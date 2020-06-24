@@ -1,6 +1,6 @@
 /* KallistiOS ##version##
 
-   ext2/fs_fat.h
+   fat/fs_fat.h
    Copyright (C) 2012, 2013, 2019 Lawrence Sebald
 */
 
@@ -73,7 +73,7 @@ int fs_fat_shutdown(void);
 
 /** \brief  Mount a FAT filesystem in the VFS.
 
-    This function mounts an ext2 filesystem to the specified mount point on the
+    This function mounts an fat filesystem to the specified mount point on the
     VFS. This function will detect whether or not an FAT filesystem exists on
     the given block device and mount it only if there is actually an FAT
     filesystem.
