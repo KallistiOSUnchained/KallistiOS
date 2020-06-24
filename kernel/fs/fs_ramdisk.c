@@ -87,8 +87,6 @@ static rd_dir_t  *rootdir = NULL;
 /********************************************************************************/
 /* File primitives */
 
-#define MAX_RAM_FILES 8
-
 /* File handles.. I could probably do this with a linked list, but I'm just
    too lazy right now. =) */
 static struct {

@@ -15,7 +15,7 @@
 
     You can choose to automount one ROMFS image by embedding it into your binary
     and using the appropriate KOS_INIT_FLAGS() setting. The embedded ROMFS will
-    mount itself on /rom. You can also mount additional images that you load
+    mount itself on /rd. You can also mount additional images that you load
     from some other source on whatever mountpoint you want.
 
     \author Dan Potter
