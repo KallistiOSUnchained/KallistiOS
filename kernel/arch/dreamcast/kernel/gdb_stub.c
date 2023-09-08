@@ -192,6 +192,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /* Hitachi SH architecture instruction encoding masks */
 
@@ -724,6 +725,23 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
 #undef LREG
 #undef WREG
 
+
+static int qfThreadInfo(kthread_t *thd, void *ud) {
+    const size_t *idx = ud;
+
+    if(!idx)
+        remcomOutBuffer[*(idx)++] = ',';
+    else if(idx >= sizeof(remcomOutBuffer) - 3)
+        return -1;
+
+    remcomOutBuffer[*(idx)++] = highhex(thd->tid);
+    remcomOutBuffer[*(idx)++] = lowhex(thd->tid);
+
+    printf("qfThreadInfo: %lu", thd->tid);
+
+    return 0;
+}
+
 /*
 This function does all exception handling.  It only does two things -
 it figures out why it was called and tells gdb, and then it reacts
@@ -873,24 +891,38 @@ static void gdb_handle_exception(int exceptionVector) {
             break;
         case 'q': /* threading */
             if(*(ptr++) == 'C') {
-                static kthread_t *prev = NULL;
                 kthread_t* thd = thd_get_current();
-                if(prev != thd) {
-                    printf("TID: %lu\n", thd->tid);
-                    remcomOutBuffer[0] = 'Q';
-                    remcomOutBuffer[1] = 'C';
-                    remcomOutBuffer[2] = highhex(thd->tid);
-                    remcomOutBuffer[3] = lowhex(thd->tid);
-                    remcomOutBuffer[4] = '\0';
-                    prev = thd; 
-                } else {
-                    remcomOutBuffer[0] = '*';
-                    remcomOutBuffer[1] = '\0';
+                printf("TID: %lu\n", thd->tid);
+                remcomOutBuffer[0] = 'Q';
+                remcomOutBuffer[1] = 'C';
+                remcomOutBuffer[2] = highhex(thd->tid);
+                remcomOutBuffer[3] = lowhex(thd->tid);
+                remcomOutBuffer[4] = '\0';
+            } else {
+                
+                if(strncmp(ptr, "fThreadInfo", 11) == 0) {
+                    size_t idx = 0;
+                    remcomOutBuffer[idx++] = 'm';
+                    remcomOutBuffer[idx++] = ' ';
+                    thd_each(qfThreadInfo, &idx);
+                    remcomOutBuffer[idx] = '\0';
+                } else if(strncmp(ptr, "sThreadInfo", 11) == 0) {
+                    strcpy(remcomOutBuffer, "l");
+                } else if(strncmp(ptr, "ThreadExtraInfo", 15) == 0) { 
+                    ptr += 16;
+                    uint32_t tid = 0;
+                    if(hexToInt(&ptr, &tid)) {
+                        kthread_t* thr = thd_by_tid(tid);
+                        strcpy(remcomOutBuffer, thd_get_label(thr));
+                    } else{
+                        fprintf(stderr, "Failed to get TID for ThreadExtraInfo\n");
+                    }
                 }
             }
+
             break;
         case 'T': {
-            int tid = 0;
+            uint32_t tid = 0;
             if(hexToInt(&ptr, &tid)) {
                 kthread_t* thr = thd_by_tid(tid);
                 if(thr) {
@@ -913,7 +945,6 @@ static void gdb_handle_exception(int exceptionVector) {
         putpacket(remcomOutBuffer);
     }
 }
-
 
 /* This function will generate a breakpoint exception.  It is used at the
    beginning of a program to sync up with a debugger and can be used
