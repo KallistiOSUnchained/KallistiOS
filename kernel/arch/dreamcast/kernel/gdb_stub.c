@@ -727,17 +727,19 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
 
 
 static int qfThreadInfo(kthread_t *thd, void *ud) {
-    const size_t *idx = ud;
+    size_t idx = *(size_t*)ud;
 
-    if(!idx)
-        remcomOutBuffer[*(idx)++] = ',';
-    else if(idx >= sizeof(remcomOutBuffer) - 3)
+    if(idx >= sizeof(remcomOutBuffer) - 3)
         return -1;
+    if(idx > 1)
+        remcomOutBuffer[idx++] = ',';
 
-    remcomOutBuffer[*(idx)++] = highhex(thd->tid);
-    remcomOutBuffer[*(idx)++] = lowhex(thd->tid);
+    remcomOutBuffer[idx++] = highhex(thd->tid);
+    remcomOutBuffer[idx++] = lowhex(thd->tid);
 
     printf("qfThreadInfo: %lu", thd->tid);
+
+    *(size_t*)ud = idx;
 
     return 0;
 }
@@ -899,11 +901,9 @@ static void gdb_handle_exception(int exceptionVector) {
                 remcomOutBuffer[3] = lowhex(thd->tid);
                 remcomOutBuffer[4] = '\0';
             } else {
-                
                 if(strncmp(ptr, "fThreadInfo", 11) == 0) {
                     size_t idx = 0;
                     remcomOutBuffer[idx++] = 'm';
-                    remcomOutBuffer[idx++] = ' ';
                     thd_each(qfThreadInfo, &idx);
                     remcomOutBuffer[idx] = '\0';
                 } else if(strncmp(ptr, "sThreadInfo", 11) == 0) {
@@ -913,7 +913,8 @@ static void gdb_handle_exception(int exceptionVector) {
                     uint32_t tid = 0;
                     if(hexToInt(&ptr, &tid)) {
                         kthread_t* thr = thd_by_tid(tid);
-                        strcpy(remcomOutBuffer, thd_get_label(thr));
+                        char* plabel = thd_get_label(thr);
+                        mem2hex(plabel , remcomOutBuffer, strlen(plabel));
                     } else{
                         fprintf(stderr, "Failed to get TID for ThreadExtraInfo\n");
                     }
@@ -933,9 +934,7 @@ static void gdb_handle_exception(int exceptionVector) {
                     printf("Thd %lu is dead!\n", tid);
                     strcpy(remcomOutBuffer, "E00");
                 }
-
             }
-
         }
         break;
         }           /* switch */
