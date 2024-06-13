@@ -238,10 +238,34 @@
 /*
  * Modes for packet dcload packet transmission
  */
-
 #define DCL_SEND       0x1
 #define DCL_RECV       0x2
 #define DCL_SENDRECV   0x3
+
+/*
+ * Error codes
+ * https://developer.arm.com/documentation/dui0155/e/gdb-and-command-monitor-error-codes/error-codes/generic-errors?lang=en
+ */
+#define GDB_OK                             "OK"
+
+/* Generic errors */
+#define GDB_ERROR_BAD_ARGUMENTS            "E06"
+#define GDB_ERROR_UNSUPPORTED_COMMAND      "E07"
+/* Memory and register errors */
+#define GDB_ERROR_MEMORY_BAD_ADDRESS       "E30"
+#define GDB_ERROR_MEMORY_BUS_ERROR         "E31"
+#define GDB_ERROR_MEMORY_TIMEOUT           "E32"
+#define GDB_ERROR_MEMORY_VERIFY_ERROR      "E33"
+#define GDB_ERROR_MEMORY_BAD_ACCESS_SIZE   "E34"
+#define GDB_ERROR_MEMORY_GENERAL           "E35"
+/* Breakpoint errors */
+#define GDB_ERROR_BKPT_NOT_SET             "E50" /* Unable to set breakpoint */
+#define GDB_ERROR_BKPT_SWBREAK_NOT_SET     "E51" /* Unable to write software breakpoint to memory */
+#define GDB_ERROR_BKPT_HWBREAK_NO_RSRC     "E52" /* No hardware breakpoint resource available to set hardware breakpoint */
+#define GDB_ERROR_BKPT_HWBREAK_ACCESS_ERR  "E53" /* Failed to access hardware breakpoint resource */
+#define GDB_ERROR_BKPT_CLEARING_BAD_ID     "E55" /* Bad ID when clearing breakpoint */
+#define GDB_ERROR_BKPT_CLEARING_BAD_ADDR   "E56" /* Bad address when clearing breakpoint */
+#define GDB_ERROR_BKPT_SBREAKER_NO_RSRC    "E57" /* Insufficient hardware resources for software breakpoints */
 
 /*
  * typedef
@@ -274,7 +298,6 @@ static int dofault;  /* Non zero, bus errors will raise exception */
 static int remote_debug;
 
 /* map from KOS register context order to GDB sh4 order */
-
 #define KOS_REG(r)      offsetof(irq_context_t, r)
 
 static uint32 kosRegMap[] = {
@@ -415,6 +438,22 @@ static int hexToInt(char **ptr, uint32 *intValue) {
     }
 
     return (numChars);
+}
+
+/* Build ASCII error message packet. */
+static void build_error_packet(const char *format, ...) {
+    char *response_ptr = remcomOutBuffer;
+    va_list args;
+
+    /* Construct the error response in the E.errtext format */
+    *response_ptr++ = 'E';
+    *response_ptr++ = '.';
+
+    va_start(args, format);
+    vsnprintf(response_ptr, BUFMAX-3, format, args);
+    va_end(args);
+
+    /* Null terminated error message is now store in remcomOutBuffer */
 }
 
 /*
@@ -697,7 +736,7 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
     bbr |= bbrBrk[brktype];
 
     if(addr == 0) {  /* GDB tries to watch 0, wasting a UCB channel */
-        strcpy(resBuffer, "OK");
+        strcpy(resBuffer, GDB_OK);
     }
     else if(brktype == 0) {
         /* we don't support memory breakpoints -- the debugger
@@ -705,7 +744,7 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
         *resBuffer = '\0';
     }
     else if(length > 8) {
-        strcpy(resBuffer, "E22");
+        strcpy(resBuffer, GDB_ERROR_BKPT_SWBREAK_NOT_SET);
     }
     else if(set) {
         WREG(ucb_base, BRCR) = 0;
@@ -719,10 +758,10 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
             LREG(ucb, BAR) = addr;
             BREG(ucb, BAMR) = 0x4; /* no BASR bits used, all BAR bits used */
             WREG(ucb, BBR) = bbr;
-            strcpy(resBuffer, "OK");
+            strcpy(resBuffer, GDB_OK);
         }
         else
-            strcpy(resBuffer, "E12");
+            strcpy(resBuffer, GDB_ERROR_BKPT_NOT_SET);
     }
     else {
         /* find matching UCB channel */
@@ -732,7 +771,7 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
 
         if(i) {
             WREG(ucb, BBR) = 0;
-            strcpy(resBuffer, "OK");
+            strcpy(resBuffer, GDB_OK);
         }
         else
             strcpy(resBuffer, "E06");
@@ -741,22 +780,6 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
 
 #undef LREG
 #undef WREG
-
-/* Build ASCII error message packet. */
-static void build_error_packet(const char *format, ...) {
-    char *response_ptr = remcomOutBuffer;
-    va_list args;
-
-    /* Construct the error response in the E.errtext format */
-    *response_ptr++ = 'E';
-    //*response_ptr++ = '.';
-
-    va_start(args, format);
-    vsnprintf(response_ptr, BUFMAX-2, format, args);
-    va_end(args);
-
-    /* Null terminated error message is now store in remcomOutBuffer */
-}
 
 /* Callback for thd_each() for qfThreadInfo packet. */
 static int qfThreadInfo(kthread_t *thd, void *ud) {
@@ -841,7 +864,7 @@ static void gdb_handle_exception(int exceptionVector) {
                 for(i = 0; i < NUMREGBYTES / 4; i++, inBuf += 8)
                     hex2mem(inBuf, (char *)((uint32)irq_ctx + kosRegMap[i]), 4);
 
-                strcpy(remcomOutBuffer, "OK");
+                strcpy(remcomOutBuffer, GDB_OK);
             }
             break;
 
@@ -850,15 +873,15 @@ static void gdb_handle_exception(int exceptionVector) {
                 dofault = 0;
 
                 /* TRY, TO READ %x,%x.  IF SUCCEED, SET PTR = 0 */
-                if(hexToInt(&ptr, &addr))
-                    if(*(ptr++) == ',')
-                        if(hexToInt(&ptr, &length)) {
-                            ptr = 0;
-                            mem2hex((char *) addr, remcomOutBuffer, length);
-                        }
+                if(hexToInt(&ptr, &addr) && 
+                   *(ptr++) == ',' && 
+                   hexToInt(&ptr, &length)) {
+                    ptr = 0;
+                    mem2hex((char *) addr, remcomOutBuffer, length);
+                }
 
                 if(ptr)
-                    strcpy(remcomOutBuffer, "E01");
+                    strcpy(remcomOutBuffer, GDB_ERROR_BAD_ARGUMENTS);
 
                 /* restore handler for bus error */
                 dofault = 1;
@@ -869,15 +892,15 @@ static void gdb_handle_exception(int exceptionVector) {
                 dofault = 0;
 
                 /* TRY, TO READ '%x,%x:'.  IF SUCCEED, SET PTR = 0 */
-                if(hexToInt(&ptr, &addr))
-                    if(*(ptr++) == ',')
-                        if(hexToInt(&ptr, &length))
-                            if(*(ptr++) == ':') {
-                                hex2mem(ptr, (char *) addr, length);
-                                icache_flush_range(addr, length);
-                                ptr = 0;
-                                strcpy(remcomOutBuffer, "OK");
-                            }
+                if(hexToInt(&ptr, &addr) && 
+                   *(ptr++) == ',' && 
+                   hexToInt(&ptr, &length) && 
+                   *(ptr++) == ':') {
+                    hex2mem(ptr, (char *) addr, length);
+                    icache_flush_range(addr, length);
+                    ptr = 0;
+                    strcpy(remcomOutBuffer, GDB_OK);
+                }
 
                 if(ptr)
                     strcpy(remcomOutBuffer, "E02");
@@ -914,13 +937,13 @@ static void gdb_handle_exception(int exceptionVector) {
                 int set = (*(ptr - 1) == 'Z');
                 int brktype = *ptr++ - '0';
 
-                if(*(ptr++) == ',')
-                    if(hexToInt(&ptr, &addr))
-                        if(*(ptr++) == ',')
-                            if(hexToInt(&ptr, &length)) {
-                                hardBreakpoint(set, brktype, addr, length, remcomOutBuffer);
-                                ptr = 0;
-                            }
+                if(*(ptr++) == ',' && 
+                     hexToInt(&ptr, &addr) && 
+                     *(ptr++) == ',' && 
+                     hexToInt(&ptr, &length)) {
+                    hardBreakpoint(set, brktype, addr, length, remcomOutBuffer);
+                    ptr = 0;
+                }
 
                 if(ptr)
                     strcpy(remcomOutBuffer, "E02");
@@ -998,7 +1021,7 @@ static void gdb_handle_exception(int exceptionVector) {
                     kthread_t* thr = thd_by_tid(tid);
                     if(thr) {
                         printf("Thd %lu is alive!\n", tid);
-                        strcpy(remcomOutBuffer, "OK");
+                        strcpy(remcomOutBuffer, GDB_OK);
                     }
                     else {
                         build_error_packet("Thd %lu is dead!\n", tid);
@@ -1061,7 +1084,7 @@ static void gdb_handle_exception(int exceptionVector) {
             //         break;
             //     }
 
-            //     strcpy(remcomOutBuffer, "OK");
+            //     strcpy(remcomOutBuffer, GDB_OK);
 
             //     /* Print the arguments to verify */
             //     printf("Arguments received:\n");
