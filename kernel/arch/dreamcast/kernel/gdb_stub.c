@@ -253,8 +253,8 @@ typedef void (*Function)();
  */
 
 static int hex(char);
-static char *mem2hex(char *, char *, uint32);
-static char *hex2mem(char *, char *, uint32);
+static char *mem2hex(const char *, char *, uint32);
+static char *hex2mem(const char *, char *, uint32);
 static int hexToInt(char **, uint32 *);
 static unsigned char *getpacket(void);
 static void putpacket(char *);
@@ -342,10 +342,19 @@ static int hex(char ch) {
     return (-1);
 }
 
-/* convert the memory, pointed to by mem into hex, placing result in buf */
-/* return a pointer to the last char put in buf (null) */
-static char * mem2hex(char *mem, char *buf, uint32 count) {
-    uint32 i;
+/*
+   Convert binary data to a hex string.
+   
+   This function converts 'count' bytes from the binary data pointed to by 'mem' 
+   into a hex string and stores it in 'buf'. It returns a pointer to the character 
+   in 'buf' immediately after the last written character (null-terminator).
+   
+   mem     Pointer to the binary data.
+   buf     Pointer to the output buffer for the hex string.
+   count   Number of bytes to convert.
+ */
+static char *mem2hex(const char *mem, char *buf, uint32_t count) {
+    uint32_t i;
     int ch;
 
     for(i = 0; i < count; i++) {
@@ -358,11 +367,19 @@ static char * mem2hex(char *mem, char *buf, uint32 count) {
     return (buf);
 }
 
-/* convert the hex array pointed to by buf into binary, to be placed in mem */
-/* return a pointer to the character after the last byte written */
+/*
+   Convert a hex string to binary data.
 
-static char * hex2mem(char *buf, char *mem, uint32 count) {
-    uint32 i;
+   This function converts 'count' bytes from the hex string 'buf' into binary 
+   data and stores it in 'mem'. It returns a pointer to the character in 'mem' 
+   immediately after the last byte written.
+   
+    buf     Pointer to the hex string.
+    mem     Pointer to the output buffer for binary data.
+    count   Number of bytes to convert (half the length of 'buf').
+ */
+static char *hex2mem(const char *buf, char *mem, uint32_t count) {
+    uint32_t i;
     unsigned char ch;
 
     for(i = 0; i < count; i++) {
@@ -725,7 +742,23 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
 #undef LREG
 #undef WREG
 
+/* Build ASCII error message packet. */
+static void build_error_packet(const char *format, ...) {
+    char *response_ptr = remcomOutBuffer;
+    va_list args;
 
+    /* Construct the error response in the E.errtext format */
+    *response_ptr++ = 'E';
+    //*response_ptr++ = '.';
+
+    va_start(args, format);
+    vsnprintf(response_ptr, BUFMAX-2, format, args);
+    va_end(args);
+
+    /* Null terminated error message is now store in remcomOutBuffer */
+}
+
+/* Callback for thd_each() for qfThreadInfo packet. */
 static int qfThreadInfo(kthread_t *thd, void *ud) {
     size_t idx = *(size_t*)ud;
 
@@ -737,7 +770,7 @@ static int qfThreadInfo(kthread_t *thd, void *ud) {
     remcomOutBuffer[idx++] = highhex(thd->tid);
     remcomOutBuffer[idx++] = lowhex(thd->tid);
 
-    printf("qfThreadInfo: %lu", thd->tid);
+    printf("qfThreadInfo: %u", thd->tid);
 
     *(size_t*)ud = idx;
 
@@ -787,6 +820,7 @@ static void gdb_handle_exception(int exceptionVector) {
                 remcomOutBuffer[2] = lowhex(sigval);
                 remcomOutBuffer[3] = 0;
                 break;
+
             case 'd':
                 remote_debug = !(remote_debug);   /* toggle debug flag */
                 break;
@@ -830,7 +864,7 @@ static void gdb_handle_exception(int exceptionVector) {
                 dofault = 1;
                 break;
 
-                /* MAA..AA,LLLL: Write LLLL bytes at address AA.AA return OK */
+            /* MAA..AA,LLLL: Write LLLL bytes at address AA.AA return OK */
             case 'M':
                 dofault = 0;
 
@@ -857,6 +891,7 @@ static void gdb_handle_exception(int exceptionVector) {
             case 's':
                 stepping = 1;
                 __fallthrough;
+
             case 'c': {
                 /* tRY, to read optional parameter, pc unchanged if no param */
                 if(hexToInt(&ptr, &addr))
@@ -889,56 +924,153 @@ static void gdb_handle_exception(int exceptionVector) {
 
                 if(ptr)
                     strcpy(remcomOutBuffer, "E02");
-            }
-            break;
-        case 'q': /* threading */
-            if(*(ptr++) == 'C') {
-                kthread_t* thd = thd_get_current();
-                printf("TID: %lu\n", thd->tid);
-                remcomOutBuffer[0] = 'Q';
-                remcomOutBuffer[1] = 'C';
-                remcomOutBuffer[2] = highhex(thd->tid);
-                remcomOutBuffer[3] = lowhex(thd->tid);
-                remcomOutBuffer[4] = '\0';
-            } else {
-                if(strncmp(ptr, "fThreadInfo", 11) == 0) {
-                    size_t idx = 0;
-                    remcomOutBuffer[idx++] = 'm';
-                    thd_each(qfThreadInfo, &idx);
-                    remcomOutBuffer[idx] = '\0';
-                } else if(strncmp(ptr, "sThreadInfo", 11) == 0) {
-                    strcpy(remcomOutBuffer, "l");
-                } else if(strncmp(ptr, "ThreadExtraInfo", 15) == 0) { 
-                    ptr += 16;
-                    uint32_t tid = 0;
-                    if(hexToInt(&ptr, &tid)) {
-                        kthread_t* thr = thd_by_tid(tid);
-                        char* plabel = thd_get_label(thr);
-                        mem2hex(plabel , remcomOutBuffer, strlen(plabel));
-                    } else{
-                        fprintf(stderr, "Failed to get TID for ThreadExtraInfo\n");
+                }
+                break;
+            case 'q': /* Threading */
+                if(*ptr == 'C') {
+                    kthread_t* thd = thd_get_current();
+                    printf("TID: %u\n", thd->tid);
+                    remcomOutBuffer[0] = 'Q';
+                    remcomOutBuffer[1] = 'C';
+                    remcomOutBuffer[2] = highhex(thd->tid);
+                    remcomOutBuffer[3] = lowhex(thd->tid);
+                    remcomOutBuffer[4] = '\0';
+                } else {
+                    /* ‘fThreadInfo’ */
+                    if(strncmp(ptr, "fThreadInfo", 11) == 0) {
+                        size_t idx = 0;
+                        remcomOutBuffer[idx++] = 'm';
+                        thd_each(qfThreadInfo, &idx);
+                        remcomOutBuffer[idx] = '\0';
+                    /* ‘sThreadInfo’ */
+                    } else if(strncmp(ptr, "sThreadInfo", 11) == 0) {
+                        strcpy(remcomOutBuffer, "l");
+                    /* ‘ThreadExtraInfo,thread-id’ */
+                    } else if(strncmp(ptr, "ThreadExtraInfo,", 16) == 0) { 
+                        ptr += 16;
+                        uint32_t tid = 0;
+                        if(hexToInt(&ptr, &tid)) {
+                            kthread_t* thr = thd_by_tid(tid);
+                            const char* plabel = thd_get_label(thr);
+                            mem2hex(plabel , remcomOutBuffer, strlen(plabel));
+                        } else{
+                            build_error_packet("Failed to get TID for ThreadExtraInfo.");
+                        }
+                    /* ‘GetTLSAddr:thread-id,offset,lm’ */
+                    } else if (strncmp(ptr, "GetTLSAddr:", 11) == 0) {
+                        ptr += 11;
+                        uint32_t thread_id = 0, offset = 0, lm = 0;
+                        kthread_t *thread;
+
+                        /* Extract thread-id, offset, and lm from the packet */
+                        if(hexToInt(&ptr, &thread_id) && *(ptr++) == ',' &&
+                           hexToInt(&ptr, &offset) && *(ptr++) == ',' &&
+                           hexToInt(&ptr, &lm)) {
+
+                            /* Find the thread by thread ID */
+                            thread = thd_by_tid(thread_id);
+                            if(thread) {
+                                /* Get the TLS header address for the specified thread */
+                                tcbhead_t *tcb = thread->tcbhead;
+
+                                if(tcb) {
+                                    /* Calculate the address by adding the offset to the base of the TLS data segment */
+                                    void* tls_addr = (void*)((uintptr_t)tcb + sizeof(tcbhead_t) + offset);
+
+                                    /* Convert the address to big endian hex string */
+                                    mem2hex((char*)&tls_addr, remcomOutBuffer, sizeof(tls_addr));
+                                } else {
+                                    build_error_packet("Memory read error for thread");
+                                }
+                            } else {
+                                build_error_packet("Invalid thread ID");
+                            }
+                        } else {
+                            build_error_packet("Invalid packet format");
+                        }
+                    }
+                }
+                break;
+
+            case 'T': { /* ‘Tthread-id’ */
+                uint32_t tid = 0;
+                if(hexToInt(&ptr, &tid)) {
+                    kthread_t* thr = thd_by_tid(tid);
+                    if(thr) {
+                        printf("Thd %lu is alive!\n", tid);
+                        strcpy(remcomOutBuffer, "OK");
+                    }
+                    else {
+                        build_error_packet("Thd %lu is dead!\n", tid);
                     }
                 }
             }
-
             break;
-        case 'T': {
-            uint32_t tid = 0;
-            if(hexToInt(&ptr, &tid)) {
-                kthread_t* thr = thd_by_tid(tid);
-                if(thr) {
-                    printf("Thd %lu is alive!\n", tid);
-                    strcpy(remcomOutBuffer, "OK");
-                }
-                else {
-                    printf("Thd %lu is dead!\n", tid);
-                    strcpy(remcomOutBuffer, "E00");
-                }
-            }
-        }
-        break;
-        }           /* switch */
 
+            // case 'A': {  /* ‘Aarglen,argnum,arg,…’*/
+            //     /* Globally we probably need to define these: */
+            //     #define MAX_ARGS  10 /* How many args is the limit? */
+            //     #define ARG_BUFFER_SIZE 512 /* Buffer size to store args */
+            //     uint8_t main_argc; /* Has current count of args */
+            //     char *main_argv[MAX_ARGS]; /* Array of char * that is MAX_ARGS size */
+            //     char main_arg_buffer[ARG_BUFFER_SIZE] = {0}; /*- Buffer that stores args */
+            //     /* End global */
+
+            //     uint32_t arglen, argnum;
+            //     char *args_ptr = main_arg_buffer;
+            //     main_argc = 0;
+                
+            //     /* Grab arglen and argnum first */
+            //     if(hexToInt(&ptr, &arglen) && *(ptr++) == ',' && hexToInt(&ptr, &argnum) && *(ptr++) == ',') {
+            //         /* Hex encoded byte stream is twice as big as an ascii one */
+            //         if(arglen > ARG_BUFFER_SIZE*2 || argnum > MAX_ARGS) {
+            //             build_error_packet("Too many arguments or argument buffer overflow.");
+            //             break;
+            //         }
+
+            //         /* Program name auto included? */
+                    
+            //         /* Start decoding the hex-encoded byte stream of args */
+            //         while(*ptr && main_argc < argnum) {
+            //             /* Set pointer to new arg */
+            //             main_argv[main_argc] = args_ptr;
+
+            //             /* Get number of bytes till we get , or \0 */
+            //             size_t length = 0;
+            //             while (ptr[length] != '\0' && ptr[length] != ',')
+            //                 length++;
+
+            //             /* Convert hex to ASCII */
+            //             args_ptr = hex2mem(ptr, args_ptr, length/2);
+            //             *args_ptr++ = '\0';
+
+            //             ptr += length;
+            //             if(*ptr == ',')
+            //                 ptr++;
+
+            //             main_argc++;
+            //         }
+
+            //         if(main_argc != argnum) {
+            //             build_error_packet("Invalid number of arguments.");
+            //             main_argc = 0; /* Invalidate everything we did above */
+            //             break;
+            //         }
+            //     } else {
+            //         build_error_packet("Invalid argument format.");
+            //         break;
+            //     }
+
+            //     strcpy(remcomOutBuffer, "OK");
+
+            //     /* Print the arguments to verify */
+            //     printf("Arguments received:\n");
+            //     for (int i = 0; i < main_argc; i++) {
+            //         printf("Arg %d: %s\n", i, main_argv[i]);
+            //     }
+            // }
+            // break;
+        }
 
         /* reply to the request */
         putpacket(remcomOutBuffer);
@@ -953,7 +1085,6 @@ static void gdb_handle_exception(int exceptionVector) {
 void gdb_breakpoint(void) {
     BREAKPOINT();
 }
-
 
 static char getDebugChar(void) {
     int ch;
