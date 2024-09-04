@@ -198,6 +198,7 @@ int pvr_init(const pvr_init_params_t *params) {
     /* Initialize PVR DMA */
     mutex_init((mutex_t *)&pvr_state.dma_lock, MUTEX_TYPE_NORMAL);
     pvr_dma_init();
+    pvr_dma2_init();
 
     /* Set us as valid and return success */
     pvr_state.valid = 1;
@@ -243,6 +244,7 @@ int pvr_shutdown(void) {
 
     /* Shut down PVR DMA */
     pvr_dma_shutdown();
+    pvr_dma2_shutdown();
 
     /* Invalidate our memory pool */
     pvr_mem_reset();
