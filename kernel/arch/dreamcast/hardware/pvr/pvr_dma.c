@@ -153,7 +153,7 @@ int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
     irq_disable_scoped();
 
         /* Make sure we're not already DMA'ing */
-        if(ta_dma->dest_addr != 0) {
+        if(ta_dma->start != 0) {
             dbglog(DBG_ERROR, "ta_dma: Previous DMA has not finished\n");
             errno = EINPROGRESS;
             return -1;
