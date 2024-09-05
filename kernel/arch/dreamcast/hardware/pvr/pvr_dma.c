@@ -3,8 +3,8 @@
    pvr_dma.c
    Copyright (C) 2002 Roger Cattermole
    Copyright (C) 2004 Megan Potter
-   Copyright (C) 2023 Andy Barajas
    Copyright (C) 2023 Ruslan Rostovtsev
+   Copyright (C) 2023, 2024 Andress Barajas
 
    http://www.boob.co.uk
  */
@@ -63,11 +63,12 @@ static void *pvr_dma_cbdata;
 #define HARDWARE_TRIGGER  1
 
 /* Protection register code. */
-#define PVR_DMA_UNLOCK_CODE      0x6702
+#define PVR_DMA_UNLOCK_CODE    0x6702
 /* All PVR memory protection values. */
-#define PVR_DMA_UNLOCK_ALLMEM    (PVR_DMA_UNLOCK_CODE << 16 | 0x007F)
-#define PVR_DMA_LOCK_ALLMEM      (PVR_DMA_UNLOCK_CODE << 16 | 0x7F00)
+#define PVR_DMA_UNLOCK_ALLMEM  (PVR_DMA_UNLOCK_CODE << 16 | 0x007F)
+#define PVR_DMA_LOCK_ALLMEM    (PVR_DMA_UNLOCK_CODE << 16 | 0x7F00)
 
+/* For TA DMA, direction of DMA doesnt apply. Its always SH4 => TA. */
 #define DIR_NA 0
 
 static void ta_dma_irq_hnd(uint32_t code, void *data) {
@@ -100,31 +101,40 @@ static void ta_dma_irq_hnd(uint32_t code, void *data) {
 
 static uintptr_t pvr_dest_addr(uintptr_t dest, pvr_dma_type_t type) {
     uintptr_t dest_addr;
+    uintptr_t masked_dest = (uintptr_t)dest & 0xFFFFFF;
 
-    /* Send the data to the right place */
-    if(type == PVR_DMA_TA) {
-        dest_addr = ((uintptr_t)dest & 0xffffff) | PVR_TA_INPUT;
-    }
-    else if(type == PVR_DMA_YUV) {
-        dest_addr = ((uintptr_t)dest & 0xffffff) | PVR_TA_YUV_CONV;
-    }
-    else if(type == PVR_DMA_VRAM64) {
-        dest_addr = ((uintptr_t)dest & 0xffffff) | PVR_TA_TEX_MEM;
-    }
-    else if(type == PVR_DMA_VRAM32) {
-        dest_addr = ((uintptr_t)dest & 0xffffff) | PVR_TA_TEX_MEM_32;
-    }
-    else if(type == PVR_DMA_VRAM64_SB) {
-        dest_addr = ((uintptr_t)dest & 0xffffff) | PVR_RAM_BASE_64_P0;
-    }
-    else if(type == PVR_DMA_VRAM32_SB) {
-        dest_addr = ((uintptr_t)dest & 0xffffff) | PVR_RAM_BASE_32_P0;
-    }
-    else if(type == PVR_DMA_REGISTERS) {
-        dest_addr = ((uintptr_t)dest & 0xffffff) | PVR_RAM_BASE_32_P0;
-    }
-    else {
-        dest_addr = dest;
+    switch(type) {
+        case PVR_DMA_TA:
+            dest_addr = masked_dest | PVR_TA_INPUT;
+            break;
+
+        case PVR_DMA_YUV:
+            dest_addr = masked_dest | PVR_TA_YUV_CONV;
+            break;
+
+        case PVR_DMA_VRAM64:
+            dest_addr = masked_dest | PVR_TA_TEX_MEM;
+            break;
+
+        case PVR_DMA_VRAM32:
+            dest_addr = masked_dest | PVR_TA_TEX_MEM_32;
+            break;
+
+        case PVR_DMA_VRAM64_SB:
+            dest_addr = masked_dest | PVR_RAM_BASE_64_P0;
+            break;
+
+        case PVR_DMA_VRAM32_SB:
+            dest_addr = masked_dest | PVR_RAM_BASE_32_P0;
+            break;
+
+        case PVR_DMA_REGISTERS:
+            dest_addr = masked_dest | PVR_RAM_BASE_32_P0;
+            break;
+
+        default:
+            dest_addr = dest;
+            break;
     }
 
     return dest_addr;
@@ -166,11 +176,12 @@ int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
     dma_callback = callback;
     dma_cbdata = cbdata;
 
+        /* Start TA DMA */
         ta_dma->dest_addr = pvr_dest_addr(pvr, type);
         ta_dma->size = count;
         ta_dma->start = 1;
 
-        /* Wait for us to be signaled */
+        /* Block if necessary */
         if(block)
             sem_wait(&ta_dma_done);
     }
@@ -212,7 +223,7 @@ void pvr_dma_init(void) {
     /* Use single 32-bit TA->VRAM bus for PVR_TA_TEX_MEM_32 */
     *ta_dma_lmmode1 = 1;
 
-    /* Hook the necessary interrupts */
+    /* Hook the necessary interrupts for TA DMA */
     asic_evt_set_handler(ASIC_EVT_TA_DMA, ta_dma_irq_hnd, NULL);
     asic_evt_enable(ASIC_EVT_TA_DMA, ASIC_IRQ_DEFAULT);
 
@@ -222,7 +233,7 @@ void pvr_dma_init(void) {
     pvr_dma_callback = NULL;
     pvr_dma_cbdata = 0;
 
-    /* Hook the necessary interrupts */
+    /* Hook the necessary interrupts for PVR DMA */
     asic_evt_set_handler(ASIC_EVT_PVR_DMA, pvr_dma_irq_hnd, NULL);
     asic_evt_enable(ASIC_EVT_PVR_DMA, ASIC_IRQ_DEFAULT);
 
@@ -230,18 +241,18 @@ void pvr_dma_init(void) {
 }
 
 void pvr_dma_shutdown(void) {
-    /* Need to ensure that no DMA is in progress */
+    /* Need to ensure that no TA DMA is in progress */
     ta_dma->start = 0;
 
-    /* Clean up */
+    /* Clean up for TA DMA */
     asic_evt_disable(ASIC_EVT_TA_DMA, ASIC_IRQ_DEFAULT);
     asic_evt_remove_handler(ASIC_EVT_TA_DMA);
     sem_destroy(&ta_dma_done);
 
-    /* Need to ensure that no DMA is in progress */
+    /* Need to ensure that no PVR DMA is in progress */
     pvr_dma->enable = 0;
 
-    /* Clean up */
+    /* Clean up PVR DMA */
     asic_evt_disable(ASIC_EVT_PVR_DMA, ASIC_IRQ_DEFAULT);
     asic_evt_remove_handler(ASIC_EVT_PVR_DMA);
     sem_destroy(&pvr_dma_done);
