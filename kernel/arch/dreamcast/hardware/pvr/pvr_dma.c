@@ -68,7 +68,7 @@ static void *pvr_dma_cbdata;
 #define PVR_DMA_UNLOCK_ALLMEM    (PVR_DMA_UNLOCK_CODE << 16 | 0x007F)
 #define PVR_DMA_LOCK_ALLMEM      (PVR_DMA_UNLOCK_CODE << 16 | 0x7F00)
 
-#define NA 0
+#define DIR_NA 0
 
 static void ta_dma_irq_hnd(uint32_t code, void *data) {
     (void)code;
@@ -182,7 +182,7 @@ int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
 int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count, bool block,
                     pvr_dma_callback_t callback, void *cbdata) {
     return pvr_dma_transfer(src, (uintptr_t)dest, count, PVR_DMA_VRAM64, block, 
-                            NA, callback, cbdata);
+                            DIR_NA, callback, cbdata);
 }
 
 int pvr_dma_load_ta(const void *src, size_t count, bool block,
