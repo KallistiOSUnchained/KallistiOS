@@ -26,7 +26,7 @@ OBJS += pvr_palette.o
 OBJS += pvr_prim.o pvr_scene.o
 
 # Texture handling
-OBJS += pvr_texture.o pvr_dma.o pvr_dma2.o
+OBJS += pvr_texture.o pvr_dma.o
 
 include $(KOS_BASE)/Makefile.prefab
 
