@@ -69,37 +69,6 @@ typedef enum {
 } pvr_dma_mode_t;
 /** @} */
 
-/** \defgroup dma_types   DMA Types
-    \brief                The two types of DMA that power the dma functions.        
-
-    @{
-*/
-typedef enum {
-    DMA_TA,   /**< \brief TA DMA */
-    DMA_PVR   /**< \brief PVR DMA */
-} dma_type_t;
-/** @} */
-
-/** \defgroup pvr_dma_direction PVR DMA Direction
- *  \brief  PVR DMA transfer direction definitions.
- *  
- *  These enumerators define the direction for DMA transfers between SH4 and PVR.
- *  - Use `PVR_DMA_TO_PVR` for transfers from SH4 to PVR.
- *  - Use `PVR_DMA_TO_SH4` for transfers from PVR to SH4.
- *  @{
- */
-
-/** \brief PVR DMA direction enumeration. */
-typedef enum {
-    PVR_DMA_TO_PVR = 0,   /**< \brief SH4 to PVR direction. */
-    PVR_DMA_TO_SH4 = 1    /**< \brief PVR to SH4 direction. */
-} pvr_dma_dir_t;
-
-/** @} */
-
-/** \brief  For TA DMA, direction doesnt apply. Its always SH4 => TA. */
-#define DIR_NA 0
-
 /** \brief   PVR DMA interrupt callback type.
 
     Functions that act as callbacks when DMA completes should be of this type.
@@ -117,24 +86,16 @@ typedef void (*pvr_dma_callback_t)(void *data);
     DMA. There are all kinds of constraints that must be fulfilled to actually 
     do this, so make sure to read all the fine print with the parameter list.
 
-    For DMA modes `PVR_DMA_VRAM64`, `PVR_DMA_VRAM32`, `PVR_DMA_TA`, and 
-    `PVR_DMA_YUV`, the `dir` parameter is ignored since these modes are always 
-    unidirectional (SH4 -> TA). For other modes, the `dir` parameter controls 
-    the direction of the transfer (to/from PVR).
-
     If a callback is specified, it will be called in an interrupt context, so
     keep that in mind in writing the callback.
 
-    \param  sh4             The SH4 address of the data. Must be 32-byte aligned.
-    \param  pvr             The PVR address of the data. Must be 32-byte aligned.
+    \param  src             Where to copy from. Must be 32-byte aligned.
+    \param  dest            Where to copy to. Must be 32-byte aligned.
     \param  count           The number of bytes to copy. Must be a multiple of
                             32.
     \param  type            The type of DMA transfer to do (see list of modes).
     \param  block           Non-zero if you want the function to block until the
                             DMA completes.
-    \param  dir             The direction of the transfer (ignored for modes 0-3).
-                            Set to `PVR_DMA_TO_PVR` for SH4 -> PVR and 
-                            `PVR_DMA_TO_SH4` for PVR -> SH4.
     \param  callback        A function to call upon completion of the DMA.
     \param  cbdata          Data to pass to the callback function.
     \retval 0               On success.
@@ -142,13 +103,13 @@ typedef void (*pvr_dma_callback_t)(void *data);
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
+    \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 
     \see    pvr_dma_modes
 */
-int pvr_dma_transfer(void *sh4, pvr_ptr_t pvr, size_t count, pvr_dma_mode_t type,
-                     int block, pvr_dma_dir_t dir, pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_transfer(void *src, void *dest, size_t count, pvr_dma_mode_t type,
+                     int block, pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load a texture using TA DMA.
 
@@ -179,8 +140,8 @@ int pvr_txr_load_dma(void *src, pvr_ptr_t dest, size_t count, int block,
     This is essentially a convenience wrapper for pvr_dma_transfer(), so all
     notes that apply to it also apply here.
 
-    \param  sh4             Where to copy from. Must be 32-byte aligned.
-    \param  pvr             Where to copy to. Must be 32-byte aligned.
+    \param  src             Where to copy from. Must be 32-byte aligned.
+    \param  dest            Where to copy to. Must be 32-byte aligned.
     \param  count           The number of bytes to copy. Must be a multiple of
                             32.
     \param  block           Non-zero if you want the function to block until the
@@ -192,10 +153,10 @@ int pvr_txr_load_dma(void *src, pvr_ptr_t dest, size_t count, int block,
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
+    \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_load_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
+int pvr_dma_load_txr(void *src, pvr_ptr_t dest, size_t count, int block, 
                     pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Download a texture using PVR DMA.
@@ -203,8 +164,8 @@ int pvr_dma_load_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block,
     This is essentially a convenience wrapper for pvr_dma_transfer(), so all
     notes that apply to it also apply here.
 
-    \param  sh4             Where to copy to. Must be 32-byte aligned.
-    \param  pvr             Where to copy from. Must be 32-byte aligned.
+    \param  src             Where to copy to. Must be 32-byte aligned.
+    \param  dest            Where to copy from. Must be 32-byte aligned.
     \param  count           The number of bytes to copy. Must be a multiple of
                             32.
     \param  block           Non-zero if you want the function to block until the
@@ -216,10 +177,10 @@ int pvr_dma_load_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block,
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
+    \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_download_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
+int pvr_dma_download_txr(pvr_ptr_t src, void *dest, size_t count, int block, 
                         pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load vertex data to the TA using TA DMA.
@@ -268,13 +229,13 @@ int pvr_dma_load_ta(void *src, size_t count, int block,
 int pvr_dma_yuv_conv(void *src, size_t count, int block,
                      pvr_dma_callback_t callback, void *cbdata);
 
-/** \brief   Load a palette using PVR DMA.
+/** \brief   Load palette data using PVR DMA.
 
     This is essentially a convenience wrapper for pvr_dma_transfer(), so all
     notes that apply to it also apply here.
 
-    \param  sh4             Where to copy from. Must be 32-byte aligned.
-    \param  pvr             Where to copy to. Must be 32-byte aligned.
+    \param  src             Where to copy from. Must be 32-byte aligned.
+    \param  idx             Where to copy to. Must be 32-byte aligned.
     \param  count           The number of bytes to copy. Must be a multiple of
                             32.
     \param  block           Non-zero if you want the function to block until the
@@ -286,10 +247,10 @@ int pvr_dma_yuv_conv(void *src, size_t count, int block,
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
+    \em     EFAULT - src is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_load_pal(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
+int pvr_dma_load_pal(void *src, uint32_t idx, size_t count, int block, 
                     pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load a fog table using PVR DMA.
@@ -316,13 +277,11 @@ int pvr_dma_load_pal(void *sh4, pvr_ptr_t pvr, size_t count, int block,
 int pvr_dma_load_fog(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
                 pvr_dma_callback_t callback, void *cbdata);
 
-/** \brief   Checks if the specified DMA (TA or PVR) is inactive.
-
-    \return                 Non-zero if no DMA is active, indicating a new DMA 
-                            can start.
-                            Returns 0 if a DMA is currently active.
+/** \brief   Checks if the TA DMA is inactive.
+    \return                 Non-zero if there is no TA DMA active, thus a DMA
+                            can begin or 0 if there is an active DMA.
 */
-int pvr_dma_ready(dma_type_t dma);
+int pvr_dma_ready(void);
 
 /** \brief   Initialize TA/PVR DMA. */
 void pvr_dma_init(void);

@@ -126,9 +126,6 @@ static uintptr_t pvr_dest_addr(uintptr_t dest, pvr_dma_type_t type) {
             break;
 
         case PVR_DMA_REGISTERS:
-            dest_addr = masked_dest | PVR_RAM_BASE_32_P0;
-            break;
-
         default:
             dest_addr = (uintptr_t)dest;
             break;
@@ -174,7 +171,7 @@ int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
     dma_cbdata = cbdata;
 
         /* Start TA DMA */
-        ta_dma->dest_addr = pvr_dest_addr(pvr, type);
+        ta_dma->dest_addr = pvr_dest_addr(dest, type);
         ta_dma->size = count;
         ta_dma->start = 1;
 
@@ -190,7 +187,7 @@ int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
 int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count, bool block,
                     pvr_dma_callback_t callback, void *cbdata) {
     return pvr_dma_transfer(src, dest, count, PVR_DMA_VRAM64, block, 
-                            DIR_NA, callback, cbdata);
+                            callback, cbdata);
 }
 
 int pvr_dma_load_ta(const void *src, size_t count, bool block,
@@ -206,6 +203,8 @@ int pvr_dma_yuv_conv(const void *src, size_t count, bool block,
 bool pvr_dma_ready(void) {
     return pvr_dma[PVR_DST] == 0;
 }
+
+//: pvr_dma->start == 0;
 
 void pvr_dma_init(void) {
     /* Create an initially blocked semaphore */
