@@ -18,15 +18,13 @@
 
     TA DMA (Tile Accelerator DMA): This is a one-way transfer method used 
     primarily for submitting data directly to the Tile Accelerator (TA). It is 
-    commonly used for submitting vertex data, PVR lists, texture data, and YUV 
-    conversion data.
+    commonly used for submitting vertex data, texture data, and YUV conversion 
+    data.
 
     PVR DMA (PowerVR DMA): This is a more flexible, two-way transfer mechanism 
     that supports both uploading and downloading data. PVR DMA is used for 
     transferring textures and palette data to VRAM, downloading data from VRAM 
-    to the SH4, and for handling register data (e. palettes, fog tables). It 
-    offers both the ability to upload data and download data to the PowerVR 
-    (e.g., textures, register data).
+    to the SH4, and for handling register data (e. palettes, fog tables).
 
     \author Megan Potter
     \author Roger Cattermole
@@ -82,15 +80,24 @@ typedef enum {
 } dma_type_t;
 /** @} */
 
-/** \brief  PVR DMA direction
+/** \defgroup pvr_dma_direction PVR DMA Direction
+ *  \brief  PVR DMA transfer direction definitions.
+ *  
+ *  These enumerators define the direction for DMA transfers between SH4 and PVR.
+ *  - Use `PVR_DMA_TO_PVR` for transfers from SH4 to PVR.
+ *  - Use `PVR_DMA_TO_SH4` for transfers from PVR to SH4.
+ *  @{
+ */
 
-    The direction you want the data to go. For SH4 to PVR use PVR_DMA_TO_PVR, 
-    otherwise PVR_DMA_TO_SH4.
-*/
-#define PVR_DMA_TO_PVR  0
-#define PVR_DMA_TO_SH4  1
+/** \brief PVR DMA direction enumeration. */
+typedef enum {
+    PVR_DMA_TO_PVR = 0,   /**< \brief SH4 to PVR direction. */
+    PVR_DMA_TO_SH4 = 1    /**< \brief PVR to SH4 direction. */
+} pvr_dma_dir_t;
 
-/* For TA DMA, direction doesnt apply. Its always SH4 => TA. */
+/** @} */
+
+/** \brief  For TA DMA, direction doesnt apply. Its always SH4 => TA. */
 #define DIR_NA 0
 
 /** \brief   PVR DMA interrupt callback type.
@@ -118,14 +125,8 @@ typedef void (*pvr_dma_callback_t)(void *data);
     If a callback is specified, it will be called in an interrupt context, so
     keep that in mind in writing the callback.
 
-    \param  src             The SH4 address of the data. For upload operations 
-                            (SH4 -> PVR/TA), this is the SH4 memory source. For 
-                            download operations (PVR/TA -> SH4), this is the PVR 
-                            or register memory source. Must be 32-byte aligned.
-    \param  dest            The destination address of the data. For upload operations 
-                            (SH4 -> PVR/TA), this is the PVR or register memory 
-                            destination. For download operations (PVR/TA -> SH4), 
-                            this is the SH4 memory destination. Must be 32-byte aligned.
+    \param  sh4             The SH4 address of the data. Must be 32-byte aligned.
+    \param  pvr             The PVR address of the data. Must be 32-byte aligned.
     \param  count           The number of bytes to copy. Must be a multiple of
                             32.
     \param  type            The type of DMA transfer to do (see list of modes).
@@ -141,13 +142,13 @@ typedef void (*pvr_dma_callback_t)(void *data);
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
+    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
     \em     EIO - I/O error
 
     \see    pvr_dma_modes
 */
-int pvr_dma_transfer(void *src, uintptr_t dest, size_t count, pvr_dma_mode_t type,
-                     int block, int dir, pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_transfer(void *sh4, pvr_ptr_t pvr, size_t count, pvr_dma_mode_t type,
+                     int block, pvr_dma_dir_t dir, pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load a texture using TA DMA.
 
@@ -167,7 +168,7 @@ int pvr_dma_transfer(void *src, uintptr_t dest, size_t count, pvr_dma_mode_t typ
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
+    \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 */
 int pvr_txr_load_dma(void *src, pvr_ptr_t dest, size_t count, int block,
@@ -191,7 +192,7 @@ int pvr_txr_load_dma(void *src, pvr_ptr_t dest, size_t count, int block,
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
+    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
     \em     EIO - I/O error
 */
 int pvr_dma_load_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
@@ -215,10 +216,11 @@ int pvr_dma_load_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block,
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - src is not 32-byte aligned \n
+    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_download_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block, pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_download_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
+                        pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load vertex data to the TA using TA DMA.
 
@@ -237,7 +239,7 @@ int pvr_dma_download_txr(void *sh4, pvr_ptr_t pvr, size_t count, int block, pvr_
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
+    \em     EFAULT - src is not 32-byte aligned \n
     \em     EIO - I/O error
  */
 int pvr_dma_load_ta(void *src, size_t count, int block,
@@ -260,7 +262,7 @@ int pvr_dma_load_ta(void *src, size_t count, int block,
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
+    \em     EFAULT - src is not 32-byte aligned \n
     \em     EIO - I/O error
 */
 int pvr_dma_yuv_conv(void *src, size_t count, int block,
@@ -272,7 +274,7 @@ int pvr_dma_yuv_conv(void *src, size_t count, int block,
     notes that apply to it also apply here.
 
     \param  sh4             Where to copy from. Must be 32-byte aligned.
-    \param  pvr            Where to copy to. Must be 32-byte aligned.
+    \param  pvr             Where to copy to. Must be 32-byte aligned.
     \param  count           The number of bytes to copy. Must be a multiple of
                             32.
     \param  block           Non-zero if you want the function to block until the
@@ -284,10 +286,11 @@ int pvr_dma_yuv_conv(void *src, size_t count, int block,
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
+    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_load_pal(void *sh4, pvr_ptr_t pvr, size_t count, int block, pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_load_pal(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
+                    pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load a fog table using PVR DMA.
 
@@ -295,7 +298,7 @@ int pvr_dma_load_pal(void *sh4, pvr_ptr_t pvr, size_t count, int block, pvr_dma_
     notes that apply to it also apply here.
 
     \param  sh4             Where to copy from. Must be 32-byte aligned.
-    \param  pvr            Where to copy to. Must be 32-byte aligned.
+    \param  pvr             Where to copy to. Must be 32-byte aligned.
     \param  count           The number of bytes to copy. Must be a multiple of
                             32.
     \param  block           Non-zero if you want the function to block until the
@@ -307,10 +310,11 @@ int pvr_dma_load_pal(void *sh4, pvr_ptr_t pvr, size_t count, int block, pvr_dma_
 
     \par    Error Conditions:
     \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
+    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_load_fog(void *sh4, pvr_ptr_t pvr, size_t count, int block, pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_load_fog(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
+                pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Checks if the specified DMA (TA or PVR) is inactive.
 

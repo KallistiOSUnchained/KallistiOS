@@ -130,7 +130,7 @@ static uintptr_t pvr_dest_addr(uintptr_t dest, pvr_dma_type_t type) {
             break;
 
         default:
-            dest_addr = dest;
+            dest_addr = (uintptr_t)dest;
             break;
     }
 
@@ -189,7 +189,7 @@ int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
 /* Count is in bytes. */
 int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count, bool block,
                     pvr_dma_callback_t callback, void *cbdata) {
-    return pvr_dma_transfer(src, (uintptr_t)dest, count, PVR_DMA_VRAM64, block, 
+    return pvr_dma_transfer(src, dest, count, PVR_DMA_VRAM64, block, 
                             DIR_NA, callback, cbdata);
 }
 
