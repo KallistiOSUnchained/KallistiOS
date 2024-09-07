@@ -229,59 +229,28 @@ int pvr_dma_load_ta(void *src, size_t count, int block,
 int pvr_dma_yuv_conv(void *src, size_t count, int block,
                      pvr_dma_callback_t callback, void *cbdata);
 
-/** \brief   Load palette data using PVR DMA.
+/** \brief   Checks if the TA DMA is inactive.
+    
+    \deprecated
+    This function is formally deprecated, and should not be used in newly
+    written code. Instead, please use pvr_dma_ta_ready().
 
-    This is essentially a convenience wrapper for pvr_dma_transfer(), so all
-    notes that apply to it also apply here.
-
-    \param  src             Where to copy from. Must be 32-byte aligned.
-    \param  idx             Where to copy to. Must be 32-byte aligned.
-    \param  count           The number of bytes to copy. Must be a multiple of
-                            32.
-    \param  block           Non-zero if you want the function to block until the
-                            DMA completes.
-    \param  callback        A function to call upon completion of the DMA.
-    \param  cbdata          Data to pass to the callback function.
-    \retval 0               On success.
-    \retval -1              On failure. Sets errno as appropriate.
-
-    \par    Error Conditions:
-    \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - src is not 32-byte aligned \n
-    \em     EIO - I/O error
+    \return                 Non-zero if there is no TA DMA active, thus a DMA
+                            can begin or 0 if there is an active DMA.
 */
-int pvr_dma_load_pal(void *src, uint32_t idx, size_t count, int block, 
-                    pvr_dma_callback_t callback, void *cbdata);
-
-/** \brief   Load a fog table using PVR DMA.
-
-    This is essentially a convenience wrapper for pvr_dma_transfer(), so all
-    notes that apply to it also apply here.
-
-    \param  sh4             Where to copy from. Must be 32-byte aligned.
-    \param  pvr             Where to copy to. Must be 32-byte aligned.
-    \param  count           The number of bytes to copy. Must be a multiple of
-                            32.
-    \param  block           Non-zero if you want the function to block until the
-                            DMA completes.
-    \param  callback        A function to call upon completion of the DMA.
-    \param  cbdata          Data to pass to the callback function.
-    \retval 0               On success.
-    \retval -1              On failure. Sets errno as appropriate.
-
-    \par    Error Conditions:
-    \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - sh4 or pvr is not 32-byte aligned \n
-    \em     EIO - I/O error
-*/
-int pvr_dma_load_fog(void *sh4, pvr_ptr_t pvr, size_t count, int block, 
-                pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_ready(void)  __depr("Use pvr_dma_ta_ready instead.");
 
 /** \brief   Checks if the TA DMA is inactive.
     \return                 Non-zero if there is no TA DMA active, thus a DMA
                             can begin or 0 if there is an active DMA.
 */
-int pvr_dma_ready(void);
+int pvr_dma_ta_ready(void);
+
+/** \brief   Checks if the PVR DMA is inactive.
+    \return                 Non-zero if there is no PVR DMA active, thus a DMA
+                            can begin or 0 if there is an active DMA.
+*/
+int pvr_dma_rb_ready(void);
 
 /** \brief   Initialize TA/PVR DMA. */
 void pvr_dma_init(void);

@@ -204,7 +204,9 @@ bool pvr_dma_ready(void) {
     return pvr_dma[PVR_DST] == 0;
 }
 
-//: pvr_dma->start == 0;
+int pvr_dma_rb_ready() {
+    return pvr_dma->start == 0;
+}
 
 void pvr_dma_init(void) {
     /* Create an initially blocked semaphore */
@@ -261,7 +263,8 @@ static int check_dma_state(pvr_dma_mode_t type, const char *func_name) {
         dbglog(DBG_ERROR, "%s: PVR DMA has not finished\n", func_name);
         errno = EINPROGRESS;
         return -1;
-    } else if(ta_dma->start != 0) {
+    } 
+    else if(ta_dma->start != 0) {
         dbglog(DBG_ERROR, "%s: TA DMA has not finished\n", func_name);
         errno = EINPROGRESS;
         return -1;
