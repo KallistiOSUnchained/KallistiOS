@@ -191,7 +191,7 @@ int pvr_init(const pvr_init_params_t *params) {
     PVR_SET(PVR_UNK_0080, 0x00000007);      /* M */
     PVR_SET(PVR_CHEAP_SHADOW, 0x00000001);      /* cheap shadow */
     PVR_SET(PVR_UNK_007C, 0x0027df77);      /* M */
-    PVR_SET(PVR_TEXTURE_MODULO, 0x00000000);    /* stride width */
+    PVR_SET(PVR_TXR_STRIDE_MULT, 0x00000000);    /* stride width */
     PVR_SET(PVR_FOG_DENSITY, 0x0000ff07);       /* fog density */
     PVR_SET(PVR_UNK_0118, 0x00008040);      /* M */
 
