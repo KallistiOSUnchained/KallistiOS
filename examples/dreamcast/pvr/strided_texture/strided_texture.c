@@ -32,26 +32,29 @@
                             texture_pointer, PVR_FILTER_NONE);
            ```
 
-  2. Set the Global Texture Stride Register:
+    2. Set the Global Texture Stride Register:
 
-       - Use `PVR_SET(PVR_TXR_STRIDE_MULT, stride_multi);` to define a custom
-         texture stride width in increments of 32 pixels.
-       - Calculate `stride_multi` by dividing the texture width by 32.
-       - The `PVR_TXR_STRIDE_MULT` register defines how the hardware interprets 
-         each row's width in VRAM. For a 640-pixel wide texture, `stride_multi` 
-         would be:
+       - Use `pvr_txr_set_stride(texture_width);` to define a custom texture 
+         stride width in increments of 32 pixels. 
+       - The `texture_width` parameter should be the full width of the texture 
+         in pixels.
+       - This setting instructs the hardware on how to interpret each row's 
+         width in VRAM for non-power-of-two textures. For a 640-pixel wide 
+         texture, you would call:
         
            ```c
-           PVR_SET(PVR_TXR_STRIDE_MULT, 640 / 32);
+           pvr_txr_set_stride(640);
            ```
-       Important Notes:
+
+    Important Notes:
+
        - Texture widths that are multiples of 32 (but not powers of two) require 
          the `PVR_TXRFMT_X32_STRIDE` flag.
        - Palette-based textures are incompatible with the `PVR_TXRFMT_X32_STRIDE` 
          flag.
-       - `PVR_TXR_STRIDE_MULT` is a global register. All textures using the 
-         `PVR_TXRFMT_X32_STRIDE` flag in the same frame must share the same 
-         stride. Changing `PVR_TXR_STRIDE_MULT` affects all such textures 
+       - `pvr_txr_set_stride()` sets a global PVR register. All textures using 
+         the `PVR_TXRFMT_X32_STRIDE` flag in the same frame must share the same 
+         stride. Changing `pvr_txr_set_stride()` affects all such textures 
          rendered afterward.
 */
 
@@ -153,8 +156,8 @@ static void load_texture(void) {
                      TEXTURE_PADDED_HEIGHT, board_texture, PVR_FILTER_NONE);
     pvr_poly_compile(&hdr, &cxt);
 
-    /* Set the STRIDE register to texture width / 32 */
-    PVR_SET(PVR_TXR_STRIDE_MULT, TEXTURE_WIDTH / 32);
+    /* Set the global non-power-of-two stride register */
+    pvr_txr_set_stride(TEXTURE_WIDTH);
 
     free(grid_texture);
 }

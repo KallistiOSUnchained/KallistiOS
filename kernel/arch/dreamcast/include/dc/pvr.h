@@ -40,6 +40,7 @@
 __BEGIN_DECLS
 
 #include <stdalign.h>
+#include <stdbool.h>
 
 #include <arch/memory.h>
 #include <arch/types.h>
@@ -2269,6 +2270,52 @@ void pvr_poly_cxt_txr_mod(pvr_poly_cxt_t *dst, pvr_list_t list,
     
     Helper functions for handling texture tasks of various kinds.
 */
+
+/** \brief   Set the global stride width for non-power-of-two textures in PVR RAM.
+    \ingroup pvr_txr_mgmt 
+
+    This function configures the global texture stride register 
+    `PVR_TXR_STRIDE_MULT`, which defines the row width in VRAM for 
+    non-power-of-two textures. The setting applies to all textures 
+    rendered with the `PVR_TXRFMT_X32_STRIDE` flag in the same frame. 
+    Since `PVR_TXR_STRIDE_MULT` is a global register, all textures 
+    using this flag must share the same stride width in each frame.
+
+    The stride width configured here is **only supported for textures 
+    with widths that are multiples of 32 pixels** and up to a maximum 
+    of 992 pixels. Any texture width not meeting this requirement will 
+    not work with the `PVR_TXRFMT_X32_STRIDE` flag.
+
+    \warning
+    - Textures that are palette-based cannot use the `PVR_TXRFMT_X32_STRIDE` 
+      flag so the stride set here will not apply to them.
+
+    \param  texture_width   The width of the texture in pixels. Must be a 
+                            multiple of 32 and up to 992 pixels.
+    \retval true            On success.
+    \retval false           On failure.
+
+    \sa pvr_txr_get_stride()
+*/
+bool pvr_txr_set_stride(uint32_t texture_width);
+
+/** \brief   Get the current texture stride width in pixels as set in the PVR.
+    \ingroup pvr_txr_mgmt 
+
+    This function reads the `PVR_TXR_STRIDE_MULT` register and calculates the 
+    texture stride width in pixels. The value returned is the width in pixels 
+    that has been configured for all textures using the `PVR_TXRFMT_X32_STRIDE` 
+    flag in the same frame. 
+
+    The stride width is computed by taking the current multiplier in 
+    `PVR_TXR_STRIDE_MULT` (which stores the width divided by 32), and 
+    multiplying it back by 32 to return the full width in pixels.
+
+    \return                 The current texture stride width in pixels.
+
+    \sa pvr_txr_set_stride()
+*/
+uint32_t pvr_txr_get_stride(void);
 
 /** \brief   Load raw texture data from an SH-4 buffer into PVR RAM.
     \ingroup pvr_txr_mgmt 
