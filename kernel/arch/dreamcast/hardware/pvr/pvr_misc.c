@@ -82,6 +82,27 @@ int pvr_vertex_dma_enabled(void) {
     return pvr_state.dma_mode;
 }
 
+bool pvr_txr_set_stride(uint32_t texture_width) {
+    uint32_t temp;
+
+    if(texture_width % 32 != 0 || texture_width > 992) { /* 1024 - 32 = 992 */
+        dbglog(DBG_ERROR, 
+            "Texture width must be divisible by 32 and be 992 or less.");
+        return false;
+    }
+
+    temp = PVR_GET(PVR_TXR_STRIDE_MULT);
+    temp &= ~0x1F;
+    temp |= (texture_width / 32) & 0x1F;
+    PVR_SET(PVR_TXR_STRIDE_MULT, temp);
+
+    return true;
+}
+
+uint32_t pvr_txr_get_stride(void) {
+    return (PVR_GET(PVR_TXR_STRIDE_MULT) & 0x1F) * 32;
+}
+
 /******** INTERNAL STUFF ************************************************/
 
 /* Update statistical counters */

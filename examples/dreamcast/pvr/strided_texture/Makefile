@@ -1,6 +1,6 @@
 #
 # strided_texture
-# Copyright (C) Andress Barajas
+# Copyright (C) 2024 Andress Barajas
 #   
 
 TARGET = strided_texture.elf
