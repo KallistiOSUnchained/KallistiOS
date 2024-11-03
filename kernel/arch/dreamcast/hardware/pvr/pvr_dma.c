@@ -121,9 +121,9 @@ static void pvr_dma_irq_hnd(uint32_t code, void *data) {
     }
 }
 
-static uintptr_t pvr_dest_addr(pvr_ptr_t dest, pvr_dma_mode_t type) {
+static uintptr_t pvr_dest_addr(uintptr_t dest, pvr_dma_type_t type) {
     uintptr_t dest_addr;
-    uintptr_t masked_dest = (uintptr_t)dest & 0xFFFFFF;
+    uintptr_t masked_dest = dest & 0xFFFFFF;
 
     switch(type) {
         case PVR_DMA_TA:
@@ -152,15 +152,16 @@ static uintptr_t pvr_dest_addr(pvr_ptr_t dest, pvr_dma_mode_t type) {
 
         case PVR_DMA_REGISTERS:
         default:
-            dest_addr = (uintptr_t)dest;
+            dest_addr = dest;
             break;
     }
 
     return dest_addr;
 }
 
-int pvr_dma_transfer(void *src, void *dest, size_t count, pvr_dma_mode_t type,
-                    int block, pvr_dma_callback_t callback, void *cbdata) {
+int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
+                     pvr_dma_type_t type, int block,
+                     pvr_dma_callback_t callback, void *cbdata) {
     uintptr_t src_addr = ((uintptr_t)src) & MEM_AREA_CACHE_MASK;
     uintptr_t dest_addr = ((uintptr_t)dest) & MEM_AREA_CACHE_MASK;
 
@@ -372,7 +373,7 @@ static int check_dma_state(pvr_dma_mode_t type, const char *func_name) {
 }
 
 /* Copies n bytes from src to PVR dest, dest must be 32-byte aligned */
-void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_mode_t type) {
+void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_type_t type) {
     void *dma_area_ptr;
 
     if(check_dma_state(type, "pvr_sq_load") < 0)
@@ -385,7 +386,7 @@ void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_mode_t type) {
 }
 
 /* Fills n bytes at PVR dest with 16-bit c, dest must be 32-byte aligned */
-void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_mode_t type) {
+void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_type_t type) {
     void *dma_area_ptr;
 
     if(check_dma_state(type, "pvr_sq_set16") < 0)
@@ -398,7 +399,7 @@ void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_mode_t type) {
 }
 
 /* Fills n bytes at PVR dest with 32-bit c, dest must be 32-byte aligned */
-void *pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_mode_t type) {
+void *pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_type_t type) {
     void *dma_area_ptr;
 
     if(check_dma_state(type, "pvr_sq_set32") < 0)
