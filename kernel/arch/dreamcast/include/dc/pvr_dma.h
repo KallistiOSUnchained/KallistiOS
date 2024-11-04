@@ -53,19 +53,20 @@ typedef void *pvr_ptr_t;
     @{
 */
 
-/** \defgroup pvr_dma_modes   Transfer Modes
-    \brief                    Transfer modes with TA/PVR DMA and Store Queues
+/** \defgroup pvr_dma_mode          Transfer Modes
+    \brief                          Transfer modes with TA/PVR DMA and Store Queues
+    \ingroup  pvr_dma
 
     @{
 */
-typedef enum {
-    PVR_DMA_VRAM64 = 0,    /**< \brief Transfer to VRAM using TA bus */
-    PVR_DMA_VRAM32 = 1,    /**< \brief Transfer to VRAM using TA bus */
-    PVR_DMA_TA = 2,        /**< \brief Transfer to the tile accelerator */
-    PVR_DMA_YUV = 3,       /**< \brief Transfer to the YUV converter (TA) */
-    PVR_DMA_VRAM32_SB = 4, /**< \brief Transfer to/from VRAM using PVR i/f */
-    PVR_DMA_VRAM64_SB = 5, /**< \brief Transfer to/from VRAM using PVR i/f */
-    PVR_DMA_REGISTERS = 6  /**< \brief Transfer to/from PVR registers */
+typedef enum pvr_dma_mode {
+    PVR_DMA_VRAM64,       /**< \brief Transfer to VRAM using TA bus */
+    PVR_DMA_VRAM32,       /**< \brief Transfer to VRAM using TA bus */
+    PVR_DMA_TA,           /**< \brief Transfer to the tile accelerator */
+    PVR_DMA_YUV,          /**< \brief Transfer to the YUV converter (TA) */
+    PVR_DMA_VRAM32_SB,    /**< \brief Transfer to/from VRAM using PVR i/f */
+    PVR_DMA_VRAM64_SB,    /**< \brief Transfer to/from VRAM using PVR i/f */
+    PVR_DMA_REGISTERS     /**< \brief Transfer to/from PVR registers */
 } pvr_dma_mode_t;
 /** @} */
 
@@ -108,8 +109,9 @@ typedef void (*pvr_dma_callback_t)(void *data);
 
     \see    pvr_dma_modes
 */
-int pvr_dma_transfer(void *src, void *dest, size_t count, pvr_dma_mode_t type,
-                     int block, pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_transfer(const void *src, void *dest, size_t count, 
+                     pvr_dma_mode_t type, int block, 
+                     pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load a texture using TA DMA.
 
@@ -132,8 +134,8 @@ int pvr_dma_transfer(void *src, void *dest, size_t count, pvr_dma_mode_t type,
     \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_txr_load_dma(void *src, pvr_ptr_t dest, size_t count, int block,
-                     pvr_dma_callback_t callback, void *cbdata);
+int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count, 
+                     int block, pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load a texture using PVR DMA.
 
@@ -156,8 +158,8 @@ int pvr_txr_load_dma(void *src, pvr_ptr_t dest, size_t count, int block,
     \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_load_txr(void *src, pvr_ptr_t dest, size_t count, int block, 
-                    pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_load_txr(const void *src, pvr_ptr_t dest, size_t count, 
+                     int block, pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Download a texture using PVR DMA.
 
@@ -180,8 +182,8 @@ int pvr_dma_load_txr(void *src, pvr_ptr_t dest, size_t count, int block,
     \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_download_txr(pvr_ptr_t src, void *dest, size_t count, int block, 
-                        pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_download_txr(const void *src, void *dest, size_t count, int block, 
+                         pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load vertex data to the TA using TA DMA.
 
@@ -203,7 +205,7 @@ int pvr_dma_download_txr(pvr_ptr_t src, void *dest, size_t count, int block,
     \em     EFAULT - src is not 32-byte aligned \n
     \em     EIO - I/O error
  */
-int pvr_dma_load_ta(void *src, size_t count, int block,
+int pvr_dma_load_ta(const void *src, size_t count, int block,
                     pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load yuv data to the YUV converter using TA DMA.
@@ -226,7 +228,7 @@ int pvr_dma_load_ta(void *src, size_t count, int block,
     \em     EFAULT - src is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_yuv_conv(void *src, size_t count, int block,
+int pvr_dma_yuv_conv(const void *src, size_t count, int block,
                      pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Checks if the TA DMA is inactive.
