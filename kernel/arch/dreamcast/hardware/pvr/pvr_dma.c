@@ -96,7 +96,7 @@ static void ta_dma_irq_hnd(uint32_t code, void *data) {
     }
 }
 
-static uintptr_t pvr_dest_addr(uintptr_t dest, pvr_dma_type_t type) {
+static uintptr_t pvr_dest_addr(uintptr_t dest, pvr_dma_mode_t type) {
     uintptr_t dest_addr;
     uintptr_t masked_dest = (uintptr_t)dest & 0xFFFFFF;
 
@@ -171,7 +171,7 @@ int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
     dma_cbdata = cbdata;
 
         /* Start TA DMA */
-        ta_dma->dest_addr = pvr_dest_addr(dest, type);
+        ta_dma->dest_addr = pvr_dest_addr((uintptr_t)dest, type);
         ta_dma->size = count;
         ta_dma->start = 1;
 
@@ -274,7 +274,7 @@ static int check_dma_state(pvr_dma_mode_t type, const char *func_name) {
 }
 
 /* Copies n bytes from src to PVR dest, dest must be 32-byte aligned */
-void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_type_t type) {
+void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_mode_t type) {
     void *dma_area_ptr;
 
     dma_area_ptr = (void *)pvr_dest_addr((uintptr_t)dest, type);
@@ -284,7 +284,7 @@ void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_type_t type) {
 }
 
 /* Fills n bytes at PVR dest with 16-bit c, dest must be 32-byte aligned */
-void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_type_t type) {
+void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_mode_t type) {
     void *dma_area_ptr;
 
     dma_area_ptr = (void *)pvr_dest_addr((uintptr_t)dest, type);
@@ -294,7 +294,7 @@ void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_type_t type) {
 }
 
 /* Fills n bytes at PVR dest with 32-bit c, dest must be 32-byte aligned */
-void *pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_type_t type) {
+void *pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_mode_t type) {
     void *dma_area_ptr;
 
     dma_area_ptr = (void *)pvr_dest_addr((uintptr_t)dest, type);
