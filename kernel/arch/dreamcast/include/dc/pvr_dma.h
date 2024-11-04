@@ -44,7 +44,7 @@ __BEGIN_DECLS
 #include <dc/sq.h>
 
 /* Forward declare pvr_ptr_t to avoid including pvr.h */
-typedef void *pvr_ptr_t;
+typedef void * pvr_ptr_t;
 
 /** \defgroup pvr_dma   DMA
     \brief              PowerVR DMA driver
@@ -53,13 +53,13 @@ typedef void *pvr_ptr_t;
     @{
 */
 
-/** \defgroup pvr_dma_mode          Transfer Modes
+/** \defgroup pvr_dma_type          Transfer Modes
     \brief                          Transfer modes with TA/PVR DMA and Store Queues
     \ingroup  pvr_dma
 
     @{
 */
-typedef enum pvr_dma_mode {
+typedef enum pvr_dma_type {
     PVR_DMA_VRAM64,       /**< \brief Transfer to VRAM using TA bus */
     PVR_DMA_VRAM32,       /**< \brief Transfer to VRAM using TA bus */
     PVR_DMA_TA,           /**< \brief Transfer to the tile accelerator */
@@ -67,7 +67,7 @@ typedef enum pvr_dma_mode {
     PVR_DMA_VRAM32_SB,    /**< \brief Transfer to/from VRAM using PVR i/f */
     PVR_DMA_VRAM64_SB,    /**< \brief Transfer to/from VRAM using PVR i/f */
     PVR_DMA_REGISTERS     /**< \brief Transfer to/from PVR registers */
-} pvr_dma_mode_t;
+} pvr_dma_type_t;
 /** @} */
 
 /** \brief   PVR DMA interrupt callback type.
@@ -110,8 +110,37 @@ typedef void (*pvr_dma_callback_t)(void *data);
     \see    pvr_dma_modes
 */
 int pvr_dma_transfer(const void *src, void *dest, size_t count, 
-                     pvr_dma_mode_t type, int block, 
+                     pvr_dma_type_t type, int block, 
                      pvr_dma_callback_t callback, void *cbdata);
+
+/** \brief   Load a texture using TA DMA.
+
+    This is essentially a convenience wrapper for pvr_dma_transfer(), so all
+    notes that apply to it also apply here.
+
+    \deprecated
+    This function is formally deprecated and should not be used in new code.
+    Instead you should use the pvr_dma_ta_load_txr() function.
+
+    \param  src             Where to copy from. Must be 32-byte aligned.
+    \param  dest            Where to copy to. Must be 32-byte aligned.
+    \param  count           The number of bytes to copy. Must be a multiple of
+                            32.
+    \param  block           Non-zero if you want the function to block until the
+                            DMA completes.
+    \param  callback        A function to call upon completion of the DMA.
+    \param  cbdata          Data to pass to the callback function.
+    \retval 0               On success.
+    \retval -1              On failure. Sets errno as appropriate.
+
+    \par    Error Conditions:
+    \em     EINPROGRESS - DMA already in progress \n
+    \em     EFAULT - src or dest is not 32-byte aligned \n
+    \em     EIO - I/O error
+*/
+int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count, 
+                     int block, pvr_dma_callback_t callback, void *cbdata)
+                     __depr("Use pvr_dma_ta_load_txr instead.");
 
 /** \brief   Load a texture using TA DMA.
 
@@ -134,8 +163,8 @@ int pvr_dma_transfer(const void *src, void *dest, size_t count,
     \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count, 
-                     int block, pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_ta_load_txr(const void *src, pvr_ptr_t dest, size_t count, 
+                        int block, pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Load a texture using PVR DMA.
 
@@ -158,8 +187,8 @@ int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count,
     \em     EFAULT - src or dest is not 32-byte aligned \n
     \em     EIO - I/O error
 */
-int pvr_dma_load_txr(const void *src, pvr_ptr_t dest, size_t count, 
-                     int block, pvr_dma_callback_t callback, void *cbdata);
+int pvr_dma_rb_load_txr(const void *src, pvr_ptr_t dest, size_t count, 
+                        int block, pvr_dma_callback_t callback, void *cbdata);
 
 /** \brief   Download a texture using PVR DMA.
 
@@ -280,7 +309,7 @@ void pvr_dma_shutdown(void);
 
     \sa pvr_sq_set32()
 */
-void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_mode_t type);
+void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_type_t type);
 
 /** \brief   Set a block of PVR memory to a 16-bit value.
 
@@ -302,7 +331,7 @@ void *pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_mode_t type);
 
     \sa pvr_sq_set32()
 */
-void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_mode_t type);
+void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_type_t type);
 
 /** \brief   Set a block of PVR memory to a 32-bit value.
 
@@ -323,7 +352,7 @@ void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_mode_t type);
 
     \sa pvr_sq_set16
 */
-void *pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_mode_t type);
+void *pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_type_t type);
 
 /** @} */
 
