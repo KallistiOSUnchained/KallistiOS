@@ -1,11 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/blocks/block.cpp
    Copyright (C) 2024 Cole Hall
 */
 
+<<<<<<< HEAD
 =======
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 #include "block.h"
 #include "../constants/constants.h"
 #include "../constants/vmuIcons.h"
@@ -57,10 +63,14 @@ std::vector<Position> Block::GetCellPositions(){
 void Block::Rotate(){
     rotationState ++;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(rotationState == static_cast<int>(cells.size())){
 =======
     if(rotationState == (int)cells.size()){
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+    if(rotationState == static_cast<int>(cells.size())){
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
         rotationState = 0;
     }
 }
@@ -72,7 +82,11 @@ void Block::UndoRotation(){
         rotationState = cells.size() -1;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+}
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)

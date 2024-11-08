@@ -1,11 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 /* KallistiOS ##version##
    examples/dreamcast/raylib/tetris/src/blocks/blocks.cpp
    Copyright (C) 2024 Cole Hall
 */
 
+<<<<<<< HEAD
 =======
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 #include "block.h"
 #include "../position/position.h"
 #include "../constants/vmuIcons.h"
@@ -105,7 +111,11 @@ class NullBlock : public Block{
             vmuIcon = vmuNULL;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 };
 =======
 };
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+};
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)

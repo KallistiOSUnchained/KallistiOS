@@ -1,11 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/sound/soundManager.cpp
    Copyright (C) 2024 Cole Hall
 */
 
+<<<<<<< HEAD
 =======
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 #include "soundManager.h"
 
 SoundManager::SoundManager(){
@@ -25,7 +31,11 @@ void SoundManager::PlayRotateSound(){
 void SoundManager::PlayClearSound(){
     if (sndClear != SFXHND_INVALID) snd_sfx_play(sndClear, 255, 128);
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+}
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)

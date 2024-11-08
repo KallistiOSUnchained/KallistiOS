@@ -1,15 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/raytris.cpp
    Copyright (C) 2024 Cole Hall
 */
 
+<<<<<<< HEAD
 =======
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 #include <raylib.h>
 #include "game/game.h"
 #include "constants/constants.h"
 #include "colors/colors.h"
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include <iostream>
 #include <string>
@@ -18,6 +25,11 @@
 #include "system/cd.h"
 #include <iostream>
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+#include <iostream>
+#include <string>
+#include <iostream> 
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 
 #include <kos/init.h>
 #include <kos/dbgio.h>
@@ -27,10 +39,14 @@
 #include <wav/sndwav.h>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static double lastUpdateTime = 0;
 =======
 double lastUpdateTime = 0;
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+static double lastUpdateTime = 0;
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 
 static bool EventTriggered(double interval){
     double currentTime = GetTime();
@@ -41,6 +57,7 @@ static bool EventTriggered(double interval){
     return false;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 int main(int argc, char* argv[]){
 =======
@@ -59,6 +76,9 @@ static bool check_btn_combo(void){
 
 int main(){
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+int main(int argc, char* argv[]){
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
     const int screenWidth = 640;
     const int screenHeight = 480;
     wav_stream_hnd_t bgm;
@@ -83,6 +103,7 @@ int main(){
     int gameOverPaddingHeight = nextBoxPaddingHeight + 180 + UIPadding::large;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     while(game.Running()){
         game.HandleInput();
 
@@ -90,6 +111,11 @@ int main(){
     while(!check_btn_combo()){
         game.HandleInput();
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+    while(game.Running()){
+        game.HandleInput();
+
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
         if(EventTriggered(0.2)){
             game.MoveBlockDown();
         }
@@ -103,6 +129,7 @@ int main(){
         DrawRectangleRounded({Constants::gridWidthWithOffset + UIPadding::medium, (float)scoreBoxPaddingHeight, 170, 60}, 0.3, 6, lightBlue);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         std::string scoreText = std::to_string(game.score);
         Vector2 textSize = MeasureTextEx(GetFontDefault(), scoreText.c_str(), UIFont::medium, 0);
 
@@ -114,6 +141,12 @@ int main(){
 
         DrawText(scoreText, TextUIDistance + (170 - textSize.x)/2, scoreBoxPaddingHeight + UIPadding::medium, UIFont::medium, WHITE);
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+        std::string scoreText = std::to_string(game.score);
+        Vector2 textSize = MeasureTextEx(GetFontDefault(), scoreText.c_str(), UIFont::medium, 0);
+
+        DrawText(scoreText.c_str(), TextUIDistance + (170 - textSize.x)/2, scoreBoxPaddingHeight + UIPadding::medium, UIFont::medium, WHITE);
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 
         DrawText("Next", TextUIDistance,  nextPaddingHeight, UIFont::medium, WHITE);
         DrawRectangleRounded({Constants::gridWidthWithOffset + UIPadding::medium, (float)nextBoxPaddingHeight, 170, 180}, 0.3, 6, lightBlue);
@@ -122,14 +155,19 @@ int main(){
         }
         game.DrawNext(TextUIDistance - 20, nextBoxPaddingHeight + UIPadding::large * 1.5);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
         game.DrawHeld(-20, nextBoxPaddingHeight + UIPadding::large * 1.5);
         EndDrawing();
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     std::cout << "Finishing - Cleaning up\n";  
     wav_stop(bgm);
@@ -141,11 +179,18 @@ int main(){
 }
 =======
     printf("Finishing - Cleaning up\n");
+=======
+    std::cout << "Finishing - Cleaning up\n";  
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
     wav_stop(bgm);
     wav_shutdown();
     snd_stream_shutdown();
-    printf("Finished - Cleaning up\n");
+    std::cout << "Finished - Cleaning up\n";  
 
     return 0;
+<<<<<<< HEAD
 }
 >>>>>>> bed13a85 (Rename example to raytris)
+=======
+}
+>>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
