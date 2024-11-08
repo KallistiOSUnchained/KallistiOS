@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/colors/colors.cpp
    Copyright (C) 2024 Cole Hall
 */
 
+=======
+>>>>>>> bed13a85 (Rename example to raytris)
 #include "colors.h"
 
 const Color darkGrey = {26, 31, 40, 255};
@@ -18,4 +21,8 @@ const Color darkBlue = {44, 44, 127, 255};
 
 std::vector<Color> GetCellColors(){
     return {darkGrey, green, red, orange, yellow, purple, cyan, blue};
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bed13a85 (Rename example to raytris)

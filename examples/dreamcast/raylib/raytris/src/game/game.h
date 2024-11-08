@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/game/game.h
    Copyright (C) 2024 Cole Hall
 */
 
+=======
+>>>>>>> bed13a85 (Rename example to raytris)
 #pragma once
 #include "../grid/grid.h"
 #include "../blocks/blocks.cpp"
@@ -19,7 +22,10 @@ class Game{
         void HandleInput();
         void MoveBlockDown();
         void DrawNext(int offsetX, int offsetY);
+<<<<<<< HEAD
         bool Running();
+=======
+>>>>>>> bed13a85 (Rename example to raytris)
         bool gameOver;
         int score;
 
@@ -47,11 +53,20 @@ class Game{
         Grid grid;
         uint16_t prev_buttons;
         uint16_t prev_triggers;
+<<<<<<< HEAD
         bool running = true;
+=======
+        maple_device_t *cont;
+        cont_state_t *state;
+>>>>>>> bed13a85 (Rename example to raytris)
         const double moveThreshold = 0.075;
         const double timerGraceBig = 2;
         const double timerGraceSmall = 0.4;
         static const int moves[15][2];
         SoundManager soundManager = SoundManager();
         VmuManager vmuManager = VmuManager();
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> bed13a85 (Rename example to raytris)

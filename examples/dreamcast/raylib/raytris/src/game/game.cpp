@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/game/game.cpp
    Copyright (C) 2024 Cole Hall
 */
 
+=======
+>>>>>>> bed13a85 (Rename example to raytris)
 #include "game.h"
 #include "../constants/constants.h"
 #include <random>
@@ -60,7 +63,11 @@ void Game::Draw(){
     currentBlock.Draw(Constants::gridOffset, 11);
 }
 
+<<<<<<< HEAD
 void Game::DrawBlockAtPosition(Block& block, int offsetX, int offsetY, int offsetXAdjustment, int offsetYAdjustment){
+=======
+void Game::DrawBlockAtPosition(Block& block, int offsetX, int offsetY, int offsetXAdjustment, int offsetYAdjustment) {
+>>>>>>> bed13a85 (Rename example to raytris)
     if (block.id == -1) return;
     if (block.id == 3 || block.id == 4) {
         block.Draw(offsetX + offsetXAdjustment, offsetY + offsetYAdjustment);
@@ -69,6 +76,7 @@ void Game::DrawBlockAtPosition(Block& block, int offsetX, int offsetY, int offse
     }
 }
 
+<<<<<<< HEAD
 void Game::DrawHeld(int offsetX, int offsetY){
     DrawBlockAtPosition(heldBlock, offsetX, offsetY, -15, 0);
 }
@@ -165,6 +173,87 @@ void Game::HandleInput(){
         // Handle left trigger (example for holding a block)
         float leftTrigger = GetGamepadAxisMovement(0, GAMEPAD_AXIS_LEFT_TRIGGER);
         if(leftTrigger > 0.1f){  // Adjust the trigger sensitivity threshold
+=======
+void Game::DrawHeld(int offsetX, int offsetY) {
+    DrawBlockAtPosition(heldBlock, offsetX, offsetY, -15, 0);
+}
+
+void Game::DrawNext(int offsetX, int offsetY) {
+    DrawBlockAtPosition(nextBlock, offsetX, offsetY, -15, 10);
+}
+
+void Game::HandleInput() {
+    if ((cont = maple_enum_type(0, MAPLE_FUNC_CONTROLLER)) != NULL) {
+        state = (cont_state_t *)maple_dev_status(cont);
+
+        if (state == NULL) {
+            return;
+        }
+
+        uint16_t just_pressed = state->buttons & ~prev_buttons;
+
+        double currentTime = GetTime();  
+        prev_buttons = state->buttons; 
+
+        switch (just_pressed) {
+            case CONT_START:
+                if(gameOver){
+                    gameOver = false;
+                    Reset();
+                }
+                break;
+
+            case CONT_DPAD_LEFT:
+                MoveBlockLeft();
+                lastHeldMoveTime = currentTime + 0.1;
+                break;
+
+            case CONT_DPAD_RIGHT:
+                MoveBlockRight();
+                lastHeldMoveTime = currentTime + 0.1;
+                break;
+
+            case CONT_DPAD_DOWN:
+                MoveBlockDown();
+                UpdateScore(0, 1);
+                lastHeldMoveTime = currentTime;
+                break;
+            
+            case CONT_DPAD_UP:
+                HardDrop();
+                break;
+
+            case CONT_X:
+                RotateBlock(false);
+                break;
+            
+            case CONT_B:
+                RotateBlock(true);
+                break;
+
+            default:
+                break;
+        }
+
+        if (prev_buttons & (CONT_DPAD_LEFT | CONT_DPAD_RIGHT | CONT_DPAD_DOWN)) {
+            if (currentTime - lastHeldMoveTime >= moveThreshold) {
+                if (prev_buttons & CONT_DPAD_LEFT) {
+                    MoveBlockLeft();
+                }
+                if (prev_buttons & CONT_DPAD_RIGHT) {
+                    MoveBlockRight();
+                }
+                if (prev_buttons & CONT_DPAD_DOWN) {
+                    MoveBlockDown();
+                    UpdateScore(0, 1);
+                }
+                lastHeldMoveTime = currentTime;
+            }
+        }
+        
+        int leftTrigger = state->ltrig;
+        if (leftTrigger > 10){
+>>>>>>> bed13a85 (Rename example to raytris)
             if(!canHoldBlock) return;
             vmuManager.displayImage(currentBlock.vmuIcon);
             HoldBlock();
@@ -305,7 +394,12 @@ void Game::LockBlock(){
     }
 }
 
+<<<<<<< HEAD
 bool Game::BlockFits(){
+=======
+bool Game::BlockFits()
+{
+>>>>>>> bed13a85 (Rename example to raytris)
     std::vector<Position> tiles = currentBlock.GetCellPositions();
     for(Position item: tiles){
         if(grid.isCellEmpty(item.row, item.column) == false){
@@ -346,4 +440,8 @@ void Game::UpdateScore(int linesCleared, int moveDownPoints){
     }
 
     score += moveDownPoints;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bed13a85 (Rename example to raytris)

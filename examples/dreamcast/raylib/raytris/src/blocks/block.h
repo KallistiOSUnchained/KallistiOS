@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/blocks/block.h
    Copyright (C) 2024 Cole Hall
 */
 
+=======
+>>>>>>> bed13a85 (Rename example to raytris)
 #pragma once
 
 #include <vector>
@@ -30,4 +33,8 @@ class Block{
         std::vector<Color> colors;
         int rowOffset;
         int columnOffset;
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> bed13a85 (Rename example to raytris)

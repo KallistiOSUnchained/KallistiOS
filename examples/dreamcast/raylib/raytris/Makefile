@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 #
 # Raytris
 # Copyright (C) 2024 Cole Hall
 #   
 
+=======
+>>>>>>> bed13a85 (Rename example to raytris)
 TARGET = raytris.elf
 OBJS = src/raytris.o romdisk.o src/grid/grid.o src/colors/colors.o src/position/position.o src/blocks/block.o src/constants/vmuIcons.o src/game/game.o src/sound/soundManager.o src/vmu/vmuManager.o
 KOS_ROMDISK_DIR = romdisk
@@ -27,4 +30,8 @@ run: $(TARGET)
 
 dist: $(TARGET)
 	-rm -f $(OBJS) romdisk.img
+<<<<<<< HEAD
 	$(KOS_STRIP) $(TARGET)
+=======
+	$(KOS_STRIP) $(TARGET)
+>>>>>>> bed13a85 (Rename example to raytris)

@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/grid/grid.h
    Copyright (C) 2024 Cole Hall
 */
 
+=======
+>>>>>>> bed13a85 (Rename example to raytris)
 #pragma once
 #include <vector>
 #include <raylib.h>
@@ -17,7 +20,11 @@ class Grid{
         bool isCellEmpty(int row, int column);
         int ClearFullRows();
         int grid[20][10];
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> bed13a85 (Rename example to raytris)
     private:
         bool IsRowFull(int row);
         void ClearRow(int row);
@@ -26,4 +33,8 @@ class Grid{
         int numCols;
         int cellSize;
         std::vector<Color> colors;
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> bed13a85 (Rename example to raytris)

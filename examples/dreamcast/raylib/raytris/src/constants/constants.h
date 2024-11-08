@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/constants/constants.h
    Copyright (C) 2024 Cole Hall
 */
 
+=======
+>>>>>>> bed13a85 (Rename example to raytris)
 #pragma once
 
 namespace Constants {
@@ -30,4 +33,8 @@ namespace UIFont{
     constexpr int medium = 24;
     constexpr int large = 32;
     constexpr int xlarge = 40;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bed13a85 (Rename example to raytris)

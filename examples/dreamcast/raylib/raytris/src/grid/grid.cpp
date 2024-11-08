@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/grid/grid.cpp
    Copyright (C) 2024 Cole Hall
@@ -9,6 +10,12 @@
 #include <iostream>
 
 #include <kos.h>
+=======
+#include "grid.h"
+#include <kos.h>
+#include "../colors/colors.h"
+#include "../constants/constants.h"
+>>>>>>> bed13a85 (Rename example to raytris)
 
 Grid::Grid(){
     numRows = 20;
@@ -30,9 +37,15 @@ void Grid::Print(){
     printf("Printing Grid");
     for(int row =0; row < numRows; row++){
         for(int column = 0; column < numCols; column++){
+<<<<<<< HEAD
             std::cout << grid[row][column] << " ";
         }
         std::cout << std::endl;
+=======
+            printf("%d ", grid[row][column]);
+        }
+        printf("\n");
+>>>>>>> bed13a85 (Rename example to raytris)
     }
 }
 
@@ -46,9 +59,17 @@ void Grid::Draw(){
                 cellSize - 1, 
                 cellSize - 1, 
                 colors[cellValue]
+<<<<<<< HEAD
             );
         }
     }
+=======
+                );
+        }
+        
+    }
+    
+>>>>>>> bed13a85 (Rename example to raytris)
 }
 
 bool Grid::IsCellOutside(int row, int column){
@@ -58,7 +79,12 @@ bool Grid::IsCellOutside(int row, int column){
     return true;
 }
 
+<<<<<<< HEAD
 bool Grid::isCellEmpty(int row, int column){
+=======
+bool Grid::isCellEmpty(int row, int column)
+{
+>>>>>>> bed13a85 (Rename example to raytris)
     if(grid[row][column] == 0){
         return true;
     }
@@ -85,7 +111,11 @@ bool Grid::IsRowFull(int row){
         }
     }
     return true;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> bed13a85 (Rename example to raytris)
 }
 
 void Grid::ClearRow(int row){
@@ -95,8 +125,18 @@ void Grid::ClearRow(int row){
 }
 
 void Grid::MoveRowDown(int row, int numRows){
+<<<<<<< HEAD
     for (int column = 0; column < numCols; column++){
         grid[row + numRows][column] = grid[row][column];
         grid[row][column] = 0;
     }
 }
+=======
+    for (int column = 0; column < numCols; column++)
+    {
+        grid[row + numRows][column] = grid[row][column];
+        grid[row][column] = 0;
+    }
+    
+}
+>>>>>>> bed13a85 (Rename example to raytris)
