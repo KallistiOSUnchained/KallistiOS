@@ -1,12 +1,16 @@
 <!-- PROJECT LOGO -->
 <div align="center">
-  <h1 align="center"><strong>KallistiOS</strong></h1>
+  <h1 align="center"><strong>KallistiOS (Unchained)</strong></h1>
   <p align="center">
     Independent SDK for the Sega Dreamcast
     <br />
-    <a href="https://kos-docs.dreamcast.wiki"><strong>Explore the docs »</strong></a>
+    <a href="https://kallistiosunchained.github.io/KallistiOS/"><strong>Explore the docs »</strong></a>
   </p>
 </div>
+
+# Goal
+
+This fork of KallistiOS [KOS](https://github.com/KallistiOS/KallistiOS) is here to stay in sync with the official version while also adding our own mix of fixes, new features, libraries, and examples. Our goal is to include things that might not fit into the main project due to different creative approaches, giving developers a bit more flexibility and room to experiment in the Dreamcast dev scene.
 
 # Overview
 
@@ -14,7 +18,7 @@ KallistiOS is a development library and operating system for the Sega Dreamcast 
 
 KallistiOS offers a modern, programmer friendly environment for the vintage Dreamcast system. The distribution includes [scripts for building and installing a cross-compiling toolchain](utils/dc-chain/README.md) using the latest GCC, Binutils, and Newlib. This allows for full support for C17 and C++20 standards and libraries, as well as various POSIX APIs. Preliminary support exists for C23, C++23, and Objective-C.
 
-KallistiOS also features a package manager called [**_kos-ports_**](https://github.com/KallistiOS/kos-ports) which gives developers the power to build and include a rich set of add-on libraries for various common audiovisual formats (jpg, png, mp3, ogg, mpeg), compression formats (libbz2, zlib), scripting languages (Lua, Tcl, MicroPython), gaming APIs (OpenGL, OpenAL, SDL), and many more.
+KallistiOS also features a package manager called [**_kos-ports_**](https://github.com/KallistiOSUnchained/kos-ports) which gives developers the power to build and include a rich set of add-on libraries for various common audiovisual formats (jpg, png, mp3, ogg, mpeg), compression formats (libbz2, zlib), scripting languages (Lua, Tcl, MicroPython), gaming APIs (OpenGL, OpenAL, SDL), and many more.
 
 ### Core Functionality
 * Concurrency with Kernel Threads, C11 Threads, C++11 `std::thread`, POSIX threads
@@ -49,7 +53,7 @@ KallistiOS also features a package manager called [**_kos-ports_**](https://gith
 * IDE hard drive, 32MB RAM upgrade, custom BIOS flashROMs
 
 # Getting Started 
-A beginner's guide to development for the Sega Dreamcast along with detailed instructions for installing KOS and the required toolchains can be found on [dreamcast.wiki](https://dreamcast.wiki/Getting_Started_with_Dreamcast_development). Additional documentation can be found in the docs folder. 
+A beginner's guide to development for the Sega Dreamcast along with detailed instructions for installing KOS and the required toolchains can be found on the [Wiki](https://github.com/KallistiOSUnchained/KallistiOS/wiki/Installation-Guide). Additional documentation can be found in the docs folder. 
 
 # Licensing
 KallistiOS itself is licensed under the BSD-like **KOS License**. **Attribution is not optional**. Additionally, this distribution contains code licensed under various free software licenses.
@@ -82,8 +86,7 @@ Once you've set up the environment and are ready to begin developing, a good pla
 - Interactive Lua interpreter terminal
 
 # Resources
-[dreamcast.wiki](http://dreamcast.wiki): Large collection of tutorials and articles for beginners  
+[Wiki](https://github.com/KallistiOSUnchained/KallistiOS/wiki): Collection of tutorials and articles for beginners  
 [Simulant Discord Chat](https://discord.gg/bpDZHT78PA): Home to the official Discord channel of KOS  
-[DCEmulation Forums](http://dcemulation.org/phpBB/viewforum.php?f=29): Goldmine of Dreamcast development information and history  
-IRC Channel: irc.libera.chat `#dreamcastdev`
+[ChatGPT](https://chatgpt.com/g/g-b64xrLn8h-kallistios-dev-guru): A GPT specifically trained to assist with and understand KallistiOS code
 
