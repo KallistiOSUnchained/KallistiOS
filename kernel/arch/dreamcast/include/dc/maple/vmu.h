@@ -190,7 +190,7 @@ int vmu_get_custom_color(maple_device_t *dev, uint8_t *red, uint8_t *green, uint
     icon by providing custom icons for both the DC BIOS menu and the VMU's LCD screen.
 
     \param  dev             The device to change the icon shape of.
-    \param  icon_shape      One of the values found in \ref vmu_icons.
+    \param  icon_shape      One of the values found in \ref bfont_vmu_icon_t.
 
     \retval 0               On success
     \retval -1              On failure
@@ -212,7 +212,7 @@ int vmu_set_icon_shape(maple_device_t *dev, uint8_t icon_shape);
     icon by providing custom icons for both the DC BIOS menu and the VMU's LCD screen.
 
     \param  dev             The device to change the icon shape of.
-    \param  icon_shape      One of the values found in \ref vmu_icons.
+    \param  icon_shape      One of the values found in \ref bfont_vmu_icon_t.
 
     \retval 0               On success
     \retval -1              On failure
