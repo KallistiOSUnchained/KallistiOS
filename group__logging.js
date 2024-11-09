@@ -1,0 +1,36 @@
+var group__logging =
+[
+    [ "Log Levels", "group__dbglog__levels.html", "group__dbglog__levels" ],
+    [ "dbgio.h", "dbgio_8h.html", null ],
+    [ "dbglog.h", "dbglog_8h.html", null ],
+    [ "dbgio_handler_t", "structdbgio__handler__t.html", [
+      [ "detected", "structdbgio__handler__t.html#a523dfd726c73a3eee42b51829a007b43", null ],
+      [ "flush", "structdbgio__handler__t.html#a84a54d1e0e76a437bee12c83a44cd7d3", null ],
+      [ "init", "structdbgio__handler__t.html#a19f930ad604f41977738aed0afa5af7e", null ],
+      [ "name", "structdbgio__handler__t.html#af8afce4bb95eacc4bc258a7a09bfe724", null ],
+      [ "read", "structdbgio__handler__t.html#a36f8c5f9e11cc08f05058d576102705f", null ],
+      [ "read_buffer", "structdbgio__handler__t.html#a33293edf39ab82759c108dacbffe1bbf", null ],
+      [ "set_irq_usage", "structdbgio__handler__t.html#a594745f116a092f4f034966ba5918ae0", null ],
+      [ "shutdown", "structdbgio__handler__t.html#a9c74e0811e82e065cb41bb72cd02ab53", null ],
+      [ "write", "structdbgio__handler__t.html#ae5a92f9bf4f6f8b59e3b63f53612131c", null ],
+      [ "write_buffer", "structdbgio__handler__t.html#af459035a867122ae1ceeb9e1e3dd49c2", null ]
+    ] ],
+    [ "DBGIO_MODE_IRQ", "group__logging.html#ga6f3263013a30c593646289663c8333e8", null ],
+    [ "DBGIO_MODE_POLLED", "group__logging.html#ga5b71f57807333b06553b471344913d8b", null ],
+    [ "dbgio_dev_get", "group__logging.html#ga82f3d267b2d354ea35343ae7a1ef9c5f", null ],
+    [ "dbgio_dev_select", "group__logging.html#gae182f1c17f205b80995f5ed7eb0d77ca", null ],
+    [ "dbgio_disable", "group__logging.html#gaa1f055ea31130f1d89ca8d0af8357465", null ],
+    [ "dbgio_enable", "group__logging.html#ga9a124dc5848ac7b1022e1c4e332e5fee", null ],
+    [ "dbgio_flush", "group__logging.html#gaf0634dc5e4bcad9b19d5d362965ecf62", null ],
+    [ "dbgio_init", "group__logging.html#ga2fff18c3a63cdbb2d465eca048025267", null ],
+    [ "dbgio_printf", "group__logging.html#ga6ee1221247b21aa4242a7cb18490b50f", null ],
+    [ "dbgio_read", "group__logging.html#gabc22d93be08fc3d1e1eea03a51d7b8e7", null ],
+    [ "dbgio_read_buffer", "group__logging.html#gac8a46c3d2c15fc53b822e9965267dcc5", null ],
+    [ "dbgio_set_irq_usage", "group__logging.html#ga24be571e57ff21ef04648b04474fe7ab", null ],
+    [ "dbgio_write", "group__logging.html#gafa22665d922a6575cef2e81213dec72e", null ],
+    [ "dbgio_write_buffer", "group__logging.html#ga45965b83b5d7d68b28d6dd14069d0438", null ],
+    [ "dbgio_write_buffer_xlat", "group__logging.html#ga6a0111ed5eb63d446561865b7a710f33", null ],
+    [ "dbgio_write_str", "group__logging.html#gabff72a3d9954b504e4717cf287dc437e", null ],
+    [ "dbglog", "group__logging.html#ga5a8fc506ac2aa69a142658920bbeb956", null ],
+    [ "dbglog_set_level", "group__logging.html#gacd4b9128abb6d4390e1692d0ac85fd0a", null ]
+];

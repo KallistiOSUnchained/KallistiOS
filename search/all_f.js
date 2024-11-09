@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['o_5fasync_894',['O_ASYNC',['../group__vfs__generic.html#gac5d0c9848f853f8b026b1211b93f78b1',1,'fs.h']]],
+  ['o_5fdir_895',['O_DIR',['../group__vfs__generic.html#gad8aa83f74090afc7e57f871c9491ed95',1,'fs.h']]],
+  ['o_5fmeta_896',['O_META',['../group__vfs__generic.html#ga1ab752a74f73e27c3a07fa21c7e510f7',1,'fs.h']]],
+  ['o_5fmode_5fmask_897',['O_MODE_MASK',['../group__vfs__generic.html#ga5fdbb2993e81d1ad639a84dcf3a43935',1,'fs.h']]],
+  ['offset_898',['offset',['../structelf__shdr__t.html#ac2300e31255870fa4a5e328eb3289905',1,'elf_shdr_t::offset()'],['../structelf__rela__t.html#a97d842896df11036c43ac66712f93086',1,'elf_rela_t::offset()'],['../structelf__rel__t.html#aa4d80f7e9917b293af4f9e94844ec93b',1,'elf_rel_t::offset()']]],
+  ['once_2eh_899',['once.h',['../once_8h.html',1,'']]],
+  ['once_5fflag_900',['once_flag',['../group__threading__c11.html#ga0f8ad63f262d12b359f6cfd45c492963',1,'threads.h']]],
+  ['once_5fflag_5finit_901',['ONCE_FLAG_INIT',['../group__threading__c11.html#ga0eeb41bf239112f98df3d9f644d48f6e',1,'threads.h']]],
+  ['oneshot_5ftimer_2eh_902',['oneshot_timer.h',['../oneshot__timer_8h.html',1,'']]],
+  ['oneshot_5ftimer_5fcreate_903',['oneshot_timer_create',['../oneshot__timer_8h.html#aaa3c5c09a31c2a656b59e692679fe775',1,'oneshot_timer_create():&#160;oneshot_timer.h'],['../structoneshot__timer__t.html#aaa3c5c09a31c2a656b59e692679fe775',1,'oneshot_timer_t::oneshot_timer_create(void(*cb)(void *), void *data, unsigned int timeout_ms)']]],
+  ['oneshot_5ftimer_5fdestroy_904',['oneshot_timer_destroy',['../structoneshot__timer__t.html#a3f09a3fb78ee5acbc972410da4d66e47',1,'oneshot_timer_t::oneshot_timer_destroy()'],['../oneshot__timer_8h.html#a3f09a3fb78ee5acbc972410da4d66e47',1,'oneshot_timer_destroy():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5freset_905',['oneshot_timer_reset',['../structoneshot__timer__t.html#ab12a95089ad8015d52c8926c857e001a',1,'oneshot_timer_t::oneshot_timer_reset()'],['../oneshot__timer_8h.html#ab12a95089ad8015d52c8926c857e001a',1,'oneshot_timer_reset():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5fsetup_906',['oneshot_timer_setup',['../structoneshot__timer__t.html#a49648f1596d40de6f46771de14d8c3cb',1,'oneshot_timer_t::oneshot_timer_setup()'],['../oneshot__timer_8h.html#a49648f1596d40de6f46771de14d8c3cb',1,'oneshot_timer_setup():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5fstart_907',['oneshot_timer_start',['../structoneshot__timer__t.html#a43a952b517086a60c5c7ddea7281e4dc',1,'oneshot_timer_t::oneshot_timer_start()'],['../oneshot__timer_8h.html#a43a952b517086a60c5c7ddea7281e4dc',1,'oneshot_timer_start():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5fstop_908',['oneshot_timer_stop',['../structoneshot__timer__t.html#a235d716435fff07018861134de6c6666',1,'oneshot_timer_t::oneshot_timer_stop()'],['../oneshot__timer_8h.html#a235d716435fff07018861134de6c6666',1,'oneshot_timer_stop(oneshot_timer_t *timer):&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5ft_909',['oneshot_timer_t',['../structoneshot__timer__t.html',1,'oneshot_timer_t'],['../oneshot__timer_8h.html#aa632c256b769e426ad8ae9217388e885',1,'oneshot_timer_t():&#160;oneshot_timer.h']]],
+  ['open_910',['open',['../structvfs__handler__t.html#a6daffa27465ad528bed407426ca9f5a9',1,'vfs_handler_t']]],
+  ['opendir_911',['opendir',['../group__vfs__posix.html#ga1632d8c06c14f295c6d9407b7fec67af',1,'dirent.h']]],
+  ['options_912',['Options',['../group__debugging__options.html',1,'(Global Namespace)'],['../group__ipv4__opts.html',1,'(Global Namespace)'],['../group__ipv6__opts.html',1,'(Global Namespace)'],['../group__so__opts.html',1,'(Global Namespace)'],['../group__tcp__opts.html',1,'(Global Namespace)']]],
+  ['opts_2eh_913',['opts.h',['../opts_8h.html',1,'']]],
+  ['ordblks_914',['ordblks',['../structmallinfo.html#a84990d8dd9c37c99db036a981af8d921',1,'mallinfo']]],
+  ['other_915',['other',['../structelf__sym__t.html#aa58024a286770ee049751de3bb03662c',1,'elf_sym_t']]]
+];

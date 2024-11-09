@@ -1,0 +1,45 @@
+var group__networking__ppp =
+[
+    [ "Automaton Phases", "group__ppp__phases.html", "group__ppp__phases" ],
+    [ "Configuration Flags", "group__ppp__flags.html", "group__ppp__flags" ],
+    [ "ppp.h", "ppp_8h.html", null ],
+    [ "ppp_device_t", "structppp__device__t.html", [
+      [ "descr", "structppp__device__t.html#ad236124c5e8f7281f074b449b9d01ebe", null ],
+      [ "detect", "structppp__device__t.html#ad3b19240784edc96019bbab28f30b76e", null ],
+      [ "flags", "structppp__device__t.html#aa42e807d29a4a8650445f64750f4d9c3", null ],
+      [ "index", "structppp__device__t.html#a0143f8795f4bc8a9486d6bda0359a40e", null ],
+      [ "init", "structppp__device__t.html#afd28d72fcb4d2d14245bc9a9149782b3", null ],
+      [ "name", "structppp__device__t.html#adecdeca319b8138d5c9e85563bfb373a", null ],
+      [ "privdata", "structppp__device__t.html#a210318f0aafe9e60563b960f90291284", null ],
+      [ "rx", "structppp__device__t.html#a6a19c82a774c5b1b2c69335c1ca69134", null ],
+      [ "shutdown", "structppp__device__t.html#aa25557276ee4a8e62ebd03bc0f4e43e5", null ],
+      [ "tx", "structppp__device__t.html#a0b8f99d603eb52b97aed61664a91402e", null ]
+    ] ],
+    [ "ppp_protocol_t", "structppp__protocol__t.html", [
+      [ "TAILQ_ENTRY", "structppp__protocol__t.html#af39416409223500a7ba8d3ea8319d96d", null ],
+      [ "check_timeouts", "structppp__protocol__t.html#ae99221043e069eada4b38a89f8ca36c3", null ],
+      [ "code", "structppp__protocol__t.html#af788b152da0479e34e8de6489027230c", null ],
+      [ "enter_phase", "structppp__protocol__t.html#a50cea5e3d2e427d2a055b42eb20533a3", null ],
+      [ "init", "structppp__protocol__t.html#a88dd927c75bed96ae25267922398ab7d", null ],
+      [ "input", "structppp__protocol__t.html#a029c7a67549944ba4393aef26209273b", null ],
+      [ "name", "structppp__protocol__t.html#a41ed89a8fe1fd069f22620a997a38a30", null ],
+      [ "privdata", "structppp__protocol__t.html#a508e9ec632d165b17ef42f7dde38236e", null ],
+      [ "shutdown", "structppp__protocol__t.html#ab41f3c0f7caff2802121d60658986fed", null ]
+    ] ],
+    [ "PPP_PROTO_ENTRY_INIT", "group__networking__ppp.html#ga37198f1094a16afd39cc7ecd57b5ed40", null ],
+    [ "PPP_TX_END_OF_PKT", "group__networking__ppp.html#ga96d6c358a9e1e937fed3d7d6d67dcce4", null ],
+    [ "ppp_add_protocol", "group__networking__ppp.html#gafb38c6a2878f2d073dbbac6c28aca41c", null ],
+    [ "ppp_connect", "group__networking__ppp.html#ga48e726f48244416e365dcf047b09740f", null ],
+    [ "ppp_del_protocol", "group__networking__ppp.html#ga6e5ebd7b67f8c9dc2010bc5f80094042", null ],
+    [ "ppp_get_flags", "group__networking__ppp.html#gab8ba11cf006022474b5a3fc06e89e292", null ],
+    [ "ppp_get_peer_flags", "group__networking__ppp.html#ga36fb371ea1bc327066686f52a503b4f0", null ],
+    [ "ppp_init", "group__networking__ppp.html#gaa34e41d613806fc74222db16dbc4085a", null ],
+    [ "ppp_lcp_send_proto_reject", "group__networking__ppp.html#ga17d606df5733d227527e28436e2e58e9", null ],
+    [ "ppp_modem_init", "group__networking__ppp.html#gaf4ef090beb9c45730c7961f58fde92a0", null ],
+    [ "ppp_scif_init", "group__networking__ppp.html#gac818f38b84cd9dbe24337a76ece3b030", null ],
+    [ "ppp_send", "group__networking__ppp.html#gab80eda92ad0e66d93e8b4163dba412e3", null ],
+    [ "ppp_set_device", "group__networking__ppp.html#gac88eea4a32d728ada2afac752346a486", null ],
+    [ "ppp_set_flags", "group__networking__ppp.html#ga897a95281873f990471393d16ba080fc", null ],
+    [ "ppp_set_login", "group__networking__ppp.html#ga83ddd507770f8bd12ff26e8199c9348d", null ],
+    [ "ppp_shutdown", "group__networking__ppp.html#ga9ea4f82a5c3591b65d756af271a3b513", null ]
+];
