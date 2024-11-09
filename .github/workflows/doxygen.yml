@@ -24,7 +24,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Doxygen
-        run: sudo apt install -y doxygen graphviz
+        run: sudo apt install -y wget graphviz
+
+      - name: Install Doxygen 1.11.0
+        run: |
+          wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
+          tar -xzf doxygen-1.11.0.linux.bin.tar.gz
+          sudo mv doxygen-1.11.0/bin/* /usr/local/bin/
+          rm -rf doxygen-1.11.0*
+
+      - name: Verify Doxygen Version
+        run: doxygen --version
 
       - name: Create Output Directory for Doxygen
         run: mkdir -p doc/reference
