@@ -40,6 +40,7 @@
 __BEGIN_DECLS
 
 #include <stdalign.h>
+#include <stdbool.h>
 
 #include <arch/memory.h>
 #include <arch/types.h>
@@ -47,6 +48,7 @@ __BEGIN_DECLS
 #include <dc/sq.h>
 #include <dc/pvr_dma.h>
 #include <kos/img.h>
+#include <kos/regfield.h>
 
 /** \defgroup pvr   PowerVR API
     \brief          Low-level PowerVR GPU Driver.
@@ -633,8 +635,8 @@ typedef struct {
 #define PVR_TXRFMT_PAL8BPP      (6 << 27)   /**< \brief 8BPP paletted format */
 #define PVR_TXRFMT_TWIDDLED     (0 << 26)   /**< \brief Texture is twiddled */
 #define PVR_TXRFMT_NONTWIDDLED  (1 << 26)   /**< \brief Texture is not twiddled */
-#define PVR_TXRFMT_NOSTRIDE     (0 << 21)   /**< \brief Texture is not strided */
-#define PVR_TXRFMT_STRIDE       (1 << 21)   /**< \brief Texture is strided */
+#define PVR_TXRFMT_POW2_STRIDE  (0 << 25)   /**< \brief Stride is a power-of-two */
+#define PVR_TXRFMT_X32_STRIDE   (1 << 25)   /**< \brief Stride is multiple of 32 */
 
 /* OR one of these into your texture format if you need it. Note that
    these coincide with the twiddled/stride bits, so you can't have a
@@ -1027,15 +1029,9 @@ Striplength set to 2 */
 #define PVR_CMD_SPRITE      0xA0000000  /**< \brief PVR sprite header */
 /** @} */
 
-/** \defgroup pvr_bitmasks          Constants and Masks
-    \brief                          Polygon header constants and masks
-    \ingroup                        pvr_primitives_headers
-
-    Note that thanks to the arrangement of constants, this is mainly a matter of
-    bit shifting to compile headers...
-
-    @{
-*/
+/** \cond
+    Deprecated macros, replaced by the pvr_bitmasks macros below.
+ */
 #define PVR_TA_CMD_TYPE_SHIFT       24
 #define PVR_TA_CMD_TYPE_MASK        (7 << PVR_TA_CMD_TYPE_SHIFT)
 
@@ -1125,6 +1121,48 @@ Striplength set to 2 */
 
 #define PVR_TA_PM3_TXRFMT_SHIFT     0
 #define PVR_TA_PM3_TXRFMT_MASK      0xffffffff
+/** \endcond */
+
+/** \defgroup pvr_bitmasks          Constants and Masks
+    \brief                          Polygon header constants and masks
+    \ingroup                        pvr_primitives_headers
+
+    Note that thanks to the arrangement of constants, this is mainly a matter of
+    bit shifting to compile headers...
+
+    @{
+*/
+#define PVR_TA_CMD_TYPE            GENMASK(26, 24)
+#define PVR_TA_CMD_USERCLIP        GENMASK(17, 16)
+#define PVR_TA_CMD_MODIFIER        BIT(7)
+#define PVR_TA_CMD_MODIFIERMODE    BIT(6)
+#define PVR_TA_CMD_CLRFMT          GENMASK(5, 4)
+#define PVR_TA_CMD_TXRENABLE       BIT(3)
+#define PVR_TA_CMD_SPECULAR        BIT(2)
+#define PVR_TA_CMD_SHADE           BIT(1)
+#define PVR_TA_CMD_UVFMT           BIT(0)
+#define PVR_TA_PM1_DEPTHCMP        GENMASK(31, 29)
+#define PVR_TA_PM1_CULLING         GENMASK(28, 27)
+#define PVR_TA_PM1_DEPTHWRITE      BIT(26)
+#define PVR_TA_PM1_TXRENABLE       BIT(25)
+#define PVR_TA_PM1_MODIFIERINST    GENMASK(30, 29)
+#define PVR_TA_PM2_SRCBLEND        GENMASK(31, 29)
+#define PVR_TA_PM2_DSTBLEND        GENMASK(28, 26)
+#define PVR_TA_PM2_SRCENABLE       BIT(25)
+#define PVR_TA_PM2_DSTENABLE       BIT(24)
+#define PVR_TA_PM2_FOG             GENMASK(23, 22)
+#define PVR_TA_PM2_CLAMP           BIT(21)
+#define PVR_TA_PM2_ALPHA           BIT(20)
+#define PVR_TA_PM2_TXRALPHA        BIT(19)
+#define PVR_TA_PM2_UVFLIP          GENMASK(18, 17)
+#define PVR_TA_PM2_UVCLAMP         GENMASK(16, 15)
+#define PVR_TA_PM2_FILTER          GENMASK(14, 12)
+#define PVR_TA_PM2_MIPBIAS         GENMASK(11, 8)
+#define PVR_TA_PM2_TXRENV          GENMASK(7, 6)
+#define PVR_TA_PM2_USIZE           GENMASK(5, 3)
+#define PVR_TA_PM2_VSIZE           GENMASK(2, 0)
+#define PVR_TA_PM3_MIPMAP          BIT(31)
+#define PVR_TA_PM3_TXRFMT          GENMASK(30, 21)
 /** @} */
 
 /**** Register macros ***************************************************/
@@ -1222,7 +1260,7 @@ Striplength set to 2 */
 #define PVR_SCAN_CLK            0x00d8  /**< \brief Clock and scanline values */
 #define PVR_BORDER_Y            0x00dc  /**< \brief Window border Y position */
 
-#define PVR_TEXTURE_MODULO      0x00e4  /**< \brief Output texture width modulo */
+#define PVR_TXR_STRIDE_MULT     0x00e4  /**< \brief Multiplier for stride width in increments of 32 */
 #define PVR_VIDEO_CFG           0x00e8  /**< \brief Misc video config */
 #define PVR_BITMAP_X            0x00ec  /**< \brief Bitmap window X position */
 #define PVR_BITMAP_Y            0x00f0  /**< \brief Bitmap window Y position */
@@ -2272,6 +2310,52 @@ void pvr_poly_cxt_txr_mod(pvr_poly_cxt_t *dst, pvr_list_t list,
     
     Helper functions for handling texture tasks of various kinds.
 */
+
+/** \brief   Set the global stride width for non-power-of-two textures in PVR RAM.
+    \ingroup pvr_txr_mgmt 
+
+    This function configures the global texture stride register 
+    `PVR_TXR_STRIDE_MULT`, which defines the row width in VRAM for 
+    non-power-of-two textures. The setting applies to all textures 
+    rendered with the `PVR_TXRFMT_X32_STRIDE` flag in the same frame. 
+    Since `PVR_TXR_STRIDE_MULT` is a global register, all textures 
+    using this flag must share the same stride width in each frame.
+
+    The stride width configured here is **only supported for textures 
+    with widths that are multiples of 32 pixels** and up to a maximum 
+    of 992 pixels. Any texture width not meeting this requirement will 
+    not work with the `PVR_TXRFMT_X32_STRIDE` flag.
+
+    \warning
+    - Textures that are palette-based cannot use the `PVR_TXRFMT_X32_STRIDE` 
+      flag so the stride set here will not apply to them.
+
+    \param  texture_width   The width of the texture in pixels. Must be a 
+                            multiple of 32 and up to 992 pixels.
+    \retval true            On success.
+    \retval false           On failure.
+
+    \sa pvr_txr_get_stride()
+*/
+bool pvr_txr_set_stride(uint32_t texture_width);
+
+/** \brief   Get the current texture stride width in pixels as set in the PVR.
+    \ingroup pvr_txr_mgmt 
+
+    This function reads the `PVR_TXR_STRIDE_MULT` register and calculates the 
+    texture stride width in pixels. The value returned is the width in pixels 
+    that has been configured for all textures using the `PVR_TXRFMT_X32_STRIDE` 
+    flag in the same frame. 
+
+    The stride width is computed by taking the current multiplier in 
+    `PVR_TXR_STRIDE_MULT` (which stores the width divided by 32), and 
+    multiplying it back by 32 to return the full width in pixels.
+
+    \return                 The current texture stride width in pixels.
+
+    \sa pvr_txr_set_stride()
+*/
+uint32_t pvr_txr_get_stride(void);
 
 /** \brief   Load raw texture data from an SH-4 buffer into PVR RAM.
     \ingroup pvr_txr_mgmt 
