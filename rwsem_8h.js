@@ -2,7 +2,7 @@ var rwsem_8h =
 [
     [ "rw_semaphore_t", "structrw__semaphore__t.html", "structrw__semaphore__t" ],
     [ "RWSEM_INITIALIZER", "rwsem_8h.html#a1e077aa42fda2bdfcddd9276fbb4b516", null ],
-    [ "rwsem_create", "rwsem_8h.html#af431cb8182ce7412c8c1765cc6ca3455", null ],
+    [ "rwsem_create", "rwsem_8h.html#a2fb7ca5577aa0e4c43d062b12eea3223", null ],
     [ "rwsem_destroy", "rwsem_8h.html#a4ca2f2ec42664eeeb0a39f35ae0cdb44", null ],
     [ "rwsem_init", "rwsem_8h.html#aecabee230a8ad6b3b7b5877e6ab5c564", null ],
     [ "rwsem_read_count", "rwsem_8h.html#a868cd8d213c973e9a5f010227ba920a7", null ],

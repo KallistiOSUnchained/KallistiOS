@@ -41,6 +41,6 @@ var group__threading__c11 =
     [ "thrd_yield", "group__threading__c11.html#gacbfb78346e6b76b23da1d2d8df03549a", null ],
     [ "tss_create", "group__threading__c11.html#ga286fe7927e9af276a9cfdbc8b9eb08ad", null ],
     [ "tss_delete", "group__threading__c11.html#gaecebbc66b206171d9381ba94528c6cb7", null ],
-    [ "tss_get", "group__threading__c11.html#ga183e71f731ed566a1d14b056606806f8", null ],
+    [ "tss_get", "group__threading__c11.html#ga5cf26b78a3f19a4e7b6876f957f2059c", null ],
     [ "tss_set", "group__threading__c11.html#ga608e01c49b84a5ad4f085a9aedc6a680", null ]
 ];

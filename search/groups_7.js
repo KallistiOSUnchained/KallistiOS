@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['generic_2342',['Generic',['../group__vfs__generic.html',1,'']]],
-  ['generic_20flags_2343',['Generic Flags',['../group__kos__initflags.html',1,'']]],
-  ['getaddrinfo_28_29_20error_20values_2344',['getaddrinfo() Error Values',['../group__addrinfo__errors.html',1,'']]]
+  ['h_5ferrno_20error_20values_0',['h_errno Error Values',['../group__herrno__vals.html',1,'']]],
+  ['handler_20types_1',['Handler Types',['../group__nmmgr__types.html',1,'']]],
+  ['header_20flags_2',['Section Header Flags',['../group__elf__hdrflags.html',1,'']]],
+  ['header_20types_3',['Section Header Types',['../group__elf__sections.html',1,'']]]
 ];

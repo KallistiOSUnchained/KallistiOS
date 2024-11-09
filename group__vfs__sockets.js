@@ -31,7 +31,7 @@ var group__vfs__sockets =
     ] ],
     [ "FS_SOCKET_PROTO_ENTRY", "group__vfs__sockets.html#ga097b7ed656e32436f856d78ea72d7d72", null ],
     [ "fs_socket_input", "group__vfs__sockets.html#ga29f23e1a12915ead3103c990ba151bb5", null ],
-    [ "fs_socket_open_sock", "group__vfs__sockets.html#gafc3fecfda5794aafa048c1799850d532", null ],
+    [ "fs_socket_open_sock", "group__vfs__sockets.html#ga59210fb2e2589dc9cfc32085239320e8", null ],
     [ "fs_socket_proto_add", "group__vfs__sockets.html#ga6fd5572c54f1300b2ed6ddae855f8629", null ],
     [ "fs_socket_proto_remove", "group__vfs__sockets.html#ga385292f1e99c1e227216803f5674b784", null ]
 ];

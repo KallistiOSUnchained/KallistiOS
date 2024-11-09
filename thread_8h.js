@@ -26,7 +26,7 @@ var thread_8h =
     [ "thd_add_to_runnable", "group__kthreads.html#ga6e70db4ad3ea0a5d97a168beb2b10133", null ],
     [ "thd_block_now", "group__kthreads.html#ga47e84ffe7caf93ee355fb1b5c41e87d2", null ],
     [ "thd_by_tid", "group__kthreads.html#ga972488281f7020676ad985cdd4d96ad9", null ],
-    [ "thd_choose_new", "group__kthreads.html#ga8da64250db0eeecdc28e6e8f6ead0e3d", null ],
+    [ "thd_choose_new", "group__kthreads.html#ga036601c3dfd9d079729a867f691c7251", null ],
     [ "thd_create", "group__kthreads.html#ga78c79e8185667cc332ff2d7a8268fa70", null ],
     [ "thd_create_ex", "group__kthreads.html#gac4862dddd62e84e192d7831105555cc1", null ],
     [ "thd_destroy", "group__kthreads.html#ga46580d9fc434ae5d832d08bdc798f487", null ],

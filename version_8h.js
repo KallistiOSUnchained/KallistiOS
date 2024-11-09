@@ -25,5 +25,5 @@ var version_8h =
     [ "kos_version_is", "group__version__runtime__check.html#gaeffd825bf595c1eef8579e2d8da8860f", null ],
     [ "kos_version_max", "group__version__runtime__check.html#gaa55d72344538cc97fbb94972d28cd0d2", null ],
     [ "kos_version_min", "group__version__runtime__check.html#ga2afaa4b1371a63751a2a3eb42afd2365", null ],
-    [ "kos_version_string", "group__version__runtime__current.html#gafe94382620100666f416fac22d49c399", null ]
+    [ "kos_version_string", "group__version__runtime__current.html#ga6207188dc8ac2ac850f241b4b821e2fd", null ]
 ];

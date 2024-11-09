@@ -11,8 +11,8 @@ var nmmgr_8h =
     [ "NMMGR_TYPE_UNKNOWN", "group__nmmgr__types.html#ga55e90ecd9bfd628a5737edcff067a27d", null ],
     [ "NMMGR_TYPE_VFS", "group__nmmgr__types.html#ga93853638a514f46c7a2f0d6e98b9875c", null ],
     [ "LIST_HEAD", "group__system__namemgr.html#gab80a0420bc03daef28fa015e348715f4", null ],
-    [ "nmmgr_get_list", "group__system__namemgr.html#ga695733de35b39162423822b65dd19e4f", null ],
+    [ "nmmgr_get_list", "group__system__namemgr.html#gaa3b8c31789e2b40fdf5e042c442c1286", null ],
     [ "nmmgr_handler_add", "group__system__namemgr.html#ga44fc1f86516dead65a83fe59f52f97dd", null ],
     [ "nmmgr_handler_remove", "group__system__namemgr.html#gab480987d26dd32d63e31ca4dce2ae867", null ],
-    [ "nmmgr_lookup", "group__system__namemgr.html#gaed0f43702a4df636a30c1f31ba664fd3", null ]
+    [ "nmmgr_lookup", "group__system__namemgr.html#gaea776aae37dd42a0c756f7beaf755e6a", null ]
 ];

@@ -23,17 +23,17 @@ var group__system__allocator =
     [ "M_MXFAST", "group__system__allocator.html#ga4e1b87a4b9fb41aa43c23f7bafc08805", null ],
     [ "M_TOP_PAD", "group__system__allocator.html#ga2726dea59943885c7312dabb23540bf8", null ],
     [ "M_TRIM_THRESHOLD", "group__system__allocator.html#gae5e96ee9e20ef7cfcbbb690877fc9fb2", null ],
-    [ "aligned_alloc", "group__system__allocator.html#gaf7c32811d7d24557ba92cd3d9dae7ddd", null ],
-    [ "calloc", "group__system__allocator.html#ga62b7798461bd461da64c5f9d35feddf7", null ],
+    [ "aligned_alloc", "group__system__allocator.html#ga8006724372b77924155bd8618fe57516", null ],
+    [ "calloc", "group__system__allocator.html#ga2807e26a012717736641384f91ab2563", null ],
     [ "free", "group__system__allocator.html#gafbedc913aa4651b3c3b4b3aecd9b4711", null ],
     [ "mallinfo", "group__system__allocator.html#ga887279dbdb413cf1a0f52dee44a11eac", null ],
-    [ "malloc", "group__system__allocator.html#ga7ac38fce3243a7dcf448301ee9ffd392", null ],
+    [ "malloc", "group__system__allocator.html#ga9c36d0fe3ec4675cbffdc9b52f5fb399", null ],
     [ "malloc_irq_safe", "group__system__allocator.html#ga9939276ffdaea92ed0bd863d80eae22e", null ],
     [ "malloc_stats", "group__system__allocator.html#gaa9299a74099c865e28fd39bf5ad5f32f", null ],
     [ "mallopt", "group__system__allocator.html#gad6b96daae81d326d7cc170b69472e326", null ],
     [ "mem_check_all", "group__system__allocator.html#gab4d0708270ab61027558ece8abac957f", null ],
     [ "mem_check_block", "group__system__allocator.html#ga1bc884f33c05716fe3b5e74e7a86e02f", null ],
-    [ "memalign", "group__system__allocator.html#ga6a1c0668b7069bb45fd6e69f301ed5b9", null ],
-    [ "realloc", "group__system__allocator.html#ga1a6b5e8d2f1c37e5b43e4345586075be", null ],
-    [ "valloc", "group__system__allocator.html#ga3d09e44a916600a38b367c1b6ebdf118", null ]
+    [ "memalign", "group__system__allocator.html#ga05e1c74287bbdaa5d7e787395207e403", null ],
+    [ "realloc", "group__system__allocator.html#gad28fed1039f35d754710633141b4edf0", null ],
+    [ "valloc", "group__system__allocator.html#ga708a2fee9ec9511aa1d013521300e174", null ]
 ];

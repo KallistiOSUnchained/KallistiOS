@@ -24,7 +24,7 @@ var netdb_8h =
     [ "TRY_AGAIN", "group__herrno__vals.html#gaefda3c41e567de5717e579212109a355", null ],
     [ "freeaddrinfo", "group__network__db.html#ga5996eed1e393834ce228347f23443db9", null ],
     [ "getaddrinfo", "group__network__db.html#gac3eb39d7dd5186de34d73253a8b372d2", null ],
-    [ "gethostbyname", "group__network__db.html#ga636674bf9937205b85a797ee6077faa9", null ],
-    [ "gethostbyname2", "group__network__db.html#gab6842b392151e8bf8d53fe4343baf91e", null ],
+    [ "gethostbyname", "group__network__db.html#gad2df09663e36f8f790d61a02810a3395", null ],
+    [ "gethostbyname2", "group__network__db.html#ga79723285501c23f69098f7691a3882f1", null ],
     [ "h_errno", "group__network__db.html#ga2a1ce3f2040007303d36c0b682b5ac10", null ]
 ];

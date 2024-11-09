@@ -2,7 +2,7 @@ var dbgio_8h =
 [
     [ "DBGIO_MODE_IRQ", "group__logging.html#ga6f3263013a30c593646289663c8333e8", null ],
     [ "DBGIO_MODE_POLLED", "group__logging.html#ga5b71f57807333b06553b471344913d8b", null ],
-    [ "dbgio_dev_get", "group__logging.html#ga82f3d267b2d354ea35343ae7a1ef9c5f", null ],
+    [ "dbgio_dev_get", "group__logging.html#ga9e848ba50eeb45123253d4084c441572", null ],
     [ "dbgio_dev_select", "group__logging.html#gae182f1c17f205b80995f5ed7eb0d77ca", null ],
     [ "dbgio_disable", "group__logging.html#gaa1f055ea31130f1d89ca8d0af8357465", null ],
     [ "dbgio_enable", "group__logging.html#ga9a124dc5848ac7b1022e1c4e332e5fee", null ],

@@ -1,5 +1,5 @@
 var libgen_8h =
 [
-    [ "basename", "group__vfs__posix.html#gaa14fc3333d84f41eacc023626687aebd", null ],
-    [ "dirname", "group__vfs__posix.html#gab1b6028f4625caec30c1020e737216e2", null ]
+    [ "basename", "group__vfs__posix.html#ga79e1e7bdc4ab98aaa8347b172a07fe45", null ],
+    [ "dirname", "group__vfs__posix.html#gaa220f13787fd366f45e2766626f982b2", null ]
 ];

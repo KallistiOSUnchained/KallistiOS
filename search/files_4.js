@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['dbgio_2eh_1454',['dbgio.h',['../dbgio_8h.html',1,'']]],
-  ['dbglog_2eh_1455',['dbglog.h',['../dbglog_8h.html',1,'']]],
-  ['debugging_2edox_1456',['debugging.dox',['../debugging_8dox.html',1,'']]],
-  ['dirent_2eh_1457',['dirent.h',['../dirent_8h.html',1,'']]]
+  ['dbgio_2eh_0',['dbgio.h',['../dbgio_8h.html',1,'']]],
+  ['dbglog_2eh_1',['dbglog.h',['../dbglog_8h.html',1,'']]],
+  ['debugging_2edox_2',['debugging.dox',['../debugging_8dox.html',1,'']]],
+  ['dirent_2eh_3',['dirent.h',['../dirent_8h.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['utimbuf_1442',['utimbuf',['../structutimbuf.html',1,'']]],
-  ['utsname_1443',['utsname',['../structutsname.html',1,'']]]
+  ['utimbuf_0',['utimbuf',['../structutimbuf.html',1,'']]],
+  ['utsname_1',['utsname',['../structutsname.html',1,'']]]
 ];

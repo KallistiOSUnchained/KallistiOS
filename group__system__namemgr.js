@@ -19,8 +19,8 @@ var group__system__namemgr =
     [ "NMMGR_FLAGS_NEEDSFREE", "group__system__namemgr.html#ga43efda3813b72c7867d6012240846165", null ],
     [ "NMMGR_LIST_INIT", "group__system__namemgr.html#ga82cc42290dd98f75c8e783f8cecec060", null ],
     [ "LIST_HEAD", "group__system__namemgr.html#gab80a0420bc03daef28fa015e348715f4", null ],
-    [ "nmmgr_get_list", "group__system__namemgr.html#ga695733de35b39162423822b65dd19e4f", null ],
+    [ "nmmgr_get_list", "group__system__namemgr.html#gaa3b8c31789e2b40fdf5e042c442c1286", null ],
     [ "nmmgr_handler_add", "group__system__namemgr.html#ga44fc1f86516dead65a83fe59f52f97dd", null ],
     [ "nmmgr_handler_remove", "group__system__namemgr.html#gab480987d26dd32d63e31ca4dce2ae867", null ],
-    [ "nmmgr_lookup", "group__system__namemgr.html#gaed0f43702a4df636a30c1f31ba664fd3", null ]
+    [ "nmmgr_lookup", "group__system__namemgr.html#gaea776aae37dd42a0c756f7beaf755e6a", null ]
 ];

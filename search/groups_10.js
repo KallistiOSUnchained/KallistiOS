@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['ramdisk_2376',['Ramdisk',['../group__vfs__ramdisk.html',1,'']]],
-  ['random_2377',['Random',['../group__vfs__rnd.html',1,'']]],
-  ['register_20macros_2378',['Register Macros',['../group__register__macros.html',1,'']]],
-  ['relocation_20types_2379',['Relocation Types',['../group__elf__reltypes.html',1,'']]],
-  ['romdisk_2380',['Romdisk',['../group__vfs__romdisk.html',1,'']]],
-  ['run_2dtime_2381',['Run-Time',['../group__version__runtime.html',1,'']]]
+  ['section_20header_20flags_0',['Section Header Flags',['../group__elf__hdrflags.html',1,'']]],
+  ['section_20header_20types_1',['Section Header Types',['../group__elf__sections.html',1,'']]],
+  ['section_20indices_2',['Special Section Indices',['../group__elf__specsec.html',1,'']]],
+  ['sockets_3',['Sockets',['../group__vfs__sockets.html',1,'Sockets'],['../group__networking__sockets.html',1,'Sockets']]],
+  ['sources_4',['Sources',['../group__netcfg__srcs.html',1,'']]],
+  ['special_20section_20indices_5',['Special Section Indices',['../group__elf__specsec.html',1,'']]],
+  ['symbol_20binding_20types_6',['Symbol Binding Types',['../group__elf__binding.html',1,'']]],
+  ['symbol_20types_7',['Symbol Types',['../group__elf__symtype.html',1,'']]],
+  ['system_8',['System',['../group__system.html',1,'']]]
 ];

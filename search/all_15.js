@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['valloc_1363',['valloc',['../group__system__allocator.html#ga3d09e44a916600a38b367c1b6ebdf118',1,'malloc.h']]],
-  ['value_1364',['value',['../structelf__sym__t.html#acfc552a88e11ad195fd6ba6651de5b64',1,'elf_sym_t']]],
-  ['vector_2eh_1365',['vector.h',['../vector_8h.html',1,'']]],
-  ['version_1366',['version',['../structelf__hdr__t.html#a59be72c571e51bf301bd57e1ff144715',1,'elf_hdr_t::version()'],['../structnmmgr__handler__t.html#a35d545596749153dc06db984e8c31c47',1,'nmmgr_handler_t::version()'],['../structutsname.html#a96f4bcb30249d9036c475ba2a7db6992',1,'utsname::version()']]],
-  ['version_2eh_1367',['version.h',['../version_8h.html',1,'']]],
-  ['version_5fihl_1368',['version_ihl',['../structip__hdr__t.html#af9a9577fa6378343ee012f3c68e1d9e7',1,'ip_hdr_t']]],
-  ['version_5flclass_1369',['version_lclass',['../structipv6__hdr__t.html#ae7885dedcb977028afa4877e53ebc973',1,'ipv6_hdr_t']]],
-  ['versioning_1370',['Versioning',['../group__version.html',1,'']]],
-  ['vfs_5fhandler_5ft_1371',['vfs_handler_t',['../structvfs__handler__t.html',1,'']]],
-  ['video_1372',['Video',['../group__video.html',1,'']]],
-  ['video_2edox_1373',['video.dox',['../video_8dox.html',1,'']]]
+  ['w_0',['w',['../structkos__img__t.html#a5832d27fd424d7a1a5ecfa0dc468cd3b',1,'kos_img_t']]],
+  ['wait_5fcallback_1',['wait_callback',['../structkthread__t.html#adfba1961050da641a2fadb318b2610c5',1,'kthread_t']]],
+  ['wait_5fmsg_2',['wait_msg',['../structkthread__t.html#ae2e66fa58a0c95e1afa7725912b06664',1,'kthread_t']]],
+  ['wait_5fobj_3',['wait_obj',['../structkthread__t.html#a7bb65df2c412e34a1252e299721b2648',1,'kthread_t']]],
+  ['wait_5ftimeout_4',['wait_timeout',['../structkthread__t.html#a391f9cea248c1db807867293fe3dbe66',1,'kthread_t']]],
+  ['worker_5fthread_2eh_5',['worker_thread.h',['../worker__thread_8h.html',1,'']]],
+  ['write_6',['write',['../structdbgio__handler__t.html#ae5a92f9bf4f6f8b59e3b63f53612131c',1,'dbgio_handler_t::write'],['../structvfs__handler__t.html#ac24eccf4a8c4c5937038d5f1e52621c8',1,'vfs_handler_t::write']]],
+  ['write_5fblocks_7',['write_blocks',['../structkos__blockdev__t.html#a670113bcd3b833064ef5057d04d82973',1,'kos_blockdev_t']]],
+  ['write_5fbuffer_8',['write_buffer',['../structdbgio__handler__t.html#af459035a867122ae1ceeb9e1e3dd49c2',1,'dbgio_handler_t']]],
+  ['write_5flock_9',['write_lock',['../structrw__semaphore__t.html#a2520c13d49a0e1e0bff48d5279659153',1,'rw_semaphore_t']]]
 ];

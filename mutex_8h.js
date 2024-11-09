@@ -10,7 +10,7 @@ var mutex_8h =
     [ "MUTEX_TYPE_OLDNORMAL", "mutex_8h.html#a1672a919084c44796af20a3e901f2c72", null ],
     [ "MUTEX_TYPE_RECURSIVE", "mutex_8h.html#aa5ed66e571a9798291a39fef1e52554c", null ],
     [ "RECURSIVE_MUTEX_INITIALIZER", "mutex_8h.html#af61b0138de93e2154cfec0bd06f0674f", null ],
-    [ "mutex_create", "mutex_8h.html#a485c003877edb90d94cfa7dcac00c181", null ],
+    [ "mutex_create", "mutex_8h.html#a734bb84ae02ae0f4570ca5ee990a6763", null ],
     [ "mutex_destroy", "mutex_8h.html#ab1aaf1b06327156001d9dbf48712b82a", null ],
     [ "mutex_init", "mutex_8h.html#a97641c93da9e9fdac2f2ba8900214ced", null ],
     [ "mutex_is_locked", "mutex_8h.html#a393e3f1e5beeec8f9755b817871cc384", null ],

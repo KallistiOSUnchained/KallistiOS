@@ -34,7 +34,7 @@ var NAVTREE =
     [ "Source Code", "^https://github.com/KallistiOS/KallistiOS", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -62,15 +62,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "__pthread_8h.html",
-"group__assertions.html#gaefd92b648fa5be204e0bf7b667abce33",
-"group__kthreads.html#ga42fb0ef4f8b4901fbb9a515b08db0ff6",
-"group__networking__arp.html#ga9ffe4520401d99cf0606613cb58d0a76",
-"group__networking__sockets.html#ga4db8b9a846c67404db0b6f014f9a9fdf",
-"group__system__libraries.html#ga9b494ff51f8320abb25558a7304f0278",
-"group__threading__c11.html#gadf2fad6f814228f1eab1d994dfe336f8",
-"group__vfs__posix.html#ga8a52fd9a3ded793b8200ac0a5a1f10d2",
-"structDIR.html",
-"structmutex__t.html#a94d48f5aef1ce2a55044c45bead68cfe"
+"group__elf__sections.html#gaf4b916dc4ca5016fb5c374068002a532",
+"group__networking__icmpv6__param__problem.html",
+"group__system__macros.html#gabe36f523b4b718c7258c816728a03f79",
+"group__vfs__posix.html#gaf428253f56fea992bff30fc52883257e",
+"structip__hdr__t.html#a89fb5eda69c606da2a0d8bb4f0260315",
+"structsockaddr__storage.html#ad74d428e2a4c0677663d304557cfb78e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
