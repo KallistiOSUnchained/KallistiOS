@@ -40,6 +40,7 @@
 __BEGIN_DECLS
 
 #include <stdalign.h>
+#include <stdbool.h>
 
 #include <arch/memory.h>
 #include <arch/types.h>
@@ -633,8 +634,8 @@ typedef struct {
 #define PVR_TXRFMT_PAL8BPP      (6 << 27)   /**< \brief 8BPP paletted format */
 #define PVR_TXRFMT_TWIDDLED     (0 << 26)   /**< \brief Texture is twiddled */
 #define PVR_TXRFMT_NONTWIDDLED  (1 << 26)   /**< \brief Texture is not twiddled */
-#define PVR_TXRFMT_NOSTRIDE     (0 << 21)   /**< \brief Texture is not strided */
-#define PVR_TXRFMT_STRIDE       (1 << 21)   /**< \brief Texture is strided */
+#define PVR_TXRFMT_POW2_STRIDE  (0 << 25)   /**< \brief Stride is a power-of-two */
+#define PVR_TXRFMT_X32_STRIDE   (1 << 25)   /**< \brief Stride is multiple of 32 */
 
 /* OR one of these into your texture format if you need it. Note that
    these coincide with the twiddled/stride bits, so you can't have a
@@ -1256,7 +1257,7 @@ Striplength set to 2 */
 #define PVR_SCAN_CLK            0x00d8  /**< \brief Clock and scanline values */
 #define PVR_BORDER_Y            0x00dc  /**< \brief Window border Y position */
 
-#define PVR_TEXTURE_MODULO      0x00e4  /**< \brief Output texture width modulo */
+#define PVR_TXR_STRIDE_MULT     0x00e4  /**< \brief Multiplier for stride width in increments of 32 */
 #define PVR_VIDEO_CFG           0x00e8  /**< \brief Misc video config */
 #define PVR_BITMAP_X            0x00ec  /**< \brief Bitmap window X position */
 #define PVR_BITMAP_Y            0x00f0  /**< \brief Bitmap window Y position */
@@ -2306,6 +2307,52 @@ void pvr_poly_cxt_txr_mod(pvr_poly_cxt_t *dst, pvr_list_t list,
     
     Helper functions for handling texture tasks of various kinds.
 */
+
+/** \brief   Set the global stride width for non-power-of-two textures in PVR RAM.
+    \ingroup pvr_txr_mgmt 
+
+    This function configures the global texture stride register 
+    `PVR_TXR_STRIDE_MULT`, which defines the row width in VRAM for 
+    non-power-of-two textures. The setting applies to all textures 
+    rendered with the `PVR_TXRFMT_X32_STRIDE` flag in the same frame. 
+    Since `PVR_TXR_STRIDE_MULT` is a global register, all textures 
+    using this flag must share the same stride width in each frame.
+
+    The stride width configured here is **only supported for textures 
+    with widths that are multiples of 32 pixels** and up to a maximum 
+    of 992 pixels. Any texture width not meeting this requirement will 
+    not work with the `PVR_TXRFMT_X32_STRIDE` flag.
+
+    \warning
+    - Textures that are palette-based cannot use the `PVR_TXRFMT_X32_STRIDE` 
+      flag so the stride set here will not apply to them.
+
+    \param  texture_width   The width of the texture in pixels. Must be a 
+                            multiple of 32 and up to 992 pixels.
+    \retval true            On success.
+    \retval false           On failure.
+
+    \sa pvr_txr_get_stride()
+*/
+bool pvr_txr_set_stride(uint32_t texture_width);
+
+/** \brief   Get the current texture stride width in pixels as set in the PVR.
+    \ingroup pvr_txr_mgmt 
+
+    This function reads the `PVR_TXR_STRIDE_MULT` register and calculates the 
+    texture stride width in pixels. The value returned is the width in pixels 
+    that has been configured for all textures using the `PVR_TXRFMT_X32_STRIDE` 
+    flag in the same frame. 
+
+    The stride width is computed by taking the current multiplier in 
+    `PVR_TXR_STRIDE_MULT` (which stores the width divided by 32), and 
+    multiplying it back by 32 to return the full width in pixels.
+
+    \return                 The current texture stride width in pixels.
+
+    \sa pvr_txr_set_stride()
+*/
+uint32_t pvr_txr_get_stride(void);
 
 /** \brief   Load raw texture data from an SH-4 buffer into PVR RAM.
     \ingroup pvr_txr_mgmt 

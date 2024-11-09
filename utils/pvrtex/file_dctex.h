@@ -166,7 +166,7 @@ typedef struct {
 		Bits 10-6:
 			Stride value. This is the width of the texture divided by 32.
 			Only valid on texture will stride bit set.
-			Place this value in the bottom 5 bits of the PVR register PVR_TEXTURE_MODULO (at address 0xA05F80E4).
+			Place this value in the bottom 5 bits of the PVR register PVR_TXR_STRIDE_MULT (at address 0xA05F80E4).
 			Only one stride value can be used per frame.
 	
 		Bits 5-3:
@@ -511,7 +511,7 @@ static inline pvr_ptr_t fDtAdjustPVRPointer(const fDtHeader * texheader, pvr_ptr
 */
 static inline void fDtSetPvrStride(const fDtHeader *tex) {
 	if (fDtIsStrided(tex))
-		PVR_SET(PVR_TEXTURE_MODULO, fDtGetStride(tex));
+		PVR_SET(PVR_TXR_STRIDE_MULT, fDtGetStride(tex));
 }
 
 /*
