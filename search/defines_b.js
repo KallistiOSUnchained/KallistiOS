@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['recursive_5fmutex_5finitializer_2304',['RECURSIVE_MUTEX_INITIALIZER',['../mutex_8h.html#af61b0138de93e2154cfec0bd06f0674f',1,'mutex.h']]],
-  ['rwsem_5finitializer_2305',['RWSEM_INITIALIZER',['../rwsem_8h.html#a1e077aa42fda2bdfcddd9276fbb4b516',1,'rwsem.h']]]
+  ['tcgets_2308',['TCGETS',['../ioctl_8h.html#ad9643c3b80739733cbf55d89d0958f98',1,'ioctl.h']]],
+  ['tiocgeta_2309',['TIOCGETA',['../ioctl_8h.html#a0cef5242a2853d0acf6d93879c517512',1,'ioctl.h']]]
 ];

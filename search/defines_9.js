@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['mutex_5finitializer_2295',['MUTEX_INITIALIZER',['../mutex_8h.html#a10ba6c8c4a5e2bcf9f5f5fd41675e122',1,'mutex.h']]],
-  ['mutex_5flock_5fscoped_2296',['mutex_lock_scoped',['../mutex_8h.html#a0571d5f8d6b8ec4b9a366be9b318af1b',1,'mutex.h']]],
-  ['mutex_5ftype_5fdefault_2297',['MUTEX_TYPE_DEFAULT',['../mutex_8h.html#a1f34b72699f1133d557221857841e748',1,'mutex.h']]],
-  ['mutex_5ftype_5ferrorcheck_2298',['MUTEX_TYPE_ERRORCHECK',['../mutex_8h.html#a6827e82217edbcae3dd5e0a0bd148d21',1,'mutex.h']]],
-  ['mutex_5ftype_5fnormal_2299',['MUTEX_TYPE_NORMAL',['../mutex_8h.html#af3e937b10010ee796438a34e952deabc',1,'mutex.h']]],
-  ['mutex_5ftype_5foldnormal_2300',['MUTEX_TYPE_OLDNORMAL',['../mutex_8h.html#a1672a919084c44796af20a3e901f2c72',1,'mutex.h']]],
-  ['mutex_5ftype_5frecursive_2301',['MUTEX_TYPE_RECURSIVE',['../mutex_8h.html#aa5ed66e571a9798291a39fef1e52554c',1,'mutex.h']]]
+  ['recursive_5fmutex_5finitializer_2301',['RECURSIVE_MUTEX_INITIALIZER',['../mutex_8h.html#af61b0138de93e2154cfec0bd06f0674f',1,'mutex.h']]],
+  ['rwsem_5finitializer_2302',['RWSEM_INITIALIZER',['../rwsem_8h.html#a1e077aa42fda2bdfcddd9276fbb4b516',1,'rwsem.h']]]
 ];

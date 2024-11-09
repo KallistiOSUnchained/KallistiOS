@@ -1,10 +1,10 @@
 var modules =
 [
     [ "Attribution", "group__attribution.html", [
-      [ "Core Functionality", "index.html#autotoc_md5", null ],
-      [ "Dreamcast Hardware Support", "index.html#autotoc_md6", null ],
-      [ "Peripherals and Accessory Support", "index.html#autotoc_md7", null ],
-      [ "Hardware Modification Support", "index.html#autotoc_md8", null ]
+      [ "Core Functionality", "index.html#autotoc_md6", null ],
+      [ "Dreamcast Hardware Support", "index.html#autotoc_md7", null ],
+      [ "Peripherals and Accessory Support", "index.html#autotoc_md8", null ],
+      [ "Hardware Modification Support", "index.html#autotoc_md9", null ]
     ] ],
     [ "Audio", "group__audio.html", null ],
     [ "Debugging", "group__debugging.html", "group__debugging" ],

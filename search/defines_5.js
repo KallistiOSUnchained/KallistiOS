@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['genmask_2287',['GENMASK',['../regfield_8h.html#a58530d20924859d16358c7400c37738d',1,'regfield.h']]]
+  ['ioctl_2286',['ioctl',['../ioctl_8h.html#a283e8988aa6e03e93cdc45dbc65848c8',1,'ioctl.h']]]
 ];

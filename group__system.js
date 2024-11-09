@@ -6,5 +6,6 @@ var group__system =
     [ "Macros", "group__system__macros.html", "group__system__macros" ],
     [ "Name Manager", "group__system__namemgr.html", "group__system__namemgr" ],
     [ "POSIX", "group__system__posix.html", "group__system__posix" ],
+    [ "Register Macros", "group__register__macros.html", "group__register__macros" ],
     [ "Types", "group__system__types.html", "group__system__types" ]
 ];

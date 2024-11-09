@@ -25,11 +25,12 @@
 var NAVTREE =
 [
   [ "KallistiOS", "index.html", [
-    [ "Overview", "index.html#autotoc_md4", null ],
-    [ "Getting Started", "index.html#autotoc_md9", null ],
-    [ "Licensing", "index.html#autotoc_md10", null ],
-    [ "Examples", "index.html#autotoc_md11", null ],
-    [ "Resources", "index.html#autotoc_md12", null ],
+    [ "Goal", "index.html#autotoc_md4", null ],
+    [ "Overview", "index.html#autotoc_md5", null ],
+    [ "Getting Started", "index.html#autotoc_md10", null ],
+    [ "Licensing", "index.html#autotoc_md11", null ],
+    [ "Examples", "index.html#autotoc_md12", null ],
+    [ "Resources", "index.html#autotoc_md13", null ],
     [ "Source Code", "^https://github.com/KallistiOS/KallistiOS", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
@@ -65,11 +66,11 @@ var NAVTREEINDEX =
 "group__kthreads.html#ga42fb0ef4f8b4901fbb9a515b08db0ff6",
 "group__networking__arp.html#ga9ffe4520401d99cf0606613cb58d0a76",
 "group__networking__sockets.html#ga4db8b9a846c67404db0b6f014f9a9fdf",
-"group__system__libraries.html#gada9ed647488134b4e95269030a00ce62",
-"group__threading__c11.html#gaf76e066715b1190d38a69da1c511e30f",
-"group__vfs__posix.html#gaa9b34669494ad61ee2035dee1eefee4f",
-"struct__mbstate__t.html#a07d0375c641cdef0a598ce3276205323",
-"structnet__ipv4__stats__t.html#abd93a60a594acb4288cef0a732b07854"
+"group__system__libraries.html#ga9b494ff51f8320abb25558a7304f0278",
+"group__threading__c11.html#gadf2fad6f814228f1eab1d994dfe336f8",
+"group__vfs__posix.html#ga8a52fd9a3ded793b8200ac0a5a1f10d2",
+"structDIR.html",
+"structmutex__t.html#a94d48f5aef1ce2a55044c45bead68cfe"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

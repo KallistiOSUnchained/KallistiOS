@@ -3,7 +3,7 @@ var searchData=
   ['basename_128',['basename',['../group__vfs__posix.html#gaa14fc3333d84f41eacc023626687aebd',1,'libgen.h']]],
   ['big_5fendian_129',['BIG_ENDIAN',['../group__system__types.html#ga23eb5e058a210efdde3d64e69679fafa',1,'_types.h']]],
   ['bind_130',['bind',['../structfs__socket__proto__t.html#a0bbc3a6cdfb5e462dd1d8b47572ea340',1,'fs_socket_proto_t::bind()'],['../group__networking__sockets.html#ga55b3c1572b4e86ca0702ecdeb7e43997',1,'bind(int socket, const struct sockaddr *address, socklen_t address_len):&#160;socket.h']]],
-  ['bit_131',['BIT',['../regfield_8h.html#a46713ab97672a328b3b79353b4a468bf',1,'regfield.h']]],
+  ['bit_131',['BIT',['../group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf',1,'regfield.h']]],
   ['block_20devices_132',['Block Devices',['../group__vfs__blockdev.html',1,'']]],
   ['blockdev_2eh_133',['blockdev.h',['../blockdev_8h.html',1,'']]],
   ['blocking_20types_134',['Blocking Types',['../group__net__drivers__blocking.html',1,'']]],

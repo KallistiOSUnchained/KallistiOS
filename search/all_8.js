@@ -3,7 +3,7 @@ var searchData=
   ['gateway_416',['gateway',['../structnetif__t.html#a4783595d941860028603c0ed0fe57327',1,'netif_t::gateway()'],['../structnetcfg__t.html#a72bea890e2a0357f7582c88139610253',1,'netcfg_t::gateway()']]],
   ['generic_417',['Generic',['../group__vfs__generic.html',1,'']]],
   ['generic_20flags_418',['Generic Flags',['../group__kos__initflags.html',1,'']]],
-  ['genmask_419',['GENMASK',['../regfield_8h.html#a58530d20924859d16358c7400c37738d',1,'regfield.h']]],
+  ['genmask_419',['GENMASK',['../group__register__macros.html#ga58530d20924859d16358c7400c37738d',1,'regfield.h']]],
   ['genwait_2eh_420',['genwait.h',['../genwait_8h.html',1,'']]],
   ['genwait_5fcheck_5ftimeouts_421',['genwait_check_timeouts',['../genwait_8h.html#a6ee4f8d39d4bd375eb835d7214e11ac6',1,'genwait.h']]],
   ['genwait_5fnext_5ftimeout_422',['genwait_next_timeout',['../genwait_8h.html#af71e45241c05df542f677865f3d364a6',1,'genwait.h']]],
