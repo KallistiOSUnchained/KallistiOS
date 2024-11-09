@@ -1,0 +1,32 @@
+name: Generate Doxygen Documentation
+
+on:
+  push:
+    branches:
+      - main   # or your default branch
+    paths:
+      - '**.h'       # Monitor header file changes
+      - '**.c'       # Monitor source file changes
+      - 'Doxyfile'   # Monitor Doxygen config changes
+      - 'pages/**'
+      - '.github/workflows/doxygen.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Doxygen
+        run: sudo apt install -y doxygen graphviz
+
+      - name: Generate Documentation
+        run: doxygen Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./doc/reference/html    # Adjust to match your OUTPUT_DIRECTORY/html
