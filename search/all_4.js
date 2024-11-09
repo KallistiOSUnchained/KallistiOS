@@ -44,7 +44,7 @@ var searchData=
   ['context_182',['context',['../structkthread__t.html#a11ad2f445c3cc3dd0ffa1ee0a003bc28',1,'kthread_t']]],
   ['count_183',['count',['../structmutex__t.html#a753a4dd3b9a6aa8bfd579ec83240e2db',1,'mutex_t::count()'],['../structsemaphore__t.html#af8d3354979a6a3fca513525c3e4c3be7',1,'semaphore_t::count()']]],
   ['count_5fblocks_184',['count_blocks',['../structkos__blockdev__t.html#a758a01cf5388b340246ff1d558016ab3',1,'kos_blockdev_t']]],
-  ['cpu_5ftime_185',['cpu_time',['../structkthread__t.html#a6ba44a839607fc864e9ff8cc13208fb2',1,'kthread_t']]],
+  ['cpu_5ftime_185',['cpu_time',['../structkthread__t.html#adaf73c0138b0ca1b47f5eab41e64757e',1,'kthread_t']]],
   ['crc_186',['CRC',['../group__networking__crc.html',1,'']]],
   ['create_5fdetached_187',['create_detached',['../structkthread__attr__t.html#a79fdb0713dc44e6b1724f8a0ee129fa0',1,'kthread_attr_t']]],
   ['current_188',['Current',['../group__version__comptime__current.html',1,'(Global Namespace)'],['../group__version__runtime__current.html',1,'(Global Namespace)']]]

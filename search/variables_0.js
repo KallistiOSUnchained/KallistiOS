@@ -2,7 +2,7 @@ var searchData=
 [
   ['_5f_5fcount_1914',['__count',['../struct__mbstate__t.html#a6261817a0f58d2907e29e39413049b6c',1,'_mbstate_t']]],
   ['_5f_5fkos_5fromdisk_1915',['__kos_romdisk',['../init_8h.html#a22757f6eff2fba15244b3318ed03bf9b',1,'init.h']]],
-  ['_5f_5fs6_5faddr_1916',['__s6_addr',['../structin6__addr.html#acbde2bfd3811690c38506648f49cb9dc',1,'in6_addr']]],
+  ['_5f_5fs6_5faddr_1916',['__s6_addr',['../structin6__addr.html#a0fe8cd10d9497ec4548ca22ab7ac1971',1,'in6_addr']]],
   ['_5f_5fs6_5faddr16_1917',['__s6_addr16',['../structin6__addr.html#a3db778b57f5786b54d5f507cbeaffeef',1,'in6_addr']]],
   ['_5f_5fs6_5faddr32_1918',['__s6_addr32',['../structin6__addr.html#add339b63efa64c22d51f4b504ce8a842',1,'in6_addr']]],
   ['_5f_5fs6_5faddr64_1919',['__s6_addr64',['../structin6__addr.html#ab092dfda06701e31df8684bfac4b88c5',1,'in6_addr']]],

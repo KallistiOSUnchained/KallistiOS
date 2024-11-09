@@ -39,7 +39,7 @@ var group__kthreads =
       [ "thd_set_prio", "group__kthreads.html#ga763b92de76217ba97aa5f86b3b5791e3", null ],
       [ "thd_set_pwd", "group__kthreads.html#gab12a497953adc81df5bea7bf50dbd917", null ],
       [ "context", "structkthread__t.html#a11ad2f445c3cc3dd0ffa1ee0a003bc28", null ],
-      [ "cpu_time", "structkthread__t.html#a6ba44a839607fc864e9ff8cc13208fb2", null ],
+      [ "cpu_time", "structkthread__t.html#adaf73c0138b0ca1b47f5eab41e64757e", null ],
       [ "flags", "structkthread__t.html#a1fbc7e7bcf3a697a71104b250e375315", null ],
       [ "label", "structkthread__t.html#a536277c2ece6b62ceee8a49c90df97e5", null ],
       [ "prio", "structkthread__t.html#a83313dc1ac814ea2ee625bc17d1a2398", null ],
