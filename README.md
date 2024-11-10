@@ -1,4 +1,7 @@
-<!-- PROJECT LOGO -->
+
+<div align="center">
+  <img src="https://github.com/KallistiOSUnchained/KallistiOS/blob/master/doc/kos_logo.svg" width="200" height="200">
+</div>
 <div align="center">
   <h1 align="center"><strong>KallistiOS (Unchained)</strong></h1>
   <p align="center">
