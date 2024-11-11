@@ -50,6 +50,7 @@ examples/dreamcast/library/exports.c
 examples/dreamcast/library/exports_stubs.c
 examples/dreamcast/library/*/exports.c
 examples/dreamcast/library/*/exports_stubs.c
+examples/dreamcast/*/nehe/nehe26/romdisk/*.bin
 utils/dc-chain/logs
 utils/dc-chain/*.tar.bz2
 utils/dc-chain/*.tar.gz
