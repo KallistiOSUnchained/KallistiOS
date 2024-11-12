@@ -10,7 +10,6 @@ on:
       - '**.c'       # Monitor source file changes
       - 'Doxyfile'   # Monitor Doxygen config changes
       - 'pages/**'
-      - '.github/workflows/doxygen.yml'
 
 jobs:
   build:
@@ -18,6 +17,7 @@ jobs:
 
     env:
       KOS_BASE: ${{ github.workspace }}  # Sets KOS_BASE to the repository root
+      KOS_ARCH: dreamcast
 
     steps:
       - name: Checkout repository
