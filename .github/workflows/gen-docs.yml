@@ -1,15 +1,24 @@
 
-name: Build and Check Doxygen Documentation on Pull Requests
+name: Generate Doxygen Documentation
 
 on:
-  pull_request:  # Triggers on all pull requests, regardless of the target branch
+  push:
+    branches:
+      - master   # or your default branch
+    paths:
+      - '**.h'       # Monitor header file changes
+      - '**.c'       # Monitor source file changes
+      - 'Doxyfile'   # Monitor Doxygen config changes
+      - 'doc/pages/**'
+      - 'README.md'
 
 jobs:
-  doxygen:
+  build:
     runs-on: ubuntu-latest
 
     env:
       KOS_BASE: ${{ github.workspace }}  # Sets KOS_BASE to the repository root
+      KOS_ARCH: dreamcast
 
     steps:
       - name: Checkout repository
@@ -25,21 +34,18 @@ jobs:
           sudo mv doxygen-1.11.0/bin/* /usr/local/bin/
           rm -rf doxygen-1.11.0*
 
+      - name: Verify Doxygen Version
+        run: doxygen --version
+
       - name: Create Output Directory for Doxygen
         run: mkdir -p doc/reference
 
       - name: Generate Documentation
         run: doxygen doc/Doxyfile
 
-      - name: Generate Doxygen Documentation and Display Warnings Only
-        run: |
-          # Run Doxygen and redirect all output to a temporary log
-          doxygen doc/Doxyfile > doxygen_output.log 2>&1
-          # Extract only warnings and display them if any are found
-          if grep -q "warning:" doxygen_output.log; then
-            echo "Doxygen generated warnings:"
-            grep "warning:" doxygen_output.log
-            exit 1
-          else
-            echo "Doxygen documentation generated without warnings."
-          fi
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./doc/reference/html    # Adjust to match your OUTPUT_DIRECTORY/html
