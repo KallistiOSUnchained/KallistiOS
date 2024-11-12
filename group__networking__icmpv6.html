@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -123,13 +123,13 @@ Topics</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga5e284ac7023ca440a57de00d59989a3d" id="r_ga5e284ac7023ca440a57de00d59989a3d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5e284ac7023ca440a57de00d59989a3d">net6_echo_cb</a>) (const struct <a class="el" href="structin6__addr.html">in6_addr</a> *ip, uint16 seq, uint64 delta_us, uint8 hlim, const uint8 *data, size_t len)</td></tr>
+<tr class="memitem:ga5e284ac7023ca440a57de00d59989a3d" id="r_ga5e284ac7023ca440a57de00d59989a3d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5e284ac7023ca440a57de00d59989a3d">net6_echo_cb</a>) (const struct <a class="el" href="structin6__addr.html">in6_addr</a> *ip, <a class="el" href="group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a> seq, <a class="el" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a> delta_us, <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> hlim, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, size_t len)</td></tr>
 <tr class="memdesc:ga5e284ac7023ca440a57de00d59989a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ICMPv6 echo reply callback type.  <br /></td></tr>
 <tr class="separator:ga5e284ac7023ca440a57de00d59989a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga051eae0cdef16d27c41fa76315d1b75e" id="r_ga051eae0cdef16d27c41fa76315d1b75e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga051eae0cdef16d27c41fa76315d1b75e">net_icmp6_send_echo</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, const struct <a class="el" href="structin6__addr.html">in6_addr</a> *dst, uint16 ident, uint16 seq, const uint8 *data, size_t size)</td></tr>
+<tr class="memitem:ga051eae0cdef16d27c41fa76315d1b75e" id="r_ga051eae0cdef16d27c41fa76315d1b75e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga051eae0cdef16d27c41fa76315d1b75e">net_icmp6_send_echo</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, const struct <a class="el" href="structin6__addr.html">in6_addr</a> *dst, <a class="el" href="group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a> ident, <a class="el" href="group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a> seq, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, size_t size)</td></tr>
 <tr class="memdesc:ga051eae0cdef16d27c41fa76315d1b75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an ICMPv6 Echo (PING6) packet to the specified device.  <br /></td></tr>
 <tr class="separator:ga051eae0cdef16d27c41fa76315d1b75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad7ed1138fdfd88cb357bfdaf4d3add20" id="r_gad7ed1138fdfd88cb357bfdaf4d3add20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad7ed1138fdfd88cb357bfdaf4d3add20">net_icmp6_send_nsol</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, const struct <a class="el" href="structin6__addr.html">in6_addr</a> *dst, const struct <a class="el" href="structin6__addr.html">in6_addr</a> *target, int dupdet)</td></tr>
@@ -141,13 +141,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8de7958f740f76953e134f45bd4db935" id="r_ga8de7958f740f76953e134f45bd4db935"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8de7958f740f76953e134f45bd4db935">net_icmp6_send_rsol</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net)</td></tr>
 <tr class="memdesc:ga8de7958f740f76953e134f45bd4db935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a Router Solicitation request on the specified interface.  <br /></td></tr>
 <tr class="separator:ga8de7958f740f76953e134f45bd4db935"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae9495f4ddc55eeff69dec65f48c9ecd0" id="r_gae9495f4ddc55eeff69dec65f48c9ecd0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae9495f4ddc55eeff69dec65f48c9ecd0">net_icmp6_send_dest_unreach</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, uint8 code, const uint8 *ppkt, size_t psz)</td></tr>
+<tr class="memitem:gae9495f4ddc55eeff69dec65f48c9ecd0" id="r_gae9495f4ddc55eeff69dec65f48c9ecd0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae9495f4ddc55eeff69dec65f48c9ecd0">net_icmp6_send_dest_unreach</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> code, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *ppkt, size_t psz)</td></tr>
 <tr class="memdesc:gae9495f4ddc55eeff69dec65f48c9ecd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a destination unreachable packet on the specified interface.  <br /></td></tr>
 <tr class="separator:gae9495f4ddc55eeff69dec65f48c9ecd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83183dccef0787846c2459af55efdd3e" id="r_ga83183dccef0787846c2459af55efdd3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83183dccef0787846c2459af55efdd3e">net_icmp6_send_time_exceeded</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, uint8 code, const uint8 *ppkt, size_t psz)</td></tr>
+<tr class="memitem:ga83183dccef0787846c2459af55efdd3e" id="r_ga83183dccef0787846c2459af55efdd3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83183dccef0787846c2459af55efdd3e">net_icmp6_send_time_exceeded</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> code, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *ppkt, size_t psz)</td></tr>
 <tr class="memdesc:ga83183dccef0787846c2459af55efdd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a time exceeded message on the specified interface.  <br /></td></tr>
 <tr class="separator:ga83183dccef0787846c2459af55efdd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2df53b985043249c4f388ff1b5420b1c" id="r_ga2df53b985043249c4f388ff1b5420b1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2df53b985043249c4f388ff1b5420b1c">net_icmp6_send_param_prob</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, uint8 code, uint32 ptr, const uint8 *ppkt, size_t psz)</td></tr>
+<tr class="memitem:ga2df53b985043249c4f388ff1b5420b1c" id="r_ga2df53b985043249c4f388ff1b5420b1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2df53b985043249c4f388ff1b5420b1c">net_icmp6_send_param_prob</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> code, <a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> ptr, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *ppkt, size_t psz)</td></tr>
 <tr class="memdesc:ga2df53b985043249c4f388ff1b5420b1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an ICMPv6 Parameter Problem about the given packet.  <br /></td></tr>
 <tr class="separator:ga2df53b985043249c4f388ff1b5420b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -167,7 +167,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* net6_echo_cb) (const struct <a class="el" href="structin6__addr.html">in6_addr</a> *ip, uint16 seq, uint64 delta_us, uint8 hlim, const uint8 *data, size_t len)</td>
+          <td class="memname">typedef void(* net6_echo_cb) (const struct <a class="el" href="structin6__addr.html">in6_addr</a> *ip, <a class="el" href="group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a> seq, <a class="el" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a> delta_us, <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> hlim, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, size_t len)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -202,12 +202,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a></td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8 *</td>          <td class="paramname"><span class="paramname"><em>ppkt</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *</td>          <td class="paramname"><span class="paramname"><em>ppkt</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -250,17 +250,17 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16</td>          <td class="paramname"><span class="paramname"><em>ident</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a></td>          <td class="paramname"><span class="paramname"><em>ident</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16</td>          <td class="paramname"><span class="paramname"><em>seq</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a></td>          <td class="paramname"><span class="paramname"><em>seq</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8 *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -386,17 +386,17 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a></td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></td>          <td class="paramname"><span class="paramname"><em>ptr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8 *</td>          <td class="paramname"><span class="paramname"><em>ppkt</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *</td>          <td class="paramname"><span class="paramname"><em>ppkt</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -461,12 +461,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a></td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8 *</td>          <td class="paramname"><span class="paramname"><em>ppkt</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *</td>          <td class="paramname"><span class="paramname"><em>ppkt</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -1,0 +1,26 @@
+var group__fr__fields =
+[
+    [ "FLASHROM_ISP_AREA_CODE", "group__fr__fields.html#gae1c779005a82cb0452f92728d6ba9ff3", null ],
+    [ "FLASHROM_ISP_BROADCAST", "group__fr__fields.html#gacd4ca201fbc85379cbbdb1efe4f7997a", null ],
+    [ "FLASHROM_ISP_CW_PREFIX", "group__fr__fields.html#gae23515006ba1b44c92018b8c16d066e0", null ],
+    [ "FLASHROM_ISP_DNS", "group__fr__fields.html#ga29e84d29831560ccb4affd40941062c6", null ],
+    [ "FLASHROM_ISP_EMAIL", "group__fr__fields.html#ga1785bb206447d42e5fc7caf86582c165", null ],
+    [ "FLASHROM_ISP_GATEWAY", "group__fr__fields.html#gaaeb97cbef898a9f772ef8cf7d0e5a8b7", null ],
+    [ "FLASHROM_ISP_HOSTNAME", "group__fr__fields.html#ga89b657448c68ed7fbdf87ba7fd674ffe", null ],
+    [ "FLASHROM_ISP_IP", "group__fr__fields.html#ga876fc36d910a3df5ea5a00b058c34d24", null ],
+    [ "FLASHROM_ISP_LD_PREFIX", "group__fr__fields.html#gad3609d0fdf14c4127eb08f24470157cf", null ],
+    [ "FLASHROM_ISP_MODEM_INIT", "group__fr__fields.html#gaec0d635aa0670f49e025bd69b1a0cfe8", null ],
+    [ "FLASHROM_ISP_NETMASK", "group__fr__fields.html#gae25df534c1dd13810353fe7eabc0b042", null ],
+    [ "FLASHROM_ISP_OUT_PREFIX", "group__fr__fields.html#ga9865617e34a941a9996045b7a9a2c18a", null ],
+    [ "FLASHROM_ISP_PHONE1", "group__fr__fields.html#ga3faf1cbe4637c4497ef26c8bf34fa6c0", null ],
+    [ "FLASHROM_ISP_PHONE2", "group__fr__fields.html#ga8422d0e4922318ce4bc19d10fb6aa834", null ],
+    [ "FLASHROM_ISP_POP3", "group__fr__fields.html#gad1a87defc637ef2f00df448eba09d4ab", null ],
+    [ "FLASHROM_ISP_POP3_PASS", "group__fr__fields.html#ga1fe6001c415e7699b4a7f3697d1ae776", null ],
+    [ "FLASHROM_ISP_POP3_USER", "group__fr__fields.html#ga2623d4b3c7e88399fd13552b9d097fdc", null ],
+    [ "FLASHROM_ISP_PPP_PASS", "group__fr__fields.html#gad0b6cf656c5719dacb0bdd93f3241566", null ],
+    [ "FLASHROM_ISP_PPP_USER", "group__fr__fields.html#gac83600d3a105f08078aedf71e48d73ae", null ],
+    [ "FLASHROM_ISP_PROXY_HOST", "group__fr__fields.html#ga5872dda8465eae7a8cc184410a1f01bb", null ],
+    [ "FLASHROM_ISP_PROXY_PORT", "group__fr__fields.html#ga06e878f1dd638a9b64a9296a9dfc6636", null ],
+    [ "FLASHROM_ISP_REAL_NAME", "group__fr__fields.html#gad09197603db0396dc849ed9bf1a46565", null ],
+    [ "FLASHROM_ISP_SMTP", "group__fr__fields.html#ga3c9ab43c6f0ef03fa0c01e2a70692da7", null ]
+];

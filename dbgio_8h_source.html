@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -125,7 +125,7 @@ $(function(){initNavTree('dbgio_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="cdefs_8h.html">kos/cdefs.h</a>&gt;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>__BEGIN_DECLS</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;arch/types.h&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"></span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/** \brief   Debug I/O Interface.</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">    \ingroup logging</span></div>
@@ -196,7 +196,7 @@ $(function(){initNavTree('dbgio_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">        \return             Number of characters written on success, or -1 on</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">                            failure (set errno as appropriate)</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="structdbgio__handler__t.html#af459035a867122ae1ceeb9e1e3dd49c2">   96</a></span>    int (*write_buffer)(<span class="keyword">const</span> uint8 *data, <span class="keywordtype">int</span> len, <span class="keywordtype">int</span> xlat);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="structdbgio__handler__t.html#af459035a867122ae1ceeb9e1e3dd49c2">   96</a></span>    int (*write_buffer)(<span class="keyword">const</span> <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, <span class="keywordtype">int</span> len, <span class="keywordtype">int</span> xlat);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"></span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">    /** \brief  Read an entire buffer of data from the console.</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">        \param  data        The buffer to read into</span></div>
@@ -204,7 +204,7 @@ $(function(){initNavTree('dbgio_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">        \return             Number of characters read on success, or -1 on</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">                            failure (set errno as appropriate)</span></div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="structdbgio__handler__t.html#a33293edf39ab82759c108dacbffe1bbf">  104</a></span>    int (*read_buffer)(uint8 *data, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="structdbgio__handler__t.html#a33293edf39ab82759c108dacbffe1bbf">  104</a></span>    int (*read_buffer)(<a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, <span class="keywordtype">int</span> len);</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>} <a class="code hl_struct" href="structdbgio__handler__t.html">dbgio_handler_t</a>;</div>
 </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment"></span> </div>
@@ -321,7 +321,7 @@ $(function(){initNavTree('dbgio_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">    \return                 Number of characters written on success, or -1 on</span></div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">                            failure (errno should be set as appropriate)</span></div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="group__logging.html#ga45965b83b5d7d68b28d6dd14069d0438">  220</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__logging.html#ga45965b83b5d7d68b28d6dd14069d0438">dbgio_write_buffer</a>(<span class="keyword">const</span> uint8 *data, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="group__logging.html#ga45965b83b5d7d68b28d6dd14069d0438">  220</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__logging.html#ga45965b83b5d7d68b28d6dd14069d0438">dbgio_write_buffer</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, <span class="keywordtype">int</span> len);</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment"></span> </div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">/** \brief   Read an entire buffer of data from the console.</span></div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">    \ingroup logging</span></div>
@@ -332,7 +332,7 @@ $(function(){initNavTree('dbgio_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">    \return                 Number of characters read on success, or -1 on</span></div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">                            failure (errno should be set as appropriate)</span></div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="group__logging.html#gac8a46c3d2c15fc53b822e9965267dcc5">  231</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__logging.html#gac8a46c3d2c15fc53b822e9965267dcc5">dbgio_read_buffer</a>(uint8 *data, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="group__logging.html#gac8a46c3d2c15fc53b822e9965267dcc5">  231</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__logging.html#gac8a46c3d2c15fc53b822e9965267dcc5">dbgio_read_buffer</a>(<a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, <span class="keywordtype">int</span> len);</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment"></span> </div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">/** \brief   Write an entire buffer of data to the console (potentially with</span></div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">             newline transformations).</span></div>
@@ -344,7 +344,7 @@ $(function(){initNavTree('dbgio_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">    \return                 Number of characters written on success, or -1 on</span></div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">                            failure (errno should be set as appropriate)</span></div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="group__logging.html#ga6a0111ed5eb63d446561865b7a710f33">  243</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__logging.html#ga6a0111ed5eb63d446561865b7a710f33">dbgio_write_buffer_xlat</a>(<span class="keyword">const</span> uint8 *data, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="group__logging.html#ga6a0111ed5eb63d446561865b7a710f33">  243</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__logging.html#ga6a0111ed5eb63d446561865b7a710f33">dbgio_write_buffer_xlat</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, <span class="keywordtype">int</span> len);</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="comment"></span> </div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">/** \brief   Write a NUL-terminated string to the console.</span></div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment">    \ingroup logging</span></div>
@@ -398,8 +398,10 @@ $(function(){initNavTree('dbgio_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="agroup__logging_html_gafa22665d922a6575cef2e81213dec72e"><div class="ttname"><a href="group__logging.html#gafa22665d922a6575cef2e81213dec72e">dbgio_write</a></div><div class="ttdeci">int dbgio_write(int c)</div><div class="ttdoc">Write one character to the console.</div></div>
 <div class="ttc" id="agroup__networking__sockets_html_ga03016e1f876d02247e91a9aca1ff4f01"><div class="ttname"><a href="group__networking__sockets.html#ga03016e1f876d02247e91a9aca1ff4f01">shutdown</a></div><div class="ttdeci">int shutdown(int socket, int how)</div><div class="ttdoc">Shutdown socket send and receive operations.</div></div>
 <div class="ttc" id="agroup__system__macros_html_gab302334d9a77a6925be4e5b45397e4a3"><div class="ttname"><a href="group__system__macros.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a></div><div class="ttdeci">#define __printflike(fmtarg, firstvararg)</div><div class="ttdoc">Identify a function as accepting formatting like printf().</div><div class="ttdef"><b>Definition</b> cdefs.h:132</div></div>
+<div class="ttc" id="agroup__system__types_html_gadde6aaee8457bee49c2a92621fe22b79"><div class="ttname"><a href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a></div><div class="ttdeci">unsigned char uint8</div><div class="ttdoc">8-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:35</div></div>
 <div class="ttc" id="astructdbgio__handler__t_html"><div class="ttname"><a href="structdbgio__handler__t.html">dbgio_handler_t</a></div><div class="ttdoc">Debug I/O Interface.</div><div class="ttdef"><b>Definition</b> dbgio.h:39</div></div>
 <div class="ttc" id="astructdbgio__handler__t_html_af8afce4bb95eacc4bc258a7a09bfe724"><div class="ttname"><a href="structdbgio__handler__t.html#af8afce4bb95eacc4bc258a7a09bfe724">dbgio_handler_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">Name of the dbgio handler.</div><div class="ttdef"><b>Definition</b> dbgio.h:41</div></div>
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

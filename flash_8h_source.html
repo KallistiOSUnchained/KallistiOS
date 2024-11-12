@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -121,7 +121,7 @@ $(function(){initNavTree('flash_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef __NAVI_FLASH_H</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define __NAVI_FLASH_H</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;arch/types.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/** \brief  Try to detect a compatible flashrom.</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">    \return                 0 if a compatible flashrom is detected, &lt;0 if the</span></div>
@@ -133,7 +133,7 @@ $(function(){initNavTree('flash_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">    \param  addr            The block of the flashrom to erase.</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">    \return                 0 on success, &lt;0 on error.</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="flash_8h.html#aa7419d65bb80b42819e8a2da4eb9bbf1">   34</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="flash_8h.html#aa7419d65bb80b42819e8a2da4eb9bbf1">nvflash_erase_block</a>(uint32 addr);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="flash_8h.html#aa7419d65bb80b42819e8a2da4eb9bbf1">   34</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="flash_8h.html#aa7419d65bb80b42819e8a2da4eb9bbf1">nvflash_erase_block</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> addr);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"></span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/** \brief  Write data to the flashrom.</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    \param  addr            The block of the flashrom to write to.</span></div>
@@ -141,7 +141,7 @@ $(function(){initNavTree('flash_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    \param  len             The length of the data, in bytes.</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    \return                 0 on success, &lt;0 on error.</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="flash_8h.html#a6e3d852cebcdf204f9993e3d46403156">   42</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="flash_8h.html#a6e3d852cebcdf204f9993e3d46403156">nvflash_write_block</a>(uint32 addr, <span class="keywordtype">void</span> * data, uint32 len);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="flash_8h.html#a6e3d852cebcdf204f9993e3d46403156">   42</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="flash_8h.html#a6e3d852cebcdf204f9993e3d46403156">nvflash_write_block</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> addr, <span class="keywordtype">void</span> * data, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> len);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/* Erase the whole flash chip */</span><span class="comment"></span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/** \brief  Erase the whole flashrom.</span></div>
@@ -154,6 +154,8 @@ $(function(){initNavTree('flash_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="aflash_8h_html_aa7419d65bb80b42819e8a2da4eb9bbf1"><div class="ttname"><a href="flash_8h.html#aa7419d65bb80b42819e8a2da4eb9bbf1">nvflash_erase_block</a></div><div class="ttdeci">int nvflash_erase_block(uint32 addr)</div><div class="ttdoc">Erase a single block of flashrom.</div></div>
 <div class="ttc" id="aflash_8h_html_af23a3a8d2084e23d9cc63d1e565bf935"><div class="ttname"><a href="flash_8h.html#af23a3a8d2084e23d9cc63d1e565bf935">nvflash_erase_all</a></div><div class="ttdeci">int nvflash_erase_all(void)</div><div class="ttdoc">Erase the whole flashrom.</div></div>
 <div class="ttc" id="aflash_8h_html_afac9b5cee555d820a3ce539cba1a5e43"><div class="ttname"><a href="flash_8h.html#afac9b5cee555d820a3ce539cba1a5e43">nvflash_detect</a></div><div class="ttdeci">int nvflash_detect(void)</div><div class="ttdoc">Try to detect a compatible flashrom.</div></div>
+<div class="ttc" id="agroup__system__types_html_ga4b435a49c74bb91f284f075e63416cb6"><div class="ttname"><a href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></div><div class="ttdeci">unsigned long uint32</div><div class="ttdoc">32-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:33</div></div>
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

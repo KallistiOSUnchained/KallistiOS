@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['values_0',['Values',['../group__addrinfo__errors.html',1,'getaddrinfo() Error Values'],['../group__herrno__vals.html',1,'h_errno Error Values'],['../group__net__drivers__returns.html',1,'TX Return Values'],['../group__networking__icmp__unreach.html',1,'Unreachable Values']]],
-  ['versioning_1',['Versioning',['../group__version.html',1,'']]],
-  ['video_2',['Video',['../group__video.html',1,'']]]
+  ['of_20operation_0',['Modes of Operation',['../group__modem__modes.html',1,'']]],
+  ['offset_20toggle_1',['Offset Toggle',['../group__pvr__offset__switch.html',1,'']]],
+  ['offsets_2',['Offsets',['../group__pvr__regs.html',1,'']]],
+  ['offsets_3',['Exception type offsets',['../group__irq__type__offsets.html',1,'']]],
+  ['operation_4',['Modes of Operation',['../group__modem__modes.html',1,'']]],
+  ['options_5',['Options',['../group__debugging__options.html',1,'Options'],['../group__ipv4__opts.html',1,'Options'],['../group__ipv6__opts.html',1,'Options'],['../group__tcp__opts.html',1,'Options'],['../group__so__opts.html',1,'Options'],['../group__udp__opts.html',1,'UDP Options'],['../group__udplite__opts.html',1,'UDP-Lite Options']]],
+  ['order_6',['Byte Order',['../group__system__arch.html',1,'']]],
+  ['overlays_7',['Overlays',['../group__system__overlays.html',1,'']]]
 ];

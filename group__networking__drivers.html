@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -116,6 +116,15 @@ Topics</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__drivers__blocking.html">Blocking Types</a></td></tr>
 <tr class="memdesc:group__net__drivers__blocking"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocking type avlues for network interfaces <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bba.html">Broadband Adapter</a></td></tr>
+<tr class="memdesc:group__bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Dreamcast's BBA (RTL8139C). <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lan__adapter.html">LAN Adapter</a></td></tr>
+<tr class="memdesc:group__lan__adapter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Dreamcast's LAN Adapter <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__modem.html">Modem</a></td></tr>
+<tr class="memdesc:group__modem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Dreamcast's built-in 56k Modem <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__drivers__returns.html">TX Return Values</a></td></tr>
 <tr class="memdesc:group__net__drivers__returns"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver return values for TX network interfaces <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,13 +146,13 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gaa839e5139547c8aa127727d44b05a10e" id="r_gaa839e5139547c8aa127727d44b05a10e"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa839e5139547c8aa127727d44b05a10e">net_input_func</a>) (<a class="el" href="structnetif__t.html">netif_t</a> *nif, const uint8 *pkt, int len)</td></tr>
+<tr class="memitem:gaa839e5139547c8aa127727d44b05a10e" id="r_gaa839e5139547c8aa127727d44b05a10e"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa839e5139547c8aa127727d44b05a10e">net_input_func</a>) (<a class="el" href="structnetif__t.html">netif_t</a> *nif, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *pkt, int len)</td></tr>
 <tr class="memdesc:gaa839e5139547c8aa127727d44b05a10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Network input callback type.  <br /></td></tr>
 <tr class="separator:gaa839e5139547c8aa127727d44b05a10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga175493d20face5ae2e720e6c13f89777" id="r_ga175493d20face5ae2e720e6c13f89777"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga175493d20face5ae2e720e6c13f89777">net_input</a> (<a class="el" href="structnetif__t.html">netif_t</a> *device, const uint8 *data, int len)</td></tr>
+<tr class="memitem:ga175493d20face5ae2e720e6c13f89777" id="r_ga175493d20face5ae2e720e6c13f89777"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga175493d20face5ae2e720e6c13f89777">net_input</a> (<a class="el" href="structnetif__t.html">netif_t</a> *device, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, int len)</td></tr>
 <tr class="memdesc:ga175493d20face5ae2e720e6c13f89777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device drivers should call this function to submit packets received in the background.  <br /></td></tr>
 <tr class="separator:ga175493d20face5ae2e720e6c13f89777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac5f8a64ac6228d14f0d54d34a9131115" id="r_gac5f8a64ac6228d14f0d54d34a9131115"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gaa839e5139547c8aa127727d44b05a10e">net_input_func</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac5f8a64ac6228d14f0d54d34a9131115">net_input_set_target</a> (<a class="el" href="#gaa839e5139547c8aa127727d44b05a10e">net_input_func</a> t)</td></tr>
@@ -161,7 +170,7 @@ Functions</h2></td></tr>
 <tr class="memitem:gac6ece7b37d8f432a1a1702db47a1e898" id="r_gac6ece7b37d8f432a1a1702db47a1e898"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac6ece7b37d8f432a1a1702db47a1e898">net_unreg_device</a> (<a class="el" href="structnetif__t.html">netif_t</a> *device)</td></tr>
 <tr class="memdesc:gac6ece7b37d8f432a1a1702db47a1e898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister a network device.  <br /></td></tr>
 <tr class="separator:gac6ece7b37d8f432a1a1702db47a1e898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaba87b146b59c8e930e08fed642d81e22" id="r_gaba87b146b59c8e930e08fed642d81e22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaba87b146b59c8e930e08fed642d81e22">net_init</a> (uint32 ip)</td></tr>
+<tr class="memitem:gaba87b146b59c8e930e08fed642d81e22" id="r_gaba87b146b59c8e930e08fed642d81e22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaba87b146b59c8e930e08fed642d81e22">net_init</a> (<a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> ip)</td></tr>
 <tr class="memdesc:gaba87b146b59c8e930e08fed642d81e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init network support.  <br /></td></tr>
 <tr class="separator:gaba87b146b59c8e930e08fed642d81e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab36bc83d220f9c2275d34b12ea88e1c0" id="r_gab36bc83d220f9c2275d34b12ea88e1c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab36bc83d220f9c2275d34b12ea88e1c0">net_shutdown</a> (void)</td></tr>
@@ -190,7 +199,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* net_input_func) (<a class="el" href="structnetif__t.html">netif_t</a> *nif, const uint8 *pkt, int len)</td>
+          <td class="memname">typedef int(* net_input_func) (<a class="el" href="structnetif__t.html">netif_t</a> *nif, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *pkt, int len)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -239,7 +248,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int net_init </td>
           <td>(</td>
-          <td class="paramtype">uint32</td>          <td class="paramname"><span class="paramname"><em>ip</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></td>          <td class="paramname"><span class="paramname"><em>ip</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -271,7 +280,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8 *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['net6_5fecho_5fcb_0',['net6_echo_cb',['../group__networking__icmpv6.html#ga5e284ac7023ca440a57de00d59989a3d',1,'net.h']]],
-  ['net_5fecho_5fcb_1',['net_echo_cb',['../group__networking__icmpv4.html#ga062e00da502fb20452755ea534f86993',1,'net.h']]],
-  ['net_5finput_5ffunc_2',['net_input_func',['../group__networking__drivers.html#gaa839e5139547c8aa127727d44b05a10e',1,'net.h']]],
-  ['nfds_5ft_3',['nfds_t',['../group__threading__polling.html#gab43b61cce930cf70d766688ebaecd350',1,'poll.h']]]
+  ['kos_5fversion_5ft_0',['kos_version_t',['../group__version__runtime.html#ga3b43000362ac354e96654ad44ebe8209',1,'version.h']]],
+  ['kthread_5fflags_5ft_1',['kthread_flags_t',['../group__kthreads.html#gaa41caf9ffc4e969b9e6d1218b0f5b0a4',1,'thread.h']]],
+  ['kthread_5fkey_5ft_2',['kthread_key_t',['../tls_8h.html#aec6736a2ae84b910c077b0e5d42a6882',1,'tls.h']]],
+  ['kthread_5fonce_5ft_3',['kthread_once_t',['../once_8h.html#a0a7053da57ccf14871e587a93d168f90',1,'once.h']]],
+  ['kthread_5fworker_5ft_4',['kthread_worker_t',['../worker__thread_8h.html#a51bad18ad8743dfa96892253c1636460',1,'worker_thread.h']]]
 ];

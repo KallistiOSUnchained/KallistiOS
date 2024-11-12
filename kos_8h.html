@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -136,17 +136,60 @@ $(function(){initNavTree('kos_8h.html',''); initResizable(true); });
 <code>#include &lt;<a class="el" href="init_8h_source.html">kos/init.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="oneshot__timer_8h_source.html">kos/oneshot_timer.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="regfield_8h_source.html">kos/regfield.h</a>&gt;</code><br />
-<code>#include &lt;arch/arch.h&gt;</code><br />
-<code>#include &lt;arch/cache.h&gt;</code><br />
-<code>#include &lt;arch/irq.h&gt;</code><br />
-<code>#include &lt;arch/spinlock.h&gt;</code><br />
-<code>#include &lt;arch/timer.h&gt;</code><br />
-<code>#include &lt;arch/wdt.h&gt;</code><br />
-<code>#include &lt;arch/types.h&gt;</code><br />
-<code>#include &lt;arch/exec.h&gt;</code><br />
-<code>#include &lt;arch/stack.h&gt;</code><br />
-<code>#include &lt;arch/byteorder.h&gt;</code><br />
-<code>#include &lt;arch/rtc.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="arch_8h_source.html">arch/arch.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cache_8h_source.html">arch/cache.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="irq_8h_source.html">arch/irq.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="spinlock_8h_source.html">arch/spinlock.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="timer_8h_source.html">arch/timer.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="wdt_8h_source.html">arch/wdt.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="exec_8h_source.html">arch/exec.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="stack_8h_source.html">arch/stack.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="byteorder_8h_source.html">arch/byteorder.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="rtc_8h_source.html">arch/rtc.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="gdb_8h_source.html">arch/gdb.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mmu_8h_source.html">arch/mmu.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="memory_8h_source.html">arch/memory.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="asic_8h_source.html">dc/asic.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="biosfont_8h_source.html">dc/biosfont.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cdrom_8h_source.html">dc/cdrom.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fb__console_8h_source.html">dc/fb_console.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="flashrom_8h_source.html">dc/flashrom.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fmath_8h_source.html">dc/fmath.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fs__dcload_8h_source.html">dc/fs_dcload.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fs__dclsocket_8h_source.html">dc/fs_dclsocket.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fs__iso9660_8h_source.html">dc/fs_iso9660.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fs__vmu_8h_source.html">dc/fs_vmu.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="g1ata_8h_source.html">dc/g1ata.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="g2bus_8h_source.html">dc/g2bus.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="maple_8h_source.html">dc/maple.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="controller_8h_source.html">dc/maple/controller.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="dreameye_8h_source.html">dc/maple/dreameye.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="keyboard_8h_source.html">dc/maple/keyboard.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mouse_8h_source.html">dc/maple/mouse.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="purupuru_8h_source.html">dc/maple/purupuru.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sip_8h_source.html">dc/maple/sip.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vmu_8h_source.html">dc/maple/vmu.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="matrix3d_8h_source.html">dc/matrix3d.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="matrix_8h_source.html">dc/matrix.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="modem_8h_source.html">dc/modem/modem.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="broadband__adapter_8h_source.html">dc/net/broadband_adapter.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="lan__adapter_8h_source.html">dc/net/lan_adapter.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="perfctr_8h_source.html">dc/perfctr.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="pvr_8h_source.html">dc/pvr.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="scif_8h_source.html">dc/scif.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sd_8h_source.html">dc/sd.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="stream_8h_source.html">dc/sound/stream.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sfxmgr_8h_source.html">dc/sound/sfxmgr.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="spu_8h_source.html">dc/spu.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sq_8h_source.html">dc/sq.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ubc_8h_source.html">dc/ubc.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vblank_8h_source.html">dc/vblank.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vec3f_8h_source.html">dc/vec3f.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="video_8h_source.html">dc/video.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vmu__fb_8h_source.html">dc/vmu_fb.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vmu__pkg_8h_source.html">dc/vmu_pkg.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vmufs_8h_source.html">dc/vmufs.h</a>&gt;</code><br />
 </div>
 <p><a href="kos_8h_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

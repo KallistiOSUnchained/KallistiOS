@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -150,7 +150,7 @@ $(function(){initNavTree('library_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/** \endcond */</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/* Thread IDs are ok for us */</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="group__system__libraries.html#gae8a85158bbff787dfd44047083da9e3e">   51</a></span><span class="keyword">typedef</span> tid_t <a class="code hl_typedef" href="group__system__libraries.html#gae8a85158bbff787dfd44047083da9e3e">libid_t</a>;                  <span class="comment">/**&lt; \brief Library ID type. */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="group__system__libraries.html#gae8a85158bbff787dfd44047083da9e3e">   51</a></span><span class="keyword">typedef</span> <a class="code hl_typedef" href="group__system__types.html#gadffe598a3ea01dc03e080c77ece14d65">tid_t</a> <a class="code hl_typedef" href="group__system__libraries.html#gae8a85158bbff787dfd44047083da9e3e">libid_t</a>;                  <span class="comment">/**&lt; \brief Library ID type. */</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"></span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">/** \brief  Loaded library structure.</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
@@ -182,7 +182,7 @@ $(function(){initNavTree('library_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structklibrary__t.html#a7aaa6eae7de9b174e46c5f50088ee97c">   79</a></span>    <a class="code hl_typedef" href="group__system__libraries.html#gae8a85158bbff787dfd44047083da9e3e">libid_t</a> <a class="code hl_variable" href="structklibrary__t.html#a7aaa6eae7de9b174e46c5f50088ee97c">libid</a>;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment"></span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">    /** \brief  Library flags. */</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structklibrary__t.html#a9b77fd179af60d2a2522ec3b91eeacb3">   82</a></span>    uint32  <a class="code hl_variable" href="structklibrary__t.html#a9b77fd179af60d2a2522ec3b91eeacb3">flags</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structklibrary__t.html#a9b77fd179af60d2a2522ec3b91eeacb3">   82</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>  <a class="code hl_variable" href="structklibrary__t.html#a9b77fd179af60d2a2522ec3b91eeacb3">flags</a>;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment"></span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">    /** \brief  ELF image for this library.</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment"></span> </div>
@@ -219,7 +219,7 @@ $(function(){initNavTree('library_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment"></span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">        \return             The library&#39;s version number</span></div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="structklibrary__t.html#ab23bb4aa2bdd49e013e10091160b22f5">  119</a></span>    uint32(*lib_get_version)(void);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="structklibrary__t.html#ab23bb4aa2bdd49e013e10091160b22f5">  119</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>(*lib_get_version)(void);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"></span> </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">    /** \brief  Open a library.</span></div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment"></span> </div>
@@ -371,7 +371,7 @@ $(function(){initNavTree('library_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="comment">    \par    Error Conditions</span></div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="comment">    \em     EINVAL - the library is not valid</span></div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="group__system__libraries.html#gada9ed647488134b4e95269030a00ce62">  270</a></span>uint32 <a class="code hl_function" href="group__system__libraries.html#gada9ed647488134b4e95269030a00ce62">library_get_version</a>(<a class="code hl_struct" href="structklibrary__t.html">klibrary_t</a> * lib);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="group__system__libraries.html#gada9ed647488134b4e95269030a00ce62">  270</a></span><a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> <a class="code hl_function" href="group__system__libraries.html#gada9ed647488134b4e95269030a00ce62">library_get_version</a>(<a class="code hl_struct" href="structklibrary__t.html">klibrary_t</a> * lib);</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment"></span> </div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="comment">/** \cond */</span></div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="comment">/* Init */</span></div>
@@ -401,6 +401,8 @@ $(function(){initNavTree('library_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="agroup__system__libraries_html_gaf25b832ff43ca64075844ecb70751c75"><div class="ttname"><a href="group__system__libraries.html#gaf25b832ff43ca64075844ecb70751c75">library_create</a></div><div class="ttdeci">klibrary_t * library_create(int flags)</div><div class="ttdoc">Create a new library shell.</div></div>
 <div class="ttc" id="agroup__system__libraries_html_gaf40aba53296974addb85a578de9e0bac"><div class="ttname"><a href="group__system__libraries.html#gaf40aba53296974addb85a578de9e0bac">library_get_refcnt</a></div><div class="ttdeci">int library_get_refcnt(klibrary_t *lib)</div><div class="ttdoc">Retrieve the specified library's reference count.</div></div>
 <div class="ttc" id="agroup__system__namemgr_html_gab80a0420bc03daef28fa015e348715f4"><div class="ttname"><a href="group__system__namemgr.html#gab80a0420bc03daef28fa015e348715f4">LIST_HEAD</a></div><div class="ttdeci">typedef LIST_HEAD(nmmgr_list, nmmgr_handler) nmmgr_list_t</div><div class="ttdoc">Name handler list type.</div></div>
+<div class="ttc" id="agroup__system__types_html_ga4b435a49c74bb91f284f075e63416cb6"><div class="ttname"><a href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></div><div class="ttdeci">unsigned long uint32</div><div class="ttdoc">32-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:33</div></div>
+<div class="ttc" id="agroup__system__types_html_gadffe598a3ea01dc03e080c77ece14d65"><div class="ttname"><a href="group__system__types.html#gadffe598a3ea01dc03e080c77ece14d65">tid_t</a></div><div class="ttdeci">handle_t tid_t</div><div class="ttdoc">Thread ID type.</div><div class="ttdef"><b>Definition</b> types.h:85</div></div>
 <div class="ttc" id="astructelf__prog__t_html"><div class="ttname"><a href="structelf__prog__t.html">elf_prog_t</a></div><div class="ttdoc">Kernel-specific definition of a loaded ELF binary.</div><div class="ttdef"><b>Definition</b> elf.h:304</div></div>
 <div class="ttc" id="astructklibrary__t_html"><div class="ttname"><a href="structklibrary__t.html">klibrary_t</a></div><div class="ttdoc">Loaded library structure.</div><div class="ttdef"><b>Definition</b> library.h:71</div></div>
 <div class="ttc" id="astructklibrary__t_html_a336137473d2ad79aef18c70a042d7621"><div class="ttname"><a href="structklibrary__t.html#a336137473d2ad79aef18c70a042d7621">klibrary_t::image</a></div><div class="ttdeci">elf_prog_t image</div><div class="ttdoc">ELF image for this library.</div><div class="ttdef"><b>Definition</b> library.h:88</div></div>

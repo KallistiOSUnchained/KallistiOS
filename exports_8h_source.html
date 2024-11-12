@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -124,7 +124,7 @@ $(function(){initNavTree('exports_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>__BEGIN_DECLS</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;arch/types.h&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/** \addtogroup system_libraries</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">    @{</span></div>
@@ -140,7 +140,7 @@ $(function(){initNavTree('exports_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structexport__sym__t.html">   38</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>export_sym {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">   39</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>  * <a class="code hl_variable" href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">name</a>;     <span class="comment">/**&lt; \brief The name of the symbol. */</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structexport__sym__t.html#aac68c914428c0179d717e7b7da67eb17">   40</a></span>    ptr_t       <a class="code hl_variable" href="structexport__sym__t.html#aac68c914428c0179d717e7b7da67eb17">ptr</a>;        <span class="comment">/**&lt; \brief A pointer to the symbol. */</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structexport__sym__t.html#aac68c914428c0179d717e7b7da67eb17">   40</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a>       <a class="code hl_variable" href="structexport__sym__t.html#aac68c914428c0179d717e7b7da67eb17">ptr</a>;        <span class="comment">/**&lt; \brief A pointer to the symbol. */</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a>;</div>
 </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span> </div>
@@ -183,12 +183,14 @@ $(function(){initNavTree('exports_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="ttc" id="agroup__system__libraries_html_ga6b710e04d23a70940a441dfaaf2f7045"><div class="ttname"><a href="group__system__libraries.html#ga6b710e04d23a70940a441dfaaf2f7045">export_lookup</a></div><div class="ttdeci">export_sym_t * export_lookup(const char *name)</div><div class="ttdoc">Look up a symbol by name.</div></div>
 <div class="ttc" id="agroup__system__libraries_html_gaa5f88a6dc842b5acfe2d45c412e083de"><div class="ttname"><a href="group__system__libraries.html#gaa5f88a6dc842b5acfe2d45c412e083de">export_init</a></div><div class="ttdeci">void export_init(void)</div><div class="ttdoc">Setup initial kernel exports.</div></div>
+<div class="ttc" id="agroup__system__types_html_ga6c3e6bc5b006cba69f59a5c14cd2c8cd"><div class="ttname"><a href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a></div><div class="ttdeci">uint32 ptr_t</div><div class="ttdoc">Pointer arithmetic type.</div><div class="ttdef"><b>Definition</b> types.h:52</div></div>
 <div class="ttc" id="anmmgr_8h_html"><div class="ttname"><a href="nmmgr_8h.html">nmmgr.h</a></div><div class="ttdoc">Name manager.</div></div>
 <div class="ttc" id="astructexport__sym__t_html"><div class="ttname"><a href="structexport__sym__t.html">export_sym_t</a></div><div class="ttdoc">A single export symbol.</div><div class="ttdef"><b>Definition</b> exports.h:38</div></div>
 <div class="ttc" id="astructexport__sym__t_html_a54ed8c54a7c51ab81c099197cfbdc346"><div class="ttname"><a href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">export_sym_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">The name of the symbol.</div><div class="ttdef"><b>Definition</b> exports.h:39</div></div>
 <div class="ttc" id="astructexport__sym__t_html_aac68c914428c0179d717e7b7da67eb17"><div class="ttname"><a href="structexport__sym__t.html#aac68c914428c0179d717e7b7da67eb17">export_sym_t::ptr</a></div><div class="ttdeci">ptr_t ptr</div><div class="ttdoc">A pointer to the symbol.</div><div class="ttdef"><b>Definition</b> exports.h:40</div></div>
 <div class="ttc" id="astructsymtab__handler__t_html"><div class="ttname"><a href="structsymtab__handler__t.html">symtab_handler_t</a></div><div class="ttdoc">A symbol table &quot;handler&quot; for nmmgr.</div><div class="ttdef"><b>Definition</b> exports.h:57</div></div>
 <div class="ttc" id="astructsymtab__handler__t_html_a5aec034b9bb71dbfd666153296ca57be"><div class="ttname"><a href="structsymtab__handler__t.html#a5aec034b9bb71dbfd666153296ca57be">symtab_handler_t::table</a></div><div class="ttdeci">export_sym_t * table</div><div class="ttdoc">Location of the first entry.</div><div class="ttdef"><b>Definition</b> exports.h:59</div></div>
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

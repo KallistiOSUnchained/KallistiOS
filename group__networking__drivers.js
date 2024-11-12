@@ -1,6 +1,9 @@
 var group__networking__drivers =
 [
     [ "Blocking Types", "group__net__drivers__blocking.html", "group__net__drivers__blocking" ],
+    [ "Broadband Adapter", "group__bba.html", "group__bba" ],
+    [ "LAN Adapter", "group__lan__adapter.html", "group__lan__adapter" ],
+    [ "Modem", "group__modem.html", "group__modem" ],
     [ "TX Return Values", "group__net__drivers__returns.html", "group__net__drivers__returns" ],
     [ "netif_t Flags", "group__net__drivers__flags.html", "group__net__drivers__flags" ],
     [ "net.h", "net_8h.html", null ],

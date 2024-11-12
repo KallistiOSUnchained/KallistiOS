@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -106,14 +106,14 @@ $(function(){initNavTree('fs__romdisk_8h.html',''); initResizable(true); });
 <p>ROMFS virtual file system.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
-<code>#include &lt;arch/types.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="fs_8h_source.html">kos/fs.h</a>&gt;</code><br />
 </div>
 <p><a href="fs__romdisk_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa688929a02562b0d482e5b6633085c5c" id="r_gaa688929a02562b0d482e5b6633085c5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__romdisk.html#gaa688929a02562b0d482e5b6633085c5c">fs_romdisk_mount</a> (const char *mountpoint, const uint8 *img, int own_buffer)</td></tr>
+<tr class="memitem:gaa688929a02562b0d482e5b6633085c5c" id="r_gaa688929a02562b0d482e5b6633085c5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__romdisk.html#gaa688929a02562b0d482e5b6633085c5c">fs_romdisk_mount</a> (const char *mountpoint, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *img, int own_buffer)</td></tr>
 <tr class="memdesc:gaa688929a02562b0d482e5b6633085c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mount a ROMFS image as a new filesystem.  <br /></td></tr>
 <tr class="separator:gaa688929a02562b0d482e5b6633085c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad5d26a221ba09da662c26523c9958e31" id="r_gad5d26a221ba09da662c26523c9958e31"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__romdisk.html#gad5d26a221ba09da662c26523c9958e31">fs_romdisk_unmount</a> (const char *mountpoint)</td></tr>

@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -97,15 +97,96 @@ $(function(){initNavTree('group__attribution.html',''); initResizable(true); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Attribution</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>KOS banner, license, and authors  
-</p>
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6dfafb1c615315737c5310f025a2a1fe" id="r_ga6dfafb1c615315737c5310f025a2a1fe"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6dfafb1c615315737c5310f025a2a1fe">kos_get_banner</a> (void)</td></tr>
+<tr class="memdesc:ga6dfafb1c615315737c5310f025a2a1fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the banner printed at program initialization.  <br /></td></tr>
+<tr class="separator:ga6dfafb1c615315737c5310f025a2a1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39d9efdea6d5c4689d85b7e2e3fc84de" id="r_ga39d9efdea6d5c4689d85b7e2e3fc84de"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga39d9efdea6d5c4689d85b7e2e3fc84de">kos_get_license</a> (void)</td></tr>
+<tr class="memdesc:ga39d9efdea6d5c4689d85b7e2e3fc84de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the license information for the compiled copy of KOS.  <br /></td></tr>
+<tr class="separator:ga39d9efdea6d5c4689d85b7e2e3fc84de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed1bb8a00197783f15957e464b595b21" id="r_gaed1bb8a00197783f15957e464b595b21"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaed1bb8a00197783f15957e464b595b21">kos_get_authors</a> (void)</td></tr>
+<tr class="memdesc:gaed1bb8a00197783f15957e464b595b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a list of authors and the dates of their contributions.  <br /></td></tr>
+<tr class="separator:gaed1bb8a00197783f15957e464b595b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>KOS banner, license, and authors </p>
 <p>This API can be used to query for and display information on KOS, its license, and its authors at runtime.</p>
 <dl class="section remark"><dt>Remarks</dt><dd>The authors list can be used for credits screens in games and applications to acknowledge KOS and its contributors. :) </dd></dl>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gaed1bb8a00197783f15957e464b595b21" name="gaed1bb8a00197783f15957e464b595b21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed1bb8a00197783f15957e464b595b21">&#9670;&#160;</a></span>kos_get_authors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * kos_get_authors </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve a list of authors and the dates of their contributions. </p>
+<p>This function retrieves the copyright information for the version of KOS in use. This function can be used to add such information to the credits of programs using KOS to give the appropriate credit to those that have worked on KOS.</p>
+<dl class="section remark"><dt>Remarks</dt><dd>Remember, you do need to give credit where credit is due, and this is an easy way to do so. ;-)</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the authors' copyright information. </dd></dl>
+
+</div>
+</div>
+<a id="ga6dfafb1c615315737c5310f025a2a1fe" name="ga6dfafb1c615315737c5310f025a2a1fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6dfafb1c615315737c5310f025a2a1fe">&#9670;&#160;</a></span>kos_get_banner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * kos_get_banner </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the banner printed at program initialization. </p>
+<p>This function retrieves the banner string that is printed at initialization time by the kernel. This contains the version of KOS in use and basic information about the environment in which it was compiled.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the banner string. </dd></dl>
+
+</div>
+</div>
+<a id="ga39d9efdea6d5c4689d85b7e2e3fc84de" name="ga39d9efdea6d5c4689d85b7e2e3fc84de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39d9efdea6d5c4689d85b7e2e3fc84de">&#9670;&#160;</a></span>kos_get_license()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * kos_get_license </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the license information for the compiled copy of KOS. </p>
+<p>This function retrieves a string containing the license terms that the version of KOS in use is distributed under. This can be used to easily add information to your program to be displayed at runtime.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the license terms. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

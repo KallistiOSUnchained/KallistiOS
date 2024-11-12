@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['binding_20types_0',['Symbol Binding Types',['../group__elf__binding.html',1,'']]],
-  ['block_20devices_1',['Block Devices',['../group__vfs__blockdev.html',1,'']]],
-  ['blocking_20types_2',['Blocking Types',['../group__net__drivers__blocking.html',1,'']]]
+  ['22_20modes_0',['V.22 Modes',['../group__modem__v22.html',1,'']]],
+  ['22bis_20modes_1',['V.22bis Modes',['../group__modem__v22bis.html',1,'']]]
 ];

@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['klibrary_5ft_0',['klibrary_t',['../structklibrary__t.html',1,'']]],
-  ['kos_5fblockdev_5ft_1',['kos_blockdev_t',['../structkos__blockdev__t.html',1,'']]],
-  ['kos_5fimg_5ft_2',['kos_img_t',['../structkos__img__t.html',1,'']]],
-  ['kos_5fmd5_5fcxt_5ft_3',['kos_md5_cxt_t',['../structkos__md5__cxt__t.html',1,'']]],
-  ['kthread_5fattr_5ft_4',['kthread_attr_t',['../structkthread__attr__t.html',1,'']]],
-  ['kthread_5fjob_5ft_5',['kthread_job_t',['../structkthread__job__t.html',1,'']]],
-  ['kthread_5ft_6',['kthread_t',['../structkthread__t.html',1,'']]],
-  ['kthread_5ftls_5fkv_5ft_7',['kthread_tls_kv_t',['../structkthread__tls__kv__t.html',1,'']]],
-  ['kthread_5fworker_5ft_8',['kthread_worker_t',['../structkthread__worker__t.html',1,'']]]
+  ['in6_5faddr_0',['in6_addr',['../structin6__addr.html',1,'']]],
+  ['in_5faddr_1',['in_addr',['../structin__addr.html',1,'']]],
+  ['iovec_2',['iovec',['../structiovec.html',1,'']]],
+  ['ip_5fhdr_5ft_3',['ip_hdr_t',['../structip__hdr__t.html',1,'']]],
+  ['ipv6_5fhdr_5ft_4',['ipv6_hdr_t',['../structipv6__hdr__t.html',1,'']]],
+  ['irq_5fcontext_5ft_5',['irq_context_t',['../structirq__context__t.html',1,'']]]
 ];

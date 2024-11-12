@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -97,12 +97,28 @@ $(function(){initNavTree('group__timing.html',''); initResizable(true); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#groups">Topics</a>  </div>
   <div class="headertitle"><div class="title">Timing</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>APIs and drivers pertaining to date and time  
-</p>
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html">Real-Time Clock</a></td></tr>
+<tr class="memdesc:group__rtc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real-Time Clock (RTC) Management <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timers.html">Timer Unit</a></td></tr>
+<tr class="memdesc:group__timers"><td class="mdescLeft">&#160;</td><td class="mdescRight">SH4 CPU peripheral providing timers and counters <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wdt.html">Watchdog Timer</a></td></tr>
+<tr class="memdesc:group__wdt"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for using the WDT as a reset or interval timer <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>APIs and drivers pertaining to date and time </p>
 <p>In addition to the low-level timing-related drivers, KOS supports all of the standard C, C++, and POSIX timing APIs. </p>
 </div><!-- contents -->

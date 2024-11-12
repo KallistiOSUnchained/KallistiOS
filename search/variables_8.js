@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['h_0',['h',['../structkos__img__t.html#ad718f6194a7fb23ffe045bfae8cc408e',1,'kos_img_t']]],
+  ['h_0',['h',['../structvmufb__font__t.html#a1d78646bab8c2daf27b9d67b7f083717',1,'vmufb_font_t::h'],['../structkos__img__t.html#ad718f6194a7fb23ffe045bfae8cc408e',1,'kos_img_t::h']]],
   ['h_5faddr_5flist_1',['h_addr_list',['../structhostent.html#a4ff8499f29c5111435d6ed4adccfb621',1,'hostent']]],
   ['h_5faddrtype_2',['h_addrtype',['../structhostent.html#a405ebb31a6922898809635b03f0faf06',1,'hostent']]],
   ['h_5faliases_3',['h_aliases',['../structhostent.html#ac266a0b528443e9479f2d8e1680b5e78',1,'hostent']]],
@@ -11,7 +11,11 @@ var searchData=
   ['hblkhd_8',['hblkhd',['../structmallinfo.html#a9a306188ec2c384a7211c271d1488c13',1,'mallinfo']]],
   ['hblks_9',['hblks',['../structmallinfo.html#a846bce3f37f21f839f23409b7eab6cfe',1,'mallinfo']]],
   ['hclass_5flflow_10',['hclass_lflow',['../structipv6__hdr__t.html#aba0d036f63da2e22756c9c4e37215cb4',1,'ipv6_hdr_t']]],
-  ['holder_11',['holder',['../structmutex__t.html#a91bc09a687b607bff6da8b8dbfb8dd3c',1,'mutex_t']]],
-  ['hop_5flimit_12',['hop_limit',['../structnetif__t.html#ad51fb3c9ec1e8fdee51f29f106baca8d',1,'netif_t::hop_limit'],['../structipv6__hdr__t.html#a8065a5fc49061e95a62127bb65a89ee9',1,'ipv6_hdr_t::hop_limit']]],
-  ['hostname_13',['hostname',['../structnetcfg__t.html#ab955158f87ed836c06b3ed573c4bc628',1,'netcfg_t']]]
+  ['hdroff_11',['hdroff',['../structvmu__dir__t.html#a653add9ccd3948f90d9a1efa4df39fbf',1,'vmu_dir_t']]],
+  ['head_12',['head',['../structaica__queue__t.html#a024f691bd63399243cf0d90f2f36302b',1,'aica_queue_t']]],
+  ['height_13',['height',['../structpvr__poly__cxt__t.html#a817b0e28ab5095f1141a02d4cfe80c0d',1,'pvr_poly_cxt_t::height'],['../structpvr__sprite__cxt__t.html#ae07b74b0916b87d095c89f5372008056',1,'pvr_sprite_cxt_t::height'],['../structvid__mode__t.html#a58606bbe4b60831b286f866fed743142',1,'vid_mode_t::height']]],
+  ['holder_14',['holder',['../structmutex__t.html#a91bc09a687b607bff6da8b8dbfb8dd3c',1,'mutex_t']]],
+  ['hop_5flimit_15',['hop_limit',['../structnetif__t.html#ad51fb3c9ec1e8fdee51f29f106baca8d',1,'netif_t::hop_limit'],['../structipv6__hdr__t.html#a8065a5fc49061e95a62127bb65a89ee9',1,'ipv6_hdr_t::hop_limit']]],
+  ['hostname_16',['hostname',['../structflashrom__ispcfg__t.html#aa19a25a8e270d32546c24d4c8ea60d91',1,'flashrom_ispcfg_t::hostname'],['../structnetcfg__t.html#ab955158f87ed836c06b3ed573c4bc628',1,'netcfg_t::hostname']]],
+  ['hour_17',['hour',['../structvmu__timestamp__t.html#ac212bee90fe071ea9dd57a01b8632d9d',1,'vmu_timestamp_t']]]
 ];

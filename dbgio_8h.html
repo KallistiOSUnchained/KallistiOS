@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -108,7 +108,7 @@ $(function(){initNavTree('dbgio_8h.html',''); initResizable(true); });
 <p>Debug I/O.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="cdefs_8h_source.html">kos/cdefs.h</a>&gt;</code><br />
-<code>#include &lt;arch/types.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
 </div>
 <p><a href="dbgio_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -150,13 +150,13 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf0634dc5e4bcad9b19d5d362965ecf62" id="r_gaf0634dc5e4bcad9b19d5d362965ecf62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#gaf0634dc5e4bcad9b19d5d362965ecf62">dbgio_flush</a> (void)</td></tr>
 <tr class="memdesc:gaf0634dc5e4bcad9b19d5d362965ecf62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush any queued output.  <br /></td></tr>
 <tr class="separator:gaf0634dc5e4bcad9b19d5d362965ecf62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga45965b83b5d7d68b28d6dd14069d0438" id="r_ga45965b83b5d7d68b28d6dd14069d0438"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#ga45965b83b5d7d68b28d6dd14069d0438">dbgio_write_buffer</a> (const uint8 *data, int len)</td></tr>
+<tr class="memitem:ga45965b83b5d7d68b28d6dd14069d0438" id="r_ga45965b83b5d7d68b28d6dd14069d0438"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#ga45965b83b5d7d68b28d6dd14069d0438">dbgio_write_buffer</a> (const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, int len)</td></tr>
 <tr class="memdesc:ga45965b83b5d7d68b28d6dd14069d0438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an entire buffer of data to the console.  <br /></td></tr>
 <tr class="separator:ga45965b83b5d7d68b28d6dd14069d0438"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8a46c3d2c15fc53b822e9965267dcc5" id="r_gac8a46c3d2c15fc53b822e9965267dcc5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#gac8a46c3d2c15fc53b822e9965267dcc5">dbgio_read_buffer</a> (uint8 *data, int len)</td></tr>
+<tr class="memitem:gac8a46c3d2c15fc53b822e9965267dcc5" id="r_gac8a46c3d2c15fc53b822e9965267dcc5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#gac8a46c3d2c15fc53b822e9965267dcc5">dbgio_read_buffer</a> (<a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, int len)</td></tr>
 <tr class="memdesc:gac8a46c3d2c15fc53b822e9965267dcc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire buffer of data from the console.  <br /></td></tr>
 <tr class="separator:gac8a46c3d2c15fc53b822e9965267dcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6a0111ed5eb63d446561865b7a710f33" id="r_ga6a0111ed5eb63d446561865b7a710f33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#ga6a0111ed5eb63d446561865b7a710f33">dbgio_write_buffer_xlat</a> (const uint8 *data, int len)</td></tr>
+<tr class="memitem:ga6a0111ed5eb63d446561865b7a710f33" id="r_ga6a0111ed5eb63d446561865b7a710f33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#ga6a0111ed5eb63d446561865b7a710f33">dbgio_write_buffer_xlat</a> (const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, int len)</td></tr>
 <tr class="memdesc:ga6a0111ed5eb63d446561865b7a710f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an entire buffer of data to the console (potentially with newline transformations).  <br /></td></tr>
 <tr class="separator:ga6a0111ed5eb63d446561865b7a710f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabff72a3d9954b504e4717cf287dc437e" id="r_gabff72a3d9954b504e4717cf287dc437e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#gabff72a3d9954b504e4717cf287dc437e">dbgio_write_str</a> (const char *str)</td></tr>

@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -108,7 +108,7 @@ $(function(){initNavTree('fs__socket_8h.html',''); initResizable(true); });
 <p>Definitions for a sockets "filesystem".  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
-<code>#include &lt;arch/types.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="fs_8h_source.html">kos/fs.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="net_8h_source.html">kos/net.h</a>&gt;</code><br />
 <code>#include &lt;sys/queue.h&gt;</code><br />
@@ -145,7 +145,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ga59210fb2e2589dc9cfc32085239320e8" id="r_ga59210fb2e2589dc9cfc32085239320e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnet__socket__t.html">net_socket_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__sockets.html#ga59210fb2e2589dc9cfc32085239320e8">fs_socket_open_sock</a> (<a class="el" href="structfs__socket__proto__t.html">fs_socket_proto_t</a> *proto)</td></tr>
 <tr class="memdesc:ga59210fb2e2589dc9cfc32085239320e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a socket without calling the protocol initializer.  <br /></td></tr>
 <tr class="separator:ga59210fb2e2589dc9cfc32085239320e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga29f23e1a12915ead3103c990ba151bb5" id="r_ga29f23e1a12915ead3103c990ba151bb5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__sockets.html#ga29f23e1a12915ead3103c990ba151bb5">fs_socket_input</a> (<a class="el" href="structnetif__t.html">netif_t</a> *src, int domain, int protocol, const void *hdr, const uint8 *data, size_t size)</td></tr>
+<tr class="memitem:ga29f23e1a12915ead3103c990ba151bb5" id="r_ga29f23e1a12915ead3103c990ba151bb5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__sockets.html#ga29f23e1a12915ead3103c990ba151bb5">fs_socket_input</a> (<a class="el" href="structnetif__t.html">netif_t</a> *src, int domain, int protocol, const void *hdr, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, size_t size)</td></tr>
 <tr class="memdesc:ga29f23e1a12915ead3103c990ba151bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input a packet into some socket family handler.  <br /></td></tr>
 <tr class="separator:ga29f23e1a12915ead3103c990ba151bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6fd5572c54f1300b2ed6ddae855f8629" id="r_ga6fd5572c54f1300b2ed6ddae855f8629"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__sockets.html#ga6fd5572c54f1300b2ed6ddae855f8629">fs_socket_proto_add</a> (<a class="el" href="structfs__socket__proto__t.html">fs_socket_proto_t</a> *proto)</td></tr>

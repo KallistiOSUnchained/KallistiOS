@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -117,10 +117,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8bd82a578c7c63e19863f33a412b6475" id="r_ga8bd82a578c7c63e19863f33a412b6475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8bd82a578c7c63e19863f33a412b6475">net_ndp_gc</a> (void)</td></tr>
 <tr class="memdesc:ga8bd82a578c7c63e19863f33a412b6475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Garbage collect timed out NDP entries.  <br /></td></tr>
 <tr class="separator:ga8bd82a578c7c63e19863f33a412b6475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga286845e9570556659d934cd0366a7ec3" id="r_ga286845e9570556659d934cd0366a7ec3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga286845e9570556659d934cd0366a7ec3">net_ndp_insert</a> (<a class="el" href="structnetif__t.html">netif_t</a> *nif, const uint8 mac[6], const struct <a class="el" href="structin6__addr.html">in6_addr</a> *ip, int unsol)</td></tr>
+<tr class="memitem:ga286845e9570556659d934cd0366a7ec3" id="r_ga286845e9570556659d934cd0366a7ec3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga286845e9570556659d934cd0366a7ec3">net_ndp_insert</a> (<a class="el" href="structnetif__t.html">netif_t</a> *nif, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> mac[6], const struct <a class="el" href="structin6__addr.html">in6_addr</a> *ip, int unsol)</td></tr>
 <tr class="memdesc:ga286845e9570556659d934cd0366a7ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an entry to the NDP cache.  <br /></td></tr>
 <tr class="separator:ga286845e9570556659d934cd0366a7ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9b22c7e15846b27c5c47b7d28088fd94" id="r_ga9b22c7e15846b27c5c47b7d28088fd94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9b22c7e15846b27c5c47b7d28088fd94">net_ndp_lookup</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, const struct <a class="el" href="structin6__addr.html">in6_addr</a> *ip, uint8 mac_out[6], const <a class="el" href="structipv6__hdr__t.html">ipv6_hdr_t</a> *pkt, const uint8 *data, int data_size)</td></tr>
+<tr class="memitem:ga9b22c7e15846b27c5c47b7d28088fd94" id="r_ga9b22c7e15846b27c5c47b7d28088fd94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9b22c7e15846b27c5c47b7d28088fd94">net_ndp_lookup</a> (<a class="el" href="structnetif__t.html">netif_t</a> *net, const struct <a class="el" href="structin6__addr.html">in6_addr</a> *ip, <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> mac_out[6], const <a class="el" href="structipv6__hdr__t.html">ipv6_hdr_t</a> *pkt, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, int data_size)</td></tr>
 <tr class="memdesc:ga9b22c7e15846b27c5c47b7d28088fd94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up an entry from the NDP cache.  <br /></td></tr>
 <tr class="separator:ga9b22c7e15846b27c5c47b7d28088fd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -186,7 +186,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>[6], </td>
+          <td class="paramtype">const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a></td>          <td class="paramname"><span class="paramname"><em>mac</em></span>[6], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -234,7 +234,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8</td>          <td class="paramname"><span class="paramname"><em>mac_out</em></span>[6], </td>
+          <td class="paramtype"><a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a></td>          <td class="paramname"><span class="paramname"><em>mac_out</em></span>[6], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -244,7 +244,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8 *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

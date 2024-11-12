@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -121,7 +121,7 @@ $(function(){initNavTree('ide_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef __NAVI_IDE_H</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define __NAVI_IDE_H</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;arch/types.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/** \brief  Read sectors from the hard disk via PIO.</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">    \param  linear          The address to begin reading from.</span></div>
@@ -129,7 +129,7 @@ $(function(){initNavTree('ide_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">    \param  bufptr          The buffer to read into.</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">    \return                 0 on success, &lt;0 on error.</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="ide_8h.html#a084c2d2236867b43ecd7100f3aead517">   30</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ide_8h.html#a084c2d2236867b43ecd7100f3aead517">ide_read</a>(uint32 linear, uint32 numsects, <span class="keywordtype">void</span> *bufptr);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="ide_8h.html#a084c2d2236867b43ecd7100f3aead517">   30</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ide_8h.html#a084c2d2236867b43ecd7100f3aead517">ide_read</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> linear, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> numsects, <span class="keywordtype">void</span> *bufptr);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"></span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/** \brief  Write sectors from the hard disk via PIO.</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">    \param  linear          The address to begin writing to.</span></div>
@@ -137,12 +137,12 @@ $(function(){initNavTree('ide_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">    \param  bufptr          The buffer to write out of.</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">    \return                 0 on success, &lt;0 on error.</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="ide_8h.html#a0df38ba5c5cb3b360476afbe9571adb4">   38</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ide_8h.html#a0df38ba5c5cb3b360476afbe9571adb4">ide_write</a>(uint32 linear, uint32 numsects, <span class="keywordtype">void</span> *bufptr);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="ide_8h.html#a0df38ba5c5cb3b360476afbe9571adb4">   38</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ide_8h.html#a0df38ba5c5cb3b360476afbe9571adb4">ide_write</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> linear, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> numsects, <span class="keywordtype">void</span> *bufptr);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"></span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/** \brief  Retrieve the number of sectors from the hard disk.</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">    \returns                The total number of linear sectors.</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="ide_8h.html#a82fbefe80e9c926b97ee79b062635451">   43</a></span>uint32 <a class="code hl_function" href="ide_8h.html#a82fbefe80e9c926b97ee79b062635451">ide_num_sectors</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="ide_8h.html#a82fbefe80e9c926b97ee79b062635451">   43</a></span><a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> <a class="code hl_function" href="ide_8h.html#a82fbefe80e9c926b97ee79b062635451">ide_num_sectors</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"></span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/** \brief  Initialize Navi IDE.</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">    \return                 0 on success (no error conditions defined).</span></div>
@@ -153,11 +153,13 @@ $(function(){initNavTree('ide_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="ide_8h.html#a07162b1db80bb23f32d87b9ec262113e">   51</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ide_8h.html#a07162b1db80bb23f32d87b9ec262113e">ide_shutdown</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif  </span><span class="comment">/* __NAVI_IDE_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="agroup__system__types_html_ga4b435a49c74bb91f284f075e63416cb6"><div class="ttname"><a href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></div><div class="ttdeci">unsigned long uint32</div><div class="ttdoc">32-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:33</div></div>
 <div class="ttc" id="aide_8h_html_a07162b1db80bb23f32d87b9ec262113e"><div class="ttname"><a href="ide_8h.html#a07162b1db80bb23f32d87b9ec262113e">ide_shutdown</a></div><div class="ttdeci">void ide_shutdown(void)</div><div class="ttdoc">Shutdown Navi IDE.</div></div>
 <div class="ttc" id="aide_8h_html_a084c2d2236867b43ecd7100f3aead517"><div class="ttname"><a href="ide_8h.html#a084c2d2236867b43ecd7100f3aead517">ide_read</a></div><div class="ttdeci">int ide_read(uint32 linear, uint32 numsects, void *bufptr)</div><div class="ttdoc">Read sectors from the hard disk via PIO.</div></div>
 <div class="ttc" id="aide_8h_html_a0df38ba5c5cb3b360476afbe9571adb4"><div class="ttname"><a href="ide_8h.html#a0df38ba5c5cb3b360476afbe9571adb4">ide_write</a></div><div class="ttdeci">int ide_write(uint32 linear, uint32 numsects, void *bufptr)</div><div class="ttdoc">Write sectors from the hard disk via PIO.</div></div>
 <div class="ttc" id="aide_8h_html_a465ca879ff85a1b648c54c3653e4da0a"><div class="ttname"><a href="ide_8h.html#a465ca879ff85a1b648c54c3653e4da0a">ide_init</a></div><div class="ttdeci">int ide_init(void)</div><div class="ttdoc">Initialize Navi IDE.</div></div>
 <div class="ttc" id="aide_8h_html_a82fbefe80e9c926b97ee79b062635451"><div class="ttname"><a href="ide_8h.html#a82fbefe80e9c926b97ee79b062635451">ide_num_sectors</a></div><div class="ttdeci">uint32 ide_num_sectors(void)</div><div class="ttdoc">Retrieve the number of sectors from the hard disk.</div></div>
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

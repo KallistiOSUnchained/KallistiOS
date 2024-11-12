@@ -1,0 +1,27 @@
+var group__fr__blocks =
+[
+    [ "FLASHROM_B1_DK_DNS", "group__fr__blocks.html#ga7233081edc99ecc8c15784e6071d3ea2", null ],
+    [ "FLASHROM_B1_DK_PPP1", "group__fr__blocks.html#gab36d026e857b28b31f4c6065174599fa", null ],
+    [ "FLASHROM_B1_DK_PPP2", "group__fr__blocks.html#ga74b4dec4807060f6e7b149f6a1d8978c", null ],
+    [ "FLASHROM_B1_EMAIL", "group__fr__blocks.html#ga739fcd1c5f73986dff04388051fc28bb", null ],
+    [ "FLASHROM_B1_IP_SETTINGS", "group__fr__blocks.html#gae288b9cbfb86194dada901ace14d98b9", null ],
+    [ "FLASHROM_B1_POP3", "group__fr__blocks.html#gaff0c87a15392be829663f0de7a37672b", null ],
+    [ "FLASHROM_B1_POP3LOGIN", "group__fr__blocks.html#ga767d9dc33a3c4592690e3b08ea2b1339", null ],
+    [ "FLASHROM_B1_POP3PASSWD", "group__fr__blocks.html#gaa46cf6320acd2a0bd25cea63b50ff23b", null ],
+    [ "FLASHROM_B1_PPPLOGIN", "group__fr__blocks.html#gab629126f7a122989b162c1d403b6ed77", null ],
+    [ "FLASHROM_B1_PPPMODEM", "group__fr__blocks.html#ga4d3ec54d187fa9476c115852a88a6820", null ],
+    [ "FLASHROM_B1_PPPPASSWD", "group__fr__blocks.html#gaa3907993b04a14a08fb07c76665cc0b5", null ],
+    [ "FLASHROM_B1_PW_DNS", "group__fr__blocks.html#gad822b017fe4c48e58f556c331c76fabe", null ],
+    [ "FLASHROM_B1_PW_EMAIL1", "group__fr__blocks.html#gabaace42b7aa6dbda46d6ae861e3e964a", null ],
+    [ "FLASHROM_B1_PW_EMAIL2", "group__fr__blocks.html#ga04b150846917ff764ee5dc3068cb49b3", null ],
+    [ "FLASHROM_B1_PW_EMAIL_PROXY", "group__fr__blocks.html#ga5b80d556d365fcce3170fe5010946e0c", null ],
+    [ "FLASHROM_B1_PW_PPP1", "group__fr__blocks.html#ga5ae6af7cdec1f8c4e05ec9ef9f5d4fdc", null ],
+    [ "FLASHROM_B1_PW_PPP2", "group__fr__blocks.html#gac51333e013878e9a03ef7bdc6ca79d65", null ],
+    [ "FLASHROM_B1_PW_SETTINGS_1", "group__fr__blocks.html#ga357e40fab428c5890a342292b825bd57", null ],
+    [ "FLASHROM_B1_PW_SETTINGS_2", "group__fr__blocks.html#ga6d62bdf80dbe4c002ee4d6017ddee2e0", null ],
+    [ "FLASHROM_B1_PW_SETTINGS_3", "group__fr__blocks.html#gaefaaaaa49b96c85b0e6966df6cc1ca8f", null ],
+    [ "FLASHROM_B1_PW_SETTINGS_4", "group__fr__blocks.html#ga14275b7fcc4123285e1bba746128d234", null ],
+    [ "FLASHROM_B1_PW_SETTINGS_5", "group__fr__blocks.html#ga7ffc0b5770f858b06a751cb2651c99e7", null ],
+    [ "FLASHROM_B1_SMTP", "group__fr__blocks.html#ga21224a381bad164cf7228ebb943928d2", null ],
+    [ "FLASHROM_B1_SYSCFG", "group__fr__blocks.html#ga5b2076e4a0eed233f3d3ab0424bc3d8a", null ]
+];

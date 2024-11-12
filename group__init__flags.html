@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -110,6 +110,9 @@ $(function(){initNavTree('group__init__flags.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kos__init__flags__dc.html">Dreamcast-Specific Flags</a></td></tr>
+<tr class="memdesc:group__kos__init__flags__dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast-specific initialization flags. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kos__initflags.html">Generic Flags</a></td></tr>
 <tr class="memdesc:group__kos__initflags"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic flags for use with <a class="el" href="#ga1f7ff64af7286347346602a6cefeee71" title="Exports and initializes the given KOS subsystems.">KOS_INIT_FLAGS()</a> <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +125,9 @@ Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="init__base_8h.html">init_base.h</a></td></tr>
 <tr class="memdesc:init__base_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared initialization macros and utilities. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="init__flags_8h.html">init_flags.h</a></td></tr>
+<tr class="memdesc:init__flags_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast-specific initialization-related flags and macros. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -131,6 +137,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ga4d84fa4d38fac55d75d80758c0da616c" id="r_ga4d84fa4d38fac55d75d80758c0da616c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4d84fa4d38fac55d75d80758c0da616c">KOS_INIT_EARLY</a>(func)&#160;&#160;&#160;void (*__kos_init_early_fn)(void) = (func)</td></tr>
 <tr class="memdesc:ga4d84fa4d38fac55d75d80758c0da616c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a single function to be called very early in the boot process, before the BSS section is cleared.  <br /></td></tr>
 <tr class="separator:ga4d84fa4d38fac55d75d80758c0da616c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb1d01a6ca479e8ba154c9e09266b50e" id="r_gadb1d01a6ca479e8ba154c9e09266b50e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadb1d01a6ca479e8ba154c9e09266b50e">KOS_INIT_FLAGS_ARCH</a>(flags)</td></tr>
+<tr class="memdesc:gadb1d01a6ca479e8ba154c9e09266b50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast-specific KOS_INIT Exports.  <br /></td></tr>
+<tr class="separator:gadb1d01a6ca479e8ba154c9e09266b50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>KOS Driver Subsystem and Component Initialization Flags </p>
@@ -184,6 +193,80 @@ Macros</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="gadb1d01a6ca479e8ba154c9e09266b50e" name="gadb1d01a6ca479e8ba154c9e09266b50e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb1d01a6ca479e8ba154c9e09266b50e">&#9670;&#160;</a></span>KOS_INIT_FLAGS_ARCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KOS_INIT_FLAGS_ARCH</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>flags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    KOS_INIT_FLAG_NONE(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga6708a410964985b03c671a3a3108dde3">INIT_NO_DCLOAD</a>, dcload_init); \</div>
+<div class="line">    KOS_INIT_FLAG_NONE(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga6708a410964985b03c671a3a3108dde3">INIT_NO_DCLOAD</a>, fs_dcload_init_console); \</div>
+<div class="line">    KOS_INIT_FLAG_NONE(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga6708a410964985b03c671a3a3108dde3">INIT_NO_DCLOAD</a>, fs_dcload_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG_NONE(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga6708a410964985b03c671a3a3108dde3">INIT_NO_DCLOAD</a>, arch_init_net_dcload_ip); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga6708a410964985b03c671a3a3108dde3">INIT_NO_DCLOAD</a>, arch_init_net_no_dcload); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga435a56c4afb310983e2268f6e0dc57ac">INIT_CDROM</a>, <a class="code hl_function" href="group__gdrom.html#ga6367ca8e204dcc252c23d0338a96b1d1">cdrom_init</a>); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga435a56c4afb310983e2268f6e0dc57ac">INIT_CDROM</a>, <a class="code hl_function" href="group__gdrom.html#gaad41c5cd1c898fb9bbaaf5f34e6290fe">cdrom_shutdown</a>); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga435a56c4afb310983e2268f6e0dc57ac">INIT_CDROM</a>, fs_iso9660_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga435a56c4afb310983e2268f6e0dc57ac">INIT_CDROM</a>, fs_iso9660_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga019345f3a7734140b5a0a07448bc07b9">INIT_CONTROLLER</a>, cont_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga019345f3a7734140b5a0a07448bc07b9">INIT_CONTROLLER</a>, cont_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga9be0380d7f830ea6d70ed291f52efc14">INIT_KEYBOARD</a>, kbd_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga9be0380d7f830ea6d70ed291f52efc14">INIT_KEYBOARD</a>, kbd_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gafd47cc5a49b0678c45bd25427161c313">INIT_MOUSE</a>, mouse_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gafd47cc5a49b0678c45bd25427161c313">INIT_MOUSE</a>, mouse_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga229171645b0ef81e6ab0b2379ed489da">INIT_LIGHTGUN</a>, lightgun_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga229171645b0ef81e6ab0b2379ed489da">INIT_LIGHTGUN</a>, lightgun_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga2a331fa1ec9e3a572b451a4f2e39a3a0">INIT_VMU</a>, vmu_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga2a331fa1ec9e3a572b451a4f2e39a3a0">INIT_VMU</a>, vmu_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga2a331fa1ec9e3a572b451a4f2e39a3a0">INIT_VMU</a>, vmu_fs_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga2a331fa1ec9e3a572b451a4f2e39a3a0">INIT_VMU</a>, vmu_fs_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gafe48628060cb3599935b92147696e604">INIT_PURUPURU</a>, purupuru_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gafe48628060cb3599935b92147696e604">INIT_PURUPURU</a>, purupuru_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga445cc27bb6164cd576911cc0f9f8447a">INIT_SIP</a>, sip_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#ga445cc27bb6164cd576911cc0f9f8447a">INIT_SIP</a>, sip_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gafe963eff8346fc2a8f989e6df0ec0bde">INIT_DREAMEYE</a>, dreameye_init); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gafe963eff8346fc2a8f989e6df0ec0bde">INIT_DREAMEYE</a>, dreameye_shutdown); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gac30e0a606da99c381a15c1b222602c21">INIT_MAPLE_ALL</a>, <a class="code hl_function" href="group__maple.html#ga4365b2fbc0d66f3fb1616815c82d1b79">maple_wait_scan</a>); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gac30e0a606da99c381a15c1b222602c21">INIT_MAPLE_ALL</a>, <a class="code hl_function" href="group__maple.html#ga735162b4e5881b11db61fd02b2cd04da">maple_init</a>); \</div>
+<div class="line">    KOS_INIT_FLAG(flags, <a class="code hl_define" href="group__kos__init__flags__dc.html#gac30e0a606da99c381a15c1b222602c21">INIT_MAPLE_ALL</a>, <a class="code hl_function" href="group__maple.html#ga53185290848409196fee63ca97f43e74">maple_shutdown</a>)</div>
+<div class="ttc" id="agroup__gdrom_html_ga6367ca8e204dcc252c23d0338a96b1d1"><div class="ttname"><a href="group__gdrom.html#ga6367ca8e204dcc252c23d0338a96b1d1">cdrom_init</a></div><div class="ttdeci">void cdrom_init(void)</div><div class="ttdoc">Initialize the GD-ROM for reading CDs.</div></div>
+<div class="ttc" id="agroup__gdrom_html_gaad41c5cd1c898fb9bbaaf5f34e6290fe"><div class="ttname"><a href="group__gdrom.html#gaad41c5cd1c898fb9bbaaf5f34e6290fe">cdrom_shutdown</a></div><div class="ttdeci">void cdrom_shutdown(void)</div><div class="ttdoc">Shutdown the CD reading system.</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_ga019345f3a7734140b5a0a07448bc07b9"><div class="ttname"><a href="group__kos__init__flags__dc.html#ga019345f3a7734140b5a0a07448bc07b9">INIT_CONTROLLER</a></div><div class="ttdeci">#define INIT_CONTROLLER</div><div class="ttdoc">Enable Controller maple driver.</div><div class="ttdef"><b>Definition</b> init_flags.h:93</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_ga229171645b0ef81e6ab0b2379ed489da"><div class="ttname"><a href="group__kos__init__flags__dc.html#ga229171645b0ef81e6ab0b2379ed489da">INIT_LIGHTGUN</a></div><div class="ttdeci">#define INIT_LIGHTGUN</div><div class="ttdoc">Enable Lightgun maple driver.</div><div class="ttdef"><b>Definition</b> init_flags.h:96</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_ga2a331fa1ec9e3a572b451a4f2e39a3a0"><div class="ttname"><a href="group__kos__init__flags__dc.html#ga2a331fa1ec9e3a572b451a4f2e39a3a0">INIT_VMU</a></div><div class="ttdeci">#define INIT_VMU</div><div class="ttdoc">Enable VMU maple driver.</div><div class="ttdef"><b>Definition</b> init_flags.h:97</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_ga435a56c4afb310983e2268f6e0dc57ac"><div class="ttname"><a href="group__kos__init__flags__dc.html#ga435a56c4afb310983e2268f6e0dc57ac">INIT_CDROM</a></div><div class="ttdeci">#define INIT_CDROM</div><div class="ttdoc">Enable CD-ROM support.</div><div class="ttdef"><b>Definition</b> init_flags.h:103</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_ga445cc27bb6164cd576911cc0f9f8447a"><div class="ttname"><a href="group__kos__init__flags__dc.html#ga445cc27bb6164cd576911cc0f9f8447a">INIT_SIP</a></div><div class="ttdeci">#define INIT_SIP</div><div class="ttdoc">Enable Sound input maple driver.</div><div class="ttdef"><b>Definition</b> init_flags.h:99</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_ga6708a410964985b03c671a3a3108dde3"><div class="ttname"><a href="group__kos__init__flags__dc.html#ga6708a410964985b03c671a3a3108dde3">INIT_NO_DCLOAD</a></div><div class="ttdeci">#define INIT_NO_DCLOAD</div><div class="ttdoc">Disable dcload.</div><div class="ttdef"><b>Definition</b> init_flags.h:106</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_ga9be0380d7f830ea6d70ed291f52efc14"><div class="ttname"><a href="group__kos__init__flags__dc.html#ga9be0380d7f830ea6d70ed291f52efc14">INIT_KEYBOARD</a></div><div class="ttdeci">#define INIT_KEYBOARD</div><div class="ttdoc">Enable Keyboard maple driver.</div><div class="ttdef"><b>Definition</b> init_flags.h:94</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_gac30e0a606da99c381a15c1b222602c21"><div class="ttname"><a href="group__kos__init__flags__dc.html#gac30e0a606da99c381a15c1b222602c21">INIT_MAPLE_ALL</a></div><div class="ttdeci">#define INIT_MAPLE_ALL</div><div class="ttdoc">Enable all Maple drivers.</div><div class="ttdef"><b>Definition</b> init_flags.h:101</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_gafd47cc5a49b0678c45bd25427161c313"><div class="ttname"><a href="group__kos__init__flags__dc.html#gafd47cc5a49b0678c45bd25427161c313">INIT_MOUSE</a></div><div class="ttdeci">#define INIT_MOUSE</div><div class="ttdoc">Enable Mouse maple driver.</div><div class="ttdef"><b>Definition</b> init_flags.h:95</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_gafe48628060cb3599935b92147696e604"><div class="ttname"><a href="group__kos__init__flags__dc.html#gafe48628060cb3599935b92147696e604">INIT_PURUPURU</a></div><div class="ttdeci">#define INIT_PURUPURU</div><div class="ttdoc">Enable Puru Puru maple driver.</div><div class="ttdef"><b>Definition</b> init_flags.h:98</div></div>
+<div class="ttc" id="agroup__kos__init__flags__dc_html_gafe963eff8346fc2a8f989e6df0ec0bde"><div class="ttname"><a href="group__kos__init__flags__dc.html#gafe963eff8346fc2a8f989e6df0ec0bde">INIT_DREAMEYE</a></div><div class="ttdeci">#define INIT_DREAMEYE</div><div class="ttdoc">Enable DreamEye maple driver.</div><div class="ttdef"><b>Definition</b> init_flags.h:100</div></div>
+<div class="ttc" id="agroup__maple_html_ga4365b2fbc0d66f3fb1616815c82d1b79"><div class="ttname"><a href="group__maple.html#ga4365b2fbc0d66f3fb1616815c82d1b79">maple_wait_scan</a></div><div class="ttdeci">void maple_wait_scan(void)</div><div class="ttdoc">Wait for the initial bus scan to complete.</div></div>
+<div class="ttc" id="agroup__maple_html_ga53185290848409196fee63ca97f43e74"><div class="ttname"><a href="group__maple.html#ga53185290848409196fee63ca97f43e74">maple_shutdown</a></div><div class="ttdeci">void maple_shutdown(void)</div><div class="ttdoc">Shutdown Maple.</div></div>
+<div class="ttc" id="agroup__maple_html_ga735162b4e5881b11db61fd02b2cd04da"><div class="ttname"><a href="group__maple.html#ga735162b4e5881b11db61fd02b2cd04da">maple_init</a></div><div class="ttdeci">void maple_init(void)</div><div class="ttdoc">Initialize Maple.</div></div>
+</div><!-- fragment -->
+<p>Dreamcast-specific KOS_INIT Exports. </p>
+<p>This macro contains a list of all of the possible DC-specific exported functions based on their associated initialization flags.</p>
+<dl class="section note"><dt>Note</dt><dd>This is not typically used directly and is instead included within the top-level architecture-independent <a class="el" href="#ga1f7ff64af7286347346602a6cefeee71" title="Exports and initializes the given KOS subsystems.">KOS_INIT_FLAGS()</a> macro.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flags</td><td>Parts of KOS to initialize.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga1f7ff64af7286347346602a6cefeee71" title="Exports and initializes the given KOS subsystems.">KOS_INIT_FLAGS()</a> </dd></dl>
 
 </div>
 </div>

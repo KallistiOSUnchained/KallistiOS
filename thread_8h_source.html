@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -143,7 +143,7 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &lt;<a class="code" href="cdefs_8h.html">kos/cdefs.h</a>&gt;</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;<a class="code" href="tls_8h.html">kos/tls.h</a>&gt;</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;arch/irq.h&gt;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;<a class="code" href="irq_8h.html">arch/irq.h</a>&gt;</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &lt;sys/queue.h&gt;</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &lt;sys/reent.h&gt;</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
@@ -275,7 +275,7 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00169" data-start="{" data-end="};">
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="structkthread__t.html">  169</a></span><span class="keyword">typedef</span> __attribute__((aligned(32))) struct kthread {<span class="comment"></span></div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment">    /** \brief  Register store -- used to save thread context. */</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="structkthread__t.html#a11ad2f445c3cc3dd0ffa1ee0a003bc28">  171</a></span>    irq_context_t <a class="code hl_variable" href="structkthread__t.html#a11ad2f445c3cc3dd0ffa1ee0a003bc28">context</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="structkthread__t.html#a11ad2f445c3cc3dd0ffa1ee0a003bc28">  171</a></span>    <a class="code hl_struct" href="structirq__context__t.html">irq_context_t</a> <a class="code hl_variable" href="structkthread__t.html#a11ad2f445c3cc3dd0ffa1ee0a003bc28">context</a>;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment"></span> </div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment">    /** \brief  Thread list handle. Not a function. */</span></div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="structkthread__t.html#ad1648f5220dcc957eb757495d65cc492">  174</a></span>    <a class="code hl_function" href="structkthread__t.html#ad1648f5220dcc957eb757495d65cc492">LIST_ENTRY</a>(kthread) t_list;</div>
@@ -287,13 +287,13 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="structkthread__t.html#a804036ac34c43be282f3d1dc4672c497">  180</a></span>    <a class="code hl_function" href="structkthread__t.html#a804036ac34c43be282f3d1dc4672c497">TAILQ_ENTRY</a>(kthread) timerq;</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment"></span> </div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment">    /** \brief  Kernel thread id. */</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="structkthread__t.html#a1e683af33bafb9b13eb2d9caf02b14d6">  183</a></span>    tid_t <a class="code hl_variable" href="structkthread__t.html#a1e683af33bafb9b13eb2d9caf02b14d6">tid</a>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="structkthread__t.html#a1e683af33bafb9b13eb2d9caf02b14d6">  183</a></span>    <a class="code hl_typedef" href="group__system__types.html#gadffe598a3ea01dc03e080c77ece14d65">tid_t</a> <a class="code hl_variable" href="structkthread__t.html#a1e683af33bafb9b13eb2d9caf02b14d6">tid</a>;</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment"></span> </div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">    /** \brief  Dynamic priority */</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="structkthread__t.html#a83313dc1ac814ea2ee625bc17d1a2398">  186</a></span>    prio_t <a class="code hl_variable" href="structkthread__t.html#a83313dc1ac814ea2ee625bc17d1a2398">prio</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="structkthread__t.html#a83313dc1ac814ea2ee625bc17d1a2398">  186</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga399ab71ffbe0a6db9d6981a7b4fbc44a">prio_t</a> <a class="code hl_variable" href="structkthread__t.html#a83313dc1ac814ea2ee625bc17d1a2398">prio</a>;</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment"></span> </div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">    /** \brief  Static priority: 0..PRIO_MAX (higher means lower priority). */</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="structkthread__t.html#af469ad26197341c798f37ae14bcb3bce">  189</a></span>    prio_t <a class="code hl_variable" href="structkthread__t.html#af469ad26197341c798f37ae14bcb3bce">real_prio</a>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="structkthread__t.html#af469ad26197341c798f37ae14bcb3bce">  189</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga399ab71ffbe0a6db9d6981a7b4fbc44a">prio_t</a> <a class="code hl_variable" href="structkthread__t.html#af469ad26197341c798f37ae14bcb3bce">real_prio</a>;</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment"></span> </div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">    /** \brief  Thread flags. */</span></div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="structkthread__t.html#a1fbc7e7bcf3a697a71104b250e375315">  192</a></span>    <a class="code hl_typedef" href="group__kthreads.html#gaa41caf9ffc4e969b9e6d1218b0f5b0a4">kthread_flags_t</a> <a class="code hl_variable" href="structkthread__t.html#a1fbc7e7bcf3a697a71104b250e375315">flags</a>;</div>
@@ -402,7 +402,7 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="structkthread__attr__t.html#a5555a458e013ac0c850eb77496572b3f">  293</a></span>    <span class="keywordtype">void</span> *<a class="code hl_variable" href="structkthread__attr__t.html#a5555a458e013ac0c850eb77496572b3f">stack_ptr</a>;</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment"></span> </div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment">    /** \brief  Set the thread&#39;s priority. */</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="structkthread__attr__t.html#a47162f30d72eff5ce941faf23c2f6f6e">  296</a></span>    prio_t <a class="code hl_variable" href="structkthread__attr__t.html#a47162f30d72eff5ce941faf23c2f6f6e">prio</a>;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="structkthread__attr__t.html#a47162f30d72eff5ce941faf23c2f6f6e">  296</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga399ab71ffbe0a6db9d6981a7b4fbc44a">prio_t</a> <a class="code hl_variable" href="structkthread__attr__t.html#a47162f30d72eff5ce941faf23c2f6f6e">prio</a>;</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="comment"></span> </div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">    /** \brief  Thread label. */</span></div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno"><a class="line" href="structkthread__attr__t.html#a5e1ff3766adbb331ec7b27dbe2b165c0">  299</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structkthread__attr__t.html#a5e1ff3766adbb331ec7b27dbe2b165c0">label</a>;</div>
@@ -443,7 +443,7 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="comment"></span> </div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="comment">    \return                 Whatever the unblocker deems necessary to return.</span></div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga47e84ffe7caf93ee355fb1b5c41e87d2">  334</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga47e84ffe7caf93ee355fb1b5c41e87d2">thd_block_now</a>(irq_context_t *mycxt);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga47e84ffe7caf93ee355fb1b5c41e87d2">  334</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga47e84ffe7caf93ee355fb1b5c41e87d2">thd_block_now</a>(<a class="code hl_struct" href="structirq__context__t.html">irq_context_t</a> *mycxt);</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="comment"></span> </div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="comment">/** \brief   Find a new thread to swap in.</span></div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="comment"></span> </div>
@@ -457,7 +457,7 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="comment"></span> </div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="comment">    \return                 The IRQ context of the thread selected.</span></div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga036601c3dfd9d079729a867f691c7251">  348</a></span>irq_context_t *<a class="code hl_function" href="group__kthreads.html#ga036601c3dfd9d079729a867f691c7251">thd_choose_new</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga036601c3dfd9d079729a867f691c7251">  348</a></span><a class="code hl_struct" href="structirq__context__t.html">irq_context_t</a> *<a class="code hl_function" href="group__kthreads.html#ga036601c3dfd9d079729a867f691c7251">thd_choose_new</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="comment"></span> </div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="comment">/** \brief       Given a thread ID, locates the thread structure.</span></div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="comment">    \relatesalso kthread_t</span></div>
@@ -466,7 +466,7 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="comment"></span> </div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="comment">    \return                 The thread on success, NULL on failure.</span></div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga972488281f7020676ad985cdd4d96ad9">  357</a></span><a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *<a class="code hl_function" href="group__kthreads.html#ga972488281f7020676ad985cdd4d96ad9">thd_by_tid</a>(tid_t tid);</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga972488281f7020676ad985cdd4d96ad9">  357</a></span><a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *<a class="code hl_function" href="group__kthreads.html#ga972488281f7020676ad985cdd4d96ad9">thd_by_tid</a>(<a class="code hl_typedef" href="group__system__types.html#gadffe598a3ea01dc03e080c77ece14d65">tid_t</a> tid);</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="comment"></span> </div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="comment">/** \brief       Enqueue a process in the runnable queue.</span></div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span><span class="comment">    \relatesalso kthread_t</span></div>
@@ -630,7 +630,7 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span><span class="comment">    \retval -1              thd is NULL.</span></div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span><span class="comment">    \retval -2              prio requested was out of range.</span></div>
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga763b92de76217ba97aa5f86b3b5791e3">  521</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga763b92de76217ba97aa5f86b3b5791e3">thd_set_prio</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd, prio_t prio);</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga763b92de76217ba97aa5f86b3b5791e3">  521</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga763b92de76217ba97aa5f86b3b5791e3">thd_set_prio</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd, <a class="code hl_typedef" href="group__system__types.html#ga399ab71ffbe0a6db9d6981a7b4fbc44a">prio_t</a> prio);</div>
 <div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span><span class="comment"></span> </div>
 <div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span><span class="comment">/** \brief       Retrieve the current thread&#39;s kthread struct.</span></div>
 <div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span><span class="comment">    \relatesalso kthread_t</span></div>
@@ -937,6 +937,10 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="agroup__system__macros_html_ga4e1585cb1b8a465a6a9a702d97bb4ad8"><div class="ttname"><a href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></div><div class="ttdeci">#define __deprecated</div><div class="ttdoc">Mark something as deprecated.</div><div class="ttdef"><b>Definition</b> cdefs.h:109</div></div>
 <div class="ttc" id="agroup__system__macros_html_ga5b6df4fe38493e14648842364a76075f"><div class="ttname"><a href="group__system__macros.html#ga5b6df4fe38493e14648842364a76075f">__noreturn</a></div><div class="ttdeci">#define __noreturn</div><div class="ttdoc">Identify a function that will never return.</div><div class="ttdef"><b>Definition</b> cdefs.h:45</div></div>
 <div class="ttc" id="agroup__system__namemgr_html_gab80a0420bc03daef28fa015e348715f4"><div class="ttname"><a href="group__system__namemgr.html#gab80a0420bc03daef28fa015e348715f4">LIST_HEAD</a></div><div class="ttdeci">typedef LIST_HEAD(nmmgr_list, nmmgr_handler) nmmgr_list_t</div><div class="ttdoc">Name handler list type.</div></div>
+<div class="ttc" id="agroup__system__types_html_ga399ab71ffbe0a6db9d6981a7b4fbc44a"><div class="ttname"><a href="group__system__types.html#ga399ab71ffbe0a6db9d6981a7b4fbc44a">prio_t</a></div><div class="ttdeci">handle_t prio_t</div><div class="ttdoc">Priority value type.</div><div class="ttdef"><b>Definition</b> types.h:86</div></div>
+<div class="ttc" id="agroup__system__types_html_gadffe598a3ea01dc03e080c77ece14d65"><div class="ttname"><a href="group__system__types.html#gadffe598a3ea01dc03e080c77ece14d65">tid_t</a></div><div class="ttdeci">handle_t tid_t</div><div class="ttdoc">Thread ID type.</div><div class="ttdef"><b>Definition</b> types.h:85</div></div>
+<div class="ttc" id="airq_8h_html"><div class="ttname"><a href="irq_8h.html">irq.h</a></div><div class="ttdoc">Interrupt and exception handling.</div></div>
+<div class="ttc" id="astructirq__context__t_html"><div class="ttname"><a href="structirq__context__t.html">irq_context_t</a></div><div class="ttdoc">Architecture-specific structure for holding the processor state.</div><div class="ttdef"><b>Definition</b> irq.h:86</div></div>
 <div class="ttc" id="astructkthread__attr__t_html"><div class="ttname"><a href="structkthread__attr__t.html">kthread_attr_t</a></div><div class="ttdoc">Thread creation attributes.</div><div class="ttdef"><b>Definition</b> thread.h:284</div></div>
 <div class="ttc" id="astructkthread__attr__t_html_a47162f30d72eff5ce941faf23c2f6f6e"><div class="ttname"><a href="structkthread__attr__t.html#a47162f30d72eff5ce941faf23c2f6f6e">kthread_attr_t::prio</a></div><div class="ttdeci">prio_t prio</div><div class="ttdoc">Set the thread's priority.</div><div class="ttdef"><b>Definition</b> thread.h:296</div></div>
 <div class="ttc" id="astructkthread__attr__t_html_a5555a458e013ac0c850eb77496572b3f"><div class="ttname"><a href="structkthread__attr__t.html#a5555a458e013ac0c850eb77496572b3f">kthread_attr_t::stack_ptr</a></div><div class="ttdeci">void * stack_ptr</div><div class="ttdoc">Pre-allocate a stack for the thread.</div><div class="ttdef"><b>Definition</b> thread.h:293</div></div>

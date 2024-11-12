@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -100,8 +100,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">KallistiOS </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a></p>
-<div align="center"> <h1 align="center"><b>KallistiOS (Unchained)</b></h1>
+<div class="textblock"><p><a class="anchor" id="md_README"></a></p><div align="center"> <img src="https://github.com/KallistiOSUnchained/KallistiOS/blob/master/doc/kos_logo.svg" alt="" style="pointer-events: none;" width="200" height="200" class="inline"/> </div> <div align="center"> <h1 align="center"><b>KallistiOS (Unchained)</b></h1>
 </div><div align="center"> </div><div align="center"> Independent SDK for the Sega Dreamcast <br  />
  <a href="https://kallistiosunchained.github.io/KallistiOS/"><b>Explore the docs »</b></a> </div><div align="center"> </div><h1><a class="anchor" id="autotoc_md4"></a>
 Goal</h1>
@@ -109,19 +108,19 @@ Goal</h1>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Overview</h1>
 <p>KallistiOS is a development library and operating system for the Sega Dreamcast game console, developed independently from Sega entirely by free software developers. Its flexible permissive license allows both homebrew and commercial use with little restrictions besides proper attribution. As a result, it powers most homebrew and commercial indie releases for the platform. Interfaces and drivers are included for a significant portion of the Dreamcast's hardware capabilities and accessories, including modifications created by hobbyists.</p>
-<p>KallistiOS offers a modern, programmer friendly environment for the vintage Dreamcast system. The distribution includes scripts for building and installing a cross-compiling toolchain using the latest GCC, Binutils, and Newlib. This allows for full support for C17 and C++20 standards and libraries, as well as various POSIX APIs. Preliminary support exists for C23, C++23, and Objective-C.</p>
+<p>KallistiOS offers a modern, programmer friendly environment for the vintage Dreamcast system. The distribution includes <a href="https://github.com/KallistiOSUnchained/KallistiOS/blob/master/utils/dc-chain/README.md">scripts for building and installing a cross-compiling toolchain</a> using the latest GCC, Binutils, and Newlib. This allows for full support for C17 and C++20 standards and libraries, as well as various POSIX APIs. Preliminary support exists for C23, C++23, and Objective-C.</p>
 <p>KallistiOS also features a package manager called <a href="https://github.com/KallistiOSUnchained/kos-ports">**_kos-ports_**</a> which gives developers the power to build and include a rich set of add-on libraries for various common audiovisual formats (jpg, png, mp3, ogg, mpeg), compression formats (libbz2, zlib), scripting languages (Lua, Tcl, MicroPython), gaming APIs (OpenGL, OpenAL, SDL), and many more.</p>
-<h3><a class="anchor" id="autotoc_md6"></a>
-Core Functionality</h3>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Core Functionality</h2>
 <ul>
-<li>Concurrency with Kernel Threads, C11 Threads, C++11 <code>std::thread</code>, POSIX threads</li>
+<li>Concurrency with Kernel Threads, C11 Threads, C++11 std::thread, POSIX threads</li>
 <li>Virtual Filesystem Abstraction</li>
 <li>IPv4/IPv6 Network Stack</li>
 <li>Dynamically Loaded Libraries and Modules</li>
 <li>GDB Debugger Support</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md7"></a>
-Dreamcast Hardware Support</h3>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Dreamcast Hardware Support</h2>
 <ul>
 <li>Optical Disc Drive</li>
 <li>Low-level 3D PowerVR Graphics</li>
@@ -135,8 +134,8 @@ Dreamcast Hardware Support</h3>
 <li>Performance Counters</li>
 <li>MMU Management</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md8"></a>
-Peripherals and Accessory Support</h3>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Peripherals and Accessory Support</h2>
 <ul>
 <li>Standard controllers, expanded controllers with additional buttons and dual analog sticks</li>
 <li>Arcade Sticks and Twin Sticks</li>
@@ -146,8 +145,8 @@ Peripherals and Accessory Support</h3>
 <li>RCA, S-video, RGB, and VGA output</li>
 <li>Serial-based SD card readers</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md9"></a>
-Hardware Modification Support</h3>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Hardware Modification Support</h2>
 <ul>
 <li>IDE hard drive, 32MB RAM upgrade, custom BIOS flashROMs</li>
 </ul>
@@ -156,7 +155,7 @@ Getting Started</h1>
 <p>A beginner's guide to development for the Sega Dreamcast along with detailed instructions for installing KOS and the required toolchains can be found on the <a href="https://github.com/KallistiOSUnchained/KallistiOS/wiki/Installation-Guide">Wiki</a>. Additional documentation can be found in the docs folder.</p>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Licensing</h1>
-<p>KallistiOS itself is licensed under the BSD-like <b>KOS License</b>. <b>Attribution is not optional</b>. Additionally, this distribution contains code licensed under various free software licenses. See LICENSE.md for more information on licensing, as well as <a href="doc/license/LICENSE.KOS">LICENSE.KOS</a> for the actual <b>KOS License</b> text.</p>
+<p>KallistiOS itself is licensed under the BSD-like <b>KOS License</b>. <b>Attribution is not optional</b>. Additionally, this distribution contains code licensed under various free software licenses. See <a href="https://github.com/KallistiOSUnchained/KallistiOS/blob/master/doc/license/LICENSE.KOS">LICENSE.md</a> for more information on licensing, as well as <a href="https://github.com/KallistiOSUnchained/KallistiOS/blob/master/doc/license/LICENSE.KOS">LICENSE.KOS</a> for the actual <b>KOS License</b> text.</p>
 <h1><a class="anchor" id="autotoc_md12"></a>
 Examples</h1>
 <p>Once you've set up the environment and are ready to begin developing, a good place to start learning is the examples directory, which provides demos for the various KOS APIs and for interacting with the Dreamcast's hardware. Examples include:</p><ul>

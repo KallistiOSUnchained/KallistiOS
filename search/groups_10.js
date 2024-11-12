@@ -1,12 +1,16 @@
 var searchData=
 [
-  ['section_20header_20flags_0',['Section Header Flags',['../group__elf__hdrflags.html',1,'']]],
-  ['section_20header_20types_1',['Section Header Types',['../group__elf__sections.html',1,'']]],
-  ['section_20indices_2',['Special Section Indices',['../group__elf__specsec.html',1,'']]],
-  ['sockets_3',['Sockets',['../group__vfs__sockets.html',1,'Sockets'],['../group__networking__sockets.html',1,'Sockets']]],
-  ['sources_4',['Sources',['../group__netcfg__srcs.html',1,'']]],
-  ['special_20section_20indices_5',['Special Section Indices',['../group__elf__specsec.html',1,'']]],
-  ['symbol_20binding_20types_6',['Symbol Binding Types',['../group__elf__binding.html',1,'']]],
-  ['symbol_20types_7',['Symbol Types',['../group__elf__symtype.html',1,'']]],
-  ['system_8',['System',['../group__system.html',1,'']]]
+  ['lan_20adapter_0',['LAN Adapter',['../group__lan__adapter.html',1,'']]],
+  ['language_20settings_1',['Language Settings',['../group__fr__langs.html',1,'']]],
+  ['lcd_20function_2',['LCD Function',['../group__maple__lcd.html',1,'']]],
+  ['leds_3',['LEDs',['../group__kbd__leds.html',1,'']]],
+  ['levels_4',['Levels',['../group__asic__irq__lv.html',1,'IRQ Levels'],['../group__dbglog__levels.html',1,'Log Levels']]],
+  ['libraries_5',['Libraries',['../group__system__libraries.html',1,'']]],
+  ['lightgun_6',['Lightgun',['../group__peripherals__lightgun.html',1,'']]],
+  ['lists_7',['Lists',['../group__pvr__lists.html',1,'Polygon Lists'],['../group__pvr__list__mgmt.html',1,'Polygon Lists']]],
+  ['lite_20options_8',['UDP-Lite Options',['../group__udplite__opts.html',1,'']]],
+  ['locations_9',['Locations',['../group__bba__regs__locs.html',1,'']]],
+  ['log_20levels_10',['Log Levels',['../group__dbglog__levels.html',1,'']]],
+  ['logging_11',['Logging',['../group__logging.html',1,'']]],
+  ['logical_20blocks_12',['Logical Blocks',['../group__fr__blocks.html',1,'']]]
 ];

@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -126,7 +126,7 @@ $(function(){initNavTree('bspline_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>__BEGIN_DECLS</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;dc/vector.h&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="kernel_2arch_2dreamcast_2include_2dc_2vector_8h.html">dc/vector.h</a>&gt;</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"></span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/** \brief  Calculate and set b-spline coefficients.</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span> </div>
@@ -142,7 +142,7 @@ $(function(){initNavTree('bspline_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    \param  pnt         The array of points used to calculate the b-spline</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">                        coefficients.</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="bspline_8h.html#a4fc0b8c9758c60aa691fe1b0d25ff056">   43</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="bspline_8h.html#a4fc0b8c9758c60aa691fe1b0d25ff056">bspline_coeff</a>(<span class="keyword">const</span> point_t *pnt);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="bspline_8h.html#a4fc0b8c9758c60aa691fe1b0d25ff056">   43</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="bspline_8h.html#a4fc0b8c9758c60aa691fe1b0d25ff056">bspline_coeff</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structvector__t.html">point_t</a> *pnt);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"></span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/** \brief  Generate the next point for the current set of coefficients.</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span> </div>
@@ -152,13 +152,15 @@ $(function(){initNavTree('bspline_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">    \param  t           The &quot;t&quot; value for the b-spline generation function.</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">    \param  p           Storage for the generated point.</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="bspline_8h.html#af5ed3ecd7f349b6fc5cb76e08e51dcad">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="bspline_8h.html#af5ed3ecd7f349b6fc5cb76e08e51dcad">bspline_get_point</a>(<span class="keywordtype">float</span> t, point_t *p);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="bspline_8h.html#af5ed3ecd7f349b6fc5cb76e08e51dcad">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="bspline_8h.html#af5ed3ecd7f349b6fc5cb76e08e51dcad">bspline_get_point</a>(<span class="keywordtype">float</span> t, <a class="code hl_struct" href="structvector__t.html">point_t</a> *p);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>__END_DECLS</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif  </span><span class="comment">/* __KOS_BSPLINE_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abspline_8h_html_a4fc0b8c9758c60aa691fe1b0d25ff056"><div class="ttname"><a href="bspline_8h.html#a4fc0b8c9758c60aa691fe1b0d25ff056">bspline_coeff</a></div><div class="ttdeci">void bspline_coeff(const point_t *pnt)</div><div class="ttdoc">Calculate and set b-spline coefficients.</div></div>
 <div class="ttc" id="abspline_8h_html_af5ed3ecd7f349b6fc5cb76e08e51dcad"><div class="ttname"><a href="bspline_8h.html#af5ed3ecd7f349b6fc5cb76e08e51dcad">bspline_get_point</a></div><div class="ttdeci">void bspline_get_point(float t, point_t *p)</div><div class="ttdoc">Generate the next point for the current set of coefficients.</div></div>
+<div class="ttc" id="akernel_2arch_2dreamcast_2include_2dc_2vector_8h_html"><div class="ttname"><a href="kernel_2arch_2dreamcast_2include_2dc_2vector_8h.html">vector.h</a></div><div class="ttdoc">Primitive matrix, vector, and point types.</div></div>
+<div class="ttc" id="astructvector__t_html"><div class="ttname"><a href="structvector__t.html">vector_t</a></div><div class="ttdoc">4-part vector type.</div><div class="ttdef"><b>Definition</b> vector.h:42</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

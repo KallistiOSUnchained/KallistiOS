@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -122,7 +122,7 @@ $(function(){initNavTree('md5_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>__BEGIN_DECLS</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;arch/types.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"></span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/** \brief  MD5 context.</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span> </div>
@@ -134,9 +134,9 @@ $(function(){initNavTree('md5_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structkos__md5__cxt__t.html">   33</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>kos_md5_cxt {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structkos__md5__cxt__t.html#a17ab647b1d25251a2d62491d3668fc8e">   34</a></span>    uint64 <a class="code hl_variable" href="structkos__md5__cxt__t.html#a17ab647b1d25251a2d62491d3668fc8e">size</a>;        <span class="comment">/**&lt; \brief Size of the data in buf. */</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structkos__md5__cxt__t.html#a9de7f62415ade838745d37345e174465">   35</a></span>    uint32 hash[4];     <span class="comment">/**&lt; \brief Intermediate hash value. */</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structkos__md5__cxt__t.html#a236d34ca7b1d6238ada3e0910c580049">   36</a></span>    uint8  buf[64];     <span class="comment">/**&lt; \brief Temporary storage of values to be hashed. */</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structkos__md5__cxt__t.html#a17ab647b1d25251a2d62491d3668fc8e">   34</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a> <a class="code hl_variable" href="structkos__md5__cxt__t.html#a17ab647b1d25251a2d62491d3668fc8e">size</a>;        <span class="comment">/**&lt; \brief Size of the data in buf. */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structkos__md5__cxt__t.html#a9de7f62415ade838745d37345e174465">   35</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> hash[4];     <span class="comment">/**&lt; \brief Intermediate hash value. */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structkos__md5__cxt__t.html#a236d34ca7b1d6238ada3e0910c580049">   36</a></span>    <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a>  buf[64];     <span class="comment">/**&lt; \brief Temporary storage of values to be hashed. */</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>} <a class="code hl_struct" href="structkos__md5__cxt__t.html">kos_md5_cxt_t</a>;</div>
 </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span> </div>
@@ -162,7 +162,7 @@ $(function(){initNavTree('md5_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    \param  input       The block of data to hash.</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">    \param  size        The number of bytes of input data passed in.</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="md5_8h.html#a60674b3fd7d4bcfaeb0d3ce8ee21e175">   61</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="md5_8h.html#a60674b3fd7d4bcfaeb0d3ce8ee21e175">kos_md5_hash_block</a>(<a class="code hl_struct" href="structkos__md5__cxt__t.html">kos_md5_cxt_t</a> *cxt, <span class="keyword">const</span> uint8 *input, uint32 size);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="md5_8h.html#a60674b3fd7d4bcfaeb0d3ce8ee21e175">   61</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="md5_8h.html#a60674b3fd7d4bcfaeb0d3ce8ee21e175">kos_md5_hash_block</a>(<a class="code hl_struct" href="structkos__md5__cxt__t.html">kos_md5_cxt_t</a> *cxt, <span class="keyword">const</span> <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *input, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> size);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/** \brief  Complete a MD5 hash.</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"></span> </div>
@@ -172,7 +172,7 @@ $(function(){initNavTree('md5_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    \param  cxt         The MD5 context to finalize.</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    \param  output      Where to store the final digest.</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="md5_8h.html#a8a0840f8cc655478554d9680be42ba7a">   71</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="md5_8h.html#a8a0840f8cc655478554d9680be42ba7a">kos_md5_finish</a>(<a class="code hl_struct" href="structkos__md5__cxt__t.html">kos_md5_cxt_t</a> *cxt, uint8 output[16]);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="md5_8h.html#a8a0840f8cc655478554d9680be42ba7a">   71</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="md5_8h.html#a8a0840f8cc655478554d9680be42ba7a">kos_md5_finish</a>(<a class="code hl_struct" href="structkos__md5__cxt__t.html">kos_md5_cxt_t</a> *cxt, <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> output[16]);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"></span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/** \brief  Compute the hash of a block of data with MD5.</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"></span> </div>
@@ -185,17 +185,21 @@ $(function(){initNavTree('md5_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">    \param  size        The number of bytes of input data passed in.</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">    \param  output      Where to store the final message digest.</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="md5_8h.html#aead497b1ba6e3d247e95828b98916c6e">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="md5_8h.html#aead497b1ba6e3d247e95828b98916c6e">kos_md5</a>(<span class="keyword">const</span> uint8 *input, uint32 size, uint8 output[16]);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="md5_8h.html#aead497b1ba6e3d247e95828b98916c6e">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="md5_8h.html#aead497b1ba6e3d247e95828b98916c6e">kos_md5</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *input, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> size, <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> output[16]);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>__END_DECLS</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif </span><span class="comment">/* !__KOS_MD5_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="agroup__system__types_html_ga29940ae63ec06c9998bba873e25407ad"><div class="ttname"><a href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a></div><div class="ttdeci">unsigned long long uint64</div><div class="ttdoc">64-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:32</div></div>
+<div class="ttc" id="agroup__system__types_html_ga4b435a49c74bb91f284f075e63416cb6"><div class="ttname"><a href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></div><div class="ttdeci">unsigned long uint32</div><div class="ttdoc">32-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:33</div></div>
+<div class="ttc" id="agroup__system__types_html_gadde6aaee8457bee49c2a92621fe22b79"><div class="ttname"><a href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a></div><div class="ttdeci">unsigned char uint8</div><div class="ttdoc">8-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:35</div></div>
 <div class="ttc" id="amd5_8h_html_a36efe0262ab24cf9c31574596c5bf2f8"><div class="ttname"><a href="md5_8h.html#a36efe0262ab24cf9c31574596c5bf2f8">kos_md5_start</a></div><div class="ttdeci">void kos_md5_start(kos_md5_cxt_t *cxt)</div><div class="ttdoc">Initialize a MD5 context.</div></div>
 <div class="ttc" id="amd5_8h_html_a60674b3fd7d4bcfaeb0d3ce8ee21e175"><div class="ttname"><a href="md5_8h.html#a60674b3fd7d4bcfaeb0d3ce8ee21e175">kos_md5_hash_block</a></div><div class="ttdeci">void kos_md5_hash_block(kos_md5_cxt_t *cxt, const uint8 *input, uint32 size)</div><div class="ttdoc">Hash a block of data with MD5.</div></div>
 <div class="ttc" id="amd5_8h_html_a8a0840f8cc655478554d9680be42ba7a"><div class="ttname"><a href="md5_8h.html#a8a0840f8cc655478554d9680be42ba7a">kos_md5_finish</a></div><div class="ttdeci">void kos_md5_finish(kos_md5_cxt_t *cxt, uint8 output[16])</div><div class="ttdoc">Complete a MD5 hash.</div></div>
 <div class="ttc" id="amd5_8h_html_aead497b1ba6e3d247e95828b98916c6e"><div class="ttname"><a href="md5_8h.html#aead497b1ba6e3d247e95828b98916c6e">kos_md5</a></div><div class="ttdeci">void kos_md5(const uint8 *input, uint32 size, uint8 output[16])</div><div class="ttdoc">Compute the hash of a block of data with MD5.</div></div>
 <div class="ttc" id="astructkos__md5__cxt__t_html"><div class="ttname"><a href="structkos__md5__cxt__t.html">kos_md5_cxt_t</a></div><div class="ttdoc">MD5 context.</div><div class="ttdef"><b>Definition</b> md5.h:33</div></div>
 <div class="ttc" id="astructkos__md5__cxt__t_html_a17ab647b1d25251a2d62491d3668fc8e"><div class="ttname"><a href="structkos__md5__cxt__t.html#a17ab647b1d25251a2d62491d3668fc8e">kos_md5_cxt_t::size</a></div><div class="ttdeci">uint64 size</div><div class="ttdoc">Size of the data in buf.</div><div class="ttdef"><b>Definition</b> md5.h:34</div></div>
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

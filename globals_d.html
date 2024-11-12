@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -112,6 +112,7 @@ $(function(){initNavTree('globals_d.html',''); initResizable(true); });
 <li>dbgio_dev_select()&#160;:&#160;<a class="el" href="group__logging.html#gae182f1c17f205b80995f5ed7eb0d77ca">dbgio.h</a></li>
 <li>dbgio_disable()&#160;:&#160;<a class="el" href="group__logging.html#gaa1f055ea31130f1d89ca8d0af8357465">dbgio.h</a></li>
 <li>dbgio_enable()&#160;:&#160;<a class="el" href="group__logging.html#ga9a124dc5848ac7b1022e1c4e332e5fee">dbgio.h</a></li>
+<li>dbgio_fb_set_target()&#160;:&#160;<a class="el" href="fb__console_8h.html#a24a55464b50bee5bdba6c7ea38d31e08">fb_console.h</a></li>
 <li>dbgio_flush()&#160;:&#160;<a class="el" href="group__logging.html#gaf0634dc5e4bcad9b19d5d362965ecf62">dbgio.h</a></li>
 <li>dbgio_init()&#160;:&#160;<a class="el" href="group__logging.html#ga2fff18c3a63cdbb2d465eca048025267">dbgio.h</a></li>
 <li>DBGIO_MODE_IRQ&#160;:&#160;<a class="el" href="group__logging.html#ga6f3263013a30c593646289663c8333e8">dbgio.h</a></li>
@@ -119,6 +120,7 @@ $(function(){initNavTree('globals_d.html',''); initResizable(true); });
 <li>dbgio_printf()&#160;:&#160;<a class="el" href="group__logging.html#ga6ee1221247b21aa4242a7cb18490b50f">dbgio.h</a></li>
 <li>dbgio_read()&#160;:&#160;<a class="el" href="group__logging.html#gabc22d93be08fc3d1e1eea03a51d7b8e7">dbgio.h</a></li>
 <li>dbgio_read_buffer()&#160;:&#160;<a class="el" href="group__logging.html#gac8a46c3d2c15fc53b822e9965267dcc5">dbgio.h</a></li>
+<li>dbgio_scif&#160;:&#160;<a class="el" href="group__system__scif.html#ga2c1cbd7d4d28769b8b822d036179fe17">scif.h</a></li>
 <li>dbgio_set_irq_usage()&#160;:&#160;<a class="el" href="group__logging.html#ga24be571e57ff21ef04648b04474fe7ab">dbgio.h</a></li>
 <li>dbgio_write()&#160;:&#160;<a class="el" href="group__logging.html#gafa22665d922a6575cef2e81213dec72e">dbgio.h</a></li>
 <li>dbgio_write_buffer()&#160;:&#160;<a class="el" href="group__logging.html#ga45965b83b5d7d68b28d6dd14069d0438">dbgio.h</a></li>
@@ -126,13 +128,84 @@ $(function(){initNavTree('globals_d.html',''); initResizable(true); });
 <li>dbgio_write_str()&#160;:&#160;<a class="el" href="group__logging.html#gabff72a3d9954b504e4717cf287dc437e">dbgio.h</a></li>
 <li>dbglog()&#160;:&#160;<a class="el" href="group__logging.html#ga5a8fc506ac2aa69a142658920bbeb956">dbglog.h</a></li>
 <li>dbglog_set_level()&#160;:&#160;<a class="el" href="group__logging.html#gacd4b9128abb6d4390e1692d0ac85fd0a">dbglog.h</a></li>
+<li>DBL_MEM&#160;:&#160;<a class="el" href="group__arch.html#ga4394a5304d7635437adcc7ed58262f2c">arch.h</a></li>
+<li>dcache_alloc_block()&#160;:&#160;<a class="el" href="group__system__cache.html#gaf791d626378a0c090ed6c0170cb215e0">cache.h</a></li>
+<li>dcache_flush_all()&#160;:&#160;<a class="el" href="group__system__cache.html#gacad9ac7bf6ef23d22432f9ba23cba2de">cache.h</a></li>
+<li>dcache_flush_range()&#160;:&#160;<a class="el" href="group__system__cache.html#gafcf6b2c67e1e4d99289cf967446e66a1">cache.h</a></li>
+<li>dcache_inval_range()&#160;:&#160;<a class="el" href="group__system__cache.html#ga2366627f3bd0e0370e6395b4791d801b">cache.h</a></li>
+<li>dcache_pref_block()&#160;:&#160;<a class="el" href="group__system__cache.html#ga3b9dc9550412ff6fe47016eab1059056">cache.h</a></li>
+<li>dcache_purge_all()&#160;:&#160;<a class="el" href="group__system__cache.html#ga26432bbe6ccfff21cdad81bc367eb1db">cache.h</a></li>
+<li>dcache_purge_all_with_buffer()&#160;:&#160;<a class="el" href="group__system__cache.html#gaeb6465f2e1b03d84847e320c80cb3098">cache.h</a></li>
+<li>dcache_purge_range()&#160;:&#160;<a class="el" href="group__system__cache.html#ga4e08215d6564dc06122e809bb2073cc3">cache.h</a></li>
+<li>dcache_wback_sq&#160;:&#160;<a class="el" href="group__system__cache.html#gab0e4bfd2c4c84423518de9dae6af4eda">cache.h</a></li>
+<li>dcload_type&#160;:&#160;<a class="el" href="group__vfs__dcload.html#gacbd2e9cc1a1a4a8b8bf9cfd66d8b09ef">fs_dcload.h</a></li>
+<li>DCLOAD_TYPE_IP&#160;:&#160;<a class="el" href="group__vfs__dcload.html#gaed2c27c8ba9d87333ca12b882c4cb91b">fs_dcload.h</a></li>
+<li>DCLOAD_TYPE_NONE&#160;:&#160;<a class="el" href="group__vfs__dcload.html#ga107e73395161f1b62f675d1b9733ad37">fs_dcload.h</a></li>
+<li>DCLOAD_TYPE_SER&#160;:&#160;<a class="el" href="group__vfs__dcload.html#ga89f594125f9ecc68b483ff2341c908a6">fs_dcload.h</a></li>
+<li>DCLOADMAGICADDR&#160;:&#160;<a class="el" href="group__vfs__dcload.html#gaae881ad5902cd3a2e738ae675ecea3f1">fs_dcload.h</a></li>
+<li>DCLOADMAGICVALUE&#160;:&#160;<a class="el" href="group__vfs__dcload.html#ga78198ba0d66d9c1b67aa22ffae9a1d01">fs_dcload.h</a></li>
 <li>DEFAULT_MMAP_MAX&#160;:&#160;<a class="el" href="group__system__allocator.html#gaa504a2885d7c047ebbeca1038808b308">malloc.h</a></li>
 <li>DEFAULT_MMAP_THRESHOLD&#160;:&#160;<a class="el" href="group__system__allocator.html#ga3d78f5f17cc66ad4b567a39a55bb4837">malloc.h</a></li>
 <li>DEFAULT_MXFAST&#160;:&#160;<a class="el" href="group__system__allocator.html#ga57e748e99a87633d6cdfee030d1b3867">malloc.h</a></li>
+<li>DEFAULT_PIXEL_MODE&#160;:&#160;<a class="el" href="group__arch.html#ga94dcee097aaa5a33b1fc211b01611fbb">arch.h</a></li>
+<li>DEFAULT_SERIAL_BAUD&#160;:&#160;<a class="el" href="group__arch.html#gaffcf2e02a44b0d07afa8f3e9524867d9">arch.h</a></li>
+<li>DEFAULT_SERIAL_FIFO&#160;:&#160;<a class="el" href="group__arch.html#ga20fd8467db50be211ddbd664e7ea8a60">arch.h</a></li>
 <li>DEFAULT_TOP_PAD&#160;:&#160;<a class="el" href="group__system__allocator.html#gaad87bcebd13178ed16c83658db630a26">malloc.h</a></li>
 <li>DEFAULT_TRIM_THRESHOLD&#160;:&#160;<a class="el" href="group__system__allocator.html#gaed027da2fe85e7618851151184d04f49">malloc.h</a></li>
+<li>DEFAULT_VID_MODE&#160;:&#160;<a class="el" href="group__arch.html#ga3e6c376b80d310d29676748f17bc8f57">arch.h</a></li>
 <li>dirfd()&#160;:&#160;<a class="el" href="group__vfs__posix.html#ga88e02eca947a61dd1c89bccc3601a4bc">dirent.h</a></li>
 <li>dirname()&#160;:&#160;<a class="el" href="group__vfs__posix.html#gaa220f13787fd366f45e2766626f982b2">libgen.h</a></li>
+<li>DM_256x256&#160;:&#160;<a class="el" href="group__video__modes__display.html#gga255fc832348678e84891b7a8e0843817af45be1aaed71ed93e30903c013ae4ec1">video.h</a></li>
+<li>DM_256x256_PAL_IL&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a37517ef466882b1967fc61823b5d9a9d">video.h</a></li>
+<li>DM_320x240&#160;:&#160;<a class="el" href="group__video__modes__display.html#gga255fc832348678e84891b7a8e0843817a8415fb0ac2d98f9650a0ab0653841cc1">video.h</a></li>
+<li>DM_320x240_NTSC&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a370a31e6bf7b0af94ec2c62c37dba17c">video.h</a></li>
+<li>DM_320x240_PAL&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a44d2a5707f826e1eae01a5d9b8ad8cde">video.h</a></li>
+<li>DM_320x240_VGA&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21afaed40ea390823b3162b8880ef45f381">video.h</a></li>
+<li>DM_640x480&#160;:&#160;<a class="el" href="group__video__modes__display.html#gga255fc832348678e84891b7a8e0843817a432742054165350684f7366e2c4d6281">video.h</a></li>
+<li>DM_640x480_NTSC_IL&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a1be1d95ae8a1468a88b1b40353e2ed13">video.h</a></li>
+<li>DM_640x480_PAL_IL&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a6eebf0036865f83d30d04c40599d995a">video.h</a></li>
+<li>DM_640x480_VGA&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a35f1a5e59218462f29a67809f7a32024">video.h</a></li>
+<li>DM_768x480&#160;:&#160;<a class="el" href="group__video__modes__display.html#gga255fc832348678e84891b7a8e0843817ae13f36d182499f8aa13a6cf63a2677cd">video.h</a></li>
+<li>DM_768x480_NTSC_IL&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a8308fdac8483fd801c282730fe54555b">video.h</a></li>
+<li>DM_768x480_PAL_IL&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a55087db4e9fe1d53e70ecbbde055e303">video.h</a></li>
+<li>DM_768x576&#160;:&#160;<a class="el" href="group__video__modes__display.html#gga255fc832348678e84891b7a8e0843817a50cb0d344f756e776985ae1a58ee8fa2">video.h</a></li>
+<li>DM_768x576_PAL_IL&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a3e91ed1173c24203bfb46487599950f6">video.h</a></li>
+<li>DM_GENERIC_FIRST&#160;:&#160;<a class="el" href="group__video__modes__display.html#gga255fc832348678e84891b7a8e0843817a369904eee8e943923f76dbfcf331a7c2">video.h</a></li>
+<li>DM_GENERIC_LAST&#160;:&#160;<a class="el" href="group__video__modes__display.html#gga255fc832348678e84891b7a8e0843817a328495a129c1a866a9cac001aa126840">video.h</a></li>
+<li>DM_INVALID&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a7c1fcc9b345992c358e393ddc2a582a8">video.h</a></li>
+<li>DM_MODE_COUNT&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a7c72cc440fb99006928c08ada8ab5d0d">video.h</a></li>
+<li>DM_MULTIBUFFER&#160;:&#160;<a class="el" href="group__video__modes__display.html#ga3e549affeddfe42d4f6a94c5dc97804f">video.h</a></li>
+<li>DM_SENTINEL&#160;:&#160;<a class="el" href="group__video__modes__display.html#ggaf5486e79753fec13f4469d634a937a21a26ba2e2e2bc382e3a65e2ac890cedad7">video.h</a></li>
+<li>DMAC_BASE&#160;:&#160;<a class="el" href="group__system__dmac.html#ga8064c4f3d53dd221f4c579350ac73e0c">dmac.h</a></li>
+<li>DMAC_CHCR0&#160;:&#160;<a class="el" href="group__system__dmac.html#ga4c1170f7f94e622c22c0bba2c26a2b07">dmac.h</a></li>
+<li>DMAC_CHCR1&#160;:&#160;<a class="el" href="group__system__dmac.html#gab50371911000dfe3bfa97cf5c424ae81">dmac.h</a></li>
+<li>DMAC_CHCR2&#160;:&#160;<a class="el" href="group__system__dmac.html#ga2341db43709365806e9548b90e8aa515">dmac.h</a></li>
+<li>DMAC_CHCR3&#160;:&#160;<a class="el" href="group__system__dmac.html#gafb447c12d4b9eb4dd36c48599366443b">dmac.h</a></li>
+<li>DMAC_DAR0&#160;:&#160;<a class="el" href="group__system__dmac.html#ga6211b4f63bdd09c74b3295e9b1da60f6">dmac.h</a></li>
+<li>DMAC_DAR1&#160;:&#160;<a class="el" href="group__system__dmac.html#ga8c28d49d6dab72d918b39ed03de84efe">dmac.h</a></li>
+<li>DMAC_DAR2&#160;:&#160;<a class="el" href="group__system__dmac.html#ga07b681a5f02017020cfecff7c01020fc">dmac.h</a></li>
+<li>DMAC_DAR3&#160;:&#160;<a class="el" href="group__system__dmac.html#ga15fb094593ab612b0666cbf485b16ae0">dmac.h</a></li>
+<li>DMAC_DMAOR&#160;:&#160;<a class="el" href="group__system__dmac.html#ga3ee41b2252405cbee5fc5920a3e6cf82">dmac.h</a></li>
+<li>DMAC_DMATCR0&#160;:&#160;<a class="el" href="group__system__dmac.html#ga64919d17edf8825ea3216eeca64801e4">dmac.h</a></li>
+<li>DMAC_DMATCR1&#160;:&#160;<a class="el" href="group__system__dmac.html#ga8ca11a183f31f59251914c37e958e132">dmac.h</a></li>
+<li>DMAC_DMATCR2&#160;:&#160;<a class="el" href="group__system__dmac.html#ga1bf8e3fb1306eefb69fcc5a894c8ec43">dmac.h</a></li>
+<li>DMAC_DMATCR3&#160;:&#160;<a class="el" href="group__system__dmac.html#ga75b954fdba83bbc90c6b3e2bef5bef7f">dmac.h</a></li>
+<li>DMAC_SAR0&#160;:&#160;<a class="el" href="group__system__dmac.html#ga4c11d8c48e5a974a8559d297f624bdcb">dmac.h</a></li>
+<li>DMAC_SAR1&#160;:&#160;<a class="el" href="group__system__dmac.html#ga14aaf77294763fc56f4afa5faf59785a">dmac.h</a></li>
+<li>DMAC_SAR2&#160;:&#160;<a class="el" href="group__system__dmac.html#ga221a0ecc958d742ad0dd25aea71750ce">dmac.h</a></li>
+<li>DMAC_SAR3&#160;:&#160;<a class="el" href="group__system__dmac.html#ga339005173defbd55d40bf9485324b7a4">dmac.h</a></li>
+<li>DMAOR_NORMAL_OPERATION&#160;:&#160;<a class="el" href="group__system__dmac.html#ga6361a41faa5b5f782163bfcd2750cd0a">dmac.h</a></li>
+<li>DMAOR_STATUS_MASK&#160;:&#160;<a class="el" href="group__system__dmac.html#ga01b55d14989e235c5c8d719b55bf21d3">dmac.h</a></li>
+<li>dreameye_erase_image()&#160;:&#160;<a class="el" href="group__peripherals__camera.html#ga8a39a4bb37c0c8a1eab866ceb9179a92">dreameye.h</a></li>
+<li>dreameye_get_image()&#160;:&#160;<a class="el" href="group__peripherals__camera.html#ga73589926382f8739fdc005d93f11d580">dreameye.h</a></li>
+<li>dreameye_get_image_count()&#160;:&#160;<a class="el" href="group__peripherals__camera.html#ga9a340e36fff0060b88e2c246976f70d4">dreameye.h</a></li>
+<li>DREAMEYE_GETCOND_NUM_IMAGES&#160;:&#160;<a class="el" href="group__peripherals__camera.html#gaabf8a534a4fc38d6c43d65a82ef792d4">dreameye.h</a></li>
+<li>DREAMEYE_GETCOND_TRANSFER_COUNT&#160;:&#160;<a class="el" href="group__peripherals__camera.html#ga9664ce4e5e996285f65d0b271e797ac0">dreameye.h</a></li>
+<li>DREAMEYE_IMAGEREQ_CONTINUE&#160;:&#160;<a class="el" href="group__peripherals__camera.html#ga710414eb5fe7d262ca12bd93714cf8d8">dreameye.h</a></li>
+<li>DREAMEYE_IMAGEREQ_START&#160;:&#160;<a class="el" href="group__peripherals__camera.html#ga3c543f5d91a20fa58fcd3b0782cbdbcd">dreameye.h</a></li>
+<li>DREAMEYE_SUBCOMMAND_ERASE&#160;:&#160;<a class="el" href="group__peripherals__camera.html#ga8b990116bbac2dcef751681893058a81">dreameye.h</a></li>
+<li>DREAMEYE_SUBCOMMAND_ERROR&#160;:&#160;<a class="el" href="group__peripherals__camera.html#ga583aa78f378ca4eb3636d3d086f2c7ac">dreameye.h</a></li>
+<li>DREAMEYE_SUBCOMMAND_IMAGEREQ&#160;:&#160;<a class="el" href="group__peripherals__camera.html#gadc029e65c5a4f00199f69d8622a99d44">dreameye.h</a></li>
 <li>DT_BLK&#160;:&#160;<a class="el" href="group__vfs__posix.html#ga212cebbaad682bc6c3bf798c8749abc5">dirent.h</a></li>
 <li>DT_CHR&#160;:&#160;<a class="el" href="group__vfs__posix.html#ga7d0095c3caf2c334bf222608d02576d7">dirent.h</a></li>
 <li>DT_DIR&#160;:&#160;<a class="el" href="group__vfs__posix.html#ga1dcee67486bc4238096ecb61e2d9ffd1">dirent.h</a></li>

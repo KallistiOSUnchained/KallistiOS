@@ -1,21 +1,10 @@
 var searchData=
 [
-  ['pcx_5fload_5fflat_0',['pcx_load_flat',['../pcx_8h.html#a16832c810a983c3ea8cedacb7c122320',1,'pcx.h']]],
-  ['pcx_5fload_5fpalette_1',['pcx_load_palette',['../pcx_8h.html#aacdbca4b1c0fa1170821612f565f22d2',1,'pcx.h']]],
-  ['poll_2',['poll',['../group__threading__polling.html#gab7fc0f6be5f13c81de180c1288ba3b6f',1,'poll.h']]],
-  ['posix_5fmemalign_3',['posix_memalign',['../stdlib_8h.html#aed1e9c27ea92f5ae3a480059bf45c311',1,'stdlib.h']]],
-  ['ppp_5fadd_5fprotocol_4',['ppp_add_protocol',['../group__networking__ppp.html#gafb38c6a2878f2d073dbbac6c28aca41c',1,'ppp.h']]],
-  ['ppp_5fconnect_5',['ppp_connect',['../group__networking__ppp.html#ga48e726f48244416e365dcf047b09740f',1,'ppp.h']]],
-  ['ppp_5fdel_5fprotocol_6',['ppp_del_protocol',['../group__networking__ppp.html#ga6e5ebd7b67f8c9dc2010bc5f80094042',1,'ppp.h']]],
-  ['ppp_5fget_5fflags_7',['ppp_get_flags',['../group__networking__ppp.html#gab8ba11cf006022474b5a3fc06e89e292',1,'ppp.h']]],
-  ['ppp_5fget_5fpeer_5fflags_8',['ppp_get_peer_flags',['../group__networking__ppp.html#ga36fb371ea1bc327066686f52a503b4f0',1,'ppp.h']]],
-  ['ppp_5finit_9',['ppp_init',['../group__networking__ppp.html#gaa34e41d613806fc74222db16dbc4085a',1,'ppp.h']]],
-  ['ppp_5flcp_5fsend_5fproto_5freject_10',['ppp_lcp_send_proto_reject',['../group__networking__ppp.html#ga17d606df5733d227527e28436e2e58e9',1,'ppp.h']]],
-  ['ppp_5fmodem_5finit_11',['ppp_modem_init',['../group__networking__ppp.html#gaf4ef090beb9c45730c7961f58fde92a0',1,'ppp.h']]],
-  ['ppp_5fscif_5finit_12',['ppp_scif_init',['../group__networking__ppp.html#gac818f38b84cd9dbe24337a76ece3b030',1,'ppp.h']]],
-  ['ppp_5fsend_13',['ppp_send',['../group__networking__ppp.html#gab80eda92ad0e66d93e8b4163dba412e3',1,'ppp.h']]],
-  ['ppp_5fset_5fdevice_14',['ppp_set_device',['../group__networking__ppp.html#gac88eea4a32d728ada2afac752346a486',1,'ppp.h']]],
-  ['ppp_5fset_5fflags_15',['ppp_set_flags',['../group__networking__ppp.html#ga897a95281873f990471393d16ba080fc',1,'ppp.h']]],
-  ['ppp_5fset_5flogin_16',['ppp_set_login',['../group__networking__ppp.html#ga83ddd507770f8bd12ff26e8199c9348d',1,'ppp.h']]],
-  ['ppp_5fshutdown_17',['ppp_shutdown',['../group__networking__ppp.html#ga9ea4f82a5c3591b65d756af271a3b513',1,'ppp.h']]]
+  ['oneshot_5ftimer_5fcreate_0',['oneshot_timer_create',['../structoneshot__timer__t.html#aaa3c5c09a31c2a656b59e692679fe775',1,'oneshot_timer_t::oneshot_timer_create()'],['../oneshot__timer_8h.html#aaa3c5c09a31c2a656b59e692679fe775',1,'oneshot_timer_create():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5fdestroy_1',['oneshot_timer_destroy',['../structoneshot__timer__t.html#a3f09a3fb78ee5acbc972410da4d66e47',1,'oneshot_timer_t::oneshot_timer_destroy()'],['../oneshot__timer_8h.html#a3f09a3fb78ee5acbc972410da4d66e47',1,'oneshot_timer_destroy():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5freset_2',['oneshot_timer_reset',['../structoneshot__timer__t.html#ab12a95089ad8015d52c8926c857e001a',1,'oneshot_timer_t::oneshot_timer_reset()'],['../oneshot__timer_8h.html#ab12a95089ad8015d52c8926c857e001a',1,'oneshot_timer_reset():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5fsetup_3',['oneshot_timer_setup',['../structoneshot__timer__t.html#a49648f1596d40de6f46771de14d8c3cb',1,'oneshot_timer_t::oneshot_timer_setup()'],['../oneshot__timer_8h.html#a49648f1596d40de6f46771de14d8c3cb',1,'oneshot_timer_setup():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5fstart_4',['oneshot_timer_start',['../structoneshot__timer__t.html#a43a952b517086a60c5c7ddea7281e4dc',1,'oneshot_timer_t::oneshot_timer_start()'],['../oneshot__timer_8h.html#a43a952b517086a60c5c7ddea7281e4dc',1,'oneshot_timer_start():&#160;oneshot_timer.h']]],
+  ['oneshot_5ftimer_5fstop_5',['oneshot_timer_stop',['../structoneshot__timer__t.html#a235d716435fff07018861134de6c6666',1,'oneshot_timer_t::oneshot_timer_stop()'],['../oneshot__timer_8h.html#a235d716435fff07018861134de6c6666',1,'oneshot_timer_stop(oneshot_timer_t *timer):&#160;oneshot_timer.h']]],
+  ['opendir_6',['opendir',['../group__vfs__posix.html#ga4fcc7ee570eeaee1fe6264604b91257f',1,'dirent.h']]]
 ];

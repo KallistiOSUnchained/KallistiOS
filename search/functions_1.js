@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['basename_0',['basename',['../group__vfs__posix.html#ga79e1e7bdc4ab98aaa8347b172a07fe45',1,'libgen.h']]],
-  ['bind_1',['bind',['../group__networking__sockets.html#ga55b3c1572b4e86ca0702ecdeb7e43997',1,'socket.h']]],
-  ['bspline_5fcoeff_2',['bspline_coeff',['../bspline_8h.html#a4fc0b8c9758c60aa691fe1b0d25ff056',1,'bspline.h']]],
-  ['bspline_5fget_5fpoint_3',['bspline_get_point',['../bspline_8h.html#af5ed3ecd7f349b6fc5cb76e08e51dcad',1,'bspline.h']]]
+  ['accept_0',['accept',['../group__networking__sockets.html#ga29c331fb36d757d993032ef83371c4e9',1,'socket.h']]],
+  ['aligned_5falloc_1',['aligned_alloc',['../group__system__allocator.html#ga8006724372b77924155bd8618fe57516',1,'malloc.h']]],
+  ['alphasort_2',['alphasort',['../group__vfs__posix.html#ga8a52fd9a3ded793b8200ac0a5a1f10d2',1,'dirent.h']]],
+  ['arch_5fabort_3',['arch_abort',['../group__arch.html#gab6c7f1b9825d2d653566fd6d58b8afb7',1,'arch.h']]],
+  ['arch_5fexec_4',['arch_exec',['../group__system__overlays.html#ga17a56f5335251833282c4114c7a39caf',1,'exec.h']]],
+  ['arch_5fexec_5fat_5',['arch_exec_at',['../group__system__overlays.html#gae00eb87863d6b8ad8cec1336a8e54e62',1,'exec.h']]],
+  ['arch_5fexit_6',['arch_exit',['../group__arch.html#gaa4e8f4af02fd811075795d898d12575e',1,'arch.h']]],
+  ['arch_5fmain_7',['arch_main',['../group__arch.html#ga605eef4d548a1210672f7a10440c255d',1,'arch.h']]],
+  ['arch_5fmenu_8',['arch_menu',['../group__arch.html#gadbeb8945a2041c718d546936a5d81d24',1,'arch.h']]],
+  ['arch_5fpanic_9',['arch_panic',['../group__arch.html#gae12ad4bb7caeac1aa648e0d21e7f5e0e',1,'arch.h']]],
+  ['arch_5freal_5fexit_10',['arch_real_exit',['../group__arch.html#ga2e2beb1da64d34f454fc42bb60cba5c1',1,'arch.h']]],
+  ['arch_5freboot_11',['arch_reboot',['../group__arch.html#ga2c1948b7e8f4d0e131bca327d4d47add',1,'arch.h']]],
+  ['arch_5freturn_12',['arch_return',['../group__arch.html#ga115e6c2fa4e9e24664052a6cb515de50',1,'arch.h']]],
+  ['arch_5fset_5fexit_5fpath_13',['arch_set_exit_path',['../group__arch.html#ga9a3989160baf3c6e49ec658038f59687',1,'arch.h']]],
+  ['arch_5fstk_5ftrace_14',['arch_stk_trace',['../group__debugging__stacktrace.html#gab8486ac6b1a02cf59d336b0d8e46ed49',1,'stack.h']]],
+  ['arch_5fstk_5ftrace_5fat_15',['arch_stk_trace_at',['../group__debugging__stacktrace.html#ga1ea5a63e6fe45154f54163fa423d8eb1',1,'stack.h']]],
+  ['asic_5fevt_5fdisable_16',['asic_evt_disable',['../group__asic.html#ga88b8918d8afd42d2f11d6e0852fb52e7',1,'asic.h']]],
+  ['asic_5fevt_5fdisable_5fall_17',['asic_evt_disable_all',['../group__asic.html#gae7ae03c5b5d351cb2be26c0a2036babe',1,'asic.h']]],
+  ['asic_5fevt_5fenable_18',['asic_evt_enable',['../group__asic.html#ga167d3ce7ed4084751c8a471b42e13391',1,'asic.h']]],
+  ['asic_5fevt_5fremove_5fhandler_19',['asic_evt_remove_handler',['../group__asic.html#gaf98ca039f41cf0b05d88a93fa472a14f',1,'asic.h']]],
+  ['asic_5fevt_5frequest_5fthreaded_5fhandler_20',['asic_evt_request_threaded_handler',['../group__asic.html#gaa47ebc5b3b3a9605a6ed9e6bfd6b479f',1,'asic.h']]],
+  ['asic_5fevt_5fset_5fhandler_21',['asic_evt_set_handler',['../group__asic.html#gad2b0347aa26ec0ff6dbb1408e7ae948a',1,'asic.h']]],
+  ['assert_5fset_5fhandler_22',['assert_set_handler',['../group__assertions.html#gaefd92b648fa5be204e0bf7b667abce33',1,'assert.h']]]
 ];

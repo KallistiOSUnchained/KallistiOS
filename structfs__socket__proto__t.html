@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -153,7 +153,7 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a3e73df79ee8c7a73f6044bedc65e3c76" id="r_a3e73df79ee8c7a73f6044bedc65e3c76"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e73df79ee8c7a73f6044bedc65e3c76">shutdownsock</a> )(<a class="el" href="structnet__socket__t.html">net_socket_t</a> *s, int how)</td></tr>
 <tr class="memdesc:a3e73df79ee8c7a73f6044bedc65e3c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shut down a socket created with the protocol.  <br /></td></tr>
 <tr class="separator:a3e73df79ee8c7a73f6044bedc65e3c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af788d1f922e3275de70329c3eb3140d7" id="r_af788d1f922e3275de70329c3eb3140d7"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af788d1f922e3275de70329c3eb3140d7">input</a> )(<a class="el" href="structnetif__t.html">netif_t</a> *src, int <a class="el" href="#a9d4a04c90c376a04e9cdb6e98e1d780c">domain</a>, const void *hdr, const uint8 *data, size_t size)</td></tr>
+<tr class="memitem:af788d1f922e3275de70329c3eb3140d7" id="r_af788d1f922e3275de70329c3eb3140d7"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af788d1f922e3275de70329c3eb3140d7">input</a> )(<a class="el" href="structnetif__t.html">netif_t</a> *src, int <a class="el" href="#a9d4a04c90c376a04e9cdb6e98e1d780c">domain</a>, const void *hdr, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, size_t size)</td></tr>
 <tr class="memdesc:af788d1f922e3275de70329c3eb3140d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input a packet into a protocol.  <br /></td></tr>
 <tr class="separator:af788d1f922e3275de70329c3eb3140d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c94550ad6d816d0e59a6b61cb2da174" id="r_a1c94550ad6d816d0e59a6b61cb2da174"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c94550ad6d816d0e59a6b61cb2da174">getsockopt</a> )(<a class="el" href="structnet__socket__t.html">net_socket_t</a> *s, int level, int option_name, void *option_value, <a class="el" href="group__networking__sockets.html#ga6e552de056211b018389ac6122675fb0">socklen_t</a> *option_len)</td></tr>
@@ -469,7 +469,7 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* fs_socket_proto_t::input) (<a class="el" href="structnetif__t.html">netif_t</a> *src, int <a class="el" href="#a9d4a04c90c376a04e9cdb6e98e1d780c">domain</a>, const void *hdr, const uint8 *data, size_t size)</td>
+          <td class="memname">int(* fs_socket_proto_t::input) (<a class="el" href="structnetif__t.html">netif_t</a> *src, int <a class="el" href="#a9d4a04c90c376a04e9cdb6e98e1d780c">domain</a>, const void *hdr, const <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, size_t size)</td>
         </tr>
       </table>
 </div><div class="memdoc">

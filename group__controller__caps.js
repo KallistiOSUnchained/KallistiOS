@@ -1,0 +1,25 @@
+var group__controller__caps =
+[
+    [ "CONT_CAPABILITY_A", "group__controller__caps.html#ga4a54ad06cf161264f33ef4f08a44975a", null ],
+    [ "CONT_CAPABILITY_ANALOG2_X", "group__controller__caps.html#ga150b1c7b102081c9d454a1c67e718ad0", null ],
+    [ "CONT_CAPABILITY_ANALOG2_Y", "group__controller__caps.html#gacc32a96d0efd9b477535d947f8aa6d54", null ],
+    [ "CONT_CAPABILITY_ANALOG_X", "group__controller__caps.html#gaf706bc841e5b8bef9712b0870a9faf06", null ],
+    [ "CONT_CAPABILITY_ANALOG_Y", "group__controller__caps.html#ga0ce915695650074e3130ed6cfeb9f0cf", null ],
+    [ "CONT_CAPABILITY_B", "group__controller__caps.html#ga353bda84142b5fa7f88c983b88ee8b77", null ],
+    [ "CONT_CAPABILITY_C", "group__controller__caps.html#ga3dce26afb56ed398215edbb924a0703a", null ],
+    [ "CONT_CAPABILITY_D", "group__controller__caps.html#ga44e466f201830e486a5ab69f9d5b003a", null ],
+    [ "CONT_CAPABILITY_DPAD2_DOWN", "group__controller__caps.html#ga365876f8b0505363e445073ce37e9ab2", null ],
+    [ "CONT_CAPABILITY_DPAD2_LEFT", "group__controller__caps.html#ga6e990032881659f09462032ee0359299", null ],
+    [ "CONT_CAPABILITY_DPAD2_RIGHT", "group__controller__caps.html#gac096a66c1809114eac190ce51a25dbf5", null ],
+    [ "CONT_CAPABILITY_DPAD2_UP", "group__controller__caps.html#ga2d8892c4044567e1a5755740de1e8f37", null ],
+    [ "CONT_CAPABILITY_DPAD_DOWN", "group__controller__caps.html#gaf6828200a372edc1c22f1f7341802683", null ],
+    [ "CONT_CAPABILITY_DPAD_LEFT", "group__controller__caps.html#gac1467b6fab07c9070526956221f2b516", null ],
+    [ "CONT_CAPABILITY_DPAD_RIGHT", "group__controller__caps.html#gaf4c51928c562f1b3937fc18a35f6d956", null ],
+    [ "CONT_CAPABILITY_DPAD_UP", "group__controller__caps.html#gacef8e08ccfb1f1bff329855ba47c8b5e", null ],
+    [ "CONT_CAPABILITY_LTRIG", "group__controller__caps.html#ga86b21738cf0c567467eb21a4f008bd09", null ],
+    [ "CONT_CAPABILITY_RTRIG", "group__controller__caps.html#ga746ba3870634164bf21d3901cc7a0e60", null ],
+    [ "CONT_CAPABILITY_START", "group__controller__caps.html#ga209533311827399eb931e52001414c5c", null ],
+    [ "CONT_CAPABILITY_X", "group__controller__caps.html#gafd8609e57db1c20496ffbbb3b6e41f69", null ],
+    [ "CONT_CAPABILITY_Y", "group__controller__caps.html#ga2dd82c004d3909b3420536064fd3f259", null ],
+    [ "CONT_CAPABILITY_Z", "group__controller__caps.html#gab347c9856e798132b8bd955dce9e8b58", null ]
+];

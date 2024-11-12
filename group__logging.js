@@ -3,6 +3,7 @@ var group__logging =
     [ "Log Levels", "group__dbglog__levels.html", "group__dbglog__levels" ],
     [ "dbgio.h", "dbgio_8h.html", null ],
     [ "dbglog.h", "dbglog_8h.html", null ],
+    [ "fb_console.h", "fb__console_8h.html", null ],
     [ "dbgio_handler_t", "structdbgio__handler__t.html", [
       [ "detected", "structdbgio__handler__t.html#a523dfd726c73a3eee42b51829a007b43", null ],
       [ "flush", "structdbgio__handler__t.html#a84a54d1e0e76a437bee12c83a44cd7d3", null ],

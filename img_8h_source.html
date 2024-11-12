@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -128,7 +128,7 @@ $(function(){initNavTree('img_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>__BEGIN_DECLS</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;arch/types.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/** \defgroup video_img  Images</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">    \brief               Platform-independent image representation</span></div>
@@ -153,12 +153,12 @@ $(function(){initNavTree('img_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structkos__img__t.html">   51</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>kos_img {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structkos__img__t.html#a224ce450b0f254965f9f7531f9245039">   52</a></span>    <span class="keywordtype">void</span> *<a class="code hl_variable" href="structkos__img__t.html#a224ce450b0f254965f9f7531f9245039">data</a>;         <span class="comment">/**&lt; \brief Image data in the specified format. */</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structkos__img__t.html#a5832d27fd424d7a1a5ecfa0dc468cd3b">   53</a></span>    uint32 <a class="code hl_variable" href="structkos__img__t.html#a5832d27fd424d7a1a5ecfa0dc468cd3b">w</a>;           <span class="comment">/**&lt; \brief Width of the image. */</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structkos__img__t.html#ad718f6194a7fb23ffe045bfae8cc408e">   54</a></span>    uint32 <a class="code hl_variable" href="structkos__img__t.html#ad718f6194a7fb23ffe045bfae8cc408e">h</a>;           <span class="comment">/**&lt; \brief Height of the image. */</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structkos__img__t.html#a28528f25197bf90915cd81669a88f049">   55</a></span>    uint32 <a class="code hl_variable" href="structkos__img__t.html#a28528f25197bf90915cd81669a88f049">fmt</a>;         <span class="comment">/**&lt; \brief Format of the image data.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structkos__img__t.html#a5832d27fd424d7a1a5ecfa0dc468cd3b">   53</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> <a class="code hl_variable" href="structkos__img__t.html#a5832d27fd424d7a1a5ecfa0dc468cd3b">w</a>;           <span class="comment">/**&lt; \brief Width of the image. */</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structkos__img__t.html#ad718f6194a7fb23ffe045bfae8cc408e">   54</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> <a class="code hl_variable" href="structkos__img__t.html#ad718f6194a7fb23ffe045bfae8cc408e">h</a>;           <span class="comment">/**&lt; \brief Height of the image. */</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structkos__img__t.html#a28528f25197bf90915cd81669a88f049">   55</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> <a class="code hl_variable" href="structkos__img__t.html#a28528f25197bf90915cd81669a88f049">fmt</a>;         <span class="comment">/**&lt; \brief Format of the image data.</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">                             \see   kos_img_fmts</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">                             \see   kos_img_fmt_macros */</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structkos__img__t.html#aca5fd08cfdfaafc6569bc3f2ee81f794">   58</a></span>    uint32 <a class="code hl_variable" href="structkos__img__t.html#aca5fd08cfdfaafc6569bc3f2ee81f794">byte_count</a>;  <span class="comment">/**&lt; \brief Length of the image data, in bytes. */</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structkos__img__t.html#aca5fd08cfdfaafc6569bc3f2ee81f794">   58</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> <a class="code hl_variable" href="structkos__img__t.html#aca5fd08cfdfaafc6569bc3f2ee81f794">byte_count</a>;  <span class="comment">/**&lt; \brief Length of the image data, in bytes. */</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>} <a class="code hl_struct" href="structkos__img__t.html">kos_img_t</a>;</div>
 </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"></span> </div>
@@ -293,6 +293,7 @@ $(function(){initNavTree('img_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="preprocessor">#endif  </span><span class="comment">/* __KOS_IMG_H */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="ttc" id="agroup__system__types_html_ga4b435a49c74bb91f284f075e63416cb6"><div class="ttname"><a href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></div><div class="ttdeci">unsigned long uint32</div><div class="ttdoc">32-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:33</div></div>
 <div class="ttc" id="agroup__video__img_html_ga00b12418ea0159983610ccfd235691bb"><div class="ttname"><a href="group__video__img.html#ga00b12418ea0159983610ccfd235691bb">kos_img_free</a></div><div class="ttdeci">void kos_img_free(kos_img_t *img, int struct_also)</div><div class="ttdoc">Free a kos_img_t object.</div></div>
 <div class="ttc" id="astructkos__img__t_html"><div class="ttname"><a href="structkos__img__t.html">kos_img_t</a></div><div class="ttdoc">Platform-indpendent image type.</div><div class="ttdef"><b>Definition</b> img.h:51</div></div>
 <div class="ttc" id="astructkos__img__t_html_a224ce450b0f254965f9f7531f9245039"><div class="ttname"><a href="structkos__img__t.html#a224ce450b0f254965f9f7531f9245039">kos_img_t::data</a></div><div class="ttdeci">void * data</div><div class="ttdoc">Image data in the specified format.</div><div class="ttdef"><b>Definition</b> img.h:52</div></div>
@@ -300,6 +301,7 @@ $(function(){initNavTree('img_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="astructkos__img__t_html_a5832d27fd424d7a1a5ecfa0dc468cd3b"><div class="ttname"><a href="structkos__img__t.html#a5832d27fd424d7a1a5ecfa0dc468cd3b">kos_img_t::w</a></div><div class="ttdeci">uint32 w</div><div class="ttdoc">Width of the image.</div><div class="ttdef"><b>Definition</b> img.h:53</div></div>
 <div class="ttc" id="astructkos__img__t_html_aca5fd08cfdfaafc6569bc3f2ee81f794"><div class="ttname"><a href="structkos__img__t.html#aca5fd08cfdfaafc6569bc3f2ee81f794">kos_img_t::byte_count</a></div><div class="ttdeci">uint32 byte_count</div><div class="ttdoc">Length of the image data, in bytes.</div><div class="ttdef"><b>Definition</b> img.h:58</div></div>
 <div class="ttc" id="astructkos__img__t_html_ad718f6194a7fb23ffe045bfae8cc408e"><div class="ttname"><a href="structkos__img__t.html#ad718f6194a7fb23ffe045bfae8cc408e">kos_img_t::h</a></div><div class="ttdeci">uint32 h</div><div class="ttdoc">Height of the image.</div><div class="ttdef"><b>Definition</b> img.h:54</div></div>
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

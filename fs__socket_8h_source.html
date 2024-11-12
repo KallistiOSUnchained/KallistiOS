@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">KallistiOS<span id="projectnumber">&#160;##version##</span>
+   <div id="projectname">KallistiOS<span id="projectnumber">&#160;git master</span>
    </div>
    <div id="projectbrief">Independent SDK for the Sega Dreamcast</div>
   </td>
@@ -131,7 +131,7 @@ $(function(){initNavTree('fs__socket_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>__BEGIN_DECLS</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;arch/types.h&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;<a class="code" href="fs_8h.html">kos/fs.h</a>&gt;</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;<a class="code" href="net_8h.html">kos/net.h</a>&gt;</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;sys/queue.h&gt;</span></div>
@@ -379,7 +379,7 @@ $(function(){initNavTree('fs__socket_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="comment">        \retval -1          On error (the packet is discarded)</span></div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment">        \retval 0           On success</span></div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="structfs__socket__proto__t.html#af788d1f922e3275de70329c3eb3140d7">  277</a></span>    int (*input)(<a class="code hl_struct" href="structnetif__t.html">netif_t</a> *src, <span class="keywordtype">int</span> domain, <span class="keyword">const</span> <span class="keywordtype">void</span> *hdr, <span class="keyword">const</span> uint8 *data,</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="structfs__socket__proto__t.html#af788d1f922e3275de70329c3eb3140d7">  277</a></span>    int (*input)(<a class="code hl_struct" href="structnetif__t.html">netif_t</a> *src, <span class="keywordtype">int</span> domain, <span class="keyword">const</span> <span class="keywordtype">void</span> *hdr, <span class="keyword">const</span> <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data,</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                 <span class="keywordtype">size_t</span> size);</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="comment"></span> </div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="comment">    /** \brief  Get socket options.</span></div>
@@ -554,7 +554,7 @@ $(function(){initNavTree('fs__socket_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span><span class="comment">    \retval 0           On success</span></div>
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00450" name="l00450"></a><span class="lineno"><a class="line" href="group__vfs__sockets.html#ga29f23e1a12915ead3103c990ba151bb5">  450</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__vfs__sockets.html#ga29f23e1a12915ead3103c990ba151bb5">fs_socket_input</a>(<a class="code hl_struct" href="structnetif__t.html">netif_t</a> *src, <span class="keywordtype">int</span> domain, <span class="keywordtype">int</span> protocol, <span class="keyword">const</span> <span class="keywordtype">void</span> *hdr,</div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>                    <span class="keyword">const</span> uint8 *data, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>                    <span class="keyword">const</span> <a class="code hl_typedef" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, <span class="keywordtype">size_t</span> size);</div>
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span><span class="comment"></span> </div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span><span class="comment">/** \brief   Add a new protocol for use with fs_socket.</span></div>
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span><span class="comment">    \ingroup vfs_sockets</span></div>
@@ -608,6 +608,7 @@ $(function(){initNavTree('fs__socket_8h_source.html',''); initResizable(true); }
 <div class="ttc" id="agroup__networking__sockets_html_gaeedaa5cac80a95d50232c1d130615a1a"><div class="ttname"><a href="group__networking__sockets.html#gaeedaa5cac80a95d50232c1d130615a1a">connect</a></div><div class="ttdeci">int connect(int socket, const struct sockaddr *address, socklen_t address_len)</div><div class="ttdoc">Connect a socket.</div></div>
 <div class="ttc" id="agroup__networking__sockets_html_gaf4e0711877c45a41168ac677b0670ccd"><div class="ttname"><a href="group__networking__sockets.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a></div><div class="ttdeci">int socket(int domain, int type, int protocol)</div><div class="ttdoc">Create an endpoint for communications.</div></div>
 <div class="ttc" id="agroup__networking__sockets_html_gafd8def2c9b8ddd24ec918a829a2089c7"><div class="ttname"><a href="group__networking__sockets.html#gafd8def2c9b8ddd24ec918a829a2089c7">getpeername</a></div><div class="ttdeci">int getpeername(int socket, struct sockaddr *__RESTRICT name, socklen_t *__RESTRICT name_len)</div><div class="ttdoc">Get the name of the connected peer socket.</div></div>
+<div class="ttc" id="agroup__system__types_html_gadde6aaee8457bee49c2a92621fe22b79"><div class="ttname"><a href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a></div><div class="ttdeci">unsigned char uint8</div><div class="ttdoc">8-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:35</div></div>
 <div class="ttc" id="agroup__threading__polling_html_gab7fc0f6be5f13c81de180c1288ba3b6f"><div class="ttname"><a href="group__threading__polling.html#gab7fc0f6be5f13c81de180c1288ba3b6f">poll</a></div><div class="ttdeci">int poll(struct pollfd fds[], nfds_t nfds, int timeout)</div><div class="ttdoc">Poll a group of file descriptors for activity.</div></div>
 <div class="ttc" id="agroup__vfs__generic_html_gacc1a13debc906d8d57e38e0ae5ad07b9"><div class="ttname"><a href="group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9">file_t</a></div><div class="ttdeci">int file_t</div><div class="ttdoc">File descriptor type.</div><div class="ttdef"><b>Definition</b> fs.h:94</div></div>
 <div class="ttc" id="agroup__vfs__sockets_html_ga29f23e1a12915ead3103c990ba151bb5"><div class="ttname"><a href="group__vfs__sockets.html#ga29f23e1a12915ead3103c990ba151bb5">fs_socket_input</a></div><div class="ttdeci">int fs_socket_input(netif_t *src, int domain, int protocol, const void *hdr, const uint8 *data, size_t size)</div><div class="ttdoc">Input a packet into some socket family handler.</div></div>
@@ -627,6 +628,7 @@ $(function(){initNavTree('fs__socket_8h_source.html',''); initResizable(true); }
 <div class="ttc" id="astructnet__socket__t_html_ae4ebb8e191303ff5005d669515ce2570"><div class="ttname"><a href="structnet__socket__t.html#ae4ebb8e191303ff5005d669515ce2570">net_socket_t::data</a></div><div class="ttdeci">void * data</div><div class="ttdoc">Protocol-specific data.</div><div class="ttdef"><b>Definition</b> fs_socket.h:70</div></div>
 <div class="ttc" id="astructnetif__t_html"><div class="ttname"><a href="structnetif__t.html">netif_t</a></div><div class="ttdoc">Structure describing one usable network device.</div><div class="ttdef"><b>Definition</b> net.h:53</div></div>
 <div class="ttc" id="astructsockaddr_html"><div class="ttname"><a href="structsockaddr.html">sockaddr</a></div><div class="ttdoc">Socket address structure.</div><div class="ttdef"><b>Definition</b> socket.h:47</div></div>
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
