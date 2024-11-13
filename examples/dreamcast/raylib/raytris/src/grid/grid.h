@@ -45,6 +45,7 @@ class Grid{
         std::vector<Color> colors;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 };
 =======
 };
@@ -52,3 +53,6 @@ class Grid{
 =======
 };
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+};
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

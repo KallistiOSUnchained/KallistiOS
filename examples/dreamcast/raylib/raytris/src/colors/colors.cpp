@@ -29,6 +29,7 @@ std::vector<Color> GetCellColors(){
     return {darkGrey, green, red, orange, yellow, purple, cyan, blue};
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -36,3 +37,6 @@ std::vector<Color> GetCellColors(){
 =======
 }
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+}
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

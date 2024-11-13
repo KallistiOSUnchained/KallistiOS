@@ -29,6 +29,7 @@ extern const Color darkBlue;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 std::vector<Color> GetCellColors();
 =======
 std::vector<Color> GetCellColors();
@@ -36,3 +37,6 @@ std::vector<Color> GetCellColors();
 =======
 std::vector<Color> GetCellColors();
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+std::vector<Color> GetCellColors();
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

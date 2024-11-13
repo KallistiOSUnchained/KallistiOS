@@ -25,6 +25,7 @@ public:
     void displayImage(const char *xmp);
     void resetImage();
 };
+<<<<<<< HEAD
 =======
     ~VmuManager();
     void displayImage(const char *xmp);
@@ -38,3 +39,5 @@ private:
     void resetImage();
 };
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

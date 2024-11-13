@@ -163,6 +163,7 @@ void Grid::MoveRowDown(int row, int numRows){
         grid[row][column] = 0;
     }
 }
+<<<<<<< HEAD
 =======
     for (int column = 0; column < numCols; column++)
     {
@@ -179,3 +180,5 @@ void Grid::MoveRowDown(int row, int numRows){
     }
 }
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

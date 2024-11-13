@@ -483,6 +483,7 @@ void Game::UpdateScore(int linesCleared, int moveDownPoints){
     score += moveDownPoints;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -490,3 +491,6 @@ void Game::UpdateScore(int linesCleared, int moveDownPoints){
 =======
 }
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+}
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

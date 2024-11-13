@@ -83,6 +83,7 @@ void Block::UndoRotation(){
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -90,3 +91,6 @@ void Block::UndoRotation(){
 =======
 }
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+}
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

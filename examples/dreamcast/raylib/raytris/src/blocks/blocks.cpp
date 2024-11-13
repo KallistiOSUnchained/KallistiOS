@@ -112,6 +112,7 @@ class NullBlock : public Block{
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 };
 =======
 };
@@ -119,3 +120,6 @@ class NullBlock : public Block{
 =======
 };
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+};
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

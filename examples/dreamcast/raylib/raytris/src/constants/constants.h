@@ -41,6 +41,7 @@ namespace UIFont{
     constexpr int xlarge = 40;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -48,3 +49,6 @@ namespace UIFont{
 =======
 }
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+}
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

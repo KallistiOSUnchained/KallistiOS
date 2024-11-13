@@ -19,6 +19,7 @@ Position::Position(int row, int column){
     this -> column = column;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -26,3 +27,6 @@ Position::Position(int row, int column){
 =======
 }
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+}
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

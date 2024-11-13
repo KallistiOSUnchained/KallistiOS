@@ -38,6 +38,7 @@ dist: $(TARGET)
 	-rm -f $(OBJS) romdisk.img
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(KOS_STRIP) $(TARGET)
 =======
 	$(KOS_STRIP) $(TARGET)
@@ -45,3 +46,7 @@ dist: $(TARGET)
 =======
 	$(KOS_STRIP) $(TARGET)
 >>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
+=======
+	$(KOS_STRIP) $(TARGET)
+	
+>>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)
