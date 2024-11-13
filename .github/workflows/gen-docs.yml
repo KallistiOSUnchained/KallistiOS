@@ -4,11 +4,12 @@ name: Generate Doxygen Documentation
 on:
   push:
     branches:
-      - master   # or your default branch
+      - master
     paths:
-      - '**.h'       # Monitor header file changes
-      - '**.c'       # Monitor source file changes
-      - 'Doxyfile'   # Monitor Doxygen config changes
+      - 'include/**'
+      - 'kernel/arch/dreamcast/include/**'
+      - 'addons/include/**'
+      - 'doc/Doxyfile'
       - 'doc/pages/**'
       - 'README.md'
 
@@ -17,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      KOS_BASE: ${{ github.workspace }}  # Sets KOS_BASE to the repository root
+      KOS_BASE: ${{ github.workspace }}
       KOS_ARCH: dreamcast
 
     steps:
@@ -33,9 +34,6 @@ jobs:
           tar -xzf doxygen-1.11.0.linux.bin.tar.gz
           sudo mv doxygen-1.11.0/bin/* /usr/local/bin/
           rm -rf doxygen-1.11.0*
-
-      - name: Verify Doxygen Version
-        run: doxygen --version
 
       - name: Create Output Directory for Doxygen
         run: mkdir -p doc/reference
