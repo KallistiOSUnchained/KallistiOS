@@ -1,8 +1,15 @@
 
-name: Build and Check Doxygen Documentation on Pull Requests
+name: Doxygen Check on PRs
 
 on:
   pull_request:  # Triggers on all pull requests, regardless of the target branch
+    paths:
+      - 'include/**'
+      - 'kernel/arch/dreamcast/include/**'
+      - 'addons/include/**'
+      - 'doc/Doxyfile'
+      - 'doc/pages/**'
+      - 'README.md'
 
 jobs:
   doxygen:
