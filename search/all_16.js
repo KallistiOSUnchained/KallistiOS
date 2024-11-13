@@ -42,7 +42,7 @@ var searchData=
   ['perf_5fcntr_5ftimer_5fenable_39',['perf_cntr_timer_enable',['../group__perf__counters__timer.html#ga3ee50187ccc93ee4d357c15963294db8',1,'perfctr.h']]],
   ['perf_5fcntr_5ftimer_5fenabled_40',['perf_cntr_timer_enabled',['../group__perf__counters__timer.html#gaf7016a0952e1313c909f57706869e629',1,'perfctr.h']]],
   ['perf_5fcntr_5ftimer_5fns_41',['perf_cntr_timer_ns',['../group__perf__counters__timer.html#ga358fcfefcb2d36710d6cfeb7c97ff77f',1,'perfctr.h']]],
-  ['perf_5fmonitor_42',['perf_monitor',['../structperf__monitor.html',1,'perf_monitor'],['../group__perf__monitor.html#ga62c61981f91df24b5188ed86998bd2b7',1,'perf_monitor:&#160;perf_monitor.h']]],
+  ['perf_5fmonitor_42',['perf_monitor',['../group__perf__monitor.html#ga62c61981f91df24b5188ed86998bd2b7',1,'perf_monitor.h']]],
   ['perf_5fmonitor_2eh_43',['perf_monitor.h',['../perf__monitor_8h.html',1,'']]],
   ['perf_5fmonitor_5fexit_44',['perf_monitor_exit',['../group__perf__monitor.html#ga820fdd7d4930bf416b90eb94d52ee137',1,'perf_monitor.h']]],
   ['perf_5fmonitor_5fif_45',['perf_monitor_if',['../group__perf__monitor.html#ga3f051cc81cdacd6314abace898d85cf5',1,'perf_monitor.h']]],

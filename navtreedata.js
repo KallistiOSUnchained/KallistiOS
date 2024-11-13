@@ -76,15 +76,15 @@ var NAVTREEINDEX =
 "group__maple__memcard.html",
 "group__netcfg__srcs.html#ga1181c4fd6c81e68711938e015eaf43c5",
 "group__perf__counters.html#gga31675ab20e99e7e50db03368a3c390c1af22d32ab77c6879e127abf252fba921a",
-"group__pvr__fog.html#gadbf51da6d5d44396c660f48350129508",
-"group__register__macros.html#ga0ebc700a1dfa57edaf8161d622d4bb34",
-"group__system__scif.html#ga0d739a4004997630f7478dd3c246209d",
-"group__vfs__dcload.html#gaae881ad5902cd3a2e738ae675ecea3f1",
-"group__vmu__package.html",
-"structdirent__t.html",
-"structkthread__t.html#adfba1961050da641a2fadb318b2610c5",
-"structpvr__init__params__t.html#a29dc5c626e3c2e5e068e5e6416ac087e",
-"structsockaddr__storage.html"
+"group__pvr__fog__types.html#gaf94b3bb1bca7e0c45ca44ff0e7480cf9",
+"group__rtc.html#ga0d91e1401bf7d4b8e7fdf381755234a9",
+"group__system__scif.html#ga5a846def85db8a7c40d8a8dd5163877f",
+"group__vfs__ext2.html#ga33dec8476d9acee46d7a789c964d5011",
+"group__vmu__settings.html#ga7d63873f3b7739ab1753fa9ab7eebc83",
+"structdreameye__state__t.html#a2ebdcfc0ec8cb280581ca67c41a61b2b",
+"structkthread__tls__kv__t.html#a26d8ad87360e7e445170560853110d84",
+"structpvr__modifier__vol__t.html#a1eed046a91d0e679674e90413fd21faf",
+"structtermios.html#a85b6c86d2a3db45a3829488190e357e4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

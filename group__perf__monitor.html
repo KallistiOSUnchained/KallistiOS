@@ -99,7 +99,6 @@ $(function(){initNavTree('group__perf__monitor.html',''); initResizable(true); }
 <div class="header">
   <div class="summary">
 <a href="#files">Files</a> &#124;
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Performance monitor<div class="ingroups"><a class="el" href="group__debugging.html">Debugging</a></div></div></div>
@@ -115,35 +114,17 @@ Files</h2></td></tr>
 <tr class="memdesc:perf__monitor_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low-level performance monitor. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperf__monitor.html">perf_monitor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">/cond  <a href="structperf__monitor.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gaf981c120519e599315a870f418740bda" id="r_gaf981c120519e599315a870f418740bda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf981c120519e599315a870f418740bda">__perf_monitor</a>(f,  l)</td></tr>
-<tr class="separator:gaf981c120519e599315a870f418740bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5b397d1897391a6a42f8f31a0b707fa0" id="r_ga5b397d1897391a6a42f8f31a0b707fa0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b397d1897391a6a42f8f31a0b707fa0">_perf_monitor</a>(f,  l)&#160;&#160;&#160;<a class="el" href="#gaf981c120519e599315a870f418740bda">__perf_monitor</a>(f, l)</td></tr>
-<tr class="separator:ga5b397d1897391a6a42f8f31a0b707fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga56ab8fe9ecddf2ba5b88a3c2f64ffe48" id="r_ga56ab8fe9ecddf2ba5b88a3c2f64ffe48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56ab8fe9ecddf2ba5b88a3c2f64ffe48">__perf_monitor_if</a>(f,  l,  tst)</td></tr>
-<tr class="separator:ga56ab8fe9ecddf2ba5b88a3c2f64ffe48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf9b4f03bf302f352bd290f7bdf163a05" id="r_gaf9b4f03bf302f352bd290f7bdf163a05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf9b4f03bf302f352bd290f7bdf163a05">_perf_monitor_if</a>(f,  l,  tst)&#160;&#160;&#160;<a class="el" href="#ga56ab8fe9ecddf2ba5b88a3c2f64ffe48">__perf_monitor_if</a>(f, l, tst)</td></tr>
-<tr class="separator:gaf9b4f03bf302f352bd290f7bdf163a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga62c61981f91df24b5188ed86998bd2b7" id="r_ga62c61981f91df24b5188ed86998bd2b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga62c61981f91df24b5188ed86998bd2b7">perf_monitor</a>()&#160;&#160;&#160;<a class="el" href="#ga5b397d1897391a6a42f8f31a0b707fa0">_perf_monitor</a>(__func__, __LINE__)</td></tr>
-<tr class="memdesc:ga62c61981f91df24b5188ed86998bd2b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">/endcond  <br /></td></tr>
+<tr class="memitem:ga62c61981f91df24b5188ed86998bd2b7" id="r_ga62c61981f91df24b5188ed86998bd2b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga62c61981f91df24b5188ed86998bd2b7">perf_monitor</a>()&#160;&#160;&#160;_perf_monitor(__func__, __LINE__)</td></tr>
+<tr class="memdesc:ga62c61981f91df24b5188ed86998bd2b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a performance monitor in the current functional block.  <br /></td></tr>
 <tr class="separator:ga62c61981f91df24b5188ed86998bd2b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3f051cc81cdacd6314abace898d85cf5" id="r_ga3f051cc81cdacd6314abace898d85cf5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f051cc81cdacd6314abace898d85cf5">perf_monitor_if</a>(tst)&#160;&#160;&#160;<a class="el" href="#gaf9b4f03bf302f352bd290f7bdf163a05">_perf_monitor_if</a>(__func__, __LINE__, tst)</td></tr>
+<tr class="memitem:ga3f051cc81cdacd6314abace898d85cf5" id="r_ga3f051cc81cdacd6314abace898d85cf5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f051cc81cdacd6314abace898d85cf5">perf_monitor_if</a>(tst)&#160;&#160;&#160;_perf_monitor_if(__func__, __LINE__, tst)</td></tr>
 <tr class="memdesc:ga3f051cc81cdacd6314abace898d85cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a performance monitor for branch likeliness analysis.  <br /></td></tr>
 <tr class="separator:ga3f051cc81cdacd6314abace898d85cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaabf47fac49b02a84bc1c8b555923f420" id="r_gaabf47fac49b02a84bc1c8b555923f420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaabf47fac49b02a84bc1c8b555923f420">__stop_perf_monitor</a> (struct <a class="el" href="structperf__monitor.html">perf_monitor</a> **monitor)</td></tr>
-<tr class="separator:gaabf47fac49b02a84bc1c8b555923f420"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9618ac4362dbfef463b436233a2c1a39" id="r_ga9618ac4362dbfef463b436233a2c1a39"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structperf__monitor.html">perf_monitor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9618ac4362dbfef463b436233a2c1a39">__start_perf_monitor</a> (struct <a class="el" href="structperf__monitor.html">perf_monitor</a> *monitor)</td></tr>
-<tr class="separator:ga9618ac4362dbfef463b436233a2c1a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacae44717c675112e78b998e19e1bf531" id="r_gacae44717c675112e78b998e19e1bf531"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacae44717c675112e78b998e19e1bf531">perf_monitor_init</a> (<a class="el" href="group__perf__counters.html#ga31675ab20e99e7e50db03368a3c390c1">perf_cntr_event_t</a> event1, <a class="el" href="group__perf__counters.html#ga31675ab20e99e7e50db03368a3c390c1">perf_cntr_event_t</a> event2)</td></tr>
 <tr class="memdesc:gacae44717c675112e78b998e19e1bf531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the performance monitor system.  <br /></td></tr>
 <tr class="separator:gacae44717c675112e78b998e19e1bf531"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,114 +139,6 @@ Functions</h2></td></tr>
 <p>Code performance monitor </p>
 <p>The performance monitor API is built on top of the performance counter API, and as such cannot be used at the same time. With this API, programs can set probe points in different functional blocks and later obtain statistics about the execution of said functional blocks. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gaf981c120519e599315a870f418740bda" name="gaf981c120519e599315a870f418740bda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf981c120519e599315a870f418740bda">&#9670;&#160;</a></span>__perf_monitor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __perf_monitor</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> <span class="keyword">struct </span><a class="code hl_struct" href="structperf__monitor.html">perf_monitor</a> __perf_monitor_##l \</div>
-<div class="line">        __attribute__((section(<span class="stringliteral">&quot;.monitors&quot;</span>))) = { f, l, }; \</div>
-<div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="structperf__monitor.html">perf_monitor</a> *___perf_monitor_##l \</div>
-<div class="line">        __attribute__((cleanup(<a class="code hl_function" href="#gaabf47fac49b02a84bc1c8b555923f420">__stop_perf_monitor</a>))) = \</div>
-<div class="line">        __start_perf_monitor(&amp;__perf_monitor_##l)</div>
-<div class="ttc" id="agroup__perf__monitor_html_gaabf47fac49b02a84bc1c8b555923f420"><div class="ttname"><a href="#gaabf47fac49b02a84bc1c8b555923f420">__stop_perf_monitor</a></div><div class="ttdeci">void __stop_perf_monitor(struct perf_monitor **monitor)</div></div>
-<div class="ttc" id="astructperf__monitor_html"><div class="ttname"><a href="structperf__monitor.html">perf_monitor</a></div><div class="ttdoc">/cond</div><div class="ttdef"><b>Definition</b> perf_monitor.h:41</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ga56ab8fe9ecddf2ba5b88a3c2f64ffe48" name="ga56ab8fe9ecddf2ba5b88a3c2f64ffe48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga56ab8fe9ecddf2ba5b88a3c2f64ffe48">&#9670;&#160;</a></span>__perf_monitor_if</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __perf_monitor_if</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tst</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    ({ \</div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">struct </span><a class="code hl_struct" href="structperf__monitor.html">perf_monitor</a> __perf_monitor_##l \</div>
-<div class="line">        __attribute__((section(<span class="stringliteral">&quot;.monitors&quot;</span>))) = { f, l, }; \</div>
-<div class="line">    __perf_monitor_##l.<a class="code hl_variable" href="structperf__monitor.html#a6d1d0b134399a3ba35e91512433f6696">calls</a>++; \</div>
-<div class="line">    (tst) ? (__perf_monitor_##l.event1++,1) : (__perf_monitor_##l.event0++,0); \</div>
-<div class="line">})</div>
-<div class="ttc" id="astructperf__monitor_html_a6d1d0b134399a3ba35e91512433f6696"><div class="ttname"><a href="structperf__monitor.html#a6d1d0b134399a3ba35e91512433f6696">perf_monitor::calls</a></div><div class="ttdeci">uint64_t calls</div><div class="ttdef"><b>Definition</b> perf_monitor.h:44</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ga5b397d1897391a6a42f8f31a0b707fa0" name="ga5b397d1897391a6a42f8f31a0b707fa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5b397d1897391a6a42f8f31a0b707fa0">&#9670;&#160;</a></span>_perf_monitor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _perf_monitor</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)&#160;&#160;&#160;<a class="el" href="#gaf981c120519e599315a870f418740bda">__perf_monitor</a>(f, l)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gaf9b4f03bf302f352bd290f7bdf163a05" name="gaf9b4f03bf302f352bd290f7bdf163a05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf9b4f03bf302f352bd290f7bdf163a05">&#9670;&#160;</a></span>_perf_monitor_if</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _perf_monitor_if</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tst</em></span>&#160;)&#160;&#160;&#160;<a class="el" href="#ga56ab8fe9ecddf2ba5b88a3c2f64ffe48">__perf_monitor_if</a>(f, l, tst)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ga62c61981f91df24b5188ed86998bd2b7" name="ga62c61981f91df24b5188ed86998bd2b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga62c61981f91df24b5188ed86998bd2b7">&#9670;&#160;</a></span>perf_monitor</h2>
 
@@ -276,13 +149,12 @@ Functions</h2></td></tr>
           <td class="memname">#define perf_monitor</td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="#ga5b397d1897391a6a42f8f31a0b707fa0">_perf_monitor</a>(__func__, __LINE__)</td>
+          <td>&#160;&#160;&#160;_perf_monitor(__func__, __LINE__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>/endcond </p>
-<p>Register a performance monitor in the current functional block</p>
+<p>Register a performance monitor in the current functional block. </p>
 <p>The performance monitor will run from the moment this macro is used, till the end of the functional block. </p>
 
 </div>
@@ -297,7 +169,7 @@ Functions</h2></td></tr>
           <td class="memname">#define perf_monitor_if</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tst</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="#gaf9b4f03bf302f352bd290f7bdf163a05">_perf_monitor_if</a>(__func__, __LINE__, tst)</td>
+          <td>&#160;&#160;&#160;_perf_monitor_if(__func__, __LINE__, tst)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -315,40 +187,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga9618ac4362dbfef463b436233a2c1a39" name="ga9618ac4362dbfef463b436233a2c1a39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9618ac4362dbfef463b436233a2c1a39">&#9670;&#160;</a></span>__start_perf_monitor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structperf__monitor.html">perf_monitor</a> * __start_perf_monitor </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structperf__monitor.html">perf_monitor</a> *</td>          <td class="paramname"><span class="paramname"><em>monitor</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gaabf47fac49b02a84bc1c8b555923f420" name="gaabf47fac49b02a84bc1c8b555923f420"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabf47fac49b02a84bc1c8b555923f420">&#9670;&#160;</a></span>__stop_perf_monitor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void __stop_perf_monitor </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structperf__monitor.html">perf_monitor</a> **</td>          <td class="paramname"><span class="paramname"><em>monitor</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ga820fdd7d4930bf416b90eb94d52ee137" name="ga820fdd7d4930bf416b90eb94d52ee137"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga820fdd7d4930bf416b90eb94d52ee137">&#9670;&#160;</a></span>perf_monitor_exit()</h2>
 

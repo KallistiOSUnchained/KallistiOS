@@ -1,11 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"group__pvr__fog.html#gadbf51da6d5d44396c660f48350129508":[9,11,5,2,0,3],
-"group__pvr__fog.html#gae3612bd64b24d2d996dcb494e9cf7142":[9,11,5,2,0,6],
-"group__pvr__fog__types.html":[9,11,5,1,0,0,0,5],
-"group__pvr__fog__types.html#ga22bec32a662993600da3948a3c824642":[9,11,5,1,0,0,0,5,0],
-"group__pvr__fog__types.html#ga9cd8333d3ee5b9deff9be5fc1589d2d4":[9,11,5,1,0,0,0,5,3],
-"group__pvr__fog__types.html#gaa260f4e93336a908b855a11c8d09c41f":[9,11,5,1,0,0,0,5,2],
 "group__pvr__fog__types.html#gaf94b3bb1bca7e0c45ca44ff0e7480cf9":[9,11,5,1,0,0,0,5,1],
 "group__pvr__geometry.html":[9,11,5,1],
 "group__pvr__global.html":[9,11,5,2],
@@ -249,5 +243,11 @@ var NAVTREEINDEX10 =
 "group__pvr__vertex__types.html#ga353933028c8e9b70804401d4b580bb8d":[9,11,5,1,1,7],
 "group__pvr__vram.html":[9,11,5,9],
 "group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4":[9,11,5,9,1],
-"group__register__macros.html":[9,7,16]
+"group__register__macros.html":[9,7,16],
+"group__register__macros.html#ga0ebc700a1dfa57edaf8161d622d4bb34":[9,7,16,3],
+"group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf":[9,7,16,1],
+"group__register__macros.html#ga58530d20924859d16358c7400c37738d":[9,7,16,4],
+"group__register__macros.html#ga846024a6ea49554ff45cb4ff61c393bb":[9,7,16,2],
+"group__rtc.html":[9,9,0],
+"group__rtc.html#ga08e5ccb1801a13800a1f242a1d898ea4":[9,9,0,3]
 };

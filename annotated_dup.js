@@ -66,7 +66,6 @@ var annotated_dup =
     [ "netif_t", "structnetif__t.html", "structnetif__t" ],
     [ "nmmgr_handler_t", "structnmmgr__handler__t.html", "structnmmgr__handler__t" ],
     [ "oneshot_timer_t", "structoneshot__timer__t.html", "structoneshot__timer__t" ],
-    [ "perf_monitor", "structperf__monitor.html", "structperf__monitor" ],
     [ "pollfd", "structpollfd.html", "structpollfd" ],
     [ "ppp_device_t", "structppp__device__t.html", "structppp__device__t" ],
     [ "ppp_protocol_t", "structppp__protocol__t.html", "structppp__protocol__t" ],
