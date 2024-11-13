@@ -37,7 +37,7 @@ __BEGIN_DECLS
     @{
 */
 
-/** /cond */
+/** \cond */
 struct perf_monitor {
     const char *fn;
     unsigned int line;
@@ -68,7 +68,7 @@ struct perf_monitor *__start_perf_monitor(struct perf_monitor *monitor);
 })
 
 #define _perf_monitor_if(f, l, tst) __perf_monitor_if(f, l, tst)
-/** /endcond */
+/** \endcond */
 
 /** \brief  Register a performance monitor in the current functional block
 
