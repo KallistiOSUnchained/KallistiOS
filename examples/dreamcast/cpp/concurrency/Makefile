@@ -5,7 +5,7 @@
 
 TARGET = concurrency.elf
 OBJS = concurrency.o
-KOS_CPPFLAGS += -std=c++20
+KOS_CPPFLAGS += -std=c++20 -Wno-dangling-pointer
 KOS_GCCVER_MIN = 12.0.0
 
 include $(KOS_BASE)/Makefile.rules

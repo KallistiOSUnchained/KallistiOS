@@ -1,0 +1,53 @@
+
+name: Doxygen Check on PRs
+
+on:
+  pull_request:  # Triggers on all pull requests, regardless of the target branch
+    paths:
+      - 'include/**'
+      - 'kernel/arch/dreamcast/include/**'
+      - 'addons/include/**'
+      - 'doc/Doxyfile'
+      - 'doc/pages/**'
+      - 'README.md'
+
+jobs:
+  doxygen:
+    runs-on: ubuntu-latest
+
+    env:
+      KOS_BASE: ${{ github.workspace }}  # Sets KOS_BASE to the repository root
+      KOS_ARCH: dreamcast
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Doxygen
+        run: sudo apt install -y wget graphviz
+
+      - name: Install Doxygen 1.11.0
+        run: |
+          wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
+          tar -xzf doxygen-1.11.0.linux.bin.tar.gz
+          sudo mv doxygen-1.11.0/bin/* /usr/local/bin/
+          rm -rf doxygen-1.11.0*
+
+      - name: Create Output Directory for Doxygen
+        run: mkdir -p doc/reference
+
+      - name: Generate Documentation
+        run: doxygen doc/Doxyfile
+
+      - name: Generate Doxygen Documentation and Display Warnings Only
+        run: |
+          # Run Doxygen and redirect all output to a temporary log
+          doxygen doc/Doxyfile > doxygen_output.log 2>&1
+          # Extract only warnings and display them if any are found
+          if grep -q "warning:" doxygen_output.log; then
+            echo "Doxygen generated warnings:"
+            grep "warning:" doxygen_output.log
+            exit 1
+          else
+            echo "Doxygen documentation generated without warnings."
+          fi
