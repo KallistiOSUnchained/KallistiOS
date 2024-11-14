@@ -22,7 +22,7 @@ __BEGIN_DECLS
     \author Megan Potter
 */
 
-/** \defgroup Assertions
+/** \defgroup assertions Assertions
     \brief    assert() management and custom handlers
     \ingroup  debugging
 

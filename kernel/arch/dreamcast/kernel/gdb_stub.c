@@ -28,7 +28,6 @@
 
 ****************************************************************************/
 
-
 /* Remote communication protocol.
 
    A debug packet whose contents are <data>
@@ -132,10 +131,39 @@
 
     general query   qXXXX       Request info about XXXX.
     general set QXXXX=yyyy  Set value of XXXX to yyyy.
+<<<<<<< Updated upstream
     query sect offs qOffsets    Get section offsets.  Reply is
                     Text=xxx;Data=yyy;Bss=zzz
     console output  Otext       Send text to stdout.  Only comes from
                     remote target.
+=======
+**********************************************************************
+    query sect offs 
+                qOffsets    Get section offsets.  
+    reply       Text=xxx;Data=yyy;Bss=zzz
+**********************************************************************
+    console output  
+                Otext       Send text to stdout.  Only comes from
+                            remote target.
+**********************************************************************
+    set command-line args
+                Aarglen,argnum,arg,…
+                            Initialized `argv[]' array passed into 
+                            program. arglen specifies the number of 
+                            bytes in the hex encoded byte stream arg. 
+                            See `gdbserver' for more details.
+
+    reply       OK 
+    reply       ENN
+**********************************************************************
+    Current thread 
+                qC          Return the current thread ID
+
+    reply       QCpid       pid is HEX encoded 16-bit process iD
+    reply       *           implies old process ID
+
+**********************************************************************
+>>>>>>> Stashed changes
 
     Responses can be run-length encoded to save space.  A '*' means that
     the next character is an ASCII encoding giving a repeat count which
@@ -207,6 +235,36 @@
 #define DCL_SENDRECV   0x3
 
 /*
+<<<<<<< Updated upstream
+=======
+ * Error codes
+ * https://developer.arm.com/documentation/dui0155/e/gdb-and-command-monitor-error-codes/error-codes/generic-errors?lang=en
+ */
+#define GDB_OK                             "OK"
+
+/* Generic errors */
+#define GDB_ERROR_BAD_ARGUMENTS            "E06"
+#define GDB_ERROR_UNSUPPORTED_COMMAND      "E07"
+
+/* Memory and register errors */
+#define GDB_ERROR_MEMORY_BAD_ADDRESS       "E30"
+#define GDB_ERROR_MEMORY_BUS_ERROR         "E31"
+#define GDB_ERROR_MEMORY_TIMEOUT           "E32"
+#define GDB_ERROR_MEMORY_VERIFY_ERROR      "E33"
+#define GDB_ERROR_MEMORY_BAD_ACCESS_SIZE   "E34"
+#define GDB_ERROR_MEMORY_GENERAL           "E35"
+
+/* Breakpoint errors */
+#define GDB_ERROR_BKPT_NOT_SET             "E50" /* Unable to set breakpoint */
+#define GDB_ERROR_BKPT_SWBREAK_NOT_SET     "E51" /* Unable to write software breakpoint to memory */
+#define GDB_ERROR_BKPT_HWBREAK_NO_RSRC     "E52" /* No hardware breakpoint resource available to set hardware breakpoint */
+#define GDB_ERROR_BKPT_HWBREAK_ACCESS_ERR  "E53" /* Failed to access hardware breakpoint resource */
+#define GDB_ERROR_BKPT_CLEARING_BAD_ID     "E55" /* Bad ID when clearing breakpoint */
+#define GDB_ERROR_BKPT_CLEARING_BAD_ADDR   "E56" /* Bad address when clearing breakpoint */
+#define GDB_ERROR_BKPT_SBREAKER_NO_RSRC    "E57" /* Insufficient hardware resources for software breakpoints */
+
+/*
+>>>>>>> Stashed changes
  * typedef
  */
 typedef void (*Function)();
@@ -214,7 +272,6 @@ typedef void (*Function)();
 /*
  * Forward declarations
  */
-
 static int hex(char);
 static char *mem2hex(char *, char *, uint32);
 static char *hex2mem(char *, char *, uint32);
@@ -261,8 +318,7 @@ static uint32 kosRegMap[] = {
 typedef struct {
     short *memAddr;
     short oldInstr;
-}
-stepData;
+} stepData;
 
 static irq_context_t *irq_ctx;
 static stepData instrBuffer;
@@ -284,14 +340,11 @@ static char lowhex(int  x) {
 /*
  * Assembly macros
  */
-
 #define BREAKPOINT()   __asm__("trapa	#0xff"::);
-
 
 /*
  * Routines to handle hex data
  */
-
 static int hex(char ch) {
     if((ch >= 'a') && (ch <= 'f'))
         return (ch - 'a' + 10);
