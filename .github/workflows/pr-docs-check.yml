@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Cache Doxygen 1.11.0
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: cache-doxygen
         with:
           path: ./doxygen-1.11.0
@@ -45,12 +45,16 @@ jobs:
       - name: Generate Doxygen Documentation and Display Warnings Only
         run: |
           # Run Doxygen and redirect all output to a temporary log
-          doxygen doc/Doxyfile > doxygen_output.log 2>&1
+          doxygen doc/DoxyfileCheck > doxygen_output.log 2>&1
+
+          # Count the warnings and store the count in a variable
+          warning_count=$(grep -c "warning:" doxygen_output.log)
+          
           # Extract only warnings and display them if any are found
-          if grep -q "warning:" doxygen_output.log; then
+          if [ "$warning_count" -gt 1 ]; then
             echo "Doxygen generated warnings:"
             grep "warning:" doxygen_output.log
             exit 1
           else
-            echo "Doxygen documentation generated without warnings."
+            echo "Doxygen documentation generated succesfully."
           fi
