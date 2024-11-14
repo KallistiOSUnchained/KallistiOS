@@ -34,9 +34,9 @@ jobs:
             sudo apt install -y wget
             wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
             tar -xzf doxygen-1.11.0.linux.bin.tar.gz
+            rm doxygen-1.11.0.linux.bin.tar.gz
           fi
-          sudo mv doxygen-1.11.0/bin/* /usr/local/bin/
-          rm -rf doxygen-1.11.0*
+          sudo cp doxygen-1.11.0/bin/* /usr/local/bin/
 
       - name: Generate Doxygen Documentation and Display Warnings Only
         run: |
