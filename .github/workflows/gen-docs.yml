@@ -25,15 +25,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Doxygen
-        run: sudo apt install -y wget graphviz
-
+      - name: Cache Doxygen 1.11.0
+        uses: actions/cache@v4
+        id: cache-doxygen
+        with:
+          path: ./doxygen-1.11.0
+          key: doxygen-1.11.0-${{ runner.os }}
+  
       - name: Install Doxygen 1.11.0
         run: |
-          wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
-          tar -xzf doxygen-1.11.0.linux.bin.tar.gz
-          sudo mv doxygen-1.11.0/bin/* /usr/local/bin/
-          rm -rf doxygen-1.11.0*
+          if [ ! -f doxygen-1.11.0/bin/doxygen ]; then
+            sudo apt install -y wget
+            wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
+            tar -xzf doxygen-1.11.0.linux.bin.tar.gz
+            rm doxygen-1.11.0.linux.bin.tar.gz
+          fi
+          sudo cp doxygen-1.11.0/bin/* /usr/local/bin/
 
       - name: Create Output Directory for Doxygen
         run: mkdir -p doc/reference
