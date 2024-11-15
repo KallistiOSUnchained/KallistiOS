@@ -69,7 +69,7 @@ host environment (or modify the utils/naomibintool Makefile to not
 use libelf and to define NO_LIBELF for building that tool).
 
 # kos-ports
-[kos-ports](https://github.com/KallistiOS/kos-ports) is a package manager and repository of various useful libraries
+[kos-ports](https://github.com/KallistiOSUnchained/kos-ports) is a package manager and repository of various useful libraries
 that have been ported to KOS.
 
 # Addons
@@ -136,9 +136,9 @@ on me later.
 
 In addition, for those used to working with pull requests on GitHub, I accept
 those as well. I assume you know how to make things work that way if you wish
-to go that route. The mirror of the repository at GitHub is currently at the
+to go that route. The repository at GitHub is currently at the
 following url:
-`https://github.com/KallistiOS/KallistiOS`
+`https://github.com/KallistiOSUnchained/KallistiOS`
 
 I don't guarantee that any patch will get included (especially if your patch
 contains a lot of reformatting, sloppy coding, things at cross-purposes with
@@ -222,11 +222,6 @@ release of KOS 2.0.0.
 # End
 Please read the other documents in the "doc" directory for more information.
 Also check the FAQ if there is something you were wondering.
-
-Also, please take note of our new web URL (below). We have moved hosting
-to SourceForge for all console-related things.
-
-`https://sourceforge.net/projects/cadcdev/`
 
 [^1]: Note that this name is _not_ to be confused or associated with either the
   professional development company Kalisto Software* or the cracking group
