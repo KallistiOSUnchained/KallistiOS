@@ -9,8 +9,8 @@
 #       docker run -it --name containername dcchain:stable /bin/bash
 
 # Stage 1
-FROM alpine:latest as build
-MAINTAINER KallistiOS <cadcdev-kallistios@lists.sourceforge.net>
+FROM alpine:latest AS build
+LABEL maintainer="KallistiOS (Unchained)"
 
 # Installing prerequisites
 RUN apk --update add --no-cache \
