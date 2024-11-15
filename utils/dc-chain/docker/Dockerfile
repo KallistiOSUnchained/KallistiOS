@@ -37,7 +37,7 @@ RUN apk --update add --no-cache \
 ARG dc_chain=stable
 ARG makejobs=2
 RUN mkdir -p /opt/toolchains/dc \
-	&& git clone https://git.code.sf.net/p/cadcdev/kallistios /opt/toolchains/dc/kos || git clone https://github.com/KallistiOS/KallistiOS.git /opt/toolchains/dc/kos \
+	&& git clone --depth=1 https://github.com/KallistiOSUnchained/KallistiOS.git /opt/toolchains/dc/kos \
 	&& cd /opt/toolchains/dc/kos/utils/dc-chain \
 	&& make build toolchain_profile=$dc_chain makejobs=$makejobs \
 	&& rm -rf /opt/toolchains/dc/kos
