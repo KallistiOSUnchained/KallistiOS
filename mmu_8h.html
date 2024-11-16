@@ -109,6 +109,7 @@ $(function(){initNavTree('mmu_8h.html',''); initResizable(true); });
 <p>Memory Management Unit and Translation Lookaside Buffer handling.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="uio_8h_source.html">sys/uio.h</a>&gt;</code><br />
 </div>
@@ -236,12 +237,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gabffee0d7e91dab25c7453f55640752b6" id="r_gabffee0d7e91dab25c7453f55640752b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gabffee0d7e91dab25c7453f55640752b6">mmu_reset_itlb</a> (void)</td></tr>
 <tr class="memdesc:gabffee0d7e91dab25c7453f55640752b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset ITLB.  <br /></td></tr>
 <tr class="separator:gabffee0d7e91dab25c7453f55640752b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadaa1f70d1e92ed042a002b9c3e84222f" id="r_gadaa1f70d1e92ed042a002b9c3e84222f"><td class="memItemLeft" align="right" valign="top">mmu_token_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gadaa1f70d1e92ed042a002b9c3e84222f">mmu_disable</a> (void)</td></tr>
-<tr class="memdesc:gadaa1f70d1e92ed042a002b9c3e84222f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporarily disable MMU address translation.  <br /></td></tr>
-<tr class="separator:gadaa1f70d1e92ed042a002b9c3e84222f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga33b30063f7fb61a46b267c50eb8438cd" id="r_ga33b30063f7fb61a46b267c50eb8438cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga33b30063f7fb61a46b267c50eb8438cd">mmu_restore</a> (mmu_token_t token)</td></tr>
-<tr class="memdesc:ga33b30063f7fb61a46b267c50eb8438cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore MMU address translation.  <br /></td></tr>
-<tr class="separator:ga33b30063f7fb61a46b267c50eb8438cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad53e98e06212defe0886eb8c7f4a6bf2" id="r_gad53e98e06212defe0886eb8c7f4a6bf2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gad53e98e06212defe0886eb8c7f4a6bf2">mmu_enabled</a> (void)</td></tr>
+<tr class="memdesc:gad53e98e06212defe0886eb8c7f4a6bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if MMU translation is enabled.  <br /></td></tr>
+<tr class="separator:gad53e98e06212defe0886eb8c7f4a6bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabba709d55b61ab67ed49548ab279aec3" id="r_gabba709d55b61ab67ed49548ab279aec3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gabba709d55b61ab67ed49548ab279aec3">mmu_set_sq_addr</a> (void *addr)</td></tr>
+<tr class="memdesc:gabba709d55b61ab67ed49548ab279aec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the base target address for store queues.  <br /></td></tr>
+<tr class="separator:gabba709d55b61ab67ed49548ab279aec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory Management Unit and Translation Lookaside Buffer handling. </p>

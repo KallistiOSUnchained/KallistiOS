@@ -128,9 +128,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga34060d140ecea2a5da87e14f7071d268" id="r_ga34060d140ecea2a5da87e14f7071d268"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga34060d140ecea2a5da87e14f7071d268">sq_lock</a> (void *dest)</td></tr>
-<tr class="memdesc:ga34060d140ecea2a5da87e14f7071d268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock Store Queues.  <br /></td></tr>
-<tr class="separator:ga34060d140ecea2a5da87e14f7071d268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4e172b463199228bf4709dad346c207" id="r_gab4e172b463199228bf4709dad346c207"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab4e172b463199228bf4709dad346c207">sq_lock</a> (void *dest)</td></tr>
+<tr class="memdesc:gab4e172b463199228bf4709dad346c207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock Store Queues.  <br /></td></tr>
+<tr class="separator:gab4e172b463199228bf4709dad346c207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga83fe109b27f9e7069beeb60c334bd563" id="r_ga83fe109b27f9e7069beeb60c334bd563"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83fe109b27f9e7069beeb60c334bd563">sq_unlock</a> (void)</td></tr>
 <tr class="memdesc:ga83fe109b27f9e7069beeb60c334bd563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock Store Queues.  <br /></td></tr>
 <tr class="separator:ga83fe109b27f9e7069beeb60c334bd563"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,14 +339,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga34060d140ecea2a5da87e14f7071d268" name="ga34060d140ecea2a5da87e14f7071d268"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga34060d140ecea2a5da87e14f7071d268">&#9670;&#160;</a></span>sq_lock()</h2>
+<a id="gab4e172b463199228bf4709dad346c207" name="gab4e172b463199228bf4709dad346c207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4e172b463199228bf4709dad346c207">&#9670;&#160;</a></span>sq_lock()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void sq_lock </td>
+          <td class="memname">uint32_t * sq_lock </td>
           <td>(</td>
           <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span></td><td>)</td>
           <td></td>
@@ -357,6 +357,13 @@ Functions</h2></td></tr>
 <p>Lock Store Queues. </p>
 <p>Locks the store queues so that they cannot be used from another thread until unlocked.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This function is called automatically by the store queue API provided by KOS; however, it must be called manually when driving the SQs directly from outside of this API.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>The destination address. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The translated address that can be directly written to.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga83fe109b27f9e7069beeb60c334bd563" title="Unlock Store Queues.">sq_unlock()</a> </dd></dl>
 
 </div>
@@ -498,9 +505,9 @@ Functions</h2></td></tr>
 
 <p>Unlock Store Queues. </p>
 <p>Unlocks the store queues so that they can be used from any thread.</p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="#ga34060d140ecea2a5da87e14f7071d268" title="Lock Store Queues.">sq_lock()</a> should've already been called previously.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd><a class="el" href="#ga34060d140ecea2a5da87e14f7071d268" title="Lock Store Queues.">sq_lock()</a> and <a class="el" href="#ga83fe109b27f9e7069beeb60c334bd563" title="Unlock Store Queues.">sq_unlock()</a> are called automatically by the store queue API provided by KOS; however, they must be called manually when driving the SQs directly from outside this API.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga34060d140ecea2a5da87e14f7071d268" title="Lock Store Queues.">sq_lock()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="#gab4e172b463199228bf4709dad346c207" title="Lock Store Queues.">sq_lock()</a> should've already been called previously.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><a class="el" href="#gab4e172b463199228bf4709dad346c207" title="Lock Store Queues.">sq_lock()</a> and <a class="el" href="#ga83fe109b27f9e7069beeb60c334bd563" title="Unlock Store Queues.">sq_unlock()</a> are called automatically by the store queue API provided by KOS; however, they must be called manually when driving the SQs directly from outside this API.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gab4e172b463199228bf4709dad346c207" title="Lock Store Queues.">sq_lock()</a> </dd></dl>
 
 </div>
 </div>
@@ -521,7 +528,7 @@ Functions</h2></td></tr>
 
 <p>Wait for both Store Queues to complete. </p>
 <p>Wait for both store queues to complete by writing to SQ area.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga34060d140ecea2a5da87e14f7071d268" title="Lock Store Queues.">sq_lock()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gab4e172b463199228bf4709dad346c207" title="Lock Store Queues.">sq_lock()</a> </dd></dl>
 
 </div>
 </div>

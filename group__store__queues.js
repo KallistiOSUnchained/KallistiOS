@@ -7,7 +7,7 @@ var group__store__queues =
     [ "sq_clr", "group__store__queues.html#gae7c2c6f4ce37eaa9d886efbbd0fa2ec5", null ],
     [ "sq_cpy", "group__store__queues.html#ga8dcb6016c825d951d5aacd15fd137b89", null ],
     [ "sq_fast_cpy", "group__store__queues.html#ga169559fc4410135c325025b6ee579a24", null ],
-    [ "sq_lock", "group__store__queues.html#ga34060d140ecea2a5da87e14f7071d268", null ],
+    [ "sq_lock", "group__store__queues.html#gab4e172b463199228bf4709dad346c207", null ],
     [ "sq_set", "group__store__queues.html#ga1ff22db673ec9c9bca4485fcd00a039f", null ],
     [ "sq_set16", "group__store__queues.html#ga30f23e7f5106da1dc68c773b9e7306a5", null ],
     [ "sq_set32", "group__store__queues.html#ga31a2bae1ddf089207a59b1dc29c3ffb4", null ],

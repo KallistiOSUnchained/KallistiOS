@@ -298,7 +298,7 @@ var searchData=
   ['sq_5fcpy_295',['sq_cpy',['../group__store__queues.html#ga8dcb6016c825d951d5aacd15fd137b89',1,'sq.h']]],
   ['sq_5ffast_5fcpy_296',['sq_fast_cpy',['../group__store__queues.html#ga169559fc4410135c325025b6ee579a24',1,'sq.h']]],
   ['sq_5fflush_297',['sq_flush',['../group__store__queues.html#gaaa981440464e89f52b075abbddfab805',1,'sq.h']]],
-  ['sq_5flock_298',['sq_lock',['../group__store__queues.html#ga34060d140ecea2a5da87e14f7071d268',1,'sq.h']]],
+  ['sq_5flock_298',['sq_lock',['../group__store__queues.html#gab4e172b463199228bf4709dad346c207',1,'sq.h']]],
   ['sq_5fmask_5fdest_299',['SQ_MASK_DEST',['../group__store__queues.html#gae368a79b7f862bbdd28e89f8fd717a97',1,'sq.h']]],
   ['sq_5fmask_5fdest_5faddr_300',['SQ_MASK_DEST_ADDR',['../group__store__queues.html#gae3f3b19cc818d9be2940facc19692856',1,'sq.h']]],
   ['sq_5fset_301',['sq_set',['../group__store__queues.html#ga1ff22db673ec9c9bca4485fcd00a039f',1,'sq.h']]],
