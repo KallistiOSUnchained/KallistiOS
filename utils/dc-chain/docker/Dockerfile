@@ -36,10 +36,34 @@ RUN apk --update add --no-cache \
 # You may adapt the KallistiOS repository URL if needed
 ARG dc_chain=stable
 ARG makejobs=2
+ARG enable_cpp=1
+ARG enable_objc=1
+ARG enable_objcpp=1
+ARG enable_d=0
+ARG enable_ada=0
+ARG enable_rust=0
+ARG enable_libgccjit=0
+ARG precision_modes=m4-single-only,m4-single
+ARG default_precision=m4-single-only
+ARG thread_model=kos
+ARG use_kos_patches=1
 RUN mkdir -p /opt/toolchains/dc \
 	&& git clone --depth=1 https://github.com/KallistiOSUnchained/KallistiOS.git /opt/toolchains/dc/kos \
 	&& cd /opt/toolchains/dc/kos/utils/dc-chain \
-	&& make build toolchain_profile=$dc_chain makejobs=$makejobs \
+	&& make build \
+        toolchain_profile=$dc_chain \
+        makejobs=$makejobs \
+        enable_cpp=$enable_cpp \
+        enable_objc=$enable_objc \
+        enable_objcpp=$enable_objcpp \
+        enable_d=$enable_d \
+        enable_ada=$enable_ada \
+        enable_rust=$enable_rust \
+        enable_libgccjit=$enable_libgccjit \
+        precision_modes=$precision_modes \
+        default_precision=$default_precision \
+        thread_model=$thread_model \
+        use_kos_patches=$use_kos_patches \
 	&& rm -rf /opt/toolchains/dc/kos
 
 # Stage 2
