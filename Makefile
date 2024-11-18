@@ -23,14 +23,15 @@ error:
 	@exit 0
 endif
 
-# Separate targets for kernel, utils, and addons
+all: subdirs
+
 kernel: kernel_subdirs
+
+addons: addons_subdirs
 
 utils: utils_subdirs
 
-addons: kernel addons_subdirs
-
-all: subdirs
+examples: examples_subdirs
 
 clean: clean_subdirs
 
@@ -62,25 +63,17 @@ all_auto_kos_base:
 clean_auto_kos_base:
 	$(MAKE) clean KOS_BASE=$(CURDIR)
 
-# Subdirectory rules
-subdirs:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir; \
-	done
-
-clean_subdirs:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir clean; \
-	done
-
-# Specific rules for kernel, utils, and addons
+# Specific rules for kernel, utils, addons, and examples
 kernel_subdirs:
 	$(MAKE) -C kernel
+
+addons_subdirs:
+	$(MAKE) -C addons
 
 utils_subdirs:
 	$(MAKE) -C utils
 
-addons_subdirs:
-	$(MAKE) -C addons
+examples_subdirs:
+	$(MAKE) -C examples
 
 include $(KOS_BASE)/Makefile.rules
