@@ -15,6 +15,8 @@
 
 This fork of KallistiOS [KOS](https://github.com/KallistiOS/KallistiOS) is here to stay in sync with the official version while also adding our own mix of fixes, new features, libraries, and examples. Our goal is to include things that might not fit into the main project due to different creative approaches, giving developers a bit more flexibility and room to experiment in the Dreamcast dev scene.
 
+A comprehensive list of enhancements and differences are available [HERE](https://github.com/KallistiOSUnchained/KallistiOS/blob/master/ENHANCEMENTS.md). 
+
 # Overview
 
 KallistiOS is a development library and operating system for the Sega Dreamcast game console, developed independently from Sega entirely by free software developers. Its flexible permissive license allows both homebrew and commercial use with little restrictions besides proper attribution. As a result, it powers most homebrew and commercial indie releases for the platform. Interfaces and drivers are included for a significant portion of the Dreamcast's hardware capabilities and accessories, including modifications created by hobbyists. 
