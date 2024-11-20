@@ -1,0 +1,26 @@
+# Master KallistiOS Environment Setup
+#
+# This script is responsible for setting up and maintaining your
+# KOS build environment dynamically. It ensures that any new settings 
+# added to environ.sh.sample (the maintainers' version) are available 
+# while preserving the user's custom overrides from environ.sh (their 
+# local version). 
+#
+# **Important:** Do not edit this script. Instead, make your customizations 
+# in environ.sh. This approach ensures you benefit from updates made to 
+# environ.sh.sample without losing your local settings.
+#
+# This script is typically sourced in your current shell environment
+# (probably by .bashrc, .bash_profile, or something similar), so that
+# the KOS environment is set up automatically for each shell session.
+#
+
+# Source the default environment settings
+echo "Sourcing default settings from environ.sh.sample..."
+. "doc/environ.sh.sample"
+
+# Source user-specific overrides, if present
+if [ -f "./environ.sh" ]; then
+    echo "Sourcing local overrides from environ.sh.local..."
+    . "./environ.sh"
+fi
