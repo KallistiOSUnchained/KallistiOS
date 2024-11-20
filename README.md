@@ -15,7 +15,7 @@
 
 This fork of KallistiOS [KOS](https://github.com/KallistiOS/KallistiOS) is here to stay in sync with the official version while also adding our own mix of fixes, new features, libraries, and examples. Our goal is to include things that might not fit into the main project due to different creative approaches, giving developers a bit more flexibility and room to experiment in the Dreamcast dev scene.
 
-A comprehensive list of enhancements and differences are available [HERE](https://github.com/KallistiOSUnchained/KallistiOS/blob/master/ENHANCEMENTS.md). 
+A comprehensive list of enhancements and differences are available [HERE](https://github.com/KallistiOSUnchained/KallistiOS/wiki/KOS-Unchained:-Improvements-Over-KOS-Proper). 
 
 # Overview
 
