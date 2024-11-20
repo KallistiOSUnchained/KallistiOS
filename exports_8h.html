@@ -108,6 +108,7 @@ $(function(){initNavTree('exports_8h.html',''); initResizable(true); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="nmmgr_8h_source.html">kos/nmmgr.h</a>&gt;</code><br />
 </div>
 <p><a href="exports_8h_source.html">Go to the source code of this file.</a></p>
@@ -129,11 +130,19 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6b710e04d23a70940a441dfaaf2f7045" id="r_ga6b710e04d23a70940a441dfaaf2f7045"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structexport__sym__t.html">export_sym_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#ga6b710e04d23a70940a441dfaaf2f7045">export_lookup</a> (const char *name)</td></tr>
 <tr class="memdesc:ga6b710e04d23a70940a441dfaaf2f7045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a symbol by name.  <br /></td></tr>
 <tr class="separator:ga6b710e04d23a70940a441dfaaf2f7045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b879b4cba2b84c302a981d1e9fe5331" id="r_ga1b879b4cba2b84c302a981d1e9fe5331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structexport__sym__t.html">export_sym_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#ga1b879b4cba2b84c302a981d1e9fe5331">export_lookup_path</a> (const char *name, const char *path)</td></tr>
+<tr class="memdesc:ga1b879b4cba2b84c302a981d1e9fe5331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a symbol by name and Name Manager path.  <br /></td></tr>
+<tr class="separator:ga1b879b4cba2b84c302a981d1e9fe5331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad264ba0a7e29f98be21aadbdba909d83" id="r_gad264ba0a7e29f98be21aadbdba909d83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structexport__sym__t.html">export_sym_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#gad264ba0a7e29f98be21aadbdba909d83">export_lookup_addr</a> (uintptr_t addr)</td></tr>
+<tr class="memdesc:gad264ba0a7e29f98be21aadbdba909d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a symbol by approx addr.  <br /></td></tr>
+<tr class="separator:gad264ba0a7e29f98be21aadbdba909d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Kernel exported symbols support. </p>
 <p>This file contains support related to dynamic linking of the kernel of KOS. The kernel (at compile time) produces a list of exported symbols, which can be looked through using the functionality in this file.</p>
-<dl class="section author"><dt>Author</dt><dd>Megan Potter </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Megan Potter </dd>
+<dd>
+Ruslan Rostovtsev </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -103,93 +103,110 @@ $(function(){initNavTree('exports_8h_source.html',''); initResizable(true); });
 <a href="exports_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* KallistiOS ##version##</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">   kos/exports.h</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">   Copyright (C)2003 Megan Potter</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"></span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/** \file    kos/exports.h</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">    \brief   Kernel exported symbols support.</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">    \ingroup system_libraries</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"></span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">    This file contains support related to dynamic linking of the kernel of KOS.</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">    The kernel (at compile time) produces a list of exported symbols, which can</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">    be looked through using the functionality in this file.</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"></span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">    \author Megan Potter</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef __KOS_EXPORTS_H</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define __KOS_EXPORTS_H</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>__BEGIN_DECLS</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/** \addtogroup system_libraries</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">    @{</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/** \brief  A single export symbol.</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"></span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">    This structure holds a single symbol that has been exported from the kernel.</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">    These will be patched into loaded ELF binaries at load time.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">   Copyright (C) 2003 Megan Potter</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">   Copyright (C) 2024 Ruslan Rostovtsev</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"></span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/** \file    kos/exports.h</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">    \brief   Kernel exported symbols support.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">    \ingroup system_libraries</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">    This file contains support related to dynamic linking of the kernel of KOS.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">    The kernel (at compile time) produces a list of exported symbols, which can</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">    be looked through using the functionality in this file.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"></span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">    \author Megan Potter</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">    \author Ruslan Rostovtsev</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifndef __KOS_EXPORTS_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define __KOS_EXPORTS_H</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>__BEGIN_DECLS</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"></span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/** \addtogroup system_libraries</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">    @{</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"></span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/** \brief  A single export symbol.</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"></span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">    \headerfile kos/exports.h</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structexport__sym__t.html">   38</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>export_sym {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">   39</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>  * <a class="code hl_variable" href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">name</a>;     <span class="comment">/**&lt; \brief The name of the symbol. */</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structexport__sym__t.html#aac68c914428c0179d717e7b7da67eb17">   40</a></span>    <a class="code hl_typedef" href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a>       <a class="code hl_variable" href="structexport__sym__t.html#aac68c914428c0179d717e7b7da67eb17">ptr</a>;        <span class="comment">/**&lt; \brief A pointer to the symbol. */</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">    This structure holds a single symbol that has been exported from the kernel.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    These will be patched into loaded ELF binaries at load time.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    \headerfile kos/exports.h</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structexport__sym__t.html">   41</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>export_sym {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">   42</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">name</a>;     <span class="comment">/**&lt; \brief The name of the symbol. */</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structexport__sym__t.html#a38314e3819ca449240abff2896a356f8">   43</a></span>    uintptr_t <a class="code hl_variable" href="structexport__sym__t.html#a38314e3819ca449240abff2896a356f8">ptr</a>;        <span class="comment">/**&lt; \brief A pointer to the symbol. */</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>} <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a>;</div>
 </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/** \cond */</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/* These are the platform-independent exports */</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">extern</span> <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> kernel_symtab[];</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/* And these are the arch-specific exports */</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">extern</span> <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> arch_symtab[];<span class="comment"></span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/** \endcond */</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#ifndef __EXPORTS_FILE</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &lt;<a class="code" href="nmmgr_8h.html">kos/nmmgr.h</a>&gt;</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"></span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">/** \brief  A symbol table &quot;handler&quot; for nmmgr.</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    \headerfile kos/exports.h</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structsymtab__handler__t.html">   57</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>symtab_handler {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structsymtab__handler__t.html#a75a283f20ab90c1cb78a102d638047d1">   58</a></span>    <span class="keyword">struct </span>nmmgr_handler nmmgr;     <span class="comment">/**&lt; \brief Name manager handler header */</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structsymtab__handler__t.html#a5aec034b9bb71dbfd666153296ca57be">   59</a></span>    <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a>         * <a class="code hl_variable" href="structsymtab__handler__t.html#a5aec034b9bb71dbfd666153296ca57be">table</a>;   <span class="comment">/**&lt; \brief Location of the first entry */</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>} <a class="code hl_struct" href="structsymtab__handler__t.html">symtab_handler_t</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"></span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/** \cond */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/* These are the platform-independent exports */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">extern</span> <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> kernel_symtab[];</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/* And these are the arch-specific exports */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">extern</span> <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> arch_symtab[];<span class="comment"></span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/** \endcond */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#ifndef __EXPORTS_FILE</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#include &lt;<a class="code" href="nmmgr_8h.html">kos/nmmgr.h</a>&gt;</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"></span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/** \brief  A symbol table &quot;handler&quot; for nmmgr.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    \headerfile kos/exports.h</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structsymtab__handler__t.html">   60</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>symtab_handler {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structsymtab__handler__t.html#a75a283f20ab90c1cb78a102d638047d1">   61</a></span>    <span class="keyword">struct </span>nmmgr_handler nmmgr;   <span class="comment">/**&lt; \brief Name manager handler header */</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structsymtab__handler__t.html#a5aec034b9bb71dbfd666153296ca57be">   62</a></span>    <a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> *<a class="code hl_variable" href="structsymtab__handler__t.html#a5aec034b9bb71dbfd666153296ca57be">table</a>;          <span class="comment">/**&lt; \brief Location of the first entry */</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>} <a class="code hl_struct" href="structsymtab__handler__t.html">symtab_handler_t</a>;</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/** \brief  Setup initial kernel exports. */</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__system__libraries.html#gaa5f88a6dc842b5acfe2d45c412e083de">   64</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__libraries.html#gaa5f88a6dc842b5acfe2d45c412e083de">export_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"></span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/** \brief  Look up a symbol by name.</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">    \param  name            The symbol to look up</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    \return                 The export structure, or NULL on failure</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="group__system__libraries.html#ga6b710e04d23a70940a441dfaaf2f7045">   70</a></span><a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> * <a class="code hl_function" href="group__system__libraries.html#ga6b710e04d23a70940a441dfaaf2f7045">export_lookup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * name);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment"></span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/** @} */</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>__END_DECLS</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif  </span><span class="comment">/* __KOS_EXPORTS_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/** \brief  Setup initial kernel exports. */</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__system__libraries.html#gaa5f88a6dc842b5acfe2d45c412e083de">   67</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__libraries.html#gaa5f88a6dc842b5acfe2d45c412e083de">export_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment"></span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/** \brief  Look up a symbol by name.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">    \param  name            The symbol to look up</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">    \return                 The export structure, or NULL on failure</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group__system__libraries.html#ga6b710e04d23a70940a441dfaaf2f7045">   73</a></span><a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> *<a class="code hl_function" href="group__system__libraries.html#ga6b710e04d23a70940a441dfaaf2f7045">export_lookup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"></span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">/** \brief  Look up a symbol by name and Name Manager path.</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">    \param  name            The symbol to look up</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">    \param  path            The Name Manager path to look up</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">    \return                 The export structure, or NULL on failure</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="group__system__libraries.html#ga1b879b4cba2b84c302a981d1e9fe5331">   80</a></span><a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> *<a class="code hl_function" href="group__system__libraries.html#ga1b879b4cba2b84c302a981d1e9fe5331">export_lookup_path</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment"></span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">/** \brief  Look up a symbol by approx addr.</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">            It can be useful for unhandled exceptions messages.</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">    \param  addr            The symbol to look up</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">    \return                 The export structure, or NULL on failure</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="group__system__libraries.html#gad264ba0a7e29f98be21aadbdba909d83">   87</a></span><a class="code hl_struct" href="structexport__sym__t.html">export_sym_t</a> *<a class="code hl_function" href="group__system__libraries.html#gad264ba0a7e29f98be21aadbdba909d83">export_lookup_addr</a>(uintptr_t addr);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment"></span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">/** @} */</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>__END_DECLS</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif  </span><span class="comment">/* __KOS_EXPORTS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="agroup__system__libraries_html_ga1b879b4cba2b84c302a981d1e9fe5331"><div class="ttname"><a href="group__system__libraries.html#ga1b879b4cba2b84c302a981d1e9fe5331">export_lookup_path</a></div><div class="ttdeci">export_sym_t * export_lookup_path(const char *name, const char *path)</div><div class="ttdoc">Look up a symbol by name and Name Manager path.</div></div>
 <div class="ttc" id="agroup__system__libraries_html_ga6b710e04d23a70940a441dfaaf2f7045"><div class="ttname"><a href="group__system__libraries.html#ga6b710e04d23a70940a441dfaaf2f7045">export_lookup</a></div><div class="ttdeci">export_sym_t * export_lookup(const char *name)</div><div class="ttdoc">Look up a symbol by name.</div></div>
 <div class="ttc" id="agroup__system__libraries_html_gaa5f88a6dc842b5acfe2d45c412e083de"><div class="ttname"><a href="group__system__libraries.html#gaa5f88a6dc842b5acfe2d45c412e083de">export_init</a></div><div class="ttdeci">void export_init(void)</div><div class="ttdoc">Setup initial kernel exports.</div></div>
-<div class="ttc" id="agroup__system__types_html_ga6c3e6bc5b006cba69f59a5c14cd2c8cd"><div class="ttname"><a href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a></div><div class="ttdeci">uint32 ptr_t</div><div class="ttdoc">Pointer arithmetic type.</div><div class="ttdef"><b>Definition</b> types.h:52</div></div>
+<div class="ttc" id="agroup__system__libraries_html_gad264ba0a7e29f98be21aadbdba909d83"><div class="ttname"><a href="group__system__libraries.html#gad264ba0a7e29f98be21aadbdba909d83">export_lookup_addr</a></div><div class="ttdeci">export_sym_t * export_lookup_addr(uintptr_t addr)</div><div class="ttdoc">Look up a symbol by approx addr.</div></div>
 <div class="ttc" id="anmmgr_8h_html"><div class="ttname"><a href="nmmgr_8h.html">nmmgr.h</a></div><div class="ttdoc">Name manager.</div></div>
-<div class="ttc" id="astructexport__sym__t_html"><div class="ttname"><a href="structexport__sym__t.html">export_sym_t</a></div><div class="ttdoc">A single export symbol.</div><div class="ttdef"><b>Definition</b> exports.h:38</div></div>
-<div class="ttc" id="astructexport__sym__t_html_a54ed8c54a7c51ab81c099197cfbdc346"><div class="ttname"><a href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">export_sym_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">The name of the symbol.</div><div class="ttdef"><b>Definition</b> exports.h:39</div></div>
-<div class="ttc" id="astructexport__sym__t_html_aac68c914428c0179d717e7b7da67eb17"><div class="ttname"><a href="structexport__sym__t.html#aac68c914428c0179d717e7b7da67eb17">export_sym_t::ptr</a></div><div class="ttdeci">ptr_t ptr</div><div class="ttdoc">A pointer to the symbol.</div><div class="ttdef"><b>Definition</b> exports.h:40</div></div>
-<div class="ttc" id="astructsymtab__handler__t_html"><div class="ttname"><a href="structsymtab__handler__t.html">symtab_handler_t</a></div><div class="ttdoc">A symbol table &quot;handler&quot; for nmmgr.</div><div class="ttdef"><b>Definition</b> exports.h:57</div></div>
-<div class="ttc" id="astructsymtab__handler__t_html_a5aec034b9bb71dbfd666153296ca57be"><div class="ttname"><a href="structsymtab__handler__t.html#a5aec034b9bb71dbfd666153296ca57be">symtab_handler_t::table</a></div><div class="ttdeci">export_sym_t * table</div><div class="ttdoc">Location of the first entry.</div><div class="ttdef"><b>Definition</b> exports.h:59</div></div>
+<div class="ttc" id="astructexport__sym__t_html"><div class="ttname"><a href="structexport__sym__t.html">export_sym_t</a></div><div class="ttdoc">A single export symbol.</div><div class="ttdef"><b>Definition</b> exports.h:41</div></div>
+<div class="ttc" id="astructexport__sym__t_html_a38314e3819ca449240abff2896a356f8"><div class="ttname"><a href="structexport__sym__t.html#a38314e3819ca449240abff2896a356f8">export_sym_t::ptr</a></div><div class="ttdeci">uintptr_t ptr</div><div class="ttdoc">A pointer to the symbol.</div><div class="ttdef"><b>Definition</b> exports.h:43</div></div>
+<div class="ttc" id="astructexport__sym__t_html_a54ed8c54a7c51ab81c099197cfbdc346"><div class="ttname"><a href="structexport__sym__t.html#a54ed8c54a7c51ab81c099197cfbdc346">export_sym_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">The name of the symbol.</div><div class="ttdef"><b>Definition</b> exports.h:42</div></div>
+<div class="ttc" id="astructsymtab__handler__t_html"><div class="ttname"><a href="structsymtab__handler__t.html">symtab_handler_t</a></div><div class="ttdoc">A symbol table &quot;handler&quot; for nmmgr.</div><div class="ttdef"><b>Definition</b> exports.h:60</div></div>
+<div class="ttc" id="astructsymtab__handler__t_html_a5aec034b9bb71dbfd666153296ca57be"><div class="ttname"><a href="structsymtab__handler__t.html#a5aec034b9bb71dbfd666153296ca57be">symtab_handler_t::table</a></div><div class="ttdeci">export_sym_t * table</div><div class="ttdoc">Location of the first entry.</div><div class="ttdef"><b>Definition</b> exports.h:62</div></div>
 <div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,5 +1,8 @@
 var NAVTREEINDEX14 =
 {
+"group__vmu__settings.html":[9,6,8,5],
+"group__vmu__settings.html#ga1345598b82c43c14b0501a5cfa4e63e6":[9,6,8,5,6],
+"group__vmu__settings.html#ga1f0e98cf6ba8222c7ccb9a3b1ba71dd2":[9,6,8,5,3],
 "group__vmu__settings.html#ga7d63873f3b7739ab1753fa9ab7eebc83":[9,6,8,5,4],
 "group__vmu__settings.html#ga7df59f77fc4205c309aaf4ed5b95ca11":[9,6,8,5,5],
 "group__vmu__settings.html#ga896f3936112c4e109367afa73d7877db":[9,6,8,5,2],
@@ -156,7 +159,7 @@ var NAVTREEINDEX14 =
 "structDIR.html#a92713bef58c8f90e757f36619a2a07ce":[9,3,7,5,2],
 "structDIR.html#ab5286d477aba39e81bb313023d55a1e7":[9,3,7,5,3],
 "struct__mbstate__t.html":[9,7,21,3],
-"struct__mbstate__t.html#a21342aeec0e545b84eb6f9eba6924e01":[9,7,21,3,1],
+"struct__mbstate__t.html#a210fe2eb89c6af705fa1fcd24d87288f":[9,7,21,3,1],
 "struct__mbstate__t.html#a6222d75eeed0d11331f95cc31cc95d3b":[9,7,21,3,2],
 "struct__mbstate__t.html#a6261817a0f58d2907e29e39413049b6c":[9,7,21,3,0],
 "struct__mbstate__t.html#ab05d19af90b0b38c292da879b74d147e":[9,7,21,3,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX14 =
 "structdirent.html#af812e4ed54eeb48e843efa6fb9a5465f":[9,3,7,4,2],
 "structdirent__t.html":[9,3,5,1],
 "structdirent__t.html#a89edd12329b317db53629203ecd20e1c":[9,3,5,1,0],
-"structdirent__t.html#a9e1d27b34f5292c8158a2523ba3621f2":[9,3,5,1,1],
-"structdirent__t.html#ac5652fb30f46299c62a9d706f9e56949":[9,3,5,1,3],
-"structdirent__t.html#ad131d233ed2233b39d4c2ccc9eaa85c9":[9,3,5,1,2],
-"structdreameye__state__t.html":[9,6,0,1]
+"structdirent__t.html#a9e1d27b34f5292c8158a2523ba3621f2":[9,3,5,1,1]
 };

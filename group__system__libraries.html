@@ -158,6 +158,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6b710e04d23a70940a441dfaaf2f7045" id="r_ga6b710e04d23a70940a441dfaaf2f7045"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structexport__sym__t.html">export_sym_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6b710e04d23a70940a441dfaaf2f7045">export_lookup</a> (const char *name)</td></tr>
 <tr class="memdesc:ga6b710e04d23a70940a441dfaaf2f7045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a symbol by name.  <br /></td></tr>
 <tr class="separator:ga6b710e04d23a70940a441dfaaf2f7045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b879b4cba2b84c302a981d1e9fe5331" id="r_ga1b879b4cba2b84c302a981d1e9fe5331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structexport__sym__t.html">export_sym_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1b879b4cba2b84c302a981d1e9fe5331">export_lookup_path</a> (const char *name, const char *path)</td></tr>
+<tr class="memdesc:ga1b879b4cba2b84c302a981d1e9fe5331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a symbol by name and Name Manager path.  <br /></td></tr>
+<tr class="separator:ga1b879b4cba2b84c302a981d1e9fe5331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad264ba0a7e29f98be21aadbdba909d83" id="r_gad264ba0a7e29f98be21aadbdba909d83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structexport__sym__t.html">export_sym_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad264ba0a7e29f98be21aadbdba909d83">export_lookup_addr</a> (uintptr_t addr)</td></tr>
+<tr class="memdesc:gad264ba0a7e29f98be21aadbdba909d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a symbol by approx addr.  <br /></td></tr>
+<tr class="separator:gad264ba0a7e29f98be21aadbdba909d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe7448a4d522473297905aa593ba29b9" id="r_gabe7448a4d522473297905aa593ba29b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklibrary__t.html">klibrary_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabe7448a4d522473297905aa593ba29b9">library_by_libid</a> (<a class="el" href="#gae8a85158bbff787dfd44047083da9e3e">libid_t</a> libid)</td></tr>
 <tr class="memdesc:gabe7448a4d522473297905aa593ba29b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a library by ID.  <br /></td></tr>
 <tr class="separator:gabe7448a4d522473297905aa593ba29b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +179,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaad66217af468d27407c557fffbaed3cf" id="r_gaad66217af468d27407c557fffbaed3cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklibrary__t.html">klibrary_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaad66217af468d27407c557fffbaed3cf">library_lookup</a> (const char *name)</td></tr>
 <tr class="memdesc:gaad66217af468d27407c557fffbaed3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a library by name.  <br /></td></tr>
 <tr class="separator:gaad66217af468d27407c557fffbaed3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c8b424fe239f3004c0cc066111adb50" id="r_ga6c8b424fe239f3004c0cc066111adb50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklibrary__t.html">klibrary_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c8b424fe239f3004c0cc066111adb50">library_lookup_fn</a> (const char *fn)</td></tr>
+<tr class="memdesc:ga6c8b424fe239f3004c0cc066111adb50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a library by filename.  <br /></td></tr>
+<tr class="separator:ga6c8b424fe239f3004c0cc066111adb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga675e5553a3e7de2fabe97d564559a8a8" id="r_ga675e5553a3e7de2fabe97d564559a8a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga675e5553a3e7de2fabe97d564559a8a8">library_close</a> (<a class="el" href="structklibrary__t.html">klibrary_t</a> *lib)</td></tr>
 <tr class="memdesc:ga675e5553a3e7de2fabe97d564559a8a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a previously opened library.  <br /></td></tr>
 <tr class="separator:ga675e5553a3e7de2fabe97d564559a8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,9 +194,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga12e49138e2e77002380c45d76dfa70eb" id="r_ga12e49138e2e77002380c45d76dfa70eb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12e49138e2e77002380c45d76dfa70eb">library_get_name</a> (<a class="el" href="structklibrary__t.html">klibrary_t</a> *lib)</td></tr>
 <tr class="memdesc:ga12e49138e2e77002380c45d76dfa70eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified library's name.  <br /></td></tr>
 <tr class="separator:ga12e49138e2e77002380c45d76dfa70eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gada9ed647488134b4e95269030a00ce62" id="r_gada9ed647488134b4e95269030a00ce62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gada9ed647488134b4e95269030a00ce62">library_get_version</a> (<a class="el" href="structklibrary__t.html">klibrary_t</a> *lib)</td></tr>
-<tr class="memdesc:gada9ed647488134b4e95269030a00ce62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified library's version.  <br /></td></tr>
-<tr class="separator:gada9ed647488134b4e95269030a00ce62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9eb1865fa921a0c5bb77ff74e48f6e23" id="r_ga9eb1865fa921a0c5bb77ff74e48f6e23"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9eb1865fa921a0c5bb77ff74e48f6e23">library_get_version</a> (<a class="el" href="structklibrary__t.html">klibrary_t</a> *lib)</td></tr>
+<tr class="memdesc:ga9eb1865fa921a0c5bb77ff74e48f6e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified library's version.  <br /></td></tr>
+<tr class="separator:ga9eb1865fa921a0c5bb77ff74e48f6e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>API for managing dynamically loaded libraries </p>
@@ -264,6 +273,63 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The symbol to look up </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The export structure, or NULL on failure </dd></dl>
+
+</div>
+</div>
+<a id="gad264ba0a7e29f98be21aadbdba909d83" name="gad264ba0a7e29f98be21aadbdba909d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad264ba0a7e29f98be21aadbdba909d83">&#9670;&#160;</a></span>export_lookup_addr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structexport__sym__t.html">export_sym_t</a> * export_lookup_addr </td>
+          <td>(</td>
+          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Look up a symbol by approx addr. </p>
+<p>It can be useful for unhandled exceptions messages. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>The symbol to look up </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The export structure, or NULL on failure </dd></dl>
+
+</div>
+</div>
+<a id="ga1b879b4cba2b84c302a981d1e9fe5331" name="ga1b879b4cba2b84c302a981d1e9fe5331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b879b4cba2b84c302a981d1e9fe5331">&#9670;&#160;</a></span>export_lookup_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structexport__sym__t.html">export_sym_t</a> * export_lookup_path </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Look up a symbol by name and Name Manager path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The symbol to look up </td></tr>
+    <tr><td class="paramname">path</td><td>The Name Manager path to look up </td></tr>
   </table>
   </dd>
 </dl>
@@ -472,14 +538,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gada9ed647488134b4e95269030a00ce62" name="gada9ed647488134b4e95269030a00ce62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gada9ed647488134b4e95269030a00ce62">&#9670;&#160;</a></span>library_get_version()</h2>
+<a id="ga9eb1865fa921a0c5bb77ff74e48f6e23" name="ga9eb1865fa921a0c5bb77ff74e48f6e23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9eb1865fa921a0c5bb77ff74e48f6e23">&#9670;&#160;</a></span>library_get_version()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> library_get_version </td>
+          <td class="memname">uint32_t library_get_version </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structklibrary__t.html">klibrary_t</a> *</td>          <td class="paramname"><span class="paramname"><em>lib</em></span></td><td>)</td>
           <td></td>
@@ -515,10 +581,38 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Look up a library by name. </p>
-<p>This function looks up a library by its symbolic name without trying to actually load or open it. This is useful if you want to open a library but not keep around a handle to it (which isn't necessarily encouraged).</p>
+<p>This is useful if you want to reuse opened library and this is used for <a class="el" href="#ga28bd6209c98e0fa09326b91e3c0bc35c" title="Try to open a library by name.">library_open()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the library to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The library, if found. NULL if not found, errno set as appropriate.</dd></dl>
+<dl class="section user"><dt>Error Conditions:</dt><dd><em>ENOENT</em> - the library was not found </dd></dl>
+
+</div>
+</div>
+<a id="ga6c8b424fe239f3004c0cc066111adb50" name="ga6c8b424fe239f3004c0cc066111adb50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c8b424fe239f3004c0cc066111adb50">&#9670;&#160;</a></span>library_lookup_fn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structklibrary__t.html">klibrary_t</a> * library_lookup_fn </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>fn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Look up a library by filename. </p>
+<p>This is useful if you want to reuse opened library and this is used for <a class="el" href="#ga28bd6209c98e0fa09326b91e3c0bc35c" title="Try to open a library by name.">library_open()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fn</td><td>The filename of the library to search for </td></tr>
   </table>
   </dd>
 </dl>
@@ -547,7 +641,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Try to open a library by name. </p>
-<p>This function attempts to open a library by its name. If it cannot be found by name, this function will attempt to load the library from the specified filename.</p>
+<p>This function attempts to open a library by its name. If it cannot be found by name, this function will attempt to open by filename. If it cannot be found by filename, this function will attempt to load the library from the specified filename. If the library is already opened, this may only involve increasing the reference count.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The symbolic name of the library </td></tr>

@@ -1,5 +1,8 @@
 var NAVTREEINDEX13 =
 {
+"group__vfs__dev.html":[9,3,1],
+"group__vfs__drivers.html":[9,3,2],
+"group__vfs__ext2.html":[9,3,2,1],
 "group__vfs__ext2.html#ga33dec8476d9acee46d7a789c964d5011":[9,3,2,1,2],
 "group__vfs__ext2.html#ga6da73543716d6be455ccbeebd3d31824":[9,3,2,1,3],
 "group__vfs__ext2.html#gaa26e70f1e0173c3ef6fed89d64241753":[9,3,2,1,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX13 =
 "group__vmu__fb.html#gaf0caa31fe6a2a42b9a46f7851ba4d10a":[9,6,8,1,3],
 "group__vmu__package.html":[9,6,8,2],
 "group__vmu__package.html#ga54577f9ae7f9f811d3838282a3950f47":[9,6,8,2,5],
-"group__vmu__package.html#ga8ba955bdb70a86e4008400b4892a08fa":[9,6,8,2,4],
-"group__vmu__settings.html":[9,6,8,5],
-"group__vmu__settings.html#ga1345598b82c43c14b0501a5cfa4e63e6":[9,6,8,5,6],
-"group__vmu__settings.html#ga1f0e98cf6ba8222c7ccb9a3b1ba71dd2":[9,6,8,5,3]
+"group__vmu__package.html#ga8ba955bdb70a86e4008400b4892a08fa":[9,6,8,2,4]
 };

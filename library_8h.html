@@ -150,6 +150,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaad66217af468d27407c557fffbaed3cf" id="r_gaad66217af468d27407c557fffbaed3cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklibrary__t.html">klibrary_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#gaad66217af468d27407c557fffbaed3cf">library_lookup</a> (const char *name)</td></tr>
 <tr class="memdesc:gaad66217af468d27407c557fffbaed3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a library by name.  <br /></td></tr>
 <tr class="separator:gaad66217af468d27407c557fffbaed3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c8b424fe239f3004c0cc066111adb50" id="r_ga6c8b424fe239f3004c0cc066111adb50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklibrary__t.html">klibrary_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#ga6c8b424fe239f3004c0cc066111adb50">library_lookup_fn</a> (const char *fn)</td></tr>
+<tr class="memdesc:ga6c8b424fe239f3004c0cc066111adb50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a library by filename.  <br /></td></tr>
+<tr class="separator:ga6c8b424fe239f3004c0cc066111adb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga675e5553a3e7de2fabe97d564559a8a8" id="r_ga675e5553a3e7de2fabe97d564559a8a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#ga675e5553a3e7de2fabe97d564559a8a8">library_close</a> (<a class="el" href="structklibrary__t.html">klibrary_t</a> *lib)</td></tr>
 <tr class="memdesc:ga675e5553a3e7de2fabe97d564559a8a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a previously opened library.  <br /></td></tr>
 <tr class="separator:ga675e5553a3e7de2fabe97d564559a8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,15 +165,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ga12e49138e2e77002380c45d76dfa70eb" id="r_ga12e49138e2e77002380c45d76dfa70eb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#ga12e49138e2e77002380c45d76dfa70eb">library_get_name</a> (<a class="el" href="structklibrary__t.html">klibrary_t</a> *lib)</td></tr>
 <tr class="memdesc:ga12e49138e2e77002380c45d76dfa70eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified library's name.  <br /></td></tr>
 <tr class="separator:ga12e49138e2e77002380c45d76dfa70eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gada9ed647488134b4e95269030a00ce62" id="r_gada9ed647488134b4e95269030a00ce62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#gada9ed647488134b4e95269030a00ce62">library_get_version</a> (<a class="el" href="structklibrary__t.html">klibrary_t</a> *lib)</td></tr>
-<tr class="memdesc:gada9ed647488134b4e95269030a00ce62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified library's version.  <br /></td></tr>
-<tr class="separator:gada9ed647488134b4e95269030a00ce62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9eb1865fa921a0c5bb77ff74e48f6e23" id="r_ga9eb1865fa921a0c5bb77ff74e48f6e23"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html#ga9eb1865fa921a0c5bb77ff74e48f6e23">library_get_version</a> (<a class="el" href="structklibrary__t.html">klibrary_t</a> *lib)</td></tr>
+<tr class="memdesc:ga9eb1865fa921a0c5bb77ff74e48f6e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified library's version.  <br /></td></tr>
+<tr class="separator:ga9eb1865fa921a0c5bb77ff74e48f6e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dynamically loadable library support. </p>
 <p>This file contains definitions for accessing loadable libraries at runtime. Each library has a name and a version number that it can be referenced by. One must be careful with these dynamic libraries as there is no private storage per instance, and all memory space is shared.</p>
 <p>Libraries can both export and import symbols. Imported symbols may require other libraries to be loaded earlier. Libraries are reference counted so that they can be opened multiple times without actually loading them multiple times, and so that a close will act as expected in situations like this.</p>
-<dl class="section author"><dt>Author</dt><dd>Megan Potter </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Megan Potter </dd>
+<dd>
+Ruslan Rostovtsev </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

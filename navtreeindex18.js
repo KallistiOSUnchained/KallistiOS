@@ -1,5 +1,8 @@
 var NAVTREEINDEX18 =
 {
+"structtermios.html#a3f42b69c0c7fa4ce2179cb61f8c7ca99":[10,0,98,6],
+"structtermios.html#a5d42b95faa4745c3bea53652d2812162":[10,0,98,1],
+"structtermios.html#a5fbe3e4316082afab45fc424938ef13a":[10,0,98,0],
 "structtermios.html#a85b6c86d2a3db45a3829488190e357e4":[10,0,98,2],
 "structtermios.html#a91bdd7691180800fccc4b791466ee9c3":[10,0,98,4],
 "structtermios.html#ad6e2cfedb81530e5a6a3a0e30b8c6362":[10,0,98,5],

@@ -33,7 +33,7 @@ var searchData=
   ['copyprotect_30',['copyprotect',['../structvmu__dir__t.html#a944934c3ec92d4e75b8e9200f09909fd',1,'vmu_dir_t']]],
   ['count_31',['count',['../structmutex__t.html#a753a4dd3b9a6aa8bfd579ec83240e2db',1,'mutex_t::count'],['../structsemaphore__t.html#af8d3354979a6a3fca513525c3e4c3be7',1,'semaphore_t::count']]],
   ['count_5fblocks_32',['count_blocks',['../structkos__blockdev__t.html#a758a01cf5388b340246ff1d558016ab3',1,'kos_blockdev_t']]],
-  ['cpu_5ftime_33',['cpu_time',['../structkthread__t.html#aff0f8d86f3e02da78eff96fb3bb36db7',1,'kthread_t']]],
+  ['cpu_5ftime_33',['cpu_time',['../structkthread__t.html#adaf73c0138b0ca1b47f5eab41e64757e',1,'kthread_t']]],
   ['crc_34',['crc',['../structvmu__hdr__t.html#a02134d0050c236e623bb76c43747f80a',1,'vmu_hdr_t']]],
   ['create_5fdetached_35',['create_detached',['../structkthread__attr__t.html#a79fdb0713dc44e6b1724f8a0ee129fa0',1,'kthread_attr_t']]],
   ['culling_36',['culling',['../structpvr__poly__cxt__t.html#a51a02469c2fbcbaa1f8ef87a3bcef5cd',1,'pvr_poly_cxt_t::culling'],['../structpvr__sprite__cxt__t.html#afa769b672242533997a05c47c5c996a0',1,'pvr_sprite_cxt_t::culling']]],

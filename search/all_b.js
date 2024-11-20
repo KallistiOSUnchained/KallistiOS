@@ -132,11 +132,13 @@ var searchData=
   ['exit_20paths_129',['Exit Paths',['../group__arch__retpaths.html',1,'']]],
   ['export_5finit_130',['export_init',['../group__system__libraries.html#gaa5f88a6dc842b5acfe2d45c412e083de',1,'exports.h']]],
   ['export_5flookup_131',['export_lookup',['../group__system__libraries.html#ga6b710e04d23a70940a441dfaaf2f7045',1,'exports.h']]],
-  ['export_5fsym_5ft_132',['export_sym_t',['../structexport__sym__t.html',1,'']]],
-  ['exports_2eh_133',['exports.h',['../exports_8h.html',1,'']]],
-  ['ext2_134',['EXT2',['../group__vfs__ext2.html',1,'']]],
-  ['external_20port_135',['External Port',['../group__asic__events__ext.html',1,'']]],
-  ['eyecatch_20types_136',['Eyecatch Types',['../group__vmu__ectype.html',1,'']]],
-  ['eyecatch_5fdata_137',['eyecatch_data',['../structvmu__pkg__t.html#ae3b2f08886653f6cb8aa5be3dbb730b0',1,'vmu_pkg_t']]],
-  ['eyecatch_5ftype_138',['eyecatch_type',['../structvmu__pkg__t.html#a082a9da1aa2009396b683efb853f526f',1,'vmu_pkg_t::eyecatch_type'],['../structvmu__hdr__t.html#a15681453f79ab6a96bd1f133eb9b36fb',1,'vmu_hdr_t::eyecatch_type']]]
+  ['export_5flookup_5faddr_132',['export_lookup_addr',['../group__system__libraries.html#gad264ba0a7e29f98be21aadbdba909d83',1,'exports.h']]],
+  ['export_5flookup_5fpath_133',['export_lookup_path',['../group__system__libraries.html#ga1b879b4cba2b84c302a981d1e9fe5331',1,'exports.h']]],
+  ['export_5fsym_5ft_134',['export_sym_t',['../structexport__sym__t.html',1,'']]],
+  ['exports_2eh_135',['exports.h',['../exports_8h.html',1,'']]],
+  ['ext2_136',['EXT2',['../group__vfs__ext2.html',1,'']]],
+  ['external_20port_137',['External Port',['../group__asic__events__ext.html',1,'']]],
+  ['eyecatch_20types_138',['Eyecatch Types',['../group__vmu__ectype.html',1,'']]],
+  ['eyecatch_5fdata_139',['eyecatch_data',['../structvmu__pkg__t.html#ae3b2f08886653f6cb8aa5be3dbb730b0',1,'vmu_pkg_t']]],
+  ['eyecatch_5ftype_140',['eyecatch_type',['../structvmu__pkg__t.html#a082a9da1aa2009396b683efb853f526f',1,'vmu_pkg_t::eyecatch_type'],['../structvmu__hdr__t.html#a15681453f79ab6a96bd1f133eb9b36fb',1,'vmu_hdr_t::eyecatch_type']]]
 ];

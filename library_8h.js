@@ -9,7 +9,8 @@ var library_8h =
     [ "library_get_libid", "group__system__libraries.html#ga580c599399cc9f76f77efa2bee150c0d", null ],
     [ "library_get_name", "group__system__libraries.html#ga12e49138e2e77002380c45d76dfa70eb", null ],
     [ "library_get_refcnt", "group__system__libraries.html#gaf40aba53296974addb85a578de9e0bac", null ],
-    [ "library_get_version", "group__system__libraries.html#gada9ed647488134b4e95269030a00ce62", null ],
+    [ "library_get_version", "group__system__libraries.html#ga9eb1865fa921a0c5bb77ff74e48f6e23", null ],
     [ "library_lookup", "group__system__libraries.html#gaad66217af468d27407c557fffbaed3cf", null ],
+    [ "library_lookup_fn", "group__system__libraries.html#ga6c8b424fe239f3004c0cc066111adb50", null ],
     [ "library_open", "group__system__libraries.html#ga28bd6209c98e0fa09326b91e3c0bc35c", null ]
 ];
