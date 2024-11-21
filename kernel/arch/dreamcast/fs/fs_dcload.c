@@ -34,41 +34,22 @@ printf goes to the dc-tool console
 
 static spinlock_t mutex = SPINLOCK_INITIALIZER;
 
-#define plain_dclsc(...) ({ \
-        int old = 0, rv; \
-        if(!irq_inside_int()) { \
-            old = irq_disable(); \
-        } \
-        while(FIFO_STATUS & FIFO_SH4) \
-            ; \
-        rv = dcloadsyscall(__VA_ARGS__); \
-        if(!irq_inside_int()) \
-            irq_restore(old); \
-        rv; \
-    })
-
-// #define plain_dclsc(...) dcloadsyscall(__VA_ARGS__)
-
-static void * lwip_dclsc = 0;
-
 #define dclsc(...) ({ \
-        int rv; \
-        if(lwip_dclsc) \
-            rv = (*(int (*)()) lwip_dclsc)(__VA_ARGS__); \
-        else \
-            rv = plain_dclsc(__VA_ARGS__); \
-        rv; \
-    })
+    int old = 0, rv; \
+    if(!irq_inside_int()) { \
+        old = irq_disable(); \
+    } \
+    while(FIFO_STATUS & FIFO_SH4) \
+        ; \
+    rv = dcloadsyscall(__VA_ARGS__); \
+    if(!irq_inside_int()) \
+        irq_restore(old); \
+    rv; \
+})
 
 /* Printk replacement */
-
 int dcload_write_buffer(const uint8 *data, int len, int xlat) {
     (void)xlat;
-
-    if(lwip_dclsc && irq_inside_int()) {
-        errno = EAGAIN;
-        return -1;
-    }
 
     spinlock_lock(&mutex);
     dclsc(DCLOAD_WRITE, 1, data, len);
@@ -83,9 +64,6 @@ int dcload_read_cons(void) {
 
 size_t dcload_gdbpacket(const char* in_buf, size_t in_size, char* out_buf, size_t out_size) {
     size_t ret = -1;
-
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
 
     spinlock_lock(&mutex);
 
@@ -105,9 +83,6 @@ void *dcload_open(vfs_handler_t * vfs, const char *fn, int mode) {
     int mm = (mode & O_MODE_MASK);
 
     (void)vfs;
-
-    if(lwip_dclsc && irq_inside_int())
-        return (void *)0;
 
     spinlock_lock(&mutex);
 
@@ -161,11 +136,6 @@ void *dcload_open(vfs_handler_t * vfs, const char *fn, int mode) {
 int dcload_close(void * h) {
     uint32 hnd = (uint32)h;
 
-    if(lwip_dclsc && irq_inside_int()) {
-        errno = EINTR;
-        return -1;
-    }
-
     spinlock_lock(&mutex);
 
     if(hnd) {
@@ -185,9 +155,6 @@ ssize_t dcload_read(void * h, void *buf, size_t cnt) {
     ssize_t ret = -1;
     uint32 hnd = (uint32)h;
 
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
-
     spinlock_lock(&mutex);
 
     if(hnd) {
@@ -202,9 +169,6 @@ ssize_t dcload_read(void * h, void *buf, size_t cnt) {
 ssize_t dcload_write(void * h, const void *buf, size_t cnt) {
     ssize_t ret = -1;
     uint32 hnd = (uint32)h;
-
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
 
     spinlock_lock(&mutex);
 
@@ -221,9 +185,6 @@ off_t dcload_seek(void * h, off_t offset, int whence) {
     off_t ret = -1;
     uint32 hnd = (uint32)h;
 
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
-
     spinlock_lock(&mutex);
 
     if(hnd) {
@@ -238,9 +199,6 @@ off_t dcload_seek(void * h, off_t offset, int whence) {
 off_t dcload_tell(void * h) {
     off_t ret = -1;
     uint32 hnd = (uint32)h;
-
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
 
     spinlock_lock(&mutex);
 
@@ -257,9 +215,6 @@ size_t dcload_total(void * h) {
     size_t ret = -1;
     size_t cur;
     uint32 hnd = (uint32)h;
-
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
 
     spinlock_lock(&mutex);
 
@@ -282,11 +237,6 @@ dirent_t *dcload_readdir(void * h) {
     dcload_stat_t filestat;
     char *fn;
     uint32 hnd = (uint32)h;
-
-    if(lwip_dclsc && irq_inside_int()) {
-        errno = EAGAIN;
-        return NULL;
-    }
 
     if(hnd < 100) {
         errno = EBADF;
@@ -332,9 +282,6 @@ int dcload_rename(vfs_handler_t * vfs, const char *fn1, const char *fn2) {
 
     (void)vfs;
 
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
-
     spinlock_lock(&mutex);
 
     /* really stupid hack, since I didn't put rename() in dcload */
@@ -353,9 +300,6 @@ int dcload_unlink(vfs_handler_t * vfs, const char *fn) {
 
     (void)vfs;
 
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
-
     spinlock_lock(&mutex);
 
     ret = dclsc(DCLOAD_UNLINK, fn);
@@ -371,9 +315,6 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
     int retval;
 
     (void)flag;
-
-    if(lwip_dclsc && irq_inside_int())
-        return 0;
 
     /* Root directory '/pc' */
     if(len == 0 || (len == 1 && *path == '/')) {
@@ -526,7 +467,6 @@ void fs_dcload_init_console(void) {
     if(*DCLOADMAGICADDR != DCLOADMAGICVALUE)
         return;
 
-
     /* dcload IP will always return -1 here. Serial will return 0 and make
       no change since it already holds 0 as 'no mem assigned */
     if(dclsc(DCLOAD_ASSIGNWRKMEM, 0) == -1) {
@@ -576,28 +516,5 @@ void fs_dcload_shutdown(void) {
         free(dcload_wrkmem);
     }
 
-    /* If we're not on lwIP, we can continue using the debug channel */
-    if(lwip_dclsc) {
-        dcload_type = DCLOAD_TYPE_NONE;
-        dbgio_dev_select("scif");
-    }
-
     nmmgr_handler_remove(&vh.nmmgr);
-}
-
-/* used for dcload-ip + lwIP
- * assumes fs_dcload_init() was previously called
- */
-int fs_dcload_init_lwip(void *p) {
-    /* Check for combination of KOS networking and dcload-ip */
-    if((dcload_type == DCLOAD_TYPE_IP) && (__kos_init_flags & INIT_NET)) {
-        lwip_dclsc = p;
-
-        dbglog(DBG_INFO, "dc-load console support enabled (lwIP)\n");
-    }
-    else
-        return -1;
-
-    /* Register with VFS */
-    return nmmgr_handler_add(&vh.nmmgr);
 }

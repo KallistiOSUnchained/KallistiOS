@@ -48,9 +48,6 @@
    This performs a simple DNS A-record query. It hasn't been tested extensively
    but so far it seems to work fine.
 
-   This relies on the really sketchy UDP support in the KOS lwIP port, so it
-   can be cleaned up later once that's improved.
-
    We really need to be setting errno in here too...
  */
 
