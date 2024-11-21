@@ -15,12 +15,14 @@
 # the KOS environment is set up automatically for each shell session.
 #
 
+# The base directory for your KallistiOS installation. If you going 
+# to edit anything in this file it would be this line.
+KOS_PATH="/opt/toolchains/dc/kos"
+
 # Source the default environment settings
-echo "Sourcing default settings from environ.sh.sample..."
-. "doc/environ.sh.sample"
+. "${KOS_PATH}/doc/environ.sh.sample"
 
 # Source user-specific overrides, if present
-if [ -f "./environ.sh" ]; then
-    echo "Sourcing local overrides from environ.sh.local..."
-    . "./environ.sh"
+if [ -f "${KOS_PATH}/environ.sh" ]; then
+    . "${KOS_PATH}/environ.sh"
 fi
