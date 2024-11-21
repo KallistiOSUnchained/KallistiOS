@@ -66,7 +66,6 @@ static spinlock_t mutex = SPINLOCK_INITIALIZER;
     })
 
 /* Printk replacement */
-
 int dcload_write_buffer(const uint8 *data, int len, int xlat) {
     (void)xlat;
 
@@ -503,7 +502,6 @@ void fs_dcload_init_console(void) {
        dcload-serial, or scif_init must not proceed. */
     if(*DCLOADMAGICADDR != DCLOADMAGICVALUE)
         return;
-
 
     /* dcload IP will always return -1 here. Serial will return 0 and make
       no change since it already holds 0 as 'no mem assigned */
