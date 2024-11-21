@@ -49,9 +49,7 @@
 #define DMA_THRESHOLD 128 // looks like a good value
 
 /* Since callbacks will be running with interrupts enabled,
-   it might be a good idea to protect bba_tx with a semaphore from inside.
-   I'm not sure lwip needs that, but dcplaya does when using both lwip and its
-   own dcload syscalls emulation.*/
+   it might be a good idea to protect bba_tx with a semaphore from inside. */
 #define TX_SEMA
 
 /* If this is defined, the dma buffer will be located in P2 area, and no call to

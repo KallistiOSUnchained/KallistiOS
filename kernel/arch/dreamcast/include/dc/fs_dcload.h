@@ -143,9 +143,6 @@ void fs_dcload_init_console(void);
 void fs_dcload_init(void);
 void fs_dcload_shutdown(void);
 
-/* Init func for dcload-ip + lwIP */
-int fs_dcload_init_lwip(void *p);
-
 /* \endcond */
 
 /** @} */
