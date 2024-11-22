@@ -320,7 +320,7 @@ void bfont_set_encoding(bfont_code_t enc);
     \param  ch              The character to look up
     \return                 A pointer to the raw character data
 */
-uint8_t *bfont_find_char(uint32_t ch);
+const uint8_t *bfont_find_char(uint32_t ch);
 
 /** \brief   Find an full-width Japanese character in the font.
 

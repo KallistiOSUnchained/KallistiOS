@@ -123,7 +123,7 @@ static uint32_t euc2jis(uint32_t euc) {
 }
 
 /* Given an ASCII character, find it in the BIOS font if possible */
-uint8_t *bfont_find_char(uint32_t ch) {
+const uint8_t *bfont_find_char(uint32_t ch) {
     uint8_t *fa = get_font_address();
     /* By default, map to a space */
     uint32_t index = 72 << 2;
@@ -222,7 +222,7 @@ static uint16_t *bfont_draw_one_row(uint16_t *b, uint16_t word, bool opaque, uin
 
 size_t bfont_draw_ex(void *buf, uint32_t bufwidth, uint32_t fg, uint32_t bg, 
                      uint8_t bpp, bool opaque, uint32_t c, bool wide, bool iskana) {
-    uint8_t *ch;
+    const uint8_t *ch;
     uint16_t word;
     uint8_t y;
     uint8_t *buffer = (uint8_t *)buf;

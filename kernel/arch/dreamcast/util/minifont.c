@@ -9,26 +9,21 @@
 #include <dc/minifont.h>
 #include "minifont.h"
 
-#define CHAR_WIDTH 8
-#define CHAR_HEIGHT 16
-
-#define BYTES_PER_CHAR ((CHAR_WIDTH / 8) * CHAR_HEIGHT)
-
 int minifont_draw(uint16 *buffer, uint32 bufwidth, uint32 c) {
     int pos, i, j, k;
     uint8 byte;
     uint16 *cur;
 
     if(c < 33 || c > 126)
-        return CHAR_WIDTH;
+        return MFONT_WIDTH;
 
-    pos = (c - 33) * BYTES_PER_CHAR;
+    pos = (c - 33) * MFONT_BYTES_PER_CHAR;
 
-    for(i = 0; i < CHAR_HEIGHT; ++i) {
+    for(i = 0; i < MFONT_HEIGHT; ++i) {
         cur = buffer;
 
-        for(j = 0; j < CHAR_WIDTH / 8; ++j) {
-            byte = minifont_data[pos + (i * (CHAR_WIDTH / 8)) + j];
+        for(j = 0; j < MFONT_WIDTH / 8; ++j) {
+            byte = minifont_data[pos + (i * (MFONT_WIDTH / 8)) + j];
 
             for(k = 0; k < 8; ++k) {
                 if(byte & (1 << (7 - k)))
@@ -41,7 +36,7 @@ int minifont_draw(uint16 *buffer, uint32 bufwidth, uint32 c) {
         buffer += bufwidth;
     }
 
-    return CHAR_WIDTH;
+    return MFONT_WIDTH;
 }
 
 int minifont_draw_str(uint16 *buffer, uint32 bufwidth, const char *str) {
