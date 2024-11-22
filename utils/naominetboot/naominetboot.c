@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include <signal.h>
 
 #include <sys/socket.h>
 #include <sys/signal.h>
@@ -312,7 +313,7 @@ int main(int argc, char *argv[]) {
                 naomi_addr.sin_family = AF_INET;
                 naomi_addr.sin_port = htons(NETDIMM_PORT);
 
-                inet_ntop(AF_INET, &naomi_addr.sin_addr, buf, INET6_ADDRSTRLEN);
+                inet_ntop(AF_INET, &naomi_addr.sin_addr, (char *)buf, INET6_ADDRSTRLEN);
                 break;
 
             case 'x':

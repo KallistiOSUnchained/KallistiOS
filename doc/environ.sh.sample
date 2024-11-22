@@ -27,11 +27,11 @@ export KOS_ARCH="dreamcast"
 #   "pristine" - Dreamcast console or HKT-0120 devkit (default)
 #   "naomi"    - NAOMI or NAOMI 2 arcade board
 #
-if [ -z "${KOS_SUBARCH}" ] ; then
+#if [ -z "${KOS_SUBARCH}" ] ; then
     export KOS_SUBARCH="pristine"
-else
-    export KOS_SUBARCH
-fi
+#else
+#    export KOS_SUBARCH
+#fi
 
 # KOS Root Path
 #

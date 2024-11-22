@@ -13,6 +13,11 @@
     Only ASCII characters 33-126 are present here. Each one taking up 16 bytes
     of the data. Each character is 8x16 pixels in size. */
 
+#define MFONT_WIDTH 8
+#define MFONT_HEIGHT 16
+
+#define MFONT_BYTES_PER_CHAR ((MFONT_WIDTH / 8) * MFONT_HEIGHT)
+
 static const int minifont_size = 1504;
 static const unsigned char minifont_data[1504] = {
     0x00, 0x00, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18,
