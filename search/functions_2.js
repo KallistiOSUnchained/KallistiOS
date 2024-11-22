@@ -15,7 +15,7 @@ var searchData=
   ['bfont_5fdraw_5fstr_5fvram_5fvfmt_12',['bfont_draw_str_vram_vfmt',['../biosfont_8h.html#aa2fd8380b268ffa1351a3b0241ad4e56',1,'biosfont.h']]],
   ['bfont_5fdraw_5fthin_13',['bfont_draw_thin',['../biosfont_8h.html#a0e0e6cad58cd031e2e48c11dcb671344',1,'biosfont.h']]],
   ['bfont_5fdraw_5fwide_14',['bfont_draw_wide',['../biosfont_8h.html#aaf92a40589a97d83b767f46106ca742c',1,'biosfont.h']]],
-  ['bfont_5ffind_5fchar_15',['bfont_find_char',['../biosfont_8h.html#ac57cb7479d1904b85d16bf36cbc09479',1,'biosfont.h']]],
+  ['bfont_5ffind_5fchar_15',['bfont_find_char',['../biosfont_8h.html#a24a89a7fd430ac4c474a1e98a79fe6cd',1,'biosfont.h']]],
   ['bfont_5ffind_5fchar_5fjp_16',['bfont_find_char_jp',['../biosfont_8h.html#af7e4f3fbee992d17f935d6ebf09cede1',1,'biosfont.h']]],
   ['bfont_5ffind_5fchar_5fjp_5fhalf_17',['bfont_find_char_jp_half',['../biosfont_8h.html#a3cd9dbef9dc3a3150ce957b6584f21ce',1,'biosfont.h']]],
   ['bfont_5ffind_5ficon_18',['bfont_find_icon',['../biosfont_8h.html#a8528edf188990e8e4f3d72b078410699',1,'biosfont.h']]],

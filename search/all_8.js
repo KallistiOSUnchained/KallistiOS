@@ -40,7 +40,7 @@ var searchData=
   ['bfont_5fdraw_5fthin_37',['bfont_draw_thin',['../biosfont_8h.html#a0e0e6cad58cd031e2e48c11dcb671344',1,'biosfont.h']]],
   ['bfont_5fdraw_5fwide_38',['bfont_draw_wide',['../biosfont_8h.html#aaf92a40589a97d83b767f46106ca742c',1,'biosfont.h']]],
   ['bfont_5fdreamcast_5fspecific_39',['BFONT_DREAMCAST_SPECIFIC',['../group__bfont__indicies.html#ga4b32a9ef4f15bf378270be7b12b9759e',1,'biosfont.h']]],
-  ['bfont_5ffind_5fchar_40',['bfont_find_char',['../biosfont_8h.html#ac57cb7479d1904b85d16bf36cbc09479',1,'biosfont.h']]],
+  ['bfont_5ffind_5fchar_40',['bfont_find_char',['../biosfont_8h.html#a24a89a7fd430ac4c474a1e98a79fe6cd',1,'biosfont.h']]],
   ['bfont_5ffind_5fchar_5fjp_41',['bfont_find_char_jp',['../biosfont_8h.html#af7e4f3fbee992d17f935d6ebf09cede1',1,'biosfont.h']]],
   ['bfont_5ffind_5fchar_5fjp_5fhalf_42',['bfont_find_char_jp_half',['../biosfont_8h.html#a3cd9dbef9dc3a3150ce957b6584f21ce',1,'biosfont.h']]],
   ['bfont_5ffind_5ficon_43',['bfont_find_icon',['../biosfont_8h.html#a8528edf188990e8e4f3d72b078410699',1,'biosfont.h']]],
