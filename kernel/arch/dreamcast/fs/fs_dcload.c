@@ -66,7 +66,7 @@ static spinlock_t mutex = SPINLOCK_INITIALIZER;
     })
 
 /* Printk replacement */
-int dcload_write_buffer(const uint8 *data, int len, int xlat) {
+int dcload_write_buffer(const uint8_t *data, int len, int xlat) {
     (void)xlat;
 
     spinlock_lock_scoped(&mutex);
@@ -83,7 +83,7 @@ size_t dcload_gdbpacket(const char* in_buf, size_t in_size, char* out_buf, size_
 
     spinlock_lock_scoped(&mutex);
 
-    /* we have to pack the sizes together because the dcloadsyscall handler
+    /* We have to pack the sizes together because the dcloadsyscall handler
        can only take 4 parameters */
     return dclsc(DCLOAD_GDBPACKET, in_buf, (in_size << 16) | (out_size & 0xffff), out_buf);
 }
@@ -101,9 +101,8 @@ static void *dcload_open(vfs_handler_t * vfs, const char *fn, int mode) {
     spinlock_lock_scoped(&mutex);
 
     if(mode & O_DIR) {
-        if(fn[0] == '\0') {
+        if(fn[0] == '\0')
             fn = "/";
-        }
 
         hnd = dclsc(DCLOAD_OPENDIR, fn);
 
@@ -181,7 +180,7 @@ static int dcload_close(void * h) {
             free(i);
         }
         else {
-            hnd--; /* KOS uses 0 for error, not -1 */
+            hnd--;     /* KOS uses 0 for error, not -1 */
             dclsc(DCLOAD_CLOSE, hnd);
         }
     }
@@ -191,7 +190,7 @@ static int dcload_close(void * h) {
 
 static ssize_t dcload_read(void * h, void *buf, size_t cnt) {
     ssize_t ret = -1;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
     spinlock_lock_scoped(&mutex);
 
@@ -205,7 +204,7 @@ static ssize_t dcload_read(void * h, void *buf, size_t cnt) {
 
 static ssize_t dcload_write(void * h, const void *buf, size_t cnt) {
     ssize_t ret = -1;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
     spinlock_lock_scoped(&mutex);
 
@@ -219,7 +218,7 @@ static ssize_t dcload_write(void * h, const void *buf, size_t cnt) {
 
 static off_t dcload_seek(void * h, off_t offset, int whence) {
     off_t ret = -1;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
     spinlock_lock_scoped(&mutex);
 
@@ -233,7 +232,7 @@ static off_t dcload_seek(void * h, off_t offset, int whence) {
 
 static off_t dcload_tell(void * h) {
     off_t ret = -1;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
     spinlock_lock_scoped(&mutex);
 
@@ -248,7 +247,7 @@ static off_t dcload_tell(void * h) {
 static size_t dcload_total(void * h) {
     size_t ret = -1;
     size_t cur;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
     spinlock_lock_scoped(&mutex);
 
@@ -316,7 +315,6 @@ static int dcload_rename(vfs_handler_t * vfs, const char *fn1, const char *fn2) 
     spinlock_lock_scoped(&mutex);
 
     /* really stupid hack, since I didn't put rename() in dcload */
-
     ret = dclsc(DCLOAD_LINK, fn1, fn2);
 
     if(!ret)
@@ -352,9 +350,9 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
         return 0;
     }
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
     retval = dclsc(DCLOAD_STAT, path, &filestat);
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
 
     if(!retval) {
         memset(st, 0, sizeof(struct stat));
@@ -504,7 +502,7 @@ void fs_dcload_init_console(void) {
         return;
 
     /* dcload IP will always return -1 here. Serial will return 0 and make
-      no change since it already holds 0 as 'no mem assigned */
+       no change since it already holds 0 as 'no mem assigned */
     if(dclsc(DCLOAD_ASSIGNWRKMEM, 0) == -1) {
         dcload_type = DCLOAD_TYPE_IP;
     }
