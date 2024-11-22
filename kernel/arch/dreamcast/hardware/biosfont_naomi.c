@@ -29,7 +29,7 @@
     - Handles various pixel formats: 4bpp, 8bpp, 16bpp, and 32bpp.
     - Offers functions for drawing individual characters, strings, and formatted text.
     - Supports customizable foreground and background colors, as well as transparent 
-    or opaque rendering.
+      or opaque rendering.
 */
 
 /* Current colors/pixel format. Default to white foreground, black background
@@ -91,7 +91,42 @@ uint8_t *bfont_find_char_jp_half(uint32_t ch) {
     return NULL;
 }
 
-/* Draws one half-width row of a character to an output buffer of bit depth in bits per pixel */
+static size_t bfont_draw_opaque_space(uint8_t *buf, uint32_t bufwidth, uint32_t bg, uint8_t bpp) {
+    uint8_t x, y;
+
+    for(y = 0; y < MFONT_HEIGHT; y++) {
+        /* Fill the row with the background color */
+        for(x = 0; x < MFONT_WIDTH; x++) {
+            if(bpp == 16) {
+                *(uint16_t *)buf = bg & 0xFFFF;
+                buf += 2;
+            } 
+            else if(bpp == 32) {
+                *(uint32_t *)buf = bg;
+                buf += 4;
+            } 
+            else if(bpp == 8) {
+                *buf = bg & 0xFF;
+                buf += 1;
+            } 
+            else if(bpp == 4) {
+                if((x % 2) == 0)
+                    *buf = (bg & 0xF) << 4;
+                else {
+                    *buf |= (bg & 0xF);
+                    buf++;
+                }
+            }
+        }
+
+        /* Move to the next row in the buffer */
+        buf += ((bufwidth - MFONT_WIDTH) * bpp) / 8;
+    }
+
+    return (MFONT_WIDTH * bpp)/8;
+}
+
+/* Draws one character to an output buffer of bit depth in bits per pixel */
 static uint16_t *bfont_draw_one_row(uint16_t *buffer, uint16_t word, bool opaque, uint32_t fg, uint32_t bg, uint8_t bpp) {
     uint8_t x;
     uint32_t color = 0x0000;
@@ -121,11 +156,10 @@ static uint16_t *bfont_draw_one_row(uint16_t *buffer, uint16_t word, bool opaque
         }
 
         /* Handle the remaining pixels in the last group, if necessary */
-        if(x % pix != 0) {
+        if(x % pix != 0)
             *buffer++ = write16;
-        }
     }
-    else {/* 16 or 32 */
+    else { /* 16 or 32 */
         for(x = 0; x < MFONT_WIDTH; x++, buffer++) {
             if(word & (0x080 >> x))
                 color = fg;
@@ -151,19 +185,23 @@ size_t bfont_draw_ex(void *buffer, uint32_t bufwidth, uint32_t fg, uint32_t bg,
                      uint8_t bpp, bool opaque, uint32_t c, bool wide, bool iskana) {
     const uint8_t *ch;
     uint16_t word;
-    uint8_t x, y;
+    uint8_t y;
     uint8_t *buf = (uint8_t *)buffer;
 
-    /* If they're requesting a wide or kana character, skip */
-    if(wide || iskana) {
-        dbglog(DBG_WARNING, "bfont_draw_ex: can't draw wide or kana for NAOMI\n");
-        return (MFONT_WIDTH*bpp)/8;
-    }
-
     /* Just making sure we can draw the character we want to */
-    if(bufwidth < (uint32_t)(MFONT_WIDTH)) {
+    if(bufwidth < MFONT_WIDTH) {
         dbglog(DBG_ERROR, "bfont_draw_ex: buffer is too small to draw into\n");
         return 0;
+    }
+
+    /* If they're requesting a wide or kana character, draw space instead */
+    if(wide || iskana) {
+        dbglog(DBG_WARNING, "bfont_draw_ex: can't draw wide or kana for NAOMI\n");
+
+        if(opaque)
+            return bfont_draw_opaque_space(buf, bufwidth, bg, bpp);
+
+        return (MFONT_WIDTH * bpp)/8;
     }
 
     /* Translate the character */
@@ -172,38 +210,10 @@ size_t bfont_draw_ex(void *buffer, uint32_t bufwidth, uint32_t fg, uint32_t bg,
     /* Unsupported character, draw a space */
     if(ch == NULL) {
         /* Draw an opaque space */
-        if(opaque) {
-            for(y = 0; y < MFONT_HEIGHT; y++) {
-                /* Fill the row with the background color */
-                for(x = 0; x < MFONT_WIDTH; x++) {
-                    if(bpp == 16) {
-                        *(uint16_t *)buf = bg & 0xFFFF;
-                        buf += 2;
-                    } 
-                    else if(bpp == 32) {
-                        *(uint32_t *)buf = bg;
-                        buf += 4;
-                    } 
-                    else if(bpp == 8) {
-                        *buf = bg & 0xFF;
-                        buf += 1;
-                    } 
-                    else if(bpp == 4) {
-                        if((x % 2) == 0)
-                            *buf = (bg & 0xF) << 4;
-                        else {
-                            *buf |= (bg & 0xF);
-                            buf++;
-                        }
-                    }
-                }
+        if(opaque)
+            return bfont_draw_opaque_space(buf, bufwidth, bg, bpp);
 
-                /* Move to the next row in the buffer */
-                buf += ((bufwidth - MFONT_WIDTH) * bpp) / 8;
-            }
-        }
-        
-        return (MFONT_WIDTH*bpp)/8;
+        return (MFONT_WIDTH * bpp)/8;
     }    
 
     /* Process each row of the 8x16 character */
@@ -259,11 +269,10 @@ void bfont_draw_str_ex(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
         else if(nChr == '\t') {
             /* Draw four spaces on the current line */
             if(opaque) {
-                nChr = 0x20;
-                buf += bfont_draw_ex(buf, width, fg, bg, bpp, opaque, nChr, false, false);
-                buf += bfont_draw_ex(buf, width, fg, bg, bpp, opaque, nChr, false, false);
-                buf += bfont_draw_ex(buf, width, fg, bg, bpp, opaque, nChr, false, false);
-                buf += bfont_draw_ex(buf, width, fg, bg, bpp, opaque, nChr, false, false);
+                buf += bfont_draw_opaque_space(buf, width, bg, bpp);
+                buf += bfont_draw_opaque_space(buf, width, bg, bpp);
+                buf += bfont_draw_opaque_space(buf, width, bg, bpp);
+                buf += bfont_draw_opaque_space(buf, width, bg, bpp);
             }
             else /* Spaces are always single width characters */
                 buf += (4 * ((MFONT_WIDTH * bpp)/8));
