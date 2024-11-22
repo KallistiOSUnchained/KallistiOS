@@ -32,7 +32,7 @@ printf goes to the dc-tool console
 #include <malloc.h>
 #include <errno.h>
 
-static spinlock_t mutex = SPINLOCK_INITIALIZER;
+static spinlock_t dcload_lock = SPINLOCK_INITIALIZER;
 
 #define dclsc(...) ({ \
     int old = 0, rv; \
@@ -48,12 +48,12 @@ static spinlock_t mutex = SPINLOCK_INITIALIZER;
 })
 
 /* Printk replacement */
-int dcload_write_buffer(const uint8 *data, int len, int xlat) {
+int dcload_write_buffer(const uint8_t *data, int len, int xlat) {
     (void)xlat;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
     dclsc(DCLOAD_WRITE, 1, data, len);
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
 
     return len;
 }
@@ -62,34 +62,34 @@ int dcload_read_cons(void) {
     return -1;
 }
 
-size_t dcload_gdbpacket(const char* in_buf, size_t in_size, char* out_buf, size_t out_size) {
+size_t dcload_gdbpacket(const char *in_buf, size_t in_size, char *out_buf, size_t out_size) {
     size_t ret = -1;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
-    /* we have to pack the sizes together because the dcloadsyscall handler
+    /* We have to pack the sizes together because the dcloadsyscall handler
        can only take 4 parameters */
     ret = dclsc(DCLOAD_GDBPACKET, in_buf, (in_size << 16) | (out_size & 0xffff), out_buf);
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return ret;
 }
 
 static char *dcload_path = NULL;
-void *dcload_open(vfs_handler_t * vfs, const char *fn, int mode) {
+
+void *dcload_open(vfs_handler_t *vfs, const char *fn, int mode) {
     int hnd = 0;
-    uint32 h;
+    uint32_t h;
     int dcload_mode = 0;
     int mm = (mode & O_MODE_MASK);
 
     (void)vfs;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     if(mode & O_DIR) {
-        if(fn[0] == '\0') {
+        if(fn[0] == '\0')
             fn = "/";
-        }
 
         hnd = dclsc(DCLOAD_OPENDIR, fn);
 
@@ -128,95 +128,95 @@ void *dcload_open(vfs_handler_t * vfs, const char *fn, int mode) {
 
     h = hnd;
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
 
     return (void *)h;
 }
 
-int dcload_close(void * h) {
-    uint32 hnd = (uint32)h;
+int dcload_close(void *h) {
+    uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     if(hnd) {
         if(hnd > 100)  /* hack */
             dclsc(DCLOAD_CLOSEDIR, hnd);
         else {
-            hnd--; /* KOS uses 0 for error, not -1 */
+            hnd--;     /* KOS uses 0 for error, not -1 */
             dclsc(DCLOAD_CLOSE, hnd);
         }
     }
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return 0;
 }
 
-ssize_t dcload_read(void * h, void *buf, size_t cnt) {
+ssize_t dcload_read(void *h, void *buf, size_t cnt) {
     ssize_t ret = -1;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
         ret = dclsc(DCLOAD_READ, hnd, buf, cnt);
     }
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return ret;
 }
 
-ssize_t dcload_write(void * h, const void *buf, size_t cnt) {
+ssize_t dcload_write(void *h, const void *buf, size_t cnt) {
     ssize_t ret = -1;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
         ret = dclsc(DCLOAD_WRITE, hnd, buf, cnt);
     }
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return ret;
 }
 
-off_t dcload_seek(void * h, off_t offset, int whence) {
+off_t dcload_seek(void *h, off_t offset, int whence) {
     off_t ret = -1;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
         ret = dclsc(DCLOAD_LSEEK, hnd, offset, whence);
     }
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return ret;
 }
 
-off_t dcload_tell(void * h) {
+off_t dcload_tell(void *h) {
     off_t ret = -1;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
         ret = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
     }
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return ret;
 }
 
-size_t dcload_total(void * h) {
+size_t dcload_total(void *h) {
     size_t ret = -1;
     size_t cur;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
@@ -225,25 +225,25 @@ size_t dcload_total(void * h) {
         dclsc(DCLOAD_LSEEK, hnd, cur, SEEK_SET);
     }
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return ret;
 }
 
 /* Not thread-safe, but that's ok because neither is the FS */
 static dirent_t dirent;
-dirent_t *dcload_readdir(void * h) {
+dirent_t *dcload_readdir(void *h) {
     dirent_t *rv = NULL;
     dcload_dirent_t *dcld;
     dcload_stat_t filestat;
     char *fn;
-    uint32 hnd = (uint32)h;
+    uint32_t hnd = (uint32_t)h;
 
     if(hnd < 100) {
         errno = EBADF;
         return NULL;
     }
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     dcld = (dcload_dirent_t *)dclsc(DCLOAD_READDIR, hnd);
 
@@ -273,38 +273,37 @@ dirent_t *dcload_readdir(void * h) {
         free(fn);
     }
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return rv;
 }
 
-int dcload_rename(vfs_handler_t * vfs, const char *fn1, const char *fn2) {
+int dcload_rename(vfs_handler_t *vfs, const char *fn1, const char *fn2) {
     int ret;
 
     (void)vfs;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     /* really stupid hack, since I didn't put rename() in dcload */
-
     ret = dclsc(DCLOAD_LINK, fn1, fn2);
 
     if(!ret)
         ret = dclsc(DCLOAD_UNLINK, fn1);
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return ret;
 }
 
-int dcload_unlink(vfs_handler_t * vfs, const char *fn) {
+int dcload_unlink(vfs_handler_t *vfs, const char *fn) {
     int ret;
 
     (void)vfs;
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
 
     ret = dclsc(DCLOAD_UNLINK, fn);
 
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
     return ret;
 }
 
@@ -327,9 +326,9 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
         return 0;
     }
 
-    spinlock_lock(&mutex);
+    spinlock_lock(&dcload_lock);
     retval = dclsc(DCLOAD_STAT, path, &filestat);
-    spinlock_unlock(&mutex);
+    spinlock_unlock(&dcload_lock);
 
     if(!retval) {
         memset(st, 0, sizeof(struct stat));
@@ -421,8 +420,8 @@ static vfs_handler_t vh = {
     NULL                /* fstat */
 };
 
-// We have to provide a minimal interface in case dcload usage is
-// disabled through init flags.
+/* We have to provide a minimal interface in case dcload usage is
+   disabled through init flags. */
 static int never_detected(void) {
     return 0;
 }
@@ -462,13 +461,13 @@ void fs_dcload_init_console(void) {
     dbgio_dcload.write_buffer = dcload_write_buffer;
     // dbgio_dcload.read = dcload_read_cons;
 
-    // We actually need to detect here to make sure we're not on
-    // dcload-serial, or scif_init must not proceed.
+    /* We actually need to detect here to make sure we're not on
+       dcload-serial, or scif_init must not proceed. */
     if(*DCLOADMAGICADDR != DCLOADMAGICVALUE)
         return;
 
     /* dcload IP will always return -1 here. Serial will return 0 and make
-      no change since it already holds 0 as 'no mem assigned */
+       no change since it already holds 0 as 'no mem assigned */
     if(dclsc(DCLOAD_ASSIGNWRKMEM, 0) == -1) {
         dcload_type = DCLOAD_TYPE_IP;
     }
@@ -486,7 +485,7 @@ void fs_dcload_init_console(void) {
 
 /* Call fs_dcload_init_console() before calling fs_dcload_init() */
 void fs_dcload_init(void) {
-    // This was already done in init_console.
+    /* This was already done in init_console. */
     if(dcload_type == DCLOAD_TYPE_NONE)
         return;
 
@@ -494,11 +493,6 @@ void fs_dcload_init(void) {
     if((dcload_type == DCLOAD_TYPE_IP) && (__kos_init_flags & INIT_NET)) {
         dbglog(DBG_INFO, "dc-load console+kosnet, will switch to internal ethernet\n");
         return;
-        /* if(old_printk) {
-            dbgio_set_printk(old_printk);
-            old_printk = 0;
-        }
-        return -1; */
     }
 
     /* Register with VFS */
