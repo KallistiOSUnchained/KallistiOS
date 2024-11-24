@@ -65,18 +65,48 @@ static spinlock_t mutex = SPINLOCK_INITIALIZER;
         dcloadsyscall(__VA_ARGS__); \
     })
 
+int dcload_write_char(int ch) {
+    spinlock_lock_scoped(&mutex);
+    dclsc(DCLOAD_WRITE, STDOUT_FILENO, &ch, 1);
+
+    return ch;
+}
+
 /* Printk replacement */
 int dcload_write_buffer(const uint8_t *data, int len, int xlat) {
     (void)xlat;
 
     spinlock_lock_scoped(&mutex);
-    dclsc(DCLOAD_WRITE, 1, data, len);
+    dclsc(DCLOAD_WRITE, STDOUT_FILENO, data, len);
 
     return len;
 }
 
-int dcload_read_cons(void) {
-    return -1;
+int dcload_read_char(void) {
+    uint8_t chr;
+
+    spinlock_lock_scoped(&mutex);
+    dclsc(DCLOAD_READ, STDIN_FILENO, &chr, 1);
+
+    return chr;
+}
+
+int dcload_read_buffer(uint8_t *data, int len) {
+
+    spinlock_lock_scoped(&mutex);
+    return dclsc(DCLOAD_READ, STDIN_FILENO, data, len);
+
+    return rv;
+}
+
+int dcload_read_char(void) {
+    uint8_t chr;
+
+    spinlock_lock(&dcload_lock);
+    dclsc(DCLOAD_READ, STDIN_FILENO, &chr, 1);
+    spinlock_unlock(&dcload_lock);
+
+    return chr;
 }
 
 size_t dcload_gdbpacket(const char* in_buf, size_t in_size, char* out_buf, size_t out_size) {
@@ -196,7 +226,7 @@ static ssize_t dcload_read(void * h, void *buf, size_t cnt) {
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        ret = dclsc(DCLOAD_READ, hnd, buf, cnt);
+        rv = dclsc(DCLOAD_READ, hnd, buf, cnt);
     }
 
     return ret;
@@ -210,7 +240,7 @@ static ssize_t dcload_write(void * h, const void *buf, size_t cnt) {
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        ret = dclsc(DCLOAD_WRITE, hnd, buf, cnt);
+        rv = dclsc(DCLOAD_WRITE, hnd, buf, cnt);
     }
 
     return ret;
@@ -224,7 +254,7 @@ static off_t dcload_seek(void * h, off_t offset, int whence) {
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        ret = dclsc(DCLOAD_LSEEK, hnd, offset, whence);
+        rv = dclsc(DCLOAD_LSEEK, hnd, offset, whence);
     }
 
     return ret;
@@ -238,7 +268,7 @@ static off_t dcload_tell(void * h) {
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        ret = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
+        rv = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
     }
 
     return ret;
@@ -254,7 +284,7 @@ static size_t dcload_total(void * h) {
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
         cur = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
-        ret = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_END);
+        rv = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_END);
         dclsc(DCLOAD_LSEEK, hnd, cur, SEEK_SET);
     }
 
@@ -315,10 +345,10 @@ static int dcload_rename(vfs_handler_t * vfs, const char *fn1, const char *fn2) 
     spinlock_lock_scoped(&mutex);
 
     /* really stupid hack, since I didn't put rename() in dcload */
-    ret = dclsc(DCLOAD_LINK, fn1, fn2);
+    rv = dclsc(DCLOAD_LINK, fn1, fn2);
 
-    if(!ret)
-        ret = dclsc(DCLOAD_UNLINK, fn1);
+    if(!rv)
+        rv = dclsc(DCLOAD_UNLINK, fn1);
 
     return ret;
 }
@@ -335,7 +365,7 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
                        int flag) {
     dcload_stat_t filestat;
     size_t len = strlen(path);
-    int retval;
+    int rv;
 
     (void)flag;
 
@@ -351,10 +381,10 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
     }
 
     spinlock_lock(&dcload_lock);
-    retval = dclsc(DCLOAD_STAT, path, &filestat);
+    rv = dclsc(DCLOAD_STAT, path, &filestat);
     spinlock_unlock(&dcload_lock);
 
-    if(!retval) {
+    if(!rv) {
         memset(st, 0, sizeof(struct stat));
         st->st_dev = (dev_t)((ptr_t)vfs);
         st->st_ino = filestat.st_ino;
@@ -493,8 +523,10 @@ void fs_dcload_init_console(void) {
     memcpy(&dbgio_dcload, &dbgio_null, sizeof(dbgio_dcload));
     dbgio_dcload.name = dbgio_dcload_name;
     dbgio_dcload.detected = fs_dcload_detected;
+    dbgio_dcload.write = dcload_write_char;
     dbgio_dcload.write_buffer = dcload_write_buffer;
-    // dbgio_dcload.read = dcload_read_cons;
+    dbgio_dcload.read = dcload_read_char;
+    dbgio_dcload.read_buffer = dcload_read_buffer;
 
     /* We actually need to detect here to make sure we're not on
        dcload-serial, or scif_init must not proceed. */
