@@ -76,6 +76,7 @@ extern int dcload_type;
 #define DCLOAD_READDIR      18
 #define DCLOAD_GETHOSTINFO  19
 #define DCLOAD_GDBPACKET    20
+#define DCLOAD_REWINDDIR    21
 
 /* dcload syscall function */
 int dcloadsyscall(uint32_t syscall, ...);
