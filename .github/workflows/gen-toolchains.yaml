@@ -41,7 +41,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         context: utils/dc-chain/docker
-        dockerfile: Dockerfile
+        file: Dockerfile
         push: true
         tags: ghcr.io/${{ github.actor }}/dcchain:${{ matrix.version.tag }}
         build-args: |
