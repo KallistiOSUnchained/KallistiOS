@@ -40,8 +40,8 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v6
       with:
-        context: .
-        dockerfile: utils/dc-chain/docker/Dockerfile
+        context: utils/dc-chain/docker
+        dockerfile: Dockerfile
         push: true
         tags: ghcr.io/${{ github.actor }}/dcchain:${{ matrix.version.tag }}
         build-args: |
