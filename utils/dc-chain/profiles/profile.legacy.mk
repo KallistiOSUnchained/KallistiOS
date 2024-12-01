@@ -3,7 +3,7 @@
 
 # Toolchain versions for SH
 sh_binutils_ver=2.43
-sh_gcc_ver=14.2.0
+sh_gcc_ver=13.3.0
 newlib_ver=4.4.0.20231231
 gdb_ver=15.1
 
