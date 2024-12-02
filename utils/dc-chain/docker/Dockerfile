@@ -3,8 +3,9 @@
 #
 # usage:
 #   - build one of the images:
-#       docker build -t dcchain:stable --build-arg dc_chain=stable .
-#       docker build -t dcchain:9.3.0-legacy --build-arg dc_chain=9.3.0-legacy --build-arg makejobs=4 .
+#       docker build -t dcchain:stable --build-arg dc_chain=stable --build-arg default_precision=m4-single .
+#       docker build -t dcchain:legacy --build-arg dc_chain=legacy --build-arg makejobs=4 .
+#       docker build -t dcchain:dev --build-arg dc_chain=dev --build-arg makejobs=4 --build-arg enable_objc=0 --build-arg enable_objcpp=0 .
 #   - create and run a container, e.g. for stable:
 #       docker run -it --name containername dcchain:stable /bin/bash
 
@@ -12,30 +13,26 @@
 FROM alpine:latest AS build
 LABEL maintainer="KallistiOS (Unchained)"
 
-# Installing prerequisites
-RUN apk --update add --no-cache \
+# Installing bare minimum for toolchain compilation
+RUN apk add --no-cache \
         build-base \
         gmp-dev \
         mpfr-dev \
         mpc1-dev \
         patch \
-        bash \
         texinfo \
-        flex \
+        git \
         curl \
         wget \
-        git \
-        subversion \
-        elfutils-dev \
-        libjpeg-turbo-dev \
-        libpng-dev \
-        python3 \
-        && rm -rf /var/cache/apk/*
+        bash \
+        flex \
+        bison
 
 # Making Sega Dreamcast toolchains
 # You may adapt the KallistiOS repository URL if needed
 ARG dc_chain=stable
 ARG makejobs=2
+ARG verbose=1
 ARG enable_cpp=1
 ARG enable_objc=1
 ARG enable_objcpp=1
@@ -47,12 +44,14 @@ ARG precision_modes=m4-single-only,m4-single
 ARG default_precision=m4-single-only
 ARG thread_model=kos
 ARG use_kos_patches=1
+
 RUN mkdir -p /opt/toolchains/dc \
-	&& git clone --depth=1 https://github.com/KallistiOSUnchained/KallistiOS.git /opt/toolchains/dc/kos \
-	&& cd /opt/toolchains/dc/kos/utils/dc-chain \
-	&& make build \
+        && git clone --depth=1 https://github.com/KallistiOSUnchained/KallistiOS.git /opt/toolchains/dc/kos \
+        && cd /opt/toolchains/dc/kos/utils/dc-chain \
+        && make build \
         toolchain_profile=$dc_chain \
         makejobs=$makejobs \
+        verbose=$verbose \
         enable_cpp=$enable_cpp \
         enable_objc=$enable_objc \
         enable_objcpp=$enable_objcpp \
@@ -64,9 +63,48 @@ RUN mkdir -p /opt/toolchains/dc \
         default_precision=$default_precision \
         thread_model=$thread_model \
         use_kos_patches=$use_kos_patches \
-	&& rm -rf /opt/toolchains/dc/kos
+        && rm -rf /opt/toolchains/dc/kos
 
-# Stage 2
-# Optimize image size
-FROM scratch
-COPY --from=build / /
+# Stage 2: Minimal Runtime Environment
+FROM alpine:latest
+
+# Copy compiled toolchains from the build stage
+COPY --from=build /opt/toolchains/dc /opt/toolchains/dc
+
+# Create the bin directory to avoid missing directory errors
+RUN mkdir -p /opt/toolchains/dc/bin
+
+# Installing prerequisites for compiling KOS, kos-ports, utils
+RUN apk add --no-cache \
+        build-base \
+        cmake \
+        git \
+        curl \
+        wget \
+        bash \
+        elfutils-dev \
+        libjpeg-turbo-dev \
+        libpng-dev \
+        python3 \
+        ruby-rake \
+        libisofs-dev \
+        meson \
+        coreutils
+
+# Set default working directory
+WORKDIR /opt/toolchains/dc
+
+# Set BASH_ENV so it works for non interactive as well
+# example: docker run --rm $TAG "make"
+ENV BASH_ENV="/opt/toolchains/dc/kos/environ.sh.master"
+
+# Set Shell to Bash so environ.sh.master will be sourced
+# in every following run command
+SHELL ["/bin/bash", "-c"]
+
+# Set entry point to bash so arg to docker run can be
+# run as a command.
+ENTRYPOINT ["/bin/bash", "-c"]
+
+# If run with no parameters just start bash
+CMD ["/bin/bash"]
