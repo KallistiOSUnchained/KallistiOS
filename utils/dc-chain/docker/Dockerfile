@@ -16,6 +16,7 @@ LABEL maintainer="KallistiOS (Unchained)"
 # Installing bare minimum for toolchain compilation
 RUN apk add --no-cache \
         build-base \
+        coreutils \
         gmp-dev \
         mpfr-dev \
         mpc1-dev \
@@ -45,10 +46,18 @@ ARG default_precision=m4-single-only
 ARG thread_model=kos
 ARG use_kos_patches=1
 
-RUN mkdir -p /opt/toolchains/dc \
-        && git clone --depth=1 https://github.com/KallistiOSUnchained/KallistiOS.git /opt/toolchains/dc/kos \
-        && cd /opt/toolchains/dc/kos/utils/dc-chain \
-        && make build \
+ARG KOS_REPO_URL="https://github.com/KallistiOSUnchained/KallistiOS.git"
+ARG KOS_REPO_BRANCH="master"
+
+# Pull repo
+RUN mkdir -p /opt/toolchains/dc && \
+    git clone --depth=1 --branch ${KOS_REPO_BRANCH} ${KOS_REPO_URL} /opt/toolchains/dc/kos
+
+# Set working directory to the dc-chain directory for GCC builds
+WORKDIR /opt/toolchains/dc/kos/utils/dc-chain
+
+# Build SH4 GCC Compiler
+RUN make build \
         toolchain_profile=$dc_chain \
         makejobs=$makejobs \
         verbose=$verbose \
@@ -62,8 +71,15 @@ RUN mkdir -p /opt/toolchains/dc \
         precision_modes=$precision_modes \
         default_precision=$default_precision \
         thread_model=$thread_model \
-        use_kos_patches=$use_kos_patches \
-        && rm -rf /opt/toolchains/dc/kos
+        use_kos_patches=$use_kos_patches
+
+# Build ARM GCC Compiler
+RUN make build-arm \
+        makejobs=$makejobs \
+        verbose=$verbose
+
+# Remove kos directory, gcc binaries are in dc directory
+RUN rm -rf /opt/toolchains/dc/kos
 
 # Stage 2: Minimal Runtime Environment
 FROM alpine:latest
@@ -77,6 +93,7 @@ RUN mkdir -p /opt/toolchains/dc/bin
 # Installing prerequisites for compiling KOS, kos-ports, utils
 RUN apk add --no-cache \
         build-base \
+        coreutils \
         cmake \
         git \
         curl \
@@ -88,19 +105,10 @@ RUN apk add --no-cache \
         python3 \
         ruby-rake \
         libisofs-dev \
-        meson \
-        coreutils
+        meson
 
 # Set default working directory
 WORKDIR /opt/toolchains/dc
-
-# Set BASH_ENV so it works for non interactive as well
-# example: docker run --rm $TAG "make"
-ENV BASH_ENV="/opt/toolchains/dc/kos/environ.sh.master"
-
-# Set Shell to Bash so environ.sh.master will be sourced
-# in every following run command
-SHELL ["/bin/bash", "-c"]
 
 # Set entry point to bash so arg to docker run can be
 # run as a command.
