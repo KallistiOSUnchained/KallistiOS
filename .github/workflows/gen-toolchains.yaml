@@ -11,6 +11,7 @@ on:
       - utils/dc-chain/Makefile
       - utils/dc-chain/Makefile.default.cfg
       - utils/dc-chain/docker/Dockerfile
+      - kernel/arch/dreamcast/kernel/startup.s
 
 permissions:
   packages: write
