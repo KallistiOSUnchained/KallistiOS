@@ -10,7 +10,7 @@ on:
       - utils/dc-chain/profiles/**
       - utils/dc-chain/Makefile
       - utils/dc-chain/Makefile.default.cfg
-      - utils/dc-chain/docker/Dockerfile
+      - .github/docker/toolchain-Dockerfile
       - kernel/arch/dreamcast/kernel/startup.s
 
 permissions:
@@ -46,26 +46,19 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-      - name: Convert Repository Owner to Lowercase
-        id: lower-owner
-        run: |
-          echo "repository_owner=${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
-
       - name: Build and Push ARM64 Docker Image
         uses: docker/build-push-action@v6
         with:
-          context: utils/dc-chain/docker
-          file: utils/dc-chain/docker/Dockerfile
+          context: .github/docker
+          file: .github/docker/toolchain-Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ steps.lower-owner.outputs.repository_owner }}/dc-toolchain:${{ matrix.version.tag }}-arm64
+            ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.version.tag }}-arm64
             ${{ secrets.DOCKER_HUB_USERNAME }}/dc-toolchain:${{ matrix.version.tag }}-arm64
           platforms: linux/arm64
           build-args: |
             dc_chain=${{ matrix.version.dc_chain }}
             makejobs=8
-            enable_objc=0
-            enable_objcpp=0
           no-cache: true
 
   build-amd64:
@@ -98,26 +91,19 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-      - name: Convert Repository Owner to Lowercase
-        id: lower-owner
-        run: |
-          echo "repository_owner=${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
-
       - name: Build and Push AMD64 Docker Image
         uses: docker/build-push-action@v6
         with:
-          context: utils/dc-chain/docker
-          file: utils/dc-chain/docker/Dockerfile
+          context: .github/docker
+          file: .github/docker/toolchain-Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ steps.lower-owner.outputs.repository_owner }}/dc-toolchain:${{ matrix.version.tag }}-amd64
+            ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.version.tag }}-amd64
             ${{ secrets.DOCKER_HUB_USERNAME }}/dc-toolchain:${{ matrix.version.tag }}-amd64
           platforms: linux/amd64
           build-args: |
             dc_chain=${{ matrix.version.dc_chain }}
             makejobs=8
-            enable_objc=0
-            enable_objcpp=0
           no-cache: true
 
   merge-manifest:
@@ -149,17 +135,12 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-      - name: Convert Repository Owner to Lowercase
-        id: lower-owner
-        run: |
-          echo "repository_owner=${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
-
       - name: Create and Push Docker Manifest
         run: |
           docker buildx imagetools create \
-            --tag ghcr.io/${{ steps.lower-owner.outputs.repository_owner }}/dc-toolchain:${{ matrix.version.tag }} \
+            --tag ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.version.tag }} \
             --tag ${{ secrets.DOCKER_HUB_USERNAME }}/dc-toolchain:${{ matrix.version.tag }} \
-            ghcr.io/${{ steps.lower-owner.outputs.repository_owner }}/dc-toolchain:${{ matrix.version.tag }}-arm64 \
-            ghcr.io/${{ steps.lower-owner.outputs.repository_owner }}/dc-toolchain:${{ matrix.version.tag }}-amd64 \
+            ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.version.tag }}-arm64 \
+            ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.version.tag }}-amd64 \
             ${{ secrets.DOCKER_HUB_USERNAME }}/dc-toolchain:${{ matrix.version.tag }}-arm64 \
             ${{ secrets.DOCKER_HUB_USERNAME }}/dc-toolchain:${{ matrix.version.tag }}-amd64

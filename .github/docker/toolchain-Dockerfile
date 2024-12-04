@@ -3,14 +3,16 @@
 #
 # usage:
 #   - build one of the images:
-#       docker build -t dcchain:stable --build-arg dc_chain=stable --build-arg default_precision=m4-single .
-#       docker build -t dcchain:legacy --build-arg dc_chain=legacy --build-arg makejobs=4 .
-#       docker build -t dcchain:dev --build-arg dc_chain=dev --build-arg makejobs=4 --build-arg enable_objc=0 --build-arg enable_objcpp=0 .
+#       docker build -t dcchain:stable --build-arg dc_chain=stable --build-arg default_precision=m4-single -f ./toolchain-Dockerfile .
+#       docker build -t dcchain:legacy --build-arg dc_chain=legacy --build-arg makejobs=4 -f ./toolchain-Dockerfile .
+#       docker build -t dcchain:dev --build-arg dc_chain=dev --build-arg makejobs=4 --build-arg enable_objc=0 --build-arg enable_objcpp=0 -f ./toolchain-Dockerfile .
 #   - create and run a container, e.g. for stable:
 #       docker run -it --name containername dcchain:stable /bin/bash
 
 # Stage 1
 FROM alpine:latest AS build
+
+# Metadata
 LABEL maintainer="KallistiOS (Unchained)"
 
 # Installing bare minimum for toolchain compilation
@@ -46,12 +48,11 @@ ARG default_precision=m4-single-only
 ARG thread_model=kos
 ARG use_kos_patches=1
 
-ARG KOS_REPO_URL="https://github.com/KallistiOSUnchained/KallistiOS.git"
-ARG KOS_REPO_BRANCH="master"
+ARG REPO_BRANCH="master"
 
 # Pull repo
 RUN mkdir -p /opt/toolchains/dc && \
-    git clone --depth=1 --branch ${KOS_REPO_BRANCH} ${KOS_REPO_URL} /opt/toolchains/dc/kos
+    git clone --depth=1 --branch ${REPO_BRANCH} https://github.com/KallistiOSUnchained/KallistiOS.git /opt/toolchains/dc/kos
 
 # Set working directory to the dc-chain directory for GCC builds
 WORKDIR /opt/toolchains/dc/kos/utils/dc-chain
