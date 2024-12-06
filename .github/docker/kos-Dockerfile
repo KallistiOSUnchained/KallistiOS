@@ -1,0 +1,31 @@
+# Define an argument for the tag
+ARG BASE_TAG=14.2-stable
+
+# Use the static portion of the base image combined with the tag
+FROM ghcr.io/kallistiosunchained/dc-toolchain:${BASE_TAG}
+
+# Metadata
+LABEL maintainer="KallistiOS (Unchained)"
+
+ARG REPO_BRANCH="master"
+
+# Clone KOS & kos-ports
+RUN git clone --depth=1 --branch ${REPO_BRANCH} https://github.com/KallistiOSUnchained/KallistiOS.git /opt/toolchains/dc/kos && \
+    git clone --depth=1 --branch ${REPO_BRANCH} https://github.com/KallistiOSUnchained/kos-ports.git /opt/toolchains/dc/kos-ports
+
+# Set default working directory
+WORKDIR /opt/toolchains/dc/kos
+
+# Compile KOS, kos-ports, and the examples
+RUN source environ.sh.master && \
+    make && \
+    make clean && \
+    make kos-ports_all
+
+# Setup auto sourcing for (non)interactice shells
+COPY entrypoint.sh /opt/toolchains/dc/kos/entrypoint.sh
+RUN chmod 755 /opt/toolchains/dc/kos/entrypoint.sh
+ENTRYPOINT ["/opt/toolchains/dc/kos/entrypoint.sh"]
+
+# If run with no parameters just start bash
+CMD ["/bin/bash"]
