@@ -18,7 +18,7 @@ SUBDIRS = utils kernel addons # examples
 # Detect a non-working or missing environ.sh file.
 ifndef KOS_BASE
 error:
-	@echo You don\'t seem to have a working  environ.sh file. Please take a look at
+	@echo You don\'t seem to have a working environ.sh.master file. Please take a look at
 	@echo doc/README for more info.
 	@exit 0
 endif
