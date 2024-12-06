@@ -35,7 +35,10 @@ $(TARGET): $(OBJS)
 main.o: main.c info/options.h info/examples.h
 
 clean:
-	rm -f $(TARGET) $(OBJS) README
+	rm -f $(OBJS) README
+
+distclean: clean
+	rm -f $(TARGET)
 
 README: readme_unformatted.txt
 	fmt -s readme_unformatted.txt > README

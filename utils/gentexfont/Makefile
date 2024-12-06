@@ -8,5 +8,8 @@ all: gentexfont
 gentexfont: gentexfont.o
 
 clean:
-	rm -f gentexfont *.o
+	rm -f *.o
+
+distclean: clean
+	rm -f gentexfont
 

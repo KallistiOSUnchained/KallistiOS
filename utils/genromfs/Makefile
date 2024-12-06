@@ -14,7 +14,10 @@ all: genromfs
 genromfs: genromfs.o
 
 clean:
-	rm -f genromfs *.o
+	rm -f *.o
+
+distclean: clean
+	rm -f genromfs
 
 install: all install-bin install-man
 

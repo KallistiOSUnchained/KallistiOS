@@ -5,7 +5,10 @@ CFLAGS = -O2 -Wall -I../../../kos-ports/include #-g#
 makejitter: makejitter.o
 
 clean:
-	rm -f makejitter jitter_table.h *.o
+	rm -f jitter_table.h *.o
+
+distclean: clean
+	rm -f makejitter
 
 install: all install-bin
 
