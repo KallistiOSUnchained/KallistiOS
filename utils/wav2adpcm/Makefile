@@ -7,4 +7,7 @@ CFLAGS = -O2 -Wall #-g#
 all: wav2adpcm
 
 clean:
-	-rm -f wav2adpcm.o wav2adpcm
+	-rm -f wav2adpcm.o
+
+distclean: clean
+	-rm -f wav2adpcm
