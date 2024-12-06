@@ -15,4 +15,6 @@ all: subdirs
 
 clean: clean_subdirs
 
+distclean: distclean_subdirs
+
 include $(KOS_BASE)/Makefile.rules

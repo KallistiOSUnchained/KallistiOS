@@ -10,7 +10,10 @@ vqenc: vqenc.o get_image.o get_image_jpg.o get_image_png.o readpng.o
 	$(CC) -o $@ $+ $(LDFLAGS)
 
 clean:
-	rm -f vqenc *.o
+	rm -f *.o
 
-install: all 
+distclean: clean
+	rm -f vqenc
+
+install: all
 	install -m 755 vqenc /usr/bin

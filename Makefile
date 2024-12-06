@@ -38,6 +38,7 @@ clean: clean_subdirs
 distclean: clean
 	-rm -f lib/$(KOS_ARCH)/*
 	-rm -f addons/lib/$(KOS_ARCH)/*
+	$(MAKE) -C utils distclean
 
 docs:
 	doxygen $(KOS_BASE)/doc/Doxyfile

@@ -6,5 +6,5 @@ all: bin2c
 bin2c: bin2c.c
 	gcc -o $@ $^
 
-clean:
+distclean:
 	-rm -f bin2c

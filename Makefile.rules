@@ -73,7 +73,12 @@ $(patsubst %, _dir_%, $(SUBDIRS)):
 clean_subdirs: $(patsubst %, _clean_dir_%, $(SUBDIRS))
 
 $(patsubst %, _clean_dir_%, $(SUBDIRS)):
-	$(MAKE) -C $(patsubst _clean_dir_%, %, $@) clean
+	-$(MAKE) -C $(patsubst _clean_dir_%, %, $@) clean
+
+distclean_subdirs: $(patsubst %, _distclean_dir_%, $(SUBDIRS))
+
+$(patsubst %, _distclean_dir_%, $(SUBDIRS)):
+	-$(MAKE) -C $(patsubst _distclean_dir_%, %, $@) distclean
 
 # Define KOS_ROMDISK_DIR in your Makefile if you want these two handy rules.
 ifdef KOS_ROMDISK_DIR
