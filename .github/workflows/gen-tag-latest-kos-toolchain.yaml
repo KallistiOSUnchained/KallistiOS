@@ -1,0 +1,46 @@
+name: Tag Latest KOS-Toolchain
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Generate KOS-Toolchain Docker Images
+    types:
+      - completed
+
+permissions:
+  packages: write
+  contents: read
+
+jobs:
+  tag-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Log in to GitHub Container Registry
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Log in to Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      # Tag latest kos-toolchains
+      - name: Create and Push Docker Latest Manifest
+        run: |
+          docker buildx imagetools create \
+            --tag ghcr.io/kallistiosunchained/dc-kos-toolchain:latest \
+            --tag ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:latest \
+            ghcr.io/kallistiosunchained/dc-kos-toolchain:14.2-stable-arm64 \
+            ghcr.io/kallistiosunchained/dc-kos-toolchain:14.2-stable-amd64 \
+            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:14.2-stable-arm64 \
+            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:14.2-stable-amd64
