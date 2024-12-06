@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        toolchain:
+        tag:
           - "13.3-legacy"
           - "14.2-stable"
           - "15.0-dev"
@@ -32,27 +32,22 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Convert Repository Owner to Lowercase
-        id: lower-owner
-        run: |
-          echo "repository_owner=${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
-
       - name: Pull Toolchain Image
         run: |
-          docker pull ghcr.io/${{ steps.lower-owner.outputs.repository_owner }}/dc-toolchain:${{ matrix.toolchain }}
+          docker pull ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.tag }}
 
       - name: Build SDK
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/opt/toolchains/dc/kos \
             -w /opt/toolchains/dc/kos \
-            ghcr.io/${{ steps.lower-owner.outputs.repository_owner }}/dc-toolchain:${{ matrix.toolchain }} \
+            ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.tag }} \
             "source environ.sh.master && make all V=1 | tee build.log"
 
       - name: Upload Build Logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: build-logs-${{ matrix.toolchain }}-pr-${{ github.event.pull_request.number }}-${{ github.run_id }}
+          name: build-logs-${{ matrix.tag }}-pr-${{ github.event.pull_request.number }}-${{ github.run_id }}
           path: build.log
 

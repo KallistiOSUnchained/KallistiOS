@@ -17,6 +17,7 @@ on:
 
 permissions:
   packages: write
+  contents: read
 
 jobs:
   build-arm64:
@@ -24,10 +25,10 @@ jobs:
     name: Build for ARM64
     strategy:
       matrix:
-        version:
-          - { tag: "13.3-legacy" }
-          - { tag: "14.2-stable" }
-          - { tag: "15.0-dev" }
+        tag:
+          - "13.3-legacy"
+          - "14.2-stable"
+          - "15.0-dev"
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -55,11 +56,11 @@ jobs:
           file: .github/docker/kos-Dockerfile
           push: true
           tags: |
-            ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.version.tag }}-arm64
-            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.version.tag }}-arm64
+            ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.tag }}-arm64
+            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.tag }}-arm64
           platforms: linux/arm64
           build-args: |
-            tag=${{ matrix.version.tag }}
+            tag=${{ matrix.tag }}
           no-cache: true
 
   build-amd64:
@@ -67,10 +68,10 @@ jobs:
     name: Build for AMD64
     strategy:
       matrix:
-        version:
-          - { tag: "13.3-legacy" }
-          - { tag: "14.2-stable" }
-          - { tag: "15.0-dev" }
+        tag:
+          - "13.3-legacy"
+          - "14.2-stable"
+          - "15.0-dev"
     needs: build-arm64
     steps:
       - name: Checkout Repository
@@ -99,11 +100,11 @@ jobs:
           file: .github/docker/kos-Dockerfile
           push: true
           tags: |
-            ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.version.tag }}-amd64
-            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.version.tag }}-amd64
+            ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.tag }}-amd64
+            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.tag }}-amd64
           platforms: linux/amd64
           build-args: |
-            tag=${{ matrix.version.tag }}
+            tag=${{ matrix.tag }}
           no-cache: true
 
   merge-manifest:
@@ -111,10 +112,10 @@ jobs:
     name: Merge Docker Manifests
     strategy:
       matrix:
-        version:
-          - { tag: "13.3-legacy" }
-          - { tag: "14.2-stable" }
-          - { tag: "15.0-dev" }
+        tag:
+          - "13.3-legacy"
+          - "14.2-stable"
+          - "15.0-dev"
     needs:
       - build-arm64
       - build-amd64
@@ -138,9 +139,9 @@ jobs:
       - name: Create and Push Docker Manifest
         run: |
           docker buildx imagetools create \
-            --tag ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.version.tag }} \
-            --tag ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.version.tag }} \
-            ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.version.tag }}-arm64 \
-            ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.version.tag }}-amd64 \
-            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.version.tag }}-arm64 \
-            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.version.tag }}-amd64
+            --tag ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.tag }} \
+            --tag ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.tag }} \
+            ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.tag }}-arm64 \
+            ghcr.io/kallistiosunchained/dc-kos-toolchain:${{ matrix.tag }}-amd64 \
+            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.tag }}-arm64 \
+            ${{ secrets.DOCKER_HUB_USERNAME }}/dc-kos-toolchain:${{ matrix.tag }}-amd64
