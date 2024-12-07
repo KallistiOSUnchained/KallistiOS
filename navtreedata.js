@@ -77,14 +77,14 @@ var NAVTREEINDEX =
 "group__netcfg__srcs.html#ga1181c4fd6c81e68711938e015eaf43c5",
 "group__perf__counters.html#gga31675ab20e99e7e50db03368a3c390c1af22d32ab77c6879e127abf252fba921a",
 "group__pvr__fog__types.html#gaf94b3bb1bca7e0c45ca44ff0e7480cf9",
-"group__rtc.html#ga0d91e1401bf7d4b8e7fdf381755234a9",
-"group__system__scif.html#ga1cffd31a80078d9c926c9dafcd1e4547",
-"group__vfs__dev.html",
-"group__vmu__settings.html",
-"structdirent__t.html#ac5652fb30f46299c62a9d706f9e56949",
-"structkthread__t.html#af469ad26197341c798f37ae14bcb3bce",
-"structpvr__mod__hdr__t.html#aef26b7417712a7b4a7581e2d775426be",
-"structtermios.html#a3f42b69c0c7fa4ce2179cb61f8c7ca99"
+"group__register__macros.html#ga846024a6ea49554ff45cb4ff61c393bb",
+"group__system__scif.html#ga0d739a4004997630f7478dd3c246209d",
+"group__vfs__dcload.html#gaae881ad5902cd3a2e738ae675ecea3f1",
+"group__vmu__package.html",
+"structdirent__t.html",
+"structkthread__t.html#adfba1961050da641a2fadb318b2610c5",
+"structpvr__mod__hdr__t.html#a4f9aea93fecc856035cf4b2e08c6b000",
+"structtcbhead__t.html#a8415185cf11ca61401fd6a3fd39fec7f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

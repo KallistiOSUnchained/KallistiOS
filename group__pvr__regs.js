@@ -50,6 +50,7 @@ var group__pvr__regs =
     [ "PVR_TA_VERTBUF_POS", "group__pvr__regs.html#ga56b0be15cd4f7973b2be89348ecec8a8", null ],
     [ "PVR_TA_VERTBUF_START", "group__pvr__regs.html#ga9b29b8081f73977ea0acfb1417a2c9d5", null ],
     [ "PVR_TEXTURE_CLIP", "group__pvr__regs.html#ga42777000dc4d5469f2bbf94ff1504418", null ],
+    [ "PVR_TEXTURE_MODULO", "group__pvr__regs.html#ga02b2713d8001d451328106d13a1b0e02", null ],
     [ "PVR_TILEMAT_CFG", "group__pvr__regs.html#gab137e659199fac5c0682bdca7b1e1c80", null ],
     [ "PVR_TXR_STRIDE_MULT", "group__pvr__regs.html#ga7b77b1b0ba6c0417cc8c168698a0aecb", null ],
     [ "PVR_UNK_0018", "group__pvr__regs.html#ga8813f9ef70d782be12c8bdc5a514194c", null ],
