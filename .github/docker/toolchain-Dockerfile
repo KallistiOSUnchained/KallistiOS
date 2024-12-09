@@ -29,7 +29,8 @@ RUN apk add --no-cache \
         wget \
         bash \
         flex \
-        bison
+        bison \
+        gawk
 
 # Making Sega Dreamcast toolchains
 # You may adapt the KallistiOS repository URL if needed
@@ -113,7 +114,7 @@ WORKDIR /opt/toolchains/dc
 
 # Set entry point to bash so arg to docker run can be
 # run as a command.
-ENTRYPOINT ["/bin/bash", "-c"]
+ENTRYPOINT ["/bin/bash", "-c", "exec \"$@\"", "bash"]
 
 # If run with no parameters just start bash
 CMD ["/bin/bash"]

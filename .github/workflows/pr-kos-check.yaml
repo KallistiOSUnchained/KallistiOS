@@ -42,7 +42,7 @@ jobs:
             -v ${{ github.workspace }}:/opt/toolchains/dc/kos \
             -w /opt/toolchains/dc/kos \
             ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.tag }} \
-            "source environ.sh.master && make all V=1 | tee build.log"
+            /bin/bash -c "source environ.sh.master && make V=1 | tee build.log"
 
       - name: Upload Build Logs
         if: always()
@@ -50,4 +50,3 @@ jobs:
         with:
           name: build-logs-${{ matrix.tag }}-pr-${{ github.event.pull_request.number }}-${{ github.run_id }}
           path: build.log
-
