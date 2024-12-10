@@ -26,3 +26,4 @@ This directory contains a number of PC-side tools used for a variety of purposes
 - [**version**](version/): A utility to write the KallistiOS version to the header of project files
 - [**vqenc**](vqenc/): Compresses image files using the Dreamcast's Vector Quantization algorithm
 - [**wav2adpcm**](wav2adpcm/): Converts audio data between WAV and ADPCM formats
+- [**mkdcdisc**](mkdcdisc/): Converts an elf to a bootable .cdi image

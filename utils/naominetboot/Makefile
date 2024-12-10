@@ -9,5 +9,5 @@ all: naominetboot
 naominetboot: naominetboot.c
 	$(CC) -o naominetboot naominetboot.c
 
-clean:
+distclean:
 	-rm -f naominetboot

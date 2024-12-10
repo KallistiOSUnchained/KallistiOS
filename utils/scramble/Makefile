@@ -5,6 +5,6 @@ all: scramble
 scramble:
 	cc -o scramble scramble.c
 
-clean:
+distclean:
 	-rm -f scramble
 

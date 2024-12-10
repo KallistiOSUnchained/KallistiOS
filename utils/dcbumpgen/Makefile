@@ -10,5 +10,8 @@ dcbumpgen: dcbumpgen.o get_image.o get_image_jpg.o get_image_png.o readpng.o
 	$(CC) -o $@ $+ $(LDFLAGS)
 
 clean:
-	rm -f dcbumpgen *.o
+	rm -f *.o
+
+distclean: clean
+	rm -f dcbumpgen
 

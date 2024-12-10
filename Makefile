@@ -18,7 +18,7 @@ SUBDIRS = utils kernel addons # examples
 # Detect a non-working or missing environ.sh file.
 ifndef KOS_BASE
 error:
-	@echo You don\'t seem to have a working  environ.sh file. Please take a look at
+	@echo You don\'t seem to have a working environ.sh.master file. Please take a look at
 	@echo doc/README for more info.
 	@exit 0
 endif
@@ -38,6 +38,7 @@ clean: clean_subdirs
 distclean: clean
 	-rm -f lib/$(KOS_ARCH)/*
 	-rm -f addons/lib/$(KOS_ARCH)/*
+	$(MAKE) -C utils distclean
 
 docs:
 	doxygen $(KOS_BASE)/doc/Doxyfile

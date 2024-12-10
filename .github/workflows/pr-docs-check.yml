@@ -2,7 +2,9 @@
 name: Doxygen Check on PRs
 
 on:
-  pull_request:  # Triggers on all pull requests, regardless of the target branch
+  pull_request:
+    branches:
+      - master
     paths:
       - 'include/**'
       - 'kernel/arch/dreamcast/include/**'
@@ -28,7 +30,7 @@ jobs:
         with:
           path: ./doxygen-1.11.0
           key: doxygen-1.11.0-${{ runner.os }}
-  
+
       - name: Install Doxygen 1.11.0
         run: |
           if [ ! -f doxygen-1.11.0/bin/doxygen ]; then
@@ -46,7 +48,7 @@ jobs:
 
           # Count the warnings and store the count in a variable
           warning_count=$(grep -c "warning:" doxygen_output.log)
-          
+
           # Extract only warnings and display them if any are found
           if [ "$warning_count" -gt 1 ]; then
             echo "Doxygen generated warnings:"

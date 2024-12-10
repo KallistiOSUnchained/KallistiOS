@@ -60,6 +60,7 @@ __BEGIN_DECLS
 */
 /** \brief Number of bytes to represent a single thin character within the BIOS font. */
 #define BFONT_BYTES_PER_CHAR        (BFONT_THIN_WIDTH * BFONT_HEIGHT / 8)
+#define BFONT_BYTES_PER_WIDE_CHAR   (BFONT_WIDE_WIDTH * BFONT_HEIGHT / 8)
 
 /** \brief Number of bytes to represent a single wide character within the BIOS font. */
 #define BFONT_BYTES_PER_WIDE_CHAR   (BFONT_WIDE_WIDTH * BFONT_HEIGHT / 8)
@@ -74,7 +75,7 @@ __BEGIN_DECLS
     @{
 */
 /** \brief Start of Narrow Characters in Font Block */
-#define BFONT_NARROW_START          0   
+#define BFONT_NARROW_START          0
 #define BFONT_OVERBAR               BFONT_NARROW_START
 #define BFONT_ISO_8859_1_33_126     (BFONT_NARROW_START + ( 1 * BFONT_BYTES_PER_CHAR))
 #define BFONT_YEN                   (BFONT_NARROW_START + (95 * BFONT_BYTES_PER_CHAR))
@@ -86,9 +87,9 @@ __BEGIN_DECLS
 #define JISX_0208_ROW_SIZE            94
 /** \brief Start of Wide Characters in Font Block */
 #define BFONT_WIDE_START              (288 * BFONT_BYTES_PER_CHAR)
-/** \brief Start of JISX-0208 Rows 1-7 in Font Block */   
+/** \brief Start of JISX-0208 Rows 1-7 in Font Block */
 #define BFONT_JISX_0208_ROW1          BFONT_WIDE_START
-/** \brief Start of JISX-0208 Row 16-47 (Start of Level 1) in Font Block */   
+/** \brief Start of JISX-0208 Row 16-47 (Start of Level 1) in Font Block */
 #define BFONT_JISX_0208_ROW16         (BFONT_WIDE_START + (658 * BFONT_BYTES_PER_WIDE_CHAR))
 /** \brief JISX-0208 Row 48-84 (Start of Level 2) in Font Block */
 #define BFONT_JISX_0208_ROW48         (BFONT_JISX_0208_ROW16 + ((32 * JISX_0208_ROW_SIZE) * BFONT_BYTES_PER_WIDE_CHAR))
@@ -98,7 +99,6 @@ __BEGIN_DECLS
 
 /** \brief Start of VMU Specific Icons in Font Block */
 #define BFONT_VMU_DREAMCAST_SPECIFIC  (BFONT_DREAMCAST_SPECIFIC+(22 * BFONT_BYTES_PER_WIDE_CHAR))
-
 /** @} */
 
 /** \brief Builtin DC Icons
@@ -136,7 +136,7 @@ typedef enum bfont_dc_icon {
 /** \brief Builtin VMU Icons
     \ingroup  bfont_indicies
 
-    Builtin VMU volume user icons. The Dreamcast's BIOS allows the 
+    Builtin VMU volume user icons. The Dreamcast's BIOS allows the
     user to set these when formatting the VMU.
     @{
 */
@@ -238,7 +238,7 @@ typedef enum bfont_vmu_icon {
     BFONT_ICON_8               = 0x5E, /**< \brief `8` digit */
     BFONT_ICON_9               = 0x5F, /**< \brief `9` digit */
     BFONT_ICON_A               = 0x60, /**< \brief `A` letter */
-    BFONT_ICON_B               = 0x61, /**< \brief `B` letter */   
+    BFONT_ICON_B               = 0x61, /**< \brief `B` letter */
     BFONT_ICON_C               = 0x62, /**< \brief `C` letter */
     BFONT_ICON_D               = 0x63, /**< \brief `D` letter */
     BFONT_ICON_E               = 0x64, /**< \brief `E` letter */
@@ -381,7 +381,7 @@ uint8_t *bfont_find_icon(bfont_vmu_icon_t icon);
 /** \brief   Find a DC icon.
 
     This function retrieves a pointer to the icon data for the specified DC
-    icon in the bios, if its available. Each dc icon has dimensions 24x24 pixels 
+    icon in the bios, if its available. Each dc icon has dimensions 24x24 pixels
     and is 72 bytes long.
 
     \param  icon            The DC icon index to look up.
@@ -392,7 +392,7 @@ uint8_t *bfont_find_dc_icon(bfont_dc_icon_t icon);
 
 /** @} */
 
-/** \name  Character Drawing 
+/** \name  Character Drawing
     \brief Methods for rendering characters.
     @{
 */
@@ -463,12 +463,12 @@ size_t bfont_draw_thin(void *buffer, uint32_t bufwidth, bool opaque,
     \param  c               The character to draw
     \return                 Amount of width covered in bytes.
 */
-size_t bfont_draw_wide(void *buffer, uint32_t bufwidth, bool opaque, 
+size_t bfont_draw_wide(void *buffer, uint32_t bufwidth, bool opaque,
                        uint32_t c);
 
 /** \brief   Draw a VMU icon to the buffer.
 
-    This function draws a 32x32 VMU icon to the given buffer, supporting 
+    This function draws a 32x32 VMU icon to the given buffer, supporting
     multiple color depths (4, 8, 16, and 32 bits per pixel).
 
     \param  buffer          The buffer to draw to (at least 32 x 32 pixels)
@@ -482,7 +482,7 @@ size_t bfont_draw_wide(void *buffer, uint32_t bufwidth, bool opaque,
     \return                 Amount of width covered in bytes
 */
 size_t bfont_draw_vmu_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
-                              uint32_t bg, uint8_t bpp, bool opaque, 
+                              uint32_t bg, uint8_t bpp, bool opaque,
                               bfont_vmu_icon_t icon);
 
 /** \brief   Draw a VMU icon to a buffer.
@@ -496,12 +496,12 @@ size_t bfont_draw_vmu_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
     \param  icon            The VMU icon to draw
     \return                 Amount of width covered in bytes.
 */
-size_t bfont_draw_vmu_icon(void *buffer, uint32_t bufwidth, bool opaque, 
+size_t bfont_draw_vmu_icon(void *buffer, uint32_t bufwidth, bool opaque,
                            bfont_vmu_icon_t icon);
 
 /** \brief   Draw a DC icon to the buffer.
 
-    This function draws a 24x24 DC icon to the given buffer, supporting 
+    This function draws a 24x24 DC icon to the given buffer, supporting
     multiple color depths (4, 8, 16, and 32 bits per pixel).
 
     \param  buffer          The buffer to draw to (at least 24 x 24 pixels)
@@ -515,7 +515,7 @@ size_t bfont_draw_vmu_icon(void *buffer, uint32_t bufwidth, bool opaque,
     \return                 Amount of width covered in bytes
 */
 size_t bfont_draw_dc_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
-                             uint32_t bg, uint8_t bpp, bool opaque, 
+                             uint32_t bg, uint8_t bpp, bool opaque,
                              bfont_dc_icon_t icon);
 
 /** \brief   Draw a DC icon to a buffer.
@@ -529,12 +529,12 @@ size_t bfont_draw_dc_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
     \param  icon            The DC icon to draw
     \return                 Amount of width covered in bytes.
 */
-size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque, 
+size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque,
                           bfont_dc_icon_t icon);
 
 /** @} */
 
-/** \name  String Drawing 
+/** \name  String Drawing
     \brief Methods for rendering formatted text.
 
     @{
@@ -632,10 +632,10 @@ void bfont_draw_str(void *buffer, uint32_t width, bool opaque, const char *str);
 */
 void bfont_draw_str_fmt(void *buffer, uint32_t width, bool opaque, const char *fmt,
                         ...) __printflike(4, 5);
-                        
+
 /** \brief   Draw a full formatted string to video ram (with va_args).
- 
-    This function is equivalent to bfont_draw_str_ex_vfmt(), except that 
+
+    This function is equivalent to bfont_draw_str_ex_vfmt(), except that
     the variadic argument list is passed via a pointer to a va_list.
 
     \param  x               The x position to start drawing at.
@@ -649,8 +649,8 @@ void bfont_draw_str_fmt(void *buffer, uint32_t width, bool opaque, const char *f
 
     \sa bfont_draw_str_ex()
 */
-void bfont_draw_str_vram_vfmt(uint32_t x, uint32_t y, uint32_t fg, uint32_t bg, 
-                              bool opaque, const char *fmt, 
+void bfont_draw_str_vram_vfmt(uint32_t x, uint32_t y, uint32_t fg, uint32_t bg,
+                              bool opaque, const char *fmt,
                               va_list *var_args);
 
 /** \brief   Draw a full string to video ram.
@@ -667,7 +667,7 @@ void bfont_draw_str_vram_vfmt(uint32_t x, uint32_t y, uint32_t fg, uint32_t bg,
     \param  fmt             The printf-style format string to draw.
     \param  ...             Additional printf-style variadic arguments.
 */
-void bfont_draw_str_vram_fmt(uint32_t x, uint32_t y, bool opaque, const char *fmt, 
+void bfont_draw_str_vram_fmt(uint32_t x, uint32_t y, bool opaque, const char *fmt,
                              ...) __printflike(4, 5);
 
 /** @} */

@@ -8,3 +8,7 @@ all:
 clean:
 	@cd ./src; \
 	$(MAKE) clean
+
+distclean: clean
+	@cd ./src; \
+	$(MAKE) distclean

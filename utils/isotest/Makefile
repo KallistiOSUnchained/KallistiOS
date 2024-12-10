@@ -9,6 +9,5 @@ all: isotest
 isotest: isotest.c
 	gcc -g -o isotest isotest.c
 
-clean:
+distclean:
 	-rm -f isotest
-

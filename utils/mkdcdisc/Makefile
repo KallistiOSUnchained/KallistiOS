@@ -15,5 +15,6 @@ run-script:
 	@chmod +x $(SCRIPT_NAME)
 	@./$(SCRIPT_NAME)
 	@if [ -f ./mkdcdisc/builddir/mkdcdisc ]; then \
+		mkdir -p $(DC_TOOLS_BASE); \
 		install -m 755 ./mkdcdisc/builddir/mkdcdisc $(DC_TOOLS_BASE)/; \
 	fi

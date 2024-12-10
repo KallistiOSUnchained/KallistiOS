@@ -86,13 +86,16 @@ all: $(TARGET)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(TARGET): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $(OUTPUT) $(OBJECTS) $(LDFLAGS) $(LDLIBS)	
+	$(CXX) $(CXXFLAGS) -o $(OUTPUT) $(OBJECTS) $(LDFLAGS) $(LDLIBS)
 
 install: $(TARGET)
 	mkdir -p $(INSTALLDIR)
 	$(STRIP) $(OUTPUT)
-	mv $(OUTPUT) $(INSTALLDIR)	
+	mv $(OUTPUT) $(INSTALLDIR)
 
-.PHONY: clean
+.PHONY: clean distclean
 clean:
-	-rm -f $(OUTPUT) *.o
+	-rm -f *.o
+
+distclean: clean
+	-rm -f $(OUTPUT)
