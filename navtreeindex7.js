@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"group__maple__lcd.html#gae3a91979d8695249c6b62c87772083e7":[9,6,8,3,0],
 "group__maple__memcard.html":[9,6,8,4],
 "group__maple__memcard.html#ga4b9d47631a7523d62be965f835ef8917":[9,6,8,4,1],
 "group__maple__memcard.html#gaa3d2fdda6e469704aa64807ca97f3e1e":[9,6,8,4,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "group__netcfg__methods.html":[9,5,3,0],
 "group__netcfg__methods.html#ga0ed63698e6d156faa9e043158df8fd87":[9,5,3,0,1],
 "group__netcfg__methods.html#ga42a3aad57a0192a609c94be0a41763a9":[9,5,3,0,0],
-"group__netcfg__methods.html#gae6357c82f49d06334b770645b515dc35":[9,5,3,0,2],
-"group__netcfg__srcs.html":[9,5,3,1]
+"group__netcfg__methods.html#gae6357c82f49d06334b770645b515dc35":[9,5,3,0,2]
 };

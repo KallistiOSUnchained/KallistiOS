@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"group__register__macros.html#ga58530d20924859d16358c7400c37738d":[9,7,16,4],
 "group__register__macros.html#ga846024a6ea49554ff45cb4ff61c393bb":[9,7,16,2],
 "group__rtc.html":[9,9,0],
 "group__rtc.html#ga08e5ccb1801a13800a1f242a1d898ea4":[9,9,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "group__system__posix.html#gab023f97426a53426d10c8090c14a6cf5":[9,7,15,3],
 "group__system__posix.html#gac64541bdd81c961304b9babef1402640":[9,7,15,5],
 "group__system__posix.html#gae1558a40dc9bf44dcee0dfd1468a6121":[9,7,15,4],
-"group__system__posix.html#gae688d728e1acdfe5988c7db45d6f0166":[9,7,15,6],
-"group__system__scif.html":[9,7,17]
+"group__system__posix.html#gae688d728e1acdfe5988c7db45d6f0166":[9,7,15,6]
 };

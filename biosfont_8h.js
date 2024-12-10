@@ -3,6 +3,7 @@ var biosfont_8h =
     [ "BFONT_ABUTTON", "group__bfont__dc__indices.html#gaa4cc0ac21220dc1d5c6981115cf037fc", null ],
     [ "BFONT_BBUTTON", "group__bfont__dc__indices.html#gaf73d6cded433f9ee9dbfa65895451a1c", null ],
     [ "BFONT_BYTES_PER_CHAR", "group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8", null ],
+    [ "BFONT_BYTES_PER_WIDE_CHAR", "group__bfont.html#ga97257939b89deb0929caf2fdba55e404", null ],
     [ "BFONT_CBUTTON", "group__bfont__dc__indices.html#ga5d050a7b03dbe0e63e171d3c691d2307", null ],
     [ "BFONT_CIRCLECOPYRIGHT", "group__bfont__dc__indices.html#gaaa5bcaf397735375499572d7986384da", null ],
     [ "BFONT_CIRCLER", "group__bfont__dc__indices.html#ga308535bc3c7611b0c912a978395553f4", null ],

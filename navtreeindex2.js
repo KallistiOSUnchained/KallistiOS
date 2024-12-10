@@ -179,6 +179,7 @@ var NAVTREEINDEX2 =
 "group__bba__wait.html#gaf0c2ceaf81fa103371050ff83a07e920":[9,5,4,1,2,1,0],
 "group__bfont.html":[9,11,1,0],
 "group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8":[9,11,1,0,3],
+"group__bfont.html#ga97257939b89deb0929caf2fdba55e404":[9,11,1,0,4],
 "group__bfont__dc__indices.html":[9,11,1,0,1,0],
 "group__bfont__dc__indices.html#ga285e0afe9735769e2d4d6da2823ee3b0":[9,11,1,0,1,0,8],
 "group__bfont__dc__indices.html#ga308535bc3c7611b0c912a978395553f4":[9,11,1,0,1,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a43297f5aecbabc51a830ed2d6bb25c55":[9,11,1,0,1,15,28],
 "group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4389323300b995b27edac8d2edb5ade0":[9,11,1,0,1,15,1],
 "group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a43c82dc010e1d38df42eeaf93faa331f":[9,11,1,0,1,15,36],
-"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4571cfbf59a39cab91a1b049dadf3aaa":[9,11,1,0,1,15,19],
-"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4576f9dda43cbc999afca1dce99416bc":[9,11,1,0,1,15,104]
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4571cfbf59a39cab91a1b049dadf3aaa":[9,11,1,0,1,15,19]
 };

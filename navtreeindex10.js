@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"group__pvr__fog__types.html#gaa260f4e93336a908b855a11c8d09c41f":[9,11,5,1,0,0,0,5,2],
 "group__pvr__fog__types.html#gaf94b3bb1bca7e0c45ca44ff0e7480cf9":[9,11,5,1,0,0,0,5,1],
 "group__pvr__geometry.html":[9,11,5,1],
 "group__pvr__global.html":[9,11,5,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4":[9,11,5,9,1],
 "group__register__macros.html":[9,7,16],
 "group__register__macros.html#ga0ebc700a1dfa57edaf8161d622d4bb34":[9,7,16,3],
-"group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf":[9,7,16,1],
-"group__register__macros.html#ga58530d20924859d16358c7400c37738d":[9,7,16,4]
+"group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf":[9,7,16,1]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"group__herrno__vals.html#ga92b3de98da10bac7363111d35bce2fe7":[9,5,1,2,2],
 "group__herrno__vals.html#gab7112bbe219185a9726405d4c5ce9886":[9,5,1,2,0],
 "group__herrno__vals.html#gaefda3c41e567de5717e579212109a355":[9,5,1,2,3],
 "group__hw__consoles.html":[9,7,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "group__kbd__regions.html#ga5ea431b3c5f9fe00bad1da253e3d8712":[9,6,2,4,4],
 "group__kbd__regions.html#ga7702841a06846aa42a2f1d5feba4e8de":[9,6,2,4,2],
 "group__kbd__regions.html#ga9f0ac826cdcc5b1ee04df91624ea7405":[9,6,2,4,5],
-"group__kbd__regions.html#gab1ea5a0b62083df4c857ea9709708cbf":[9,6,2,4,1],
-"group__kbd__regions.html#gac0018452869d2662805539fe434aaa21":[9,6,2,4,3]
+"group__kbd__regions.html#gab1ea5a0b62083df4c857ea9709708cbf":[9,6,2,4,1]
 };

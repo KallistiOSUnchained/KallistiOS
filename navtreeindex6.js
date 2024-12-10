@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"group__kbd__regions.html#gac0018452869d2662805539fe434aaa21":[9,6,2,4,3],
 "group__kbd__regions.html#gace564bc86a5f967d395ee16ec86fdc81":[9,6,2,4,0],
 "group__kbd__regions.html#gae7b1f6a309c7b7c7dd85e19e1a5af8ff":[9,6,2,4,6],
 "group__key__states.html":[9,6,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "group__maple__lcd.html#ga6c738acaab877131cc3bb0ddb12afec4":[9,6,8,3,3],
 "group__maple__lcd.html#gaa8e600a6714861baf26af1db596f98c0":[9,6,8,3,2],
 "group__maple__lcd.html#gab6fe45750f62045a210cf4733cb5be08":[9,6,8,3,4],
-"group__maple__lcd.html#gae1c10c8440a02b71fc27898f6c13e0d5":[9,6,8,3,5],
-"group__maple__lcd.html#gae3a91979d8695249c6b62c87772083e7":[9,6,8,3,0]
+"group__maple__lcd.html#gae1c10c8440a02b71fc27898f6c13e0d5":[9,6,8,3,5]
 };

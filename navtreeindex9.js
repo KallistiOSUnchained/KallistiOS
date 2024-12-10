@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"group__perf__counters.html#gga31675ab20e99e7e50db03368a3c390c1aebee4df46cf0bfbf4cb3ecdd4339be6d":[9,2,4,3,19],
 "group__perf__counters.html#gga31675ab20e99e7e50db03368a3c390c1af22d32ab77c6879e127abf252fba921a":[9,2,4,3,26],
 "group__perf__counters.html#gga31675ab20e99e7e50db03368a3c390c1afa12e341c2d6c8984428a3620dbd1fe6":[9,2,4,3,16],
 "group__perf__counters.html#gga48567e102d5902143a371df9e9ec0c58a37a5b2d9f089b52f40bed667faf3ef2a":[9,2,4,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "group__pvr__fog.html#gae3612bd64b24d2d996dcb494e9cf7142":[9,11,5,2,0,6],
 "group__pvr__fog__types.html":[9,11,5,1,0,0,0,5],
 "group__pvr__fog__types.html#ga22bec32a662993600da3948a3c824642":[9,11,5,1,0,0,0,5,0],
-"group__pvr__fog__types.html#ga9cd8333d3ee5b9deff9be5fc1589d2d4":[9,11,5,1,0,0,0,5,3],
-"group__pvr__fog__types.html#gaa260f4e93336a908b855a11c8d09c41f":[9,11,5,1,0,0,0,5,2]
+"group__pvr__fog__types.html#ga9cd8333d3ee5b9deff9be5fc1589d2d4":[9,11,5,1,0,0,0,5,3]
 };
