@@ -38,9 +38,9 @@ __BEGIN_DECLS
 
 #include <arch/types.h>
 
-/** \defgroup bfont     BIOS
-    \brief              API for the Dreamcast's built-in BIOS font.
-    \ingroup            video_fonts
+/** \defgroup bfont  BIOS
+    \brief    API for the Dreamcast's built-in BIOS font.
+    \ingroup  video_fonts
     @{
 */
 
@@ -60,7 +60,6 @@ __BEGIN_DECLS
 */
 /** \brief Number of bytes to represent a single thin character within the BIOS font. */
 #define BFONT_BYTES_PER_CHAR        (BFONT_THIN_WIDTH * BFONT_HEIGHT / 8)
-#define BFONT_BYTES_PER_WIDE_CHAR   (BFONT_WIDE_WIDTH * BFONT_HEIGHT / 8)
 
 /** \brief Number of bytes to represent a single wide character within the BIOS font. */
 #define BFONT_BYTES_PER_WIDE_CHAR   (BFONT_WIDE_WIDTH * BFONT_HEIGHT / 8)
@@ -99,10 +98,8 @@ __BEGIN_DECLS
 
 /** \brief Start of VMU Specific Icons in Font Block */
 #define BFONT_VMU_DREAMCAST_SPECIFIC  (BFONT_DREAMCAST_SPECIFIC+(22 * BFONT_BYTES_PER_WIDE_CHAR))
-/** @} */
 
 /** \brief Builtin DC Icons
-    \ingroup  bfont_indicies
 
     Builtin DC user icons.
     @{
@@ -134,7 +131,6 @@ typedef enum bfont_dc_icon {
 /** @} */
 
 /** \brief Builtin VMU Icons
-    \ingroup  bfont_indicies
 
     Builtin VMU volume user icons. The Dreamcast's BIOS allows the
     user to set these when formatting the VMU.
@@ -273,6 +269,8 @@ typedef enum bfont_vmu_icon {
 } bfont_vmu_icon_t;
 /** @} */
 
+/** @} */
+
 /** \name  Coloring
     \brief Methods for modifying the text color.
     @{
@@ -392,8 +390,8 @@ uint8_t *bfont_find_dc_icon(bfont_dc_icon_t icon);
 
 /** @} */
 
-/** \name  Character Drawing
-    \brief Methods for rendering characters.
+/** \defgroup bfont_char Character Drawing
+    \brief Methods for rendering characters/icons.
     @{
 */
 
@@ -534,11 +532,178 @@ size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque,
 
 /** @} */
 
-/** \name  String Drawing
-    \brief Methods for rendering formatted text.
+/** \defgroup bfont_string String Drawing
+    \brief    Methods for rendering formatted text/icons.
 
     @{
 */
+
+/** brief Macros for Builtin DC Icons
+
+    These macros are provided for use in string concatenation for printf
+    and other functions requiring inline representation of DC icons.
+    @{
+*/
+#define DI_CIRCLECOPYRIGHT     "\\di00"
+#define DI_CIRCLER             "\\di01"
+#define DI_TRADEMARK           "\\di02"
+#define DI_UPARROW             "\\di03"
+#define DI_DOWNARROW           "\\di04"
+#define DI_LEFTARROW           "\\di05"
+#define DI_RIGHTARROW          "\\di06"
+#define DI_UPRIGHTARROW        "\\di07"
+#define DI_DOWNRIGHTARROW      "\\di08"
+#define DI_DOWNLEFTARROW       "\\di09"
+#define DI_UPLEFTARROW         "\\di0A"
+#define DI_ABUTTON             "\\di0B"
+#define DI_BBUTTON             "\\di0C"
+#define DI_CBUTTON             "\\di0D"
+#define DI_DBUTTON             "\\di0E"
+#define DI_XBUTTON             "\\di0F"
+#define DI_YBUTTON             "\\di10"
+#define DI_ZBUTTON             "\\di11"
+#define DI_LTRIGGER            "\\di12"
+#define DI_RTRIGGER            "\\di13"
+#define DI_STARTBUTTON         "\\di14"
+#define DI_VMU                 "\\di15"
+/** @} */
+
+/** brief Macros for Builtin VMU Icons
+
+    These macros are provided for use in string concatenation for printf
+    and other functions requiring inline representation of VMU icons.
+    @{
+*/
+#define VI_INVALID_VMU         "\\vi00"
+#define VI_HOURGLASS_ONE       "\\vi01"
+#define VI_HOURGLASS_TWO       "\\vi02"
+#define VI_HOURGLASS_THREE     "\\vi03"
+#define VI_HOURGLASS_FOUR      "\\vi04"
+#define VI_VMUICON             "\\vi05"
+#define VI_EARTH               "\\vi06"
+#define VI_SATURN              "\\vi07"
+#define VI_QUARTER_MOON        "\\vi08"
+#define VI_LAUGHING_FACE       "\\vi09"
+#define VI_SMILING_FACE        "\\vi0A"
+#define VI_CASUAL_FACE         "\\vi0B"
+#define VI_ANGRY_FACE          "\\vi0C"
+#define VI_COW                 "\\vi0D"
+#define VI_HORSE               "\\vi0E"
+#define VI_RABBIT              "\\vi0F"
+#define VI_CAT                 "\\vi10"
+#define VI_CHICK               "\\vi11"
+#define VI_LION                "\\vi12"
+#define VI_MONKEY              "\\vi13"
+#define VI_PANDA               "\\vi14"
+#define VI_BEAR                "\\vi15"
+#define VI_PIG                 "\\vi16"
+#define VI_DOG                 "\\vi17"
+#define VI_FISH                "\\vi18"
+#define VI_OCTOPUS             "\\vi19"
+#define VI_SQUID               "\\vi1A"
+#define VI_WHALE               "\\vi1B"
+#define VI_CRAB                "\\vi1C"
+#define VI_BUTTERFLY           "\\vi1D"
+#define VI_LADYBUG             "\\vi1E"
+#define VI_ANGLER_FISH         "\\vi1F"
+#define VI_PENGUIN             "\\vi20"
+#define VI_CHERRIES            "\\vi21"
+#define VI_TULIP               "\\vi22"
+#define VI_LEAF                "\\vi23"
+#define VI_SAKURA              "\\vi24"
+#define VI_APPLE               "\\vi25"
+#define VI_ICECREAM            "\\vi26"
+#define VI_CACTUS              "\\vi27"
+#define VI_PIANO               "\\vi28"
+#define VI_GUITAR              "\\vi29"
+#define VI_EIGHTH_NOTE         "\\vi2A"
+#define VI_TREBLE_CLEF         "\\vi2B"
+#define VI_BOAT                "\\vi2C"
+#define VI_CAR                 "\\vi2D"
+#define VI_HELMET              "\\vi2E"
+#define VI_MOTORCYCLE          "\\vi2F"
+#define VI_VAN                 "\\vi30"
+#define VI_TRUCK               "\\vi31"
+#define VI_CLOCK               "\\vi32"
+#define VI_TELEPHONE           "\\vi33"
+#define VI_PENCIL              "\\vi34"
+#define VI_CUP                 "\\vi35"
+#define VI_SILVERWARE          "\\vi36"
+#define VI_HOUSE               "\\vi37"
+#define VI_BELL                "\\vi38"
+#define VI_CROWN               "\\vi39"
+#define VI_SOCK                "\\vi3A"
+#define VI_CAKE                "\\vi3B"
+#define VI_KEY                 "\\vi3C"
+#define VI_BOOK                "\\vi3D"
+#define VI_BASEBALL            "\\vi3E"
+#define VI_SOCCER              "\\vi3F"
+#define VI_BULB                "\\vi40"
+#define VI_TEDDY_BEAR          "\\vi41"
+#define VI_BOW_TIE             "\\vi42"
+#define VI_BOW_ARROW           "\\vi43"
+#define VI_SNOWMAN             "\\vi44"
+#define VI_LIGHTNING           "\\vi45"
+#define VI_SUN                 "\\vi46"
+#define VI_CLOUD               "\\vi47"
+#define VI_UMBRELLA            "\\vi48"
+#define VI_ONE_STAR            "\\vi49"
+#define VI_TWO_STARS           "\\vi4A"
+#define VI_THREE_STARS         "\\vi4B"
+#define VI_FOUR_STARS          "\\vi4C"
+#define VI_HEART               "\\vi4D"
+#define VI_DIAMOND             "\\vi4E"
+#define VI_SPADE               "\\vi4F"
+#define VI_CLUB                "\\vi50"
+#define VI_JACK                "\\vi51"
+#define VI_QUEEN               "\\vi52"
+#define VI_KING                "\\vi53"
+#define VI_JOKER               "\\vi54"
+#define VI_ISLAND              "\\vi55"
+#define VI_0                   "\\vi56"
+#define VI_1                   "\\vi57"
+#define VI_2                   "\\vi58"
+#define VI_3                   "\\vi59"
+#define VI_4                   "\\vi5A"
+#define VI_5                   "\\vi5B"
+#define VI_6                   "\\vi5C"
+#define VI_7                   "\\vi5D"
+#define VI_8                   "\\vi5E"
+#define VI_9                   "\\vi5F"
+#define VI_A                   "\\vi60"
+#define VI_B                   "\\vi61"
+#define VI_C                   "\\vi62"
+#define VI_D                   "\\vi63"
+#define VI_E                   "\\vi64"
+#define VI_F                   "\\vi65"
+#define VI_G                   "\\vi66"
+#define VI_H                   "\\vi67"
+#define VI_I                   "\\vi68"
+#define VI_J                   "\\vi69"
+#define VI_K                   "\\vi6A"
+#define VI_L                   "\\vi6B"
+#define VI_M                   "\\vi6C"
+#define VI_N                   "\\vi6D"
+#define VI_O                   "\\vi6E"
+#define VI_P                   "\\vi6F"
+#define VI_Q                   "\\vi70"
+#define VI_R                   "\\vi71"
+#define VI_S                   "\\vi72"
+#define VI_T                   "\\vi73"
+#define VI_U                   "\\vi74"
+#define VI_V                   "\\vi75"
+#define VI_W                   "\\vi76"
+#define VI_X                   "\\vi77"
+#define VI_Y                   "\\vi78"
+#define VI_Z                   "\\vi79"
+#define VI_CHECKER_BOARD       "\\vi7A"
+#define VI_GRID                "\\vi7B"
+#define VI_LIGHT_GRAY          "\\vi7C"
+#define VI_DIAG_GRID           "\\vi7D"
+#define VI_PACMAN_GRID         "\\vi7E"
+#define VI_DARK_GRAY           "\\vi7F"
+#define VI_EMBROIDERY          "\\vi80"
+/** @} */
 
 /** \brief   Draw a full string of any sort to any sort of buffer.
 
