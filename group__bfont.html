@@ -100,21 +100,31 @@ $(function(){initNavTree('group__bfont.html',''); initResizable(true); });
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
 <a href="#files">Files</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">BIOS<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__video__fonts.html">Fonts</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>API for the Dreamcast's built-in BIOS font  
+<p>API for the Dreamcast's built-in BIOS font.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__byte__size.html">Byte Sizes</a></td></tr>
+<tr class="memdesc:group__bfont__byte__size"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte size definitions for the BIOS fonts. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html">Character Drawing</a></td></tr>
+<tr class="memdesc:group__bfont__char"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methods for rendering characters/icons. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__size.html">Dimensions</a></td></tr>
-<tr class="memdesc:group__bfont__size"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sizes for of the BIOS font's dimensions <br /></td></tr>
+<tr class="memdesc:group__bfont__size"><td class="mdescLeft">&#160;</td><td class="mdescRight">Font size definitions for the BIOS fonts. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html">String Drawing</a></td></tr>
+<tr class="memdesc:group__bfont__string"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methods for rendering formatted text/icons. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html">Structure</a></td></tr>
-<tr class="memdesc:group__bfont__indicies"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of the Bios Font <br /></td></tr>
+<tr class="memdesc:group__bfont__indicies"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of the Bios Font. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
@@ -123,44 +133,294 @@ Files</h2></td></tr>
 <tr class="memdesc:biosfont_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">BIOS font drawing functions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga962a08bcef07a42119d6d1eb0a8a25a8" id="r_ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td></tr>
-<tr class="memdesc:ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes to represent a single character within the BIOS font.  <br /></td></tr>
-<tr class="separator:ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga97257939b89deb0929caf2fdba55e404" id="r_ga97257939b89deb0929caf2fdba55e404"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#gae578b3c98e6b5d7eb250c28dc497d4a0">BFONT_WIDE_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td></tr>
-<tr class="separator:ga97257939b89deb0929caf2fdba55e404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gac8888c1dabdfca1ec9d3e1f8fa4ba371" id="r_gac8888c1dabdfca1ec9d3e1f8fa4ba371"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a> { <a class="el" href="#ggac8888c1dabdfca1ec9d3e1f8fa4ba371a44a3d159579c3ee856ebac20cc16b0b4">BFONT_CODE_ISO8859_1</a> = 0
+, <a class="el" href="#ggac8888c1dabdfca1ec9d3e1f8fa4ba371ab9deefcd4d273bb8515ea910e04deef7">BFONT_CODE_EUC</a> = 1
+, <a class="el" href="#ggac8888c1dabdfca1ec9d3e1f8fa4ba371aa15c18aad7cffd0ce9d0abbd4d35cae4">BFONT_CODE_SJIS</a> = 2
+, <a class="el" href="#ggac8888c1dabdfca1ec9d3e1f8fa4ba371a9669c9fe21008a6c6a7aa870f9fb9673">BFONT_CODE_RAW</a> = 3
+ }</td></tr>
+<tr class="separator:gac8888c1dabdfca1ec9d3e1f8fa4ba371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga637f9a06db7b12859327bb283a6807cc" id="r_ga637f9a06db7b12859327bb283a6807cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga637f9a06db7b12859327bb283a6807cc">bfont_set_encoding</a> (<a class="el" href="#gac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a> enc)</td></tr>
+<tr class="memdesc:ga637f9a06db7b12859327bb283a6807cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font encoding.  <br /></td></tr>
+<tr class="separator:ga637f9a06db7b12859327bb283a6807cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Coloring</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Methods for modifying the text color. </p>
+</td></tr>
+<tr class="memitem:gab7f8f69cb7a23842cf64e928e71c3d85" id="r_gab7f8f69cb7a23842cf64e928e71c3d85"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab7f8f69cb7a23842cf64e928e71c3d85">bfont_set_foreground_color</a> (uint32_t c)</td></tr>
+<tr class="memdesc:gab7f8f69cb7a23842cf64e928e71c3d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font foreground color.  <br /></td></tr>
+<tr class="separator:gab7f8f69cb7a23842cf64e928e71c3d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga837a12a7361a501aebdaf0aed32e152a" id="r_ga837a12a7361a501aebdaf0aed32e152a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga837a12a7361a501aebdaf0aed32e152a">bfont_set_background_color</a> (uint32_t c)</td></tr>
+<tr class="memdesc:ga837a12a7361a501aebdaf0aed32e152a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font background color.  <br /></td></tr>
+<tr class="separator:ga837a12a7361a501aebdaf0aed32e152a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Character Lookups</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Methods for finding various font characters and icons. </p>
+</td></tr>
+<tr class="memitem:ga24a89a7fd430ac4c474a1e98a79fe6cd" id="r_ga24a89a7fd430ac4c474a1e98a79fe6cd"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga24a89a7fd430ac4c474a1e98a79fe6cd">bfont_find_char</a> (uint32_t ch)</td></tr>
+<tr class="memdesc:ga24a89a7fd430ac4c474a1e98a79fe6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an ISO-8859-1 character in the font.  <br /></td></tr>
+<tr class="separator:ga24a89a7fd430ac4c474a1e98a79fe6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7e4f3fbee992d17f935d6ebf09cede1" id="r_gaf7e4f3fbee992d17f935d6ebf09cede1"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf7e4f3fbee992d17f935d6ebf09cede1">bfont_find_char_jp</a> (uint32_t ch)</td></tr>
+<tr class="memdesc:gaf7e4f3fbee992d17f935d6ebf09cede1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an full-width Japanese character in the font.  <br /></td></tr>
+<tr class="separator:gaf7e4f3fbee992d17f935d6ebf09cede1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cd9dbef9dc3a3150ce957b6584f21ce" id="r_ga3cd9dbef9dc3a3150ce957b6584f21ce"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3cd9dbef9dc3a3150ce957b6584f21ce">bfont_find_char_jp_half</a> (uint32_t ch)</td></tr>
+<tr class="memdesc:ga3cd9dbef9dc3a3150ce957b6584f21ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an half-width Japanese character in the font.  <br /></td></tr>
+<tr class="separator:ga3cd9dbef9dc3a3150ce957b6584f21ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8528edf188990e8e4f3d72b078410699" id="r_ga8528edf188990e8e4f3d72b078410699"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8528edf188990e8e4f3d72b078410699">bfont_find_icon</a> (<a class="el" href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a> icon)</td></tr>
+<tr class="memdesc:ga8528edf188990e8e4f3d72b078410699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a VMU icon.  <br /></td></tr>
+<tr class="separator:ga8528edf188990e8e4f3d72b078410699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga59a7b75b2bd4128fe1c0e0a99edbffa1" id="r_ga59a7b75b2bd4128fe1c0e0a99edbffa1"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga59a7b75b2bd4128fe1c0e0a99edbffa1">bfont_find_dc_icon</a> (<a class="el" href="group__bfont__indicies.html#gaeccdd5f0c34bcb51645903791a63a166">bfont_dc_icon_t</a> icon)</td></tr>
+<tr class="memdesc:ga59a7b75b2bd4128fe1c0e0a99edbffa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a DC icon.  <br /></td></tr>
+<tr class="separator:ga59a7b75b2bd4128fe1c0e0a99edbffa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>API for the Dreamcast's built-in BIOS font </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga962a08bcef07a42119d6d1eb0a8a25a8" name="ga962a08bcef07a42119d6d1eb0a8a25a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga962a08bcef07a42119d6d1eb0a8a25a8">&#9670;&#160;</a></span>BFONT_BYTES_PER_CHAR</h2>
+<p>API for the Dreamcast's built-in BIOS font. </p>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gac8888c1dabdfca1ec9d3e1f8fa4ba371" name="gac8888c1dabdfca1ec9d3e1f8fa4ba371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8888c1dabdfca1ec9d3e1f8fa4ba371">&#9670;&#160;</a></span>bfont_code_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_BYTES_PER_CHAR&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td>
+          <td class="memname">enum <a class="el" href="#gac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Number of bytes to represent a single character within the BIOS font. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggac8888c1dabdfca1ec9d3e1f8fa4ba371a44a3d159579c3ee856ebac20cc16b0b4" name="ggac8888c1dabdfca1ec9d3e1f8fa4ba371a44a3d159579c3ee856ebac20cc16b0b4"></a>BFONT_CODE_ISO8859_1&#160;</td><td class="fielddoc"><p>ISO-8859-1 (western) charset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac8888c1dabdfca1ec9d3e1f8fa4ba371ab9deefcd4d273bb8515ea910e04deef7" name="ggac8888c1dabdfca1ec9d3e1f8fa4ba371ab9deefcd4d273bb8515ea910e04deef7"></a>BFONT_CODE_EUC&#160;</td><td class="fielddoc"><p>EUC-JP charset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac8888c1dabdfca1ec9d3e1f8fa4ba371aa15c18aad7cffd0ce9d0abbd4d35cae4" name="ggac8888c1dabdfca1ec9d3e1f8fa4ba371aa15c18aad7cffd0ce9d0abbd4d35cae4"></a>BFONT_CODE_SJIS&#160;</td><td class="fielddoc"><p>Shift-JIS charset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac8888c1dabdfca1ec9d3e1f8fa4ba371a9669c9fe21008a6c6a7aa870f9fb9673" name="ggac8888c1dabdfca1ec9d3e1f8fa4ba371a9669c9fe21008a6c6a7aa870f9fb9673"></a>BFONT_CODE_RAW&#160;</td><td class="fielddoc"><p>Raw indexing to the BFONT. </p>
+</td></tr>
+</table>
 
 </div>
 </div>
-<a id="ga97257939b89deb0929caf2fdba55e404" name="ga97257939b89deb0929caf2fdba55e404"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga97257939b89deb0929caf2fdba55e404">&#9670;&#160;</a></span>BFONT_BYTES_PER_WIDE_CHAR</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga24a89a7fd430ac4c474a1e98a79fe6cd" name="ga24a89a7fd430ac4c474a1e98a79fe6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24a89a7fd430ac4c474a1e98a79fe6cd">&#9670;&#160;</a></span>bfont_find_char()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_BYTES_PER_WIDE_CHAR&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#gae578b3c98e6b5d7eb250c28dc497d4a0">BFONT_WIDE_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td>
+          <td class="memname">const uint8_t * bfont_find_char </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ch</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Find an ISO-8859-1 character in the font. </p>
+<p>This function retrieves a pointer to the font data for the specified character in the font, if its available. Generally, you will not have to use this function, use one of the bfont_draw_* functions instead.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ch</td><td>The character to look up </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw character data </dd></dl>
+
+</div>
+</div>
+<a id="gaf7e4f3fbee992d17f935d6ebf09cede1" name="gaf7e4f3fbee992d17f935d6ebf09cede1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7e4f3fbee992d17f935d6ebf09cede1">&#9670;&#160;</a></span>bfont_find_char_jp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * bfont_find_char_jp </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find an full-width Japanese character in the font. </p>
+<p>This function retrieves a pointer to the font data for the specified character in the font, if its available. Generally, you will not have to use this function, use one of the bfont_draw_* functions instead.</p>
+<p>This function deals with full-width kana and kanji.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ch</td><td>The character to look up </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw character data </dd></dl>
+
+</div>
+</div>
+<a id="ga3cd9dbef9dc3a3150ce957b6584f21ce" name="ga3cd9dbef9dc3a3150ce957b6584f21ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3cd9dbef9dc3a3150ce957b6584f21ce">&#9670;&#160;</a></span>bfont_find_char_jp_half()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * bfont_find_char_jp_half </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find an half-width Japanese character in the font. </p>
+<p>This function retrieves a pointer to the font data for the specified character in the font, if its available. Generally, you will not have to use this function, use one of the bfont_draw_* functions instead.</p>
+<p>This function deals with half-width kana only.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ch</td><td>The character to look up </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw character data </dd></dl>
+
+</div>
+</div>
+<a id="ga59a7b75b2bd4128fe1c0e0a99edbffa1" name="ga59a7b75b2bd4128fe1c0e0a99edbffa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga59a7b75b2bd4128fe1c0e0a99edbffa1">&#9670;&#160;</a></span>bfont_find_dc_icon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * bfont_find_dc_icon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__bfont__indicies.html#gaeccdd5f0c34bcb51645903791a63a166">bfont_dc_icon_t</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find a DC icon. </p>
+<p>This function retrieves a pointer to the icon data for the specified DC icon in the bios, if its available. Each dc icon has dimensions 24x24 pixels and is 72 bytes long.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">icon</td><td>The DC icon index to look up. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw icon data or NULL if icon value is incorrect. </dd></dl>
+
+</div>
+</div>
+<a id="ga8528edf188990e8e4f3d72b078410699" name="ga8528edf188990e8e4f3d72b078410699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8528edf188990e8e4f3d72b078410699">&#9670;&#160;</a></span>bfont_find_icon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * bfont_find_icon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find a VMU icon. </p>
+<p>This function retrieves a pointer to the icon data for the specified VMU icon in the bios, if its available. The icon data is flipped both vertically and horizontally. Each vmu icon has dimensions 32x32 pixels and is 128 bytes long.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">icon</td><td>The VMU icon index to look up. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw icon data or NULL if icon value is incorrect. </dd></dl>
+
+</div>
+</div>
+<a id="ga837a12a7361a501aebdaf0aed32e152a" name="ga837a12a7361a501aebdaf0aed32e152a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga837a12a7361a501aebdaf0aed32e152a">&#9670;&#160;</a></span>bfont_set_background_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bfont_set_background_color </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the font background color. </p>
+<p>This function selects the background color to draw when a pixel is drawn in the font. This color is only used for pixels not covered by the font when you have selected to have the font be opaque.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>The color to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The old background color.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gab7f8f69cb7a23842cf64e928e71c3d85" title="Set the font foreground color.">bfont_set_foreground_color()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga637f9a06db7b12859327bb283a6807cc" name="ga637f9a06db7b12859327bb283a6807cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga637f9a06db7b12859327bb283a6807cc">&#9670;&#160;</a></span>bfont_set_encoding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bfont_set_encoding </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#gac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a></td>          <td class="paramname"><span class="paramname"><em>enc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the font encoding. </p>
+<p>This function selects the font encoding that is used for the font. This allows you to select between the various character sets available.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enc</td><td>The character encoding in use </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab7f8f69cb7a23842cf64e928e71c3d85" name="gab7f8f69cb7a23842cf64e928e71c3d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7f8f69cb7a23842cf64e928e71c3d85">&#9670;&#160;</a></span>bfont_set_foreground_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bfont_set_foreground_color </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the font foreground color. </p>
+<p>This function selects the foreground color to draw when a pixel is opaque in the font. The value passed in for the color should be in whatever pixel format that you intend to use for the image produced.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>The color to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The old foreground color.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga837a12a7361a501aebdaf0aed32e152a" title="Set the font background color.">bfont_set_background_color()</a> </dd></dl>
 
 </div>
 </div>

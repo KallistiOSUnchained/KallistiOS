@@ -98,22 +98,14 @@ $(function(){initNavTree('group__bfont__indicies.html',''); initResizable(true);
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Topics</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">Structure<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__video__fonts.html">Fonts</a> &raquo; <a class="el" href="group__bfont.html">BIOS</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Structure of the Bios Font  
+<p>Structure of the Bios Font.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html">Dreamcast-Specific</a></td></tr>
-<tr class="memdesc:group__bfont__dc__indices"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast-specific BIOS icon offsets. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ga016330a87acf0315c1255a6222c74474" id="r_ga016330a87acf0315c1255a6222c74474"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a>&#160;&#160;&#160;0</td></tr>
@@ -121,41 +113,65 @@ Macros</h2></td></tr>
 <tr class="separator:ga016330a87acf0315c1255a6222c74474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae828a430fce2ee451762dca614c601e4" id="r_gae828a430fce2ee451762dca614c601e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae828a430fce2ee451762dca614c601e4">BFONT_OVERBAR</a>&#160;&#160;&#160;<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a></td></tr>
 <tr class="separator:gae828a430fce2ee451762dca614c601e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga737c13e0a52a1777cb38caff1dde3f63" id="r_ga737c13e0a52a1777cb38caff1dde3f63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga737c13e0a52a1777cb38caff1dde3f63">BFONT_ISO_8859_1_33_126</a>&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + ( 1 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
+<tr class="memitem:ga737c13e0a52a1777cb38caff1dde3f63" id="r_ga737c13e0a52a1777cb38caff1dde3f63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga737c13e0a52a1777cb38caff1dde3f63">BFONT_ISO_8859_1_33_126</a>&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + ( 1 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
 <tr class="separator:ga737c13e0a52a1777cb38caff1dde3f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf6ec946257ae34e055566bd87767ac53" id="r_gaf6ec946257ae34e055566bd87767ac53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf6ec946257ae34e055566bd87767ac53">BFONT_YEN</a>&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (95 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
+<tr class="memitem:gaf6ec946257ae34e055566bd87767ac53" id="r_gaf6ec946257ae34e055566bd87767ac53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf6ec946257ae34e055566bd87767ac53">BFONT_YEN</a>&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (95 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
 <tr class="separator:gaf6ec946257ae34e055566bd87767ac53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1cd5572600bd55227e6abc576cc775f" id="r_gaa1cd5572600bd55227e6abc576cc775f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa1cd5572600bd55227e6abc576cc775f">BFONT_ISO_8859_1_160_255</a>&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (96 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
+<tr class="memitem:gaa1cd5572600bd55227e6abc576cc775f" id="r_gaa1cd5572600bd55227e6abc576cc775f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa1cd5572600bd55227e6abc576cc775f">BFONT_ISO_8859_1_160_255</a>&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (96 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
 <tr class="separator:gaa1cd5572600bd55227e6abc576cc775f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga99e731cbb1713abe2b82fad66c6e1fba" id="r_ga99e731cbb1713abe2b82fad66c6e1fba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga99e731cbb1713abe2b82fad66c6e1fba">JISX_0208_ROW_SIZE</a>&#160;&#160;&#160;94</td></tr>
 <tr class="memdesc:ga99e731cbb1713abe2b82fad66c6e1fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a row for JISX-0208 characters.  <br /></td></tr>
 <tr class="separator:ga99e731cbb1713abe2b82fad66c6e1fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga765fdae6a9b802af18b633354a4004d1" id="r_ga765fdae6a9b802af18b633354a4004d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a>&#160;&#160;&#160;(288 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>)</td></tr>
+<tr class="memitem:ga765fdae6a9b802af18b633354a4004d1" id="r_ga765fdae6a9b802af18b633354a4004d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a>&#160;&#160;&#160;(288 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>)</td></tr>
 <tr class="memdesc:ga765fdae6a9b802af18b633354a4004d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of Wide Characters in Font Block.  <br /></td></tr>
 <tr class="separator:ga765fdae6a9b802af18b633354a4004d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga82f6b33cc504d579fd606e147d61e0e5" id="r_ga82f6b33cc504d579fd606e147d61e0e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga82f6b33cc504d579fd606e147d61e0e5">BFONT_JISX_0208_ROW1</a>&#160;&#160;&#160;<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a></td></tr>
 <tr class="memdesc:ga82f6b33cc504d579fd606e147d61e0e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of JISX-0208 Rows 1-7 in Font Block.  <br /></td></tr>
 <tr class="separator:ga82f6b33cc504d579fd606e147d61e0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf24c12618fde68d86dd24196da304f20" id="r_gaf24c12618fde68d86dd24196da304f20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a>&#160;&#160;&#160;(<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (658 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memitem:gaf24c12618fde68d86dd24196da304f20" id="r_gaf24c12618fde68d86dd24196da304f20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a>&#160;&#160;&#160;(<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (658 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
 <tr class="memdesc:gaf24c12618fde68d86dd24196da304f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of JISX-0208 Row 16-47 (Start of Level 1) in Font Block.  <br /></td></tr>
 <tr class="separator:gaf24c12618fde68d86dd24196da304f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga41c62881dab3cebf18081e067c3b9476" id="r_ga41c62881dab3cebf18081e067c3b9476"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga41c62881dab3cebf18081e067c3b9476">BFONT_JISX_0208_ROW48</a>&#160;&#160;&#160;(<a class="el" href="#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a> + ((32 * <a class="el" href="#ga99e731cbb1713abe2b82fad66c6e1fba">JISX_0208_ROW_SIZE</a>) * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memitem:ga41c62881dab3cebf18081e067c3b9476" id="r_ga41c62881dab3cebf18081e067c3b9476"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga41c62881dab3cebf18081e067c3b9476">BFONT_JISX_0208_ROW48</a>&#160;&#160;&#160;(<a class="el" href="#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a> + ((32 * <a class="el" href="#ga99e731cbb1713abe2b82fad66c6e1fba">JISX_0208_ROW_SIZE</a>) * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
 <tr class="memdesc:ga41c62881dab3cebf18081e067c3b9476"><td class="mdescLeft">&#160;</td><td class="mdescRight">JISX-0208 Row 48-84 (Start of Level 2) in Font Block.  <br /></td></tr>
 <tr class="separator:ga41c62881dab3cebf18081e067c3b9476"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4b32a9ef4f15bf378270be7b12b9759e" id="r_ga4b32a9ef4f15bf378270be7b12b9759e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>&#160;&#160;&#160;(<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (7056 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
-<tr class="memdesc:ga4b32a9ef4f15bf378270be7b12b9759e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of DC Specific Characters in Font Block.  <br /></td></tr>
+<tr class="memitem:ga4b32a9ef4f15bf378270be7b12b9759e" id="r_ga4b32a9ef4f15bf378270be7b12b9759e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>&#160;&#160;&#160;(<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (7056 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memdesc:ga4b32a9ef4f15bf378270be7b12b9759e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of DC Specific Icons in Font Block.  <br /></td></tr>
 <tr class="separator:ga4b32a9ef4f15bf378270be7b12b9759e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9c8041a17a4eced6b0f6912013789bcc" id="r_ga9c8041a17a4eced6b0f6912013789bcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(offset)&#160;&#160;&#160;(<a class="el" href="#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a> + ((offset) * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
-<tr class="memdesc:ga9c8041a17a4eced6b0f6912013789bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a DC-specific icon index and returns a character offset.  <br /></td></tr>
-<tr class="separator:ga9c8041a17a4eced6b0f6912013789bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ac1662c8723fdcc6dd2245c529d9eb7" id="r_ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a>&#160;&#160;&#160;32</td></tr>
-<tr class="memdesc:ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of vmu icons.  <br /></td></tr>
-<tr class="separator:ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga19f72f5d297a32dcd9cab1ccbe4b1386" id="r_ga19f72f5d297a32dcd9cab1ccbe4b1386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga19f72f5d297a32dcd9cab1ccbe4b1386">BFONT_VMU_DREAMCAST_SPECIFIC</a>&#160;&#160;&#160;(<a class="el" href="#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>+(22 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memitem:ga19f72f5d297a32dcd9cab1ccbe4b1386" id="r_ga19f72f5d297a32dcd9cab1ccbe4b1386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga19f72f5d297a32dcd9cab1ccbe4b1386">BFONT_VMU_DREAMCAST_SPECIFIC</a>&#160;&#160;&#160;(<a class="el" href="#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>+(22 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memdesc:ga19f72f5d297a32dcd9cab1ccbe4b1386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of VMU Specific Icons in Font Block.  <br /></td></tr>
 <tr class="separator:ga19f72f5d297a32dcd9cab1ccbe4b1386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
+<tr class="memitem:gaeccdd5f0c34bcb51645903791a63a166" id="r_gaeccdd5f0c34bcb51645903791a63a166"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeccdd5f0c34bcb51645903791a63a166">bfont_dc_icon_t</a> { <br />
+&#160;&#160;<a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a45710e07b4bcee1801421d686de47fc7">BFONT_ICON_CIRCLECOPYRIGHT</a> = 0x00
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a9136bbd71da7277e0754fc9b18a430da">BFONT_CIRCLER</a> = 0x01
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a45814e86f663bd95ad6d11a069a8b149">BFONT_ICON_TRADEMARK</a> = 0x02
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a86f6a9dedb4120e876eb8debc82c0973">BFONT_ICON_UPARROW</a> = 0x03
+, <br />
+&#160;&#160;<a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166aa40da2fc6a9084b281ce1b9a1f7876fb">BFONT_ICON_DOWNARROW</a> = 0x04
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166ab64189870c84d569b3fb72efc64c08b6">BFONT_ICON_LEFTARROW</a> = 0x05
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a0d2c2f82632a290c6b777f589dbb0841">BFONT_ICON_RIGHTARROW</a> = 0x06
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a3bbe11be6ef75dfbe5a5d0f6f94aa07d">BFONT_ICON_UPRIGHTARROW</a> = 0x07
+, <br />
+&#160;&#160;<a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a6ceba5bfc07faf223e6c4a6486353f5e">BFONT_ICON_DOWNRIGHTARROW</a> = 0x08
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a955cee072f8fd980a0657ef4a0572c1c">BFONT_ICON_DOWNLEFTARROW</a> = 0x09
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a586e1457c6e6a68336efb227e496eb81">BFONT_ICON_UPLEFTARROW</a> = 0x0A
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a1dbb188c769e0db0b9222dbf2f462777">BFONT_ICON_ABUTTON</a> = 0x0B
+, <br />
+&#160;&#160;<a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a7fdd036f37db939aa1c6dd676f36762c">BFONT_ICON_BBUTTON</a> = 0x0C
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a3a72e54c335928b33407b7f4fa3fe912">BFONT_ICON_CBUTTON</a> = 0x0D
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166af3b00b76297917739c9c17d12c4014b5">BFONT_ICON_DBUTTON</a> = 0x0E
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a2afaf5d5c5ce59e4ab57e3a0d540f1a7">BFONT_ICON_XBUTTON</a> = 0x0F
+, <br />
+&#160;&#160;<a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a5ebcf68c4f608e8e808d0bd5b409e931">BFONT_ICON_YBUTTON</a> = 0x10
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a58c0782d2bf1af474b292ee7f841791b">BFONT_ICON_ZBUTTON</a> = 0x11
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a30465dc76bfd0d8d521243f32e56cb85">BFONT_ICON_LTRIGGER</a> = 0x12
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166af10fa87377fd649324999e0a2c08e5ad">BFONT_ICON_RTRIGGER</a> = 0x13
+, <br />
+&#160;&#160;<a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a4974823bf3f8d48f29e963e7257eedce">BFONT_ICON_STARTBUTTON</a> = 0x14
+, <a class="el" href="#ggaeccdd5f0c34bcb51645903791a63a166a2b1828ddc1233e32b10437e0d12d3b6c">BFONT_ICON_VMU</a> = 0x15
+<br />
+ }</td></tr>
+<tr class="memdesc:gaeccdd5f0c34bcb51645903791a63a166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builtin DC Icons.  <a href="#gaeccdd5f0c34bcb51645903791a63a166">More...</a><br /></td></tr>
+<tr class="separator:gaeccdd5f0c34bcb51645903791a63a166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga378ee090caa5326a4670400b3740d9f7" id="r_ga378ee090caa5326a4670400b3740d9f7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a> { <br />
 &#160;&#160;<a class="el" href="#gga378ee090caa5326a4670400b3740d9f7a00457306d77e07354f5a74c2b9546806">BFONT_ICON_INVALID_VMU</a> = 0x00
 , <a class="el" href="#gga378ee090caa5326a4670400b3740d9f7a4389323300b995b27edac8d2edb5ade0">BFONT_ICON_HOURGLASS_ONE</a> = 0x01
@@ -324,27 +340,8 @@ Enumerations</h2></td></tr>
 <tr class="separator:ga378ee090caa5326a4670400b3740d9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Structure of the Bios Font </p>
+<p>Structure of the Bios Font. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga9c8041a17a4eced6b0f6912013789bcc" name="ga9c8041a17a4eced6b0f6912013789bcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9c8041a17a4eced6b0f6912013789bcc">&#9670;&#160;</a></span>BFONT_DC_ICON</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BFONT_DC_ICON</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>offset</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;(<a class="el" href="#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a> + ((offset) * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Takes a DC-specific icon index and returns a character offset. </p>
-
-</div>
-</div>
 <a id="ga4b32a9ef4f15bf378270be7b12b9759e" name="ga4b32a9ef4f15bf378270be7b12b9759e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4b32a9ef4f15bf378270be7b12b9759e">&#9670;&#160;</a></span>BFONT_DREAMCAST_SPECIFIC</h2>
 
@@ -352,28 +349,12 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_DREAMCAST_SPECIFIC&#160;&#160;&#160;(<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (7056 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
+          <td class="memname">#define BFONT_DREAMCAST_SPECIFIC&#160;&#160;&#160;(<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (7056 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Start of DC Specific Characters in Font Block. </p>
-
-</div>
-</div>
-<a id="ga6ac1662c8723fdcc6dd2245c529d9eb7" name="ga6ac1662c8723fdcc6dd2245c529d9eb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6ac1662c8723fdcc6dd2245c529d9eb7">&#9670;&#160;</a></span>BFONT_ICON_DIMEN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BFONT_ICON_DIMEN&#160;&#160;&#160;32</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Dimension of vmu icons. </p>
+<p>Start of DC Specific Icons in Font Block. </p>
 
 </div>
 </div>
@@ -384,7 +365,7 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_ISO_8859_1_160_255&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (96 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td>
+          <td class="memname">#define BFONT_ISO_8859_1_160_255&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (96 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -398,7 +379,7 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_ISO_8859_1_33_126&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + ( 1 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td>
+          <td class="memname">#define BFONT_ISO_8859_1_33_126&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + ( 1 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -428,7 +409,7 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_JISX_0208_ROW16&#160;&#160;&#160;(<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (658 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
+          <td class="memname">#define BFONT_JISX_0208_ROW16&#160;&#160;&#160;(<a class="el" href="#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (658 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -444,7 +425,7 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_JISX_0208_ROW48&#160;&#160;&#160;(<a class="el" href="#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a> + ((32 * <a class="el" href="#ga99e731cbb1713abe2b82fad66c6e1fba">JISX_0208_ROW_SIZE</a>) * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
+          <td class="memname">#define BFONT_JISX_0208_ROW48&#160;&#160;&#160;(<a class="el" href="#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a> + ((32 * <a class="el" href="#ga99e731cbb1713abe2b82fad66c6e1fba">JISX_0208_ROW_SIZE</a>) * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -490,10 +471,12 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_VMU_DREAMCAST_SPECIFIC&#160;&#160;&#160;(<a class="el" href="#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>+(22 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
+          <td class="memname">#define BFONT_VMU_DREAMCAST_SPECIFIC&#160;&#160;&#160;(<a class="el" href="#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>+(22 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Start of VMU Specific Icons in Font Block. </p>
 
 </div>
 </div>
@@ -504,7 +487,7 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_WIDE_START&#160;&#160;&#160;(288 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>)</td>
+          <td class="memname">#define BFONT_WIDE_START&#160;&#160;&#160;(288 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -520,7 +503,7 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_YEN&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (95 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td>
+          <td class="memname">#define BFONT_YEN&#160;&#160;&#160;(<a class="el" href="#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (95 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -544,6 +527,69 @@ Enumerations</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gaeccdd5f0c34bcb51645903791a63a166" name="gaeccdd5f0c34bcb51645903791a63a166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeccdd5f0c34bcb51645903791a63a166">&#9670;&#160;</a></span>bfont_dc_icon_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gaeccdd5f0c34bcb51645903791a63a166">bfont_dc_icon_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Builtin DC Icons. </p>
+<p>Builtin DC user icons. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a45710e07b4bcee1801421d686de47fc7" name="ggaeccdd5f0c34bcb51645903791a63a166a45710e07b4bcee1801421d686de47fc7"></a>BFONT_ICON_CIRCLECOPYRIGHT&#160;</td><td class="fielddoc"><p>Circle copyright. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a9136bbd71da7277e0754fc9b18a430da" name="ggaeccdd5f0c34bcb51645903791a63a166a9136bbd71da7277e0754fc9b18a430da"></a>BFONT_CIRCLER&#160;</td><td class="fielddoc"><p>Circle restricted. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a45814e86f663bd95ad6d11a069a8b149" name="ggaeccdd5f0c34bcb51645903791a63a166a45814e86f663bd95ad6d11a069a8b149"></a>BFONT_ICON_TRADEMARK&#160;</td><td class="fielddoc"><p>Trademark. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a86f6a9dedb4120e876eb8debc82c0973" name="ggaeccdd5f0c34bcb51645903791a63a166a86f6a9dedb4120e876eb8debc82c0973"></a>BFONT_ICON_UPARROW&#160;</td><td class="fielddoc"><p>Up arrow. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166aa40da2fc6a9084b281ce1b9a1f7876fb" name="ggaeccdd5f0c34bcb51645903791a63a166aa40da2fc6a9084b281ce1b9a1f7876fb"></a>BFONT_ICON_DOWNARROW&#160;</td><td class="fielddoc"><p>Down arrow. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166ab64189870c84d569b3fb72efc64c08b6" name="ggaeccdd5f0c34bcb51645903791a63a166ab64189870c84d569b3fb72efc64c08b6"></a>BFONT_ICON_LEFTARROW&#160;</td><td class="fielddoc"><p>Left arrow. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a0d2c2f82632a290c6b777f589dbb0841" name="ggaeccdd5f0c34bcb51645903791a63a166a0d2c2f82632a290c6b777f589dbb0841"></a>BFONT_ICON_RIGHTARROW&#160;</td><td class="fielddoc"><p>Right arrow. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a3bbe11be6ef75dfbe5a5d0f6f94aa07d" name="ggaeccdd5f0c34bcb51645903791a63a166a3bbe11be6ef75dfbe5a5d0f6f94aa07d"></a>BFONT_ICON_UPRIGHTARROW&#160;</td><td class="fielddoc"><p>Up right arrow. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a6ceba5bfc07faf223e6c4a6486353f5e" name="ggaeccdd5f0c34bcb51645903791a63a166a6ceba5bfc07faf223e6c4a6486353f5e"></a>BFONT_ICON_DOWNRIGHTARROW&#160;</td><td class="fielddoc"><p>Down right arrow. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a955cee072f8fd980a0657ef4a0572c1c" name="ggaeccdd5f0c34bcb51645903791a63a166a955cee072f8fd980a0657ef4a0572c1c"></a>BFONT_ICON_DOWNLEFTARROW&#160;</td><td class="fielddoc"><p>Down left arrow. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a586e1457c6e6a68336efb227e496eb81" name="ggaeccdd5f0c34bcb51645903791a63a166a586e1457c6e6a68336efb227e496eb81"></a>BFONT_ICON_UPLEFTARROW&#160;</td><td class="fielddoc"><p>Up left arrow. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a1dbb188c769e0db0b9222dbf2f462777" name="ggaeccdd5f0c34bcb51645903791a63a166a1dbb188c769e0db0b9222dbf2f462777"></a>BFONT_ICON_ABUTTON&#160;</td><td class="fielddoc"><p>A button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a7fdd036f37db939aa1c6dd676f36762c" name="ggaeccdd5f0c34bcb51645903791a63a166a7fdd036f37db939aa1c6dd676f36762c"></a>BFONT_ICON_BBUTTON&#160;</td><td class="fielddoc"><p>B button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a3a72e54c335928b33407b7f4fa3fe912" name="ggaeccdd5f0c34bcb51645903791a63a166a3a72e54c335928b33407b7f4fa3fe912"></a>BFONT_ICON_CBUTTON&#160;</td><td class="fielddoc"><p>C button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166af3b00b76297917739c9c17d12c4014b5" name="ggaeccdd5f0c34bcb51645903791a63a166af3b00b76297917739c9c17d12c4014b5"></a>BFONT_ICON_DBUTTON&#160;</td><td class="fielddoc"><p>D button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a2afaf5d5c5ce59e4ab57e3a0d540f1a7" name="ggaeccdd5f0c34bcb51645903791a63a166a2afaf5d5c5ce59e4ab57e3a0d540f1a7"></a>BFONT_ICON_XBUTTON&#160;</td><td class="fielddoc"><p>X button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a5ebcf68c4f608e8e808d0bd5b409e931" name="ggaeccdd5f0c34bcb51645903791a63a166a5ebcf68c4f608e8e808d0bd5b409e931"></a>BFONT_ICON_YBUTTON&#160;</td><td class="fielddoc"><p>Y button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a58c0782d2bf1af474b292ee7f841791b" name="ggaeccdd5f0c34bcb51645903791a63a166a58c0782d2bf1af474b292ee7f841791b"></a>BFONT_ICON_ZBUTTON&#160;</td><td class="fielddoc"><p>Z button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a30465dc76bfd0d8d521243f32e56cb85" name="ggaeccdd5f0c34bcb51645903791a63a166a30465dc76bfd0d8d521243f32e56cb85"></a>BFONT_ICON_LTRIGGER&#160;</td><td class="fielddoc"><p>L trigger. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166af10fa87377fd649324999e0a2c08e5ad" name="ggaeccdd5f0c34bcb51645903791a63a166af10fa87377fd649324999e0a2c08e5ad"></a>BFONT_ICON_RTRIGGER&#160;</td><td class="fielddoc"><p>R trigger. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a4974823bf3f8d48f29e963e7257eedce" name="ggaeccdd5f0c34bcb51645903791a63a166a4974823bf3f8d48f29e963e7257eedce"></a>BFONT_ICON_STARTBUTTON&#160;</td><td class="fielddoc"><p>Start button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeccdd5f0c34bcb51645903791a63a166a2b1828ddc1233e32b10437e0d12d3b6c" name="ggaeccdd5f0c34bcb51645903791a63a166a2b1828ddc1233e32b10437e0d12d3b6c"></a>BFONT_ICON_VMU&#160;</td><td class="fielddoc"><p>VMU icon. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="ga378ee090caa5326a4670400b3740d9f7" name="ga378ee090caa5326a4670400b3740d9f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga378ee090caa5326a4670400b3740d9f7">&#9670;&#160;</a></span>bfont_vmu_icon_t</h2>
 

@@ -144,7 +144,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions for a recursive mutex. </p>
 <p>This file defines a recursive lock mechanism, similar to a mutex, but that a single thread can obtain as many times as it wants. A single thread is still limited to holding the lock at a time, but it can hold it an "unlimited" number of times (actually limited to INT_MAX, but who's counting).</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated</a></b></dt><dd>These are now just wrappers around the MUTEX_TYPE_RECURSIVE that is now provided and will be removed at some point in the future. Please update your code to use that type instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated</a></b></dt><dd>These are now just wrappers around the MUTEX_TYPE_RECURSIVE that is now provided and will be removed at some point in the future. Please update your code to use that type instead.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Lawrence Sebald </dd></dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="ad3f671bbbf893c7216104f8b8eb19107" name="ad3f671bbbf893c7216104f8b8eb19107"></a>
@@ -181,7 +181,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Allocate a new recursive lock. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated</a></b></dt><dd>This function allocates a new recursive lock that is initially not locked.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated</a></b></dt><dd>This function allocates a new recursive lock that is initially not locked.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The created lock, or NULL on failure (errno will be set to ENOMEM to indicate that the system appears to be out of memory). </dd></dl>
 
 </div>
@@ -202,7 +202,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destroy a recursive lock. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated</a></b></dt><dd>This function cleans up a recursive lock. It is an error to attempt to destroy a locked recursive lock.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated</a></b></dt><dd>This function cleans up a recursive lock. It is an error to attempt to destroy a locked recursive lock.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td>The recursive lock to destroy. It must be unlocked. </td></tr>
@@ -228,7 +228,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if a recursive lock is currently held by any thread. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated</a></b></dt><dd>This function checks whether or not a lock is currently held by any thread, including the calling thread. Note that this is <b>NOT</b> a safe way to check if a lock <em>will</em> be held by the time you get around to locking it.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>This function checks whether or not a lock is currently held by any thread, including the calling thread. Note that this is <b>NOT</b> a safe way to check if a lock <em>will</em> be held by the time you get around to locking it.</dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">TRUE</td><td>If the lock is held by any thread. </td></tr>
@@ -255,7 +255,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Lock a recursive lock. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated</a></b></dt><dd>This function attempts to lock the requested lock, and if it cannot it will block until that is possible.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated</a></b></dt><dd>This function attempts to lock the requested lock, and if it cannot it will block until that is possible.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td>The recursive lock to lock. </td></tr>
@@ -295,7 +295,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Lock a recursive lock (with a timeout). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated</a></b></dt><dd>This function attempts to lock the requested lock, and if it cannot it will block until either it is possible to acquire the lock or timeout milliseconds have elapsed.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000016">Deprecated</a></b></dt><dd>This function attempts to lock the requested lock, and if it cannot it will block until either it is possible to acquire the lock or timeout milliseconds have elapsed.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td>The recursive lock to lock. </td></tr>
@@ -332,7 +332,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempt to lock a recursive lock without blocking. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated</a></b></dt><dd>This function attempts to lock a recursive lock without blocking. This function, unlike rlock_lock and rlock_lock_timed is safe to call inside an interrupt.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated</a></b></dt><dd>This function attempts to lock a recursive lock without blocking. This function, unlike rlock_lock and rlock_lock_timed is safe to call inside an interrupt.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td>The recursive lock to lock. </td></tr>
@@ -368,7 +368,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Unlock a recursive lock. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated</a></b></dt><dd>This function releases the lock one time from the current thread.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated</a></b></dt><dd>This function releases the lock one time from the current thread.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td>The recursive lock to unlock. </td></tr>

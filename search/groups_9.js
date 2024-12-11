@@ -16,7 +16,7 @@ var searchData=
   ['disc_20types_13',['Drive Disc Types',['../group__cd__disc__types.html',1,'']]],
   ['display_14',['Display',['../group__video__display.html',1,'']]],
   ['dma_15',['DMA',['../group__system__dmac.html',1,'DMA'],['../group__pvr__dma.html',1,'DMA'],['../group__asic__events__g2dma.html',1,'G2 Bus DMA'],['../group__pvr__vertex__dma.html',1,'Vertex DMA']]],
-  ['dreamcast_20specific_16',['Dreamcast-Specific',['../group__bfont__dc__indices.html',1,'']]],
+  ['drawing_16',['Drawing',['../group__bfont__char.html',1,'Character Drawing'],['../group__bfont__string.html',1,'String Drawing']]],
   ['dreamcast_20specific_20flags_17',['Dreamcast-Specific Flags',['../group__kos__init__flags__dc.html',1,'']]],
   ['drive_18',['GD-ROM Drive',['../group__asic__events__gd.html',1,'']]],
   ['drive_20disc_20types_19',['Drive Disc Types',['../group__cd__disc__types.html',1,'']]],

@@ -17,5 +17,6 @@ var searchData=
   ['bus_14',['Bus',['../group__system__g2bus.html',1,'G2 Bus'],['../group__maple.html',1,'Maple Bus']]],
   ['bus_20dma_15',['G2 Bus DMA',['../group__asic__events__g2dma.html',1,'']]],
   ['buttons_16',['Buttons',['../group__mouse__buttons.html',1,'Buttons'],['../group__vmu__buttons.html',1,'VMU Buttons']]],
-  ['byte_20order_17',['Byte Order',['../group__system__arch.html',1,'']]]
+  ['byte_20order_17',['Byte Order',['../group__system__arch.html',1,'']]],
+  ['byte_20sizes_18',['Byte Sizes',['../group__bfont__byte__size.html',1,'']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: Dimensions</title>
+<title>KallistiOS: Byte Sizes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('group__bfont__size.html',''); initResizable(true); });
+$(function(){initNavTree('group__bfont__byte__size.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -99,92 +99,73 @@ $(function(){initNavTree('group__bfont__size.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">Dimensions<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__video__fonts.html">Fonts</a> &raquo; <a class="el" href="group__bfont.html">BIOS</a></div></div></div>
+  <div class="headertitle"><div class="title">Byte Sizes<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__video__fonts.html">Fonts</a> &raquo; <a class="el" href="group__bfont.html">BIOS</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Font size definitions for the BIOS fonts.  
+<p>Byte size definitions for the BIOS fonts.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga4e935dab9a1568610fe7f0495ae48317" id="r_ga4e935dab9a1568610fe7f0495ae48317"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a>&#160;&#160;&#160;12</td></tr>
-<tr class="memdesc:ga4e935dab9a1568610fe7f0495ae48317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of Thin Font (ISO8859_1, half-JP)  <br /></td></tr>
-<tr class="separator:ga4e935dab9a1568610fe7f0495ae48317"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae578b3c98e6b5d7eb250c28dc497d4a0" id="r_gae578b3c98e6b5d7eb250c28dc497d4a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae578b3c98e6b5d7eb250c28dc497d4a0">BFONT_WIDE_WIDTH</a>&#160;&#160;&#160;(<a class="el" href="#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a> * 2)</td></tr>
-<tr class="memdesc:gae578b3c98e6b5d7eb250c28dc497d4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of Wide Font (full-JP)  <br /></td></tr>
-<tr class="separator:gae578b3c98e6b5d7eb250c28dc497d4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8e71ab361e269d9e45b099bc37f9f1bf" id="r_ga8e71ab361e269d9e45b099bc37f9f1bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a>&#160;&#160;&#160;24</td></tr>
-<tr class="memdesc:ga8e71ab361e269d9e45b099bc37f9f1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of All Fonts.  <br /></td></tr>
-<tr class="separator:ga8e71ab361e269d9e45b099bc37f9f1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ac1662c8723fdcc6dd2245c529d9eb7" id="r_ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a>&#160;&#160;&#160;32</td></tr>
-<tr class="memdesc:ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of vmu icons.  <br /></td></tr>
-<tr class="separator:ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga962a08bcef07a42119d6d1eb0a8a25a8" id="r_ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td></tr>
+<tr class="memdesc:ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes to represent a single thin character within the BIOS font.  <br /></td></tr>
+<tr class="separator:ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97257939b89deb0929caf2fdba55e404" id="r_ga97257939b89deb0929caf2fdba55e404"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#gae578b3c98e6b5d7eb250c28dc497d4a0">BFONT_WIDE_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td></tr>
+<tr class="memdesc:ga97257939b89deb0929caf2fdba55e404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes to represent a single wide character within the BIOS font.  <br /></td></tr>
+<tr class="separator:ga97257939b89deb0929caf2fdba55e404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad85d4322aa8667947dcf551250dca628" id="r_gad85d4322aa8667947dcf551250dca628"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad85d4322aa8667947dcf551250dca628">BFONT_BYTES_PER_VMU_ICON</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a> * <a class="el" href="group__bfont__size.html#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a> / 8)</td></tr>
+<tr class="memdesc:gad85d4322aa8667947dcf551250dca628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes to represent a vmu icon within the BIOS font.  <br /></td></tr>
+<tr class="separator:gad85d4322aa8667947dcf551250dca628"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Font size definitions for the BIOS fonts. </p>
+<p>Byte size definitions for the BIOS fonts. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga8e71ab361e269d9e45b099bc37f9f1bf" name="ga8e71ab361e269d9e45b099bc37f9f1bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8e71ab361e269d9e45b099bc37f9f1bf">&#9670;&#160;</a></span>BFONT_HEIGHT</h2>
+<a id="ga962a08bcef07a42119d6d1eb0a8a25a8" name="ga962a08bcef07a42119d6d1eb0a8a25a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga962a08bcef07a42119d6d1eb0a8a25a8">&#9670;&#160;</a></span>BFONT_BYTES_PER_CHAR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_HEIGHT&#160;&#160;&#160;24</td>
+          <td class="memname">#define BFONT_BYTES_PER_CHAR&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Height of All Fonts. </p>
+<p>Number of bytes to represent a single thin character within the BIOS font. </p>
 
 </div>
 </div>
-<a id="ga6ac1662c8723fdcc6dd2245c529d9eb7" name="ga6ac1662c8723fdcc6dd2245c529d9eb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6ac1662c8723fdcc6dd2245c529d9eb7">&#9670;&#160;</a></span>BFONT_ICON_DIMEN</h2>
+<a id="gad85d4322aa8667947dcf551250dca628" name="gad85d4322aa8667947dcf551250dca628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad85d4322aa8667947dcf551250dca628">&#9670;&#160;</a></span>BFONT_BYTES_PER_VMU_ICON</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_ICON_DIMEN&#160;&#160;&#160;32</td>
+          <td class="memname">#define BFONT_BYTES_PER_VMU_ICON&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a> * <a class="el" href="group__bfont__size.html#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a> / 8)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Dimension of vmu icons. </p>
+<p>Number of bytes to represent a vmu icon within the BIOS font. </p>
 
 </div>
 </div>
-<a id="ga4e935dab9a1568610fe7f0495ae48317" name="ga4e935dab9a1568610fe7f0495ae48317"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4e935dab9a1568610fe7f0495ae48317">&#9670;&#160;</a></span>BFONT_THIN_WIDTH</h2>
+<a id="ga97257939b89deb0929caf2fdba55e404" name="ga97257939b89deb0929caf2fdba55e404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga97257939b89deb0929caf2fdba55e404">&#9670;&#160;</a></span>BFONT_BYTES_PER_WIDE_CHAR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BFONT_THIN_WIDTH&#160;&#160;&#160;12</td>
+          <td class="memname">#define BFONT_BYTES_PER_WIDE_CHAR&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#gae578b3c98e6b5d7eb250c28dc497d4a0">BFONT_WIDE_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Width of Thin Font (ISO8859_1, half-JP) </p>
-
-</div>
-</div>
-<a id="gae578b3c98e6b5d7eb250c28dc497d4a0" name="gae578b3c98e6b5d7eb250c28dc497d4a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae578b3c98e6b5d7eb250c28dc497d4a0">&#9670;&#160;</a></span>BFONT_WIDE_WIDTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BFONT_WIDE_WIDTH&#160;&#160;&#160;(<a class="el" href="#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a> * 2)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Width of Wide Font (full-JP) </p>
+<p>Number of bytes to represent a single wide character within the BIOS font. </p>
 
 </div>
 </div>

@@ -126,117 +126,399 @@ Macros</h2></td></tr>
 <tr class="memitem:ga8e71ab361e269d9e45b099bc37f9f1bf" id="r_ga8e71ab361e269d9e45b099bc37f9f1bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a>&#160;&#160;&#160;24</td></tr>
 <tr class="memdesc:ga8e71ab361e269d9e45b099bc37f9f1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of All Fonts.  <br /></td></tr>
 <tr class="separator:ga8e71ab361e269d9e45b099bc37f9f1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga962a08bcef07a42119d6d1eb0a8a25a8" id="r_ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td></tr>
-<tr class="memdesc:ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes to represent a single character within the BIOS font.  <br /></td></tr>
+<tr class="memitem:ga6ac1662c8723fdcc6dd2245c529d9eb7" id="r_ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__size.html#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of vmu icons.  <br /></td></tr>
+<tr class="separator:ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga962a08bcef07a42119d6d1eb0a8a25a8" id="r_ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga4e935dab9a1568610fe7f0495ae48317">BFONT_THIN_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td></tr>
+<tr class="memdesc:ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes to represent a single thin character within the BIOS font.  <br /></td></tr>
 <tr class="separator:ga962a08bcef07a42119d6d1eb0a8a25a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga97257939b89deb0929caf2fdba55e404" id="r_ga97257939b89deb0929caf2fdba55e404"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#gae578b3c98e6b5d7eb250c28dc497d4a0">BFONT_WIDE_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td></tr>
+<tr class="memitem:ga97257939b89deb0929caf2fdba55e404" id="r_ga97257939b89deb0929caf2fdba55e404"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#gae578b3c98e6b5d7eb250c28dc497d4a0">BFONT_WIDE_WIDTH</a> * <a class="el" href="group__bfont__size.html#ga8e71ab361e269d9e45b099bc37f9f1bf">BFONT_HEIGHT</a> / 8)</td></tr>
+<tr class="memdesc:ga97257939b89deb0929caf2fdba55e404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes to represent a single wide character within the BIOS font.  <br /></td></tr>
 <tr class="separator:ga97257939b89deb0929caf2fdba55e404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad85d4322aa8667947dcf551250dca628" id="r_gad85d4322aa8667947dcf551250dca628"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__byte__size.html#gad85d4322aa8667947dcf551250dca628">BFONT_BYTES_PER_VMU_ICON</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__size.html#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a> * <a class="el" href="group__bfont__size.html#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a> / 8)</td></tr>
+<tr class="memdesc:gad85d4322aa8667947dcf551250dca628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes to represent a vmu icon within the BIOS font.  <br /></td></tr>
+<tr class="separator:gad85d4322aa8667947dcf551250dca628"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga016330a87acf0315c1255a6222c74474" id="r_ga016330a87acf0315c1255a6222c74474"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:ga016330a87acf0315c1255a6222c74474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of Narrow Characters in Font Block.  <br /></td></tr>
 <tr class="separator:ga016330a87acf0315c1255a6222c74474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae828a430fce2ee451762dca614c601e4" id="r_gae828a430fce2ee451762dca614c601e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#gae828a430fce2ee451762dca614c601e4">BFONT_OVERBAR</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a></td></tr>
 <tr class="separator:gae828a430fce2ee451762dca614c601e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga737c13e0a52a1777cb38caff1dde3f63" id="r_ga737c13e0a52a1777cb38caff1dde3f63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga737c13e0a52a1777cb38caff1dde3f63">BFONT_ISO_8859_1_33_126</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + ( 1 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
+<tr class="memitem:ga737c13e0a52a1777cb38caff1dde3f63" id="r_ga737c13e0a52a1777cb38caff1dde3f63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga737c13e0a52a1777cb38caff1dde3f63">BFONT_ISO_8859_1_33_126</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + ( 1 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
 <tr class="separator:ga737c13e0a52a1777cb38caff1dde3f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf6ec946257ae34e055566bd87767ac53" id="r_gaf6ec946257ae34e055566bd87767ac53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#gaf6ec946257ae34e055566bd87767ac53">BFONT_YEN</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (95 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
+<tr class="memitem:gaf6ec946257ae34e055566bd87767ac53" id="r_gaf6ec946257ae34e055566bd87767ac53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#gaf6ec946257ae34e055566bd87767ac53">BFONT_YEN</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (95 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
 <tr class="separator:gaf6ec946257ae34e055566bd87767ac53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1cd5572600bd55227e6abc576cc775f" id="r_gaa1cd5572600bd55227e6abc576cc775f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#gaa1cd5572600bd55227e6abc576cc775f">BFONT_ISO_8859_1_160_255</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (96 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
+<tr class="memitem:gaa1cd5572600bd55227e6abc576cc775f" id="r_gaa1cd5572600bd55227e6abc576cc775f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#gaa1cd5572600bd55227e6abc576cc775f">BFONT_ISO_8859_1_160_255</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga016330a87acf0315c1255a6222c74474">BFONT_NARROW_START</a> + (96 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>))</td></tr>
 <tr class="separator:gaa1cd5572600bd55227e6abc576cc775f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga99e731cbb1713abe2b82fad66c6e1fba" id="r_ga99e731cbb1713abe2b82fad66c6e1fba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga99e731cbb1713abe2b82fad66c6e1fba">JISX_0208_ROW_SIZE</a>&#160;&#160;&#160;94</td></tr>
 <tr class="memdesc:ga99e731cbb1713abe2b82fad66c6e1fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a row for JISX-0208 characters.  <br /></td></tr>
 <tr class="separator:ga99e731cbb1713abe2b82fad66c6e1fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga765fdae6a9b802af18b633354a4004d1" id="r_ga765fdae6a9b802af18b633354a4004d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a>&#160;&#160;&#160;(288 * <a class="el" href="group__bfont.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>)</td></tr>
+<tr class="memitem:ga765fdae6a9b802af18b633354a4004d1" id="r_ga765fdae6a9b802af18b633354a4004d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a>&#160;&#160;&#160;(288 * <a class="el" href="group__bfont__byte__size.html#ga962a08bcef07a42119d6d1eb0a8a25a8">BFONT_BYTES_PER_CHAR</a>)</td></tr>
 <tr class="memdesc:ga765fdae6a9b802af18b633354a4004d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of Wide Characters in Font Block.  <br /></td></tr>
 <tr class="separator:ga765fdae6a9b802af18b633354a4004d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga82f6b33cc504d579fd606e147d61e0e5" id="r_ga82f6b33cc504d579fd606e147d61e0e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga82f6b33cc504d579fd606e147d61e0e5">BFONT_JISX_0208_ROW1</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a></td></tr>
 <tr class="memdesc:ga82f6b33cc504d579fd606e147d61e0e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of JISX-0208 Rows 1-7 in Font Block.  <br /></td></tr>
 <tr class="separator:ga82f6b33cc504d579fd606e147d61e0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf24c12618fde68d86dd24196da304f20" id="r_gaf24c12618fde68d86dd24196da304f20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (658 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memitem:gaf24c12618fde68d86dd24196da304f20" id="r_gaf24c12618fde68d86dd24196da304f20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (658 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
 <tr class="memdesc:gaf24c12618fde68d86dd24196da304f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of JISX-0208 Row 16-47 (Start of Level 1) in Font Block.  <br /></td></tr>
 <tr class="separator:gaf24c12618fde68d86dd24196da304f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga41c62881dab3cebf18081e067c3b9476" id="r_ga41c62881dab3cebf18081e067c3b9476"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga41c62881dab3cebf18081e067c3b9476">BFONT_JISX_0208_ROW48</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a> + ((32 * <a class="el" href="group__bfont__indicies.html#ga99e731cbb1713abe2b82fad66c6e1fba">JISX_0208_ROW_SIZE</a>) * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memitem:ga41c62881dab3cebf18081e067c3b9476" id="r_ga41c62881dab3cebf18081e067c3b9476"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga41c62881dab3cebf18081e067c3b9476">BFONT_JISX_0208_ROW48</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#gaf24c12618fde68d86dd24196da304f20">BFONT_JISX_0208_ROW16</a> + ((32 * <a class="el" href="group__bfont__indicies.html#ga99e731cbb1713abe2b82fad66c6e1fba">JISX_0208_ROW_SIZE</a>) * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
 <tr class="memdesc:ga41c62881dab3cebf18081e067c3b9476"><td class="mdescLeft">&#160;</td><td class="mdescRight">JISX-0208 Row 48-84 (Start of Level 2) in Font Block.  <br /></td></tr>
 <tr class="separator:ga41c62881dab3cebf18081e067c3b9476"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4b32a9ef4f15bf378270be7b12b9759e" id="r_ga4b32a9ef4f15bf378270be7b12b9759e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (7056 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
-<tr class="memdesc:ga4b32a9ef4f15bf378270be7b12b9759e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of DC Specific Characters in Font Block.  <br /></td></tr>
+<tr class="memitem:ga4b32a9ef4f15bf378270be7b12b9759e" id="r_ga4b32a9ef4f15bf378270be7b12b9759e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga765fdae6a9b802af18b633354a4004d1">BFONT_WIDE_START</a> + (7056 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memdesc:ga4b32a9ef4f15bf378270be7b12b9759e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of DC Specific Icons in Font Block.  <br /></td></tr>
 <tr class="separator:ga4b32a9ef4f15bf378270be7b12b9759e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9c8041a17a4eced6b0f6912013789bcc" id="r_ga9c8041a17a4eced6b0f6912013789bcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(offset)&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a> + ((offset) * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
-<tr class="memdesc:ga9c8041a17a4eced6b0f6912013789bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a DC-specific icon index and returns a character offset.  <br /></td></tr>
-<tr class="separator:ga9c8041a17a4eced6b0f6912013789bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa5bcaf397735375499572d7986384da" id="r_gaaa5bcaf397735375499572d7986384da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gaaa5bcaf397735375499572d7986384da">BFONT_CIRCLECOPYRIGHT</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(0)</td></tr>
-<tr class="memdesc:gaaa5bcaf397735375499572d7986384da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circle copyright.  <br /></td></tr>
-<tr class="separator:gaaa5bcaf397735375499572d7986384da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga308535bc3c7611b0c912a978395553f4" id="r_ga308535bc3c7611b0c912a978395553f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga308535bc3c7611b0c912a978395553f4">BFONT_CIRCLER</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(1)</td></tr>
-<tr class="memdesc:ga308535bc3c7611b0c912a978395553f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circle restricted.  <br /></td></tr>
-<tr class="separator:ga308535bc3c7611b0c912a978395553f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac0af423e8da0382032d9e8d10d98d0a3" id="r_gac0af423e8da0382032d9e8d10d98d0a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gac0af423e8da0382032d9e8d10d98d0a3">BFONT_TRADEMARK</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(2)</td></tr>
-<tr class="memdesc:gac0af423e8da0382032d9e8d10d98d0a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trademark.  <br /></td></tr>
-<tr class="separator:gac0af423e8da0382032d9e8d10d98d0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae8c27722adbc6cc251a251f04a5dee38" id="r_gae8c27722adbc6cc251a251f04a5dee38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gae8c27722adbc6cc251a251f04a5dee38">BFONT_UPARROW</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(3)</td></tr>
-<tr class="memdesc:gae8c27722adbc6cc251a251f04a5dee38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Up arrow.  <br /></td></tr>
-<tr class="separator:gae8c27722adbc6cc251a251f04a5dee38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab06110d00bb2455ae67faacc8f74ec04" id="r_gab06110d00bb2455ae67faacc8f74ec04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gab06110d00bb2455ae67faacc8f74ec04">BFONT_DOWNARROW</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(4)</td></tr>
-<tr class="memdesc:gab06110d00bb2455ae67faacc8f74ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Down arrow.  <br /></td></tr>
-<tr class="separator:gab06110d00bb2455ae67faacc8f74ec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3e0d5c3a987d0d60091abe957da1d5b9" id="r_ga3e0d5c3a987d0d60091abe957da1d5b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga3e0d5c3a987d0d60091abe957da1d5b9">BFONT_LEFTARROW</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(5)</td></tr>
-<tr class="memdesc:ga3e0d5c3a987d0d60091abe957da1d5b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left arrow.  <br /></td></tr>
-<tr class="separator:ga3e0d5c3a987d0d60091abe957da1d5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga90b84f3f8214e562be494cd4886cf1d6" id="r_ga90b84f3f8214e562be494cd4886cf1d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga90b84f3f8214e562be494cd4886cf1d6">BFONT_RIGHTARROW</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(6)</td></tr>
-<tr class="memdesc:ga90b84f3f8214e562be494cd4886cf1d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right arrow.  <br /></td></tr>
-<tr class="separator:ga90b84f3f8214e562be494cd4886cf1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6b5d1e9fe8deb09fcf3bfad4671be252" id="r_ga6b5d1e9fe8deb09fcf3bfad4671be252"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga6b5d1e9fe8deb09fcf3bfad4671be252">BFONT_UPRIGHTARROW</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(7)</td></tr>
-<tr class="memdesc:ga6b5d1e9fe8deb09fcf3bfad4671be252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Up right arrow.  <br /></td></tr>
-<tr class="separator:ga6b5d1e9fe8deb09fcf3bfad4671be252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga285e0afe9735769e2d4d6da2823ee3b0" id="r_ga285e0afe9735769e2d4d6da2823ee3b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga285e0afe9735769e2d4d6da2823ee3b0">BFONT_DOWNRIGHTARROW</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(8)</td></tr>
-<tr class="memdesc:ga285e0afe9735769e2d4d6da2823ee3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Down right arrow.  <br /></td></tr>
-<tr class="separator:ga285e0afe9735769e2d4d6da2823ee3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadbd06b3b8d226355244411280c4ededd" id="r_gadbd06b3b8d226355244411280c4ededd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gadbd06b3b8d226355244411280c4ededd">BFONT_DOWNLEFTARROW</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(9)</td></tr>
-<tr class="memdesc:gadbd06b3b8d226355244411280c4ededd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Down left arrow.  <br /></td></tr>
-<tr class="separator:gadbd06b3b8d226355244411280c4ededd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga735bcf376ca263796b70eeb5201be7d0" id="r_ga735bcf376ca263796b70eeb5201be7d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga735bcf376ca263796b70eeb5201be7d0">BFONT_UPLEFTARROW</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(10)</td></tr>
-<tr class="memdesc:ga735bcf376ca263796b70eeb5201be7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Up left arrow.  <br /></td></tr>
-<tr class="separator:ga735bcf376ca263796b70eeb5201be7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4cc0ac21220dc1d5c6981115cf037fc" id="r_gaa4cc0ac21220dc1d5c6981115cf037fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gaa4cc0ac21220dc1d5c6981115cf037fc">BFONT_ABUTTON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(11)</td></tr>
-<tr class="memdesc:gaa4cc0ac21220dc1d5c6981115cf037fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A button.  <br /></td></tr>
-<tr class="separator:gaa4cc0ac21220dc1d5c6981115cf037fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf73d6cded433f9ee9dbfa65895451a1c" id="r_gaf73d6cded433f9ee9dbfa65895451a1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gaf73d6cded433f9ee9dbfa65895451a1c">BFONT_BBUTTON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(12)</td></tr>
-<tr class="memdesc:gaf73d6cded433f9ee9dbfa65895451a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">B button.  <br /></td></tr>
-<tr class="separator:gaf73d6cded433f9ee9dbfa65895451a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5d050a7b03dbe0e63e171d3c691d2307" id="r_ga5d050a7b03dbe0e63e171d3c691d2307"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga5d050a7b03dbe0e63e171d3c691d2307">BFONT_CBUTTON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(13)</td></tr>
-<tr class="memdesc:ga5d050a7b03dbe0e63e171d3c691d2307"><td class="mdescLeft">&#160;</td><td class="mdescRight">C button.  <br /></td></tr>
-<tr class="separator:ga5d050a7b03dbe0e63e171d3c691d2307"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc10f43782992ad1bfe125bc1fa3f3e4" id="r_gafc10f43782992ad1bfe125bc1fa3f3e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gafc10f43782992ad1bfe125bc1fa3f3e4">BFONT_DBUTTON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(14)</td></tr>
-<tr class="memdesc:gafc10f43782992ad1bfe125bc1fa3f3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">D button.  <br /></td></tr>
-<tr class="separator:gafc10f43782992ad1bfe125bc1fa3f3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66508ddb53c9f1ee235eb8c7e7e51fac" id="r_ga66508ddb53c9f1ee235eb8c7e7e51fac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga66508ddb53c9f1ee235eb8c7e7e51fac">BFONT_XBUTTON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(15)</td></tr>
-<tr class="memdesc:ga66508ddb53c9f1ee235eb8c7e7e51fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">X button.  <br /></td></tr>
-<tr class="separator:ga66508ddb53c9f1ee235eb8c7e7e51fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6cf58688a652bee46399cd9f540f808f" id="r_ga6cf58688a652bee46399cd9f540f808f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga6cf58688a652bee46399cd9f540f808f">BFONT_YBUTTON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(16)</td></tr>
-<tr class="memdesc:ga6cf58688a652bee46399cd9f540f808f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y button.  <br /></td></tr>
-<tr class="separator:ga6cf58688a652bee46399cd9f540f808f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf394f62d8e5fa99485efe2c37df3d5dd" id="r_gaf394f62d8e5fa99485efe2c37df3d5dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gaf394f62d8e5fa99485efe2c37df3d5dd">BFONT_ZBUTTON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(17)</td></tr>
-<tr class="memdesc:gaf394f62d8e5fa99485efe2c37df3d5dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z button.  <br /></td></tr>
-<tr class="separator:gaf394f62d8e5fa99485efe2c37df3d5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga79628e6ab28244babd5e21e6df143fad" id="r_ga79628e6ab28244babd5e21e6df143fad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga79628e6ab28244babd5e21e6df143fad">BFONT_LTRIGGER</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(18)</td></tr>
-<tr class="memdesc:ga79628e6ab28244babd5e21e6df143fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">L trigger.  <br /></td></tr>
-<tr class="separator:ga79628e6ab28244babd5e21e6df143fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8935f1747fd0068f8b718d51df1f5bf1" id="r_ga8935f1747fd0068f8b718d51df1f5bf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#ga8935f1747fd0068f8b718d51df1f5bf1">BFONT_RTRIGGER</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(19)</td></tr>
-<tr class="memdesc:ga8935f1747fd0068f8b718d51df1f5bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">R trigger.  <br /></td></tr>
-<tr class="separator:ga8935f1747fd0068f8b718d51df1f5bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaff59e103b4761cde9c0423d601c455ed" id="r_gaff59e103b4761cde9c0423d601c455ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gaff59e103b4761cde9c0423d601c455ed">BFONT_STARTBUTTON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(20)</td></tr>
-<tr class="memdesc:gaff59e103b4761cde9c0423d601c455ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start button.  <br /></td></tr>
-<tr class="separator:gaff59e103b4761cde9c0423d601c455ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab8309172e7451cec19c3f112281d7d9a" id="r_gab8309172e7451cec19c3f112281d7d9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__dc__indices.html#gab8309172e7451cec19c3f112281d7d9a">BFONT_VMUICON</a>&#160;&#160;&#160;<a class="el" href="group__bfont__indicies.html#ga9c8041a17a4eced6b0f6912013789bcc">BFONT_DC_ICON</a>(21)</td></tr>
-<tr class="memdesc:gab8309172e7451cec19c3f112281d7d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">VMU icon.  <br /></td></tr>
-<tr class="separator:gab8309172e7451cec19c3f112281d7d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ac1662c8723fdcc6dd2245c529d9eb7" id="r_ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga6ac1662c8723fdcc6dd2245c529d9eb7">BFONT_ICON_DIMEN</a>&#160;&#160;&#160;32</td></tr>
-<tr class="memdesc:ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of vmu icons.  <br /></td></tr>
-<tr class="separator:ga6ac1662c8723fdcc6dd2245c529d9eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga19f72f5d297a32dcd9cab1ccbe4b1386" id="r_ga19f72f5d297a32dcd9cab1ccbe4b1386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga19f72f5d297a32dcd9cab1ccbe4b1386">BFONT_VMU_DREAMCAST_SPECIFIC</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>+(22 * <a class="el" href="group__bfont.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memitem:ga19f72f5d297a32dcd9cab1ccbe4b1386" id="r_ga19f72f5d297a32dcd9cab1ccbe4b1386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga19f72f5d297a32dcd9cab1ccbe4b1386">BFONT_VMU_DREAMCAST_SPECIFIC</a>&#160;&#160;&#160;(<a class="el" href="group__bfont__indicies.html#ga4b32a9ef4f15bf378270be7b12b9759e">BFONT_DREAMCAST_SPECIFIC</a>+(22 * <a class="el" href="group__bfont__byte__size.html#ga97257939b89deb0929caf2fdba55e404">BFONT_BYTES_PER_WIDE_CHAR</a>))</td></tr>
+<tr class="memdesc:ga19f72f5d297a32dcd9cab1ccbe4b1386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of VMU Specific Icons in Font Block.  <br /></td></tr>
 <tr class="separator:ga19f72f5d297a32dcd9cab1ccbe4b1386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ga42bb36cee2b1c3ca22ad6c25c1657fe7" id="r_ga42bb36cee2b1c3ca22ad6c25c1657fe7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga42bb36cee2b1c3ca22ad6c25c1657fe7">DI_CIRCLECOPYRIGHT</a>&#160;&#160;&#160;&quot;\\di00&quot;</td></tr>
+<tr class="memdesc:ga42bb36cee2b1c3ca22ad6c25c1657fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">brief Macros for Builtin DC Icons  <br /></td></tr>
+<tr class="separator:ga42bb36cee2b1c3ca22ad6c25c1657fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac87bdce1facd6008a77f42f5f19de1d1" id="r_gac87bdce1facd6008a77f42f5f19de1d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac87bdce1facd6008a77f42f5f19de1d1">DI_CIRCLER</a>&#160;&#160;&#160;&quot;\\di01&quot;</td></tr>
+<tr class="separator:gac87bdce1facd6008a77f42f5f19de1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad358faa6673320b83c552e7b3f3c6560" id="r_gad358faa6673320b83c552e7b3f3c6560"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gad358faa6673320b83c552e7b3f3c6560">DI_TRADEMARK</a>&#160;&#160;&#160;&quot;\\di02&quot;</td></tr>
+<tr class="separator:gad358faa6673320b83c552e7b3f3c6560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c27c4d6cdf33cf9998dd1e4bf401600" id="r_ga3c27c4d6cdf33cf9998dd1e4bf401600"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga3c27c4d6cdf33cf9998dd1e4bf401600">DI_UPARROW</a>&#160;&#160;&#160;&quot;\\di03&quot;</td></tr>
+<tr class="separator:ga3c27c4d6cdf33cf9998dd1e4bf401600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad35b9bd2cd6da2930c9633d464df01f7" id="r_gad35b9bd2cd6da2930c9633d464df01f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gad35b9bd2cd6da2930c9633d464df01f7">DI_DOWNARROW</a>&#160;&#160;&#160;&quot;\\di04&quot;</td></tr>
+<tr class="separator:gad35b9bd2cd6da2930c9633d464df01f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1835cd881a5de142c9108616504dab71" id="r_ga1835cd881a5de142c9108616504dab71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1835cd881a5de142c9108616504dab71">DI_LEFTARROW</a>&#160;&#160;&#160;&quot;\\di05&quot;</td></tr>
+<tr class="separator:ga1835cd881a5de142c9108616504dab71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3a850155360ec6c10ca202e2469ee43" id="r_gae3a850155360ec6c10ca202e2469ee43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gae3a850155360ec6c10ca202e2469ee43">DI_RIGHTARROW</a>&#160;&#160;&#160;&quot;\\di06&quot;</td></tr>
+<tr class="separator:gae3a850155360ec6c10ca202e2469ee43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a6128b6e85a8706013f37ec40676d5c" id="r_ga1a6128b6e85a8706013f37ec40676d5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1a6128b6e85a8706013f37ec40676d5c">DI_UPRIGHTARROW</a>&#160;&#160;&#160;&quot;\\di07&quot;</td></tr>
+<tr class="separator:ga1a6128b6e85a8706013f37ec40676d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae770cce88e0a34f3e670c9799f59e4a1" id="r_gae770cce88e0a34f3e670c9799f59e4a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gae770cce88e0a34f3e670c9799f59e4a1">DI_DOWNRIGHTARROW</a>&#160;&#160;&#160;&quot;\\di08&quot;</td></tr>
+<tr class="separator:gae770cce88e0a34f3e670c9799f59e4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a269e9565c4b2c17c729b7b6ade55e1" id="r_ga1a269e9565c4b2c17c729b7b6ade55e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1a269e9565c4b2c17c729b7b6ade55e1">DI_DOWNLEFTARROW</a>&#160;&#160;&#160;&quot;\\di09&quot;</td></tr>
+<tr class="separator:ga1a269e9565c4b2c17c729b7b6ade55e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5cf15b8f720b8bfc250cb612c3b84deb" id="r_ga5cf15b8f720b8bfc250cb612c3b84deb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga5cf15b8f720b8bfc250cb612c3b84deb">DI_UPLEFTARROW</a>&#160;&#160;&#160;&quot;\\di0A&quot;</td></tr>
+<tr class="separator:ga5cf15b8f720b8bfc250cb612c3b84deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a63b8423de07a2f88536a5812b56b73" id="r_ga3a63b8423de07a2f88536a5812b56b73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga3a63b8423de07a2f88536a5812b56b73">DI_ABUTTON</a>&#160;&#160;&#160;&quot;\\di0B&quot;</td></tr>
+<tr class="separator:ga3a63b8423de07a2f88536a5812b56b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac820ac8a7f9f29f5a593a276e1e1e4a2" id="r_gac820ac8a7f9f29f5a593a276e1e1e4a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac820ac8a7f9f29f5a593a276e1e1e4a2">DI_BBUTTON</a>&#160;&#160;&#160;&quot;\\di0C&quot;</td></tr>
+<tr class="separator:gac820ac8a7f9f29f5a593a276e1e1e4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16c7cafce24143998eeafac30c5d5b84" id="r_ga16c7cafce24143998eeafac30c5d5b84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga16c7cafce24143998eeafac30c5d5b84">DI_CBUTTON</a>&#160;&#160;&#160;&quot;\\di0D&quot;</td></tr>
+<tr class="separator:ga16c7cafce24143998eeafac30c5d5b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac95c0d5d380fe76b81c24928674e5b89" id="r_gac95c0d5d380fe76b81c24928674e5b89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac95c0d5d380fe76b81c24928674e5b89">DI_DBUTTON</a>&#160;&#160;&#160;&quot;\\di0E&quot;</td></tr>
+<tr class="separator:gac95c0d5d380fe76b81c24928674e5b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27664b67b3652ca97e206ca57363fa2c" id="r_ga27664b67b3652ca97e206ca57363fa2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga27664b67b3652ca97e206ca57363fa2c">DI_XBUTTON</a>&#160;&#160;&#160;&quot;\\di0F&quot;</td></tr>
+<tr class="separator:ga27664b67b3652ca97e206ca57363fa2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4ec548b958bfd98566e0a0e2eedf753" id="r_gac4ec548b958bfd98566e0a0e2eedf753"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac4ec548b958bfd98566e0a0e2eedf753">DI_YBUTTON</a>&#160;&#160;&#160;&quot;\\di10&quot;</td></tr>
+<tr class="separator:gac4ec548b958bfd98566e0a0e2eedf753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d9232f8fd2cb4e1cf5eb5410d914c37" id="r_ga9d9232f8fd2cb4e1cf5eb5410d914c37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9d9232f8fd2cb4e1cf5eb5410d914c37">DI_ZBUTTON</a>&#160;&#160;&#160;&quot;\\di11&quot;</td></tr>
+<tr class="separator:ga9d9232f8fd2cb4e1cf5eb5410d914c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f0836f75afc494653b12e1fb26275ef" id="r_ga5f0836f75afc494653b12e1fb26275ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga5f0836f75afc494653b12e1fb26275ef">DI_LTRIGGER</a>&#160;&#160;&#160;&quot;\\di12&quot;</td></tr>
+<tr class="separator:ga5f0836f75afc494653b12e1fb26275ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90f181ec876358cba1e812e78bef267f" id="r_ga90f181ec876358cba1e812e78bef267f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga90f181ec876358cba1e812e78bef267f">DI_RTRIGGER</a>&#160;&#160;&#160;&quot;\\di13&quot;</td></tr>
+<tr class="separator:ga90f181ec876358cba1e812e78bef267f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8a72142ccfe4cc4f859fcc90b27f8b8" id="r_gad8a72142ccfe4cc4f859fcc90b27f8b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gad8a72142ccfe4cc4f859fcc90b27f8b8">DI_STARTBUTTON</a>&#160;&#160;&#160;&quot;\\di14&quot;</td></tr>
+<tr class="separator:gad8a72142ccfe4cc4f859fcc90b27f8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06b10a4904212d0d881e6cb30f0fd805" id="r_ga06b10a4904212d0d881e6cb30f0fd805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga06b10a4904212d0d881e6cb30f0fd805">DI_VMU</a>&#160;&#160;&#160;&quot;\\di15&quot;</td></tr>
+<tr class="separator:ga06b10a4904212d0d881e6cb30f0fd805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ga1bab6cdd8b2edf7a38d1a44182c92e46" id="r_ga1bab6cdd8b2edf7a38d1a44182c92e46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1bab6cdd8b2edf7a38d1a44182c92e46">VI_INVALID_VMU</a>&#160;&#160;&#160;&quot;\\vi00&quot;</td></tr>
+<tr class="memdesc:ga1bab6cdd8b2edf7a38d1a44182c92e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">brief Macros for Builtin VMU Icons  <br /></td></tr>
+<tr class="separator:ga1bab6cdd8b2edf7a38d1a44182c92e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaeffb0eabde607213393a29ebf64608c" id="r_gaaeffb0eabde607213393a29ebf64608c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaaeffb0eabde607213393a29ebf64608c">VI_HOURGLASS_ONE</a>&#160;&#160;&#160;&quot;\\vi01&quot;</td></tr>
+<tr class="separator:gaaeffb0eabde607213393a29ebf64608c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ae12b8817ceffe05f4f987ff9daabae" id="r_ga4ae12b8817ceffe05f4f987ff9daabae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga4ae12b8817ceffe05f4f987ff9daabae">VI_HOURGLASS_TWO</a>&#160;&#160;&#160;&quot;\\vi02&quot;</td></tr>
+<tr class="separator:ga4ae12b8817ceffe05f4f987ff9daabae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0dc3c56f00dfe9ec7bb7e1f25daa0fc6" id="r_ga0dc3c56f00dfe9ec7bb7e1f25daa0fc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga0dc3c56f00dfe9ec7bb7e1f25daa0fc6">VI_HOURGLASS_THREE</a>&#160;&#160;&#160;&quot;\\vi03&quot;</td></tr>
+<tr class="separator:ga0dc3c56f00dfe9ec7bb7e1f25daa0fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d100d086290124d5ab10b591dc153c2" id="r_ga0d100d086290124d5ab10b591dc153c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga0d100d086290124d5ab10b591dc153c2">VI_HOURGLASS_FOUR</a>&#160;&#160;&#160;&quot;\\vi04&quot;</td></tr>
+<tr class="separator:ga0d100d086290124d5ab10b591dc153c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa382856787e6b54b35cd1b9411bea3bd" id="r_gaa382856787e6b54b35cd1b9411bea3bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa382856787e6b54b35cd1b9411bea3bd">VI_VMUICON</a>&#160;&#160;&#160;&quot;\\vi05&quot;</td></tr>
+<tr class="separator:gaa382856787e6b54b35cd1b9411bea3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c2b0d7b881b14c16fe37fbf40026ea5" id="r_ga1c2b0d7b881b14c16fe37fbf40026ea5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1c2b0d7b881b14c16fe37fbf40026ea5">VI_EARTH</a>&#160;&#160;&#160;&quot;\\vi06&quot;</td></tr>
+<tr class="separator:ga1c2b0d7b881b14c16fe37fbf40026ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c48abf4cd847ef7e0257e81f5116017" id="r_ga9c48abf4cd847ef7e0257e81f5116017"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9c48abf4cd847ef7e0257e81f5116017">VI_SATURN</a>&#160;&#160;&#160;&quot;\\vi07&quot;</td></tr>
+<tr class="separator:ga9c48abf4cd847ef7e0257e81f5116017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2bf92d34bcf2b29349a90107000e317c" id="r_ga2bf92d34bcf2b29349a90107000e317c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga2bf92d34bcf2b29349a90107000e317c">VI_QUARTER_MOON</a>&#160;&#160;&#160;&quot;\\vi08&quot;</td></tr>
+<tr class="separator:ga2bf92d34bcf2b29349a90107000e317c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeeb4221891659e2184682206ff98b173" id="r_gaeeb4221891659e2184682206ff98b173"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaeeb4221891659e2184682206ff98b173">VI_LAUGHING_FACE</a>&#160;&#160;&#160;&quot;\\vi09&quot;</td></tr>
+<tr class="separator:gaeeb4221891659e2184682206ff98b173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf43860587f289a28f5f61426f17f8c4d" id="r_gaf43860587f289a28f5f61426f17f8c4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaf43860587f289a28f5f61426f17f8c4d">VI_SMILING_FACE</a>&#160;&#160;&#160;&quot;\\vi0A&quot;</td></tr>
+<tr class="separator:gaf43860587f289a28f5f61426f17f8c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03b49b3aa0a6a3b57e2c0f0d3c4dea50" id="r_ga03b49b3aa0a6a3b57e2c0f0d3c4dea50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga03b49b3aa0a6a3b57e2c0f0d3c4dea50">VI_CASUAL_FACE</a>&#160;&#160;&#160;&quot;\\vi0B&quot;</td></tr>
+<tr class="separator:ga03b49b3aa0a6a3b57e2c0f0d3c4dea50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa81638d0b757ee567eb0c19e8b2d2d8b" id="r_gaa81638d0b757ee567eb0c19e8b2d2d8b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa81638d0b757ee567eb0c19e8b2d2d8b">VI_ANGRY_FACE</a>&#160;&#160;&#160;&quot;\\vi0C&quot;</td></tr>
+<tr class="separator:gaa81638d0b757ee567eb0c19e8b2d2d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad0b4fa76cfefea9e47bc78e038112b40" id="r_gad0b4fa76cfefea9e47bc78e038112b40"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gad0b4fa76cfefea9e47bc78e038112b40">VI_COW</a>&#160;&#160;&#160;&quot;\\vi0D&quot;</td></tr>
+<tr class="separator:gad0b4fa76cfefea9e47bc78e038112b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9adc5b146144d5aeb8b0b3ee6d5decaf" id="r_ga9adc5b146144d5aeb8b0b3ee6d5decaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9adc5b146144d5aeb8b0b3ee6d5decaf">VI_HORSE</a>&#160;&#160;&#160;&quot;\\vi0E&quot;</td></tr>
+<tr class="separator:ga9adc5b146144d5aeb8b0b3ee6d5decaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafba2a0037c96bba6878996ce62b4dc46" id="r_gafba2a0037c96bba6878996ce62b4dc46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gafba2a0037c96bba6878996ce62b4dc46">VI_RABBIT</a>&#160;&#160;&#160;&quot;\\vi0F&quot;</td></tr>
+<tr class="separator:gafba2a0037c96bba6878996ce62b4dc46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga723edc36135083f4423260a19c44469c" id="r_ga723edc36135083f4423260a19c44469c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga723edc36135083f4423260a19c44469c">VI_CAT</a>&#160;&#160;&#160;&quot;\\vi10&quot;</td></tr>
+<tr class="separator:ga723edc36135083f4423260a19c44469c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14da2740b303129870ee7072e7065ddb" id="r_ga14da2740b303129870ee7072e7065ddb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga14da2740b303129870ee7072e7065ddb">VI_CHICK</a>&#160;&#160;&#160;&quot;\\vi11&quot;</td></tr>
+<tr class="separator:ga14da2740b303129870ee7072e7065ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3d621bad4429cd7082294d6e2ab4dd6" id="r_gae3d621bad4429cd7082294d6e2ab4dd6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gae3d621bad4429cd7082294d6e2ab4dd6">VI_LION</a>&#160;&#160;&#160;&quot;\\vi12&quot;</td></tr>
+<tr class="separator:gae3d621bad4429cd7082294d6e2ab4dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3060468c2feef707baa2ea1ab6f89ec" id="r_gaa3060468c2feef707baa2ea1ab6f89ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa3060468c2feef707baa2ea1ab6f89ec">VI_MONKEY</a>&#160;&#160;&#160;&quot;\\vi13&quot;</td></tr>
+<tr class="separator:gaa3060468c2feef707baa2ea1ab6f89ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9a0c6c5465e1bae5818370db132f6e9" id="r_gae9a0c6c5465e1bae5818370db132f6e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gae9a0c6c5465e1bae5818370db132f6e9">VI_PANDA</a>&#160;&#160;&#160;&quot;\\vi14&quot;</td></tr>
+<tr class="separator:gae9a0c6c5465e1bae5818370db132f6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcd43fe769e2fb0f0605db621c92288a" id="r_gabcd43fe769e2fb0f0605db621c92288a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gabcd43fe769e2fb0f0605db621c92288a">VI_BEAR</a>&#160;&#160;&#160;&quot;\\vi15&quot;</td></tr>
+<tr class="separator:gabcd43fe769e2fb0f0605db621c92288a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9767a2d6db5cf56bf94d1587f486395d" id="r_ga9767a2d6db5cf56bf94d1587f486395d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9767a2d6db5cf56bf94d1587f486395d">VI_PIG</a>&#160;&#160;&#160;&quot;\\vi16&quot;</td></tr>
+<tr class="separator:ga9767a2d6db5cf56bf94d1587f486395d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b04ba210b8d4e85a877378322c7293a" id="r_ga1b04ba210b8d4e85a877378322c7293a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1b04ba210b8d4e85a877378322c7293a">VI_DOG</a>&#160;&#160;&#160;&quot;\\vi17&quot;</td></tr>
+<tr class="separator:ga1b04ba210b8d4e85a877378322c7293a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga992ec767b9cceac1bd3c168b003e48a0" id="r_ga992ec767b9cceac1bd3c168b003e48a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga992ec767b9cceac1bd3c168b003e48a0">VI_FISH</a>&#160;&#160;&#160;&quot;\\vi18&quot;</td></tr>
+<tr class="separator:ga992ec767b9cceac1bd3c168b003e48a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d7a9f6c23ca99241f42820f91139dc0" id="r_ga2d7a9f6c23ca99241f42820f91139dc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga2d7a9f6c23ca99241f42820f91139dc0">VI_OCTOPUS</a>&#160;&#160;&#160;&quot;\\vi19&quot;</td></tr>
+<tr class="separator:ga2d7a9f6c23ca99241f42820f91139dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabf47131270b7bdd478e3c11bfc3d55a" id="r_gaabf47131270b7bdd478e3c11bfc3d55a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaabf47131270b7bdd478e3c11bfc3d55a">VI_SQUID</a>&#160;&#160;&#160;&quot;\\vi1A&quot;</td></tr>
+<tr class="separator:gaabf47131270b7bdd478e3c11bfc3d55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1955914fb1897681ef2a6d7a5d1600e2" id="r_ga1955914fb1897681ef2a6d7a5d1600e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1955914fb1897681ef2a6d7a5d1600e2">VI_WHALE</a>&#160;&#160;&#160;&quot;\\vi1B&quot;</td></tr>
+<tr class="separator:ga1955914fb1897681ef2a6d7a5d1600e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b4306731ea9011d803670a627e7c237" id="r_ga9b4306731ea9011d803670a627e7c237"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9b4306731ea9011d803670a627e7c237">VI_CRAB</a>&#160;&#160;&#160;&quot;\\vi1C&quot;</td></tr>
+<tr class="separator:ga9b4306731ea9011d803670a627e7c237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga498aba97d109002bd3c1dd8710274cfa" id="r_ga498aba97d109002bd3c1dd8710274cfa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga498aba97d109002bd3c1dd8710274cfa">VI_BUTTERFLY</a>&#160;&#160;&#160;&quot;\\vi1D&quot;</td></tr>
+<tr class="separator:ga498aba97d109002bd3c1dd8710274cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7634a0dd374a7e6cbfa87acd345b35e3" id="r_ga7634a0dd374a7e6cbfa87acd345b35e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga7634a0dd374a7e6cbfa87acd345b35e3">VI_LADYBUG</a>&#160;&#160;&#160;&quot;\\vi1E&quot;</td></tr>
+<tr class="separator:ga7634a0dd374a7e6cbfa87acd345b35e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5445d13f7c222e9b9c5df8c9445c4d85" id="r_ga5445d13f7c222e9b9c5df8c9445c4d85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga5445d13f7c222e9b9c5df8c9445c4d85">VI_ANGLER_FISH</a>&#160;&#160;&#160;&quot;\\vi1F&quot;</td></tr>
+<tr class="separator:ga5445d13f7c222e9b9c5df8c9445c4d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga523df0e42744eb64967c46b63c3f4016" id="r_ga523df0e42744eb64967c46b63c3f4016"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga523df0e42744eb64967c46b63c3f4016">VI_PENGUIN</a>&#160;&#160;&#160;&quot;\\vi20&quot;</td></tr>
+<tr class="separator:ga523df0e42744eb64967c46b63c3f4016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga352439a3d62ff16879ca3db77a18161e" id="r_ga352439a3d62ff16879ca3db77a18161e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga352439a3d62ff16879ca3db77a18161e">VI_CHERRIES</a>&#160;&#160;&#160;&quot;\\vi21&quot;</td></tr>
+<tr class="separator:ga352439a3d62ff16879ca3db77a18161e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga951596fa25b50a6ff08806d7605853de" id="r_ga951596fa25b50a6ff08806d7605853de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga951596fa25b50a6ff08806d7605853de">VI_TULIP</a>&#160;&#160;&#160;&quot;\\vi22&quot;</td></tr>
+<tr class="separator:ga951596fa25b50a6ff08806d7605853de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga456aa19eec34c3f05d99726eeb8037ee" id="r_ga456aa19eec34c3f05d99726eeb8037ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga456aa19eec34c3f05d99726eeb8037ee">VI_LEAF</a>&#160;&#160;&#160;&quot;\\vi23&quot;</td></tr>
+<tr class="separator:ga456aa19eec34c3f05d99726eeb8037ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac73fca40e872b9e3de619a557f503111" id="r_gac73fca40e872b9e3de619a557f503111"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac73fca40e872b9e3de619a557f503111">VI_SAKURA</a>&#160;&#160;&#160;&quot;\\vi24&quot;</td></tr>
+<tr class="separator:gac73fca40e872b9e3de619a557f503111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad026c4e0932058b8443d9e4a2f08086" id="r_gaad026c4e0932058b8443d9e4a2f08086"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaad026c4e0932058b8443d9e4a2f08086">VI_APPLE</a>&#160;&#160;&#160;&quot;\\vi25&quot;</td></tr>
+<tr class="separator:gaad026c4e0932058b8443d9e4a2f08086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2bb6cfcf576bcc33ea568d87fbb4782f" id="r_ga2bb6cfcf576bcc33ea568d87fbb4782f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga2bb6cfcf576bcc33ea568d87fbb4782f">VI_ICECREAM</a>&#160;&#160;&#160;&quot;\\vi26&quot;</td></tr>
+<tr class="separator:ga2bb6cfcf576bcc33ea568d87fbb4782f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8be5f53cb79d2b364d3db186877860f" id="r_gad8be5f53cb79d2b364d3db186877860f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gad8be5f53cb79d2b364d3db186877860f">VI_CACTUS</a>&#160;&#160;&#160;&quot;\\vi27&quot;</td></tr>
+<tr class="separator:gad8be5f53cb79d2b364d3db186877860f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1ea79fa38dd58952fda1c1fb8b56047" id="r_gac1ea79fa38dd58952fda1c1fb8b56047"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac1ea79fa38dd58952fda1c1fb8b56047">VI_PIANO</a>&#160;&#160;&#160;&quot;\\vi28&quot;</td></tr>
+<tr class="separator:gac1ea79fa38dd58952fda1c1fb8b56047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0489710272585a9ee251a1904cbfc0fb" id="r_ga0489710272585a9ee251a1904cbfc0fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga0489710272585a9ee251a1904cbfc0fb">VI_GUITAR</a>&#160;&#160;&#160;&quot;\\vi29&quot;</td></tr>
+<tr class="separator:ga0489710272585a9ee251a1904cbfc0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ebc122212c54d1f73b4a90d3714eddf" id="r_ga1ebc122212c54d1f73b4a90d3714eddf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1ebc122212c54d1f73b4a90d3714eddf">VI_EIGHTH_NOTE</a>&#160;&#160;&#160;&quot;\\vi2A&quot;</td></tr>
+<tr class="separator:ga1ebc122212c54d1f73b4a90d3714eddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf03694aeb97dbb30b6593eacfa9e1f11" id="r_gaf03694aeb97dbb30b6593eacfa9e1f11"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaf03694aeb97dbb30b6593eacfa9e1f11">VI_TREBLE_CLEF</a>&#160;&#160;&#160;&quot;\\vi2B&quot;</td></tr>
+<tr class="separator:gaf03694aeb97dbb30b6593eacfa9e1f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae11506096dfa32b20be5cd8a06762f60" id="r_gae11506096dfa32b20be5cd8a06762f60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gae11506096dfa32b20be5cd8a06762f60">VI_BOAT</a>&#160;&#160;&#160;&quot;\\vi2C&quot;</td></tr>
+<tr class="separator:gae11506096dfa32b20be5cd8a06762f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81c2179298f68ccd979407a3f197549b" id="r_ga81c2179298f68ccd979407a3f197549b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga81c2179298f68ccd979407a3f197549b">VI_CAR</a>&#160;&#160;&#160;&quot;\\vi2D&quot;</td></tr>
+<tr class="separator:ga81c2179298f68ccd979407a3f197549b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacba45aeb8040d11f55957eb00f3b7fb3" id="r_gacba45aeb8040d11f55957eb00f3b7fb3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gacba45aeb8040d11f55957eb00f3b7fb3">VI_HELMET</a>&#160;&#160;&#160;&quot;\\vi2E&quot;</td></tr>
+<tr class="separator:gacba45aeb8040d11f55957eb00f3b7fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bf853d4a544a3a32f2a030968f29df0" id="r_ga1bf853d4a544a3a32f2a030968f29df0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1bf853d4a544a3a32f2a030968f29df0">VI_MOTORCYCLE</a>&#160;&#160;&#160;&quot;\\vi2F&quot;</td></tr>
+<tr class="separator:ga1bf853d4a544a3a32f2a030968f29df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad56c77035bb9925981e83454de9d76a0" id="r_gad56c77035bb9925981e83454de9d76a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gad56c77035bb9925981e83454de9d76a0">VI_VAN</a>&#160;&#160;&#160;&quot;\\vi30&quot;</td></tr>
+<tr class="separator:gad56c77035bb9925981e83454de9d76a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada3da402fc4651bfc85c73dfb7e39f56" id="r_gada3da402fc4651bfc85c73dfb7e39f56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gada3da402fc4651bfc85c73dfb7e39f56">VI_TRUCK</a>&#160;&#160;&#160;&quot;\\vi31&quot;</td></tr>
+<tr class="separator:gada3da402fc4651bfc85c73dfb7e39f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4322b3b508ef2993ca4a0948203bbdbc" id="r_ga4322b3b508ef2993ca4a0948203bbdbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga4322b3b508ef2993ca4a0948203bbdbc">VI_CLOCK</a>&#160;&#160;&#160;&quot;\\vi32&quot;</td></tr>
+<tr class="separator:ga4322b3b508ef2993ca4a0948203bbdbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7aa6618cbeb84e5a4a6788217f784c89" id="r_ga7aa6618cbeb84e5a4a6788217f784c89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga7aa6618cbeb84e5a4a6788217f784c89">VI_TELEPHONE</a>&#160;&#160;&#160;&quot;\\vi33&quot;</td></tr>
+<tr class="separator:ga7aa6618cbeb84e5a4a6788217f784c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b30cdeb28ade7333041699a76471397" id="r_ga1b30cdeb28ade7333041699a76471397"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1b30cdeb28ade7333041699a76471397">VI_PENCIL</a>&#160;&#160;&#160;&quot;\\vi34&quot;</td></tr>
+<tr class="separator:ga1b30cdeb28ade7333041699a76471397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa72c4b403d9413d82d6d28d00d151b67" id="r_gaa72c4b403d9413d82d6d28d00d151b67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa72c4b403d9413d82d6d28d00d151b67">VI_CUP</a>&#160;&#160;&#160;&quot;\\vi35&quot;</td></tr>
+<tr class="separator:gaa72c4b403d9413d82d6d28d00d151b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7cdb0941fe6fda85d1876dfc2644cbeb" id="r_ga7cdb0941fe6fda85d1876dfc2644cbeb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga7cdb0941fe6fda85d1876dfc2644cbeb">VI_SILVERWARE</a>&#160;&#160;&#160;&quot;\\vi36&quot;</td></tr>
+<tr class="separator:ga7cdb0941fe6fda85d1876dfc2644cbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga285556e1c564663e6b634b86fee8753d" id="r_ga285556e1c564663e6b634b86fee8753d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga285556e1c564663e6b634b86fee8753d">VI_HOUSE</a>&#160;&#160;&#160;&quot;\\vi37&quot;</td></tr>
+<tr class="separator:ga285556e1c564663e6b634b86fee8753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3a437504cef121e76e7fbbf79b85f83" id="r_gae3a437504cef121e76e7fbbf79b85f83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gae3a437504cef121e76e7fbbf79b85f83">VI_BELL</a>&#160;&#160;&#160;&quot;\\vi38&quot;</td></tr>
+<tr class="separator:gae3a437504cef121e76e7fbbf79b85f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1449bf197d352b7a42130e11d6f48bb" id="r_gad1449bf197d352b7a42130e11d6f48bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gad1449bf197d352b7a42130e11d6f48bb">VI_CROWN</a>&#160;&#160;&#160;&quot;\\vi39&quot;</td></tr>
+<tr class="separator:gad1449bf197d352b7a42130e11d6f48bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52c0f34ccf6c4625d238e9c67d6e8d87" id="r_ga52c0f34ccf6c4625d238e9c67d6e8d87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga52c0f34ccf6c4625d238e9c67d6e8d87">VI_SOCK</a>&#160;&#160;&#160;&quot;\\vi3A&quot;</td></tr>
+<tr class="separator:ga52c0f34ccf6c4625d238e9c67d6e8d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaaa533c18685ecea836fbf04f4cb168a" id="r_gaaaa533c18685ecea836fbf04f4cb168a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaaaa533c18685ecea836fbf04f4cb168a">VI_CAKE</a>&#160;&#160;&#160;&quot;\\vi3B&quot;</td></tr>
+<tr class="separator:gaaaa533c18685ecea836fbf04f4cb168a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23f0d73c78f702e7b431d29dd465bc5c" id="r_ga23f0d73c78f702e7b431d29dd465bc5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga23f0d73c78f702e7b431d29dd465bc5c">VI_KEY</a>&#160;&#160;&#160;&quot;\\vi3C&quot;</td></tr>
+<tr class="separator:ga23f0d73c78f702e7b431d29dd465bc5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25c96a79f38693cc398d464e3a6952dd" id="r_ga25c96a79f38693cc398d464e3a6952dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga25c96a79f38693cc398d464e3a6952dd">VI_BOOK</a>&#160;&#160;&#160;&quot;\\vi3D&quot;</td></tr>
+<tr class="separator:ga25c96a79f38693cc398d464e3a6952dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69207871997a7c1a840894401bd8d166" id="r_ga69207871997a7c1a840894401bd8d166"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga69207871997a7c1a840894401bd8d166">VI_BASEBALL</a>&#160;&#160;&#160;&quot;\\vi3E&quot;</td></tr>
+<tr class="separator:ga69207871997a7c1a840894401bd8d166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ed6ccdb3e37800a2dc55b38684c5908" id="r_ga1ed6ccdb3e37800a2dc55b38684c5908"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1ed6ccdb3e37800a2dc55b38684c5908">VI_SOCCER</a>&#160;&#160;&#160;&quot;\\vi3F&quot;</td></tr>
+<tr class="separator:ga1ed6ccdb3e37800a2dc55b38684c5908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab708204672904235dc0055ad2e84c40c" id="r_gab708204672904235dc0055ad2e84c40c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gab708204672904235dc0055ad2e84c40c">VI_BULB</a>&#160;&#160;&#160;&quot;\\vi40&quot;</td></tr>
+<tr class="separator:gab708204672904235dc0055ad2e84c40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3df3e5576b7f68690e6abbdb05988e3" id="r_gaa3df3e5576b7f68690e6abbdb05988e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa3df3e5576b7f68690e6abbdb05988e3">VI_TEDDY_BEAR</a>&#160;&#160;&#160;&quot;\\vi41&quot;</td></tr>
+<tr class="separator:gaa3df3e5576b7f68690e6abbdb05988e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe9aadc5f54306f15bcb32f57322170b" id="r_gafe9aadc5f54306f15bcb32f57322170b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gafe9aadc5f54306f15bcb32f57322170b">VI_BOW_TIE</a>&#160;&#160;&#160;&quot;\\vi42&quot;</td></tr>
+<tr class="separator:gafe9aadc5f54306f15bcb32f57322170b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3ffda3a5c4af2137fd71739985b6057" id="r_gaa3ffda3a5c4af2137fd71739985b6057"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa3ffda3a5c4af2137fd71739985b6057">VI_BOW_ARROW</a>&#160;&#160;&#160;&quot;\\vi43&quot;</td></tr>
+<tr class="separator:gaa3ffda3a5c4af2137fd71739985b6057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1281343e814badb3ea8f271c66cc30e" id="r_gae1281343e814badb3ea8f271c66cc30e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gae1281343e814badb3ea8f271c66cc30e">VI_SNOWMAN</a>&#160;&#160;&#160;&quot;\\vi44&quot;</td></tr>
+<tr class="separator:gae1281343e814badb3ea8f271c66cc30e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0407bd890a1d8c364d71e74b04069b72" id="r_ga0407bd890a1d8c364d71e74b04069b72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga0407bd890a1d8c364d71e74b04069b72">VI_LIGHTNING</a>&#160;&#160;&#160;&quot;\\vi45&quot;</td></tr>
+<tr class="separator:ga0407bd890a1d8c364d71e74b04069b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86f9e64652f0319c75dcbad33b877d35" id="r_ga86f9e64652f0319c75dcbad33b877d35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga86f9e64652f0319c75dcbad33b877d35">VI_SUN</a>&#160;&#160;&#160;&quot;\\vi46&quot;</td></tr>
+<tr class="separator:ga86f9e64652f0319c75dcbad33b877d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b5353e37d9d8f2ba5e9adde5fbb2ff5" id="r_ga8b5353e37d9d8f2ba5e9adde5fbb2ff5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga8b5353e37d9d8f2ba5e9adde5fbb2ff5">VI_CLOUD</a>&#160;&#160;&#160;&quot;\\vi47&quot;</td></tr>
+<tr class="separator:ga8b5353e37d9d8f2ba5e9adde5fbb2ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga066d393f12159a31812342d72885f416" id="r_ga066d393f12159a31812342d72885f416"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga066d393f12159a31812342d72885f416">VI_UMBRELLA</a>&#160;&#160;&#160;&quot;\\vi48&quot;</td></tr>
+<tr class="separator:ga066d393f12159a31812342d72885f416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66a24b751574df7927b5ce62da74ab38" id="r_ga66a24b751574df7927b5ce62da74ab38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga66a24b751574df7927b5ce62da74ab38">VI_ONE_STAR</a>&#160;&#160;&#160;&quot;\\vi49&quot;</td></tr>
+<tr class="separator:ga66a24b751574df7927b5ce62da74ab38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d06c676f9806db6c9b8cbdf4c8dabec" id="r_ga2d06c676f9806db6c9b8cbdf4c8dabec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga2d06c676f9806db6c9b8cbdf4c8dabec">VI_TWO_STARS</a>&#160;&#160;&#160;&quot;\\vi4A&quot;</td></tr>
+<tr class="separator:ga2d06c676f9806db6c9b8cbdf4c8dabec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52d417d8f0e9650b5b55419cf1964c5d" id="r_ga52d417d8f0e9650b5b55419cf1964c5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga52d417d8f0e9650b5b55419cf1964c5d">VI_THREE_STARS</a>&#160;&#160;&#160;&quot;\\vi4B&quot;</td></tr>
+<tr class="separator:ga52d417d8f0e9650b5b55419cf1964c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70eb164c137ddb8a0ae894c3c6b37a28" id="r_ga70eb164c137ddb8a0ae894c3c6b37a28"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga70eb164c137ddb8a0ae894c3c6b37a28">VI_FOUR_STARS</a>&#160;&#160;&#160;&quot;\\vi4C&quot;</td></tr>
+<tr class="separator:ga70eb164c137ddb8a0ae894c3c6b37a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3fdefa21c9df1121ce7e5e2dc17f2300" id="r_ga3fdefa21c9df1121ce7e5e2dc17f2300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga3fdefa21c9df1121ce7e5e2dc17f2300">VI_HEART</a>&#160;&#160;&#160;&quot;\\vi4D&quot;</td></tr>
+<tr class="separator:ga3fdefa21c9df1121ce7e5e2dc17f2300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90382fd2b337a5c4da0998bd748fe029" id="r_ga90382fd2b337a5c4da0998bd748fe029"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga90382fd2b337a5c4da0998bd748fe029">VI_DIAMOND</a>&#160;&#160;&#160;&quot;\\vi4E&quot;</td></tr>
+<tr class="separator:ga90382fd2b337a5c4da0998bd748fe029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad0f3a6091901b164210fcda17b49849" id="r_gaad0f3a6091901b164210fcda17b49849"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaad0f3a6091901b164210fcda17b49849">VI_SPADE</a>&#160;&#160;&#160;&quot;\\vi4F&quot;</td></tr>
+<tr class="separator:gaad0f3a6091901b164210fcda17b49849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6269b223c1840e17aa4f1923560c8168" id="r_ga6269b223c1840e17aa4f1923560c8168"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga6269b223c1840e17aa4f1923560c8168">VI_CLUB</a>&#160;&#160;&#160;&quot;\\vi50&quot;</td></tr>
+<tr class="separator:ga6269b223c1840e17aa4f1923560c8168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1acd1867be676622c1adc59511d68b14" id="r_ga1acd1867be676622c1adc59511d68b14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1acd1867be676622c1adc59511d68b14">VI_JACK</a>&#160;&#160;&#160;&quot;\\vi51&quot;</td></tr>
+<tr class="separator:ga1acd1867be676622c1adc59511d68b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa44ed29376f669c801ebac41cca27808" id="r_gaa44ed29376f669c801ebac41cca27808"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa44ed29376f669c801ebac41cca27808">VI_QUEEN</a>&#160;&#160;&#160;&quot;\\vi52&quot;</td></tr>
+<tr class="separator:gaa44ed29376f669c801ebac41cca27808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a21b626590aa1f9184dcbacd3e6f29e" id="r_ga4a21b626590aa1f9184dcbacd3e6f29e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga4a21b626590aa1f9184dcbacd3e6f29e">VI_KING</a>&#160;&#160;&#160;&quot;\\vi53&quot;</td></tr>
+<tr class="separator:ga4a21b626590aa1f9184dcbacd3e6f29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40dfba14dff2adff7951b4c8aaa91b78" id="r_ga40dfba14dff2adff7951b4c8aaa91b78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga40dfba14dff2adff7951b4c8aaa91b78">VI_JOKER</a>&#160;&#160;&#160;&quot;\\vi54&quot;</td></tr>
+<tr class="separator:ga40dfba14dff2adff7951b4c8aaa91b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga813d695f22ec786ae0cd49c44d80ee20" id="r_ga813d695f22ec786ae0cd49c44d80ee20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga813d695f22ec786ae0cd49c44d80ee20">VI_ISLAND</a>&#160;&#160;&#160;&quot;\\vi55&quot;</td></tr>
+<tr class="separator:ga813d695f22ec786ae0cd49c44d80ee20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e0a4698f65947d20f4be9a0c9948fb9" id="r_ga6e0a4698f65947d20f4be9a0c9948fb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga6e0a4698f65947d20f4be9a0c9948fb9">VI_0</a>&#160;&#160;&#160;&quot;\\vi56&quot;</td></tr>
+<tr class="separator:ga6e0a4698f65947d20f4be9a0c9948fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a3ddb747394a9ec18293d5256bb1a68" id="r_ga9a3ddb747394a9ec18293d5256bb1a68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9a3ddb747394a9ec18293d5256bb1a68">VI_1</a>&#160;&#160;&#160;&quot;\\vi57&quot;</td></tr>
+<tr class="separator:ga9a3ddb747394a9ec18293d5256bb1a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac53000906269bee6cb0a7e82bf1090a3" id="r_gac53000906269bee6cb0a7e82bf1090a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac53000906269bee6cb0a7e82bf1090a3">VI_2</a>&#160;&#160;&#160;&quot;\\vi58&quot;</td></tr>
+<tr class="separator:gac53000906269bee6cb0a7e82bf1090a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5118ad9f6aaa9bdd600d4fcaf0778182" id="r_ga5118ad9f6aaa9bdd600d4fcaf0778182"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga5118ad9f6aaa9bdd600d4fcaf0778182">VI_3</a>&#160;&#160;&#160;&quot;\\vi59&quot;</td></tr>
+<tr class="separator:ga5118ad9f6aaa9bdd600d4fcaf0778182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40cc1be824abeb50b9110a91a4ecdd44" id="r_ga40cc1be824abeb50b9110a91a4ecdd44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga40cc1be824abeb50b9110a91a4ecdd44">VI_4</a>&#160;&#160;&#160;&quot;\\vi5A&quot;</td></tr>
+<tr class="separator:ga40cc1be824abeb50b9110a91a4ecdd44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46457f5b131fd31113d569303148c326" id="r_ga46457f5b131fd31113d569303148c326"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga46457f5b131fd31113d569303148c326">VI_5</a>&#160;&#160;&#160;&quot;\\vi5B&quot;</td></tr>
+<tr class="separator:ga46457f5b131fd31113d569303148c326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab768617cd56a4eb5fdaf6ae3262f47fc" id="r_gab768617cd56a4eb5fdaf6ae3262f47fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gab768617cd56a4eb5fdaf6ae3262f47fc">VI_6</a>&#160;&#160;&#160;&quot;\\vi5C&quot;</td></tr>
+<tr class="separator:gab768617cd56a4eb5fdaf6ae3262f47fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9608f67961a1887590e7462b22d814cd" id="r_ga9608f67961a1887590e7462b22d814cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9608f67961a1887590e7462b22d814cd">VI_7</a>&#160;&#160;&#160;&quot;\\vi5D&quot;</td></tr>
+<tr class="separator:ga9608f67961a1887590e7462b22d814cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61763f1940e599d59e7c3a4aae036f2d" id="r_ga61763f1940e599d59e7c3a4aae036f2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga61763f1940e599d59e7c3a4aae036f2d">VI_8</a>&#160;&#160;&#160;&quot;\\vi5E&quot;</td></tr>
+<tr class="separator:ga61763f1940e599d59e7c3a4aae036f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a390b9ebd4e53e439ee02adc964f61b" id="r_ga8a390b9ebd4e53e439ee02adc964f61b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga8a390b9ebd4e53e439ee02adc964f61b">VI_9</a>&#160;&#160;&#160;&quot;\\vi5F&quot;</td></tr>
+<tr class="separator:ga8a390b9ebd4e53e439ee02adc964f61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga322bba630fcb5427aca4e756f24e3b12" id="r_ga322bba630fcb5427aca4e756f24e3b12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga322bba630fcb5427aca4e756f24e3b12">VI_A</a>&#160;&#160;&#160;&quot;\\vi60&quot;</td></tr>
+<tr class="separator:ga322bba630fcb5427aca4e756f24e3b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga76e527d5a4317150c8cad953b691592a" id="r_ga76e527d5a4317150c8cad953b691592a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga76e527d5a4317150c8cad953b691592a">VI_B</a>&#160;&#160;&#160;&quot;\\vi61&quot;</td></tr>
+<tr class="separator:ga76e527d5a4317150c8cad953b691592a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98d770cc51996b1d08392e6a83d59e5c" id="r_ga98d770cc51996b1d08392e6a83d59e5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga98d770cc51996b1d08392e6a83d59e5c">VI_C</a>&#160;&#160;&#160;&quot;\\vi62&quot;</td></tr>
+<tr class="separator:ga98d770cc51996b1d08392e6a83d59e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac440511dd1698c92263b5b34d38afd4c" id="r_gac440511dd1698c92263b5b34d38afd4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac440511dd1698c92263b5b34d38afd4c">VI_D</a>&#160;&#160;&#160;&quot;\\vi63&quot;</td></tr>
+<tr class="separator:gac440511dd1698c92263b5b34d38afd4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44fd2500a756982c41d37a86f78c023c" id="r_ga44fd2500a756982c41d37a86f78c023c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga44fd2500a756982c41d37a86f78c023c">VI_E</a>&#160;&#160;&#160;&quot;\\vi64&quot;</td></tr>
+<tr class="separator:ga44fd2500a756982c41d37a86f78c023c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a2dabaee1d62f5ad28fd5d2c0a84446" id="r_ga0a2dabaee1d62f5ad28fd5d2c0a84446"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga0a2dabaee1d62f5ad28fd5d2c0a84446">VI_F</a>&#160;&#160;&#160;&quot;\\vi65&quot;</td></tr>
+<tr class="separator:ga0a2dabaee1d62f5ad28fd5d2c0a84446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab034e889e7d31989076f59b6b69eaaf6" id="r_gab034e889e7d31989076f59b6b69eaaf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gab034e889e7d31989076f59b6b69eaaf6">VI_G</a>&#160;&#160;&#160;&quot;\\vi66&quot;</td></tr>
+<tr class="separator:gab034e889e7d31989076f59b6b69eaaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a60aba2938e2a252091e1e62ded27b0" id="r_ga5a60aba2938e2a252091e1e62ded27b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga5a60aba2938e2a252091e1e62ded27b0">VI_H</a>&#160;&#160;&#160;&quot;\\vi67&quot;</td></tr>
+<tr class="separator:ga5a60aba2938e2a252091e1e62ded27b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga531abb05b86484900c8b47c2b48bc33b" id="r_ga531abb05b86484900c8b47c2b48bc33b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga531abb05b86484900c8b47c2b48bc33b">VI_I</a>&#160;&#160;&#160;&quot;\\vi68&quot;</td></tr>
+<tr class="separator:ga531abb05b86484900c8b47c2b48bc33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae37121b41b85eafb17ab02a2c15f9b9e" id="r_gae37121b41b85eafb17ab02a2c15f9b9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gae37121b41b85eafb17ab02a2c15f9b9e">VI_J</a>&#160;&#160;&#160;&quot;\\vi69&quot;</td></tr>
+<tr class="separator:gae37121b41b85eafb17ab02a2c15f9b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1463395ae28a97e33ce4583216cd83c" id="r_gaa1463395ae28a97e33ce4583216cd83c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa1463395ae28a97e33ce4583216cd83c">VI_K</a>&#160;&#160;&#160;&quot;\\vi6A&quot;</td></tr>
+<tr class="separator:gaa1463395ae28a97e33ce4583216cd83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd8e61cb274d2cb0d7677a845b412ce6" id="r_gacd8e61cb274d2cb0d7677a845b412ce6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gacd8e61cb274d2cb0d7677a845b412ce6">VI_L</a>&#160;&#160;&#160;&quot;\\vi6B&quot;</td></tr>
+<tr class="separator:gacd8e61cb274d2cb0d7677a845b412ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c2892f55ea3c3e6625aada92c12a0d9" id="r_ga9c2892f55ea3c3e6625aada92c12a0d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9c2892f55ea3c3e6625aada92c12a0d9">VI_M</a>&#160;&#160;&#160;&quot;\\vi6C&quot;</td></tr>
+<tr class="separator:ga9c2892f55ea3c3e6625aada92c12a0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4716f52dd89b5e95ab41530ffc05594" id="r_gac4716f52dd89b5e95ab41530ffc05594"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac4716f52dd89b5e95ab41530ffc05594">VI_N</a>&#160;&#160;&#160;&quot;\\vi6D&quot;</td></tr>
+<tr class="separator:gac4716f52dd89b5e95ab41530ffc05594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50d6ac4417aa73785b3526cbf4c92709" id="r_ga50d6ac4417aa73785b3526cbf4c92709"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga50d6ac4417aa73785b3526cbf4c92709">VI_O</a>&#160;&#160;&#160;&quot;\\vi6E&quot;</td></tr>
+<tr class="separator:ga50d6ac4417aa73785b3526cbf4c92709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ccf0cfd8c76ad8a5e5296fa8cbf9498" id="r_ga6ccf0cfd8c76ad8a5e5296fa8cbf9498"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga6ccf0cfd8c76ad8a5e5296fa8cbf9498">VI_P</a>&#160;&#160;&#160;&quot;\\vi6F&quot;</td></tr>
+<tr class="separator:ga6ccf0cfd8c76ad8a5e5296fa8cbf9498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fd39e90e21641372d9e9e34c2235425" id="r_ga7fd39e90e21641372d9e9e34c2235425"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga7fd39e90e21641372d9e9e34c2235425">VI_Q</a>&#160;&#160;&#160;&quot;\\vi70&quot;</td></tr>
+<tr class="separator:ga7fd39e90e21641372d9e9e34c2235425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70bfe2c7a3244902dea3fd830d687c8f" id="r_ga70bfe2c7a3244902dea3fd830d687c8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga70bfe2c7a3244902dea3fd830d687c8f">VI_R</a>&#160;&#160;&#160;&quot;\\vi71&quot;</td></tr>
+<tr class="separator:ga70bfe2c7a3244902dea3fd830d687c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2cb14651a1210438deed9386587268f" id="r_gaf2cb14651a1210438deed9386587268f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaf2cb14651a1210438deed9386587268f">VI_S</a>&#160;&#160;&#160;&quot;\\vi72&quot;</td></tr>
+<tr class="separator:gaf2cb14651a1210438deed9386587268f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf818b5fd4be1cfa91e2a7479b123aadb" id="r_gaf818b5fd4be1cfa91e2a7479b123aadb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaf818b5fd4be1cfa91e2a7479b123aadb">VI_T</a>&#160;&#160;&#160;&quot;\\vi73&quot;</td></tr>
+<tr class="separator:gaf818b5fd4be1cfa91e2a7479b123aadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfbaaa8185814d619cfd82d975c3fc34" id="r_gabfbaaa8185814d619cfd82d975c3fc34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gabfbaaa8185814d619cfd82d975c3fc34">VI_U</a>&#160;&#160;&#160;&quot;\\vi74&quot;</td></tr>
+<tr class="separator:gabfbaaa8185814d619cfd82d975c3fc34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga882aacbfbddffab1fbe76183ff1d7a7a" id="r_ga882aacbfbddffab1fbe76183ff1d7a7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga882aacbfbddffab1fbe76183ff1d7a7a">VI_V</a>&#160;&#160;&#160;&quot;\\vi75&quot;</td></tr>
+<tr class="separator:ga882aacbfbddffab1fbe76183ff1d7a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f33e95af9222608202dfe21b68e1e9f" id="r_ga8f33e95af9222608202dfe21b68e1e9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga8f33e95af9222608202dfe21b68e1e9f">VI_W</a>&#160;&#160;&#160;&quot;\\vi76&quot;</td></tr>
+<tr class="separator:ga8f33e95af9222608202dfe21b68e1e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e515f0bb9835f1143b04c90991cace7" id="r_ga1e515f0bb9835f1143b04c90991cace7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1e515f0bb9835f1143b04c90991cace7">VI_X</a>&#160;&#160;&#160;&quot;\\vi77&quot;</td></tr>
+<tr class="separator:ga1e515f0bb9835f1143b04c90991cace7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga152c7431309c5865a59e810242042dfc" id="r_ga152c7431309c5865a59e810242042dfc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga152c7431309c5865a59e810242042dfc">VI_Y</a>&#160;&#160;&#160;&quot;\\vi78&quot;</td></tr>
+<tr class="separator:ga152c7431309c5865a59e810242042dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26cdf57e54e3213a45bc90cd1cfeb836" id="r_ga26cdf57e54e3213a45bc90cd1cfeb836"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga26cdf57e54e3213a45bc90cd1cfeb836">VI_Z</a>&#160;&#160;&#160;&quot;\\vi79&quot;</td></tr>
+<tr class="separator:ga26cdf57e54e3213a45bc90cd1cfeb836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2288b8b0305c6d67fd81e8cee90f782b" id="r_ga2288b8b0305c6d67fd81e8cee90f782b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga2288b8b0305c6d67fd81e8cee90f782b">VI_CHECKER_BOARD</a>&#160;&#160;&#160;&quot;\\vi7A&quot;</td></tr>
+<tr class="separator:ga2288b8b0305c6d67fd81e8cee90f782b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5afaff9ec5761bfecb374ec168f4a8e6" id="r_ga5afaff9ec5761bfecb374ec168f4a8e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga5afaff9ec5761bfecb374ec168f4a8e6">VI_GRID</a>&#160;&#160;&#160;&quot;\\vi7B&quot;</td></tr>
+<tr class="separator:ga5afaff9ec5761bfecb374ec168f4a8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc5343566f6a441e46f0241736488199" id="r_gadc5343566f6a441e46f0241736488199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gadc5343566f6a441e46f0241736488199">VI_LIGHT_GRAY</a>&#160;&#160;&#160;&quot;\\vi7C&quot;</td></tr>
+<tr class="separator:gadc5343566f6a441e46f0241736488199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0ab236df742228e83c6b20ab3b52f67" id="r_gac0ab236df742228e83c6b20ab3b52f67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gac0ab236df742228e83c6b20ab3b52f67">VI_DIAG_GRID</a>&#160;&#160;&#160;&quot;\\vi7D&quot;</td></tr>
+<tr class="separator:gac0ab236df742228e83c6b20ab3b52f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab43fef064a885e1f39c301fff72ab910" id="r_gab43fef064a885e1f39c301fff72ab910"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gab43fef064a885e1f39c301fff72ab910">VI_PACMAN_GRID</a>&#160;&#160;&#160;&quot;\\vi7E&quot;</td></tr>
+<tr class="separator:gab43fef064a885e1f39c301fff72ab910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a695ea3b257dbf43df0eb719d3fc711" id="r_ga9a695ea3b257dbf43df0eb719d3fc711"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga9a695ea3b257dbf43df0eb719d3fc711">VI_DARK_GRAY</a>&#160;&#160;&#160;&quot;\\vi7F&quot;</td></tr>
+<tr class="separator:ga9a695ea3b257dbf43df0eb719d3fc711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf295e005ca89039b04c1f1c16261271d" id="r_gaf295e005ca89039b04c1f1c16261271d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaf295e005ca89039b04c1f1c16261271d">VI_EMBROIDERY</a>&#160;&#160;&#160;&quot;\\vi80&quot;</td></tr>
+<tr class="separator:gaf295e005ca89039b04c1f1c16261271d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:gac8888c1dabdfca1ec9d3e1f8fa4ba371" id="r_gac8888c1dabdfca1ec9d3e1f8fa4ba371"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#gac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a> { <a class="el" href="group__bfont.html#ggac8888c1dabdfca1ec9d3e1f8fa4ba371a44a3d159579c3ee856ebac20cc16b0b4">BFONT_CODE_ISO8859_1</a> = 0
+, <a class="el" href="group__bfont.html#ggac8888c1dabdfca1ec9d3e1f8fa4ba371ab9deefcd4d273bb8515ea910e04deef7">BFONT_CODE_EUC</a> = 1
+, <a class="el" href="group__bfont.html#ggac8888c1dabdfca1ec9d3e1f8fa4ba371aa15c18aad7cffd0ce9d0abbd4d35cae4">BFONT_CODE_SJIS</a> = 2
+, <a class="el" href="group__bfont.html#ggac8888c1dabdfca1ec9d3e1f8fa4ba371a9669c9fe21008a6c6a7aa870f9fb9673">BFONT_CODE_RAW</a> = 3
+ }</td></tr>
+<tr class="separator:gac8888c1dabdfca1ec9d3e1f8fa4ba371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:gaeccdd5f0c34bcb51645903791a63a166" id="r_gaeccdd5f0c34bcb51645903791a63a166"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#gaeccdd5f0c34bcb51645903791a63a166">bfont_dc_icon_t</a> { <br />
+&#160;&#160;<a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a45710e07b4bcee1801421d686de47fc7">BFONT_ICON_CIRCLECOPYRIGHT</a> = 0x00
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a9136bbd71da7277e0754fc9b18a430da">BFONT_CIRCLER</a> = 0x01
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a45814e86f663bd95ad6d11a069a8b149">BFONT_ICON_TRADEMARK</a> = 0x02
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a86f6a9dedb4120e876eb8debc82c0973">BFONT_ICON_UPARROW</a> = 0x03
+, <br />
+&#160;&#160;<a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166aa40da2fc6a9084b281ce1b9a1f7876fb">BFONT_ICON_DOWNARROW</a> = 0x04
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166ab64189870c84d569b3fb72efc64c08b6">BFONT_ICON_LEFTARROW</a> = 0x05
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a0d2c2f82632a290c6b777f589dbb0841">BFONT_ICON_RIGHTARROW</a> = 0x06
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a3bbe11be6ef75dfbe5a5d0f6f94aa07d">BFONT_ICON_UPRIGHTARROW</a> = 0x07
+, <br />
+&#160;&#160;<a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a6ceba5bfc07faf223e6c4a6486353f5e">BFONT_ICON_DOWNRIGHTARROW</a> = 0x08
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a955cee072f8fd980a0657ef4a0572c1c">BFONT_ICON_DOWNLEFTARROW</a> = 0x09
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a586e1457c6e6a68336efb227e496eb81">BFONT_ICON_UPLEFTARROW</a> = 0x0A
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a1dbb188c769e0db0b9222dbf2f462777">BFONT_ICON_ABUTTON</a> = 0x0B
+, <br />
+&#160;&#160;<a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a7fdd036f37db939aa1c6dd676f36762c">BFONT_ICON_BBUTTON</a> = 0x0C
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a3a72e54c335928b33407b7f4fa3fe912">BFONT_ICON_CBUTTON</a> = 0x0D
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166af3b00b76297917739c9c17d12c4014b5">BFONT_ICON_DBUTTON</a> = 0x0E
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a2afaf5d5c5ce59e4ab57e3a0d540f1a7">BFONT_ICON_XBUTTON</a> = 0x0F
+, <br />
+&#160;&#160;<a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a5ebcf68c4f608e8e808d0bd5b409e931">BFONT_ICON_YBUTTON</a> = 0x10
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a58c0782d2bf1af474b292ee7f841791b">BFONT_ICON_ZBUTTON</a> = 0x11
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a30465dc76bfd0d8d521243f32e56cb85">BFONT_ICON_LTRIGGER</a> = 0x12
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166af10fa87377fd649324999e0a2c08e5ad">BFONT_ICON_RTRIGGER</a> = 0x13
+, <br />
+&#160;&#160;<a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a4974823bf3f8d48f29e963e7257eedce">BFONT_ICON_STARTBUTTON</a> = 0x14
+, <a class="el" href="group__bfont__indicies.html#ggaeccdd5f0c34bcb51645903791a63a166a2b1828ddc1233e32b10437e0d12d3b6c">BFONT_ICON_VMU</a> = 0x15
+<br />
+ }</td></tr>
+<tr class="memdesc:gaeccdd5f0c34bcb51645903791a63a166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builtin DC Icons.  <a href="group__bfont__indicies.html#gaeccdd5f0c34bcb51645903791a63a166">More...</a><br /></td></tr>
+<tr class="separator:gaeccdd5f0c34bcb51645903791a63a166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ga378ee090caa5326a4670400b3740d9f7" id="r_ga378ee090caa5326a4670400b3740d9f7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a> { <br />
 &#160;&#160;<a class="el" href="group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a00457306d77e07354f5a74c2b9546806">BFONT_ICON_INVALID_VMU</a> = 0x00
 , <a class="el" href="group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4389323300b995b27edac8d2edb5ade0">BFONT_ICON_HOURGLASS_ONE</a> = 0x01
@@ -403,81 +685,84 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga378ee090caa5326a4670400b3740d9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builtin VMU Icons.  <a href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">More...</a><br /></td></tr>
 <tr class="separator:ga378ee090caa5326a4670400b3740d9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8888c1dabdfca1ec9d3e1f8fa4ba371" id="r_ac8888c1dabdfca1ec9d3e1f8fa4ba371"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a> { <a class="el" href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371a44a3d159579c3ee856ebac20cc16b0b4">BFONT_CODE_ISO8859_1</a> = 0
-, <a class="el" href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371ab9deefcd4d273bb8515ea910e04deef7">BFONT_CODE_EUC</a> = 1
-, <a class="el" href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371aa15c18aad7cffd0ce9d0abbd4d35cae4">BFONT_CODE_SJIS</a> = 2
-, <a class="el" href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371a9669c9fe21008a6c6a7aa870f9fb9673">BFONT_CODE_RAW</a> = 3
- }</td></tr>
-<tr class="separator:ac8888c1dabdfca1ec9d3e1f8fa4ba371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a637f9a06db7b12859327bb283a6807cc" id="r_a637f9a06db7b12859327bb283a6807cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a637f9a06db7b12859327bb283a6807cc">bfont_set_encoding</a> (<a class="el" href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a> enc)</td></tr>
-<tr class="memdesc:a637f9a06db7b12859327bb283a6807cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font encoding.  <br /></td></tr>
-<tr class="separator:a637f9a06db7b12859327bb283a6807cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga637f9a06db7b12859327bb283a6807cc" id="r_ga637f9a06db7b12859327bb283a6807cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#ga637f9a06db7b12859327bb283a6807cc">bfont_set_encoding</a> (<a class="el" href="group__bfont.html#gac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a> enc)</td></tr>
+<tr class="memdesc:ga637f9a06db7b12859327bb283a6807cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font encoding.  <br /></td></tr>
+<tr class="separator:ga637f9a06db7b12859327bb283a6807cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d8ce42c4b60d3ad27e0183f6c1fc954" id="r_ga0d8ce42c4b60d3ad27e0183f6c1fc954"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html#ga0d8ce42c4b60d3ad27e0183f6c1fc954">bfont_draw_ex</a> (void *buffer, uint32_t bufwidth, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, uint32_t c, bool wide, bool iskana)</td></tr>
+<tr class="memdesc:ga0d8ce42c4b60d3ad27e0183f6c1fc954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a single character of any sort to a buffer.  <br /></td></tr>
+<tr class="separator:ga0d8ce42c4b60d3ad27e0183f6c1fc954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54ecff1572ed1881f8aa28d674defbbc" id="r_ga54ecff1572ed1881f8aa28d674defbbc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html#ga54ecff1572ed1881f8aa28d674defbbc">bfont_draw</a> (void *buffer, uint32_t bufwidth, bool opaque, uint32_t c)</td></tr>
+<tr class="memdesc:ga54ecff1572ed1881f8aa28d674defbbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a single character to a buffer.  <br /></td></tr>
+<tr class="separator:ga54ecff1572ed1881f8aa28d674defbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e0e6cad58cd031e2e48c11dcb671344" id="r_ga0e0e6cad58cd031e2e48c11dcb671344"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html#ga0e0e6cad58cd031e2e48c11dcb671344">bfont_draw_thin</a> (void *buffer, uint32_t bufwidth, bool opaque, uint32_t c, bool iskana)</td></tr>
+<tr class="memdesc:ga0e0e6cad58cd031e2e48c11dcb671344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a single thin character to a buffer.  <br /></td></tr>
+<tr class="separator:ga0e0e6cad58cd031e2e48c11dcb671344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf92a40589a97d83b767f46106ca742c" id="r_gaaf92a40589a97d83b767f46106ca742c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html#gaaf92a40589a97d83b767f46106ca742c">bfont_draw_wide</a> (void *buffer, uint32_t bufwidth, bool opaque, uint32_t c)</td></tr>
+<tr class="memdesc:gaaf92a40589a97d83b767f46106ca742c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a single wide character to a buffer.  <br /></td></tr>
+<tr class="separator:gaaf92a40589a97d83b767f46106ca742c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabff0f1604576da3ed19858112f6589a2" id="r_gabff0f1604576da3ed19858112f6589a2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html#gabff0f1604576da3ed19858112f6589a2">bfont_draw_vmu_icon_ex</a> (void *buffer, uint32_t bufwidth, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, <a class="el" href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a> icon)</td></tr>
+<tr class="memdesc:gabff0f1604576da3ed19858112f6589a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a VMU icon to the buffer.  <br /></td></tr>
+<tr class="separator:gabff0f1604576da3ed19858112f6589a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7983b280ada5d3a1f633d93d52d3ac0" id="r_gae7983b280ada5d3a1f633d93d52d3ac0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html#gae7983b280ada5d3a1f633d93d52d3ac0">bfont_draw_vmu_icon</a> (void *buffer, uint32_t bufwidth, bool opaque, <a class="el" href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a> icon)</td></tr>
+<tr class="memdesc:gae7983b280ada5d3a1f633d93d52d3ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a VMU icon to a buffer.  <br /></td></tr>
+<tr class="separator:gae7983b280ada5d3a1f633d93d52d3ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7e1cbc4787b9e255007c49322b3aa54" id="r_gae7e1cbc4787b9e255007c49322b3aa54"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html#gae7e1cbc4787b9e255007c49322b3aa54">bfont_draw_dc_icon_ex</a> (void *buffer, uint32_t bufwidth, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, <a class="el" href="group__bfont__indicies.html#gaeccdd5f0c34bcb51645903791a63a166">bfont_dc_icon_t</a> icon)</td></tr>
+<tr class="memdesc:gae7e1cbc4787b9e255007c49322b3aa54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a DC icon to the buffer.  <br /></td></tr>
+<tr class="separator:gae7e1cbc4787b9e255007c49322b3aa54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87b0a13688d03fe668c157231262e551" id="r_ga87b0a13688d03fe668c157231262e551"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__char.html#ga87b0a13688d03fe668c157231262e551">bfont_draw_dc_icon</a> (void *buffer, uint32_t bufwidth, bool opaque, <a class="el" href="group__bfont__indicies.html#gaeccdd5f0c34bcb51645903791a63a166">bfont_dc_icon_t</a> icon)</td></tr>
+<tr class="memdesc:ga87b0a13688d03fe668c157231262e551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a DC icon to a buffer.  <br /></td></tr>
+<tr class="separator:ga87b0a13688d03fe668c157231262e551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3026ea42b7cef078a48e432a171c162d" id="r_ga3026ea42b7cef078a48e432a171c162d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga3026ea42b7cef078a48e432a171c162d">bfont_draw_str_ex</a> (void *buffer, uint32_t width, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, const char *str)</td></tr>
+<tr class="memdesc:ga3026ea42b7cef078a48e432a171c162d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full string of any sort to any sort of buffer.  <br /></td></tr>
+<tr class="separator:ga3026ea42b7cef078a48e432a171c162d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1470a49921db3bcd3bc49bc1ab01decd" id="r_ga1470a49921db3bcd3bc49bc1ab01decd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga1470a49921db3bcd3bc49bc1ab01decd">bfont_draw_str_ex_fmt</a> (void *buffer, uint32_t width, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, const char *fmt,...) <a class="el" href="group__system__macros.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a>(7</td></tr>
+<tr class="memdesc:ga1470a49921db3bcd3bc49bc1ab01decd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full formatted string of any sort to any sort of buffer.  <br /></td></tr>
+<tr class="separator:ga1470a49921db3bcd3bc49bc1ab01decd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7cfb14fbc17bedd6d13017caed89e16" id="r_gaf7cfb14fbc17bedd6d13017caed89e16"><td class="memItemLeft" align="right" valign="top">void void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaf7cfb14fbc17bedd6d13017caed89e16">bfont_draw_str_ex_vfmt</a> (void *buffer, uint32_t width, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, const char *fmt, va_list *var_args)</td></tr>
+<tr class="memdesc:gaf7cfb14fbc17bedd6d13017caed89e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw formatted string of any sort to buffer (with va_args).  <br /></td></tr>
+<tr class="separator:gaf7cfb14fbc17bedd6d13017caed89e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75e3be54fbbc08f8e7eeb4422d72f35d" id="r_ga75e3be54fbbc08f8e7eeb4422d72f35d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga75e3be54fbbc08f8e7eeb4422d72f35d">bfont_draw_str</a> (void *buffer, uint32_t width, bool opaque, const char *str)</td></tr>
+<tr class="memdesc:ga75e3be54fbbc08f8e7eeb4422d72f35d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full string to a buffer.  <br /></td></tr>
+<tr class="separator:ga75e3be54fbbc08f8e7eeb4422d72f35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa779bd92ae79d38ac4c145faa28b9f6b" id="r_gaa779bd92ae79d38ac4c145faa28b9f6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa779bd92ae79d38ac4c145faa28b9f6b">bfont_draw_str_fmt</a> (void *buffer, uint32_t width, bool opaque, const char *fmt,...) <a class="el" href="group__system__macros.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a>(4</td></tr>
+<tr class="memdesc:gaa779bd92ae79d38ac4c145faa28b9f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full formatted string to a buffer.  <br /></td></tr>
+<tr class="separator:gaa779bd92ae79d38ac4c145faa28b9f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2fd8380b268ffa1351a3b0241ad4e56" id="r_gaa2fd8380b268ffa1351a3b0241ad4e56"><td class="memItemLeft" align="right" valign="top">void void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#gaa2fd8380b268ffa1351a3b0241ad4e56">bfont_draw_str_vram_vfmt</a> (uint32_t x, uint32_t y, uint32_t fg, uint32_t bg, bool opaque, const char *fmt, va_list *var_args)</td></tr>
+<tr class="memdesc:gaa2fd8380b268ffa1351a3b0241ad4e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full formatted string to video ram (with va_args).  <br /></td></tr>
+<tr class="separator:gaa2fd8380b268ffa1351a3b0241ad4e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga053f4ccd43831044c2ced8fbf1ffb358" id="r_ga053f4ccd43831044c2ced8fbf1ffb358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont__string.html#ga053f4ccd43831044c2ced8fbf1ffb358">bfont_draw_str_vram_fmt</a> (uint32_t x, uint32_t y, bool opaque, const char *fmt,...) <a class="el" href="group__system__macros.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a>(4</td></tr>
+<tr class="memdesc:ga053f4ccd43831044c2ced8fbf1ffb358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full string to video ram.  <br /></td></tr>
+<tr class="separator:ga053f4ccd43831044c2ced8fbf1ffb358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Coloring</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Methods for modifying the text color. </p>
 </div></td></tr>
-<tr class="memitem:ab7f8f69cb7a23842cf64e928e71c3d85" id="r_ab7f8f69cb7a23842cf64e928e71c3d85"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7f8f69cb7a23842cf64e928e71c3d85">bfont_set_foreground_color</a> (uint32_t c)</td></tr>
-<tr class="memdesc:ab7f8f69cb7a23842cf64e928e71c3d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font foreground color.  <br /></td></tr>
-<tr class="separator:ab7f8f69cb7a23842cf64e928e71c3d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a837a12a7361a501aebdaf0aed32e152a" id="r_a837a12a7361a501aebdaf0aed32e152a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a837a12a7361a501aebdaf0aed32e152a">bfont_set_background_color</a> (uint32_t c)</td></tr>
-<tr class="memdesc:a837a12a7361a501aebdaf0aed32e152a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font background color.  <br /></td></tr>
-<tr class="separator:a837a12a7361a501aebdaf0aed32e152a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7f8f69cb7a23842cf64e928e71c3d85" id="r_gab7f8f69cb7a23842cf64e928e71c3d85"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#gab7f8f69cb7a23842cf64e928e71c3d85">bfont_set_foreground_color</a> (uint32_t c)</td></tr>
+<tr class="memdesc:gab7f8f69cb7a23842cf64e928e71c3d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font foreground color.  <br /></td></tr>
+<tr class="separator:gab7f8f69cb7a23842cf64e928e71c3d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga837a12a7361a501aebdaf0aed32e152a" id="r_ga837a12a7361a501aebdaf0aed32e152a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#ga837a12a7361a501aebdaf0aed32e152a">bfont_set_background_color</a> (uint32_t c)</td></tr>
+<tr class="memdesc:ga837a12a7361a501aebdaf0aed32e152a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font background color.  <br /></td></tr>
+<tr class="separator:ga837a12a7361a501aebdaf0aed32e152a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Character Lookups</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Methods for finding various font characters and icons. </p>
 </div></td></tr>
-<tr class="memitem:a24a89a7fd430ac4c474a1e98a79fe6cd" id="r_a24a89a7fd430ac4c474a1e98a79fe6cd"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24a89a7fd430ac4c474a1e98a79fe6cd">bfont_find_char</a> (uint32_t ch)</td></tr>
-<tr class="memdesc:a24a89a7fd430ac4c474a1e98a79fe6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an ISO-8859-1 character in the font.  <br /></td></tr>
-<tr class="separator:a24a89a7fd430ac4c474a1e98a79fe6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7e4f3fbee992d17f935d6ebf09cede1" id="r_af7e4f3fbee992d17f935d6ebf09cede1"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7e4f3fbee992d17f935d6ebf09cede1">bfont_find_char_jp</a> (uint32_t ch)</td></tr>
-<tr class="memdesc:af7e4f3fbee992d17f935d6ebf09cede1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an full-width Japanese character in the font.  <br /></td></tr>
-<tr class="separator:af7e4f3fbee992d17f935d6ebf09cede1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cd9dbef9dc3a3150ce957b6584f21ce" id="r_a3cd9dbef9dc3a3150ce957b6584f21ce"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cd9dbef9dc3a3150ce957b6584f21ce">bfont_find_char_jp_half</a> (uint32_t ch)</td></tr>
-<tr class="memdesc:a3cd9dbef9dc3a3150ce957b6584f21ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an half-width Japanese character in the font.  <br /></td></tr>
-<tr class="separator:a3cd9dbef9dc3a3150ce957b6584f21ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8528edf188990e8e4f3d72b078410699" id="r_a8528edf188990e8e4f3d72b078410699"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8528edf188990e8e4f3d72b078410699">bfont_find_icon</a> (<a class="el" href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a> icon)</td></tr>
-<tr class="memdesc:a8528edf188990e8e4f3d72b078410699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a VMU icon.  <br /></td></tr>
-<tr class="separator:a8528edf188990e8e4f3d72b078410699"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Character Drawing</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Methods for rendering characters. </p>
-</div></td></tr>
-<tr class="memitem:a0d8ce42c4b60d3ad27e0183f6c1fc954" id="r_a0d8ce42c4b60d3ad27e0183f6c1fc954"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d8ce42c4b60d3ad27e0183f6c1fc954">bfont_draw_ex</a> (void *buffer, uint32_t bufwidth, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, uint32_t c, bool wide, bool iskana)</td></tr>
-<tr class="memdesc:a0d8ce42c4b60d3ad27e0183f6c1fc954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a single character of any sort to the buffer.  <br /></td></tr>
-<tr class="separator:a0d8ce42c4b60d3ad27e0183f6c1fc954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54ecff1572ed1881f8aa28d674defbbc" id="r_a54ecff1572ed1881f8aa28d674defbbc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54ecff1572ed1881f8aa28d674defbbc">bfont_draw</a> (void *buffer, uint32_t bufwidth, bool opaque, uint32_t c)</td></tr>
-<tr class="memdesc:a54ecff1572ed1881f8aa28d674defbbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a single character to a buffer.  <br /></td></tr>
-<tr class="separator:a54ecff1572ed1881f8aa28d674defbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e0e6cad58cd031e2e48c11dcb671344" id="r_a0e0e6cad58cd031e2e48c11dcb671344"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e0e6cad58cd031e2e48c11dcb671344">bfont_draw_thin</a> (void *buffer, uint32_t bufwidth, bool opaque, uint32_t c, bool iskana)</td></tr>
-<tr class="memdesc:a0e0e6cad58cd031e2e48c11dcb671344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a single thin character to a buffer.  <br /></td></tr>
-<tr class="separator:a0e0e6cad58cd031e2e48c11dcb671344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf92a40589a97d83b767f46106ca742c" id="r_aaf92a40589a97d83b767f46106ca742c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf92a40589a97d83b767f46106ca742c">bfont_draw_wide</a> (void *buffer, uint32_t bufwidth, bool opaque, uint32_t c)</td></tr>
-<tr class="memdesc:aaf92a40589a97d83b767f46106ca742c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a single wide character to a buffer.  <br /></td></tr>
-<tr class="separator:aaf92a40589a97d83b767f46106ca742c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">String Drawing</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Methods for rendering formatted text. </p>
-</div></td></tr>
-<tr class="memitem:a497d98909ecd3dd4e834adf293e369c2" id="r_a497d98909ecd3dd4e834adf293e369c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a497d98909ecd3dd4e834adf293e369c2">bfont_draw_str_ex</a> (void *b, uint32_t width, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, const char *str)</td></tr>
-<tr class="memdesc:a497d98909ecd3dd4e834adf293e369c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full string of any sort to any sort of buffer.  <br /></td></tr>
-<tr class="separator:a497d98909ecd3dd4e834adf293e369c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a009180cafd23538344ca7f3df9b89890" id="r_a009180cafd23538344ca7f3df9b89890"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a009180cafd23538344ca7f3df9b89890">bfont_draw_str_ex_fmt</a> (void *b, uint32_t width, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, const char *fmt,...) <a class="el" href="group__system__macros.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a>(7</td></tr>
-<tr class="memdesc:a009180cafd23538344ca7f3df9b89890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full formatted string of any sort to any sort of buffer.  <br /></td></tr>
-<tr class="separator:a009180cafd23538344ca7f3df9b89890"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69e0bc46841832cec3bdf25ec2c1e0a3" id="r_a69e0bc46841832cec3bdf25ec2c1e0a3"><td class="memItemLeft" align="right" valign="top">void void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69e0bc46841832cec3bdf25ec2c1e0a3">bfont_draw_str_ex_vfmt</a> (void *b, uint32_t width, uint32_t fg, uint32_t bg, uint8_t bpp, bool opaque, const char *fmt, va_list *var_args)</td></tr>
-<tr class="memdesc:a69e0bc46841832cec3bdf25ec2c1e0a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw formatted string of any sort to buffer (with va_args).  <br /></td></tr>
-<tr class="separator:a69e0bc46841832cec3bdf25ec2c1e0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9187c1a7d0302b17efc03d1ce866aba2" id="r_a9187c1a7d0302b17efc03d1ce866aba2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9187c1a7d0302b17efc03d1ce866aba2">bfont_draw_str</a> (void *b, uint32_t width, bool opaque, const char *str)</td></tr>
-<tr class="memdesc:a9187c1a7d0302b17efc03d1ce866aba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full string to a buffer.  <br /></td></tr>
-<tr class="separator:a9187c1a7d0302b17efc03d1ce866aba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7ade5be0dd673ce87a2a8531de4a80b" id="r_ae7ade5be0dd673ce87a2a8531de4a80b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7ade5be0dd673ce87a2a8531de4a80b">bfont_draw_str_fmt</a> (void *b, uint32_t width, bool opaque, const char *fmt,...) <a class="el" href="group__system__macros.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a>(4</td></tr>
-<tr class="memdesc:ae7ade5be0dd673ce87a2a8531de4a80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full formatted string to a buffer.  <br /></td></tr>
-<tr class="separator:ae7ade5be0dd673ce87a2a8531de4a80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2fd8380b268ffa1351a3b0241ad4e56" id="r_aa2fd8380b268ffa1351a3b0241ad4e56"><td class="memItemLeft" align="right" valign="top">void void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2fd8380b268ffa1351a3b0241ad4e56">bfont_draw_str_vram_vfmt</a> (uint32_t x, uint32_t y, uint32_t fg, uint32_t bg, bool opaque, const char *fmt, va_list *var_args)</td></tr>
-<tr class="memdesc:aa2fd8380b268ffa1351a3b0241ad4e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full formatted string to video ram (with va_args).  <br /></td></tr>
-<tr class="separator:aa2fd8380b268ffa1351a3b0241ad4e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a053f4ccd43831044c2ced8fbf1ffb358" id="r_a053f4ccd43831044c2ced8fbf1ffb358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a053f4ccd43831044c2ced8fbf1ffb358">bfont_draw_str_vram_fmt</a> (uint32_t x, uint32_t y, bool opaque, const char *fmt,...) <a class="el" href="group__system__macros.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a>(4</td></tr>
-<tr class="memdesc:a053f4ccd43831044c2ced8fbf1ffb358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a full string to video ram.  <br /></td></tr>
-<tr class="separator:a053f4ccd43831044c2ced8fbf1ffb358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24a89a7fd430ac4c474a1e98a79fe6cd" id="r_ga24a89a7fd430ac4c474a1e98a79fe6cd"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#ga24a89a7fd430ac4c474a1e98a79fe6cd">bfont_find_char</a> (uint32_t ch)</td></tr>
+<tr class="memdesc:ga24a89a7fd430ac4c474a1e98a79fe6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an ISO-8859-1 character in the font.  <br /></td></tr>
+<tr class="separator:ga24a89a7fd430ac4c474a1e98a79fe6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7e4f3fbee992d17f935d6ebf09cede1" id="r_gaf7e4f3fbee992d17f935d6ebf09cede1"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#gaf7e4f3fbee992d17f935d6ebf09cede1">bfont_find_char_jp</a> (uint32_t ch)</td></tr>
+<tr class="memdesc:gaf7e4f3fbee992d17f935d6ebf09cede1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an full-width Japanese character in the font.  <br /></td></tr>
+<tr class="separator:gaf7e4f3fbee992d17f935d6ebf09cede1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cd9dbef9dc3a3150ce957b6584f21ce" id="r_ga3cd9dbef9dc3a3150ce957b6584f21ce"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#ga3cd9dbef9dc3a3150ce957b6584f21ce">bfont_find_char_jp_half</a> (uint32_t ch)</td></tr>
+<tr class="memdesc:ga3cd9dbef9dc3a3150ce957b6584f21ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an half-width Japanese character in the font.  <br /></td></tr>
+<tr class="separator:ga3cd9dbef9dc3a3150ce957b6584f21ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8528edf188990e8e4f3d72b078410699" id="r_ga8528edf188990e8e4f3d72b078410699"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#ga8528edf188990e8e4f3d72b078410699">bfont_find_icon</a> (<a class="el" href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a> icon)</td></tr>
+<tr class="memdesc:ga8528edf188990e8e4f3d72b078410699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a VMU icon.  <br /></td></tr>
+<tr class="separator:ga8528edf188990e8e4f3d72b078410699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga59a7b75b2bd4128fe1c0e0a99edbffa1" id="r_ga59a7b75b2bd4128fe1c0e0a99edbffa1"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bfont.html#ga59a7b75b2bd4128fe1c0e0a99edbffa1">bfont_find_dc_icon</a> (<a class="el" href="group__bfont__indicies.html#gaeccdd5f0c34bcb51645903791a63a166">bfont_dc_icon_t</a> icon)</td></tr>
+<tr class="memdesc:ga59a7b75b2bd4128fe1c0e0a99edbffa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a DC icon.  <br /></td></tr>
+<tr class="separator:ga59a7b75b2bd4128fe1c0e0a99edbffa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>BIOS font drawing functions. </p>
@@ -493,838 +778,7 @@ Falco Girgis</dd></dl>
 <li>More user-friendly way to fetch/print DC-specific icons. </li>
 </ul>
 </dd></dl>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ac8888c1dabdfca1ec9d3e1f8fa4ba371" name="ac8888c1dabdfca1ec9d3e1f8fa4ba371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371">&#9670;&#160;</a></span>bfont_code_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac8888c1dabdfca1ec9d3e1f8fa4ba371a44a3d159579c3ee856ebac20cc16b0b4" name="ac8888c1dabdfca1ec9d3e1f8fa4ba371a44a3d159579c3ee856ebac20cc16b0b4"></a>BFONT_CODE_ISO8859_1&#160;</td><td class="fielddoc"><p>ISO-8859-1 (western) charset. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ac8888c1dabdfca1ec9d3e1f8fa4ba371ab9deefcd4d273bb8515ea910e04deef7" name="ac8888c1dabdfca1ec9d3e1f8fa4ba371ab9deefcd4d273bb8515ea910e04deef7"></a>BFONT_CODE_EUC&#160;</td><td class="fielddoc"><p>EUC-JP charset. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ac8888c1dabdfca1ec9d3e1f8fa4ba371aa15c18aad7cffd0ce9d0abbd4d35cae4" name="ac8888c1dabdfca1ec9d3e1f8fa4ba371aa15c18aad7cffd0ce9d0abbd4d35cae4"></a>BFONT_CODE_SJIS&#160;</td><td class="fielddoc"><p>Shift-JIS charset. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ac8888c1dabdfca1ec9d3e1f8fa4ba371a9669c9fe21008a6c6a7aa870f9fb9673" name="ac8888c1dabdfca1ec9d3e1f8fa4ba371a9669c9fe21008a6c6a7aa870f9fb9673"></a>BFONT_CODE_RAW&#160;</td><td class="fielddoc"><p>Raw indexing to the BFONT. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a54ecff1572ed1881f8aa28d674defbbc" name="a54ecff1572ed1881f8aa28d674defbbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54ecff1572ed1881f8aa28d674defbbc">&#9670;&#160;</a></span>bfont_draw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t bfont_draw </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bufwidth</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a single character to a buffer. </p>
-<p>This function draws a single character in the set encoding to the given buffer. Calling this is equivalent to calling <a class="el" href="#a0e0e6cad58cd031e2e48c11dcb671344" title="Draw a single thin character to a buffer.">bfont_draw_thin()</a> with 0 for the final parameter.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>The buffer to draw to (at least 12 x 24 pixels) </td></tr>
-    <tr><td class="paramname">bufwidth</td><td>The width of the buffer in pixels </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite blank areas with black, otherwise do not change them from what they are </td></tr>
-    <tr><td class="paramname">c</td><td>The character to draw </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Amount of width covered in bytes. </dd></dl>
-
-</div>
-</div>
-<a id="a0d8ce42c4b60d3ad27e0183f6c1fc954" name="a0d8ce42c4b60d3ad27e0183f6c1fc954"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d8ce42c4b60d3ad27e0183f6c1fc954">&#9670;&#160;</a></span>bfont_draw_ex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t bfont_draw_ex </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bufwidth</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>fg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>bpp</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>wide</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>iskana</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a single character of any sort to the buffer. </p>
-<p>This function draws a single character in the set encoding to the given buffer. This function sits under draw, draw_thin, and draw_wide, while exposing the colors and bitdepths desired. This will allow the writing of bfont characters to paletted textures.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>The buffer to draw to. </td></tr>
-    <tr><td class="paramname">bufwidth</td><td>The width of the buffer in pixels. </td></tr>
-    <tr><td class="paramname">fg</td><td>The foreground color to use. </td></tr>
-    <tr><td class="paramname">bg</td><td>The background color to use. </td></tr>
-    <tr><td class="paramname">bpp</td><td>The number of bits per pixel in the buffer. </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite background areas with black, otherwise do not change them from what they are. </td></tr>
-    <tr><td class="paramname">c</td><td>The character to draw. </td></tr>
-    <tr><td class="paramname">wide</td><td>Draw a wide character. </td></tr>
-    <tr><td class="paramname">iskana</td><td>Draw a half-width kana character. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Amount of width covered in bytes. </dd></dl>
-
-</div>
-</div>
-<a id="a9187c1a7d0302b17efc03d1ce866aba2" name="a9187c1a7d0302b17efc03d1ce866aba2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9187c1a7d0302b17efc03d1ce866aba2">&#9670;&#160;</a></span>bfont_draw_str()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void bfont_draw_str </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a full string to a buffer. </p>
-<p>This function draws a NUL-terminated string in the set encoding to the given buffer. This will automatically handle mixed half and full-width characters if the encoding is set to one of the Japanese encodings. Draws pre-set 16-bit colors.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">b</td><td>The buffer to draw to. </td></tr>
-    <tr><td class="paramname">width</td><td>The width of the buffer in pixels. </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite blank areas with bfont_bgcolor, otherwise do not change them from what they are. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to draw. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a497d98909ecd3dd4e834adf293e369c2" name="a497d98909ecd3dd4e834adf293e369c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a497d98909ecd3dd4e834adf293e369c2">&#9670;&#160;</a></span>bfont_draw_str_ex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void bfont_draw_str_ex </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>fg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>bpp</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a full string of any sort to any sort of buffer. </p>
-<p>This function draws a NUL-terminated string in the set encoding to the given buffer. This will automatically handle mixed half and full-width characters if the encoding is set to one of the Japanese encodings. Colors and bitdepth can be set.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">b</td><td>The buffer to draw to. </td></tr>
-    <tr><td class="paramname">width</td><td>The width of the buffer in pixels. </td></tr>
-    <tr><td class="paramname">fg</td><td>The foreground color to use. </td></tr>
-    <tr><td class="paramname">bg</td><td>The background color to use. </td></tr>
-    <tr><td class="paramname">bpp</td><td>The number of bits per pixel in the buffer. </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite background areas with black, otherwise do not change them from what they are. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to draw.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a009180cafd23538344ca7f3df9b89890" title="Draw a full formatted string of any sort to any sort of buffer.">bfont_draw_str_ex_fmt()</a>, bfont_draw_str_ex_va() </dd></dl>
-
-</div>
-</div>
-<a id="a009180cafd23538344ca7f3df9b89890" name="a009180cafd23538344ca7f3df9b89890"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a009180cafd23538344ca7f3df9b89890">&#9670;&#160;</a></span>bfont_draw_str_ex_fmt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void bfont_draw_str_ex_fmt </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>fg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>bpp</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a full formatted string of any sort to any sort of buffer. </p>
-<p>This function is equivalent to <a class="el" href="#a497d98909ecd3dd4e834adf293e369c2" title="Draw a full string of any sort to any sort of buffer.">bfont_draw_str_ex()</a>, except that the string is formatted as with the <code>printf()</code> function.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">b</td><td>The buffer to draw to. </td></tr>
-    <tr><td class="paramname">width</td><td>The width of the buffer in pixels. </td></tr>
-    <tr><td class="paramname">fg</td><td>The foreground color to use. </td></tr>
-    <tr><td class="paramname">bg</td><td>The background color to use. </td></tr>
-    <tr><td class="paramname">bpp</td><td>The number of bits per pixel in the buffer. </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite background areas with black, otherwise do not change them from what they are. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The printf-style format string to draw. </td></tr>
-    <tr><td class="paramname">...</td><td>Additional printf-style variadic arguments</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a69e0bc46841832cec3bdf25ec2c1e0a3" title="Draw formatted string of any sort to buffer (with va_args).">bfont_draw_str_ex_vfmt()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a69e0bc46841832cec3bdf25ec2c1e0a3" name="a69e0bc46841832cec3bdf25ec2c1e0a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69e0bc46841832cec3bdf25ec2c1e0a3">&#9670;&#160;</a></span>bfont_draw_str_ex_vfmt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void void bfont_draw_str_ex_vfmt </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>fg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>bpp</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">va_list *</td>          <td class="paramname"><span class="paramname"><em>var_args</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw formatted string of any sort to buffer (with va_args). </p>
-<p>This function is equivalent to <a class="el" href="#a009180cafd23538344ca7f3df9b89890" title="Draw a full formatted string of any sort to any sort of buffer.">bfont_draw_str_ex_fmt()</a>, except that the variadic argument list is passed via a pointer to a va_list.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">b</td><td>The buffer to draw to. </td></tr>
-    <tr><td class="paramname">width</td><td>The width of the buffer in pixels. </td></tr>
-    <tr><td class="paramname">fg</td><td>The foreground color to use. </td></tr>
-    <tr><td class="paramname">bg</td><td>The background color to use. </td></tr>
-    <tr><td class="paramname">bpp</td><td>The number of bits per pixel in the buffer. </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite background areas with black, otherwise do not change them from what they are. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The printf-style format string to draw. </td></tr>
-    <tr><td class="paramname">var_args</td><td>Additional printf-style variadic arguments</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a009180cafd23538344ca7f3df9b89890" title="Draw a full formatted string of any sort to any sort of buffer.">bfont_draw_str_ex_fmt()</a> </dd></dl>
-
-</div>
-</div>
-<a id="ae7ade5be0dd673ce87a2a8531de4a80b" name="ae7ade5be0dd673ce87a2a8531de4a80b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7ade5be0dd673ce87a2a8531de4a80b">&#9670;&#160;</a></span>bfont_draw_str_fmt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void bfont_draw_str_fmt </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a full formatted string to a buffer. </p>
-<p>This function is equvalent to <a class="el" href="#a9187c1a7d0302b17efc03d1ce866aba2" title="Draw a full string to a buffer.">bfont_draw_str()</a>, except that the string is formatted as with the <code>printf()</code> function.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">b</td><td>The buffer to draw to. </td></tr>
-    <tr><td class="paramname">width</td><td>The width of the buffer in pixels. </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite blank areas with bfont_bgcolor, otherwise do not change them from what they are. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The printf-style format string to draw. </td></tr>
-    <tr><td class="paramname">...</td><td>Additional printf-style variadic arguments. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a053f4ccd43831044c2ced8fbf1ffb358" name="a053f4ccd43831044c2ced8fbf1ffb358"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a053f4ccd43831044c2ced8fbf1ffb358">&#9670;&#160;</a></span>bfont_draw_str_vram_fmt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void bfont_draw_str_vram_fmt </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a full string to video ram. </p>
-<p>This function draws a NUL-terminated string in the set encoding to video ram. This will automatically handle mixed half and full-width characters if the encoding is set to one of the Japanese encodings. Draws pre-set 16-bit colors.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>The x position to start drawing at. </td></tr>
-    <tr><td class="paramname">y</td><td>The y position to start drawing at. </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite blank areas with bfont_bgcolor, otherwise do not change them from what they are. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The printf-style format string to draw. </td></tr>
-    <tr><td class="paramname">...</td><td>Additional printf-style variadic arguments. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa2fd8380b268ffa1351a3b0241ad4e56" name="aa2fd8380b268ffa1351a3b0241ad4e56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2fd8380b268ffa1351a3b0241ad4e56">&#9670;&#160;</a></span>bfont_draw_str_vram_vfmt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void void bfont_draw_str_vram_vfmt </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>fg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">va_list *</td>          <td class="paramname"><span class="paramname"><em>var_args</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a full formatted string to video ram (with va_args). </p>
-<p>This function is equivalent to <a class="el" href="#a69e0bc46841832cec3bdf25ec2c1e0a3" title="Draw formatted string of any sort to buffer (with va_args).">bfont_draw_str_ex_vfmt()</a>, except that the variadic argument list is passed via a pointer to a va_list.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>The x position to start drawing at. </td></tr>
-    <tr><td class="paramname">y</td><td>The y position to start drawing at. </td></tr>
-    <tr><td class="paramname">fg</td><td>The foreground color to use. </td></tr>
-    <tr><td class="paramname">bg</td><td>The background color to use. </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite background areas with black, otherwise do not change them from what they are. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The printf-style format string to draw. </td></tr>
-    <tr><td class="paramname">var_args</td><td>Additional printf-style variadic arguments</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a497d98909ecd3dd4e834adf293e369c2" title="Draw a full string of any sort to any sort of buffer.">bfont_draw_str_ex()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a0e0e6cad58cd031e2e48c11dcb671344" name="a0e0e6cad58cd031e2e48c11dcb671344"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e0e6cad58cd031e2e48c11dcb671344">&#9670;&#160;</a></span>bfont_draw_thin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t bfont_draw_thin </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bufwidth</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>iskana</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a single thin character to a buffer. </p>
-<p>This function draws a single character in the set encoding to the given buffer. This only works with ISO-8859-1 characters and half-width kana.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>The buffer to draw to (at least 12 x 24 pixels) </td></tr>
-    <tr><td class="paramname">bufwidth</td><td>The width of the buffer in pixels </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite blank areas with black, otherwise do not change them from what they are </td></tr>
-    <tr><td class="paramname">c</td><td>The character to draw </td></tr>
-    <tr><td class="paramname">iskana</td><td>Set to 1 if the character is a kana, 0 if ISO-8859-1 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Amount of width covered in bytes. </dd></dl>
-
-</div>
-</div>
-<a id="aaf92a40589a97d83b767f46106ca742c" name="aaf92a40589a97d83b767f46106ca742c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf92a40589a97d83b767f46106ca742c">&#9670;&#160;</a></span>bfont_draw_wide()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t bfont_draw_wide </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bufwidth</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a single wide character to a buffer. </p>
-<p>This function draws a single character in the set encoding to the given buffer. This only works with full-width kana and kanji.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>The buffer to draw to (at least 24 x 24 pixels) </td></tr>
-    <tr><td class="paramname">bufwidth</td><td>The width of the buffer in pixels </td></tr>
-    <tr><td class="paramname">opaque</td><td>If true, overwrite blank areas with black, otherwise do not change them from what they are </td></tr>
-    <tr><td class="paramname">c</td><td>The character to draw </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Amount of width covered in bytes. </dd></dl>
-
-</div>
-</div>
-<a id="a24a89a7fd430ac4c474a1e98a79fe6cd" name="a24a89a7fd430ac4c474a1e98a79fe6cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24a89a7fd430ac4c474a1e98a79fe6cd">&#9670;&#160;</a></span>bfont_find_char()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t * bfont_find_char </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ch</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Find an ISO-8859-1 character in the font. </p>
-<p>This function retrieves a pointer to the font data for the specified character in the font, if its available. Generally, you will not have to use this function, use one of the bfont_draw_* functions instead.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ch</td><td>The character to look up </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw character data </dd></dl>
-
-</div>
-</div>
-<a id="af7e4f3fbee992d17f935d6ebf09cede1" name="af7e4f3fbee992d17f935d6ebf09cede1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7e4f3fbee992d17f935d6ebf09cede1">&#9670;&#160;</a></span>bfont_find_char_jp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t * bfont_find_char_jp </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ch</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Find an full-width Japanese character in the font. </p>
-<p>This function retrieves a pointer to the font data for the specified character in the font, if its available. Generally, you will not have to use this function, use one of the bfont_draw_* functions instead.</p>
-<p>This function deals with full-width kana and kanji.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ch</td><td>The character to look up </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw character data </dd></dl>
-
-</div>
-</div>
-<a id="a3cd9dbef9dc3a3150ce957b6584f21ce" name="a3cd9dbef9dc3a3150ce957b6584f21ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cd9dbef9dc3a3150ce957b6584f21ce">&#9670;&#160;</a></span>bfont_find_char_jp_half()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t * bfont_find_char_jp_half </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ch</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Find an half-width Japanese character in the font. </p>
-<p>This function retrieves a pointer to the font data for the specified character in the font, if its available. Generally, you will not have to use this function, use one of the bfont_draw_* functions instead.</p>
-<p>This function deals with half-width kana only.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ch</td><td>The character to look up </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw character data </dd></dl>
-
-</div>
-</div>
-<a id="a8528edf188990e8e4f3d72b078410699" name="a8528edf188990e8e4f3d72b078410699"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8528edf188990e8e4f3d72b078410699">&#9670;&#160;</a></span>bfont_find_icon()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t * bfont_find_icon </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__bfont__indicies.html#ga378ee090caa5326a4670400b3740d9f7">bfont_vmu_icon_t</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Find a VMU icon. </p>
-<p>This function retrieves a pointer to the icon data for the specified VMU icon in the bios, if its available. The icon data is flipped both vertically and horizontally. Each vmu icon has dimensions 32x32 pixels and is 128 bytes long.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">icon</td><td>The VMU icon index to look up. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the raw icon data or NULL if icon value is incorrect. </dd></dl>
-
-</div>
-</div>
-<a id="a837a12a7361a501aebdaf0aed32e152a" name="a837a12a7361a501aebdaf0aed32e152a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a837a12a7361a501aebdaf0aed32e152a">&#9670;&#160;</a></span>bfont_set_background_color()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t bfont_set_background_color </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the font background color. </p>
-<p>This function selects the background color to draw when a pixel is drawn in the font. This color is only used for pixels not covered by the font when you have selected to have the font be opaque.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>The color to use. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The old background color.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ab7f8f69cb7a23842cf64e928e71c3d85" title="Set the font foreground color.">bfont_set_foreground_color()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a637f9a06db7b12859327bb283a6807cc" name="a637f9a06db7b12859327bb283a6807cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a637f9a06db7b12859327bb283a6807cc">&#9670;&#160;</a></span>bfont_set_encoding()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void bfont_set_encoding </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#ac8888c1dabdfca1ec9d3e1f8fa4ba371">bfont_code_t</a></td>          <td class="paramname"><span class="paramname"><em>enc</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the font encoding. </p>
-<p>This function selects the font encoding that is used for the font. This allows you to select between the various character sets available.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enc</td><td>The character encoding in use </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab7f8f69cb7a23842cf64e928e71c3d85" name="ab7f8f69cb7a23842cf64e928e71c3d85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7f8f69cb7a23842cf64e928e71c3d85">&#9670;&#160;</a></span>bfont_set_foreground_color()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t bfont_set_foreground_color </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the font foreground color. </p>
-<p>This function selects the foreground color to draw when a pixel is opaque in the font. The value passed in for the color should be in whatever pixel format that you intend to use for the image produced.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>The color to use. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The old foreground color.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a837a12a7361a501aebdaf0aed32e152a" title="Set the font background color.">bfont_set_background_color()</a> </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
