@@ -19,14 +19,14 @@ int main(int argc, char **argv) {
                                   | ((c >> 3) << 0);
         }
 
-    /* Set our starting offset to one letter height away from the 
+    /* Set our starting offset to one letter height away from the
        top of the screen and two widths from the left */
     x = BFONT_WIDE_WIDTH;
     y = BFONT_HEIGHT;
 
     /* Test with ISO8859-1 encoding */
     bfont_set_encoding(BFONT_CODE_ISO8859_1);
-    bfont_draw_str_vram_fmt(x, y, true, 
+    bfont_draw_str_vram_fmt(x, y, true,
         "Test of basic ASCII\nParlez-vous fran�ais?");
     y += 2 * BFONT_HEIGHT;
     /* Do a second set drawn transparently */
@@ -52,14 +52,14 @@ int main(int argc, char **argv) {
     y += 2 * BFONT_HEIGHT;
 
     bfont_set_encoding(BFONT_CODE_ISO8859_1);
-    bfont_draw_str_vram_fmt(x, y, true, 
+    bfont_draw_str_vram_fmt(x, y, true,
         "We now support DC/VMU icons in printf statements!\n"
         "Use diXX for DC icons and viXX for VMU icons in your\n"
-        "strings. Enhance your text with visual icons like \n" 
-        "\\di03\\di04\\di05\\di06 for navigation, and make your UI more\n"
-        "intuitive. You can display buttons like \\di0B\\di0C\\di0F\\di10\n"
-        "\\di12\\di13 and icons like \\vi01\\vi05\\vi21\\vi18\\vi1C effortlessly.\n\n"
-        "\tTo exit, press \\di14");
+        "strings. Enhance your text with visual icons like \n"
+        DI_UPARROW DI_DOWNARROW DI_LEFTARROW DI_RIGHTARROW " for navigation, and make your UI more\n"
+        "intuitive. You can display buttons like " DI_ABUTTON DI_BBUTTON DI_XBUTTON DI_YBUTTON "\n"
+        DI_LTRIGGER DI_RTRIGGER " and icons like " VI_HOURGLASS_ONE VI_VMUICON VI_CHERRIES VI_FISH VI_CRAB " effortlessly.\n\n"
+        "\tTo exit, press " DI_STARTBUTTON);
 
     /* If Start is pressed, exit the app */
     cont_btn_callback(0, CONT_START, (cont_btn_callback_t)arch_exit);
