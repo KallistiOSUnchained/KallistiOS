@@ -29,6 +29,9 @@ install:
 	mkdir -p $(INSTALLDIR)
 	mv $(OUTPUT) $(INSTALLDIR)
 
-.PHONY: clean
+.PHONY: clean distclean
 clean:
-	-rm -f $(OUTPUT) *.o
+	-rm -f *.o
+
+distclean: clean
+	-rm -f $(OUTPUT)

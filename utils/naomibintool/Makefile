@@ -7,7 +7,8 @@
 all: naomibintool
 
 naomibintool: naomibintool.c
+#	$(CC) -DNO_LIBELF -o naomibintool naomibintool.c
 	$(CC) -o naomibintool naomibintool.c -lelf
 
-clean:
+distclean:
 	-rm -f naomibintool

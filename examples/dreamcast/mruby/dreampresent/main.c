@@ -38,7 +38,7 @@
    INIT_NONE         -- don't do any auto init
    INIT_IRQ          -- knable IRQs
    INIT_THD_PREEMPT  -- Enable pre-emptive threading
-   INIT_NET          -- Enable networking (doesn't imply lwIP!)
+   INIT_NET          -- Enable networking
    INIT_MALLOCSTATS  -- Enable a call to malloc_stats() right before shutdown
 
    You can OR any or all of those together. If you want to start out with

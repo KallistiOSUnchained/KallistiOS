@@ -1,0 +1,56 @@
+
+name: Generate Doxygen Documentation
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'include/**'
+      - 'kernel/arch/dreamcast/include/**'
+      - 'addons/include/**'
+      - 'doc/Doxyfile'
+      - 'doc/pages/**'
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      KOS_BASE: ${{ github.workspace }}
+      KOS_ARCH: dreamcast
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache Doxygen 1.11.0
+        uses: actions/cache@v4
+        id: cache-doxygen
+        with:
+          path: ./doxygen-1.11.0
+          key: doxygen-1.11.0-${{ runner.os }}
+  
+      - name: Install Doxygen 1.11.0
+        run: |
+          if [ ! -f doxygen-1.11.0/bin/doxygen ]; then
+            sudo apt install -y wget
+            wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
+            tar -xzf doxygen-1.11.0.linux.bin.tar.gz
+            rm doxygen-1.11.0.linux.bin.tar.gz
+          fi
+          sudo cp doxygen-1.11.0/bin/* /usr/local/bin/
+
+      - name: Create Output Directory for Doxygen
+        run: mkdir -p doc/reference
+
+      - name: Generate Documentation
+        run: doxygen doc/Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./doc/reference/html    # Adjust to match your OUTPUT_DIRECTORY/html

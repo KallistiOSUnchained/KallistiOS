@@ -40,12 +40,15 @@
 __BEGIN_DECLS
 
 #include <stdalign.h>
+#include <stdbool.h>
 
 #include <arch/memory.h>
 #include <arch/types.h>
 #include <arch/cache.h>
 #include <dc/sq.h>
+#include <dc/pvr_dma.h>
 #include <kos/img.h>
+#include <kos/regfield.h>
 
 /** \defgroup pvr   PowerVR API
     \brief          Low-level PowerVR GPU Driver.
@@ -60,7 +63,7 @@ __BEGIN_DECLS
     Unlike the old "TA" system, PVR pointers in the new system are actually SH-4
     compatible pointers and can be used directly in place of ta_txr_map().
 
-    Not that anyone probably even remembers the old TA system anymore... 
+    Not that anyone probably even remembers the old TA system anymore...
 */
 typedef void *pvr_ptr_t;
 
@@ -381,7 +384,7 @@ typedef struct {
 /** \defgroup pvr_txr_switch        Toggle
     \brief                          Enable or Disable Texturing on Polygons.
     \ingroup                        pvr_ctx_texture
-    
+
     @{
 */
 #define PVR_TEXTURE_DISABLE     0   /**< \brief Disable texturing */
@@ -415,7 +418,7 @@ typedef struct {
 /** \defgroup pvr_blend_switch      Blending Toggle
     \brief                          Enable or Disable Blending.
     \ingroup                        pvr_blend
-    
+
     @{
 */
 #define PVR_BLEND_DISABLE       0   /**< \brief Disable blending */
@@ -632,8 +635,12 @@ typedef struct {
 #define PVR_TXRFMT_PAL8BPP      (6 << 27)   /**< \brief 8BPP paletted format */
 #define PVR_TXRFMT_TWIDDLED     (0 << 26)   /**< \brief Texture is twiddled */
 #define PVR_TXRFMT_NONTWIDDLED  (1 << 26)   /**< \brief Texture is not twiddled */
-#define PVR_TXRFMT_NOSTRIDE     (0 << 21)   /**< \brief Texture is not strided */
-#define PVR_TXRFMT_STRIDE       (1 << 21)   /**< \brief Texture is strided */
+#define PVR_TXRFMT_POW2_STRIDE  (0 << 25)   /**< \brief Stride is a power-of-two */
+#define PVR_TXRFMT_X32_STRIDE   (1 << 25)   /**< \brief Stride is multiple of 32 */
+
+/* Backward compatibility */
+#define PVR_TXRFMT_NOSTRIDE     PVR_TXRFMT_POW2_STRIDE
+#define PVR_TXRFMT_STRIDE       PVR_TXRFMT_X32_STRIDE
 
 /* OR one of these into your texture format if you need it. Note that
    these coincide with the twiddled/stride bits, so you can't have a
@@ -1026,15 +1033,9 @@ Striplength set to 2 */
 #define PVR_CMD_SPRITE      0xA0000000  /**< \brief PVR sprite header */
 /** @} */
 
-/** \defgroup pvr_bitmasks          Constants and Masks
-    \brief                          Polygon header constants and masks
-    \ingroup                        pvr_primitives_headers
-
-    Note that thanks to the arrangement of constants, this is mainly a matter of
-    bit shifting to compile headers...
-
-    @{
-*/
+/** \cond
+    Deprecated macros, replaced by the pvr_bitmasks macros below.
+ */
 #define PVR_TA_CMD_TYPE_SHIFT       24
 #define PVR_TA_CMD_TYPE_MASK        (7 << PVR_TA_CMD_TYPE_SHIFT)
 
@@ -1124,6 +1125,48 @@ Striplength set to 2 */
 
 #define PVR_TA_PM3_TXRFMT_SHIFT     0
 #define PVR_TA_PM3_TXRFMT_MASK      0xffffffff
+/** \endcond */
+
+/** \defgroup pvr_bitmasks          Constants and Masks
+    \brief                          Polygon header constants and masks
+    \ingroup                        pvr_primitives_headers
+
+    Note that thanks to the arrangement of constants, this is mainly a matter of
+    bit shifting to compile headers...
+
+    @{
+*/
+#define PVR_TA_CMD_TYPE            GENMASK(26, 24)
+#define PVR_TA_CMD_USERCLIP        GENMASK(17, 16)
+#define PVR_TA_CMD_MODIFIER        BIT(7)
+#define PVR_TA_CMD_MODIFIERMODE    BIT(6)
+#define PVR_TA_CMD_CLRFMT          GENMASK(5, 4)
+#define PVR_TA_CMD_TXRENABLE       BIT(3)
+#define PVR_TA_CMD_SPECULAR        BIT(2)
+#define PVR_TA_CMD_SHADE           BIT(1)
+#define PVR_TA_CMD_UVFMT           BIT(0)
+#define PVR_TA_PM1_DEPTHCMP        GENMASK(31, 29)
+#define PVR_TA_PM1_CULLING         GENMASK(28, 27)
+#define PVR_TA_PM1_DEPTHWRITE      BIT(26)
+#define PVR_TA_PM1_TXRENABLE       BIT(25)
+#define PVR_TA_PM1_MODIFIERINST    GENMASK(30, 29)
+#define PVR_TA_PM2_SRCBLEND        GENMASK(31, 29)
+#define PVR_TA_PM2_DSTBLEND        GENMASK(28, 26)
+#define PVR_TA_PM2_SRCENABLE       BIT(25)
+#define PVR_TA_PM2_DSTENABLE       BIT(24)
+#define PVR_TA_PM2_FOG             GENMASK(23, 22)
+#define PVR_TA_PM2_CLAMP           BIT(21)
+#define PVR_TA_PM2_ALPHA           BIT(20)
+#define PVR_TA_PM2_TXRALPHA        BIT(19)
+#define PVR_TA_PM2_UVFLIP          GENMASK(18, 17)
+#define PVR_TA_PM2_UVCLAMP         GENMASK(16, 15)
+#define PVR_TA_PM2_FILTER          GENMASK(14, 12)
+#define PVR_TA_PM2_MIPBIAS         GENMASK(11, 8)
+#define PVR_TA_PM2_TXRENV          GENMASK(7, 6)
+#define PVR_TA_PM2_USIZE           GENMASK(5, 3)
+#define PVR_TA_PM2_VSIZE           GENMASK(2, 0)
+#define PVR_TA_PM3_MIPMAP          BIT(31)
+#define PVR_TA_PM3_TXRFMT          GENMASK(30, 21)
 /** @} */
 
 /**** Register macros ***************************************************/
@@ -1137,13 +1180,15 @@ Striplength set to 2 */
 /* We use these macros to do all PVR register access, so that it's
    simple later on to hook them for debugging or whatnot. */
 
+#define PVR_REGISTERS_BASE  0xa05f8000  /**< \brief PVR Register Base */
+
 /** \brief   Retrieve a PVR register value
 
     \param   REG             The register to fetch. See \ref pvr_regs.
-    
+
     \return                  The value of that register (32-bits)
 */
-#define PVR_GET(REG) (* ( (vuint32*)( 0xa05f8000 + (REG) ) ) )
+#define PVR_GET(REG) (* ( (vuint32*)( PVR_REGISTERS_BASE + (REG) ) ) )
 
 /** \brief   Set a PVR register value
 
@@ -1162,7 +1207,7 @@ Striplength set to 2 */
 
     \note
     2D specific registers have been excluded for now (like
-    vsync, hsync, v/h size, etc) 
+    vsync, hsync, v/h size, etc)
 
     @{
 */
@@ -1219,7 +1264,8 @@ Striplength set to 2 */
 #define PVR_SCAN_CLK            0x00d8  /**< \brief Clock and scanline values */
 #define PVR_BORDER_Y            0x00dc  /**< \brief Window border Y position */
 
-#define PVR_TEXTURE_MODULO      0x00e4  /**< \brief Output texture width modulo */
+#define PVR_TXR_STRIDE_MULT     0x00e4  /**< \brief Multiplier for stride width in increments of 32 */
+#define PVR_TEXTURE_MODULO      PVR_TXR_STRIDE_MULT  /* Backward compatibility */
 #define PVR_VIDEO_CFG           0x00e8  /**< \brief Misc video config */
 #define PVR_BITMAP_X            0x00ec  /**< \brief Bitmap window X position */
 #define PVR_BITMAP_Y            0x00f0  /**< \brief Bitmap window Y position */
@@ -1304,12 +1350,12 @@ Striplength set to 2 */
 /** @} */
 
 /* Initialization ****************************************************/
-/** \defgroup pvr_init  Initialization 
+/** \defgroup pvr_init  Initialization
     \brief              Driver initialization and shutdown
     \ingroup            pvr
 
     Initialization and shutdown: stuff you should only ever have to do
-    once in your program. 
+    once in your program.
 */
 
 /** \defgroup pvr_binsizes          Primitive Bin Sizes
@@ -1373,7 +1419,7 @@ typedef struct {
 
         Preallocates this many extra OPBs (sets of tile bins), allowing the PVR
         to use the extra space when there's too much geometry in the first OPB.
-    
+
         Increasing this value can eliminate artifacts where pieces of geometry
         flicker in and out of existence along the tile boundaries. */
 
@@ -1529,12 +1575,12 @@ int pvr_get_stats(pvr_stats_t *stat);
     \ingroup                pvr_global
 
     In addition to its 16-bit truecolor modes, the PVR also supports some
-    nice paletted modes. 
+    nice paletted modes.
 
     \remark
     These aren't useful for super high quality images most of the time,
     but they can be useful for doing some interesting special effects,
-    like the old cheap "worm hole". 
+    like the old cheap "worm hole".
 */
 
 /** \defgroup pvr_palfmt            Formats
@@ -1591,7 +1637,7 @@ static inline void pvr_set_pal_entry(uint32_t idx, uint32_t value) {
     \brief                  Hardware Fog API for the PowerVR
     \ingroup                pvr_global
 
-    \note 
+    \note
     Thanks to Paul Boese for figuring this stuff out
 */
 
@@ -1690,7 +1736,7 @@ void pvr_fog_table_custom(float tbl1[]);
     \ingroup                 pvr_vram
 
     PVR memory management in KOS uses a modified dlmalloc; see the
-    source file pvr_mem_core.c for more info. 
+    source file pvr_mem_core.c for more info.
 */
 
 /** \brief   Allocate a chunk of memory from texture space.
@@ -1702,7 +1748,7 @@ void pvr_fog_table_custom(float tbl1[]);
     allocations will be aligned to a 32-byte boundary.
 
     \param  size            The amount of memory to allocate
-    
+
     \return                 A pointer to the memory on success, NULL on error
 */
 pvr_ptr_t pvr_mem_malloc(size_t size);
@@ -1788,7 +1834,7 @@ void pvr_mem_stats(void);
     Another somewhat subtle point that bears mentioning is that in the normal
     case (interrupts enabled) an interrupt handler will automatically take
     care of starting a frame rendering (after scene_finish()) and also
-    flipping pages when appropriate. 
+    flipping pages when appropriate.
 */
 
 /** \defgroup  pvr_vertex_dma   Vertex DMA
@@ -1798,7 +1844,7 @@ void pvr_mem_stats(void);
 
 /** \brief   Is vertex DMA enabled?
     \ingroup pvr_vertex_dma
-    
+
     \return                 Non-zero if vertex DMA was enabled at init time
 */
 int pvr_vertex_dma_enabled(void);
@@ -1807,7 +1853,7 @@ int pvr_vertex_dma_enabled(void);
     \ingroup pvr_list_mgmt
 
     If the specified list type already has a vertex buffer, it will be replaced
-    by the new one. 
+    by the new one.
 
     \note
     Each buffer should actually be twice as long as what you will need to hold
@@ -1823,7 +1869,7 @@ int pvr_vertex_dma_enabled(void);
     \param  len             The length of the buffer. This must be a multiple of
                             64, and must be at least 128 (even if you're not
                             using the list).
-    
+
     \return                 The old buffer location (if any)
 */
 void *pvr_set_vertbuf(pvr_list_t list, void *buffer, int len);
@@ -1837,7 +1883,7 @@ void *pvr_set_vertbuf(pvr_list_t list, void *buffer, int len);
     pvr_vertbuf_written() to notify the system of any such changes.
 
     \param  list            The primitive list to get the buffer for.
-    
+
     \return                 The tail of that list's buffer.
 */
 void *pvr_vertbuf_tail(pvr_list_t list);
@@ -1917,7 +1963,7 @@ void pvr_scene_begin_txr(pvr_ptr_t txr, uint32_t *rx, uint32_t *ry);
     \retval 0               On success.
     \retval -1              If the specified list has already been closed.
 */
-int pvr_list_begin(pvr_list_t list);            
+int pvr_list_begin(pvr_list_t list);
 
 /** \brief   End collecting data for the current list type.
     \ingroup pvr_list_mgmt
@@ -1952,7 +1998,7 @@ int pvr_list_finish(void);
     \param  data            The primitive to submit.
     \param  size            The length of the primitive, in bytes. Must be a
                             multiple of 32.
-    
+
     \retval 0               On success.
     \retval -1              On error.
 */
@@ -1981,7 +2027,7 @@ void pvr_dr_init(pvr_dr_state_t *vtx_buf_ptr);
     \param  vtx_buf_ptr     State variable for Direct Rendering. Should be of
                             type pvr_dr_state_t, and must have been initialized
                             previously in the scene with pvr_dr_init().
-    
+
     \return                 A write-only destination address where a primitive
                             should be written to get ready to submit it to the
                             TA in DR mode.
@@ -2006,6 +2052,17 @@ void pvr_dr_init(pvr_dr_state_t *vtx_buf_ptr);
 */
 void pvr_dr_finish(void);
 
+/** \brief  Upload a 32-byte payload to the Tile Accelerator
+
+    Upload the given payload to the Tile Accelerator. The difference with the
+    Direct Rendering approach above is that the Store Queues are not used, and
+    therefore can be used for anything else.
+
+    \param  data            A pointer to the 32-byte payload.
+                            The pointer must be aligned to 8 bytes.
+*/
+void pvr_send_to_ta(void *data);
+
 /** @} */
 
 /** \brief   Submit a primitive of the given list type.
@@ -2018,7 +2075,7 @@ void pvr_dr_finish(void);
     \param  data            The primitive to submit.
     \param  size            The size of the primitive in bytes. This must be a
                             multiple of 32.
-    
+
     \retval 0               On success.
     \retval -1              On error.
 */
@@ -2032,7 +2089,7 @@ int pvr_list_prim(pvr_list_t list, void *data, int size);
     both direct and DMA TA submission is possible.
 
     \param  list            The list to flush.
-    
+
     \retval -1              On error (it is not possible to succeed).
 */
 int pvr_list_flush(pvr_list_t list);
@@ -2255,12 +2312,58 @@ void pvr_poly_cxt_txr_mod(pvr_poly_cxt_t *dst, pvr_list_t list,
 /** \defgroup pvr_txr_mgmt      Texturing
     \brief                      API for managing PowerVR textures
     \ingroup                    pvr
-    
+
     Helper functions for handling texture tasks of various kinds.
 */
 
+/** \brief   Set the global stride width for non-power-of-two textures in PVR RAM.
+    \ingroup pvr_txr_mgmt
+
+    This function configures the global texture stride register
+    `PVR_TXR_STRIDE_MULT`, which defines the row width in VRAM for
+    non-power-of-two textures. The setting applies to all textures
+    rendered with the `PVR_TXRFMT_X32_STRIDE` flag in the same frame.
+    Since `PVR_TXR_STRIDE_MULT` is a global register, all textures
+    using this flag must share the same stride width in each frame.
+
+    The stride width configured here is **only supported for textures
+    with widths that are multiples of 32 pixels** and up to a maximum
+    of 992 pixels. Any texture width not meeting this requirement will
+    not work with the `PVR_TXRFMT_X32_STRIDE` flag.
+
+    \warning
+    - Textures that are palette-based cannot use the `PVR_TXRFMT_X32_STRIDE`
+      flag so the stride set here will not apply to them.
+
+    \param  texture_width   The width of the texture in pixels. Must be a
+                            multiple of 32 and up to 992 pixels.
+    \retval true            On success.
+    \retval false           On failure.
+
+    \sa pvr_txr_get_stride()
+*/
+bool pvr_txr_set_stride(uint32_t texture_width);
+
+/** \brief   Get the current texture stride width in pixels as set in the PVR.
+    \ingroup pvr_txr_mgmt
+
+    This function reads the `PVR_TXR_STRIDE_MULT` register and calculates the
+    texture stride width in pixels. The value returned is the width in pixels
+    that has been configured for all textures using the `PVR_TXRFMT_X32_STRIDE`
+    flag in the same frame.
+
+    The stride width is computed by taking the current multiplier in
+    `PVR_TXR_STRIDE_MULT` (which stores the width divided by 32), and
+    multiplying it back by 32 to return the full width in pixels.
+
+    \return                 The current texture stride width in pixels.
+
+    \sa pvr_txr_set_stride()
+*/
+uint32_t pvr_txr_get_stride(void);
+
 /** \brief   Load raw texture data from an SH-4 buffer into PVR RAM.
-    \ingroup pvr_txr_mgmt 
+    \ingroup pvr_txr_mgmt
 
     This essentially just acts as a memcpy() from main RAM to PVR RAM, using
     the Store Queues and 64-bit TA bus.
@@ -2352,234 +2455,6 @@ void pvr_txr_load_ex(const void *src, pvr_ptr_t dst,
 */
 void pvr_txr_load_kimg(const kos_img_t *img, pvr_ptr_t dst, uint32_t flags);
 
-
-/* PVR DMA ***********************************************************/
-/** \defgroup pvr_dma   DMA
-    \brief              PowerVR DMA driver
-    \ingroup            pvr
-*/
-
-/** \brief   PVR DMA interrupt callback type.
-    \ingroup pvr_dma
-
-    Functions that act as callbacks when DMA completes should be of this type.
-    These functions will be called inside an interrupt context, so don't try to
-    use anything that might stall.
-
-    \param  data            User data passed in to the pvr_dma_transfer()
-                            function.
-*/
-typedef void (*pvr_dma_callback_t)(void *data);
-
-/** \defgroup pvr_dma_type          Transfer Modes
-    \brief                          Transfer modes with TA/PVR DMA and Store Queues
-    \ingroup  pvr_dma
-
-    @{
-*/
-typedef enum pvr_dma_type {
-    PVR_DMA_VRAM64,       /**< \brief Transfer to VRAM using TA bus */
-    PVR_DMA_VRAM32,       /**< \brief Transfer to VRAM using TA bus */
-    PVR_DMA_TA,           /**< \brief Transfer to the tile accelerator */
-    PVR_DMA_YUV,          /**< \brief Transfer to the YUV converter (TA) */
-    PVR_DMA_VRAM32_SB,    /**< \brief Transfer to/from VRAM using PVR i/f */
-    PVR_DMA_VRAM64_SB,    /**< \brief Transfer to/from VRAM using PVR i/f */
-} pvr_dma_type_t;
-/** @} */
-
-/** \brief   Perform a DMA transfer to the PVR RAM over 64-bit TA bus.
-    \ingroup pvr_dma
-
-    This function copies a block of data to the PVR or its memory via DMA. There
-    are all kinds of constraints that must be fulfilled to actually do this, so
-    make sure to read all the fine print with the parameter list.
-
-    If a callback is specified, it will be called in an interrupt context, so
-    keep that in mind in writing the callback.
-
-    \param  src             Where to copy from. Must be 32-byte aligned.
-    \param  dest            Where to copy to. Must be 32-byte aligned.
-    \param  count           The number of bytes to copy. Must be a multiple of
-                            32.
-    \param  type            The type of DMA transfer to do (see list of modes).
-    \param  block           Non-zero if you want the function to block until the
-                            DMA completes.
-    \param  callback        A function to call upon completion of the DMA.
-    \param  cbdata          Data to pass to the callback function.
-    \retval 0               On success.
-    \retval -1              On failure. Sets errno as appropriate.
-
-    \par    Error Conditions:
-    \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
-    \em     EIO - I/O error
-
-    \see    pvr_dma_type_t
-*/
-int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count,
-                     pvr_dma_type_t type, int block,
-                     pvr_dma_callback_t callback, void *cbdata);
-
-/** \brief   Load a texture using TA DMA.
-    \ingroup pvr_dma
-
-    This is essentially a convenience wrapper for pvr_dma_transfer(), so all
-    notes that apply to it also apply here.
-
-    \param  src             Where to copy from. Must be 32-byte aligned.
-    \param  dest            Where to copy to. Must be 32-byte aligned.
-    \param  count           The number of bytes to copy. Must be a multiple of
-                            32.
-    \param  block           Non-zero if you want the function to block until the
-                            DMA completes.
-    \param  callback        A function to call upon completion of the DMA.
-    \param  cbdata          Data to pass to the callback function.
-    \retval 0               On success.
-    \retval -1              On failure. Sets errno as appropriate.
-
-    \par    Error Conditions:
-    \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
-    \em     EIO - I/O error
-*/
-int pvr_txr_load_dma(void *src, pvr_ptr_t dest, size_t count, int block,
-                     pvr_dma_callback_t callback, void *cbdata);
-
-/** \brief   Load vertex data to the TA using TA DMA.
-    \ingroup pvr_dma
-
-    This is essentially a convenience wrapper for pvr_dma_transfer(), so all
-    notes that apply to it also apply here.
-
-    \param  src             Where to copy from. Must be 32-byte aligned.
-    \param  count           The number of bytes to copy. Must be a multiple of
-                            32.
-    \param  block           Non-zero if you want the function to block until the
-                            DMA completes.
-    \param  callback        A function to call upon completion of the DMA.
-    \param  cbdata          Data to pass to the callback function.
-    \retval 0               On success.
-    \retval -1              On failure. Sets errno as appropriate.
-
-    \par    Error Conditions:
-    \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
-    \em     EIO - I/O error
- */
-int pvr_dma_load_ta(void *src, size_t count, int block,
-                    pvr_dma_callback_t callback, void *cbdata);
-
-/** \brief   Load yuv data to the YUV converter using TA DMA.
-    \ingroup pvr_dma
-
-    This is essentially a convenience wrapper for pvr_dma_transfer(), so all
-    notes that apply to it also apply here.
-
-    \param  src             Where to copy from. Must be 32-byte aligned.
-    \param  count           The number of bytes to copy. Must be a multiple of
-                            32.
-    \param  block           Non-zero if you want the function to block until the
-                            DMA completes.
-    \param  callback        A function to call upon completion of the DMA.
-    \param  cbdata          Data to pass to the callback function.
-    \retval 0               On success.
-    \retval -1              On failure. Sets errno as appropriate.
-
-    \par    Error Conditions:
-    \em     EINPROGRESS - DMA already in progress \n
-    \em     EFAULT - dest is not 32-byte aligned \n
-    \em     EIO - I/O error
-*/
-int pvr_dma_yuv_conv(void *src, size_t count, int block,
-                     pvr_dma_callback_t callback, void *cbdata);
-
-/** \brief   Is PVR DMA is inactive?
-    \ingroup pvr_dma
-    \return                 Non-zero if there is no PVR DMA active, thus a DMA
-                            can begin or 0 if there is an active DMA.
-*/
-int pvr_dma_ready(void);
-
-/** \brief   Initialize TA/PVR DMA. 
-    \ingroup pvr_dma
- */
-void pvr_dma_init(void);
-
-/** \brief   Shut down TA/PVR DMA. 
-    \ingroup pvr_dma
- */
-void pvr_dma_shutdown(void);
-
-/** \brief   Copy a block of memory to VRAM
-    \ingroup store_queues
-
-    This function is similar to sq_cpy(), but it has been
-    optimized for writing to a destination residing within VRAM.
-
-    \warning
-    This function cannot be used at the same time as a PVR DMA transfer.
-
-    The dest pointer must be at least 32-byte aligned and reside 
-    in video memory, the src pointer must be at least 8-byte aligned, 
-    and n must be a multiple of 32.
-
-    \param  dest            The address to copy to (32-byte aligned).
-    \param  src             The address to copy from (32-bit (8-byte) aligned).
-    \param  n               The number of bytes to copy (multiple of 32).
-    \param  type            The type of SQ/DMA transfer to do (see list of modes).
-    \return                 The original value of dest.
-
-    \sa pvr_sq_set32()
-*/
-void *pvr_sq_load(void *dest, const void *src,
-                  size_t n, pvr_dma_type_t type);
-
-/** \brief   Set a block of PVR memory to a 16-bit value.
-    \ingroup store_queues
-
-    This function is similar to sq_set16(), but it has been
-    optimized for writing to a destination residing within VRAM.
-
-    \warning
-    This function cannot be used at the same time as a PVR DMA transfer.
-    
-    The dest pointer must be at least 32-byte aligned and reside in video 
-    memory, n must be a multiple of 32 and only the low 16-bits are used 
-    from c.
-
-    \param  dest            The address to begin setting at (32-byte aligned).
-    \param  c               The value to set (in the low 16-bits).
-    \param  n               The number of bytes to set (multiple of 32).
-    \param  type            The type of SQ/DMA transfer to do (see list of modes).
-    \return                 The original value of dest.
-
-    \sa pvr_sq_set32()
-*/
-void *pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_type_t type);
-
-/** \brief   Set a block of PVR memory to a 32-bit value.
-    \ingroup store_queues
-
-    This function is similar to sq_set32(), but it has been
-    optimized for writing to a destination residing within VRAM.
-
-    \warning
-    This function cannot be used at the same time as a PVR DMA transfer.
-
-    The dest pointer must be at least 32-byte aligned and reside in video 
-    memory, n must be a multiple of 32.
-
-    \param  dest            The address to begin setting at (32-byte aligned).
-    \param  c               The value to set.
-    \param  n               The number of bytes to set (multiple of 32).
-    \param  type            The type of SQ/DMA transfer to do (see list of modes).
-    \return                 The original value of dest.
-
-    \sa pvr_sq_set16
-*/
-void *pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_type_t type);
-
-/*********************************************************************/
 
 
 __END_DECLS

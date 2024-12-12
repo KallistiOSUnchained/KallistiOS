@@ -88,6 +88,7 @@ This page serves as an index for all KallistiOS examples.
   - cheap_shadow
   - modifier_volume
   - modifier_volume_tex
+  - palette
   - plasma
   - pvrmark
   - pvrmark_strips
@@ -107,6 +108,8 @@ This page serves as an index for all KallistiOS examples.
   - hello-opus
   - multi-stream
   - sfx
+- raylib
+  - raytris
 - tsunami
   - banner
   - font

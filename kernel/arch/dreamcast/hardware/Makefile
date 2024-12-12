@@ -10,6 +10,8 @@ OBJS = hardware.o
 # BIOS services
 ifneq ($(KOS_SUBARCH), naomi)
 	OBJS += biosfont.o cdrom.o flashrom.o
+else
+    OBJS += biosfont_naomi.o
 endif
 
 # System Calls

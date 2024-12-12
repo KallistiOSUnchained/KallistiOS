@@ -7,6 +7,7 @@
 TARGET = speedtest.elf
 OBJS = speedtest.o server.o handle_request.o romdisk.o
 KOS_ROMDISK_DIR = romdisk
+KOS_BUILD_SUBARCHS = pristine
 
 all: rm-elf $(TARGET)
 

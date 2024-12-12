@@ -8,3 +8,6 @@ all:
 clean:
 	@cd ./src; \
 	$(MAKE) clean
+
+distclean: clean
+	-rm -f makeip

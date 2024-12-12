@@ -14,6 +14,7 @@
 #include <dc/pvr.h>
 #include <dc/video.h>
 #include <kos/string.h>
+#include <kos/dbglog.h>
 
 #include "pvr_internal.h"
 
@@ -80,6 +81,27 @@ int pvr_get_stats(pvr_stats_t *stat) {
 
 int pvr_vertex_dma_enabled(void) {
     return pvr_state.dma_mode;
+}
+
+bool pvr_txr_set_stride(uint32_t texture_width) {
+    uint32_t temp;
+
+    if(texture_width % 32 != 0 || texture_width > 992) { /* 1024 - 32 = 992 */
+        dbglog(DBG_ERROR, 
+            "Texture width must be divisible by 32 and be 992 or less.");
+        return false;
+    }
+
+    temp = PVR_GET(PVR_TXR_STRIDE_MULT);
+    temp &= ~0x1F;
+    temp |= (texture_width / 32) & 0x1F;
+    PVR_SET(PVR_TXR_STRIDE_MULT, temp);
+
+    return true;
+}
+
+uint32_t pvr_txr_get_stride(void) {
+    return (PVR_GET(PVR_TXR_STRIDE_MULT) & 0x1F) * 32;
 }
 
 /******** INTERNAL STUFF ************************************************/
@@ -263,7 +285,7 @@ void pvr_blank_polyhdr_buf(int type, pvr_poly_hdr_t * poly) {
     memset(poly, 0, sizeof(pvr_poly_hdr_t));
 
     /* Put in the list type */
-    poly->cmd = (type << PVR_TA_CMD_TYPE_SHIFT) | 0x80840012;
+    poly->cmd = FIELD_PREP(PVR_TA_CMD_TYPE, type) | 0x80840012;
 
     /* Fill in dummy values */
     poly->d1 = poly->d2 = poly->d3 = poly->d4 = 0xffffffff;

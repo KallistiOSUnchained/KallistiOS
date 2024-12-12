@@ -1,6 +1,8 @@
 TARGET = sdl_sound.elf
 OBJS = sdl_sound.o
 
+KOS_BUILD_SUBARCHS = pristine
+
 all: rm-elf $(TARGET)
 
 include $(KOS_BASE)/Makefile.rules

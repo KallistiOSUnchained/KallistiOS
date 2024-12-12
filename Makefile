@@ -12,27 +12,33 @@
 # here too. ;-)
 KOS_CFLAGS += -Wextra -Wno-deprecated
 
-# Add stuff to DIRS to auto-compile it with the big tree.
-DIRS = utils
-DIRS += kernel addons # examples
+# Add stuff to SUBDIRS to auto-compile it with the big tree.
+SUBDIRS = utils kernel addons # examples
 
 # Detect a non-working or missing environ.sh file.
 ifndef KOS_BASE
 error:
-	@echo You don\'t seem to have a working  environ.sh file. Please take a look at
+	@echo You don\'t seem to have a working environ.sh.master file. Please take a look at
 	@echo doc/README for more info.
 	@exit 0
 endif
 
-all:
-	for i in $(DIRS); do $(KOS_MAKE) -C $$i || exit -1; done
+all: subdirs
 
-clean:
-	for i in $(DIRS); do $(KOS_MAKE) -C $$i clean || exit -1; done
+kernel: kernel_subdirs
+
+addons: addons_subdirs
+
+utils: utils_subdirs
+
+examples: examples_subdirs
+
+clean: clean_subdirs
 
 distclean: clean
 	-rm -f lib/$(KOS_ARCH)/*
 	-rm -f addons/lib/$(KOS_ARCH)/*
+	$(MAKE) -C utils distclean
 
 docs:
 	doxygen $(KOS_BASE)/doc/Doxyfile
@@ -53,7 +59,22 @@ kos-ports_distclean: kos-ports_clean
 	$(KOS_PORTS)/utils/uninstall-all.sh
 
 all_auto_kos_base:
-	$(KOS_MAKE) all KOS_BASE=$(CURDIR)
+	$(MAKE) all KOS_BASE=$(CURDIR)
 
 clean_auto_kos_base:
-	$(KOS_MAKE) clean KOS_BASE=$(CURDIR)
+	$(MAKE) clean KOS_BASE=$(CURDIR)
+
+# Specific rules for kernel, utils, addons, and examples
+kernel_subdirs:
+	$(MAKE) -C kernel
+
+addons_subdirs:
+	$(MAKE) -C addons
+
+utils_subdirs:
+	$(MAKE) -C utils
+
+examples_subdirs:
+	$(MAKE) -C examples
+
+include $(KOS_BASE)/Makefile.rules

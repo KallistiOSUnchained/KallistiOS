@@ -51,91 +51,125 @@
 
    <data> is as follows:
    All values are encoded in ascii hex digits.
-
-    Request     Packet
-
-    read registers  g
+**********************************************************************
+    REQUEST     PACKET
+**********************************************************************
+    read regs   g
+    
     reply       XX....X     Each byte of register data
-                    is described by two hex digits.
-                    Registers are in the internal order
-                    for GDB, and the bytes in a register
-                    are in the same order the machine uses.
-            or ENN      for an error.
-
+                            is described by two hex digits.
+                            Registers are in the internal order
+                            for GDB, and the bytes in a register
+                            are in the same order the machine uses.
+                or ENN      for an error.
+**********************************************************************
     write regs  GXX..XX     Each byte of register data
-                    is described by two hex digits.
-    reply       OK      for success
-            ENN     for an error
-
-        write reg   Pn...=r...  Write register n... with value r...,
-                    which contains two hex digits for each
-                    byte in the register (target byte
-                    order).
-    reply       OK      for success
-            ENN     for an error
+                            is described by two hex digits.
+    
+    reply       OK          for success
+                ENN         for an error
+**********************************************************************
+    write reg   Pn...=r...  Write register n... with value r...,
+                            which contains two hex digits for each
+                            byte in the register (target byte
+                            order).
+    
+    reply       OK          for success
+                ENN         for an error
     (not supported by all stubs).
-
-    read mem    mAA..AA,LLLL    AA..AA is address, LLLL is length.
+**********************************************************************
+    read mem    mAA..AA,LLLL    
+                            AA..AA is address, LLLL is length.
     reply       XX..XX      XX..XX is mem contents
-                    Can be fewer bytes than requested
-                    if able to read only part of the data.
-            or ENN      NN is errno
 
+                            Can be fewer bytes than requested
+                            if able to read only part of the data.
+                or ENN      NN is errno
+**********************************************************************
     write mem   MAA..AA,LLLL:XX..XX
-                    AA..AA is address,
-                    LLLL is number of bytes,
-                    XX..XX is data
-    reply       OK      for success
-            ENN     for an error (this includes the case
-                    where only part of the data was
-                    written).
+                            AA..AA is address,
+                            LLLL is number of bytes,
+                            XX..XX is data
 
+    reply       OK          for success
+                ENN         for an error (this includes the case
+                            where only part of the data was
+                            written).
+**********************************************************************
     cont        cAA..AA     AA..AA is address to resume
-                    If AA..AA is omitted,
-                    resume at same address.
-
+                            If AA..AA is omitted,
+                            resume at same address.
+**********************************************************************
     step        sAA..AA     AA..AA is address to resume
-                    If AA..AA is omitted,
-                    resume at same address.
-
-    last signal     ?               Reply the current reason for stopping.
-                                        This is the same reply as is generated
-                    for step or cont : SAA where AA is the
-                    signal number.
+                            If AA..AA is omitted,
+                            resume at same address.
+**********************************************************************
+    last signal ?           Reply the current reason for stopping.
+                            This is the same reply as is generated
+                            for step or cont : SAA where AA is the
+                            signal number.
 
     There is no immediate reply to step or cont.
     The reply comes when the machine stops.
     It is       SAA     AA is the "signal number"
 
     or...       TAAn...:r...;n:r...;n...:r...;
-                    AA = signal number
-                    n... = register number
-                    r... = register contents
-    or...       WAA     The process exited, and AA is
-                    the exit status.  This is only
-                    applicable for certains sorts of
-                    targets.
-    kill request    k
-
-    toggle debug    d       toggle debug flag (see 386 & 68k stubs)
-    reset       r       reset -- see sparc stub.
+                            AA = signal number
+                            n... = register number
+                            r... = register contents
+    or...       WAA         The process exited, and AA is
+                            the exit status.  This is only
+                            applicable for certains sorts of
+                            targets.
+**********************************************************************
+    kill        k           Kill request.
+**********************************************************************
+    debug       d           toggle debug flag (see 386 & 68k stubs)
+**********************************************************************
+    reset       r           reset -- see sparc stub.
+**********************************************************************
     reserved    <other>     On other requests, the stub should
-                    ignore the request and send an empty
-                    response ($#<checksum>).  This way
-                    we can extend the protocol and GDB
-                    can tell whether the stub it is
-                    talking to uses the old or the new.
+                            ignore the request and send an empty
+                            response ($#<checksum>).  This way
+                            we can extend the protocol and GDB
+                            can tell whether the stub it is
+                            talking to uses the old or the new.
+**********************************************************************
     search      tAA:PP,MM   Search backwards starting at address
-                    AA for a match with pattern PP and
-                    mask MM.  PP and MM are 4 bytes.
-                    Not supported by all stubs.
-
-    general query   qXXXX       Request info about XXXX.
+                            AA for a match with pattern PP and
+                            mask MM.  PP and MM are 4 bytes.
+                            Not supported by all stubs.
+**********************************************************************
+    general query   
+                qXXXX       Request info about XXXX.
+**********************************************************************
     general set QXXXX=yyyy  Set value of XXXX to yyyy.
-    query sect offs qOffsets    Get section offsets.  Reply is
-                    Text=xxx;Data=yyy;Bss=zzz
-    console output  Otext       Send text to stdout.  Only comes from
-                    remote target.
+**********************************************************************
+    query sect offs 
+                qOffsets    Get section offsets.  
+    reply       Text=xxx;Data=yyy;Bss=zzz
+**********************************************************************
+    console output  
+                Otext       Send text to stdout.  Only comes from
+                            remote target.
+**********************************************************************
+    set command-line args
+                Aarglen,argnum,arg,…
+                            Initialized `argv[]' array passed into 
+                            program. arglen specifies the number of 
+                            bytes in the hex encoded byte stream arg. 
+                            See `gdbserver' for more details.
+
+    reply       OK 
+    reply       ENN
+**********************************************************************
+    Current thread 
+                qC      Return the current thread ID
+
+    reply       QCpid   pid is HEX encoded 16-bit process iD
+    reply       *       implies old process ID
+
+**********************************************************************
 
     Responses can be run-length encoded to save space.  A '*' means that
     the next character is an ASCII encoding giving a repeat count which
@@ -153,9 +187,12 @@
 #include <arch/irq.h>
 #include <arch/arch.h>
 #include <arch/cache.h>
+#include <kos/thread.h>
 
 #include <stddef.h>
 #include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /* Hitachi SH architecture instruction encoding masks */
 
@@ -201,10 +238,34 @@
 /*
  * Modes for packet dcload packet transmission
  */
-
 #define DCL_SEND       0x1
 #define DCL_RECV       0x2
 #define DCL_SENDRECV   0x3
+
+/*
+ * Error codes
+ * https://developer.arm.com/documentation/dui0155/e/gdb-and-command-monitor-error-codes/error-codes/generic-errors?lang=en
+ */
+#define GDB_OK                             "OK"
+
+/* Generic errors */
+#define GDB_ERROR_BAD_ARGUMENTS            "E06"
+#define GDB_ERROR_UNSUPPORTED_COMMAND      "E07"
+/* Memory and register errors */
+#define GDB_ERROR_MEMORY_BAD_ADDRESS       "E30"
+#define GDB_ERROR_MEMORY_BUS_ERROR         "E31"
+#define GDB_ERROR_MEMORY_TIMEOUT           "E32"
+#define GDB_ERROR_MEMORY_VERIFY_ERROR      "E33"
+#define GDB_ERROR_MEMORY_BAD_ACCESS_SIZE   "E34"
+#define GDB_ERROR_MEMORY_GENERAL           "E35"
+/* Breakpoint errors */
+#define GDB_ERROR_BKPT_NOT_SET             "E50" /* Unable to set breakpoint */
+#define GDB_ERROR_BKPT_SWBREAK_NOT_SET     "E51" /* Unable to write software breakpoint to memory */
+#define GDB_ERROR_BKPT_HWBREAK_NO_RSRC     "E52" /* No hardware breakpoint resource available to set hardware breakpoint */
+#define GDB_ERROR_BKPT_HWBREAK_ACCESS_ERR  "E53" /* Failed to access hardware breakpoint resource */
+#define GDB_ERROR_BKPT_CLEARING_BAD_ID     "E55" /* Bad ID when clearing breakpoint */
+#define GDB_ERROR_BKPT_CLEARING_BAD_ADDR   "E56" /* Bad address when clearing breakpoint */
+#define GDB_ERROR_BKPT_SBREAKER_NO_RSRC    "E57" /* Insufficient hardware resources for software breakpoints */
 
 /*
  * typedef
@@ -216,8 +277,8 @@ typedef void (*Function)();
  */
 
 static int hex(char);
-static char *mem2hex(char *, char *, uint32);
-static char *hex2mem(char *, char *, uint32);
+static char *mem2hex(const char *, char *, uint32);
+static char *hex2mem(const char *, char *, uint32);
 static int hexToInt(char **, uint32 *);
 static unsigned char *getpacket(void);
 static void putpacket(char *);
@@ -237,7 +298,6 @@ static int dofault;  /* Non zero, bus errors will raise exception */
 static int remote_debug;
 
 /* map from KOS register context order to GDB sh4 order */
-
 #define KOS_REG(r)      offsetof(irq_context_t, r)
 
 static uint32 kosRegMap[] = {
@@ -273,11 +333,11 @@ static char remcomInBuffer[BUFMAX], remcomOutBuffer[BUFMAX];
 static char in_dcl_buf[BUFMAX], out_dcl_buf[BUFMAX];
 static int using_dcl = 0, in_dcl_pos = 0, out_dcl_pos = 0, in_dcl_size = 0;
 
-static char highhex(int  x) {
+static char highhex(int x) {
     return hexchars[(x >> 4) & 0xf];
 }
 
-static char lowhex(int  x) {
+static char lowhex(int x) {
     return hexchars[x & 0xf];
 }
 
@@ -305,10 +365,19 @@ static int hex(char ch) {
     return (-1);
 }
 
-/* convert the memory, pointed to by mem into hex, placing result in buf */
-/* return a pointer to the last char put in buf (null) */
-static char * mem2hex(char *mem, char *buf, uint32 count) {
-    uint32 i;
+/*
+   Convert binary data to a hex string.
+   
+   This function converts 'count' bytes from the binary data pointed to by 'mem' 
+   into a hex string and stores it in 'buf'. It returns a pointer to the character 
+   in 'buf' immediately after the last written character (null-terminator).
+   
+   mem     Pointer to the binary data.
+   buf     Pointer to the output buffer for the hex string.
+   count   Number of bytes to convert.
+ */
+static char *mem2hex(const char *mem, char *buf, uint32_t count) {
+    uint32_t i;
     int ch;
 
     for(i = 0; i < count; i++) {
@@ -321,11 +390,19 @@ static char * mem2hex(char *mem, char *buf, uint32 count) {
     return (buf);
 }
 
-/* convert the hex array pointed to by buf into binary, to be placed in mem */
-/* return a pointer to the character after the last byte written */
+/*
+   Convert a hex string to binary data.
 
-static char * hex2mem(char *buf, char *mem, uint32 count) {
-    uint32 i;
+   This function converts 'count' bytes from the hex string 'buf' into binary 
+   data and stores it in 'mem'. It returns a pointer to the character in 'mem' 
+   immediately after the last byte written.
+   
+    buf     Pointer to the hex string.
+    mem     Pointer to the output buffer for binary data.
+    count   Number of bytes to convert (half the length of 'buf').
+ */
+static char *hex2mem(const char *buf, char *mem, uint32_t count) {
+    uint32_t i;
     unsigned char ch;
 
     for(i = 0; i < count; i++) {
@@ -361,6 +438,22 @@ static int hexToInt(char **ptr, uint32 *intValue) {
     }
 
     return (numChars);
+}
+
+/* Build ASCII error message packet. */
+static void build_error_packet(const char *format, ...) {
+    char *response_ptr = remcomOutBuffer;
+    va_list args;
+
+    /* Construct the error response in the E.errtext format */
+    *response_ptr++ = 'E';
+    *response_ptr++ = '.';
+
+    va_start(args, format);
+    vsnprintf(response_ptr, BUFMAX-3, format, args);
+    va_end(args);
+
+    /* Null terminated error message is now store in remcomOutBuffer */
 }
 
 /*
@@ -643,7 +736,7 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
     bbr |= bbrBrk[brktype];
 
     if(addr == 0) {  /* GDB tries to watch 0, wasting a UCB channel */
-        strcpy(resBuffer, "OK");
+        strcpy(resBuffer, GDB_OK);
     }
     else if(brktype == 0) {
         /* we don't support memory breakpoints -- the debugger
@@ -651,7 +744,7 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
         *resBuffer = '\0';
     }
     else if(length > 8) {
-        strcpy(resBuffer, "E22");
+        strcpy(resBuffer, GDB_ERROR_BKPT_SWBREAK_NOT_SET);
     }
     else if(set) {
         WREG(ucb_base, BRCR) = 0;
@@ -665,10 +758,10 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
             LREG(ucb, BAR) = addr;
             BREG(ucb, BAMR) = 0x4; /* no BASR bits used, all BAR bits used */
             WREG(ucb, BBR) = bbr;
-            strcpy(resBuffer, "OK");
+            strcpy(resBuffer, GDB_OK);
         }
         else
-            strcpy(resBuffer, "E12");
+            strcpy(resBuffer, GDB_ERROR_BKPT_NOT_SET);
     }
     else {
         /* find matching UCB channel */
@@ -678,7 +771,7 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
 
         if(i) {
             WREG(ucb, BBR) = 0;
-            strcpy(resBuffer, "OK");
+            strcpy(resBuffer, GDB_OK);
         }
         else
             strcpy(resBuffer, "E06");
@@ -687,6 +780,25 @@ static void hardBreakpoint(int set, int brktype, uint32 addr, int length, char* 
 
 #undef LREG
 #undef WREG
+
+/* Callback for thd_each() for qfThreadInfo packet. */
+static int qfThreadInfo(kthread_t *thd, void *ud) {
+    size_t idx = *(size_t*)ud;
+
+    if(idx >= sizeof(remcomOutBuffer) - 3)
+        return -1;
+    if(idx > 1)
+        remcomOutBuffer[idx++] = ',';
+
+    remcomOutBuffer[idx++] = highhex(thd->tid);
+    remcomOutBuffer[idx++] = lowhex(thd->tid);
+
+    printf("qfThreadInfo: %u", thd->tid);
+
+    *(size_t*)ud = idx;
+
+    return 0;
+}
 
 /*
 This function does all exception handling.  It only does two things -
@@ -731,6 +843,7 @@ static void gdb_handle_exception(int exceptionVector) {
                 remcomOutBuffer[2] = lowhex(sigval);
                 remcomOutBuffer[3] = 0;
                 break;
+
             case 'd':
                 remote_debug = !(remote_debug);   /* toggle debug flag */
                 break;
@@ -751,7 +864,7 @@ static void gdb_handle_exception(int exceptionVector) {
                 for(i = 0; i < NUMREGBYTES / 4; i++, inBuf += 8)
                     hex2mem(inBuf, (char *)((uint32)irq_ctx + kosRegMap[i]), 4);
 
-                strcpy(remcomOutBuffer, "OK");
+                strcpy(remcomOutBuffer, GDB_OK);
             }
             break;
 
@@ -760,34 +873,34 @@ static void gdb_handle_exception(int exceptionVector) {
                 dofault = 0;
 
                 /* TRY, TO READ %x,%x.  IF SUCCEED, SET PTR = 0 */
-                if(hexToInt(&ptr, &addr))
-                    if(*(ptr++) == ',')
-                        if(hexToInt(&ptr, &length)) {
-                            ptr = 0;
-                            mem2hex((char *) addr, remcomOutBuffer, length);
-                        }
+                if(hexToInt(&ptr, &addr) && 
+                   *(ptr++) == ',' && 
+                   hexToInt(&ptr, &length)) {
+                    ptr = 0;
+                    mem2hex((char *) addr, remcomOutBuffer, length);
+                }
 
                 if(ptr)
-                    strcpy(remcomOutBuffer, "E01");
+                    strcpy(remcomOutBuffer, GDB_ERROR_BAD_ARGUMENTS);
 
                 /* restore handler for bus error */
                 dofault = 1;
                 break;
 
-                /* MAA..AA,LLLL: Write LLLL bytes at address AA.AA return OK */
+            /* MAA..AA,LLLL: Write LLLL bytes at address AA.AA return OK */
             case 'M':
                 dofault = 0;
 
                 /* TRY, TO READ '%x,%x:'.  IF SUCCEED, SET PTR = 0 */
-                if(hexToInt(&ptr, &addr))
-                    if(*(ptr++) == ',')
-                        if(hexToInt(&ptr, &length))
-                            if(*(ptr++) == ':') {
-                                hex2mem(ptr, (char *) addr, length);
-                                icache_flush_range(addr, length);
-                                ptr = 0;
-                                strcpy(remcomOutBuffer, "OK");
-                            }
+                if(hexToInt(&ptr, &addr) && 
+                   *(ptr++) == ',' && 
+                   hexToInt(&ptr, &length) && 
+                   *(ptr++) == ':') {
+                    hex2mem(ptr, (char *) addr, length);
+                    icache_flush_range(addr, length);
+                    ptr = 0;
+                    strcpy(remcomOutBuffer, GDB_OK);
+                }
 
                 if(ptr)
                     strcpy(remcomOutBuffer, "E02");
@@ -801,6 +914,7 @@ static void gdb_handle_exception(int exceptionVector) {
             case 's':
                 stepping = 1;
                 __fallthrough;
+
             case 'c': {
                 /* tRY, to read optional parameter, pc unchanged if no param */
                 if(hexToInt(&ptr, &addr))
@@ -814,7 +928,7 @@ static void gdb_handle_exception(int exceptionVector) {
 
             /* kill the program */
             case 'k':       /* reboot */
-                arch_reboot();
+                arch_abort();
                 break;
 
                 /* set or remove a breakpoint */
@@ -823,25 +937,168 @@ static void gdb_handle_exception(int exceptionVector) {
                 int set = (*(ptr - 1) == 'Z');
                 int brktype = *ptr++ - '0';
 
-                if(*(ptr++) == ',')
-                    if(hexToInt(&ptr, &addr))
-                        if(*(ptr++) == ',')
-                            if(hexToInt(&ptr, &length)) {
-                                hardBreakpoint(set, brktype, addr, length, remcomOutBuffer);
-                                ptr = 0;
-                            }
+                if(*(ptr++) == ',' && 
+                     hexToInt(&ptr, &addr) && 
+                     *(ptr++) == ',' && 
+                     hexToInt(&ptr, &length)) {
+                    hardBreakpoint(set, brktype, addr, length, remcomOutBuffer);
+                    ptr = 0;
+                }
 
                 if(ptr)
                     strcpy(remcomOutBuffer, "E02");
+                }
+                break;
+            case 'q': /* Threading */
+                if(*ptr == 'C') {
+                    kthread_t* thd = thd_get_current();
+                    printf("TID: %u\n", thd->tid);
+                    remcomOutBuffer[0] = 'Q';
+                    remcomOutBuffer[1] = 'C';
+                    remcomOutBuffer[2] = highhex(thd->tid);
+                    remcomOutBuffer[3] = lowhex(thd->tid);
+                    remcomOutBuffer[4] = '\0';
+                } else {
+                    /* ‘fThreadInfo’ */
+                    if(strncmp(ptr, "fThreadInfo", 11) == 0) {
+                        size_t idx = 0;
+                        remcomOutBuffer[idx++] = 'm';
+                        thd_each(qfThreadInfo, &idx);
+                        remcomOutBuffer[idx] = '\0';
+                    /* ‘sThreadInfo’ */
+                    } else if(strncmp(ptr, "sThreadInfo", 11) == 0) {
+                        strcpy(remcomOutBuffer, "l");
+                    /* ‘ThreadExtraInfo,thread-id’ */
+                    } else if(strncmp(ptr, "ThreadExtraInfo,", 16) == 0) { 
+                        ptr += 16;
+                        uint32_t tid = 0;
+                        if(hexToInt(&ptr, &tid)) {
+                            kthread_t* thr = thd_by_tid(tid);
+                            const char* plabel = thd_get_label(thr);
+                            mem2hex(plabel , remcomOutBuffer, strlen(plabel));
+                        } else{
+                            build_error_packet("Failed to get TID for ThreadExtraInfo.");
+                        }
+                    /* ‘GetTLSAddr:thread-id,offset,lm’ */
+                    } else if (strncmp(ptr, "GetTLSAddr:", 11) == 0) {
+                        ptr += 11;
+                        uint32_t thread_id = 0, offset = 0, lm = 0;
+                        kthread_t *thread;
+
+                        /* Extract thread-id, offset, and lm from the packet */
+                        if(hexToInt(&ptr, &thread_id) && *(ptr++) == ',' &&
+                           hexToInt(&ptr, &offset) && *(ptr++) == ',' &&
+                           hexToInt(&ptr, &lm)) {
+
+                            /* Find the thread by thread ID */
+                            thread = thd_by_tid(thread_id);
+                            if(thread) {
+                                /* Get the TLS header address for the specified thread */
+                                tcbhead_t *tcb = thread->tcbhead;
+
+                                if(tcb) {
+                                    /* Calculate the address by adding the offset to the base of the TLS data segment */
+                                    void* tls_addr = (void*)((uintptr_t)tcb + sizeof(tcbhead_t) + offset);
+
+                                    /* Convert the address to big endian hex string */
+                                    mem2hex((char*)&tls_addr, remcomOutBuffer, sizeof(tls_addr));
+                                } else {
+                                    build_error_packet("Memory read error for thread");
+                                }
+                            } else {
+                                build_error_packet("Invalid thread ID");
+                            }
+                        } else {
+                            build_error_packet("Invalid packet format");
+                        }
+                    }
+                }
+                break;
+
+            case 'T': { /* ‘Tthread-id’ */
+                uint32_t tid = 0;
+                if(hexToInt(&ptr, &tid)) {
+                    kthread_t* thr = thd_by_tid(tid);
+                    if(thr) {
+                        printf("Thd %lu is alive!\n", tid);
+                        strcpy(remcomOutBuffer, GDB_OK);
+                    }
+                    else {
+                        build_error_packet("Thd %lu is dead!\n", tid);
+                    }
+                }
             }
             break;
-        }           /* switch */
+
+            // case 'A': {  /* ‘Aarglen,argnum,arg,…’*/
+            //     /* Globally we probably need to define these: */
+            //     #define MAX_ARGS  10 /* How many args is the limit? */
+            //     #define ARG_BUFFER_SIZE 512 /* Buffer size to store args */
+            //     uint8_t main_argc; /* Has current count of args */
+            //     char *main_argv[MAX_ARGS]; /* Array of char * that is MAX_ARGS size */
+            //     char main_arg_buffer[ARG_BUFFER_SIZE] = {0}; /*- Buffer that stores args */
+            //     /* End global */
+
+            //     uint32_t arglen, argnum;
+            //     char *args_ptr = main_arg_buffer;
+            //     main_argc = 0;
+                
+            //     /* Grab arglen and argnum first */
+            //     if(hexToInt(&ptr, &arglen) && *(ptr++) == ',' && hexToInt(&ptr, &argnum) && *(ptr++) == ',') {
+            //         /* Hex encoded byte stream is twice as big as an ascii one */
+            //         if(arglen > ARG_BUFFER_SIZE*2 || argnum > MAX_ARGS) {
+            //             build_error_packet("Too many arguments or argument buffer overflow.");
+            //             break;
+            //         }
+
+            //         /* Program name auto included? */
+                    
+            //         /* Start decoding the hex-encoded byte stream of args */
+            //         while(*ptr && main_argc < argnum) {
+            //             /* Set pointer to new arg */
+            //             main_argv[main_argc] = args_ptr;
+
+            //             /* Get number of bytes till we get , or \0 */
+            //             size_t length = 0;
+            //             while (ptr[length] != '\0' && ptr[length] != ',')
+            //                 length++;
+
+            //             /* Convert hex to ASCII */
+            //             args_ptr = hex2mem(ptr, args_ptr, length/2);
+            //             *args_ptr++ = '\0';
+
+            //             ptr += length;
+            //             if(*ptr == ',')
+            //                 ptr++;
+
+            //             main_argc++;
+            //         }
+
+            //         if(main_argc != argnum) {
+            //             build_error_packet("Invalid number of arguments.");
+            //             main_argc = 0; /* Invalidate everything we did above */
+            //             break;
+            //         }
+            //     } else {
+            //         build_error_packet("Invalid argument format.");
+            //         break;
+            //     }
+
+            //     strcpy(remcomOutBuffer, GDB_OK);
+
+            //     /* Print the arguments to verify */
+            //     printf("Arguments received:\n");
+            //     for (int i = 0; i < main_argc; i++) {
+            //         printf("Arg %d: %s\n", i, main_argv[i]);
+            //     }
+            // }
+            // break;
+        }
 
         /* reply to the request */
         putpacket(remcomOutBuffer);
     }
 }
-
 
 /* This function will generate a breakpoint exception.  It is used at the
    beginning of a program to sync up with a debugger and can be used
@@ -851,7 +1108,6 @@ static void gdb_handle_exception(int exceptionVector) {
 void gdb_breakpoint(void) {
     BREAKPOINT();
 }
-
 
 static char getDebugChar(void) {
     int ch;
@@ -910,14 +1166,14 @@ static void handle_exception(irq_t code, irq_context_t *context, void *data) {
     gdb_handle_exception(code);
 }
 
-static void handle_user_trapa(irq_t code, irq_context_t *context, void *data) {
+static void handle_user_trapa(trapa_t code, irq_context_t *context, void *data) {
     (void)code;
     (void)data;
     irq_ctx = context;
     gdb_handle_exception(EXC_TRAPA);
 }
 
-static void handle_gdb_trapa(irq_t code, irq_context_t *context, void *data) {
+static void handle_gdb_trapa(trapa_t code, irq_context_t *context, void *data) {
     /*
     * trapa 0x20 indicates a software trap inserted in
     * place of code ... so back up PC by one
