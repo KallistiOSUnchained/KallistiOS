@@ -1,13 +1,13 @@
 # Master KallistiOS Environment Setup
 #
 # This script is responsible for setting up and maintaining your
-# KOS build environment dynamically. It ensures that any new settings 
-# added to environ.sh.sample (the maintainers' version) are available 
-# while preserving the user's custom overrides from environ.sh (their 
-# local version). 
+# KOS build environment dynamically. It ensures that any new settings
+# added to environ.sh.sample (the maintainers' version) are available
+# while preserving the user's custom overrides from environ.sh (their
+# local version).
 #
-# **Important:** Do not edit this script. Instead, make your customizations 
-# in environ.sh. This approach ensures you benefit from updates made to 
+# **Important:** Do not edit this script. Instead, make your customizations
+# in environ.sh. This approach ensures you benefit from updates made to
 # environ.sh.sample without losing your local settings.
 #
 # This script is typically sourced in your current shell environment
@@ -15,9 +15,10 @@
 # the KOS environment is set up automatically for each shell session.
 #
 
-# The base directory for your KallistiOS installation. If you going 
-# to edit anything in this file it would be this line.
-KOS_PATH="/opt/toolchains/dc/kos"
+# The base directory for your KallistiOS installation.
+# This is automatically set to the directory where the environ.sh.master
+# file is located.
+KOS_PATH=$(cd "$(dirname "${BASH_SOURCE[0]:-${(%):-%N}}")" && pwd)
 
 # Source the default environment settings
 . "${KOS_PATH}/doc/environ.sh.sample"
