@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/KallistiOSUnchained/KallistiOS/6bd3dd29f61439e59d799085e4b4089b80123bb8/doc/kos_logo.svg" width="200" height="200">
+  <img src="https://github.com/KallistiOSUnchained/KallistiOS/blob/a8d60d21201e5ddb07fa9daec4c5d9694283a38a/doc/kos_logo.svg" width="200" height="200">
 </div>
 <div align="center">
   <h1 align="center"><strong>KallistiOS (Unchained)</strong></h1>
