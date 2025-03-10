@@ -41,13 +41,11 @@ __BEGIN_DECLS
 
 #include <stdalign.h>
 #include <stdbool.h>
-#include <stdbool.h>
 
 #include <arch/memory.h>
 #include <arch/types.h>
 #include <arch/cache.h>
 #include <dc/sq.h>
-#include <dc/pvr_dma.h>
 #include <kos/img.h>
 #include <kos/regfield.h>
 
@@ -1132,12 +1130,10 @@ Striplength set to 2 */
 
 /* Initialization ****************************************************/
 /** \defgroup pvr_init  Initialization
-/** \defgroup pvr_init  Initialization
     \brief              Driver initialization and shutdown
     \ingroup            pvr
 
     Initialization and shutdown: stuff you should only ever have to do
-    once in your program.
     once in your program.
 */
 

@@ -27,9 +27,4 @@ run: $(TARGET)
 
 dist: $(TARGET)
 	-rm -f $(OBJS) romdisk.img
-<<<<<<< HEAD
 	$(KOS_STRIP) $(TARGET)
-=======
-	$(KOS_STRIP) $(TARGET)
-	
->>>>>>> master
