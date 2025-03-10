@@ -123,7 +123,8 @@ __BEGIN_DECLS
 #define PVR_SCAN_CLK            0x00d8  /**< \brief Clock and scanline values */
 #define PVR_BORDER_Y            0x00dc  /**< \brief Window border Y position */
 
-#define PVR_TEXTURE_MODULO      0x00e4  /**< \brief Output texture width modulo */
+#define PVR_TXR_STRIDE_MULT     0x00e4  /**< \brief Multiplier for stride width in increments of 32 */
+#define PVR_TEXTURE_MODULO      PVR_TXR_STRIDE_MULT  /* Backward compatibility */
 #define PVR_VIDEO_CFG           0x00e8  /**< \brief Misc video config */
 #define PVR_BITMAP_X            0x00ec  /**< \brief Bitmap window X position */
 #define PVR_BITMAP_Y            0x00f0  /**< \brief Bitmap window Y position */

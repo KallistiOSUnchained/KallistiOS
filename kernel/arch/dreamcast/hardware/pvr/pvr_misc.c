@@ -13,6 +13,7 @@
 #include <arch/timer.h>
 #include <dc/pvr.h>
 #include <dc/video.h>
+#include <kos/dbglog.h>
 #include <kos/regfield.h>
 
 #include "pvr_internal.h"

@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 /* KallistiOS ##version##
    examples/dreamcast/raylib/raytris/src/colors/colors.cpp
    Copyright (C) 2024 Cole Hall
 */
 
-<<<<<<< HEAD
-=======
->>>>>>> bed13a85 (Rename example to raytris)
-=======
->>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
 #include "colors.h"
 
 const Color darkGrey = {26, 31, 40, 255};
@@ -27,16 +18,4 @@ const Color darkBlue = {44, 44, 127, 255};
 
 std::vector<Color> GetCellColors(){
     return {darkGrey, green, red, orange, yellow, purple, cyan, blue};
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bed13a85 (Rename example to raytris)
-=======
-}
->>>>>>> d5839872 (Add raylib raytris example with changes to code formatting)
-=======
-}
->>>>>>> 6dffd11d (Added newlines to EOF that github likes to complain about)

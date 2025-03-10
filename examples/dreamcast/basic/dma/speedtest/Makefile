@@ -18,3 +18,10 @@ rm-elf:
 
 $(TARGET): $(OBJS)
 	kos-cc -o $@ $^
+
+run: $(TARGET)
+	$(KOS_LOADER) $(TARGET)
+
+dist: $(TARGET)
+	-rm -f $(OBJS)
+	$(KOS_STRIP) $(TARGET)

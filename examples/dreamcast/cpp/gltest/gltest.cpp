@@ -266,6 +266,7 @@ int main(int argc, char **argv) {
     gluPerspective(45.0f, vid_mode->width / (GLfloat)vid_mode->height, 0.1f, 100.0f);
     glMatrixMode(GL_MODELVIEW);
     glEnable(GL_TEXTURE_2D);
+    glEnable(GL_DEPTH_TEST);
 
     /* Expect CW vertex order */
     glFrontFace(GL_CW);

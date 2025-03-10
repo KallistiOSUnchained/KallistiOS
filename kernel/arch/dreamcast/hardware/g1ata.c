@@ -108,14 +108,6 @@ typedef struct ata_devdata {
 #define G1_ATA_DMA_DIRECTION    0xA05F740C      /* Read/Write */
 #define G1_ATA_DMA_ENABLE       0xA05F7414      /* Read/Write */
 #define G1_ATA_DMA_STATUS       0xA05F7418      /* Read/Write */
-#define G1_ATA_DMA_PROTECTION   0xA05F74B8      /* Write-only */
-
-/* Protection register code. */
-#define G1_DMA_UNLOCK_CODE      0x8843
-/* System memory protection unlock value. */
-#define G1_DMA_UNLOCK_SYSMEM    (G1_DMA_UNLOCK_CODE << 16 | 0x407F)
-/* All memory protection unlock value. */
-#define G1_DMA_UNLOCK_ALLMEM    (G1_DMA_UNLOCK_CODE << 16 | 0x007F)
 
 /* Bitmasks for the STATUS_REG/ALT_STATUS registers. */
 #define G1_ATA_SR_ERR   0x01
@@ -1082,7 +1074,7 @@ static int g1_ata_scan(void) {
         if(!g1_ata_set_transfer_mode(ATA_TRANSFER_WDMA(2))) {
             OUT32(G1_ATA_DMA_RACCESS_WAIT, G1_ACCESS_WDMA_MODE2);
             OUT32(G1_ATA_DMA_WACCESS_WAIT, G1_ACCESS_WDMA_MODE2);
-            OUT32(G1_ATA_DMA_PROTECTION, G1_DMA_UNLOCK_ALLMEM);
+            OUT32(G1_ATA_DMA_PROTECTION, G1_ATA_DMA_UNLOCK_ALLMEM);
         }
         else {
             device.wdma_modes = 0;

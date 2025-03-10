@@ -49,7 +49,8 @@ typedef enum pvr_dma_type {
     PVR_DMA_TA,        /**< Transfer to the tile accelerator */
     PVR_DMA_YUV,       /**< Transfer to the YUV converter (TA) */
     PVR_DMA_VRAM32_SB, /**< Transfer to/from VRAM using PVR i/f */
-    PVR_DMA_VRAM64_SB  /**< Transfer to/from VRAM using PVR i/f */
+    PVR_DMA_VRAM64_SB,  /**< Transfer to/from VRAM using PVR i/f */
+    PVR_DMA_REGISTERS  /**< \brief Transfer to/from PVR registers */
 } pvr_dma_type_t;
 
 /** \brief   PVR DMA interrupt callback type.

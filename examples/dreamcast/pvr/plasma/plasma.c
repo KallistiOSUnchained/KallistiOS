@@ -102,7 +102,7 @@ void plasma_drawtex(void) {
     // Switch these around to try out texture DMA
     pvr_txr_load(txr_buf[txr_cur], txr[txr_cur], 64 * 64 * 2);
     // dcache_flush_range((uint32)txr_buf[txr_cur], 64*64*2);   // dcache flush is needed when using DMA
-    // pvr_dma_ta_load_txr(txr_buf[txr_cur], txr[txr_cur], 64*64*2, 1, NULL, 0);
+    // pvr_txr_load_dma(txr_buf[txr_cur], txr[txr_cur], 64*64*2, 1, NULL, 0);
 }
 
 int check_start(void) {

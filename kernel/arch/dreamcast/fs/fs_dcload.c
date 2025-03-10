@@ -92,21 +92,8 @@ int dcload_read_char(void) {
 }
 
 int dcload_read_buffer(uint8_t *data, int len) {
-
     spinlock_lock_scoped(&mutex);
     return dclsc(DCLOAD_READ, STDIN_FILENO, data, len);
-
-    return rv;
-}
-
-int dcload_read_char(void) {
-    uint8_t chr;
-
-    spinlock_lock(&dcload_lock);
-    dclsc(DCLOAD_READ, STDIN_FILENO, &chr, 1);
-    spinlock_unlock(&dcload_lock);
-
-    return chr;
 }
 
 size_t dcload_gdbpacket(const char* in_buf, size_t in_size, char* out_buf, size_t out_size) {
@@ -226,7 +213,7 @@ static ssize_t dcload_read(void * h, void *buf, size_t cnt) {
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        rv = dclsc(DCLOAD_READ, hnd, buf, cnt);
+        ret = dclsc(DCLOAD_READ, hnd, buf, cnt);
     }
 
     return ret;
@@ -240,7 +227,7 @@ static ssize_t dcload_write(void * h, const void *buf, size_t cnt) {
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        rv = dclsc(DCLOAD_WRITE, hnd, buf, cnt);
+        ret = dclsc(DCLOAD_WRITE, hnd, buf, cnt);
     }
 
     return ret;
@@ -254,7 +241,7 @@ static off_t dcload_seek(void * h, off_t offset, int whence) {
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        rv = dclsc(DCLOAD_LSEEK, hnd, offset, whence);
+        ret = dclsc(DCLOAD_LSEEK, hnd, offset, whence);
     }
 
     return ret;
@@ -268,7 +255,7 @@ static off_t dcload_tell(void * h) {
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        rv = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
+        ret = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
     }
 
     return ret;
@@ -284,7 +271,7 @@ static size_t dcload_total(void * h) {
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
         cur = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
-        rv = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_END);
+        ret = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_END);
         dclsc(DCLOAD_LSEEK, hnd, cur, SEEK_SET);
     }
 
@@ -292,7 +279,7 @@ static size_t dcload_total(void * h) {
 }
 
 static dirent_t *dcload_readdir(void * h) {
-    dirent_t *rv = NULL;
+    dirent_t *ret = NULL;
     dcload_dirent_t *dcld;
     dcload_stat_t filestat;
     char *fn;
@@ -309,11 +296,11 @@ static dirent_t *dcload_readdir(void * h) {
     dcld = (dcload_dirent_t *)dclsc(DCLOAD_READDIR, hnd);
 
     if(dcld) {
-        rv = &(entry->dirent);
-        strcpy(rv->name, dcld->d_name);
-        rv->size = 0;
-        rv->time = 0;
-        rv->attr = 0; /* what the hell is attr supposed to be anyways? */
+        ret = &(entry->dirent);
+        strcpy(ret->name, dcld->d_name);
+        ret->size = 0;
+        ret->time = 0;
+        ret->attr = 0; /* what the hell is attr supposed to be anyways? */
 
         fn = malloc(strlen(entry->path) + strlen(dcld->d_name) + 1);
         strcpy(fn, entry->path);
@@ -321,20 +308,20 @@ static dirent_t *dcload_readdir(void * h) {
 
         if(!dclsc(DCLOAD_STAT, fn, &filestat)) {
             if(filestat.st_mode & S_IFDIR) {
-                rv->size = -1;
-                rv->attr = O_DIR;
+                ret->size = -1;
+                ret->attr = O_DIR;
             }
             else
-                rv->size = filestat.st_size;
+                ret->size = filestat.st_size;
 
-            rv->time = filestat.mtime;
+            ret->time = filestat.mtime;
 
         }
 
         free(fn);
     }
 
-    return rv;
+    return ret;
 }
 
 static int dcload_rename(vfs_handler_t * vfs, const char *fn1, const char *fn2) {
@@ -345,10 +332,10 @@ static int dcload_rename(vfs_handler_t * vfs, const char *fn1, const char *fn2) 
     spinlock_lock_scoped(&mutex);
 
     /* really stupid hack, since I didn't put rename() in dcload */
-    rv = dclsc(DCLOAD_LINK, fn1, fn2);
+    ret = dclsc(DCLOAD_LINK, fn1, fn2);
 
-    if(!rv)
-        rv = dclsc(DCLOAD_UNLINK, fn1);
+    if(!ret)
+        ret = dclsc(DCLOAD_UNLINK, fn1);
 
     return ret;
 }
@@ -365,7 +352,7 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
                        int flag) {
     dcload_stat_t filestat;
     size_t len = strlen(path);
-    int rv;
+    int ret;
 
     (void)flag;
 
@@ -380,11 +367,11 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
         return 0;
     }
 
-    spinlock_lock(&dcload_lock);
-    rv = dclsc(DCLOAD_STAT, path, &filestat);
-    spinlock_unlock(&dcload_lock);
+    spinlock_lock(&mutex);
+    ret = dclsc(DCLOAD_STAT, path, &filestat);
+    spinlock_unlock(&mutex);
 
-    if(!rv) {
+    if(!ret) {
         memset(st, 0, sizeof(struct stat));
         st->st_dev = (dev_t)((ptr_t)vfs);
         st->st_ino = filestat.st_ino;
@@ -408,7 +395,7 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
 }
 
 static int dcload_fcntl(void *h, int cmd, va_list ap) {
-    int rv = -1;
+    int ret = -1;
 
     (void)h;
     (void)ap;
@@ -416,20 +403,20 @@ static int dcload_fcntl(void *h, int cmd, va_list ap) {
     switch(cmd) {
         case F_GETFL:
             /* XXXX: Not the right thing to do... */
-            rv = O_RDWR;
+            ret = O_RDWR;
             break;
 
         case F_SETFL:
         case F_GETFD:
         case F_SETFD:
-            rv = 0;
+            ret = 0;
             break;
 
         default:
             errno = EINVAL;
     }
 
-    return rv;
+    return ret;
 }
 
 static int dcload_rewinddir(void *h) {

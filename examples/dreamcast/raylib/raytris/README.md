@@ -9,7 +9,7 @@ This is a block stacking puzzle game created using raylib following [this tutori
 I have decided to continue past the tutorial in order to further develop my skills and make a nicer Raytris experience. You can see this [here](https://github.com/Niisoks/Tetris-RayLib4DC). If you are here _just_ to see what the tutorial looks like on kallistios, [please check the branch titled "TutorialCompletion"](https://github.com/Niisoks/Tetris-RayLib4DC/tree/TutorialCompletion).
 
 ## Tools and references used
-- [KallistiOS (KOS)](https://github.com/KallistiOSUnchained/KallistiOS)
+- [KallistiOS (KOS)](https://github.com/KallistiOS/KallistiOS)
     - [Simulant Discord Server](https://discord.gg/NtBGReCtBT)
 - [raylib4Dreamcast](https://github.com/raylib4Consoles/raylib4Dreamcast)
     - [raylib](https://github.com/raysan5/raylib)

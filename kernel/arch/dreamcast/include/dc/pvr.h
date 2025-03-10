@@ -46,7 +46,6 @@ __BEGIN_DECLS
 #include <arch/types.h>
 #include <arch/cache.h>
 #include <dc/sq.h>
-#include <dc/pvr_dma.h>
 #include <kos/img.h>
 #include <kos/regfield.h>
 
