@@ -41,16 +41,21 @@ __BEGIN_DECLS
 /** \defgroup bfont  BIOS
     \brief    API for the Dreamcast's built-in BIOS font.
     \ingroup  video_fonts
+/** \defgroup bfont  BIOS
+    \brief    API for the Dreamcast's built-in BIOS font.
+    \ingroup  video_fonts
     @{
 */
 
 /** \defgroup bfont_size  Dimensions
+    \brief    Font size definitions for the BIOS fonts.
     \brief    Font size definitions for the BIOS fonts.
     @{
 */
 #define BFONT_THIN_WIDTH                        12  /**< \brief Width of Thin Font (ISO8859_1, half-JP) */
 #define BFONT_WIDE_WIDTH    (BFONT_THIN_WIDTH * 2)  /**< \brief Width of Wide Font (full-JP) */
 #define BFONT_HEIGHT                            24  /**< \brief Height of All Fonts */
+#define BFONT_ICON_DIMEN                        32  /**< \brief Dimension of vmu icons */
 #define BFONT_ICON_DIMEN                        32  /**< \brief Dimension of vmu icons */
 /** @} */
 
@@ -59,7 +64,14 @@ __BEGIN_DECLS
     @{
 */
 /** \brief Number of bytes to represent a single thin character within the BIOS font. */
+/** \defgroup bfont_byte_size  Byte Sizes
+    \brief    Byte size definitions for the BIOS fonts.
+    @{
+*/
+/** \brief Number of bytes to represent a single thin character within the BIOS font. */
 #define BFONT_BYTES_PER_CHAR        (BFONT_THIN_WIDTH * BFONT_HEIGHT / 8)
+
+/** \brief Number of bytes to represent a single wide character within the BIOS font. */
 
 /** \brief Number of bytes to represent a single wide character within the BIOS font. */
 #define BFONT_BYTES_PER_WIDE_CHAR   (BFONT_WIDE_WIDTH * BFONT_HEIGHT / 8)
@@ -69,12 +81,18 @@ __BEGIN_DECLS
 
 /** @} */
 
+/** \brief Number of bytes to represent a vmu icon within the BIOS font. */
+#define BFONT_BYTES_PER_VMU_ICON    (BFONT_ICON_DIMEN * BFONT_ICON_DIMEN / 8)
+
+/** @} */
+
 /** \defgroup bfont_indicies Structure
+    \brief    Structure of the Bios Font.
     \brief    Structure of the Bios Font.
     @{
 */
 /** \brief Start of Narrow Characters in Font Block */
-#define BFONT_NARROW_START          0   
+#define BFONT_NARROW_START          0
 #define BFONT_OVERBAR               BFONT_NARROW_START
 #define BFONT_ISO_8859_1_33_126     (BFONT_NARROW_START + ( 1 * BFONT_BYTES_PER_CHAR))
 #define BFONT_YEN                   (BFONT_NARROW_START + (95 * BFONT_BYTES_PER_CHAR))
@@ -84,7 +102,13 @@ __BEGIN_DECLS
     Only the box-drawing characters (row 8) are missing. */
 /** \brief Size of a row for JISX-0208 characters */
 #define JISX_0208_ROW_SIZE            94
+#define JISX_0208_ROW_SIZE            94
 /** \brief Start of Wide Characters in Font Block */
+#define BFONT_WIDE_START              (288 * BFONT_BYTES_PER_CHAR)
+/** \brief Start of JISX-0208 Rows 1-7 in Font Block */
+#define BFONT_JISX_0208_ROW1          BFONT_WIDE_START
+/** \brief Start of JISX-0208 Row 16-47 (Start of Level 1) in Font Block */
+#define BFONT_JISX_0208_ROW16         (BFONT_WIDE_START + (658 * BFONT_BYTES_PER_WIDE_CHAR))
 #define BFONT_WIDE_START              (288 * BFONT_BYTES_PER_CHAR)
 /** \brief Start of JISX-0208 Rows 1-7 in Font Block */   
 #define BFONT_JISX_0208_ROW1          BFONT_WIDE_START
@@ -92,15 +116,23 @@ __BEGIN_DECLS
 #define BFONT_JISX_0208_ROW16         (BFONT_WIDE_START + (658 * BFONT_BYTES_PER_WIDE_CHAR))
 /** \brief JISX-0208 Row 48-84 (Start of Level 2) in Font Block */
 #define BFONT_JISX_0208_ROW48         (BFONT_JISX_0208_ROW16 + ((32 * JISX_0208_ROW_SIZE) * BFONT_BYTES_PER_WIDE_CHAR))
+#define BFONT_JISX_0208_ROW48         (BFONT_JISX_0208_ROW16 + ((32 * JISX_0208_ROW_SIZE) * BFONT_BYTES_PER_WIDE_CHAR))
 
+/** \brief Start of DC Specific Icons in Font Block */
+#define BFONT_DREAMCAST_SPECIFIC      (BFONT_WIDE_START + (7056 * BFONT_BYTES_PER_WIDE_CHAR))
 /** \brief Start of DC Specific Icons in Font Block */
 #define BFONT_DREAMCAST_SPECIFIC      (BFONT_WIDE_START + (7056 * BFONT_BYTES_PER_WIDE_CHAR))
 
 /** \brief Start of VMU Specific Icons in Font Block */
 #define BFONT_VMU_DREAMCAST_SPECIFIC  (BFONT_DREAMCAST_SPECIFIC+(22 * BFONT_BYTES_PER_WIDE_CHAR))
+/** \brief Start of VMU Specific Icons in Font Block */
+#define BFONT_VMU_DREAMCAST_SPECIFIC  (BFONT_DREAMCAST_SPECIFIC+(22 * BFONT_BYTES_PER_WIDE_CHAR))
 
 /** @} */
 
+/** \brief Builtin DC Icons
+
+    Builtin DC user icons.
 /** \brief Builtin DC Icons
 
     Builtin DC user icons.
@@ -130,11 +162,38 @@ typedef enum bfont_dc_icon {
     BFONT_ICON_STARTBUTTON     = 0x14,   /**< \brief Start button */
     BFONT_ICON_VMU             = 0x15    /**< \brief VMU icon */
 } bfont_dc_icon_t;
+typedef enum bfont_dc_icon {
+    BFONT_ICON_CIRCLECOPYRIGHT = 0x00,   /**< \brief Circle copyright */
+    BFONT_CIRCLER              = 0x01,   /**< \brief Circle restricted */
+    BFONT_ICON_TRADEMARK       = 0x02,   /**< \brief Trademark */
+    BFONT_ICON_UPARROW         = 0x03,   /**< \brief Up arrow */
+    BFONT_ICON_DOWNARROW       = 0x04,   /**< \brief Down arrow */
+    BFONT_ICON_LEFTARROW       = 0x05,   /**< \brief Left arrow */
+    BFONT_ICON_RIGHTARROW      = 0x06,   /**< \brief Right arrow */
+    BFONT_ICON_UPRIGHTARROW    = 0x07,   /**< \brief Up right arrow */
+    BFONT_ICON_DOWNRIGHTARROW  = 0x08,   /**< \brief Down right arrow */
+    BFONT_ICON_DOWNLEFTARROW   = 0x09,   /**< \brief Down left arrow */
+    BFONT_ICON_UPLEFTARROW     = 0x0A,   /**< \brief Up left arrow */
+    BFONT_ICON_ABUTTON         = 0x0B,   /**< \brief A button */
+    BFONT_ICON_BBUTTON         = 0x0C,   /**< \brief B button */
+    BFONT_ICON_CBUTTON         = 0x0D,   /**< \brief C button */
+    BFONT_ICON_DBUTTON         = 0x0E,   /**< \brief D button */
+    BFONT_ICON_XBUTTON         = 0x0F,   /**< \brief X button */
+    BFONT_ICON_YBUTTON         = 0x10,   /**< \brief Y button */
+    BFONT_ICON_ZBUTTON         = 0x11,   /**< \brief Z button */
+    BFONT_ICON_LTRIGGER        = 0x12,   /**< \brief L trigger */
+    BFONT_ICON_RTRIGGER        = 0x13,   /**< \brief R trigger */
+    BFONT_ICON_STARTBUTTON     = 0x14,   /**< \brief Start button */
+    BFONT_ICON_VMU             = 0x15    /**< \brief VMU icon */
+} bfont_dc_icon_t;
 /** @} */
 
 /** \brief Builtin VMU Icons
 
     Builtin VMU volume user icons. The Dreamcast's BIOS allows the 
+    user to set these when formatting the VMU.
+    @{
+    Builtin VMU volume user icons. The Dreamcast's BIOS allows the
     user to set these when formatting the VMU.
     @{
 */
@@ -236,7 +295,7 @@ typedef enum bfont_vmu_icon {
     BFONT_ICON_8               = 0x5E, /**< \brief `8` digit */
     BFONT_ICON_9               = 0x5F, /**< \brief `9` digit */
     BFONT_ICON_A               = 0x60, /**< \brief `A` letter */
-    BFONT_ICON_B               = 0x61, /**< \brief `B` letter */   
+    BFONT_ICON_B               = 0x61, /**< \brief `B` letter */
     BFONT_ICON_C               = 0x62, /**< \brief `C` letter */
     BFONT_ICON_D               = 0x63, /**< \brief `D` letter */
     BFONT_ICON_E               = 0x64, /**< \brief `E` letter */
@@ -269,6 +328,8 @@ typedef enum bfont_vmu_icon {
     BFONT_ICON_DARK_GRAY       = 0x7F, /**< \brief Dark gray */
     BFONT_ICON_EMBROIDERY      = 0x80  /**< \brief Embroidery */
 } bfont_vmu_icon_t;
+/** @} */
+
 /** @} */
 
 /** @} */
@@ -338,6 +399,7 @@ void bfont_set_encoding(bfont_code_t enc);
     \return                 A pointer to the raw character data
 */
 const uint8_t *bfont_find_char(uint32_t ch);
+const uint8_t *bfont_find_char(uint32_t ch);
 
 /** \brief   Find an full-width Japanese character in the font.
 
@@ -390,13 +452,28 @@ uint8_t *bfont_find_icon(bfont_vmu_icon_t icon);
 */
 uint8_t *bfont_find_dc_icon(bfont_dc_icon_t icon);
 
+/** \brief   Find a DC icon.
+
+    This function retrieves a pointer to the icon data for the specified DC
+    icon in the bios, if its available. Each dc icon has dimensions 24x24 pixels
+    and is 72 bytes long.
+
+    \param  icon            The DC icon index to look up.
+    \return                 A pointer to the raw icon data or NULL if icon value
+                            is incorrect.
+*/
+uint8_t *bfont_find_dc_icon(bfont_dc_icon_t icon);
+
 /** @} */
 
+/** \defgroup bfont_char Character Drawing
+    \brief Methods for rendering characters/icons.
 /** \defgroup bfont_char Character Drawing
     \brief Methods for rendering characters/icons.
     @{
 */
 
+/** \brief   Draw a single character of any sort to a buffer.
 /** \brief   Draw a single character of any sort to a buffer.
 
     This function draws a single character in the set encoding to the given
@@ -404,6 +481,17 @@ uint8_t *bfont_find_dc_icon(bfont_dc_icon_t icon);
     exposing the colors and bitdepths desired. This will allow the writing
     of bfont characters to paletted textures.
 
+    \param  buffer          The buffer to draw to
+    \param  bufwidth        The width of the buffer in pixels
+    \param  fg              The foreground color to use
+    \param  bg              The background color to use
+    \param  bpp             The number of bits per pixel in the buffer
+    \param  opaque          If true, overwrite background areas with black,
+                            otherwise do not change them from what they are
+    \param  c               The character to draw
+    \param  wide            Draw a wide character
+    \param  iskana          Draw a half-width kana character
+    \return                 Amount of width covered in bytes
     \param  buffer          The buffer to draw to
     \param  bufwidth        The width of the buffer in pixels
     \param  fg              The foreground color to use
@@ -463,7 +551,7 @@ size_t bfont_draw_thin(void *buffer, uint32_t bufwidth, bool opaque,
     \param  c               The character to draw
     \return                 Amount of width covered in bytes.
 */
-size_t bfont_draw_wide(void *buffer, uint32_t bufwidth, bool opaque, 
+size_t bfont_draw_wide(void *buffer, uint32_t bufwidth, bool opaque,
                        uint32_t c);
 
 /** \brief   Draw a VMU icon to the buffer.
@@ -532,13 +620,248 @@ size_t bfont_draw_dc_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
 size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque, 
                           bfont_dc_icon_t icon);
 
+/** \brief   Draw a VMU icon to the buffer.
+
+    This function draws a 32x32 VMU icon to the given buffer, supporting
+    multiple color depths (4, 8, 16, and 32 bits per pixel).
+
+    \param  buffer          The buffer to draw to (at least 32 x 32 pixels)
+    \param  bufwidth        The width of the buffer in pixels
+    \param  fg              The foreground color to use
+    \param  bg              The background color to use
+    \param  bpp             The number of bits per pixel in the buffer
+    \param  opaque          If true, overwrite background areas with black,
+                            otherwise do not change them from what they are
+    \param  icon            The VMU icon to draw
+    \return                 Amount of width covered in bytes
+*/
+size_t bfont_draw_vmu_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
+                              uint32_t bg, uint8_t bpp, bool opaque,
+                              bfont_vmu_icon_t icon);
+
+/** \brief   Draw a VMU icon to a buffer.
+
+    This function draws a 32x32 VMU icon to the given buffer.
+
+    \param  buffer          The buffer to draw to (at least 32 x 32 pixels)
+    \param  bufwidth        The width of the buffer in pixels
+    \param  opaque          If true, overwrite blank areas with black,
+                            otherwise do not change them from what they are
+    \param  icon            The VMU icon to draw
+    \return                 Amount of width covered in bytes.
+*/
+size_t bfont_draw_vmu_icon(void *buffer, uint32_t bufwidth, bool opaque,
+                           bfont_vmu_icon_t icon);
+
+/** \brief   Draw a DC icon to the buffer.
+
+    This function draws a 24x24 DC icon to the given buffer, supporting
+    multiple color depths (4, 8, 16, and 32 bits per pixel).
+
+    \param  buffer          The buffer to draw to (at least 24 x 24 pixels)
+    \param  bufwidth        The width of the buffer in pixels
+    \param  fg              The foreground color to use
+    \param  bg              The background color to use
+    \param  bpp             The number of bits per pixel in the buffer
+    \param  opaque          If true, overwrite background areas with black,
+                            otherwise do not change them from what they are
+    \param  icon            The DC icon to draw
+    \return                 Amount of width covered in bytes
+*/
+size_t bfont_draw_dc_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
+                             uint32_t bg, uint8_t bpp, bool opaque,
+                             bfont_dc_icon_t icon);
+
+/** \brief   Draw a DC icon to a buffer.
+
+    This function draws a 24x24 DC icon to the given buffer.
+
+    \param  buffer          The buffer to draw to (at least 24 x 24 pixels)
+    \param  bufwidth        The width of the buffer in pixels
+    \param  opaque          If true, overwrite blank areas with black,
+                            otherwise do not change them from what they are
+    \param  icon            The DC icon to draw
+    \return                 Amount of width covered in bytes.
+*/
+size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque,
+                          bfont_dc_icon_t icon);
+
 /** @} */
 
+/** \defgroup bfont_string String Drawing
+    \brief    Methods for rendering formatted text/icons.
 /** \defgroup bfont_string String Drawing
     \brief    Methods for rendering formatted text/icons.
 
     @{
 */
+
+/** brief Macros for Builtin DC Icons
+
+    These macros are provided for use in string concatenation for printf
+    and other functions requiring inline representation of DC icons.
+    @{
+*/
+#define DI_CIRCLECOPYRIGHT     "\\di00"
+#define DI_CIRCLER             "\\di01"
+#define DI_TRADEMARK           "\\di02"
+#define DI_UPARROW             "\\di03"
+#define DI_DOWNARROW           "\\di04"
+#define DI_LEFTARROW           "\\di05"
+#define DI_RIGHTARROW          "\\di06"
+#define DI_UPRIGHTARROW        "\\di07"
+#define DI_DOWNRIGHTARROW      "\\di08"
+#define DI_DOWNLEFTARROW       "\\di09"
+#define DI_UPLEFTARROW         "\\di0A"
+#define DI_ABUTTON             "\\di0B"
+#define DI_BBUTTON             "\\di0C"
+#define DI_CBUTTON             "\\di0D"
+#define DI_DBUTTON             "\\di0E"
+#define DI_XBUTTON             "\\di0F"
+#define DI_YBUTTON             "\\di10"
+#define DI_ZBUTTON             "\\di11"
+#define DI_LTRIGGER            "\\di12"
+#define DI_RTRIGGER            "\\di13"
+#define DI_STARTBUTTON         "\\di14"
+#define DI_VMU                 "\\di15"
+/** @} */
+
+/** brief Macros for Builtin VMU Icons
+
+    These macros are provided for use in string concatenation for printf
+    and other functions requiring inline representation of VMU icons.
+    @{
+*/
+#define VI_INVALID_VMU         "\\vi00"
+#define VI_HOURGLASS_ONE       "\\vi01"
+#define VI_HOURGLASS_TWO       "\\vi02"
+#define VI_HOURGLASS_THREE     "\\vi03"
+#define VI_HOURGLASS_FOUR      "\\vi04"
+#define VI_VMUICON             "\\vi05"
+#define VI_EARTH               "\\vi06"
+#define VI_SATURN              "\\vi07"
+#define VI_QUARTER_MOON        "\\vi08"
+#define VI_LAUGHING_FACE       "\\vi09"
+#define VI_SMILING_FACE        "\\vi0A"
+#define VI_CASUAL_FACE         "\\vi0B"
+#define VI_ANGRY_FACE          "\\vi0C"
+#define VI_COW                 "\\vi0D"
+#define VI_HORSE               "\\vi0E"
+#define VI_RABBIT              "\\vi0F"
+#define VI_CAT                 "\\vi10"
+#define VI_CHICK               "\\vi11"
+#define VI_LION                "\\vi12"
+#define VI_MONKEY              "\\vi13"
+#define VI_PANDA               "\\vi14"
+#define VI_BEAR                "\\vi15"
+#define VI_PIG                 "\\vi16"
+#define VI_DOG                 "\\vi17"
+#define VI_FISH                "\\vi18"
+#define VI_OCTOPUS             "\\vi19"
+#define VI_SQUID               "\\vi1A"
+#define VI_WHALE               "\\vi1B"
+#define VI_CRAB                "\\vi1C"
+#define VI_BUTTERFLY           "\\vi1D"
+#define VI_LADYBUG             "\\vi1E"
+#define VI_ANGLER_FISH         "\\vi1F"
+#define VI_PENGUIN             "\\vi20"
+#define VI_CHERRIES            "\\vi21"
+#define VI_TULIP               "\\vi22"
+#define VI_LEAF                "\\vi23"
+#define VI_SAKURA              "\\vi24"
+#define VI_APPLE               "\\vi25"
+#define VI_ICECREAM            "\\vi26"
+#define VI_CACTUS              "\\vi27"
+#define VI_PIANO               "\\vi28"
+#define VI_GUITAR              "\\vi29"
+#define VI_EIGHTH_NOTE         "\\vi2A"
+#define VI_TREBLE_CLEF         "\\vi2B"
+#define VI_BOAT                "\\vi2C"
+#define VI_CAR                 "\\vi2D"
+#define VI_HELMET              "\\vi2E"
+#define VI_MOTORCYCLE          "\\vi2F"
+#define VI_VAN                 "\\vi30"
+#define VI_TRUCK               "\\vi31"
+#define VI_CLOCK               "\\vi32"
+#define VI_TELEPHONE           "\\vi33"
+#define VI_PENCIL              "\\vi34"
+#define VI_CUP                 "\\vi35"
+#define VI_SILVERWARE          "\\vi36"
+#define VI_HOUSE               "\\vi37"
+#define VI_BELL                "\\vi38"
+#define VI_CROWN               "\\vi39"
+#define VI_SOCK                "\\vi3A"
+#define VI_CAKE                "\\vi3B"
+#define VI_KEY                 "\\vi3C"
+#define VI_BOOK                "\\vi3D"
+#define VI_BASEBALL            "\\vi3E"
+#define VI_SOCCER              "\\vi3F"
+#define VI_BULB                "\\vi40"
+#define VI_TEDDY_BEAR          "\\vi41"
+#define VI_BOW_TIE             "\\vi42"
+#define VI_BOW_ARROW           "\\vi43"
+#define VI_SNOWMAN             "\\vi44"
+#define VI_LIGHTNING           "\\vi45"
+#define VI_SUN                 "\\vi46"
+#define VI_CLOUD               "\\vi47"
+#define VI_UMBRELLA            "\\vi48"
+#define VI_ONE_STAR            "\\vi49"
+#define VI_TWO_STARS           "\\vi4A"
+#define VI_THREE_STARS         "\\vi4B"
+#define VI_FOUR_STARS          "\\vi4C"
+#define VI_HEART               "\\vi4D"
+#define VI_DIAMOND             "\\vi4E"
+#define VI_SPADE               "\\vi4F"
+#define VI_CLUB                "\\vi50"
+#define VI_JACK                "\\vi51"
+#define VI_QUEEN               "\\vi52"
+#define VI_KING                "\\vi53"
+#define VI_JOKER               "\\vi54"
+#define VI_ISLAND              "\\vi55"
+#define VI_0                   "\\vi56"
+#define VI_1                   "\\vi57"
+#define VI_2                   "\\vi58"
+#define VI_3                   "\\vi59"
+#define VI_4                   "\\vi5A"
+#define VI_5                   "\\vi5B"
+#define VI_6                   "\\vi5C"
+#define VI_7                   "\\vi5D"
+#define VI_8                   "\\vi5E"
+#define VI_9                   "\\vi5F"
+#define VI_A                   "\\vi60"
+#define VI_B                   "\\vi61"
+#define VI_C                   "\\vi62"
+#define VI_D                   "\\vi63"
+#define VI_E                   "\\vi64"
+#define VI_F                   "\\vi65"
+#define VI_G                   "\\vi66"
+#define VI_H                   "\\vi67"
+#define VI_I                   "\\vi68"
+#define VI_J                   "\\vi69"
+#define VI_K                   "\\vi6A"
+#define VI_L                   "\\vi6B"
+#define VI_M                   "\\vi6C"
+#define VI_N                   "\\vi6D"
+#define VI_O                   "\\vi6E"
+#define VI_P                   "\\vi6F"
+#define VI_Q                   "\\vi70"
+#define VI_R                   "\\vi71"
+#define VI_S                   "\\vi72"
+#define VI_T                   "\\vi73"
+#define VI_U                   "\\vi74"
+#define VI_V                   "\\vi75"
+#define VI_W                   "\\vi76"
+#define VI_X                   "\\vi77"
+#define VI_Y                   "\\vi78"
+#define VI_Z                   "\\vi79"
+#define VI_CHECKER_BOARD       "\\vi7A"
+#define VI_GRID                "\\vi7B"
+#define VI_LIGHT_GRAY          "\\vi7C"
+#define VI_DIAG_GRID           "\\vi7D"
+#define VI_PACMAN_GRID         "\\vi7E"
+#define VI_DARK_GRAY           "\\vi7F"
+#define VI_EMBROIDERY          "\\vi80"
+/** @} */
 
 /** brief Macros for Builtin DC Icons
 
@@ -715,6 +1038,7 @@ size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque,
     can be set.
 
     \param  buffer          The buffer to draw to.
+    \param  buffer          The buffer to draw to.
     \param  width           The width of the buffer in pixels.
     \param  fg              The foreground color to use.
     \param  bg              The background color to use.
@@ -726,6 +1050,7 @@ size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque,
     \sa bfont_draw_str_ex_fmt(), bfont_draw_str_ex_va()
 */
 void bfont_draw_str_ex(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
+void bfont_draw_str_ex(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
                        uint8_t bpp, bool opaque, const char *str);
 
 /** \brief   Draw a full formatted string of any sort to any sort of buffer.
@@ -733,6 +1058,7 @@ void bfont_draw_str_ex(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
     This function is equivalent to bfont_draw_str_ex(), except that the string
     is formatted as with the `printf()` function.
 
+    \param  buffer          The buffer to draw to.
     \param  buffer          The buffer to draw to.
     \param  width           The width of the buffer in pixels.
     \param  fg              The foreground color to use.
@@ -746,6 +1072,7 @@ void bfont_draw_str_ex(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
     \sa bfont_draw_str_ex_vfmt()
 */
 void bfont_draw_str_ex_fmt(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
+void bfont_draw_str_ex_fmt(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
                            uint8_t bpp, bool opaque, const char *fmt, ...)
                            __printflike(7, 8);
 
@@ -754,6 +1081,7 @@ void bfont_draw_str_ex_fmt(void *buffer, uint32_t width, uint32_t fg, uint32_t b
     This function is equivalent to bfont_draw_str_ex_fmt(), except that the
     variadic argument list is passed via a pointer to a va_list.
 
+    \param  buffer          The buffer to draw to.
     \param  buffer          The buffer to draw to.
     \param  width           The width of the buffer in pixels.
     \param  fg              The foreground color to use.
@@ -767,6 +1095,7 @@ void bfont_draw_str_ex_fmt(void *buffer, uint32_t width, uint32_t fg, uint32_t b
     \sa bfont_draw_str_ex_fmt()
 */
 void bfont_draw_str_ex_vfmt(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
+void bfont_draw_str_ex_vfmt(void *buffer, uint32_t width, uint32_t fg, uint32_t bg,
                             uint8_t bpp, bool opaque, const char *fmt,
                             va_list *var_args);
 
@@ -778,11 +1107,13 @@ void bfont_draw_str_ex_vfmt(void *buffer, uint32_t width, uint32_t fg, uint32_t 
     16-bit colors.
 
     \param  buffer          The buffer to draw to.
+    \param  buffer          The buffer to draw to.
     \param  width           The width of the buffer in pixels.
     \param  opaque          If true, overwrite blank areas with bfont_bgcolor,
                             otherwise do not change them from what they are.
     \param  str             The string to draw.
 */
+void bfont_draw_str(void *buffer, uint32_t width, bool opaque, const char *str);
 void bfont_draw_str(void *buffer, uint32_t width, bool opaque, const char *str);
 
 /** \brief   Draw a full formatted string to a buffer.
@@ -791,6 +1122,7 @@ void bfont_draw_str(void *buffer, uint32_t width, bool opaque, const char *str);
     formatted as with the `printf()` function.
 
     \param  buffer          The buffer to draw to.
+    \param  buffer          The buffer to draw to.
     \param  width           The width of the buffer in pixels.
     \param  opaque          If true, overwrite blank areas with bfont_bgcolor,
                             otherwise do not change them from what they are.
@@ -798,11 +1130,12 @@ void bfont_draw_str(void *buffer, uint32_t width, bool opaque, const char *str);
     \param  ...             Additional printf-style variadic arguments.
 */
 void bfont_draw_str_fmt(void *buffer, uint32_t width, bool opaque, const char *fmt,
+void bfont_draw_str_fmt(void *buffer, uint32_t width, bool opaque, const char *fmt,
                         ...) __printflike(4, 5);
-                        
+
 /** \brief   Draw a full formatted string to video ram (with va_args).
- 
-    This function is equivalent to bfont_draw_str_ex_vfmt(), except that 
+
+    This function is equivalent to bfont_draw_str_ex_vfmt(), except that
     the variadic argument list is passed via a pointer to a va_list.
 
     \param  x               The x position to start drawing at.
@@ -816,8 +1149,8 @@ void bfont_draw_str_fmt(void *buffer, uint32_t width, bool opaque, const char *f
 
     \sa bfont_draw_str_ex()
 */
-void bfont_draw_str_vram_vfmt(uint32_t x, uint32_t y, uint32_t fg, uint32_t bg, 
-                              bool opaque, const char *fmt, 
+void bfont_draw_str_vram_vfmt(uint32_t x, uint32_t y, uint32_t fg, uint32_t bg,
+                              bool opaque, const char *fmt,
                               va_list *var_args);
 
 /** \brief   Draw a full string to video ram.
@@ -834,8 +1167,10 @@ void bfont_draw_str_vram_vfmt(uint32_t x, uint32_t y, uint32_t fg, uint32_t bg,
     \param  fmt             The printf-style format string to draw.
     \param  ...             Additional printf-style variadic arguments.
 */
-void bfont_draw_str_vram_fmt(uint32_t x, uint32_t y, bool opaque, const char *fmt, 
+void bfont_draw_str_vram_fmt(uint32_t x, uint32_t y, bool opaque, const char *fmt,
                              ...) __printflike(4, 5);
+
+/** @} */
 
 /** @} */
 

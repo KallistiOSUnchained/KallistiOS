@@ -33,6 +33,7 @@ utils/scramble/scramble
 utils/makeip/makeip
 utils/naomibintool/naomibintool
 utils/naominetboot/naominetboot
+utils/mkdcdisc/mkdcdisc
 examples/dreamcast/basic/exec/romdisk/sub.bin
 examples/dreamcast/kgl/basic/vq/fruit.vq
 examples/dreamcast/kgl/nehe/nehe26/data/txt2bin
@@ -46,6 +47,7 @@ examples/dreamcast/pvr/bumpmap/romdisk/bumpmap.raw
 examples/dreamcast/pvr/modifier_volume_tex/romdisk/fruit.kmg
 examples/dreamcast/pvr/texture_render/texture_render.bin
 examples/dreamcast/video/screenshot/screenshot*.ppm
+examples/dreamcast/*/nehe/nehe26/romdisk/*.bin
 examples/dreamcast/library/exports.c
 examples/dreamcast/library/exports_stubs.c
 examples/dreamcast/library/*/exports.c

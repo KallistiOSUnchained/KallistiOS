@@ -55,7 +55,6 @@ extern int dcload_type;
 
 /* \cond */
 /* Available dcload console commands */
-
 #define DCLOAD_READ         0
 #define DCLOAD_WRITE        1
 #define DCLOAD_OPEN         2
