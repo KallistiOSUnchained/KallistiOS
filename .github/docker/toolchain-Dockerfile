@@ -107,7 +107,8 @@ RUN apk add --no-cache \
         python3 \
         ruby-rake \
         libisofs-dev \
-        meson
+        meson \
+        gcompat libc6-compat linux-headers  # ✅ FIX: dctool-serial
 
 # Set default working directory
 WORKDIR /opt/toolchains/dc
