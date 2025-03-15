@@ -20,6 +20,7 @@
 #include <arch/timer.h>
 #include <arch/cache.h>
 #include <arch/irq.h>
+#include <arch/memory.h>
 
 /*
    This file implements support for accessing devices over the G1 bus by the
@@ -107,14 +108,6 @@ typedef struct ata_devdata {
 #define G1_ATA_DMA_DIRECTION    0xA05F740C      /* Read/Write */
 #define G1_ATA_DMA_ENABLE       0xA05F7414      /* Read/Write */
 #define G1_ATA_DMA_STATUS       0xA05F7418      /* Read/Write */
-#define G1_ATA_DMA_PROTECTION   0xA05F74B8      /* Write-only */
-
-/* Protection register code. */
-#define G1_DMA_UNLOCK_CODE      0x8843
-/* System memory protection unlock value. */
-#define G1_DMA_UNLOCK_SYSMEM    (G1_DMA_UNLOCK_CODE << 16 | 0x407F)
-/* All memory protection unlock value. */
-#define G1_DMA_UNLOCK_ALLMEM    (G1_DMA_UNLOCK_CODE << 16 | 0x007F)
 
 /* Bitmasks for the STATUS_REG/ALT_STATUS registers. */
 #define G1_ATA_SR_ERR   0x01
@@ -618,7 +611,7 @@ out:
 int g1_ata_read_lba_dma(uint64_t sector, size_t count, void *buf,
                         int block) {
     int lba28, old, can_lba48 = CAN_USE_LBA48();
-    uint32_t addr;
+    uintptr_t addr;
     uint8_t cmd;
 
     /* Make sure we're actually being asked to do work... */
@@ -661,7 +654,7 @@ int g1_ata_read_lba_dma(uint64_t sector, size_t count, void *buf,
     }
 
     /* Check the alignment of the address. */
-    addr = ((uint32_t)buf) & 0x0FFFFFFF;
+    addr = (uintptr_t)buf;
 
     if(addr & 0x1F) {
         dbglog(DBG_ERROR, "g1_ata_read_lba_dma: Unaligned output address\n");
@@ -669,10 +662,18 @@ int g1_ata_read_lba_dma(uint64_t sector, size_t count, void *buf,
         return -1;
     }
 
-    if((addr >> 24) == 0x0C) {
+    /* Invalidate the CPU cache only for cacheable memory areas.
+       Otherwise, it is assumed that either this operation is unnecessary
+       (another DMA is being used) or that the caller is responsible
+       for managing the CPU data cache.
+    */
+    if((addr & MEM_AREA_P2_BASE) != MEM_AREA_P2_BASE) {
         /* Invalidate the dcache over the range of the data. */
-        dcache_inval_range((uint32)buf, count * 512);
+        dcache_inval_range(addr, count * 512);
     }
+
+    /* Use the physical memory address. */
+    addr &= MEM_AREA_CACHE_MASK;
 
     /* Lock the mutex. It will be unlocked later in the IRQ handler. */
     if(g1_ata_mutex_lock())
@@ -801,7 +802,7 @@ int g1_ata_write_lba(uint64_t sector, size_t count, const void *buf) {
 int g1_ata_write_lba_dma(uint64_t sector, size_t count, const void *buf,
                          int block) {
     int cmd, lba28, old, can_lba48 = CAN_USE_LBA48();
-    uint32_t addr;
+    uintptr_t addr;
 
     /* Make sure we're actually being asked to do work... */
     if(!count)
@@ -843,7 +844,7 @@ int g1_ata_write_lba_dma(uint64_t sector, size_t count, const void *buf,
     }
 
     /* Check the alignment of the address. */
-    addr = ((uint32_t)buf) & 0x0FFFFFFF;
+    addr = (uintptr_t)buf;
 
     if(addr & 0x1F) {
         dbglog(DBG_ERROR, "g1_ata_write_lba_dma: Unaligned input address\n");
@@ -851,10 +852,18 @@ int g1_ata_write_lba_dma(uint64_t sector, size_t count, const void *buf,
         return -1;
     }
 
-    if((addr >> 24) == 0x0C) {
+    /* Flush the CPU cache only for cacheable memory areas.
+       Otherwise, it is assumed that either this operation is unnecessary
+       (another DMA is being used) or that the caller is responsible
+       for managing the CPU data cache.
+    */
+    if((addr & MEM_AREA_P2_BASE) != MEM_AREA_P2_BASE) {
         /* Flush the dcache over the range of the data. */
-        dcache_flush_range((uint32)buf, count * 512);
+        dcache_flush_range(addr, count * 512);
     }
+
+    /* Use the physical memory address. */
+    addr &= MEM_AREA_CACHE_MASK;
 
     /* Lock the mutex. It will be unlocked in the IRQ handler later. */
     if(g1_ata_mutex_lock())
@@ -1065,7 +1074,7 @@ static int g1_ata_scan(void) {
         if(!g1_ata_set_transfer_mode(ATA_TRANSFER_WDMA(2))) {
             OUT32(G1_ATA_DMA_RACCESS_WAIT, G1_ACCESS_WDMA_MODE2);
             OUT32(G1_ATA_DMA_WACCESS_WAIT, G1_ACCESS_WDMA_MODE2);
-            OUT32(G1_ATA_DMA_PROTECTION, G1_DMA_UNLOCK_ALLMEM);
+            OUT32(G1_ATA_DMA_PROTECTION, G1_ATA_DMA_UNLOCK_ALLMEM);
         }
         else {
             device.wdma_modes = 0;

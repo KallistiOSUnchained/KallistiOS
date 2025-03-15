@@ -64,8 +64,8 @@ __BEGIN_DECLS
 #define ASIC_EVT_PVR_TRANSDONE            0x0009  /**< \brief Transparent list completed */
 #define ASIC_EVT_PVR_TRANSMODDONE         0x000a  /**< \brief Transparent modifiers completed */
 
-#define ASIC_EVT_PVR_DMA                  0x000b  /**< \brief PVR DMA complete */
-#define ASIC_EVT_TA_DMA                   0x0013  /**< \brief TA DMA complete */
+#define ASIC_EVT_PVR_DMA                  0x0013  /**< \brief PVR DMA complete */
+#define ASIC_EVT_TA_DMA                   0x000b  /**< \brief TA DMA complete */
 #define ASIC_EVT_PVR_PTDONE               0x0015  /**< \brief Punch-thrus completed */
 
 #define ASIC_EVT_PVR_ISP_OUTOFMEM         0x0200  /**< \brief ISP out of memory */
@@ -188,6 +188,14 @@ __BEGIN_DECLS
 */
 typedef void (*asic_evt_handler)(uint32_t code, void *data);
 
+/** \brief   ASIC event handler table entry.
+    \ingroup asic
+ */
+typedef struct {
+    asic_evt_handler hdl;
+    void *data;
+} asic_evt_handler_entry_t;
+
 /** \brief   Set or remove an ASIC handler.
     \ingroup asic
 
@@ -199,7 +207,7 @@ typedef void (*asic_evt_handler)(uint32_t code, void *data);
     \param  data            A user pointer that will be passed to the callback.
 
 */
-void asic_evt_set_handler(uint16_t code, asic_evt_handler handler, void *data);
+asic_evt_handler_entry_t asic_evt_set_handler(uint16_t code, asic_evt_handler handler, void *data);
 
 /** \brief   Register a threaded handler with the given ASIC event.
     \ingroup asic

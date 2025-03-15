@@ -1,8 +1,8 @@
 # Define an argument for the tag
-ARG tag=14.2-stable
+ARG BASE_TAG=14.2-stable
 
 # Use the static portion of the base image combined with the tag
-FROM ghcr.io/kallistiosunchained/dc-toolchain:${tag}
+FROM ghcr.io/kallistiosunchained/dc-toolchain:${BASE_TAG}
 
 # Metadata
 LABEL maintainer="KallistiOS (Unchained)"

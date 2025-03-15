@@ -6,9 +6,9 @@
  */
 
 #include <assert.h>
-#include <kos/string.h>
 #include <dc/pvr.h>
 #include <dc/sq.h>
+#include <string.h>
 #include "pvr_internal.h"
 
 /*
@@ -190,7 +190,7 @@ void pvr_txr_load_kimg(const kos_img_t *img, pvr_ptr_t dst, uint32 flags) {
                to have to allocate an intermediary buffer. */
             if(flags & PVR_TXRLOAD_DMA) {
                 mutex_lock((mutex_t *)&pvr_state.dma_lock);
-                pvr_dma_ta_load_txr(img->data, dst, img->byte_count,
+                pvr_txr_load_dma(img->data, dst, img->byte_count,
                                  (flags & PVR_TXRLOAD_NONBLOCK) ? 1 : 0, NULL, 0);
                 mutex_unlock((mutex_t *)&pvr_state.dma_lock);
             }
@@ -198,7 +198,7 @@ void pvr_txr_load_kimg(const kos_img_t *img, pvr_ptr_t dst, uint32 flags) {
                 pvr_txr_load(img->data, dst, img->byte_count);
             }
             else {
-                memcpy4(dst, img->data, img->byte_count);
+                memcpy(dst, img->data, img->byte_count);
             }
         }
     }

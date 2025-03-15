@@ -2,7 +2,7 @@
 
    dc/sound/sound.h
    Copyright (C) 2002 Megan Potter
-   Copyright (C) 2023 Ruslan Rostovtsev
+   Copyright (C) 2023, 2024 Ruslan Rostovtsev
 
 */
 
@@ -27,6 +27,7 @@ __BEGIN_DECLS
 
 #include <arch/types.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 /** \defgroup audio_driver  Driver
     \brief                  Low-level driver for SPU and audio management
@@ -158,10 +159,10 @@ void snd_poll_resp(void);
     \warning 
     All arguments must be 32-byte aligned.
 
-    \param data   Source buffer of interleaved stereo samples
-    \param left   Destination buffer for left mono samples
-    \param right  Destination buffer for right mono samples
-    \param size   Size of the source buffer in bytes (must be divisible by 32)
+    \param data             Source buffer of interleaved stereo samples
+    \param left             Destination buffer for left mono samples
+    \param right            Destination buffer for right mono samples
+    \param size             Size of the source buffer in bytes (must be divisible by 32)
 
     \sa snd_pcm16_split_sq()
 */
@@ -176,10 +177,10 @@ void snd_pcm16_split(uint32_t *data, uint32_t *left, uint32_t *right, size_t siz
     \warning 
     All arguments must be 32-byte aligned.
 
-    \param data   Source buffer of interleaved stereo samples
-    \param left   Destination buffer address for left mono samples
-    \param right  Destination buffer address for right mono samples
-    \param size   Size of the source buffer in bytes (must be divisible by 32)
+    \param data             Source buffer of interleaved stereo samples
+    \param left             Destination buffer address for left mono samples
+    \param right            Destination buffer address for right mono samples
+    \param size             Size of the source buffer in bytes (must be divisible by 32)
 
     \sa snd_pcm16_split()
     Store queues must be prepared before.
@@ -191,10 +192,10 @@ void snd_pcm16_split_sq(uint32_t *data, uintptr_t left, uintptr_t right, size_t 
     Splits a buffer containing 2 interleaved channels of 8-bit PCM samples
     into 2 separate buffers of 8-bit PCM samples.
 
-    \param data   Source buffer of interleaved stereo samples
-    \param left   Destination buffer for left mono samples
-    \param right  Destination buffer for right mono samples
-    \param size   Size of the source buffer in bytes
+    \param data             Source buffer of interleaved stereo samples
+    \param left             Destination buffer for left mono samples
+    \param right            Destination buffer for right mono samples
+    \param size             Size of the source buffer in bytes
 
     \sa snd_adpcm_split()
 */
@@ -205,10 +206,10 @@ void snd_pcm8_split(uint32_t *data, uint32_t *left, uint32_t *right, size_t size
     Splits a buffer containing 2 interleaved channels of 4-bit ADPCM samples
     into 2 separate buffers of 4-bit ADPCM samples.
 
-    \param data   Source buffer of interleaved stereo samples
-    \param left   Destination buffer for left mono samples
-    \param right  Destination buffer for right mono samples
-    \param size   Size of the source buffer in bytes
+    \param data             Source buffer of interleaved stereo samples
+    \param left             Destination buffer for left mono samples
+    \param right            Destination buffer for right mono samples
+    \param size             Size of the source buffer in bytes
 
     \sa snd_pcm16_split()
 */
@@ -216,7 +217,28 @@ void snd_adpcm_split(uint32_t *data, uint32_t *left, uint32_t *right, size_t siz
 
 /** @} */
 
+/** \brief  Get AICA channel position.
+
+    This function returns actual the channel position
+    that stores in SPU memory and updated by the SPU firmware.
+
+    \param  ch              The channel to retrieve position.
+
+    \return                 Last channel position in samples.
+*/
+uint16_t snd_get_pos(unsigned int ch);
+
+/** \brief  Get AICA channel playback state.
+
+    This function returns actual the channel playback state
+    that stores in AICA registers directly.
+
+    \param  ch              The channel to check.
+
+    \return                 True if the channel is playing.
+*/
+bool snd_is_playing(unsigned int ch);
+
 __END_DECLS
 
 #endif  /* __DC_SOUND_SOUND_H */
-

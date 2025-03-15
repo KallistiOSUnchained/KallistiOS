@@ -4,6 +4,7 @@
    Copyright (C) 2002 Andrew Kieschnick
    Copyright (C) 2004 Megan Potter
    Copyright (C) 2012 Lawrence Sebald
+   Copyright (C) 2025 Donald Haase
 
 */
 
@@ -19,38 +20,54 @@ printf goes to the dc-tool console
 
 #include <dc/fifo.h>
 #include <dc/fs_dcload.h>
-#include <kos/thread.h>
 #include <arch/spinlock.h>
-#include <arch/arch.h>
 #include <kos/dbgio.h>
 #include <kos/fs.h>
+#include <kos/init.h>
 
 #include <errno.h>
 #include <stdio.h>
-#include <ctype.h>
+#include <stdlib.h>
 #include <string.h>
-#include <malloc.h>
-#include <errno.h>
+#include <sys/queue.h>
 
-static spinlock_t dcload_lock = SPINLOCK_INITIALIZER;
+/* A linked list of dir entries. */
+typedef struct dcl_dir {
+    LIST_ENTRY(dcl_dir) fhlist;
+    int hnd;
+    char *path;
+    dirent_t dirent;
+} dcl_dir_t;
+
+LIST_HEAD(dcl_de, dcl_dir);
+
+static struct dcl_de dir_head = LIST_HEAD_INITIALIZER(0);
+
+static dcl_dir_t *hnd_is_dir(int hnd) {
+    dcl_dir_t *i;
+
+    if(!hnd) return NULL;
+
+    LIST_FOREACH(i, &dir_head, fhlist) {
+        if(i->hnd == (int)hnd)
+            break;
+    }
+
+    return i;
+}
+
+static spinlock_t mutex = SPINLOCK_INITIALIZER;
 
 #define dclsc(...) ({ \
-    int old = 0, rv; \
-    if(!irq_inside_int()) { \
-        old = irq_disable(); \
-    } \
-    while(FIFO_STATUS & FIFO_SH4) \
-        ; \
-    rv = dcloadsyscall(__VA_ARGS__); \
-    if(!irq_inside_int()) \
-        irq_restore(old); \
-    rv; \
-})
+        irq_disable_scoped(); \
+        while(FIFO_STATUS & FIFO_SH4) \
+            ; \
+        dcloadsyscall(__VA_ARGS__); \
+    })
 
 int dcload_write_char(int ch) {
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
     dclsc(DCLOAD_WRITE, STDOUT_FILENO, &ch, 1);
-    spinlock_unlock(&dcload_lock);
 
     return ch;
 }
@@ -59,9 +76,8 @@ int dcload_write_char(int ch) {
 int dcload_write_buffer(const uint8_t *data, int len, int xlat) {
     (void)xlat;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
     dclsc(DCLOAD_WRITE, STDOUT_FILENO, data, len);
-    spinlock_unlock(&dcload_lock);
 
     return len;
 }
@@ -69,46 +85,37 @@ int dcload_write_buffer(const uint8_t *data, int len, int xlat) {
 int dcload_read_char(void) {
     uint8_t chr;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
     dclsc(DCLOAD_READ, STDIN_FILENO, &chr, 1);
-    spinlock_unlock(&dcload_lock);
 
     return chr;
 }
 
 int dcload_read_buffer(uint8_t *data, int len) {
-    ssize_t rv = -1;
-
-    spinlock_lock(&dcload_lock);
-    rv = dclsc(DCLOAD_READ, STDIN_FILENO, data, len);
-    spinlock_unlock(&dcload_lock);
-
-    return rv;
+    spinlock_lock_scoped(&mutex);
+    return dclsc(DCLOAD_READ, STDIN_FILENO, data, len);
 }
 
-size_t dcload_gdbpacket(const char *in_buf, size_t in_size, char *out_buf, size_t out_size) {
-    size_t rv = -1;
+size_t dcload_gdbpacket(const char* in_buf, size_t in_size, char* out_buf, size_t out_size) {
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
+
     /* We have to pack the sizes together because the dcloadsyscall handler
        can only take 4 parameters */
-    rv = dclsc(DCLOAD_GDBPACKET, in_buf, (in_size << 16) | (out_size & 0xffff), out_buf);
-    spinlock_unlock(&dcload_lock);
-
-    return rv;
+    return dclsc(DCLOAD_GDBPACKET, in_buf, (in_size << 16) | (out_size & 0xffff), out_buf);
 }
 
-static char *dcload_path = NULL;
-
-void *dcload_open(vfs_handler_t *vfs, const char *fn, int mode) {
+static void *dcload_open(vfs_handler_t * vfs, const char *fn, int mode) {
+    char *dcload_path = NULL;
+    dcl_dir_t *entry;
     int hnd = 0;
-    uint32_t h;
     int dcload_mode = 0;
     int mm = (mode & O_MODE_MASK);
+    size_t fn_len = 0;
 
     (void)vfs;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
     if(mode & O_DIR) {
         if(fn[0] == '\0')
@@ -116,22 +123,42 @@ void *dcload_open(vfs_handler_t *vfs, const char *fn, int mode) {
 
         hnd = dclsc(DCLOAD_OPENDIR, fn);
 
-        if(hnd) {
-            if(dcload_path)
-                free(dcload_path);
-
-            if(fn[strlen(fn) - 1] == '/') {
-                dcload_path = malloc(strlen(fn) + 1);
-                strcpy(dcload_path, fn);
-            }
-            else {
-                dcload_path = malloc(strlen(fn) + 2);
-                strcpy(dcload_path, fn);
-                strcat(dcload_path, "/");
-            }
+        if(!hnd) {
+            /* It could be caused by other issues, such as
+            pathname being too long or symlink loops, but
+            ENOTDIR seems to be the best generic and we should
+            set something */
+            errno = ENOTDIR;
+            return (void *)NULL;
         }
+
+        /* We got something back so create an dir list entry for it */
+        entry = malloc(sizeof(dcl_dir_t));
+        if(!entry) {
+            errno = ENOMEM;
+            return (void *)NULL;
+        }
+
+        fn_len = strlen(fn);
+        if(fn[fn_len - 1] == '/') fn_len--;
+
+        dcload_path = malloc(fn_len + 2);
+        if(!dcload_path) {
+            errno = ENOMEM;
+            free(entry);
+            return (void *)NULL;
+        }
+
+        memcpy(dcload_path, fn, fn_len);
+        dcload_path[fn_len]   = '/';
+        dcload_path[fn_len+1] = '\0';
+
+        /* Now that everything is ready, add to list */
+        entry->hnd = hnd;
+        entry->path = dcload_path;
+        LIST_INSERT_HEAD(&dir_head, entry, fhlist);
     }
-    else {   /* hack */
+    else {
         if(mm == O_RDONLY)
             dcload_mode = 0;
         else if((mm & O_RDWR) == O_RDWR)
@@ -149,192 +176,183 @@ void *dcload_open(vfs_handler_t *vfs, const char *fn, int mode) {
         hnd++; /* KOS uses 0 for error, not -1 */
     }
 
-    h = hnd;
-
-    spinlock_unlock(&dcload_lock);
-
-    return (void *)h;
+    return (void *)hnd;
 }
 
-int dcload_close(void *h) {
-    uint32_t hnd = (uint32_t)h;
+static int dcload_close(void * h) {
+    uint32 hnd = (uint32)h;
+    dcl_dir_t *i;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
     if(hnd) {
-        if(hnd > 100)  /* hack */
+        /* Check if it's a dir */
+        i = hnd_is_dir(hnd);
+
+        /* We found it in the list, so it's a dir */
+        if(i) {
             dclsc(DCLOAD_CLOSEDIR, hnd);
+            LIST_REMOVE(i, fhlist);
+            free(i->path);
+            free(i);
+        }
         else {
             hnd--;     /* KOS uses 0 for error, not -1 */
             dclsc(DCLOAD_CLOSE, hnd);
         }
     }
 
-    spinlock_unlock(&dcload_lock);
     return 0;
 }
 
-ssize_t dcload_read(void *h, void *buf, size_t cnt) {
-    ssize_t rv = -1;
+static ssize_t dcload_read(void * h, void *buf, size_t cnt) {
+    ssize_t ret = -1;
     uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        rv = dclsc(DCLOAD_READ, hnd, buf, cnt);
+        ret = dclsc(DCLOAD_READ, hnd, buf, cnt);
     }
 
-    spinlock_unlock(&dcload_lock);
-    return rv;
+    return ret;
 }
 
-ssize_t dcload_write(void *h, const void *buf, size_t cnt) {
-    ssize_t rv = -1;
+static ssize_t dcload_write(void * h, const void *buf, size_t cnt) {
+    ssize_t ret = -1;
     uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        rv = dclsc(DCLOAD_WRITE, hnd, buf, cnt);
+        ret = dclsc(DCLOAD_WRITE, hnd, buf, cnt);
     }
 
-    spinlock_unlock(&dcload_lock);
-    return rv;
+    return ret;
 }
 
-off_t dcload_seek(void *h, off_t offset, int whence) {
-    off_t rv = -1;
+static off_t dcload_seek(void * h, off_t offset, int whence) {
+    off_t ret = -1;
     uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        rv = dclsc(DCLOAD_LSEEK, hnd, offset, whence);
+        ret = dclsc(DCLOAD_LSEEK, hnd, offset, whence);
     }
 
-    spinlock_unlock(&dcload_lock);
-    return rv;
+    return ret;
 }
 
-off_t dcload_tell(void *h) {
-    off_t rv = -1;
+static off_t dcload_tell(void * h) {
+    off_t ret = -1;
     uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
-        rv = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
+        ret = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
     }
 
-    spinlock_unlock(&dcload_lock);
-    return rv;
+    return ret;
 }
 
-size_t dcload_total(void *h) {
-    size_t rv = -1;
+static size_t dcload_total(void * h) {
+    size_t ret = -1;
     size_t cur;
     uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
     if(hnd) {
         hnd--; /* KOS uses 0 for error, not -1 */
         cur = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_CUR);
-        rv = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_END);
+        ret = dclsc(DCLOAD_LSEEK, hnd, 0, SEEK_END);
         dclsc(DCLOAD_LSEEK, hnd, cur, SEEK_SET);
     }
 
-    spinlock_unlock(&dcload_lock);
-    return rv;
+    return ret;
 }
 
-/* Not thread-safe, but that's ok because neither is the FS */
-static dirent_t dirent;
-dirent_t *dcload_readdir(void *h) {
-    dirent_t *rv = NULL;
+static dirent_t *dcload_readdir(void * h) {
+    dirent_t *ret = NULL;
     dcload_dirent_t *dcld;
     dcload_stat_t filestat;
     char *fn;
-    uint32_t hnd = (uint32_t)h;
+    uint32 hnd = (uint32)h;
+    dcl_dir_t *entry;
 
-    if(hnd < 100) {
+    spinlock_lock_scoped(&mutex);
+
+    if(!(entry = hnd_is_dir(hnd))) {
         errno = EBADF;
         return NULL;
     }
 
-    spinlock_lock(&dcload_lock);
-
     dcld = (dcload_dirent_t *)dclsc(DCLOAD_READDIR, hnd);
 
     if(dcld) {
-        rv = &dirent;
-        strcpy(rv->name, dcld->d_name);
-        rv->size = 0;
-        rv->time = 0;
-        rv->attr = 0; /* what the hell is attr supposed to be anyways? */
+        ret = &(entry->dirent);
+        strcpy(ret->name, dcld->d_name);
+        ret->size = 0;
+        ret->time = 0;
+        ret->attr = 0; /* what the hell is attr supposed to be anyways? */
 
-        fn = malloc(strlen(dcload_path) + strlen(dcld->d_name) + 1);
-        strcpy(fn, dcload_path);
+        fn = malloc(strlen(entry->path) + strlen(dcld->d_name) + 1);
+        strcpy(fn, entry->path);
         strcat(fn, dcld->d_name);
 
         if(!dclsc(DCLOAD_STAT, fn, &filestat)) {
             if(filestat.st_mode & S_IFDIR) {
-                rv->size = -1;
-                rv->attr = O_DIR;
+                ret->size = -1;
+                ret->attr = O_DIR;
             }
             else
-                rv->size = filestat.st_size;
+                ret->size = filestat.st_size;
 
-            rv->time = filestat.mtime;
+            ret->time = filestat.mtime;
 
         }
 
         free(fn);
     }
 
-    spinlock_unlock(&dcload_lock);
-    return rv;
+    return ret;
 }
 
-int dcload_rename(vfs_handler_t *vfs, const char *fn1, const char *fn2) {
-    int rv;
+static int dcload_rename(vfs_handler_t * vfs, const char *fn1, const char *fn2) {
+    int ret;
 
     (void)vfs;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
     /* really stupid hack, since I didn't put rename() in dcload */
-    rv = dclsc(DCLOAD_LINK, fn1, fn2);
+    ret = dclsc(DCLOAD_LINK, fn1, fn2);
 
-    if(!rv)
-        rv = dclsc(DCLOAD_UNLINK, fn1);
+    if(!ret)
+        ret = dclsc(DCLOAD_UNLINK, fn1);
 
-    spinlock_unlock(&dcload_lock);
-    return rv;
+    return ret;
 }
 
-int dcload_unlink(vfs_handler_t *vfs, const char *fn) {
-    int rv;
-
+static int dcload_unlink(vfs_handler_t * vfs, const char *fn) {
     (void)vfs;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
-    rv = dclsc(DCLOAD_UNLINK, fn);
-
-    spinlock_unlock(&dcload_lock);
-    return rv;
+    return dclsc(DCLOAD_UNLINK, fn);
 }
 
 static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
                        int flag) {
     dcload_stat_t filestat;
     size_t len = strlen(path);
-    int rv;
+    int ret;
 
     (void)flag;
 
@@ -349,11 +367,11 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
         return 0;
     }
 
-    spinlock_lock(&dcload_lock);
-    rv = dclsc(DCLOAD_STAT, path, &filestat);
-    spinlock_unlock(&dcload_lock);
+    spinlock_lock(&mutex);
+    ret = dclsc(DCLOAD_STAT, path, &filestat);
+    spinlock_unlock(&mutex);
 
-    if(!rv) {
+    if(!ret) {
         memset(st, 0, sizeof(struct stat));
         st->st_dev = (dev_t)((ptr_t)vfs);
         st->st_ino = filestat.st_ino;
@@ -377,7 +395,7 @@ static int dcload_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
 }
 
 static int dcload_fcntl(void *h, int cmd, va_list ap) {
-    int rv = -1;
+    int ret = -1;
 
     (void)h;
     (void)ap;
@@ -385,33 +403,31 @@ static int dcload_fcntl(void *h, int cmd, va_list ap) {
     switch(cmd) {
         case F_GETFL:
             /* XXXX: Not the right thing to do... */
-            rv = O_RDWR;
+            ret = O_RDWR;
             break;
 
         case F_SETFL:
         case F_GETFD:
         case F_SETFD:
-            rv = 0;
+            ret = 0;
             break;
 
         default:
             errno = EINVAL;
     }
 
-    return rv;
+    return ret;
 }
 
 static int dcload_rewinddir(void *h) {
-    int rv = -1;
     uint32_t hnd = (uint32_t)h;
 
-    spinlock_lock(&dcload_lock);
+    spinlock_lock_scoped(&mutex);
 
-    rv = dclsc(DCLOAD_REWINDDIR, hnd);
+    if(!hnd_is_dir(hnd))
+        return -1;
 
-    spinlock_unlock(&dcload_lock);
-
-    return rv;
+    return dclsc(DCLOAD_REWINDDIR, hnd);
 }
 
 /* Pull all that together */
@@ -529,7 +545,7 @@ void fs_dcload_init(void) {
 
     /* Check for combination of KOS networking and dcload-ip */
     if((dcload_type == DCLOAD_TYPE_IP) && (__kos_init_flags & INIT_NET)) {
-        dbglog(DBG_INFO, "dc-load console+kosnet, will switch to internal ethernet\n");
+        dbglog(DBG_INFO, "dc-load console+kosnet, fs_dcload unavailable.\n");
         return;
     }
 

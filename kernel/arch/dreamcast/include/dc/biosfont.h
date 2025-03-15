@@ -132,7 +132,7 @@ typedef enum bfont_dc_icon {
 
 /** \brief Builtin VMU Icons
 
-    Builtin VMU volume user icons. The Dreamcast's BIOS allows the
+    Builtin VMU volume user icons. The Dreamcast's BIOS allows the 
     user to set these when formatting the VMU.
     @{
 */
@@ -379,7 +379,7 @@ uint8_t *bfont_find_icon(bfont_vmu_icon_t icon);
 /** \brief   Find a DC icon.
 
     This function retrieves a pointer to the icon data for the specified DC
-    icon in the bios, if its available. Each dc icon has dimensions 24x24 pixels
+    icon in the bios, if its available. Each dc icon has dimensions 24x24 pixels 
     and is 72 bytes long.
 
     \param  icon            The DC icon index to look up.
@@ -466,7 +466,7 @@ size_t bfont_draw_wide(void *buffer, uint32_t bufwidth, bool opaque,
 
 /** \brief   Draw a VMU icon to the buffer.
 
-    This function draws a 32x32 VMU icon to the given buffer, supporting
+    This function draws a 32x32 VMU icon to the given buffer, supporting 
     multiple color depths (4, 8, 16, and 32 bits per pixel).
 
     \param  buffer          The buffer to draw to (at least 32 x 32 pixels)
@@ -480,7 +480,7 @@ size_t bfont_draw_wide(void *buffer, uint32_t bufwidth, bool opaque,
     \return                 Amount of width covered in bytes
 */
 size_t bfont_draw_vmu_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
-                              uint32_t bg, uint8_t bpp, bool opaque,
+                              uint32_t bg, uint8_t bpp, bool opaque, 
                               bfont_vmu_icon_t icon);
 
 /** \brief   Draw a VMU icon to a buffer.
@@ -494,12 +494,12 @@ size_t bfont_draw_vmu_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
     \param  icon            The VMU icon to draw
     \return                 Amount of width covered in bytes.
 */
-size_t bfont_draw_vmu_icon(void *buffer, uint32_t bufwidth, bool opaque,
+size_t bfont_draw_vmu_icon(void *buffer, uint32_t bufwidth, bool opaque, 
                            bfont_vmu_icon_t icon);
 
 /** \brief   Draw a DC icon to the buffer.
 
-    This function draws a 24x24 DC icon to the given buffer, supporting
+    This function draws a 24x24 DC icon to the given buffer, supporting 
     multiple color depths (4, 8, 16, and 32 bits per pixel).
 
     \param  buffer          The buffer to draw to (at least 24 x 24 pixels)
@@ -513,7 +513,7 @@ size_t bfont_draw_vmu_icon(void *buffer, uint32_t bufwidth, bool opaque,
     \return                 Amount of width covered in bytes
 */
 size_t bfont_draw_dc_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
-                             uint32_t bg, uint8_t bpp, bool opaque,
+                             uint32_t bg, uint8_t bpp, bool opaque, 
                              bfont_dc_icon_t icon);
 
 /** \brief   Draw a DC icon to a buffer.
@@ -527,7 +527,7 @@ size_t bfont_draw_dc_icon_ex(void *buffer, uint32_t bufwidth, uint32_t fg,
     \param  icon            The DC icon to draw
     \return                 Amount of width covered in bytes.
 */
-size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque,
+size_t bfont_draw_dc_icon(void *buffer, uint32_t bufwidth, bool opaque, 
                           bfont_dc_icon_t icon);
 
 /** @} */

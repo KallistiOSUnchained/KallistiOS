@@ -42,7 +42,7 @@ jobs:
             -v ${{ github.workspace }}:/opt/toolchains/dc/kos \
             -w /opt/toolchains/dc/kos \
             ghcr.io/kallistiosunchained/dc-toolchain:${{ matrix.tag }} \
-            /bin/bash -c "source environ.sh.master && make V=1 | tee build.log"
+            /bin/bash -c "source environ.sh.master && make V=1 | tee build.log; exit \${PIPESTATUS[0]}"
 
       - name: Upload Build Logs
         if: always()
