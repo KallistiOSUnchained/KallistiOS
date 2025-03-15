@@ -2,7 +2,7 @@ var searchData=
 [
   ['kallistios_0',['KallistiOS',['../index.html',1,'']]],
   ['kbd_5fcond_5ft_1',['kbd_cond_t',['../structkbd__cond__t.html',1,'']]],
-  ['kbd_5fget_5fkey_2',['kbd_get_key',['../group__kbd.html#ga25b49d83a0c6e63f241bab9cb5a8bc45',1,'keyboard.h']]],
+  ['kbd_5fget_5fkey_2',['kbd_get_key',['../group__kbd.html#ga624304aea04506a26d96e5d885feff8d',1,'keyboard.h']]],
   ['kbd_5fkey_5f0_3',['KBD_KEY_0',['../group__kbd__keys.html#ga7475e2e7728279e259e8d27d2b9d201d',1,'keyboard.h']]],
   ['kbd_5fkey_5f1_4',['KBD_KEY_1',['../group__kbd__keys.html#gad6b0e50ed9647aade1c52c6dbb19a187',1,'keyboard.h']]],
   ['kbd_5fkey_5f2_5',['KBD_KEY_2',['../group__kbd__keys.html#ga8c86b26f70a1de9dcc21f21393167121',1,'keyboard.h']]],
@@ -126,7 +126,7 @@ var searchData=
   ['kbd_5fregion_5fus_123',['KBD_REGION_US',['../group__kbd__regions.html#gae7b1f6a309c7b7c7dd85e19e1a5af8ff',1,'keyboard.h']]],
   ['kbd_5frepeat_5fkey_124',['kbd_repeat_key',['../structkbd__state__t.html#a24ef54149b27b552599a9e4759ab6f58',1,'kbd_state_t']]],
   ['kbd_5frepeat_5ftimer_125',['kbd_repeat_timer',['../structkbd__state__t.html#ae9ea7ff7ce5d2042fbd13e76b51b4ecf',1,'kbd_state_t']]],
-  ['kbd_5fset_5fqueue_126',['kbd_set_queue',['../group__kbd.html#ga7a89b91417209b1fbfde0ee659ccfed2',1,'keyboard.h']]],
+  ['kbd_5fset_5fqueue_126',['kbd_set_queue',['../group__kbd.html#ga92be71208168ee6163b3793e29d70ac4',1,'keyboard.h']]],
   ['kbd_5fstate_5ft_127',['kbd_state_t',['../structkbd__state__t.html',1,'']]],
   ['keepcost_128',['keepcost',['../structmallinfo.html#adb0e5c8cde8d9f45a6f3d136cd91b00c',1,'mallinfo']]],
   ['kernel_129',['Kernel',['../group__kthreads.html',1,'']]],

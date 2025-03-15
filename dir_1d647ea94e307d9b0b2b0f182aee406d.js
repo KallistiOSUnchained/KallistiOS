@@ -4,6 +4,7 @@ var dir_1d647ea94e307d9b0b2b0f182aee406d =
     [ "args.h", "args_8h.html", "args_8h" ],
     [ "byteorder.h", "byteorder_8h.html", "byteorder_8h" ],
     [ "cache.h", "cache_8h.html", "cache_8h" ],
+    [ "dmac.h", "arch_2dmac_8h.html", "arch_2dmac_8h" ],
     [ "exec.h", "exec_8h.html", "exec_8h" ],
     [ "gdb.h", "gdb_8h.html", "gdb_8h" ],
     [ "init_flags.h", "init__flags_8h.html", "init__flags_8h" ],

@@ -5,6 +5,7 @@ var group__system =
     [ "Architecture", "group__arch.html", "group__arch" ],
     [ "Cache", "group__system__cache.html", "group__system__cache" ],
     [ "DMA", "group__system__dmac.html", "group__system__dmac" ],
+    [ "DMA Controller API", "group__dmac.html", "group__dmac" ],
     [ "Events", "group__asic.html", "group__asic" ],
     [ "FIFO", "group__system__fifo.html", "group__system__fifo" ],
     [ "G2 Bus", "group__system__g2bus.html", "group__system__g2bus" ],

@@ -2,7 +2,9 @@ var sound_8h =
 [
     [ "snd_adpcm_split", "group__audio__driver.html#ga77eee806f26b83e1704ebcce2accf161", null ],
     [ "snd_aica_to_sh4", "group__audio__driver.html#gacee770c708796514b3cf584cee83030b", null ],
+    [ "snd_get_pos", "sound_8h.html#a0f40c2be5df36a117de6cb6bffd8e27d", null ],
     [ "snd_init", "group__audio__driver.html#ga560ac4fd9add698bcbd83eccdc349fdc", null ],
+    [ "snd_is_playing", "sound_8h.html#a55646b9e0c94cb14cf2bd0ace538f0d7", null ],
     [ "snd_mem_available", "group__audio__driver.html#ga6b998217c826e1935042375f517f66d1", null ],
     [ "snd_mem_free", "group__audio__driver.html#ga6fd7c76f27ce24a5f0bdbb1f151e6ad5", null ],
     [ "snd_mem_init", "group__audio__driver.html#ga799d5a90728b5b7c4986ade748f26fc8", null ],

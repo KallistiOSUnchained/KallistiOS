@@ -640,17 +640,18 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read one or more sector from a CD-ROM. </p>
-<p>This function reads the specified number of sectors from the disc, starting where requested. This will respect the size of the sectors set with <a class="el" href="#ga0864556ec5c970d634f83ae147ed77e7" title="Change the datatype of disc.">cdrom_change_datatype()</a>. The buffer must have enough space to store the specified number of sectors.</p>
+<p>This function reads the specified number of sectors from the disc, starting where requested. This will respect the size of the sectors set with <a class="el" href="#ga0864556ec5c970d634f83ae147ed77e7" title="Change the datatype of disc.">cdrom_change_datatype()</a>. The buffer must have enough space to store the specified number of sectors and size must be a multiple of 32 for DMA.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>Space to store the read sectors. </td></tr>
     <tr><td class="paramname">sector</td><td>The sector to start reading from. </td></tr>
     <tr><td class="paramname">cnt</td><td>The number of sectors to read. </td></tr>
-    <tr><td class="paramname">mode</td><td>DMA or PIO </td></tr>
+    <tr><td class="paramname">mode</td><td><a class="el" href="group__cd__read__sector__mode.html">Read Sector Mode</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__cd__cmd__response.html">Command Responses</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__cd__cmd__response.html">Command Responses</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the buffer address points to the P2 memory area, the caller function will be responsible for ensuring memory coherency.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__cd__read__sector__mode.html" title="Mode to use when reading sectors">Read Sector Mode</a> </dd></dl>
 
 </div>

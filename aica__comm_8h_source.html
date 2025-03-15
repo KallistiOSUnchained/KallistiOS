@@ -199,7 +199,7 @@ $(function(){initNavTree('aica__comm_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">*/</span></div>
 <div class="foldopen" id="foldopen00092" data-start="" data-end="">
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group__audio__aica.html#ga37db28bacb7fa33fdc9b360da5e15354">   92</a></span><span class="preprocessor">#define AICA_CMDSTR_CHANNEL(T, CMDR, CHANR) \</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">    uint8   T[sizeof(aica_cmd_t) + sizeof(aica_channel_t)]; \</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">    uint32   T[(sizeof(aica_cmd_t) + sizeof(aica_channel_t)) / 4]; \</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">    aica_cmd_t  * CMDR = (aica_cmd_t *)T; \</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">    aica_channel_t  * CHANR = (aica_channel_t *)(CMDR-&gt;cmd_data);</span></div>
 </div>

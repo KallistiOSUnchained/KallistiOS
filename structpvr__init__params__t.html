@@ -128,11 +128,14 @@ Data Fields</h2></td></tr>
 <tr class="memitem:abf1dde86528c2cbc34c4d01eb921bcf3" id="r_abf1dde86528c2cbc34c4d01eb921bcf3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf1dde86528c2cbc34c4d01eb921bcf3">opb_overflow_count</a></td></tr>
 <tr class="memdesc:abf1dde86528c2cbc34c4d01eb921bcf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">OPB Overflow Count.  <br /></td></tr>
 <tr class="separator:abf1dde86528c2cbc34c4d01eb921bcf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c3a69b5457754c08436f31f7e114a43" id="r_a3c3a69b5457754c08436f31f7e114a43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c3a69b5457754c08436f31f7e114a43">vbuf_doublebuf_disabled</a></td></tr>
+<tr class="memdesc:a3c3a69b5457754c08436f31f7e114a43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable vertex buffer double-buffering.  <br /></td></tr>
+<tr class="separator:a3c3a69b5457754c08436f31f7e114a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>PVR initialization structure. </p>
 <p>This structure defines how the PVR initializes various parts of the system, including the primitive bin sizes, the vertex buffer size, and whether vertex DMA will be enabled.</p>
-<p>You essentially fill one of these in, and pass it to <a class="el" href="group__pvr__init.html#ga4b4ac5e3833831db5cff6f6602e2447b" title="Initialize the PVR chip to ready status.">pvr_init()</a>. </p>
+<p>You essentially fill one of these in, and pass it to <a class="el" href="group__pvr__init.html#ga23b177aa613bf342069af413bdc004ce" title="Initialize the PVR chip to ready status.">pvr_init()</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aa42358aa9530a23d849e70fab5493bc6" name="aa42358aa9530a23d849e70fab5493bc6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa42358aa9530a23d849e70fab5493bc6">&#9670;&#160;</a></span>autosort_disabled</h2>
@@ -217,6 +220,23 @@ Data Fields</h2></td></tr>
 
 <p>Bin sizes. </p>
 <p>The bins go in the following order: opaque polygons, opaque modifiers, translucent polygons, translucent modifiers, punch-thrus </p>
+
+</div>
+</div>
+<a id="a3c3a69b5457754c08436f31f7e114a43" name="a3c3a69b5457754c08436f31f7e114a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c3a69b5457754c08436f31f7e114a43">&#9670;&#160;</a></span>vbuf_doublebuf_disabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pvr_init_params_t::vbuf_doublebuf_disabled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable vertex buffer double-buffering. </p>
+<p>Use only one single vertex buffer. This means that the PVR must finish rendering before the Tile Accelerator is used to prepare a new frame; but it allows using much smaller vertex buffers. </p>
 
 </div>
 </div>

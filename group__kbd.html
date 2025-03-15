@@ -160,12 +160,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga7a89b91417209b1fbfde0ee659ccfed2" id="r_ga7a89b91417209b1fbfde0ee659ccfed2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7a89b91417209b1fbfde0ee659ccfed2">kbd_set_queue</a> (int active)</td></tr>
-<tr class="memdesc:ga7a89b91417209b1fbfde0ee659ccfed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate or deactivate global key queueing.  <br /></td></tr>
-<tr class="separator:ga7a89b91417209b1fbfde0ee659ccfed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga25b49d83a0c6e63f241bab9cb5a8bc45" id="r_ga25b49d83a0c6e63f241bab9cb5a8bc45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga25b49d83a0c6e63f241bab9cb5a8bc45">kbd_get_key</a> (void)</td></tr>
-<tr class="memdesc:ga25b49d83a0c6e63f241bab9cb5a8bc45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop a key off the global keyboard queue.  <br /></td></tr>
-<tr class="separator:ga25b49d83a0c6e63f241bab9cb5a8bc45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92be71208168ee6163b3793e29d70ac4" id="r_ga92be71208168ee6163b3793e29d70ac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga92be71208168ee6163b3793e29d70ac4">kbd_set_queue</a> (int active) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
+<tr class="memdesc:ga92be71208168ee6163b3793e29d70ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate or deactivate global key queueing.  <br /></td></tr>
+<tr class="separator:ga92be71208168ee6163b3793e29d70ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga624304aea04506a26d96e5d885feff8d" id="r_ga624304aea04506a26d96e5d885feff8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga624304aea04506a26d96e5d885feff8d">kbd_get_key</a> (void) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
+<tr class="memdesc:ga624304aea04506a26d96e5d885feff8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop a key off the global keyboard queue.  <br /></td></tr>
+<tr class="separator:ga624304aea04506a26d96e5d885feff8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa79d9098e001b2a7b8ff92c11bbb5e37" id="r_gaa79d9098e001b2a7b8ff92c11bbb5e37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa79d9098e001b2a7b8ff92c11bbb5e37">kbd_queue_pop</a> (<a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev, int xlat)</td></tr>
 <tr class="memdesc:gaa79d9098e001b2a7b8ff92c11bbb5e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop a key off a specific keyboard's queue.  <br /></td></tr>
 <tr class="separator:gaa79d9098e001b2a7b8ff92c11bbb5e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,8 +226,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga25b49d83a0c6e63f241bab9cb5a8bc45" name="ga25b49d83a0c6e63f241bab9cb5a8bc45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga25b49d83a0c6e63f241bab9cb5a8bc45">&#9670;&#160;</a></span>kbd_get_key()</h2>
+<a id="ga624304aea04506a26d96e5d885feff8d" name="ga624304aea04506a26d96e5d885feff8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga624304aea04506a26d96e5d885feff8d">&#9670;&#160;</a></span>kbd_get_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +242,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pop a key off the global keyboard queue. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated</a></b></dt><dd></dd></dl>
 <p>This function pops the front off of the keyboard queue, and returns the value to the caller. The value returned will be the ASCII value of the key pressed (accounting for the shift keys being pressed).</p>
 <p>If a key does not have an ASCII value associated with it, the raw key code will be returned, shifted up by 8 bits.</p>
 <dl class="section return"><dt>Returns</dt><dd>The value at the front of the queue, or -1 if there are no keys in the queue or queueing is off. </dd></dl>
@@ -285,8 +285,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga7a89b91417209b1fbfde0ee659ccfed2" name="ga7a89b91417209b1fbfde0ee659ccfed2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7a89b91417209b1fbfde0ee659ccfed2">&#9670;&#160;</a></span>kbd_set_queue()</h2>
+<a id="ga92be71208168ee6163b3793e29d70ac4" name="ga92be71208168ee6163b3793e29d70ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92be71208168ee6163b3793e29d70ac4">&#9670;&#160;</a></span>kbd_set_queue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,7 +301,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Activate or deactivate global key queueing. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated</a></b></dt><dd></dd></dl>
 <p>This function will turn the internal keyboard queueing on or off. Note that there is only one queue for the whole system, no matter how many keyboards are attached, and the queue is of fairly limited length. Turning queueing off is useful (for instance) in a game where individual keypresses don't mean as much as having the keys up or down does.</p>
 <p>You can clear the queue (without popping all the keys off) by setting the active value to a different value than it was.</p>
 <p>The queue is by default on, unless you turn it off.</p>

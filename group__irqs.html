@@ -101,7 +101,8 @@ $(function(){initNavTree('group__irqs.html',''); initResizable(true); });
 <a href="#groups">Topics</a> &#124;
 <a href="#files">Files</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Interrupts<div class="ingroups"><a class="el" href="group__system.html">System</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -141,9 +142,13 @@ Macros</h2></td></tr>
 <tr class="memitem:ga7095fb363d08f6646611f9a47806647b" id="r_ga7095fb363d08f6646611f9a47806647b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7095fb363d08f6646611f9a47806647b">TIMER_IRQ</a>&#160;&#160;&#160;<a class="el" href="#gga514a97b44194f47af21948925e129400a8268fcd59953a628949c22ef17c0ba3a">EXC_TMU0_TUNI0</a></td></tr>
 <tr class="memdesc:ga7095fb363d08f6646611f9a47806647b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of the timer IRQ.  <br /></td></tr>
 <tr class="separator:ga7095fb363d08f6646611f9a47806647b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f9fd9695f1bd7a6c78fe9401989408d" id="r_ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0f9fd9695f1bd7a6c78fe9401989408d">irq_disable_scoped</a>()&#160;&#160;&#160;__irq_disable_scoped(__LINE__)</td></tr>
-<tr class="memdesc:ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable interrupts with scope management.  <br /></td></tr>
-<tr class="separator:ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa595fffe85c06c91d6a074f6f6fef3da" id="r_gaa595fffe85c06c91d6a074f6f6fef3da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa595fffe85c06c91d6a074f6f6fef3da">IRQ_PRIO_MAX</a>&#160;&#160;&#160;15</td></tr>
+<tr class="memdesc:gaa595fffe85c06c91d6a074f6f6fef3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum/maximum values for IRQ priorities.  <br /></td></tr>
+<tr class="separator:gaa595fffe85c06c91d6a074f6f6fef3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae260e8e9aded67a2f967690739e05351" id="r_gae260e8e9aded67a2f967690739e05351"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae260e8e9aded67a2f967690739e05351">IRQ_PRIO_MIN</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:gae260e8e9aded67a2f967690739e05351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbab15415e7fd3fd09686b1057561db8" id="r_gadbab15415e7fd3fd09686b1057561db8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadbab15415e7fd3fd09686b1057561db8">IRQ_PRIO_MASKED</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gadbab15415e7fd3fd09686b1057561db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -228,35 +233,94 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#gga514a97b44194f47af21948925e129400abd7e1af7e7217180c2a20b0c0808d54d">EXC_SCIF_BRI</a> = 0x0740
 , <a class="el" href="#gga514a97b44194f47af21948925e129400a0252ae50bb25e01f62f90524e3c64526">EXC_SCIF_TXI</a> = 0x0760
 , <br />
-&#160;&#160;<a class="el" href="#gga514a97b44194f47af21948925e129400a70dd83a44a4f58f734bce251f0fee9f9">EXC_DOUBLE_FAULT</a> = 0x0ff0
-, <a class="el" href="#gga514a97b44194f47af21948925e129400a067eb6f8286aa0ebab653e10d45f01d3">EXC_UNHANDLED_EXC</a> = 0x0fe0
+&#160;&#160;<a class="el" href="#gga514a97b44194f47af21948925e129400a70dd83a44a4f58f734bce251f0fee9f9">EXC_DOUBLE_FAULT</a> = 0x0780
+, <a class="el" href="#gga514a97b44194f47af21948925e129400a067eb6f8286aa0ebab653e10d45f01d3">EXC_UNHANDLED_EXC</a> = 0x07e0
 <br />
  }</td></tr>
 <tr class="memdesc:ga514a97b44194f47af21948925e129400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt exception codes.  <a href="#ga514a97b44194f47af21948925e129400">More...</a><br /></td></tr>
 <tr class="separator:ga514a97b44194f47af21948925e129400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26eeabb95673d3d3a3568fd93139da37" id="r_ga26eeabb95673d3d3a3568fd93139da37"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a> { <br />
+&#160;&#160;<a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a3bdd9d91629e3a6d5c0deecc7d72929f">IRQ_SRC_RTC</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a70cb0f6535a1dab3d35c96741c8d61de">IRQ_SRC_TMU2</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a095a1d16278d32987c455c8fc0be40f6">IRQ_SRC_TMU1</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a7968cfc9025744cbb53343e3d3f8c143">IRQ_SRC_TMU0</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37ab7e5b276c1d0820ee90b598b901dc1ee">_IRQ_SRC_RESV</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37ac3c44724d6ce7e1be493cca5636e672d">IRQ_SRC_SCI1</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a057a22ce7f370b97cb13a13e1b1270f8">IRQ_SRC_REF</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a4f4201892aa3199fe2b231128ea8ba9c">IRQ_SRC_WDT</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a88facd5656807e0498051d0a2d8497cb">IRQ_SRC_HUDI</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37ab95bf26a139ecf45d3a80e9de7aff12a">IRQ_SRC_SCIF</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37ab453e93c28a8a8457b66ca06e19ea01a">IRQ_SRC_DMAC</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a1c79c151f934009c501bb4b71ede60d6">IRQ_SRC_GPIO</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a8a0bae7762cd170444aa5580fba859ea">IRQ_SRC_IRL3</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a04b493504ba492f6c44952556d4964dd">IRQ_SRC_IRL2</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37adaf50dab79c1c1ba799b6dc248a88bcd">IRQ_SRC_IRL1</a>
+, <a class="el" href="#gga26eeabb95673d3d3a3568fd93139da37a8ea50ac131a16d2124a6f2997e0d209c">IRQ_SRC_IRL0</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga26eeabb95673d3d3a3568fd93139da37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt sources.  <a href="#ga26eeabb95673d3d3a3568fd93139da37">More...</a><br /></td></tr>
+<tr class="separator:ga26eeabb95673d3d3a3568fd93139da37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga2c731b76846e9882613ea21dcf465a97" id="r_ga2c731b76846e9882613ea21dcf465a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2c731b76846e9882613ea21dcf465a97">irq_set_priority</a> (<a class="el" href="#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a> src, unsigned int prio)</td></tr>
+<tr class="memdesc:ga2c731b76846e9882613ea21dcf465a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the priority of a given IRQ source.  <br /></td></tr>
+<tr class="separator:ga2c731b76846e9882613ea21dcf465a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga599ada81c7cb2fce2a09b2270998100e" id="r_ga599ada81c7cb2fce2a09b2270998100e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga599ada81c7cb2fce2a09b2270998100e">irq_get_priority</a> (<a class="el" href="#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a> src)</td></tr>
+<tr class="memdesc:ga599ada81c7cb2fce2a09b2270998100e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the priority of a given IRQ source.  <br /></td></tr>
+<tr class="separator:ga599ada81c7cb2fce2a09b2270998100e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>IRQs and ISRs for the SH4's CPU </p>
 <p>This is an API for managing interrupts, their masks, and their handler routines along with thread context information.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This is a low-level, internal kernel API. Many of these interrupts are utilized by various KOS drivers and have higher-level APIs for hooking into them. Care must be taken to not interfere with the IRQ handling which is being done by in-use KOS drivers. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This is a low-level, internal kernel API. Many of these interrupts are utilized by various KOS drivers and have higher-level APIs for hooking into them. Care must be taken to not interfere with the IRQ handling which is being done by in-use KOS drivers.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The naming convention used by this API differs from that of the actual SH4 manual for historical reasons (it wasn't platform-specific). The SH4 manual refers to the most general type of CPU events which result in a SW callback as "exceptions," with "interrupts" and "general exceptions" being subtypes of exceptions. This API uses the term "interrupt" and "exception" interchangeably, except where it is explicitly noted that "SH4 interrupts" or "SH4 general exceptions" are being referred to, more specifically. </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga0f9fd9695f1bd7a6c78fe9401989408d" name="ga0f9fd9695f1bd7a6c78fe9401989408d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0f9fd9695f1bd7a6c78fe9401989408d">&#9670;&#160;</a></span>irq_disable_scoped</h2>
+<a id="gadbab15415e7fd3fd09686b1057561db8" name="gadbab15415e7fd3fd09686b1057561db8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadbab15415e7fd3fd09686b1057561db8">&#9670;&#160;</a></span>IRQ_PRIO_MASKED</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define irq_disable_scoped</td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;__irq_disable_scoped(__LINE__)</td>
+          <td class="memname">#define IRQ_PRIO_MASKED&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Disable interrupts with scope management. </p>
-<p>This macro will disable interrupts, similarly to <a class="el" href="group__irq__mask.html#gac8594a5bb7ec76a0d1a5f08c9b7aae27" title="Disable interrupts.">irq_disable()</a>, with the difference that the interrupt state will automatically be restored once the execution exits the functional block in which the macro was called. </p>
+</div>
+</div>
+<a id="gaa595fffe85c06c91d6a074f6f6fef3da" name="gaa595fffe85c06c91d6a074f6f6fef3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa595fffe85c06c91d6a074f6f6fef3da">&#9670;&#160;</a></span>IRQ_PRIO_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IRQ_PRIO_MAX&#160;&#160;&#160;15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Minimum/maximum values for IRQ priorities. </p>
+<p>A priority of zero means the interrupt is masked. The maximum priority that can be set is 15. </p>
+
+</div>
+</div>
+<a id="gae260e8e9aded67a2f967690739e05351" name="gae260e8e9aded67a2f967690739e05351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae260e8e9aded67a2f967690739e05351">&#9670;&#160;</a></span>IRQ_PRIO_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IRQ_PRIO_MIN&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -277,6 +341,41 @@ Enumerations</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga26eeabb95673d3d3a3568fd93139da37" name="ga26eeabb95673d3d3a3568fd93139da37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26eeabb95673d3d3a3568fd93139da37">&#9670;&#160;</a></span>irq_src_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt sources. </p>
+<p>Interrupt sources at the SH4 level. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a3bdd9d91629e3a6d5c0deecc7d72929f" name="gga26eeabb95673d3d3a3568fd93139da37a3bdd9d91629e3a6d5c0deecc7d72929f"></a>IRQ_SRC_RTC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a70cb0f6535a1dab3d35c96741c8d61de" name="gga26eeabb95673d3d3a3568fd93139da37a70cb0f6535a1dab3d35c96741c8d61de"></a>IRQ_SRC_TMU2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a095a1d16278d32987c455c8fc0be40f6" name="gga26eeabb95673d3d3a3568fd93139da37a095a1d16278d32987c455c8fc0be40f6"></a>IRQ_SRC_TMU1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a7968cfc9025744cbb53343e3d3f8c143" name="gga26eeabb95673d3d3a3568fd93139da37a7968cfc9025744cbb53343e3d3f8c143"></a>IRQ_SRC_TMU0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37ab7e5b276c1d0820ee90b598b901dc1ee" name="gga26eeabb95673d3d3a3568fd93139da37ab7e5b276c1d0820ee90b598b901dc1ee"></a>_IRQ_SRC_RESV&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37ac3c44724d6ce7e1be493cca5636e672d" name="gga26eeabb95673d3d3a3568fd93139da37ac3c44724d6ce7e1be493cca5636e672d"></a>IRQ_SRC_SCI1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a057a22ce7f370b97cb13a13e1b1270f8" name="gga26eeabb95673d3d3a3568fd93139da37a057a22ce7f370b97cb13a13e1b1270f8"></a>IRQ_SRC_REF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a4f4201892aa3199fe2b231128ea8ba9c" name="gga26eeabb95673d3d3a3568fd93139da37a4f4201892aa3199fe2b231128ea8ba9c"></a>IRQ_SRC_WDT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a88facd5656807e0498051d0a2d8497cb" name="gga26eeabb95673d3d3a3568fd93139da37a88facd5656807e0498051d0a2d8497cb"></a>IRQ_SRC_HUDI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37ab95bf26a139ecf45d3a80e9de7aff12a" name="gga26eeabb95673d3d3a3568fd93139da37ab95bf26a139ecf45d3a80e9de7aff12a"></a>IRQ_SRC_SCIF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37ab453e93c28a8a8457b66ca06e19ea01a" name="gga26eeabb95673d3d3a3568fd93139da37ab453e93c28a8a8457b66ca06e19ea01a"></a>IRQ_SRC_DMAC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a1c79c151f934009c501bb4b71ede60d6" name="gga26eeabb95673d3d3a3568fd93139da37a1c79c151f934009c501bb4b71ede60d6"></a>IRQ_SRC_GPIO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a8a0bae7762cd170444aa5580fba859ea" name="gga26eeabb95673d3d3a3568fd93139da37a8a0bae7762cd170444aa5580fba859ea"></a>IRQ_SRC_IRL3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a04b493504ba492f6c44952556d4964dd" name="gga26eeabb95673d3d3a3568fd93139da37a04b493504ba492f6c44952556d4964dd"></a>IRQ_SRC_IRL2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37adaf50dab79c1c1ba799b6dc248a88bcd" name="gga26eeabb95673d3d3a3568fd93139da37adaf50dab79c1c1ba799b6dc248a88bcd"></a>IRQ_SRC_IRL1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga26eeabb95673d3d3a3568fd93139da37a8ea50ac131a16d2124a6f2997e0d209c" name="gga26eeabb95673d3d3a3568fd93139da37a8ea50ac131a16d2124a6f2997e0d209c"></a>IRQ_SRC_IRL0&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a id="ga514a97b44194f47af21948925e129400" name="ga514a97b44194f47af21948925e129400"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga514a97b44194f47af21948925e129400">&#9670;&#160;</a></span>irq_t</h2>
 
@@ -290,7 +389,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Interrupt exception codes. </p>
-<p>Dreamcast-specific exception codes. Used to identify the source or type of an interrupt. Each exception code is of a certain "type" which dictates how the interrupt is generated and handled.</p>
+<p>SH-specific exception codes. Used to identify the source or type of an interrupt. Each exception code is of a certain "type" which dictates how the interrupt is generated and handled.</p>
 <p>List of exception types:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -441,6 +540,65 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga514a97b44194f47af21948925e129400a067eb6f8286aa0ebab653e10d45f01d3" name="gga514a97b44194f47af21948925e129400a067eb6f8286aa0ebab653e10d45f01d3"></a>EXC_UNHANDLED_EXC&#160;</td><td class="fielddoc"><p><code>[SOFT ]</code> Exception went unhandled </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga599ada81c7cb2fce2a09b2270998100e" name="ga599ada81c7cb2fce2a09b2270998100e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga599ada81c7cb2fce2a09b2270998100e">&#9670;&#160;</a></span>irq_get_priority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int irq_get_priority </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a></td>          <td class="paramname"><span class="paramname"><em>src</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the priority of a given IRQ source. </p>
+<p>This function returns the priority of a given IRQ source.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>The interrupt source whose priority should be set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The priority of the IRQ source. A value of 0 means the IRQs are masked. </dd></dl>
+
+</div>
+</div>
+<a id="ga2c731b76846e9882613ea21dcf465a97" name="ga2c731b76846e9882613ea21dcf465a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c731b76846e9882613ea21dcf465a97">&#9670;&#160;</a></span>irq_set_priority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irq_set_priority </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a></td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>prio</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the priority of a given IRQ source. </p>
+<p>This function can be used to set the priority of a given IRQ source.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>The interrupt source whose priority should be set </td></tr>
+    <tr><td class="paramname">prio</td><td>The priority to set, in the range [0..15], 0 meaning the IRQs from that source are masked. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

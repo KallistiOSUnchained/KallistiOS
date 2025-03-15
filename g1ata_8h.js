@@ -1,5 +1,14 @@
 var g1ata_8h =
 [
+    [ "G1_ATA_BUS_PROTECTION", "group__g1ata.html#ga036b452ba591b798fce0f25b82bdf420", null ],
+    [ "G1_ATA_BUS_PROTECTION_STATUS", "group__g1ata.html#gaf40ff4f661682423a99fc6dfd7778b2e", null ],
+    [ "G1_ATA_BUS_PROTECTION_STATUS_FAILED", "group__g1ata.html#ga7beee661208be757eddc60e338f2c2e5", null ],
+    [ "G1_ATA_BUS_PROTECTION_STATUS_IN_PROGRESS", "group__g1ata.html#ga95d0cb5d9b26754a54fa99348d20a33d", null ],
+    [ "G1_ATA_BUS_PROTECTION_STATUS_PASSED", "group__g1ata.html#gadca90a2ce9598a09843b73c4ab05b665", null ],
+    [ "G1_ATA_DMA_PROTECTION", "group__g1ata.html#ga7049e17fa607a7dce55c60fe53122a0a", null ],
+    [ "G1_ATA_DMA_UNLOCK_ALLMEM", "group__g1ata.html#ga7c4a0ef8107ed0353041d260b5405272", null ],
+    [ "G1_ATA_DMA_UNLOCK_CODE", "group__g1ata.html#ga1394c7fd63b35857aeed20a23583b9bd", null ],
+    [ "G1_ATA_DMA_UNLOCK_SYSMEM", "group__g1ata.html#ga4b6e6c7ff40c4d9257065b47f4ac5bef", null ],
     [ "G1_ATA_LBA_MODE", "group__g1ata.html#gaef5c019f3d6b409726956f00c1039c5d", null ],
     [ "G1_ATA_MASTER", "group__g1ata.html#ga3dc455d7a6f219451ddba518a9ce8114", null ],
     [ "G1_ATA_MASTER_ALT", "group__g1ata.html#ga149da23b0353a4e53a622524c2139a0f", null ],

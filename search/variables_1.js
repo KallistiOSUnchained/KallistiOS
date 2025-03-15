@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../structcont__state__t.html#a47172ecb3b861d5761809188fd546851',1,'cont_state_t::a'],['../unionvmu__state__t.html#a7950381c9d9cc6b5900eb9ed5432e6b5',1,'vmu_state_t::a'],['../structpvr__poly__ic__hdr__t.html#a4cb89b8afb2c53c95db3b48f41672822',1,'pvr_poly_ic_hdr_t::a']]],
+  ['a_0',['a',['../structcont__state__t.html#a47172ecb3b861d5761809188fd546851',1,'cont_state_t::a'],['../unionvmu__buttons__t.html#aab46ea609f89db0b328f708ae013afa0',1,'vmu_buttons_t::a'],['../structpvr__poly__ic__hdr__t.html#a4cb89b8afb2c53c95db3b48f41672822',1,'pvr_poly_ic_hdr_t::a']]],
   ['accept_1',['accept',['../structfs__socket__proto__t.html#ae90911696379ecec4c73ae4350a93977',1,'fs_socket_proto_t']]],
   ['access_2',['access',['../structubc__breakpoint__t.html#a498e93bb1d0ad08730891b1b2f874bc0',1,'ubc_breakpoint_t']]],
   ['actime_3',['actime',['../structutimbuf.html#aa39cf0bad7eff4df6239528506a557df',1,'utimbuf']]],
@@ -28,7 +28,7 @@ var searchData=
   ['argb_25',['argb',['../structpvr__sprite__hdr__t.html#aea860ce155464a7a6cdfe1c7f52658fe',1,'pvr_sprite_hdr_t::argb'],['../structpvr__vertex__t.html#add85154783eb582d3e374a86ceb5a1e6',1,'pvr_vertex_t::argb']]],
   ['argb0_26',['argb0',['../structpvr__vertex__pcm__t.html#a61d0a632976331d73796397cd72f14f9',1,'pvr_vertex_pcm_t::argb0'],['../structpvr__vertex__tpcm__t.html#ad085221b560cccf6173eea847daa3a2e',1,'pvr_vertex_tpcm_t::argb0']]],
   ['argb1_27',['argb1',['../structpvr__vertex__pcm__t.html#ab1ae478a8bc840521587ba4ceeb91dd1',1,'pvr_vertex_pcm_t::argb1'],['../structpvr__vertex__tpcm__t.html#ada82375a226c96e548afd73ff08a479a',1,'pvr_vertex_tpcm_t::argb1']]],
-  ['asid_28',['asid',['../structmmucontext__t.html#a58b077f8fc26691aec5f4b070d67072d',1,'mmucontext_t::asid'],['../structubc__breakpoint__t.html#a61910e4f628d8ebca86e648a8437bcf0',1,'ubc_breakpoint_t::asid']]],
+  ['asid_28',['asid',['../structmmucontext__t.html#a58b077f8fc26691aec5f4b070d67072d',1,'mmucontext_t::asid'],['../structubc__breakpoint__t.html#a255e324f2bf247fc8597a16f7ece4444',1,'ubc_breakpoint_t::asid']]],
   ['attach_29',['attach',['../structmaple__driver__t.html#aa8ff28be52edab75ad78e18b922431e0',1,'maple_driver_t']]],
   ['attr_30',['attr',['../structdirent__t.html#a89edd12329b317db53629203ecd20e1c',1,'dirent_t']]],
   ['audio_31',['audio',['../structflashrom__syscfg__t.html#a5adde100b843d45239cc7b18b656a93a',1,'flashrom_syscfg_t']]],

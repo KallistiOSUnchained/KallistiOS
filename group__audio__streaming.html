@@ -120,8 +120,17 @@ Macros</h2></td></tr>
 <tr class="memitem:gac6a4dd8ba64ce0598beec50ba5c04cca" id="r_gac6a4dd8ba64ce0598beec50ba5c04cca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac6a4dd8ba64ce0598beec50ba5c04cca">SND_STREAM_MAX</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:gac6a4dd8ba64ce0598beec50ba5c04cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of streams that can be allocated at once.  <br /></td></tr>
 <tr class="separator:gac6a4dd8ba64ce0598beec50ba5c04cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga082956718695c49f9bb288db467ef019" id="r_ga082956718695c49f9bb288db467ef019"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga082956718695c49f9bb288db467ef019">SND_STREAM_BUFFER_MAX</a>&#160;&#160;&#160;0x10000</td></tr>
-<tr class="memdesc:ga082956718695c49f9bb288db467ef019"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum buffer size for a stream.  <br /></td></tr>
+<tr class="memitem:gadcec1de04aa6e61114b6562c800db1ac" id="r_gadcec1de04aa6e61114b6562c800db1ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadcec1de04aa6e61114b6562c800db1ac">SND_STREAM_BUFFER_MAX_PCM16</a>&#160;&#160;&#160;(128 &lt;&lt; 10)</td></tr>
+<tr class="memdesc:gadcec1de04aa6e61114b6562c800db1ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum buffer size for each channel of PCM 16-bit stream.  <br /></td></tr>
+<tr class="separator:gadcec1de04aa6e61114b6562c800db1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e6314dc638a28c24c3720c9f2676e0a" id="r_ga9e6314dc638a28c24c3720c9f2676e0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9e6314dc638a28c24c3720c9f2676e0a">SND_STREAM_BUFFER_MAX_PCM8</a>&#160;&#160;&#160;(64 &lt;&lt; 10)</td></tr>
+<tr class="memdesc:ga9e6314dc638a28c24c3720c9f2676e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum buffer size for each channel of PCM 8-bit stream.  <br /></td></tr>
+<tr class="separator:ga9e6314dc638a28c24c3720c9f2676e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0e0e62412ea1d250ae49a51faa0b5fd" id="r_gac0e0e62412ea1d250ae49a51faa0b5fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac0e0e62412ea1d250ae49a51faa0b5fd">SND_STREAM_BUFFER_MAX_ADPCM</a>&#160;&#160;&#160;(32 &lt;&lt; 10)</td></tr>
+<tr class="memdesc:gac0e0e62412ea1d250ae49a51faa0b5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum buffer size for each channel of ADPCM stream.  <br /></td></tr>
+<tr class="separator:gac0e0e62412ea1d250ae49a51faa0b5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga082956718695c49f9bb288db467ef019" id="r_ga082956718695c49f9bb288db467ef019"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga082956718695c49f9bb288db467ef019">SND_STREAM_BUFFER_MAX</a>&#160;&#160;&#160;(64 &lt;&lt; 10)</td></tr>
+<tr class="memdesc:ga082956718695c49f9bb288db467ef019"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum buffer size for each channel of streams by default and for backward compatibility.  <br /></td></tr>
 <tr class="separator:ga082956718695c49f9bb288db467ef019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6c03ea438593bac1ec9987e2571a94a8" id="r_ga6c03ea438593bac1ec9987e2571a94a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c03ea438593bac1ec9987e2571a94a8">SND_STREAM_INVALID</a>&#160;&#160;&#160;-1</td></tr>
 <tr class="memdesc:ga6c03ea438593bac1ec9987e2571a94a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid stream handle.  <br /></td></tr>
@@ -224,12 +233,60 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SND_STREAM_BUFFER_MAX&#160;&#160;&#160;0x10000</td>
+          <td class="memname">#define SND_STREAM_BUFFER_MAX&#160;&#160;&#160;(64 &lt;&lt; 10)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The maximum buffer size for a stream. </p>
+<p>The maximum buffer size for each channel of streams by default and for backward compatibility. </p>
+
+</div>
+</div>
+<a id="gac0e0e62412ea1d250ae49a51faa0b5fd" name="gac0e0e62412ea1d250ae49a51faa0b5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0e0e62412ea1d250ae49a51faa0b5fd">&#9670;&#160;</a></span>SND_STREAM_BUFFER_MAX_ADPCM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SND_STREAM_BUFFER_MAX_ADPCM&#160;&#160;&#160;(32 &lt;&lt; 10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The maximum buffer size for each channel of ADPCM stream. </p>
+
+</div>
+</div>
+<a id="gadcec1de04aa6e61114b6562c800db1ac" name="gadcec1de04aa6e61114b6562c800db1ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadcec1de04aa6e61114b6562c800db1ac">&#9670;&#160;</a></span>SND_STREAM_BUFFER_MAX_PCM16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SND_STREAM_BUFFER_MAX_PCM16&#160;&#160;&#160;(128 &lt;&lt; 10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The maximum buffer size for each channel of PCM 16-bit stream. </p>
+
+</div>
+</div>
+<a id="ga9e6314dc638a28c24c3720c9f2676e0a" name="ga9e6314dc638a28c24c3720c9f2676e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e6314dc638a28c24c3720c9f2676e0a">&#9670;&#160;</a></span>SND_STREAM_BUFFER_MAX_PCM8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SND_STREAM_BUFFER_MAX_PCM8&#160;&#160;&#160;(64 &lt;&lt; 10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The maximum buffer size for each channel of PCM 8-bit stream. </p>
 
 </div>
 </div>

@@ -109,7 +109,8 @@ $(function(){initNavTree('irq_8h.html',''); initResizable(true); });
 
 <p>Interrupt and exception handling.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdalign.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
@@ -121,6 +122,9 @@ $(function(){initNavTree('irq_8h.html',''); initResizable(true); });
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structirq__context__t.html">irq_context_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Architecture-specific structure for holding the processor state.  <a href="structirq__context__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structirq__cb__t.html">irq_cb_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a full callback of an IRQ handler and userdata.  <a href="structirq__cb__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -143,9 +147,16 @@ Macros</h2></td></tr>
 <tr class="memitem:ga7095fb363d08f6646611f9a47806647b" id="r_ga7095fb363d08f6646611f9a47806647b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html#ga7095fb363d08f6646611f9a47806647b">TIMER_IRQ</a>&#160;&#160;&#160;<a class="el" href="group__irqs.html#gga514a97b44194f47af21948925e129400a8268fcd59953a628949c22ef17c0ba3a">EXC_TMU0_TUNI0</a></td></tr>
 <tr class="memdesc:ga7095fb363d08f6646611f9a47806647b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of the timer IRQ.  <br /></td></tr>
 <tr class="separator:ga7095fb363d08f6646611f9a47806647b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f9fd9695f1bd7a6c78fe9401989408d" id="r_ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html#ga0f9fd9695f1bd7a6c78fe9401989408d">irq_disable_scoped</a>()&#160;&#160;&#160;__irq_disable_scoped(__LINE__)</td></tr>
+<tr class="memitem:ga0f9fd9695f1bd7a6c78fe9401989408d" id="r_ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__mask.html#ga0f9fd9695f1bd7a6c78fe9401989408d">irq_disable_scoped</a>()&#160;&#160;&#160;__irq_disable_scoped(__LINE__)</td></tr>
 <tr class="memdesc:ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable interrupts with scope management.  <br /></td></tr>
 <tr class="separator:ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa595fffe85c06c91d6a074f6f6fef3da" id="r_gaa595fffe85c06c91d6a074f6f6fef3da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html#gaa595fffe85c06c91d6a074f6f6fef3da">IRQ_PRIO_MAX</a>&#160;&#160;&#160;15</td></tr>
+<tr class="memdesc:gaa595fffe85c06c91d6a074f6f6fef3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum/maximum values for IRQ priorities.  <br /></td></tr>
+<tr class="separator:gaa595fffe85c06c91d6a074f6f6fef3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae260e8e9aded67a2f967690739e05351" id="r_gae260e8e9aded67a2f967690739e05351"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html#gae260e8e9aded67a2f967690739e05351">IRQ_PRIO_MIN</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:gae260e8e9aded67a2f967690739e05351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbab15415e7fd3fd09686b1057561db8" id="r_gadbab15415e7fd3fd09686b1057561db8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html#gadbab15415e7fd3fd09686b1057561db8">IRQ_PRIO_MASKED</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gadbab15415e7fd3fd09686b1057561db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Register Accessors</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Convenience macros for accessing context registers </p>
 </div></td></tr>
@@ -254,12 +265,36 @@ Enumerations</h2></td></tr>
 , <a class="el" href="group__irqs.html#gga514a97b44194f47af21948925e129400abd7e1af7e7217180c2a20b0c0808d54d">EXC_SCIF_BRI</a> = 0x0740
 , <a class="el" href="group__irqs.html#gga514a97b44194f47af21948925e129400a0252ae50bb25e01f62f90524e3c64526">EXC_SCIF_TXI</a> = 0x0760
 , <br />
-&#160;&#160;<a class="el" href="group__irqs.html#gga514a97b44194f47af21948925e129400a70dd83a44a4f58f734bce251f0fee9f9">EXC_DOUBLE_FAULT</a> = 0x0ff0
-, <a class="el" href="group__irqs.html#gga514a97b44194f47af21948925e129400a067eb6f8286aa0ebab653e10d45f01d3">EXC_UNHANDLED_EXC</a> = 0x0fe0
+&#160;&#160;<a class="el" href="group__irqs.html#gga514a97b44194f47af21948925e129400a70dd83a44a4f58f734bce251f0fee9f9">EXC_DOUBLE_FAULT</a> = 0x0780
+, <a class="el" href="group__irqs.html#gga514a97b44194f47af21948925e129400a067eb6f8286aa0ebab653e10d45f01d3">EXC_UNHANDLED_EXC</a> = 0x07e0
 <br />
  }</td></tr>
 <tr class="memdesc:ga514a97b44194f47af21948925e129400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt exception codes.  <a href="group__irqs.html#ga514a97b44194f47af21948925e129400">More...</a><br /></td></tr>
 <tr class="separator:ga514a97b44194f47af21948925e129400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26eeabb95673d3d3a3568fd93139da37" id="r_ga26eeabb95673d3d3a3568fd93139da37"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a> { <br />
+&#160;&#160;<a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a3bdd9d91629e3a6d5c0deecc7d72929f">IRQ_SRC_RTC</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a70cb0f6535a1dab3d35c96741c8d61de">IRQ_SRC_TMU2</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a095a1d16278d32987c455c8fc0be40f6">IRQ_SRC_TMU1</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a7968cfc9025744cbb53343e3d3f8c143">IRQ_SRC_TMU0</a>
+, <br />
+&#160;&#160;<a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37ab7e5b276c1d0820ee90b598b901dc1ee">_IRQ_SRC_RESV</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37ac3c44724d6ce7e1be493cca5636e672d">IRQ_SRC_SCI1</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a057a22ce7f370b97cb13a13e1b1270f8">IRQ_SRC_REF</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a4f4201892aa3199fe2b231128ea8ba9c">IRQ_SRC_WDT</a>
+, <br />
+&#160;&#160;<a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a88facd5656807e0498051d0a2d8497cb">IRQ_SRC_HUDI</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37ab95bf26a139ecf45d3a80e9de7aff12a">IRQ_SRC_SCIF</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37ab453e93c28a8a8457b66ca06e19ea01a">IRQ_SRC_DMAC</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a1c79c151f934009c501bb4b71ede60d6">IRQ_SRC_GPIO</a>
+, <br />
+&#160;&#160;<a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a8a0bae7762cd170444aa5580fba859ea">IRQ_SRC_IRL3</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a04b493504ba492f6c44952556d4964dd">IRQ_SRC_IRL2</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37adaf50dab79c1c1ba799b6dc248a88bcd">IRQ_SRC_IRL1</a>
+, <a class="el" href="group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a8ea50ac131a16d2124a6f2997e0d209c">IRQ_SRC_IRL0</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga26eeabb95673d3d3a3568fd93139da37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt sources.  <a href="group__irqs.html#ga26eeabb95673d3d3a3568fd93139da37">More...</a><br /></td></tr>
+<tr class="separator:ga26eeabb95673d3d3a3568fd93139da37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -275,6 +310,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga239a0e14ec3e16f17243a9d3a0da40fa" id="r_ga239a0e14ec3e16f17243a9d3a0da40fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__state.html#ga239a0e14ec3e16f17243a9d3a0da40fa">irq_inside_int</a> (void)</td></tr>
 <tr class="memdesc:ga239a0e14ec3e16f17243a9d3a0da40fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether inside of an interrupt context.  <br /></td></tr>
 <tr class="separator:ga239a0e14ec3e16f17243a9d3a0da40fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3b8efdb3e2d84b5ef13e2dee25b7ebf" id="r_gae3b8efdb3e2d84b5ef13e2dee25b7ebf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__irq__mask.html#gac86eb9bc95ad073837dfe8e4e9453295">irq_mask_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__mask.html#gae3b8efdb3e2d84b5ef13e2dee25b7ebf">irq_get_sr</a> (void)</td></tr>
+<tr class="memdesc:gae3b8efdb3e2d84b5ef13e2dee25b7ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get status register contents.  <br /></td></tr>
+<tr class="separator:gae3b8efdb3e2d84b5ef13e2dee25b7ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac8594a5bb7ec76a0d1a5f08c9b7aae27" id="r_gac8594a5bb7ec76a0d1a5f08c9b7aae27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__irq__mask.html#gac86eb9bc95ad073837dfe8e4e9453295">irq_mask_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__mask.html#gac8594a5bb7ec76a0d1a5f08c9b7aae27">irq_disable</a> (void)</td></tr>
 <tr class="memdesc:gac8594a5bb7ec76a0d1a5f08c9b7aae27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable interrupts.  <br /></td></tr>
 <tr class="separator:gac8594a5bb7ec76a0d1a5f08c9b7aae27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,15 +328,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2dc33e7878adb023d93fae5f0602c4a7" id="r_ga2dc33e7878adb023d93fae5f0602c4a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__handlers__ind.html#ga2dc33e7878adb023d93fae5f0602c4a7">irq_set_handler</a> (<a class="el" href="group__irqs.html#ga514a97b44194f47af21948925e129400">irq_t</a> code, <a class="el" href="group__irq__handlers.html#ga3ea6c10e0d2493ea00afe960dc070c86">irq_handler</a> hnd, void *data)</td></tr>
 <tr class="memdesc:ga2dc33e7878adb023d93fae5f0602c4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an IRQ handler.  <br /></td></tr>
 <tr class="separator:ga2dc33e7878adb023d93fae5f0602c4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga234309c6acb56e11285337c38c9ad57e" id="r_ga234309c6acb56e11285337c38c9ad57e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__irq__handlers.html#ga3ea6c10e0d2493ea00afe960dc070c86">irq_handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__handlers__ind.html#ga234309c6acb56e11285337c38c9ad57e">irq_get_handler</a> (<a class="el" href="group__irqs.html#ga514a97b44194f47af21948925e129400">irq_t</a> code)</td></tr>
-<tr class="memdesc:ga234309c6acb56e11285337c38c9ad57e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the address of the current handler for the IRQ type.  <br /></td></tr>
-<tr class="separator:ga234309c6acb56e11285337c38c9ad57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae07fa560a0bba53c58e7e4d1d3914a5" id="r_gaae07fa560a0bba53c58e7e4d1d3914a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structirq__cb__t.html">irq_cb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__handlers__ind.html#gaae07fa560a0bba53c58e7e4d1d3914a5">irq_get_handler</a> (<a class="el" href="group__irqs.html#ga514a97b44194f47af21948925e129400">irq_t</a> code)</td></tr>
+<tr class="memdesc:gaae07fa560a0bba53c58e7e4d1d3914a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the address of the current handler for the IRQ type.  <br /></td></tr>
+<tr class="separator:gaae07fa560a0bba53c58e7e4d1d3914a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacf69b20473c32c2c9879617650b165a4" id="r_gacf69b20473c32c2c9879617650b165a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__handlers__global.html#gacf69b20473c32c2c9879617650b165a4">irq_set_global_handler</a> (<a class="el" href="group__irq__handlers.html#ga3ea6c10e0d2493ea00afe960dc070c86">irq_handler</a> hnd, void *data)</td></tr>
 <tr class="memdesc:gacf69b20473c32c2c9879617650b165a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a global exception handler.  <br /></td></tr>
 <tr class="separator:gacf69b20473c32c2c9879617650b165a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3ff70e98c4984804ff9bbaa0a436cb97" id="r_ga3ff70e98c4984804ff9bbaa0a436cb97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__irq__handlers.html#ga3ea6c10e0d2493ea00afe960dc070c86">irq_handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__handlers__global.html#ga3ff70e98c4984804ff9bbaa0a436cb97">irq_get_global_handler</a> (void)</td></tr>
-<tr class="memdesc:ga3ff70e98c4984804ff9bbaa0a436cb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global exception handler.  <br /></td></tr>
-<tr class="separator:ga3ff70e98c4984804ff9bbaa0a436cb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf57a4efb00f45f5b98a3803f7019377d" id="r_gaf57a4efb00f45f5b98a3803f7019377d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structirq__cb__t.html">irq_cb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__handlers__global.html#gaf57a4efb00f45f5b98a3803f7019377d">irq_get_global_handler</a> (void)</td></tr>
+<tr class="memdesc:gaf57a4efb00f45f5b98a3803f7019377d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global exception handler.  <br /></td></tr>
+<tr class="separator:gaf57a4efb00f45f5b98a3803f7019377d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c731b76846e9882613ea21dcf465a97" id="r_ga2c731b76846e9882613ea21dcf465a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html#ga2c731b76846e9882613ea21dcf465a97">irq_set_priority</a> (<a class="el" href="group__irqs.html#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a> src, unsigned int prio)</td></tr>
+<tr class="memdesc:ga2c731b76846e9882613ea21dcf465a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the priority of a given IRQ source.  <br /></td></tr>
+<tr class="separator:ga2c731b76846e9882613ea21dcf465a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga599ada81c7cb2fce2a09b2270998100e" id="r_ga599ada81c7cb2fce2a09b2270998100e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html#ga599ada81c7cb2fce2a09b2270998100e">irq_get_priority</a> (<a class="el" href="group__irqs.html#ga26eeabb95673d3d3a3568fd93139da37">irq_src_t</a> src)</td></tr>
+<tr class="memdesc:ga599ada81c7cb2fce2a09b2270998100e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the priority of a given IRQ source.  <br /></td></tr>
+<tr class="separator:ga599ada81c7cb2fce2a09b2270998100e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interrupt and exception handling. </p>

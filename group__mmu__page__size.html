@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: Transfer Modes</title>
+<title>KallistiOS: Page size settings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('group__pvr__dma__type.html',''); initResizable(true); });
+$(function(){initNavTree('group__mmu__page__size.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -99,57 +99,41 @@ $(function(){initNavTree('group__pvr__dma__type.html',''); initResizable(true); 
 <div class="header">
   <div class="summary">
 <a href="#enum-members">Enumerations</a>  </div>
-  <div class="headertitle"><div class="title">Transfer Modes<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__pvr.html">PowerVR API</a> &raquo; <a class="el" href="group__pvr__dma.html">DMA</a></div></div></div>
+  <div class="headertitle"><div class="title">Page size settings<div class="ingroups"><a class="el" href="group__system.html">System</a> &raquo; <a class="el" href="group__mmu.html">MMU</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Transfer modes with TA/PVR DMA and Store Queues  
+<p>SH4 MMU page sizes  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga7d772c6dfeec1493c31bb6a200cd3744" id="r_ga7d772c6dfeec1493c31bb6a200cd3744"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> { <br />
-&#160;&#160;<a class="el" href="#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">PVR_DMA_VRAM64</a>
-, <a class="el" href="#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">PVR_DMA_VRAM32</a>
-, <a class="el" href="#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">PVR_DMA_TA</a>
-, <a class="el" href="#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">PVR_DMA_YUV</a>
-, <br />
-&#160;&#160;<a class="el" href="#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">PVR_DMA_VRAM32_SB</a>
-, <a class="el" href="#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">PVR_DMA_VRAM64_SB</a>
-, <a class="el" href="#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">PVR_DMA_REGISTERS</a>
-<br />
+<tr class="memitem:ga7066734c48cf2896d679c58a9d2fd90e" id="r_ga7066734c48cf2896d679c58a9d2fd90e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7066734c48cf2896d679c58a9d2fd90e">page_size_t</a> { <a class="el" href="#gga7066734c48cf2896d679c58a9d2fd90ea2363a8b0119c9c191b4a4cdf2e623983">PAGE_SIZE_1K</a>
+, <a class="el" href="#gga7066734c48cf2896d679c58a9d2fd90ea573617459ac726f98c5b412a468972fb">PAGE_SIZE_4K</a>
+, <a class="el" href="#gga7066734c48cf2896d679c58a9d2fd90ea614d7261afaf6a5c3bd0a56563ebd5cd">PAGE_SIZE_64K</a>
+, <a class="el" href="#gga7066734c48cf2896d679c58a9d2fd90eaf950aa4cf2b551289990ef1ee9d12621">PAGE_SIZE_1M</a>
  }</td></tr>
-<tr class="separator:ga7d772c6dfeec1493c31bb6a200cd3744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ga7066734c48cf2896d679c58a9d2fd90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Transfer modes with TA/PVR DMA and Store Queues </p>
+<p>SH4 MMU page sizes </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ga7d772c6dfeec1493c31bb6a200cd3744" name="ga7d772c6dfeec1493c31bb6a200cd3744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7d772c6dfeec1493c31bb6a200cd3744">&#9670;&#160;</a></span>pvr_dma_type_t</h2>
+<a id="ga7066734c48cf2896d679c58a9d2fd90e" name="ga7066734c48cf2896d679c58a9d2fd90e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7066734c48cf2896d679c58a9d2fd90e">&#9670;&#160;</a></span>page_size_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a></td>
+          <td class="memname">enum <a class="el" href="#ga7066734c48cf2896d679c58a9d2fd90e">page_size_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77" name="gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77"></a>PVR_DMA_VRAM64&#160;</td><td class="fielddoc"><p>Transfer to VRAM using TA bus. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5" name="gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5"></a>PVR_DMA_VRAM32&#160;</td><td class="fielddoc"><p>Transfer to VRAM using TA bus. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc" name="gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc"></a>PVR_DMA_TA&#160;</td><td class="fielddoc"><p>Transfer to the tile accelerator. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3" name="gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3"></a>PVR_DMA_YUV&#160;</td><td class="fielddoc"><p>Transfer to the YUV converter (TA) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049" name="gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049"></a>PVR_DMA_VRAM32_SB&#160;</td><td class="fielddoc"><p>Transfer to/from VRAM using PVR i/f. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b" name="gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b"></a>PVR_DMA_VRAM64_SB&#160;</td><td class="fielddoc"><p>Transfer to/from VRAM using PVR i/f. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7" name="gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7"></a>PVR_DMA_REGISTERS&#160;</td><td class="fielddoc"><p>Transfer to/from PVR registers. </p>
-</td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga7066734c48cf2896d679c58a9d2fd90ea2363a8b0119c9c191b4a4cdf2e623983" name="gga7066734c48cf2896d679c58a9d2fd90ea2363a8b0119c9c191b4a4cdf2e623983"></a>PAGE_SIZE_1K&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga7066734c48cf2896d679c58a9d2fd90ea573617459ac726f98c5b412a468972fb" name="gga7066734c48cf2896d679c58a9d2fd90ea573617459ac726f98c5b412a468972fb"></a>PAGE_SIZE_4K&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga7066734c48cf2896d679c58a9d2fd90ea614d7261afaf6a5c3bd0a56563ebd5cd" name="gga7066734c48cf2896d679c58a9d2fd90ea614d7261afaf6a5c3bd0a56563ebd5cd"></a>PAGE_SIZE_64K&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga7066734c48cf2896d679c58a9d2fd90eaf950aa4cf2b551289990ef1ee9d12621" name="gga7066734c48cf2896d679c58a9d2fd90eaf950aa4cf2b551289990ef1ee9d12621"></a>PAGE_SIZE_1M&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

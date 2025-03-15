@@ -55,8 +55,9 @@ var searchData=
   ['control_20flow_52',['Control Flow',['../group__irq__ctrl.html',1,'']]],
   ['control_20registers_53',['Control Registers',['../group__sh4__cr__regs.html',1,'']]],
   ['controller_54',['Controller',['../group__controller.html',1,'Controller'],['../group__ubc.html',1,'User Break Controller']]],
-  ['counters_55',['Performance Counters',['../group__perf__counters.html',1,'']]],
-  ['crc_56',['CRC',['../group__networking__crc.html',1,'']]],
-  ['culling_20modes_57',['Culling Modes',['../group__pvr__cull__modes.html',1,'']]],
-  ['current_58',['Current',['../group__version__comptime__current.html',1,'Current'],['../group__version__runtime__current.html',1,'Current']]]
+  ['controller_20api_55',['DMA Controller API',['../group__dmac.html',1,'']]],
+  ['counters_56',['Performance Counters',['../group__perf__counters.html',1,'']]],
+  ['crc_57',['CRC',['../group__networking__crc.html',1,'']]],
+  ['culling_20modes_58',['Culling Modes',['../group__pvr__cull__modes.html',1,'']]],
+  ['current_59',['Current',['../group__version__comptime__current.html',1,'Current'],['../group__version__runtime__current.html',1,'Current']]]
 ];

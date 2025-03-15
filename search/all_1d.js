@@ -35,5 +35,5 @@ var searchData=
   ['write_5fblocks_32',['write_blocks',['../structkos__blockdev__t.html#a670113bcd3b833064ef5057d04d82973',1,'kos_blockdev_t']]],
   ['write_5fbuffer_33',['write_buffer',['../structdbgio__handler__t.html#af459035a867122ae1ceeb9e1e3dd49c2',1,'dbgio_handler_t']]],
   ['write_5flock_34',['write_lock',['../structrw__semaphore__t.html#a2520c13d49a0e1e0bff48d5279659153',1,'rw_semaphore_t']]],
-  ['wthru_35',['wthru',['../structmmupage__t.html#ac693bb55bcc9a80e9d33527b10111cdd',1,'mmupage_t']]]
+  ['wthru_35',['wthru',['../structmmupage__t.html#a98b978bd4b75c46bccb10d9f39e55479',1,'mmupage_t']]]
 ];

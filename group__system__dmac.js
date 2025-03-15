@@ -1,6 +1,7 @@
 var group__system__dmac =
 [
-    [ "dmac.h", "dmac_8h.html", null ],
+    [ "dmac.h", "arch_2dmac_8h.html", null ],
+    [ "dmac.h", "dc_2dmac_8h.html", null ],
     [ "DMAC_BASE", "group__system__dmac.html#ga8064c4f3d53dd221f4c579350ac73e0c", null ],
     [ "DMAC_CHCR0", "group__system__dmac.html#ga4c1170f7f94e622c22c0bba2c26a2b07", null ],
     [ "DMAC_CHCR1", "group__system__dmac.html#gab50371911000dfe3bfa97cf5c424ae81", null ],

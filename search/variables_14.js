@@ -15,9 +15,10 @@ var searchData=
   ['total_12',['total',['../structvfs__handler__t.html#a44cedcce18f6378e8f3812970ee0e910',1,'vfs_handler_t::total'],['../structkthread__t.html#a492dad4841d8f5b5adeb44d6fb2bb42c',1,'kthread_t::total']]],
   ['total64_13',['total64',['../structvfs__handler__t.html#ade559766260bcc61755b47c708635933',1,'vfs_handler_t']]],
   ['transfer_5fcount_14',['transfer_count',['../structdreameye__state__t.html#ae17352341210a9f18116d77837dfac95',1,'dreameye_state_t']]],
-  ['ttl_15',['ttl',['../structip__hdr__t.html#a89fb5eda69c606da2a0d8bb4f0260315',1,'ip_hdr_t']]],
-  ['tx_16',['tx',['../structppp__device__t.html#a0b8f99d603eb52b97aed61664a91402e',1,'ppp_device_t']]],
-  ['txr_17',['txr',['../structpvr__poly__cxt__t.html#acf7f27fe5dcdb47423b62e400a16a4d9',1,'pvr_poly_cxt_t::txr'],['../structpvr__sprite__cxt__t.html#a30a5fd8feb917b27b17d856c50577e0a',1,'pvr_sprite_cxt_t::txr']]],
-  ['txr2_18',['txr2',['../structpvr__poly__cxt__t.html#a28fe96e909db9dd7e9e69d9feca45b0c',1,'pvr_poly_cxt_t']]],
-  ['type_19',['type',['../structelf__hdr__t.html#a2fdbb3597a35aa5c1505bd02b33b9d47',1,'elf_hdr_t::type'],['../structelf__shdr__t.html#a2d10b31679cf8194aa931a75a484d118',1,'elf_shdr_t::type'],['../structfs__socket__proto__t.html#a953406ac76959e7a825fb217a52a1f5b',1,'fs_socket_proto_t::type'],['../structmutex__t.html#a94d48f5aef1ce2a55044c45bead68cfe',1,'mutex_t::type'],['../structnmmgr__handler__t.html#a582a530a244448897364919edd94b14a',1,'nmmgr_handler_t::type'],['../structaica__channel__t.html#a55ec8b2d743af57a609dec959c4749ca',1,'aica_channel_t::type']]]
+  ['transmit_5fmode_15',['transmit_mode',['../structdma__config__t.html#a72bc08f75bddce98906fcb419bef0054',1,'dma_config_t']]],
+  ['ttl_16',['ttl',['../structip__hdr__t.html#a89fb5eda69c606da2a0d8bb4f0260315',1,'ip_hdr_t']]],
+  ['tx_17',['tx',['../structppp__device__t.html#a0b8f99d603eb52b97aed61664a91402e',1,'ppp_device_t']]],
+  ['txr_18',['txr',['../structpvr__poly__cxt__t.html#a3490cd164a906ae603095a64d11c8c6a',1,'pvr_poly_cxt_t::txr'],['../structpvr__sprite__cxt__t.html#a167a28006a2ac2bb29dce6cc17c2e112',1,'pvr_sprite_cxt_t::txr']]],
+  ['txr2_19',['txr2',['../structpvr__poly__cxt__t.html#a4180e9ce549eb403a68f700a76ee7d48',1,'pvr_poly_cxt_t']]],
+  ['type_20',['type',['../structelf__hdr__t.html#a2fdbb3597a35aa5c1505bd02b33b9d47',1,'elf_hdr_t::type'],['../structelf__shdr__t.html#a2d10b31679cf8194aa931a75a484d118',1,'elf_shdr_t::type'],['../structfs__socket__proto__t.html#a953406ac76959e7a825fb217a52a1f5b',1,'fs_socket_proto_t::type'],['../structmutex__t.html#a94d48f5aef1ce2a55044c45bead68cfe',1,'mutex_t::type'],['../structnmmgr__handler__t.html#a582a530a244448897364919edd94b14a',1,'nmmgr_handler_t::type'],['../structaica__channel__t.html#a55ec8b2d743af57a609dec959c4749ca',1,'aica_channel_t::type']]]
 ];

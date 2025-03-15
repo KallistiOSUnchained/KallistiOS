@@ -100,6 +100,7 @@ $(function(){initNavTree('group__asic.html',''); initResizable(true); });
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
 <a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Events<div class="ingroups"><a class="el" href="group__system.html">System</a></div></div></div>
@@ -127,6 +128,12 @@ Files</h2></td></tr>
 <tr class="memdesc:asic_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast ASIC event handling support. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structasic__evt__handler__entry__t.html">asic_evt_handler_entry_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ASIC event handler table entry.  <a href="structasic__evt__handler__entry__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga9f85e0eeb981f3f156a165938b2cef03" id="r_ga9f85e0eeb981f3f156a165938b2cef03"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9f85e0eeb981f3f156a165938b2cef03">asic_evt_handler</a>) (uint32_t code, void *data)</td></tr>
@@ -135,9 +142,9 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad2b0347aa26ec0ff6dbb1408e7ae948a" id="r_gad2b0347aa26ec0ff6dbb1408e7ae948a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad2b0347aa26ec0ff6dbb1408e7ae948a">asic_evt_set_handler</a> (uint16_t code, <a class="el" href="#ga9f85e0eeb981f3f156a165938b2cef03">asic_evt_handler</a> handler, void *data)</td></tr>
-<tr class="memdesc:gad2b0347aa26ec0ff6dbb1408e7ae948a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an ASIC handler.  <br /></td></tr>
-<tr class="separator:gad2b0347aa26ec0ff6dbb1408e7ae948a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaacd85a41326d64192788ada09822045" id="r_gaaacd85a41326d64192788ada09822045"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structasic__evt__handler__entry__t.html">asic_evt_handler_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaacd85a41326d64192788ada09822045">asic_evt_set_handler</a> (uint16_t code, <a class="el" href="#ga9f85e0eeb981f3f156a165938b2cef03">asic_evt_handler</a> handler, void *data)</td></tr>
+<tr class="memdesc:gaaacd85a41326d64192788ada09822045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an ASIC handler.  <br /></td></tr>
+<tr class="separator:gaaacd85a41326d64192788ada09822045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa47ebc5b3b3a9605a6ed9e6bfd6b479f" id="r_gaa47ebc5b3b3a9605a6ed9e6bfd6b479f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa47ebc5b3b3a9605a6ed9e6bfd6b479f">asic_evt_request_threaded_handler</a> (uint16_t code, <a class="el" href="#ga9f85e0eeb981f3f156a165938b2cef03">asic_evt_handler</a> handler, void *data, void(*ack_and_mask)(uint16_t), void(*unmask)(uint16_t))</td></tr>
 <tr class="memdesc:gaa47ebc5b3b3a9605a6ed9e6bfd6b479f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a threaded handler with the given ASIC event.  <br /></td></tr>
 <tr class="separator:gaa47ebc5b3b3a9605a6ed9e6bfd6b479f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,7 +181,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">code</td><td>The ASIC event code that generated this event. </td></tr>
-    <tr><td class="paramname">data</td><td>The user pointer that was passed to <a class="el" href="#gad2b0347aa26ec0ff6dbb1408e7ae948a">asic_evt_set_handler</a>. </td></tr>
+    <tr><td class="paramname">data</td><td>The user pointer that was passed to <a class="el" href="#gaaacd85a41326d64192788ada09822045">asic_evt_set_handler</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -254,7 +261,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Enable an ASIC event. </p>
-<p>This function will enable the hook for a specified code and register it at the given IRQ level. You should only register each event at a max of one IRQ level (this will not check that for you), and this does not actually set the hook function for the event, you must do that separately with <a class="el" href="#gad2b0347aa26ec0ff6dbb1408e7ae948a" title="Set or remove an ASIC handler.">asic_evt_set_handler()</a>. Generally, unless you're adding in new functionality, you'll never have to do this.</p>
+<p>This function will enable the hook for a specified code and register it at the given IRQ level. You should only register each event at a max of one IRQ level (this will not check that for you), and this does not actually set the hook function for the event, you must do that separately with <a class="el" href="#gaaacd85a41326d64192788ada09822045" title="Set or remove an ASIC handler.">asic_evt_set_handler()</a>. Generally, unless you're adding in new functionality, you'll never have to do this.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">code</td><td>The ASIC event code to hook (see <a class="el" href="group__asic__events.html">Event Codes</a>). </td></tr>
@@ -339,14 +346,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gad2b0347aa26ec0ff6dbb1408e7ae948a" name="gad2b0347aa26ec0ff6dbb1408e7ae948a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad2b0347aa26ec0ff6dbb1408e7ae948a">&#9670;&#160;</a></span>asic_evt_set_handler()</h2>
+<a id="gaaacd85a41326d64192788ada09822045" name="gaaacd85a41326d64192788ada09822045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaacd85a41326d64192788ada09822045">&#9670;&#160;</a></span>asic_evt_set_handler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void asic_evt_set_handler </td>
+          <td class="memname"><a class="el" href="structasic__evt__handler__entry__t.html">asic_evt_handler_entry_t</a> asic_evt_set_handler </td>
           <td>(</td>
           <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
         </tr>

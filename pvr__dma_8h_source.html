@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: kernel/arch/dreamcast/include/dc/pvr_dma.h Source File</title>
+<title>KallistiOS: kernel/arch/dreamcast/include/dc/pvr/pvr_dma.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,401 +102,293 @@ $(function(){initNavTree('pvr__dma_8h_source.html',''); initResizable(true); });
 <div class="contents">
 <a href="pvr__dma_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* KallistiOS ##version##</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">    dc/pvr_dma.h</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">    Copyright (C) 2002 Megan Potter</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    Copyright (C) 2014 Lawrence Sebald</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">    Copyright (C) 2023 Ruslan Rostovtsev</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">    Copyright (C) 2024 Andress Barajas</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">   dc/pvr/pvr_dma.h</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">   Copyright (C) 2002 Megan Potter</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">   Copyright (C) 2014 Lawrence Sebald</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">   Copyright (C) 2023 Ruslan Rostovtsev</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">   Copyright (C) 2024 Falco Girgis</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/** \file    dc/pvr_dma.h</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">    \brief   PVR/TA DMA interface.</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">    \ingroup pvr</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/** \file       dc/pvr/pvr_dma.h</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">    \brief      API for utilizing the DMA with the PVR for rendering</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">    \ingroup    pvr_dma</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">    This file provides support for PVR DMA and TA DMA transfers in the </span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">    Dreamcast. These DMA types can be used independently of each other, </span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">    and both can operate concurrently. Depending on the transfer method </span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">    specified, the appropriate DMA mechanism is selected.</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"></span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    TA DMA (Tile Accelerator DMA): This is a one-way transfer method used </span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">    primarily for submitting data directly to the Tile Accelerator (TA). It is </span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">    commonly used for submitting vertex data, texture data, and YUV conversion </span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">    data.</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">    PVR DMA (PowerVR DMA): This is a more flexible, two-way transfer mechanism </span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">    that supports both uploading and downloading data. PVR DMA is used for </span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">    transferring textures and palette data to VRAM, downloading data from VRAM </span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">    to the SH4, and for handling register data (e. palettes, fog tables).</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"></span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">    \author Megan Potter</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">    \author Roger Cattermole</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">    \author Paul Boese</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">    \author Brian Paul</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">    \author Lawrence Sebald</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">    \author Benoit Miller</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">    \author Ruslan Rostovtsev</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#ifndef __DC_PVR_DMA_H</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define __DC_PVR_DMA_H</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>__BEGIN_DECLS</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;<a class="code" href="sq_8h.html">dc/sq.h</a>&gt;</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/* Forward declare pvr_ptr_t to avoid including pvr.h */</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="pvr__dma_8h.html#a621fa8a260d17a31b12d4155426d0fa4">   47</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span> * <a class="code hl_typedef" href="pvr__dma_8h.html#a621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"></span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/** \defgroup pvr_dma   DMA</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">    \brief              PowerVR DMA driver</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">    \ingroup            pvr</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"></span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">    @{</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"></span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/** \defgroup pvr_dma_type          Transfer Modes</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    \brief                          Transfer modes with TA/PVR DMA and Store Queues</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    \ingroup  pvr_dma</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">    @{</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">   62</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> pvr_dma_type {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">   63</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">PVR_DMA_VRAM64</a>,       <span class="comment">/**&lt; \brief Transfer to VRAM using TA bus */</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">   64</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">PVR_DMA_VRAM32</a>,       <span class="comment">/**&lt; \brief Transfer to VRAM using TA bus */</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">   65</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">PVR_DMA_TA</a>,           <span class="comment">/**&lt; \brief Transfer to the tile accelerator */</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">   66</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">PVR_DMA_YUV</a>,          <span class="comment">/**&lt; \brief Transfer to the YUV converter (TA) */</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">   67</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">PVR_DMA_VRAM32_SB</a>,    <span class="comment">/**&lt; \brief Transfer to/from VRAM using PVR i/f */</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">   68</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">PVR_DMA_VRAM64_SB</a>,    <span class="comment">/**&lt; \brief Transfer to/from VRAM using PVR i/f */</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_enumvalue" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">PVR_DMA_REGISTERS</a>     <span class="comment">/**&lt; \brief Transfer to/from PVR registers */</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">   70</a></span>} <a class="code hl_enumeration" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a>;<span class="comment"></span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">    \author Megan Potter</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">    \author Roger Cattermole</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">    \author Paul Boese</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">    \author Brian Paul</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">    \author Lawrence Sebald</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    \author Benoit Miller</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">    \author Ruslan Rostovtsev</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">    \author Falco Girgis</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"></span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">    \todo</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">    - Top  level &quot;Transfer&quot; group</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">        a. DMA</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">        b. SQs</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#ifndef __DC_PVR_PVR_DMA_H</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define __DC_PVR_PVR_DMA_H</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>__BEGIN_DECLS</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"></span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/** \defgroup pvr_dma   DMA</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    \brief              PowerVR DMA driver</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    \ingroup            pvr</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/** \brief    Transfer modes with TA/PVR DMA and Store Queues</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">    \ingroup  pvr_dma</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">   46</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> pvr_dma_type {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">   47</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">PVR_DMA_VRAM64</a>,    <span class="comment">/**&lt; Transfer to VRAM using TA bus */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">   48</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">PVR_DMA_VRAM32</a>,    <span class="comment">/**&lt; Transfer to VRAM using TA bus */</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">   49</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">PVR_DMA_TA</a>,        <span class="comment">/**&lt; Transfer to the tile accelerator */</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">   50</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">PVR_DMA_YUV</a>,       <span class="comment">/**&lt; Transfer to the YUV converter (TA) */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">   51</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">PVR_DMA_VRAM32_SB</a>, <span class="comment">/**&lt; Transfer to/from VRAM using PVR i/f */</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">   52</a></span>    <a class="code hl_enumvalue" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">PVR_DMA_VRAM64_SB</a>,  <span class="comment">/**&lt; Transfer to/from VRAM using PVR i/f */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_enumvalue" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">PVR_DMA_REGISTERS</a>  <span class="comment">/**&lt; \brief Transfer to/from PVR registers */</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">   54</a></span>} <a class="code hl_enumeration" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a>;</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/** @} */</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"></span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/** \brief   PVR DMA interrupt callback type.</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"></span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/** \brief   PVR DMA interrupt callback type.</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    \ingroup pvr_dma</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"></span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">    Functions that act as callbacks when DMA completes should be of this type.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">    These functions will be called inside an interrupt context, so don&#39;t try to</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">    use anything that might stall.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">    \param  data            User data passed in to the pvr_dma_transfer()</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">                            function.</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">   66</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a>)(<span class="keywordtype">void</span> *data);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">/** \brief   Perform a DMA transfer to the PVR RAM over 64-bit TA bus.</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    \ingroup pvr_dma</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment"></span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">    This function copies a block of data to the PVR or its memory via DMA. There</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">    are all kinds of constraints that must be fulfilled to actually do this, so</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">    make sure to read all the fine print with the parameter list.</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"></span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">    Functions that act as callbacks when DMA completes should be of this type.</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">    These functions will be called inside an interrupt context, so don&#39;t try to</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">    use anything that might stall.</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment"></span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">    \param  data            User data passed in to the pvr_dma_transfer()</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">                            function.</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">   82</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a>)(<span class="keywordtype">void</span> *data);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment"></span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">/** \brief   Perform a DMA transfer to/from the TA/PVR RAM.</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment"></span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">    This function copies a block of data to/from the TA/PVR or its memory via </span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">    DMA. There are all kinds of constraints that must be fulfilled to actually </span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">    do this, so make sure to read all the fine print with the parameter list.</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">    If a callback is specified, it will be called in an interrupt context, so</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">    keep that in mind in writing the callback.</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment"></span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">    \param  dest            Where to copy to. Must be 32-byte aligned.</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">                            32.</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">    \param  type            The type of DMA transfer to do (see list of modes).</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">    \param  block           True if you want the function to block until the</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">                            DMA completes.</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"></span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">    If a callback is specified, it will be called in an interrupt context, so</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">    keep that in mind in writing the callback.</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment"></span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">    \param  dest            Where to copy to. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">                            32.</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">    \param  type            The type of DMA transfer to do (see list of modes).</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">                            DMA completes.</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment"></span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">    \par    Error Conditions:</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">    \em     EFAULT - src or dest is not 32-byte aligned \n</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">    \em     EIO - I/O error</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment"></span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">    \see    pvr_dma_modes</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga3d92510391f4cfdbe06a531a69827e54">  112</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga3d92510391f4cfdbe06a531a69827e54">pvr_dma_transfer</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">void</span> *dest, <span class="keywordtype">size_t</span> count, </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                     <a class="code hl_enumeration" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type, <span class="keywordtype">int</span> block, </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                     <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment"></span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">/** \brief   Load a texture using TA DMA.</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment"></span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    notes that apply to it also apply here.</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"></span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">    \deprecated</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">    This function is formally deprecated and should not be used in new code.</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">    Instead you should use the pvr_dma_ta_load_txr() function.</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">    \par    Error Conditions:</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">    \em     EFAULT - dest is not 32-byte aligned \n</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">    \em     EIO - I/O error</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga2052d2931d4d43a1f9a9a522411cc767">   95</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga2052d2931d4d43a1f9a9a522411cc767">pvr_dma_transfer</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, uintptr_t dest, <span class="keywordtype">size_t</span> count,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                     <a class="code hl_enumeration" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type, <span class="keywordtype">bool</span> block,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                     <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment"></span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">/** \brief   Load a texture using TA DMA.</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">    \ingroup pvr_dma</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"></span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">    notes that apply to it also apply here.</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment"></span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">    \param  dest            Where to copy to. Must be 32-byte aligned.</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">                            32.</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">    \param  block           True if you want the function to block until the</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">                            DMA completes.</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment"></span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">    \par    Error Conditions:</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    \em     EFAULT - dest is not 32-byte aligned \n</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">    \em     EIO - I/O error</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga2fb51a5199b68eb794dfee318a6ab99a">  122</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga2fb51a5199b68eb794dfee318a6ab99a">pvr_txr_load_dma</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <a class="code hl_typedef" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dest, <span class="keywordtype">size_t</span> count, <span class="keywordtype">bool</span> block,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                     <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment"></span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">    \param  dest            Where to copy to. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">                            32.</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">                            DMA completes.</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment"></span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">    \par    Error Conditions:</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">    \em     EFAULT - src or dest is not 32-byte aligned \n</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">    \em     EIO - I/O error</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gaf646382b9252ce7ff46d346ad1bca523">  141</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#gaf646382b9252ce7ff46d346ad1bca523">pvr_txr_load_dma</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <a class="code hl_typedef" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dest, <span class="keywordtype">size_t</span> count, </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                     <span class="keywordtype">int</span> block, <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata)</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                     <a class="code hl_define" href="group__system__macros.html#ga392e91d0f8a0af994874aadeed30534d">__depr</a>(<span class="stringliteral">&quot;Use pvr_dma_ta_load_txr instead.&quot;</span>);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment"></span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">/** \brief   Load a texture using TA DMA.</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment"></span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">    notes that apply to it also apply here.</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment"></span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment">    \param  dest            Where to copy to. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">                            32.</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">                            DMA completes.</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment"></span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">    \par    Error Conditions:</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">    \em     EFAULT - src or dest is not 32-byte aligned \n</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">    \em     EIO - I/O error</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gab9fce8e20ebac9ff07500339bbec2987">  166</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#gab9fce8e20ebac9ff07500339bbec2987">pvr_dma_ta_load_txr</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <a class="code hl_typedef" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dest, <span class="keywordtype">size_t</span> count, </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                        <span class="keywordtype">int</span> block, <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment"></span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment">/** \brief   Load a texture using PVR DMA.</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment"></span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment">    notes that apply to it also apply here.</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment"></span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">    \param  dest            Where to copy to. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">                            32.</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">                            DMA completes.</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">/** \brief   Load vertex data to the TA using TA DMA.</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">    \ingroup pvr_dma</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment"></span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">    notes that apply to it also apply here.</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment"></span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">                            32.</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">    \param  block           True if you want the function to block until the</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">                            DMA completes.</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment"></span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">    \par    Error Conditions:</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">    \em     EFAULT - dest is not 32-byte aligned \n</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">    \em     EIO - I/O error</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga8cb0c72f5ade6e432e4d1c9920228a48">  146</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga8cb0c72f5ade6e432e4d1c9920228a48">pvr_dma_load_ta</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">size_t</span> count, <span class="keywordtype">bool</span> block,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                    <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment"></span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">/** \brief   Load yuv data to the YUV converter using TA DMA.</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment">    \ingroup pvr_dma</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment"></span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">    notes that apply to it also apply here.</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment"></span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">                            32.</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">    \param  block           True if you want the function to block until the</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">                            DMA completes.</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment"></span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">    \par    Error Conditions:</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment">    \em     EFAULT - dest is not 32-byte aligned \n</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment">    \em     EIO - I/O error</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga07a9d0bac01e1149b1732ef83837c16d">  170</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga07a9d0bac01e1149b1732ef83837c16d">pvr_dma_yuv_conv</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">size_t</span> count, <span class="keywordtype">bool</span> block,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                     <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment"></span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment">/** \brief   Is PVR DMA is inactive?</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">    \ingroup pvr_dma</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">    \return                 True if there is no PVR DMA active, thus a DMA</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">                            can begin or false if there is an active DMA.</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga4a286584074c5d23d73ab3575ec033ba">  178</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__pvr__dma.html#ga4a286584074c5d23d73ab3575ec033ba">pvr_dma_ready</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment"></span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">/** \brief   Initialize TA/PVR DMA. </span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment">    \ingroup pvr_dma</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gad109fa463b781e04238895138e0a2a38">  183</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__pvr__dma.html#gad109fa463b781e04238895138e0a2a38">pvr_dma_init</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment"></span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">    \par    Error Conditions:</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">    \em     EFAULT - src or dest is not 32-byte aligned \n</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">    \em     EIO - I/O error</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gaffbd9e0f61dae3e4b9b4417ab7f264f8">  190</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#gaffbd9e0f61dae3e4b9b4417ab7f264f8">pvr_dma_rb_load_txr</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <a class="code hl_typedef" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dest, <span class="keywordtype">size_t</span> count, </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                        <span class="keywordtype">int</span> block, <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">/** \brief   Shut down TA/PVR DMA. </span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">    \ingroup pvr_dma</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gaea1ae7a936cd5952942d6039f00c9862">  188</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__pvr__dma.html#gaea1ae7a936cd5952942d6039f00c9862">pvr_dma_shutdown</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment"></span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">/** \brief   Copy a block of memory to VRAM</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">    \ingroup store_queues</span></div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment"></span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">/** \brief   Download a texture using PVR DMA.</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment"></span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment">    notes that apply to it also apply here.</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment"></span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="comment">    \param  src             Where to copy to. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">    \param  dest            Where to copy from. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">                            32.</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment">                            DMA completes.</span></div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">    This function is similar to sq_cpy(), but it has been</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment">    optimized for writing to a destination residing within VRAM.</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment"></span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment">    \warning</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment">    This function cannot be used at the same time as a PVR DMA transfer.</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="comment"></span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">    The dest pointer must be at least 32-byte aligned and reside </span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">    in video memory, the src pointer must be at least 8-byte aligned, </span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">    and n must be a multiple of 32.</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment"></span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment">    \param  dest            The address to copy to (32-byte aligned).</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">    \param  src             The address to copy from (32-bit (8-byte) aligned).</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">    \param  n               The number of bytes to copy (multiple of 32).</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">    \param  type            The type of SQ/DMA transfer to do (see list of modes).</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment">    \return                 The original value of dest.</span></div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment"></span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">    \par    Error Conditions:</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">    \em     EFAULT - src or dest is not 32-byte aligned \n</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">    \em     EIO - I/O error</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga308b01012bbe28dfbc0a4b8c680a9fc4">  214</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga308b01012bbe28dfbc0a4b8c680a9fc4">pvr_dma_download_txr</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">void</span> *dest, <span class="keywordtype">size_t</span> count, <span class="keywordtype">int</span> block, </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                         <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">    \sa pvr_sq_set32()</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="group__store__queues.html#ga862e89040f0b6a0649843f9e2f08ee9a">  211</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="group__store__queues.html#ga862e89040f0b6a0649843f9e2f08ee9a">pvr_sq_load</a>(<span class="keywordtype">void</span> *dest, <span class="keyword">const</span> <span class="keywordtype">void</span> *src,</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                  <span class="keywordtype">size_t</span> n, <a class="code hl_enumeration" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment"></span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">/** \brief   Set a block of PVR memory to a 16-bit value.</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">    \ingroup store_queues</span></div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment"></span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">/** \brief   Load vertex data to the TA using TA DMA.</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment"></span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">    notes that apply to it also apply here.</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment"></span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">                            32.</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment">                            DMA completes.</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment"></span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment">    \par    Error Conditions:</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">    \em     EFAULT - src is not 32-byte aligned \n</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">    \em     EIO - I/O error</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga9c43a18a5c44c04f14f7445e7e41dd6e">  237</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga9c43a18a5c44c04f14f7445e7e41dd6e">pvr_dma_load_ta</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">size_t</span> count, <span class="keywordtype">int</span> block,</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                    <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">    This function is similar to sq_set16(), but it has been</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">    optimized for writing to a destination residing within VRAM.</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment"></span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">    \warning</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">    This function cannot be used at the same time as a PVR DMA transfer.</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">    </span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">    The dest pointer must be at least 32-byte aligned and reside in video </span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">    memory, n must be a multiple of 32 and only the low 16-bits are used </span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">    from c.</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment"></span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">    \param  dest            The address to begin setting at (32-byte aligned).</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">    \param  c               The value to set (in the low 16-bits).</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">    \param  n               The number of bytes to set (multiple of 32).</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">    \param  type            The type of SQ/DMA transfer to do (see list of modes).</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">    \return                 The original value of dest.</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment"></span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">    \sa pvr_sq_set32()</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="group__store__queues.html#ga279e1dc13ceda7c544ed72a9e4141fac">  235</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="group__store__queues.html#ga279e1dc13ceda7c544ed72a9e4141fac">pvr_sq_set16</a>(<span class="keywordtype">void</span> *dest, uint32_t c, <span class="keywordtype">size_t</span> n, <a class="code hl_enumeration" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment"></span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="comment">/** \brief   Set a block of PVR memory to a 32-bit value.</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment">    \ingroup store_queues</span></div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="comment"></span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">/** \brief   Load yuv data to the YUV converter using TA DMA.</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment"></span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">    This is essentially a convenience wrapper for pvr_dma_transfer(), so all</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="comment">    notes that apply to it also apply here.</span></div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="comment"></span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">    \param  src             Where to copy from. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment">    \param  count           The number of bytes to copy. Must be a multiple of</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment">                            32.</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment">                            DMA completes.</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">    This function is similar to sq_set32(), but it has been</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">    optimized for writing to a destination residing within VRAM.</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment"></span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="comment">    \warning</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="comment">    This function cannot be used at the same time as a PVR DMA transfer.</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment"></span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment">    The dest pointer must be at least 32-byte aligned and reside in video </span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment">    memory, n must be a multiple of 32.</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment"></span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment">    \param  dest            The address to begin setting at (32-byte aligned).</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment">    \param  c               The value to set.</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment">    \param  n               The number of bytes to set (multiple of 32).</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="comment">    \param  type            The type of SQ/DMA transfer to do (see list of modes).</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="comment">    \return                 The original value of dest.</span></div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="comment"></span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment">    \par    Error Conditions:</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="comment">    \em     EFAULT - src is not 32-byte aligned \n</span></div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="comment">    \em     EIO - I/O error</span></div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gaddc2155f9725e1c514299bc4f3e99efd">  260</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#gaddc2155f9725e1c514299bc4f3e99efd">pvr_dma_yuv_conv</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">size_t</span> count, <span class="keywordtype">int</span> block,</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                     <a class="code hl_typedef" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata);</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="comment"></span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="comment">/** \brief   Checks if the TA DMA is inactive.</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="comment">    </span></div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">    \deprecated</span></div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment">    This function is formally deprecated, and should not be used in newly</span></div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="comment">    written code. Instead, please use pvr_dma_ta_ready().</span></div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="comment"></span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment">    \return                 Non-zero if there is no TA DMA active, thus a DMA</span></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment">                            can begin or 0 if there is an active DMA.</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga04de1a27a256b15e1296961b13cb6b45">  272</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga04de1a27a256b15e1296961b13cb6b45">pvr_dma_ready</a>(<span class="keywordtype">void</span>)  <a class="code hl_define" href="group__system__macros.html#ga392e91d0f8a0af994874aadeed30534d">__depr</a>(<span class="stringliteral">&quot;Use pvr_dma_ta_ready instead.&quot;</span>);</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="comment"></span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="comment">/** \brief   Checks if the TA DMA is inactive.</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment">    \return                 Non-zero if there is no TA DMA active, thus a DMA</span></div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">                            can begin or 0 if there is an active DMA.</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga8e61fe6cb891c5d29dd6cc69a787fe18">  278</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#ga8e61fe6cb891c5d29dd6cc69a787fe18">pvr_dma_ta_ready</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="comment"></span> </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="comment">/** \brief   Checks if the PVR DMA is inactive.</span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="comment">    \return                 Non-zero if there is no PVR DMA active, thus a DMA</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">                            can begin or 0 if there is an active DMA.</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gaf1053b29573bbab8a654eecf285b6c32">  284</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__pvr__dma.html#gaf1053b29573bbab8a654eecf285b6c32">pvr_dma_rb_ready</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="comment"></span> </div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="comment">/** \brief   Initialize TA/PVR DMA. */</span></div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gad109fa463b781e04238895138e0a2a38">  287</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__pvr__dma.html#gad109fa463b781e04238895138e0a2a38">pvr_dma_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="comment"></span> </div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="comment">/** \brief   Shut down TA/PVR DMA. */</span></div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#gaea1ae7a936cd5952942d6039f00c9862">  290</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__pvr__dma.html#gaea1ae7a936cd5952942d6039f00c9862">pvr_dma_shutdown</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment"></span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="comment">/** \brief   Copy a block of memory to VRAM</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment"></span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment">    This function is similar to sq_cpy(), but it has been</span></div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment">    optimized for writing to a destination residing within VRAM.</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="comment"></span> </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="comment">    \warning</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">    This function cannot be used at the same time as a PVR DMA transfer.</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="comment"></span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="comment">    The dest pointer must be at least 32-byte aligned and reside </span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="comment">    in video memory, the src pointer must be at least 8-byte aligned, </span></div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="comment">    and n must be a multiple of 32.</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="comment"></span> </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="comment">    \param  dest            The address to copy to (32-byte aligned).</span></div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment">    \param  src             The address to copy from (32-bit (8-byte) aligned).</span></div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="comment">    \param  n               The number of bytes to copy (multiple of 32).</span></div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="comment">    \param  type            The type of SQ/DMA transfer to do (see list of modes).</span></div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="comment">    \return                 The original value of dest.</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="comment"></span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="comment">    \sa pvr_sq_set32()</span></div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga862e89040f0b6a0649843f9e2f08ee9a">  312</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="group__pvr__dma.html#ga862e89040f0b6a0649843f9e2f08ee9a">pvr_sq_load</a>(<span class="keywordtype">void</span> *dest, <span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">size_t</span> n, <a class="code hl_enumeration" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type);</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="comment"></span> </div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="comment">/** \brief   Set a block of PVR memory to a 16-bit value.</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="comment"></span> </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="comment">    This function is similar to sq_set16(), but it has been</span></div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="comment">    optimized for writing to a destination residing within VRAM.</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="comment"></span> </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="comment">    \warning</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="comment">    This function cannot be used at the same time as a PVR DMA transfer.</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="comment">    </span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="comment">    The dest pointer must be at least 32-byte aligned and reside in video </span></div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="comment">    memory, n must be a multiple of 32 and only the low 16-bits are used </span></div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="comment">    from c.</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="comment"></span> </div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="comment">    \param  dest            The address to begin setting at (32-byte aligned).</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="comment">    \param  c               The value to set (in the low 16-bits).</span></div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="comment">    \param  n               The number of bytes to set (multiple of 32).</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="comment">    \param  type            The type of SQ/DMA transfer to do (see list of modes).</span></div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="comment">    \return                 The original value of dest.</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="comment"></span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="comment">    \sa pvr_sq_set32()</span></div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga279e1dc13ceda7c544ed72a9e4141fac">  334</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="group__pvr__dma.html#ga279e1dc13ceda7c544ed72a9e4141fac">pvr_sq_set16</a>(<span class="keywordtype">void</span> *dest, uint32_t c, <span class="keywordtype">size_t</span> n, <a class="code hl_enumeration" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type);</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="comment"></span> </div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="comment">/** \brief   Set a block of PVR memory to a 32-bit value.</span></div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="comment"></span> </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="comment">    This function is similar to sq_set32(), but it has been</span></div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="comment">    optimized for writing to a destination residing within VRAM.</span></div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="comment"></span> </div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="comment">    \warning</span></div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="comment">    This function cannot be used at the same time as a PVR DMA transfer.</span></div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="comment"></span> </div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="comment">    The dest pointer must be at least 32-byte aligned and reside in video </span></div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="comment">    memory, n must be a multiple of 32.</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="comment"></span> </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="comment">    \param  dest            The address to begin setting at (32-byte aligned).</span></div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="comment">    \param  c               The value to set.</span></div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="comment">    \param  n               The number of bytes to set (multiple of 32).</span></div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="comment">    \param  type            The type of SQ/DMA transfer to do (see list of modes).</span></div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="comment">    \return                 The original value of dest.</span></div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="comment"></span> </div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="comment">    \sa pvr_sq_set16</span></div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno"><a class="line" href="group__pvr__dma.html#ga60be360851438cc0c0a0d8d9c4ec8230">  355</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="group__pvr__dma.html#ga60be360851438cc0c0a0d8d9c4ec8230">pvr_sq_set32</a>(<span class="keywordtype">void</span> *dest, uint32_t c, <span class="keywordtype">size_t</span> n, <a class="code hl_enumeration" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type);</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="comment"></span> </div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="comment">/** @} */</span></div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>__END_DECLS</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span><span class="preprocessor">#endif </span><span class="comment">/* __DC_PVR_DMA_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="agroup__pvr__dma__type_html_ga7d772c6dfeec1493c31bb6a200cd3744"><div class="ttname"><a href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a></div><div class="ttdeci">pvr_dma_type_t</div><div class="ttdef"><b>Definition</b> pvr_dma.h:62</div></div>
-<div class="ttc" id="agroup__pvr__dma__type_html_gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc"><div class="ttname"><a href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">PVR_DMA_TA</a></div><div class="ttdeci">@ PVR_DMA_TA</div><div class="ttdoc">Transfer to the tile accelerator.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:65</div></div>
-<div class="ttc" id="agroup__pvr__dma__type_html_gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049"><div class="ttname"><a href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">PVR_DMA_VRAM32_SB</a></div><div class="ttdeci">@ PVR_DMA_VRAM32_SB</div><div class="ttdoc">Transfer to/from VRAM using PVR i/f.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:67</div></div>
-<div class="ttc" id="agroup__pvr__dma__type_html_gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7"><div class="ttname"><a href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">PVR_DMA_REGISTERS</a></div><div class="ttdeci">@ PVR_DMA_REGISTERS</div><div class="ttdoc">Transfer to/from PVR registers.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:69</div></div>
-<div class="ttc" id="agroup__pvr__dma__type_html_gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5"><div class="ttname"><a href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">PVR_DMA_VRAM32</a></div><div class="ttdeci">@ PVR_DMA_VRAM32</div><div class="ttdoc">Transfer to VRAM using TA bus.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:64</div></div>
-<div class="ttc" id="agroup__pvr__dma__type_html_gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3"><div class="ttname"><a href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">PVR_DMA_YUV</a></div><div class="ttdeci">@ PVR_DMA_YUV</div><div class="ttdoc">Transfer to the YUV converter (TA)</div><div class="ttdef"><b>Definition</b> pvr_dma.h:66</div></div>
-<div class="ttc" id="agroup__pvr__dma__type_html_gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b"><div class="ttname"><a href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">PVR_DMA_VRAM64_SB</a></div><div class="ttdeci">@ PVR_DMA_VRAM64_SB</div><div class="ttdoc">Transfer to/from VRAM using PVR i/f.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:68</div></div>
-<div class="ttc" id="agroup__pvr__dma__type_html_gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77"><div class="ttname"><a href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">PVR_DMA_VRAM64</a></div><div class="ttdeci">@ PVR_DMA_VRAM64</div><div class="ttdoc">Transfer to VRAM using TA bus.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:63</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga04de1a27a256b15e1296961b13cb6b45"><div class="ttname"><a href="group__pvr__dma.html#ga04de1a27a256b15e1296961b13cb6b45">pvr_dma_ready</a></div><div class="ttdeci">int pvr_dma_ready(void) __depr(&quot;Use pvr_dma_ta_ready instead.&quot;)</div><div class="ttdoc">Checks if the TA DMA is inactive.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga1c983e6877a569204c25ec9e5ad48d63"><div class="ttname"><a href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a></div><div class="ttdeci">void(* pvr_dma_callback_t)(void *data)</div><div class="ttdoc">PVR DMA interrupt callback type.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:82</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga279e1dc13ceda7c544ed72a9e4141fac"><div class="ttname"><a href="group__pvr__dma.html#ga279e1dc13ceda7c544ed72a9e4141fac">pvr_sq_set16</a></div><div class="ttdeci">void * pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_type_t type)</div><div class="ttdoc">Set a block of PVR memory to a 16-bit value.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga308b01012bbe28dfbc0a4b8c680a9fc4"><div class="ttname"><a href="group__pvr__dma.html#ga308b01012bbe28dfbc0a4b8c680a9fc4">pvr_dma_download_txr</a></div><div class="ttdeci">int pvr_dma_download_txr(const void *src, void *dest, size_t count, int block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Download a texture using PVR DMA.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga3d92510391f4cfdbe06a531a69827e54"><div class="ttname"><a href="group__pvr__dma.html#ga3d92510391f4cfdbe06a531a69827e54">pvr_dma_transfer</a></div><div class="ttdeci">int pvr_dma_transfer(const void *src, void *dest, size_t count, pvr_dma_type_t type, int block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Perform a DMA transfer to/from the TA/PVR RAM.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga60be360851438cc0c0a0d8d9c4ec8230"><div class="ttname"><a href="group__pvr__dma.html#ga60be360851438cc0c0a0d8d9c4ec8230">pvr_sq_set32</a></div><div class="ttdeci">void * pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_type_t type)</div><div class="ttdoc">Set a block of PVR memory to a 32-bit value.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga862e89040f0b6a0649843f9e2f08ee9a"><div class="ttname"><a href="group__pvr__dma.html#ga862e89040f0b6a0649843f9e2f08ee9a">pvr_sq_load</a></div><div class="ttdeci">void * pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_type_t type)</div><div class="ttdoc">Copy a block of memory to VRAM.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga8e61fe6cb891c5d29dd6cc69a787fe18"><div class="ttname"><a href="group__pvr__dma.html#ga8e61fe6cb891c5d29dd6cc69a787fe18">pvr_dma_ta_ready</a></div><div class="ttdeci">int pvr_dma_ta_ready(void)</div><div class="ttdoc">Checks if the TA DMA is inactive.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_ga9c43a18a5c44c04f14f7445e7e41dd6e"><div class="ttname"><a href="group__pvr__dma.html#ga9c43a18a5c44c04f14f7445e7e41dd6e">pvr_dma_load_ta</a></div><div class="ttdeci">int pvr_dma_load_ta(const void *src, size_t count, int block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Load vertex data to the TA using TA DMA.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_gab9fce8e20ebac9ff07500339bbec2987"><div class="ttname"><a href="group__pvr__dma.html#gab9fce8e20ebac9ff07500339bbec2987">pvr_dma_ta_load_txr</a></div><div class="ttdeci">int pvr_dma_ta_load_txr(const void *src, pvr_ptr_t dest, size_t count, int block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Load a texture using TA DMA.</div></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment">    \sa pvr_sq_set16()</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="group__store__queues.html#ga60be360851438cc0c0a0d8d9c4ec8230">  257</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="group__store__queues.html#ga60be360851438cc0c0a0d8d9c4ec8230">pvr_sq_set32</a>(<span class="keywordtype">void</span> *dest, uint32_t c, <span class="keywordtype">size_t</span> n, <a class="code hl_enumeration" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>__END_DECLS</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="preprocessor">#endif  </span><span class="comment">/* __DC_PVR_PVR_DMA_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="agroup__pvr__dma_html_ga07a9d0bac01e1149b1732ef83837c16d"><div class="ttname"><a href="group__pvr__dma.html#ga07a9d0bac01e1149b1732ef83837c16d">pvr_dma_yuv_conv</a></div><div class="ttdeci">int pvr_dma_yuv_conv(const void *src, size_t count, bool block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Load yuv data to the YUV converter using TA DMA.</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_ga1c983e6877a569204c25ec9e5ad48d63"><div class="ttname"><a href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a></div><div class="ttdeci">void(* pvr_dma_callback_t)(void *data)</div><div class="ttdoc">PVR DMA interrupt callback type.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:66</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_ga2052d2931d4d43a1f9a9a522411cc767"><div class="ttname"><a href="group__pvr__dma.html#ga2052d2931d4d43a1f9a9a522411cc767">pvr_dma_transfer</a></div><div class="ttdeci">int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count, pvr_dma_type_t type, bool block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Perform a DMA transfer to the PVR RAM over 64-bit TA bus.</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_ga2fb51a5199b68eb794dfee318a6ab99a"><div class="ttname"><a href="group__pvr__dma.html#ga2fb51a5199b68eb794dfee318a6ab99a">pvr_txr_load_dma</a></div><div class="ttdeci">int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count, bool block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Load a texture using TA DMA.</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_ga4a286584074c5d23d73ab3575ec033ba"><div class="ttname"><a href="group__pvr__dma.html#ga4a286584074c5d23d73ab3575ec033ba">pvr_dma_ready</a></div><div class="ttdeci">bool pvr_dma_ready(void)</div><div class="ttdoc">Is PVR DMA is inactive?</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_ga7d772c6dfeec1493c31bb6a200cd3744"><div class="ttname"><a href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a></div><div class="ttdeci">pvr_dma_type_t</div><div class="ttdoc">Transfer modes with TA/PVR DMA and Store Queues.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:46</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_ga8cb0c72f5ade6e432e4d1c9920228a48"><div class="ttname"><a href="group__pvr__dma.html#ga8cb0c72f5ade6e432e4d1c9920228a48">pvr_dma_load_ta</a></div><div class="ttdeci">int pvr_dma_load_ta(const void *src, size_t count, bool block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Load vertex data to the TA using TA DMA.</div></div>
 <div class="ttc" id="agroup__pvr__dma_html_gad109fa463b781e04238895138e0a2a38"><div class="ttname"><a href="group__pvr__dma.html#gad109fa463b781e04238895138e0a2a38">pvr_dma_init</a></div><div class="ttdeci">void pvr_dma_init(void)</div><div class="ttdoc">Initialize TA/PVR DMA.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_gaddc2155f9725e1c514299bc4f3e99efd"><div class="ttname"><a href="group__pvr__dma.html#gaddc2155f9725e1c514299bc4f3e99efd">pvr_dma_yuv_conv</a></div><div class="ttdeci">int pvr_dma_yuv_conv(const void *src, size_t count, int block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Load yuv data to the YUV converter using TA DMA.</div></div>
 <div class="ttc" id="agroup__pvr__dma_html_gaea1ae7a936cd5952942d6039f00c9862"><div class="ttname"><a href="group__pvr__dma.html#gaea1ae7a936cd5952942d6039f00c9862">pvr_dma_shutdown</a></div><div class="ttdeci">void pvr_dma_shutdown(void)</div><div class="ttdoc">Shut down TA/PVR DMA.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_gaf1053b29573bbab8a654eecf285b6c32"><div class="ttname"><a href="group__pvr__dma.html#gaf1053b29573bbab8a654eecf285b6c32">pvr_dma_rb_ready</a></div><div class="ttdeci">int pvr_dma_rb_ready(void)</div><div class="ttdoc">Checks if the PVR DMA is inactive.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_gaf646382b9252ce7ff46d346ad1bca523"><div class="ttname"><a href="group__pvr__dma.html#gaf646382b9252ce7ff46d346ad1bca523">pvr_txr_load_dma</a></div><div class="ttdeci">int pvr_txr_load_dma(const void *src, pvr_ptr_t dest, size_t count, int block, pvr_dma_callback_t callback, void *cbdata) __depr(&quot;Use pvr_dma_ta_load_txr instead.&quot;)</div><div class="ttdoc">Load a texture using TA DMA.</div></div>
-<div class="ttc" id="agroup__pvr__dma_html_gaffbd9e0f61dae3e4b9b4417ab7f264f8"><div class="ttname"><a href="group__pvr__dma.html#gaffbd9e0f61dae3e4b9b4417ab7f264f8">pvr_dma_rb_load_txr</a></div><div class="ttdeci">int pvr_dma_rb_load_txr(const void *src, pvr_ptr_t dest, size_t count, int block, pvr_dma_callback_t callback, void *cbdata)</div><div class="ttdoc">Load a texture using PVR DMA.</div></div>
-<div class="ttc" id="agroup__pvr__vram_html_ga621fa8a260d17a31b12d4155426d0fa4"><div class="ttname"><a href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a></div><div class="ttdeci">void * pvr_ptr_t</div><div class="ttdoc">PVR texture memory pointer.</div><div class="ttdef"><b>Definition</b> pvr.h:68</div></div>
-<div class="ttc" id="agroup__system__macros_html_ga392e91d0f8a0af994874aadeed30534d"><div class="ttname"><a href="group__system__macros.html#ga392e91d0f8a0af994874aadeed30534d">__depr</a></div><div class="ttdeci">#define __depr(m)</div><div class="ttdoc">Mark something as deprecated, with an informative message.</div><div class="ttdef"><b>Definition</b> cdefs.h:119</div></div>
-<div class="ttc" id="apvr__dma_8h_html_a621fa8a260d17a31b12d4155426d0fa4"><div class="ttname"><a href="pvr__dma_8h.html#a621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a></div><div class="ttdeci">void * pvr_ptr_t</div><div class="ttdef"><b>Definition</b> pvr_dma.h:47</div></div>
-<div class="ttc" id="asq_8h_html"><div class="ttname"><a href="sq_8h.html">sq.h</a></div><div class="ttdoc">Functions to access the SH4 Store Queues.</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc"><div class="ttname"><a href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">PVR_DMA_TA</a></div><div class="ttdeci">@ PVR_DMA_TA</div><div class="ttdoc">Transfer to the tile accelerator.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:49</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049"><div class="ttname"><a href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">PVR_DMA_VRAM32_SB</a></div><div class="ttdeci">@ PVR_DMA_VRAM32_SB</div><div class="ttdoc">Transfer to/from VRAM using PVR i/f.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:51</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7"><div class="ttname"><a href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">PVR_DMA_REGISTERS</a></div><div class="ttdeci">@ PVR_DMA_REGISTERS</div><div class="ttdoc">Transfer to/from PVR registers.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:53</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5"><div class="ttname"><a href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">PVR_DMA_VRAM32</a></div><div class="ttdeci">@ PVR_DMA_VRAM32</div><div class="ttdoc">Transfer to VRAM using TA bus.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:48</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3"><div class="ttname"><a href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">PVR_DMA_YUV</a></div><div class="ttdeci">@ PVR_DMA_YUV</div><div class="ttdoc">Transfer to the YUV converter (TA)</div><div class="ttdef"><b>Definition</b> pvr_dma.h:50</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b"><div class="ttname"><a href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">PVR_DMA_VRAM64_SB</a></div><div class="ttdeci">@ PVR_DMA_VRAM64_SB</div><div class="ttdoc">Transfer to/from VRAM using PVR i/f.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:52</div></div>
+<div class="ttc" id="agroup__pvr__dma_html_gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77"><div class="ttname"><a href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">PVR_DMA_VRAM64</a></div><div class="ttdeci">@ PVR_DMA_VRAM64</div><div class="ttdoc">Transfer to VRAM using TA bus.</div><div class="ttdef"><b>Definition</b> pvr_dma.h:47</div></div>
+<div class="ttc" id="agroup__pvr__vram_html_ga621fa8a260d17a31b12d4155426d0fa4"><div class="ttname"><a href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a></div><div class="ttdeci">void * pvr_ptr_t</div><div class="ttdoc">PVR texture memory pointer.</div><div class="ttdef"><b>Definition</b> pvr_mem.h:45</div></div>
+<div class="ttc" id="agroup__store__queues_html_ga279e1dc13ceda7c544ed72a9e4141fac"><div class="ttname"><a href="group__store__queues.html#ga279e1dc13ceda7c544ed72a9e4141fac">pvr_sq_set16</a></div><div class="ttdeci">void * pvr_sq_set16(void *dest, uint32_t c, size_t n, pvr_dma_type_t type)</div><div class="ttdoc">Set a block of PVR memory to a 16-bit value.</div></div>
+<div class="ttc" id="agroup__store__queues_html_ga60be360851438cc0c0a0d8d9c4ec8230"><div class="ttname"><a href="group__store__queues.html#ga60be360851438cc0c0a0d8d9c4ec8230">pvr_sq_set32</a></div><div class="ttdeci">void * pvr_sq_set32(void *dest, uint32_t c, size_t n, pvr_dma_type_t type)</div><div class="ttdoc">Set a block of PVR memory to a 32-bit value.</div></div>
+<div class="ttc" id="agroup__store__queues_html_ga862e89040f0b6a0649843f9e2f08ee9a"><div class="ttname"><a href="group__store__queues.html#ga862e89040f0b6a0649843f9e2f08ee9a">pvr_sq_load</a></div><div class="ttdeci">void * pvr_sq_load(void *dest, const void *src, size_t n, pvr_dma_type_t type)</div><div class="ttdoc">Copy a block of memory to VRAM.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="dir_49fbd9c46ac73fe76d8a6b686de400da.html">dreamcast</a></li><li class="navelem"><a class="el" href="dir_08ece2ffab5ad20e41852b4cf81b30e2.html">include</a></li><li class="navelem"><a class="el" href="dir_39421b6c340728d4b73811bee3577133.html">dc</a></li><li class="navelem"><a class="el" href="pvr__dma_8h.html">pvr_dma.h</a></li>
+    <li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="dir_49fbd9c46ac73fe76d8a6b686de400da.html">dreamcast</a></li><li class="navelem"><a class="el" href="dir_08ece2ffab5ad20e41852b4cf81b30e2.html">include</a></li><li class="navelem"><a class="el" href="dir_39421b6c340728d4b73811bee3577133.html">dc</a></li><li class="navelem"><a class="el" href="dir_323b7fb2b5c5a279a7364037e09b4dac.html">pvr</a></li><li class="navelem"><a class="el" href="pvr__dma_8h.html">pvr_dma.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

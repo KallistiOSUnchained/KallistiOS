@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['tcflag_5ft_0',['tcflag_t',['../termios_8h.html#a9cc845fb67f0a7d66cf023aad7f4c6e4',1,'termios.h']]],
-  ['thrd_5fstart_5ft_1',['thrd_start_t',['../group__threading__c11.html#ga147516955219e436959e755b082eafe1',1,'threads.h']]],
-  ['thrd_5ft_2',['thrd_t',['../group__threading__c11.html#gaa061fe1137b02e69f5b97ab32d9fa587',1,'threads.h']]],
-  ['tid_5ft_3',['tid_t',['../group__system__types.html#gadffe598a3ea01dc03e080c77ece14d65',1,'types.h']]],
-  ['timer_5fprimary_5fcallback_5ft_4',['timer_primary_callback_t',['../group__tmu__primary.html#gacc246cd332a958f02eb98c34e79a14e3',1,'timer.h']]],
-  ['trapa_5fhandler_5',['trapa_handler',['../group__irq__trapa__handler.html#gaa16df2bd198f45a2ed0f1fdbcd25ae9b',1,'trap.h']]],
-  ['trapa_5ft_6',['trapa_t',['../group__traps.html#ga50019c8fd9c43cdbf3656018657bde1f',1,'trap.h']]],
-  ['tss_5fdtor_5ft_7',['tss_dtor_t',['../group__threading__c11.html#gafce80e0fbade87b49b3230f35e33833f',1,'threads.h']]],
-  ['tss_5ft_8',['tss_t',['../group__threading__c11.html#gab270b39c6978f0048ffc583e82528b83',1,'threads.h']]]
+  ['sa_5ffamily_5ft_0',['sa_family_t',['../group__networking__sockets.html#gab9df23fa1f7557ad984e9eae06938608',1,'socket.h']]],
+  ['sfxhnd_5ft_1',['sfxhnd_t',['../group__audio__sfx.html#ga55343251375bf0ac822aaab24948922f',1,'sfxmgr.h']]],
+  ['sip_5fsample_5fcb_2',['sip_sample_cb',['../group__peripherals__mic.html#ga9ab725e1bef9af662bcb53924d6df262',1,'sip.h']]],
+  ['snd_5fstream_5fcallback_5fdirect_5ft_3',['snd_stream_callback_direct_t',['../group__audio__streaming.html#ga5cd9bdb3c131197b97a4537f66bcb41b',1,'stream.h']]],
+  ['snd_5fstream_5fcallback_5ft_4',['snd_stream_callback_t',['../group__audio__streaming.html#ga8bbd49d9ab752f2b61016785e53c7e14',1,'stream.h']]],
+  ['snd_5fstream_5ffilter_5ft_5',['snd_stream_filter_t',['../group__audio__streaming.html#gaf4f096d8b4d50163e34aef9ac5dab1b4',1,'stream.h']]],
+  ['snd_5fstream_5fhnd_5ft_6',['snd_stream_hnd_t',['../group__audio__streaming.html#ga8704696730ed041f865066831c029c8f',1,'stream.h']]],
+  ['socklen_5ft_7',['socklen_t',['../group__networking__sockets.html#ga6e552de056211b018389ac6122675fb0',1,'socket.h']]],
+  ['spinlock_5ft_8',['spinlock_t',['../spinlock_8h.html#a7d562148dafb0dacf0ee876d482ed090',1,'spinlock.h']]],
+  ['spu_5fdma_5fcallback_5ft_9',['spu_dma_callback_t',['../group__audio__driver.html#ga1f5f4af52c45f1e2227d30cfde015ae5',1,'spu.h']]]
 ];

@@ -121,9 +121,6 @@ Topics</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga31ff6483321e2432e064f1659089f405" id="r_ga31ff6483321e2432e064f1659089f405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga31ff6483321e2432e064f1659089f405">pvr_set_presort_mode</a> (int presort)</td></tr>
-<tr class="memdesc:ga31ff6483321e2432e064f1659089f405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the translucent polygon sort mode for the next frame.  <br /></td></tr>
-<tr class="separator:ga31ff6483321e2432e064f1659089f405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2591778ee90a30e44c6ea815a71105dd" id="r_ga2591778ee90a30e44c6ea815a71105dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2591778ee90a30e44c6ea815a71105dd">pvr_scene_begin</a> (void)</td></tr>
 <tr class="memdesc:ga2591778ee90a30e44c6ea815a71105dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begin collecting data for a frame of 3D output to the off-screen frame buffer.  <br /></td></tr>
 <tr class="separator:ga2591778ee90a30e44c6ea815a71105dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +136,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3a75605c69b298038704cbf5e27d4cc0" id="r_ga3a75605c69b298038704cbf5e27d4cc0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3a75605c69b298038704cbf5e27d4cc0">pvr_check_ready</a> (void)</td></tr>
 <tr class="memdesc:ga3a75605c69b298038704cbf5e27d4cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the PVR system is ready for another frame to be submitted.  <br /></td></tr>
 <tr class="separator:ga3a75605c69b298038704cbf5e27d4cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5aa80be533564e0dcdef92d1e057665" id="r_gaf5aa80be533564e0dcdef92d1e057665"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf5aa80be533564e0dcdef92d1e057665">pvr_wait_render_done</a> (void)</td></tr>
+<tr class="memdesc:gaf5aa80be533564e0dcdef92d1e057665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block the caller until the PVR has finished rendering the previous frame.  <br /></td></tr>
+<tr class="separator:gaf5aa80be533564e0dcdef92d1e057665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae678ffa1f04593cd2847eadacfa1935a" id="r_gae678ffa1f04593cd2847eadacfa1935a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae678ffa1f04593cd2847eadacfa1935a">pvr_set_presort_mode</a> (bool presort)</td></tr>
+<tr class="memdesc:gae678ffa1f04593cd2847eadacfa1935a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the translucent polygon sort mode for the next frame.  <br /></td></tr>
+<tr class="separator:gae678ffa1f04593cd2847eadacfa1935a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>PowerVR API for submitting scene geometry </p>
@@ -260,8 +263,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga31ff6483321e2432e064f1659089f405" name="ga31ff6483321e2432e064f1659089f405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga31ff6483321e2432e064f1659089f405">&#9670;&#160;</a></span>pvr_set_presort_mode()</h2>
+<a id="gae678ffa1f04593cd2847eadacfa1935a" name="gae678ffa1f04593cd2847eadacfa1935a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae678ffa1f04593cd2847eadacfa1935a">&#9670;&#160;</a></span>pvr_set_presort_mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +272,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void pvr_set_presort_mode </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>presort</em></span></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>presort</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -280,7 +283,7 @@ Functions</h2></td></tr>
 <p>For most programs, you'll probably want to set this at initialization time (with the autosort_disabled field in the <a class="el" href="structpvr__init__params__t.html" title="PVR initialization structure.">pvr_init_params_t</a> structure) and not mess with it per-frame. It is recommended that if you do use this function to change the mode that you should set it each frame to ensure that the mode is set properly.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">presort</td><td>Set to 1 to set the presort mode for translucent polygons, set to 0 to use autosort mode. </td></tr>
+    <tr><td class="paramname">presort</td><td>Set to true to set the presort mode for translucent polygons, set to false to use autosort mode. </td></tr>
   </table>
   </dd>
 </dl>
@@ -307,6 +310,33 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">0</td><td>On success. A new scene can be started now. </td></tr>
+    <tr><td class="paramname">-1</td><td>On error. Something is probably very wrong... </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf5aa80be533564e0dcdef92d1e057665" name="gaf5aa80be533564e0dcdef92d1e057665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf5aa80be533564e0dcdef92d1e057665">&#9670;&#160;</a></span>pvr_wait_render_done()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pvr_wait_render_done </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Block the caller until the PVR has finished rendering the previous frame. </p>
+<p>This function can be used to wait until the PVR is done rendering a previous scene. This can be useful for instance to make sure that the PVR is done using textures that have to be updated, before updating those.</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>On success. </td></tr>
     <tr><td class="paramname">-1</td><td>On error. Something is probably very wrong... </td></tr>
   </table>
   </dd>

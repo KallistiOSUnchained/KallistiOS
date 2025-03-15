@@ -110,6 +110,7 @@ $(function(){initNavTree('vmu_8h.html',''); initResizable(true); });
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="maple_8h_source.html">dc/maple.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="regfield_8h_source.html">kos/regfield.h</a>&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="time_8h_source.html">time.h</a>&gt;</code><br />
 </div>
@@ -117,11 +118,11 @@ $(function(){initNavTree('vmu_8h.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvmu__cond__t.html">vmu_cond_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">VMU's raw condition data: 0 = PRESSED, 1 = RELEASED.  <a href="structvmu__cond__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionvmu__buttons__t.html">vmu_buttons_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the combined state of all VMU buttons.  <a href="unionvmu__buttons__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionvmu__state__t.html">vmu_state_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">VMU's "civilized" state data: 0 = RELEASED, 1 = PRESSED.  <a href="unionvmu__state__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvmu__state__t.html">vmu_state_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Civilized" structure containing VMU's current state.  <a href="structvmu__state__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -132,28 +133,28 @@ Macros</h2></td></tr>
 <tr class="memitem:gae3a91979d8695249c6b62c87772083e7" id="r_gae3a91979d8695249c6b62c87772083e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__maple__lcd.html#gae3a91979d8695249c6b62c87772083e7">VMU_SCREEN_HEIGHT</a>&#160;&#160;&#160;32</td></tr>
 <tr class="memdesc:gae3a91979d8695249c6b62c87772083e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pixel height of a standard VMU screen.  <br /></td></tr>
 <tr class="separator:gae3a91979d8695249c6b62c87772083e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga40426b7c731cb3742924211e3b2b1718" id="r_ga40426b7c731cb3742924211e3b2b1718"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#ga40426b7c731cb3742924211e3b2b1718">VMU_DPAD_UP</a>&#160;&#160;&#160;(0&lt;&lt;1)</td></tr>
+<tr class="memitem:ga40426b7c731cb3742924211e3b2b1718" id="r_ga40426b7c731cb3742924211e3b2b1718"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#ga40426b7c731cb3742924211e3b2b1718">VMU_DPAD_UP</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(0)</td></tr>
 <tr class="memdesc:ga40426b7c731cb3742924211e3b2b1718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Up Dpad button on the VMU.  <br /></td></tr>
 <tr class="separator:ga40426b7c731cb3742924211e3b2b1718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf4920e270ef0490bb522fb32c25e084" id="r_gacf4920e270ef0490bb522fb32c25e084"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#gacf4920e270ef0490bb522fb32c25e084">VMU_DPAD_DOWN</a>&#160;&#160;&#160;(1&lt;&lt;1)</td></tr>
+<tr class="memitem:gacf4920e270ef0490bb522fb32c25e084" id="r_gacf4920e270ef0490bb522fb32c25e084"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#gacf4920e270ef0490bb522fb32c25e084">VMU_DPAD_DOWN</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(1)</td></tr>
 <tr class="memdesc:gacf4920e270ef0490bb522fb32c25e084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Down Dpad button on the VMU.  <br /></td></tr>
 <tr class="separator:gacf4920e270ef0490bb522fb32c25e084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15ac9f83adefb9da6b13db6672b3f1bb" id="r_ga15ac9f83adefb9da6b13db6672b3f1bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#ga15ac9f83adefb9da6b13db6672b3f1bb">VMU_DPAD_LEFT</a>&#160;&#160;&#160;(2&lt;&lt;1)</td></tr>
+<tr class="memitem:ga15ac9f83adefb9da6b13db6672b3f1bb" id="r_ga15ac9f83adefb9da6b13db6672b3f1bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#ga15ac9f83adefb9da6b13db6672b3f1bb">VMU_DPAD_LEFT</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(2)</td></tr>
 <tr class="memdesc:ga15ac9f83adefb9da6b13db6672b3f1bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left Dpad button on the VMU.  <br /></td></tr>
 <tr class="separator:ga15ac9f83adefb9da6b13db6672b3f1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1fe0090f6887ff04b1df2ef2e68ddc8" id="r_gac1fe0090f6887ff04b1df2ef2e68ddc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#gac1fe0090f6887ff04b1df2ef2e68ddc8">VMU_DPAD_RIGHT</a>&#160;&#160;&#160;(3&lt;&lt;1)</td></tr>
+<tr class="memitem:gac1fe0090f6887ff04b1df2ef2e68ddc8" id="r_gac1fe0090f6887ff04b1df2ef2e68ddc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#gac1fe0090f6887ff04b1df2ef2e68ddc8">VMU_DPAD_RIGHT</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(3)</td></tr>
 <tr class="memdesc:gac1fe0090f6887ff04b1df2ef2e68ddc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right Dpad button on the VMU.  <br /></td></tr>
 <tr class="separator:gac1fe0090f6887ff04b1df2ef2e68ddc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga52125f3da9e11c947ea33b3f93d0cd70" id="r_ga52125f3da9e11c947ea33b3f93d0cd70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#ga52125f3da9e11c947ea33b3f93d0cd70">VMU_A</a>&#160;&#160;&#160;(4&lt;&lt;1)</td></tr>
+<tr class="memitem:ga52125f3da9e11c947ea33b3f93d0cd70" id="r_ga52125f3da9e11c947ea33b3f93d0cd70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#ga52125f3da9e11c947ea33b3f93d0cd70">VMU_A</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(4)</td></tr>
 <tr class="memdesc:ga52125f3da9e11c947ea33b3f93d0cd70"><td class="mdescLeft">&#160;</td><td class="mdescRight">'A' button on the VMU  <br /></td></tr>
 <tr class="separator:ga52125f3da9e11c947ea33b3f93d0cd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacfd30e1a6ea3d87d72206ad2e54b4cbd" id="r_gacfd30e1a6ea3d87d72206ad2e54b4cbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#gacfd30e1a6ea3d87d72206ad2e54b4cbd">VMU_B</a>&#160;&#160;&#160;(5&lt;&lt;1)</td></tr>
+<tr class="memitem:gacfd30e1a6ea3d87d72206ad2e54b4cbd" id="r_gacfd30e1a6ea3d87d72206ad2e54b4cbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#gacfd30e1a6ea3d87d72206ad2e54b4cbd">VMU_B</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(5)</td></tr>
 <tr class="memdesc:gacfd30e1a6ea3d87d72206ad2e54b4cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">'B' button on the VMU  <br /></td></tr>
 <tr class="separator:gacfd30e1a6ea3d87d72206ad2e54b4cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4443d9013efe3e41f3f5e3a6d0e74f3c" id="r_ga4443d9013efe3e41f3f5e3a6d0e74f3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#ga4443d9013efe3e41f3f5e3a6d0e74f3c">VMU_MODE</a>&#160;&#160;&#160;(6&lt;&lt;1)</td></tr>
+<tr class="memitem:ga4443d9013efe3e41f3f5e3a6d0e74f3c" id="r_ga4443d9013efe3e41f3f5e3a6d0e74f3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#ga4443d9013efe3e41f3f5e3a6d0e74f3c">VMU_MODE</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(6)</td></tr>
 <tr class="memdesc:ga4443d9013efe3e41f3f5e3a6d0e74f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode button on the VMU.  <br /></td></tr>
 <tr class="separator:ga4443d9013efe3e41f3f5e3a6d0e74f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac44ba4ff65fb5ae445b41ad50cf94364" id="r_gac44ba4ff65fb5ae445b41ad50cf94364"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#gac44ba4ff65fb5ae445b41ad50cf94364">VMU_SLEEP</a>&#160;&#160;&#160;(7&lt;&lt;1)</td></tr>
+<tr class="memitem:gac44ba4ff65fb5ae445b41ad50cf94364" id="r_gac44ba4ff65fb5ae445b41ad50cf94364"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__buttons.html#gac44ba4ff65fb5ae445b41ad50cf94364">VMU_SLEEP</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(7)</td></tr>
 <tr class="memdesc:gac44ba4ff65fb5ae445b41ad50cf94364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleep button on the VMU.  <br /></td></tr>
 <tr class="separator:gac44ba4ff65fb5ae445b41ad50cf94364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">

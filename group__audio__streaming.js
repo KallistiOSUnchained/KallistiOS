@@ -2,6 +2,9 @@ var group__audio__streaming =
 [
     [ "stream.h", "stream_8h.html", null ],
     [ "SND_STREAM_BUFFER_MAX", "group__audio__streaming.html#ga082956718695c49f9bb288db467ef019", null ],
+    [ "SND_STREAM_BUFFER_MAX_ADPCM", "group__audio__streaming.html#gac0e0e62412ea1d250ae49a51faa0b5fd", null ],
+    [ "SND_STREAM_BUFFER_MAX_PCM16", "group__audio__streaming.html#gadcec1de04aa6e61114b6562c800db1ac", null ],
+    [ "SND_STREAM_BUFFER_MAX_PCM8", "group__audio__streaming.html#ga9e6314dc638a28c24c3720c9f2676e0a", null ],
     [ "SND_STREAM_INVALID", "group__audio__streaming.html#ga6c03ea438593bac1ec9987e2571a94a8", null ],
     [ "SND_STREAM_MAX", "group__audio__streaming.html#gac6a4dd8ba64ce0598beec50ba5c04cca", null ],
     [ "snd_stream_callback_direct_t", "group__audio__streaming.html#ga5cd9bdb3c131197b97a4537f66bcb41b", null ],

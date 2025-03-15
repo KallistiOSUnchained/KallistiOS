@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: vmu_cond_t Struct Reference</title>
+<title>KallistiOS: vmu_state_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('structvmu__cond__t.html',''); initResizable(true); });
+$(function(){initNavTree('structvmu__state__t.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -99,56 +99,78 @@ $(function(){initNavTree('structvmu__cond__t.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">vmu_cond_t Struct Reference<div class="ingroups"><a class="el" href="group__peripherals.html">Peripherals</a> &raquo; <a class="el" href="group__vmu.html">Visual Memory Unit</a> &raquo; <a class="el" href="group__maple__clock.html">Clock Function</a> &raquo; <a class="el" href="group__vmu__buttons.html">VMU Buttons</a></div></div></div>
+  <div class="headertitle"><div class="title">vmu_state_t Struct Reference<div class="ingroups"><a class="el" href="group__peripherals.html">Peripherals</a> &raquo; <a class="el" href="group__vmu.html">Visual Memory Unit</a> &raquo; <a class="el" href="group__maple__clock.html">Clock Function</a> &raquo; <a class="el" href="group__vmu__buttons.html">VMU Buttons</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>VMU's raw condition data: 0 = PRESSED, 1 = RELEASED.  
+<p>"Civilized" structure containing VMU's current state.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="vmu_8h_source.html">vmu.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a9d4068361d37c7f9cc167c90b534f98c" id="r_a9d4068361d37c7f9cc167c90b534f98c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d4068361d37c7f9cc167c90b534f98c">raw_buttons</a></td></tr>
-<tr class="memdesc:a9d4068361d37c7f9cc167c90b534f98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined button mask.  <br /></td></tr>
-<tr class="separator:a9d4068361d37c7f9cc167c90b534f98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ada4f6e4eefb37b65da83a2dc4a91d7" id="r_a8ada4f6e4eefb37b65da83a2dc4a91d7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ada4f6e4eefb37b65da83a2dc4a91d7">dummy</a> [3]</td></tr>
-<tr class="memdesc:a8ada4f6e4eefb37b65da83a2dc4a91d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unused response data.  <br /></td></tr>
-<tr class="separator:a8ada4f6e4eefb37b65da83a2dc4a91d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79712736321e6bd2cccc53cc4503fab0" id="r_a79712736321e6bd2cccc53cc4503fab0"><td class="memItemLeft" >struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1420914f1d329c5cf3ecf533f96654f7" id="r_a1420914f1d329c5cf3ecf533f96654f7"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="unionvmu__buttons__t.html">vmu_buttons_t</a>&#160;&#160;&#160;<a class="el" href="#aab88c6b3c5f870bef70a18c0863d85c9">current</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a1420914f1d329c5cf3ecf533f96654f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Button states from the current frame.  <a href="#aab88c6b3c5f870bef70a18c0863d85c9">More...</a><br /></td></tr>
+<tr class="separator:a1420914f1d329c5cf3ecf533f96654f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf964cf1e9a9e3109df9dcc91236bf7e" id="r_abf964cf1e9a9e3109df9dcc91236bf7e"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="unionvmu__buttons__t.html">vmu_buttons_t</a>&#160;&#160;&#160;<a class="el" href="#aa479ec63097ba7a7a6ebb010ce8954a3">previous</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:abf964cf1e9a9e3109df9dcc91236bf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Button states from the previous frame.  <a href="#aa479ec63097ba7a7a6ebb010ce8954a3">More...</a><br /></td></tr>
+<tr class="separator:abf964cf1e9a9e3109df9dcc91236bf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79712736321e6bd2cccc53cc4503fab0" id="r_a79712736321e6bd2cccc53cc4503fab0"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79712736321e6bd2cccc53cc4503fab0">buttons</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a79712736321e6bd2cccc53cc4503fab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Latest two frames of button state data.  <br /></td></tr>
+<tr class="separator:a79712736321e6bd2cccc53cc4503fab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>VMU's raw condition data: 0 = PRESSED, 1 = RELEASED. </p>
+<div class="textblock"><p>"Civilized" structure containing VMU's current state. </p>
+<dl class="section note"><dt>Note</dt><dd>Don't forget that if you want valid button state information, you must enable polling for it in the driver with <a class="el" href="group__maple__clock.html#ga924903ba9a7a00ed91dfed40f6bb5617" title="Enable/Disable polling for VMU input.">vmu_set_buttons_enabled()</a>! </dd></dl>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a8ada4f6e4eefb37b65da83a2dc4a91d7" name="a8ada4f6e4eefb37b65da83a2dc4a91d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ada4f6e4eefb37b65da83a2dc4a91d7">&#9670;&#160;</a></span>dummy</h2>
+<a id="a79712736321e6bd2cccc53cc4503fab0" name="a79712736321e6bd2cccc53cc4503fab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79712736321e6bd2cccc53cc4503fab0">&#9670;&#160;</a></span>[struct]</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t vmu_cond_t::dummy[3]</td>
+          <td class="memname">struct  { ... }  vmu_state_t::buttons</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unused response data. </p>
+<p>Latest two frames of button state data. </p>
 
 </div>
 </div>
-<a id="a9d4068361d37c7f9cc167c90b534f98c" name="a9d4068361d37c7f9cc167c90b534f98c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d4068361d37c7f9cc167c90b534f98c">&#9670;&#160;</a></span>raw_buttons</h2>
+<a id="aab88c6b3c5f870bef70a18c0863d85c9" name="aab88c6b3c5f870bef70a18c0863d85c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab88c6b3c5f870bef70a18c0863d85c9">&#9670;&#160;</a></span>current</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t vmu_cond_t::raw_buttons</td>
+          <td class="memname"><a class="el" href="unionvmu__buttons__t.html">vmu_buttons_t</a> vmu_state_t::current</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Combined button mask. </p>
+<p>Button states from the current frame. </p>
+
+</div>
+</div>
+<a id="aa479ec63097ba7a7a6ebb010ce8954a3" name="aa479ec63097ba7a7a6ebb010ce8954a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa479ec63097ba7a7a6ebb010ce8954a3">&#9670;&#160;</a></span>previous</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unionvmu__buttons__t.html">vmu_buttons_t</a> vmu_state_t::previous</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Button states from the previous frame. </p>
 
 </div>
 </div>
@@ -160,7 +182,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structvmu__cond__t.html">vmu_cond_t</a></li>
+    <li class="navelem"><a class="el" href="structvmu__state__t.html">vmu_state_t</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

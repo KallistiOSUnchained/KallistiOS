@@ -10,5 +10,11 @@ var searchData=
   ['pthread_2eh_7',['pthread.h',['../pthread_8h.html',1,'']]],
   ['purupuru_2eh_8',['purupuru.h',['../purupuru_8h.html',1,'']]],
   ['pvr_2eh_9',['pvr.h',['../pvr_8h.html',1,'']]],
-  ['pvr_5fdma_2eh_10',['pvr_dma.h',['../pvr__dma_8h.html',1,'']]]
+  ['pvr_5fdma_2eh_10',['pvr_dma.h',['../pvr__dma_8h.html',1,'']]],
+  ['pvr_5ffog_2eh_11',['pvr_fog.h',['../pvr__fog_8h.html',1,'']]],
+  ['pvr_5fmem_2eh_12',['pvr_mem.h',['../pvr__mem_8h.html',1,'']]],
+  ['pvr_5fmisc_2eh_13',['pvr_misc.h',['../pvr__misc_8h.html',1,'']]],
+  ['pvr_5fpal_2eh_14',['pvr_pal.h',['../pvr__pal_8h.html',1,'']]],
+  ['pvr_5fregs_2eh_15',['pvr_regs.h',['../pvr__regs_8h.html',1,'']]],
+  ['pvr_5ftxr_2eh_16',['pvr_txr.h',['../pvr__txr_8h.html',1,'']]]
 ];

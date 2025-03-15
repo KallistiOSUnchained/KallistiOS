@@ -108,6 +108,7 @@ $(function(){initNavTree('sound_8h.html',''); initResizable(true); });
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 </div>
 <p><a href="sound_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -161,6 +162,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga77eee806f26b83e1704ebcce2accf161" id="r_ga77eee806f26b83e1704ebcce2accf161"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__driver.html#ga77eee806f26b83e1704ebcce2accf161">snd_adpcm_split</a> (uint32_t *data, uint32_t *left, uint32_t *right, size_t size)</td></tr>
 <tr class="memdesc:ga77eee806f26b83e1704ebcce2accf161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Separates stereo ADPCM samples into 2 mono channels.  <br /></td></tr>
 <tr class="separator:ga77eee806f26b83e1704ebcce2accf161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f40c2be5df36a117de6cb6bffd8e27d" id="r_a0f40c2be5df36a117de6cb6bffd8e27d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f40c2be5df36a117de6cb6bffd8e27d">snd_get_pos</a> (unsigned int ch)</td></tr>
+<tr class="memdesc:a0f40c2be5df36a117de6cb6bffd8e27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get AICA channel position.  <br /></td></tr>
+<tr class="separator:a0f40c2be5df36a117de6cb6bffd8e27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55646b9e0c94cb14cf2bd0ace538f0d7" id="r_a55646b9e0c94cb14cf2bd0ace538f0d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55646b9e0c94cb14cf2bd0ace538f0d7">snd_is_playing</a> (unsigned int ch)</td></tr>
+<tr class="memdesc:a55646b9e0c94cb14cf2bd0ace538f0d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get AICA channel playback state.  <br /></td></tr>
+<tr class="separator:a55646b9e0c94cb14cf2bd0ace538f0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Low-level sound support and memory management. </p>
@@ -168,7 +175,62 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Megan Potter </dd>
 <dd>
 Ruslan Rostovtsev </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a0f40c2be5df36a117de6cb6bffd8e27d" name="a0f40c2be5df36a117de6cb6bffd8e27d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f40c2be5df36a117de6cb6bffd8e27d">&#9670;&#160;</a></span>snd_get_pos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t snd_get_pos </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>ch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get AICA channel position. </p>
+<p>This function returns actual the channel position that stores in SPU memory and updated by the SPU firmware.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ch</td><td>The channel to retrieve position.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Last channel position in samples. </dd></dl>
+
+</div>
+</div>
+<a id="a55646b9e0c94cb14cf2bd0ace538f0d7" name="a55646b9e0c94cb14cf2bd0ace538f0d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55646b9e0c94cb14cf2bd0ace538f0d7">&#9670;&#160;</a></span>snd_is_playing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool snd_is_playing </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>ch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get AICA channel playback state. </p>
+<p>This function returns actual the channel playback state that stores in AICA registers directly.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ch</td><td>The channel to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the channel is playing. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

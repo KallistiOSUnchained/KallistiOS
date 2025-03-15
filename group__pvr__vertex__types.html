@@ -98,9 +98,7 @@ $(function(){initNavTree('group__pvr__vertex__types.html',''); initResizable(tru
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle"><div class="title">Vertices<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__pvr.html">PowerVR API</a> &raquo; <a class="el" href="group__pvr__geometry.html">Geometry</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -128,111 +126,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpvr__modifier__vol__t.html">pvr_modifier_vol_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PVR vertex type: Modifier volume.  <a href="structpvr__modifier__vol__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga33cf9bb04e81c6729365336a7cf6cb9d" id="r_ga33cf9bb04e81c6729365336a7cf6cb9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga33cf9bb04e81c6729365336a7cf6cb9d">PVR_PACK_COLOR</a>(a,  r,  g,  b)</td></tr>
-<tr class="memdesc:ga33cf9bb04e81c6729365336a7cf6cb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pack four floating point color values into a 32-bit integer form.  <br /></td></tr>
-<tr class="separator:ga33cf9bb04e81c6729365336a7cf6cb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga353933028c8e9b70804401d4b580bb8d" id="r_ga353933028c8e9b70804401d4b580bb8d"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga353933028c8e9b70804401d4b580bb8d">PVR_PACK_16BIT_UV</a> (float u, float v)</td></tr>
-<tr class="memdesc:ga353933028c8e9b70804401d4b580bb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pack two floating point coordinates into one 32-bit value, truncating them to 16-bits each.  <br /></td></tr>
-<tr class="separator:ga353933028c8e9b70804401d4b580bb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>PowerVR vertex types </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga33cf9bb04e81c6729365336a7cf6cb9d" name="ga33cf9bb04e81c6729365336a7cf6cb9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga33cf9bb04e81c6729365336a7cf6cb9d">&#9670;&#160;</a></span>PVR_PACK_COLOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PVR_PACK_COLOR</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                     ( \</div>
-<div class="line">                                     ( ((uint8_t)( (a) * 255 ) ) &lt;&lt; 24 ) | \</div>
-<div class="line">                                     ( ((uint8_t)( (r) * 255 ) ) &lt;&lt; 16 ) | \</div>
-<div class="line">                                     ( ((uint8_t)( (g) * 255 ) ) &lt;&lt; 8 ) | \</div>
-<div class="line">                                     ( ((uint8_t)( (b) * 255 ) ) &lt;&lt; 0 ) )</div>
-</div><!-- fragment -->
-<p>Pack four floating point color values into a 32-bit integer form. </p>
-<p>All of the color values should be between 0 and 1.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>Alpha value </td></tr>
-    <tr><td class="paramname">r</td><td>Red value </td></tr>
-    <tr><td class="paramname">g</td><td>Green value </td></tr>
-    <tr><td class="paramname">b</td><td>Blue value </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The packed color value </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga353933028c8e9b70804401d4b580bb8d" name="ga353933028c8e9b70804401d4b580bb8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga353933028c8e9b70804401d4b580bb8d">&#9670;&#160;</a></span>PVR_PACK_16BIT_UV()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static uint32_t PVR_PACK_16BIT_UV </td>
-          <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Pack two floating point coordinates into one 32-bit value, truncating them to 16-bits each. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">u</td><td>First coordinate to pack </td></tr>
-    <tr><td class="paramname">v</td><td>Second coordinate to pack </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The packed coordinates </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

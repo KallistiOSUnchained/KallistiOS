@@ -121,9 +121,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga38bd026c03a9d48d801a7f8e04d55beb" id="r_ga38bd026c03a9d48d801a7f8e04d55beb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga38bd026c03a9d48d801a7f8e04d55beb">pvr_set_bg_color</a> (float r, float g, float b)</td></tr>
 <tr class="memdesc:ga38bd026c03a9d48d801a7f8e04d55beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the background plane color.  <br /></td></tr>
 <tr class="separator:ga38bd026c03a9d48d801a7f8e04d55beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf867468eb4b5f8cc22778995cc66da80" id="r_gaf867468eb4b5f8cc22778995cc66da80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf867468eb4b5f8cc22778995cc66da80">pvr_set_shadow_scale</a> (int enable, float scale_value)</td></tr>
-<tr class="memdesc:gaf867468eb4b5f8cc22778995cc66da80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set cheap shadow parameters.  <br /></td></tr>
-<tr class="separator:gaf867468eb4b5f8cc22778995cc66da80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15f9f7630571da850dfa47356e47ef70" id="r_ga15f9f7630571da850dfa47356e47ef70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga15f9f7630571da850dfa47356e47ef70">pvr_set_shadow_scale</a> (bool enable, float scale_value)</td></tr>
+<tr class="memdesc:ga15f9f7630571da850dfa47356e47ef70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set cheap shadow parameters.  <br /></td></tr>
+<tr class="separator:ga15f9f7630571da850dfa47356e47ef70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga07cfca26a294a53486c7538375cbdc04" id="r_ga07cfca26a294a53486c7538375cbdc04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga07cfca26a294a53486c7538375cbdc04">pvr_set_zclip</a> (float zc)</td></tr>
 <tr class="memdesc:ga07cfca26a294a53486c7538375cbdc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Z clipping depth.  <br /></td></tr>
 <tr class="separator:ga07cfca26a294a53486c7538375cbdc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,8 +169,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaf867468eb4b5f8cc22778995cc66da80" name="gaf867468eb4b5f8cc22778995cc66da80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf867468eb4b5f8cc22778995cc66da80">&#9670;&#160;</a></span>pvr_set_shadow_scale()</h2>
+<a id="ga15f9f7630571da850dfa47356e47ef70" name="ga15f9f7630571da850dfa47356e47ef70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15f9f7630571da850dfa47356e47ef70">&#9670;&#160;</a></span>pvr_set_shadow_scale()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +178,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void pvr_set_shadow_scale </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>enable</em></span>, </td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enable</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -193,7 +193,7 @@ Functions</h2></td></tr>
 <p>Polygons affected by a shadow modifier volume will effectively multiply their final color by the scale value set here when shadows are enabled and the polygon is inside the modifier (or outside for exclusion volumes).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enable</td><td>Set to non-zero to enable cheap shadow mode. </td></tr>
+    <tr><td class="paramname">enable</td><td>Set to true to enable cheap shadow mode. </td></tr>
     <tr><td class="paramname">scale_value</td><td>Floating point value (between 0 and 1) representing how colors of polygons affected by and inside the volume will be modified by the shadow volume. </td></tr>
   </table>
   </dd>

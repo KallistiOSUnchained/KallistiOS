@@ -111,22 +111,22 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2dc33e7878adb023d93fae5f0602c4a7" id="r_ga2dc33e7878adb023d93fae5f0602c4a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2dc33e7878adb023d93fae5f0602c4a7">irq_set_handler</a> (<a class="el" href="group__irqs.html#ga514a97b44194f47af21948925e129400">irq_t</a> code, <a class="el" href="group__irq__handlers.html#ga3ea6c10e0d2493ea00afe960dc070c86">irq_handler</a> hnd, void *data)</td></tr>
 <tr class="memdesc:ga2dc33e7878adb023d93fae5f0602c4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an IRQ handler.  <br /></td></tr>
 <tr class="separator:ga2dc33e7878adb023d93fae5f0602c4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga234309c6acb56e11285337c38c9ad57e" id="r_ga234309c6acb56e11285337c38c9ad57e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__irq__handlers.html#ga3ea6c10e0d2493ea00afe960dc070c86">irq_handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga234309c6acb56e11285337c38c9ad57e">irq_get_handler</a> (<a class="el" href="group__irqs.html#ga514a97b44194f47af21948925e129400">irq_t</a> code)</td></tr>
-<tr class="memdesc:ga234309c6acb56e11285337c38c9ad57e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the address of the current handler for the IRQ type.  <br /></td></tr>
-<tr class="separator:ga234309c6acb56e11285337c38c9ad57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae07fa560a0bba53c58e7e4d1d3914a5" id="r_gaae07fa560a0bba53c58e7e4d1d3914a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structirq__cb__t.html">irq_cb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaae07fa560a0bba53c58e7e4d1d3914a5">irq_get_handler</a> (<a class="el" href="group__irqs.html#ga514a97b44194f47af21948925e129400">irq_t</a> code)</td></tr>
+<tr class="memdesc:gaae07fa560a0bba53c58e7e4d1d3914a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the address of the current handler for the IRQ type.  <br /></td></tr>
+<tr class="separator:gaae07fa560a0bba53c58e7e4d1d3914a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>API for managing individual IRQ handlers. </p>
 <p>This API is for managing handlers installed to handle individual IRQ codes. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga234309c6acb56e11285337c38c9ad57e" name="ga234309c6acb56e11285337c38c9ad57e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga234309c6acb56e11285337c38c9ad57e">&#9670;&#160;</a></span>irq_get_handler()</h2>
+<a id="gaae07fa560a0bba53c58e7e4d1d3914a5" name="gaae07fa560a0bba53c58e7e4d1d3914a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaae07fa560a0bba53c58e7e4d1d3914a5">&#9670;&#160;</a></span>irq_get_handler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__irq__handlers.html#ga3ea6c10e0d2493ea00afe960dc070c86">irq_handler</a> irq_get_handler </td>
+          <td class="memname"><a class="el" href="structirq__cb__t.html">irq_cb_t</a> irq_get_handler </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__irqs.html#ga514a97b44194f47af21948925e129400">irq_t</a></td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
           <td></td>
@@ -141,7 +141,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the procedure to handle the exception.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The current handler for the IRQ type and its userdata.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga2dc33e7878adb023d93fae5f0602c4a7" title="Set or remove an IRQ handler.">irq_set_handler()</a> </dd></dl>
 
 </div>
@@ -187,7 +187,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga234309c6acb56e11285337c38c9ad57e" title="Get the address of the current handler for the IRQ type.">irq_get_handler()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gaae07fa560a0bba53c58e7e4d1d3914a5" title="Get the address of the current handler for the IRQ type.">irq_get_handler()</a> </dd></dl>
 
 </div>
 </div>

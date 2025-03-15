@@ -1,19 +1,20 @@
 var group__vmu__buttons =
 [
-    [ "vmu_cond_t", "structvmu__cond__t.html", [
-      [ "dummy", "structvmu__cond__t.html#a8ada4f6e4eefb37b65da83a2dc4a91d7", null ],
-      [ "raw_buttons", "structvmu__cond__t.html#a9d4068361d37c7f9cc167c90b534f98c", null ]
+    [ "vmu_buttons_t", "unionvmu__buttons__t.html", [
+      [ "a", "unionvmu__buttons__t.html#aab46ea609f89db0b328f708ae013afa0", null ],
+      [ "b", "unionvmu__buttons__t.html#a0c6e91bd96f86442652724c16874ad37", null ],
+      [ "dpad_down", "unionvmu__buttons__t.html#a1907cb58b18f60ed721f2b22f8d294bc", null ],
+      [ "dpad_left", "unionvmu__buttons__t.html#ac7900c2c883348c571ebfe4a9aeb55ab", null ],
+      [ "dpad_right", "unionvmu__buttons__t.html#ac5b81e1430ccc15738d0daad5614c436", null ],
+      [ "dpad_up", "unionvmu__buttons__t.html#a9396117b376a6e01d6286359be48b29a", null ],
+      [ "mode", "unionvmu__buttons__t.html#a09a03707c62376ecc6f822326c9d0499", null ],
+      [ "raw", "unionvmu__buttons__t.html#abceb52266a2bf5c690ad3e5fd15d7f21", null ],
+      [ "sleep", "unionvmu__buttons__t.html#affbcad0a5df7e53962d1f1bbe7636c87", null ]
     ] ],
-    [ "vmu_state_t", "unionvmu__state__t.html", [
-      [ "a", "unionvmu__state__t.html#a7950381c9d9cc6b5900eb9ed5432e6b5", null ],
-      [ "b", "unionvmu__state__t.html#af8fadeea93251c1cdead1d66f7626a45", null ],
-      [ "buttons", "unionvmu__state__t.html#aac7ffb52f2e5ef050da1799794e62ce1", null ],
-      [ "dpad_down", "unionvmu__state__t.html#a71642b976d525bd78b2a89aa6fcac8cd", null ],
-      [ "dpad_left", "unionvmu__state__t.html#a58fb168ea5a1fc10162ede4b9e83c4e5", null ],
-      [ "dpad_right", "unionvmu__state__t.html#a90e394f1f49497566df7dd4f42df553f", null ],
-      [ "dpad_up", "unionvmu__state__t.html#a4482a50d1dd1164082256abada9d965d", null ],
-      [ "mode", "unionvmu__state__t.html#a175c566464390a59f0ca077d9db26d0c", null ],
-      [ "sleep", "unionvmu__state__t.html#a6642098c5df629f7e61517b7f6cb4d29", null ]
+    [ "vmu_state_t", "structvmu__state__t.html", [
+      [ "buttons", "structvmu__state__t.html#a79712736321e6bd2cccc53cc4503fab0", null ],
+      [ "current", "structvmu__state__t.html#aab88c6b3c5f870bef70a18c0863d85c9", null ],
+      [ "previous", "structvmu__state__t.html#aa479ec63097ba7a7a6ebb010ce8954a3", null ]
     ] ],
     [ "VMU_A", "group__vmu__buttons.html#ga52125f3da9e11c947ea33b3f93d0cd70", null ],
     [ "VMU_B", "group__vmu__buttons.html#gacfd30e1a6ea3d87d72206ad2e54b4cbd", null ],

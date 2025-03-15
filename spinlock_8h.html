@@ -99,7 +99,8 @@ $(function(){initNavTree('spinlock_8h.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">spinlock.h File Reference<div class="ingroups"><a class="el" href="group__threading.html">Threading</a> &raquo; <a class="el" href="group__kthreads.html">Kernel</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -107,6 +108,7 @@ $(function(){initNavTree('spinlock_8h.html',''); initResizable(true); });
 <p>Simple locking.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="thread_8h_source.html">kos/thread.h</a>&gt;</code><br />
 </div>
 <p><a href="spinlock_8h_source.html">Go to the source code of this file.</a></p>
@@ -116,27 +118,36 @@ Macros</h2></td></tr>
 <tr class="memitem:a650d9d834c1c99b71df08ddd1772714d" id="r_a650d9d834c1c99b71df08ddd1772714d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a650d9d834c1c99b71df08ddd1772714d">SPINLOCK_INITIALIZER</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:a650d9d834c1c99b71df08ddd1772714d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spinlock initializer.  <br /></td></tr>
 <tr class="separator:a650d9d834c1c99b71df08ddd1772714d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a254c16d8ca5a239555ae2851c74798a8" id="r_a254c16d8ca5a239555ae2851c74798a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a254c16d8ca5a239555ae2851c74798a8">spinlock_init</a>(A)&#160;&#160;&#160;*(A) = <a class="el" href="#a650d9d834c1c99b71df08ddd1772714d">SPINLOCK_INITIALIZER</a></td></tr>
-<tr class="memdesc:a254c16d8ca5a239555ae2851c74798a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a spinlock.  <br /></td></tr>
-<tr class="separator:a254c16d8ca5a239555ae2851c74798a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a831d3e1d5fb34326a316700e5076bf70" id="r_a831d3e1d5fb34326a316700e5076bf70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a831d3e1d5fb34326a316700e5076bf70">spinlock_lock</a>(A)</td></tr>
-<tr class="memdesc:a831d3e1d5fb34326a316700e5076bf70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spin on a lock.  <br /></td></tr>
-<tr class="separator:a831d3e1d5fb34326a316700e5076bf70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7f31e1fbfda4101be2e96ddf41cc274" id="r_af7f31e1fbfda4101be2e96ddf41cc274"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7f31e1fbfda4101be2e96ddf41cc274">spinlock_trylock</a>(A)</td></tr>
-<tr class="memdesc:af7f31e1fbfda4101be2e96ddf41cc274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to lock, without spinning.  <br /></td></tr>
-<tr class="separator:af7f31e1fbfda4101be2e96ddf41cc274"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5265ed5cba7da548147564216b52bdb7" id="r_a5265ed5cba7da548147564216b52bdb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5265ed5cba7da548147564216b52bdb7">spinlock_unlock</a>(A)</td></tr>
-<tr class="memdesc:a5265ed5cba7da548147564216b52bdb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a lock.  <br /></td></tr>
-<tr class="separator:a5265ed5cba7da548147564216b52bdb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ec4bf4f9841f5dd3380c5adfa6db61b" id="r_a0ec4bf4f9841f5dd3380c5adfa6db61b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ec4bf4f9841f5dd3380c5adfa6db61b">spinlock_is_locked</a>(A)&#160;&#160;&#160;( *(A) != 0 )</td></tr>
-<tr class="memdesc:a0ec4bf4f9841f5dd3380c5adfa6db61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a lock is locked.  <br /></td></tr>
-<tr class="separator:a0ec4bf4f9841f5dd3380c5adfa6db61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88ce894fbb7446cbcd2149eaf1ebb51" id="r_af88ce894fbb7446cbcd2149eaf1ebb51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af88ce894fbb7446cbcd2149eaf1ebb51">spinlock_lock_scoped</a>(lock)&#160;&#160;&#160;    __spinlock_lock_scoped((lock), __LINE__)</td></tr>
+<tr class="memdesc:af88ce894fbb7446cbcd2149eaf1ebb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spin on a lock with scope management.  <br /></td></tr>
+<tr class="separator:af88ce894fbb7446cbcd2149eaf1ebb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a7d562148dafb0dacf0ee876d482ed090" id="r_a7d562148dafb0dacf0ee876d482ed090"><td class="memItemLeft" align="right" valign="top">typedef volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a></td></tr>
 <tr class="memdesc:a7d562148dafb0dacf0ee876d482ed090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spinlock data type.  <br /></td></tr>
 <tr class="separator:a7d562148dafb0dacf0ee876d482ed090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4b302a778b6f2d0f5e73074bd10cc55d" id="r_a4b302a778b6f2d0f5e73074bd10cc55d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b302a778b6f2d0f5e73074bd10cc55d">spinlock_init</a> (<a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *lock)</td></tr>
+<tr class="memdesc:a4b302a778b6f2d0f5e73074bd10cc55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a spinlock.  <br /></td></tr>
+<tr class="separator:a4b302a778b6f2d0f5e73074bd10cc55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452431580f742453848b1620e7d7f3ee" id="r_a452431580f742453848b1620e7d7f3ee"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a452431580f742453848b1620e7d7f3ee">spinlock_trylock</a> (<a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *lock)</td></tr>
+<tr class="memdesc:a452431580f742453848b1620e7d7f3ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to lock, without spinning.  <br /></td></tr>
+<tr class="separator:a452431580f742453848b1620e7d7f3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69984b905a2abdb547f999db8da176f" id="r_ac69984b905a2abdb547f999db8da176f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac69984b905a2abdb547f999db8da176f">spinlock_lock</a> (<a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *lock)</td></tr>
+<tr class="memdesc:ac69984b905a2abdb547f999db8da176f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spin on a lock.  <br /></td></tr>
+<tr class="separator:ac69984b905a2abdb547f999db8da176f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec9466afc6c52304371a1602abf1658" id="r_adec9466afc6c52304371a1602abf1658"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adec9466afc6c52304371a1602abf1658">spinlock_lock_irqsafe</a> (<a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *lock)</td></tr>
+<tr class="memdesc:adec9466afc6c52304371a1602abf1658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spin on a lock.  <br /></td></tr>
+<tr class="separator:adec9466afc6c52304371a1602abf1658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137ffedacdea7e8313b6388153ffd2ce" id="r_a137ffedacdea7e8313b6388153ffd2ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a137ffedacdea7e8313b6388153ffd2ce">spinlock_unlock</a> (<a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *lock)</td></tr>
+<tr class="memdesc:a137ffedacdea7e8313b6388153ffd2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a lock.  <br /></td></tr>
+<tr class="separator:a137ffedacdea7e8313b6388153ffd2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37edeb64c14973ee341314ef8610394" id="r_ad37edeb64c14973ee341314ef8610394"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad37edeb64c14973ee341314ef8610394">spinlock_is_locked</a> (<a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *lock)</td></tr>
+<tr class="memdesc:ad37edeb64c14973ee341314ef8610394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a lock is locked.  <br /></td></tr>
+<tr class="separator:ad37edeb64c14973ee341314ef8610394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple locking. </p>
@@ -150,32 +161,6 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="recursive__lock_8h.html" title="Definitions for a recursive mutex.">kos/recursive_lock.h</a> </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a254c16d8ca5a239555ae2851c74798a8" name="a254c16d8ca5a239555ae2851c74798a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a254c16d8ca5a239555ae2851c74798a8">&#9670;&#160;</a></span>spinlock_init</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define spinlock_init</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>A</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;*(A) = <a class="el" href="#a650d9d834c1c99b71df08ddd1772714d">SPINLOCK_INITIALIZER</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initialize a spinlock. </p>
-<p>This function-like macro abstracts initializing a spinlock, in case the initializer is not applicable to what you are doing.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">A</td><td>A pointer to the spinlock to be initialized. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a650d9d834c1c99b71df08ddd1772714d" name="a650d9d834c1c99b71df08ddd1772714d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a650d9d834c1c99b71df08ddd1772714d">&#9670;&#160;</a></span>SPINLOCK_INITIALIZER</h2>
 
@@ -191,137 +176,30 @@ Typedefs</h2></td></tr>
 <p>Spinlock initializer. </p>
 <p>All created spinlocks should be initialized with this initializer so that they are in a sane state, ready to be used. </p>
 
+<p class="reference">Referenced by <a class="el" href="#a4b302a778b6f2d0f5e73074bd10cc55d">spinlock_init()</a>.</p>
+
 </div>
 </div>
-<a id="a0ec4bf4f9841f5dd3380c5adfa6db61b" name="a0ec4bf4f9841f5dd3380c5adfa6db61b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ec4bf4f9841f5dd3380c5adfa6db61b">&#9670;&#160;</a></span>spinlock_is_locked</h2>
+<a id="af88ce894fbb7446cbcd2149eaf1ebb51" name="af88ce894fbb7446cbcd2149eaf1ebb51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88ce894fbb7446cbcd2149eaf1ebb51">&#9670;&#160;</a></span>spinlock_lock_scoped</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define spinlock_is_locked</td>
+          <td class="memname">#define spinlock_lock_scoped</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>A</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;( *(A) != 0 )</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>lock</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;    __spinlock_lock_scoped((lock), __LINE__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determine if a lock is locked. </p>
-<p>This macro will return whether or not the lock specified is actually locked when it is called. This is NOT a thread-safe way of determining if a lock will be locked when you get around to locking it!</p>
+<p>Spin on a lock with scope management. </p>
+<p>This macro will spin on the lock, similar to <a class="el" href="#ac69984b905a2abdb547f999db8da176f" title="Spin on a lock.">spinlock_lock()</a>, with the difference that the lock will automatically be freed once the execution exits the functional block in which the macro was called.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">A</td><td>A pointer to the spinlock to be checked. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a831d3e1d5fb34326a316700e5076bf70" name="a831d3e1d5fb34326a316700e5076bf70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a831d3e1d5fb34326a316700e5076bf70">&#9670;&#160;</a></span>spinlock_lock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define spinlock_lock</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>A</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> { \</div>
-<div class="line">        <a class="code hl_typedef" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> * __lock = A; \</div>
-<div class="line">        <span class="keywordtype">int</span> __gotlock = 0; \</div>
-<div class="line">        while(1) { \</div>
-<div class="line">            __asm__ __volatile__(<span class="stringliteral">&quot;tas.b @%1\n\t&quot;</span> \</div>
-<div class="line">                                 <span class="stringliteral">&quot;movt %0\n\t&quot;</span> \</div>
-<div class="line">                                 : <span class="stringliteral">&quot;=r&quot;</span> (__gotlock) \</div>
-<div class="line">                                 : <span class="stringliteral">&quot;r&quot;</span> (__lock) \</div>
-<div class="line">                                 : <span class="stringliteral">&quot;t&quot;</span>, <span class="stringliteral">&quot;memory&quot;</span>); \</div>
-<div class="line">            if(!__gotlock) \</div>
-<div class="line">                thd_pass(); \</div>
-<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">break</span>; \</div>
-<div class="line">        } \</div>
-<div class="line">    } <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="aspinlock_8h_html_a7d562148dafb0dacf0ee876d482ed090"><div class="ttname"><a href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a></div><div class="ttdeci">volatile int spinlock_t</div><div class="ttdoc">Spinlock data type.</div><div class="ttdef"><b>Definition</b> spinlock.h:37</div></div>
-</div><!-- fragment -->
-<p>Spin on a lock. </p>
-<p>This macro will spin on the lock, and will not return until the lock has been obtained for the calling thread.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">A</td><td>A pointer to the spinlock to be locked. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af7f31e1fbfda4101be2e96ddf41cc274" name="af7f31e1fbfda4101be2e96ddf41cc274"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7f31e1fbfda4101be2e96ddf41cc274">&#9670;&#160;</a></span>spinlock_trylock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define spinlock_trylock</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>A</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        ({ \</div>
-<div class="line">        <span class="keywordtype">int</span> __gotlock = 0; \</div>
-<div class="line">        <span class="keywordflow">do</span> { \</div>
-<div class="line">            <a class="code hl_typedef" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *__lock = A; \</div>
-<div class="line">            __asm__ __volatile__(<span class="stringliteral">&quot;tas.b @%1\n\t&quot;</span> \</div>
-<div class="line">                                 <span class="stringliteral">&quot;movt %0\n\t&quot;</span> \</div>
-<div class="line">                                 : <span class="stringliteral">&quot;=r&quot;</span> (__gotlock) \</div>
-<div class="line">                                 : <span class="stringliteral">&quot;r&quot;</span> (__lock) \</div>
-<div class="line">                                 : <span class="stringliteral">&quot;t&quot;</span>, <span class="stringliteral">&quot;memory&quot;</span>); \</div>
-<div class="line">        } <span class="keywordflow">while</span>(0); \</div>
-<div class="line">        __gotlock; \</div>
-<div class="line">    })</div>
-</div><!-- fragment -->
-<p>Try to lock, without spinning. </p>
-<p>This macro will attempt to lock the lock, but will not spin. Instead, it will return whether the lock was obtained or not.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">A</td><td>A pointer to the spinlock to be locked. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if the lock is held by another thread. Non-zero if the lock was successfully obtained. </dd></dl>
-
-</div>
-</div>
-<a id="a5265ed5cba7da548147564216b52bdb7" name="a5265ed5cba7da548147564216b52bdb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5265ed5cba7da548147564216b52bdb7">&#9670;&#160;</a></span>spinlock_unlock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define spinlock_unlock</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>A</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> { \</div>
-<div class="line">        *(A) = 0; \</div>
-<div class="line">    } <span class="keywordflow">while</span>(0)</div>
-</div><!-- fragment -->
-<p>Free a lock. </p>
-<p>This macro will unlock the lock that is currently held by the calling thread. Do not use this macro unless you actually hold the lock!</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">A</td><td>A pointer to the spinlock to be unlocked. </td></tr>
+    <tr><td class="paramname">lock</td><td>A pointer to the spinlock to be locked. </td></tr>
   </table>
   </dd>
 </dl>
@@ -342,6 +220,224 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Spinlock data type. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a4b302a778b6f2d0f5e73074bd10cc55d" name="a4b302a778b6f2d0f5e73074bd10cc55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b302a778b6f2d0f5e73074bd10cc55d">&#9670;&#160;</a></span>spinlock_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void spinlock_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *</td>          <td class="paramname"><span class="paramname"><em>lock</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize a spinlock. </p>
+<p>This function abstracts initializing a spinlock, in case the initializer is not applicable to what you are doing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lock</td><td>A pointer to the spinlock to be initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="#a650d9d834c1c99b71df08ddd1772714d">SPINLOCK_INITIALIZER</a>.</p>
+
+</div>
+</div>
+<a id="ad37edeb64c14973ee341314ef8610394" name="ad37edeb64c14973ee341314ef8610394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37edeb64c14973ee341314ef8610394">&#9670;&#160;</a></span>spinlock_is_locked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool spinlock_is_locked </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *</td>          <td class="paramname"><span class="paramname"><em>lock</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine if a lock is locked. </p>
+<p>This function will return whether or not the lock specified is actually locked when it is called. This is NOT a thread-safe way of determining if a lock will be locked when you get around to locking it!</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lock</td><td>A pointer to the spinlock to be checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the spinlock is locked, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ac69984b905a2abdb547f999db8da176f" name="ac69984b905a2abdb547f999db8da176f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69984b905a2abdb547f999db8da176f">&#9670;&#160;</a></span>spinlock_lock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void spinlock_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *</td>          <td class="paramname"><span class="paramname"><em>lock</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Spin on a lock. </p>
+<p>This function will spin on the lock, and will not return until the lock has been obtained for the calling thread.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lock</td><td>A pointer to the spinlock to be locked. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="#a452431580f742453848b1620e7d7f3ee">spinlock_trylock()</a>, and <a class="el" href="group__kthreads.html#gae8fa787b9408d6e108ba49097afb8a17">thd_pass()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#adec9466afc6c52304371a1602abf1658">spinlock_lock_irqsafe()</a>.</p>
+
+</div>
+</div>
+<a id="adec9466afc6c52304371a1602abf1658" name="adec9466afc6c52304371a1602abf1658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec9466afc6c52304371a1602abf1658">&#9670;&#160;</a></span>spinlock_lock_irqsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool spinlock_lock_irqsafe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *</td>          <td class="paramname"><span class="paramname"><em>lock</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Spin on a lock. </p>
+<p>This function will spin on the lock, and will not return until the lock has been obtained for the calling thread, unless it is called from within an interrupt context.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lock</td><td>A pointer to the spinlock to be locked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the spinlock could be locked, false otherwise. </dd></dl>
+
+<p class="reference">References <a class="el" href="group__irq__state.html#ga239a0e14ec3e16f17243a9d3a0da40fa">irq_inside_int()</a>, <a class="el" href="#ac69984b905a2abdb547f999db8da176f">spinlock_lock()</a>, and <a class="el" href="#a452431580f742453848b1620e7d7f3ee">spinlock_trylock()</a>.</p>
+
+</div>
+</div>
+<a id="a452431580f742453848b1620e7d7f3ee" name="a452431580f742453848b1620e7d7f3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a452431580f742453848b1620e7d7f3ee">&#9670;&#160;</a></span>spinlock_trylock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool spinlock_trylock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *</td>          <td class="paramname"><span class="paramname"><em>lock</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to lock, without spinning. </p>
+<p>This function will attempt to lock the lock, but will not spin. Instead, it will return whether the lock was obtained or not.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lock</td><td>A pointer to the spinlock to be locked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>False if the lock is held by another thread. True if the lock was successfully obtained. </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="#ac69984b905a2abdb547f999db8da176f">spinlock_lock()</a>, and <a class="el" href="#adec9466afc6c52304371a1602abf1658">spinlock_lock_irqsafe()</a>.</p>
+
+</div>
+</div>
+<a id="a137ffedacdea7e8313b6388153ffd2ce" name="a137ffedacdea7e8313b6388153ffd2ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137ffedacdea7e8313b6388153ffd2ce">&#9670;&#160;</a></span>spinlock_unlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void spinlock_unlock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7d562148dafb0dacf0ee876d482ed090">spinlock_t</a> *</td>          <td class="paramname"><span class="paramname"><em>lock</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Free a lock. </p>
+<p>This function will unlock the lock that is currently held by the calling thread. Do not use this function unless you actually hold the lock!</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lock</td><td>A pointer to the spinlock to be unlocked. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

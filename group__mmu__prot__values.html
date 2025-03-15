@@ -98,7 +98,7 @@ $(function(){initNavTree('group__mmu__prot__values.html',''); initResizable(true
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">Protection Settings<div class="ingroups"><a class="el" href="group__system.html">System</a> &raquo; <a class="el" href="group__mmu.html">MMU</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -106,86 +106,40 @@ $(function(){initNavTree('group__mmu__prot__values.html',''); initResizable(true
 <p>SH4 MMU page protection settings values  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga3ea26a2af1f5c77c800d04bcbd2b9f4e" id="r_ga3ea26a2af1f5c77c800d04bcbd2b9f4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ea26a2af1f5c77c800d04bcbd2b9f4e">MMU_KERNEL_RDONLY</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ga3ea26a2af1f5c77c800d04bcbd2b9f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">No user access, kernel read-only.  <br /></td></tr>
-<tr class="separator:ga3ea26a2af1f5c77c800d04bcbd2b9f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad26df705dc75a83e024c260d6e2aec98" id="r_gad26df705dc75a83e024c260d6e2aec98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad26df705dc75a83e024c260d6e2aec98">MMU_KERNEL_RDWR</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gad26df705dc75a83e024c260d6e2aec98"><td class="mdescLeft">&#160;</td><td class="mdescRight">No user access, kernel full.  <br /></td></tr>
-<tr class="separator:gad26df705dc75a83e024c260d6e2aec98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga41bb197fa6677f3568b4d965c3b89379" id="r_ga41bb197fa6677f3568b4d965c3b89379"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga41bb197fa6677f3568b4d965c3b89379">MMU_ALL_RDONLY</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:ga41bb197fa6677f3568b4d965c3b89379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only user and kernel.  <br /></td></tr>
-<tr class="separator:ga41bb197fa6677f3568b4d965c3b89379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae62e749b994950ccb572af032eecf0c4" id="r_gae62e749b994950ccb572af032eecf0c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae62e749b994950ccb572af032eecf0c4">MMU_ALL_RDWR</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:gae62e749b994950ccb572af032eecf0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full access, user and kernel.  <br /></td></tr>
-<tr class="separator:gae62e749b994950ccb572af032eecf0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gabb74621125b66f85a633b965209f92ec" id="r_gabb74621125b66f85a633b965209f92ec"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabb74621125b66f85a633b965209f92ec">page_prot_t</a> { <a class="el" href="#ggabb74621125b66f85a633b965209f92ecaf7f36b98041a6cdb95caa31038818ebb">MMU_KERNEL_RDONLY</a>
+, <a class="el" href="#ggabb74621125b66f85a633b965209f92eca74682ac2a94362d6e636ce68b60dd4a3">MMU_KERNEL_RDWR</a>
+, <a class="el" href="#ggabb74621125b66f85a633b965209f92eca60a56b06e8d223911fb6ee0eb3075167">MMU_ALL_RDONLY</a>
+, <a class="el" href="#ggabb74621125b66f85a633b965209f92ecab13121ab06ec05f300945898cecf8b86">MMU_ALL_RDWR</a>
+ }</td></tr>
+<tr class="separator:gabb74621125b66f85a633b965209f92ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>SH4 MMU page protection settings values </p>
 <p>Each page mapped via the MMU can be protected in a couple of different ways, as specified here. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga41bb197fa6677f3568b4d965c3b89379" name="ga41bb197fa6677f3568b4d965c3b89379"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga41bb197fa6677f3568b4d965c3b89379">&#9670;&#160;</a></span>MMU_ALL_RDONLY</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gabb74621125b66f85a633b965209f92ec" name="gabb74621125b66f85a633b965209f92ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabb74621125b66f85a633b965209f92ec">&#9670;&#160;</a></span>page_prot_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MMU_ALL_RDONLY&#160;&#160;&#160;2</td>
+          <td class="memname">enum <a class="el" href="#gabb74621125b66f85a633b965209f92ec">page_prot_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Read-only user and kernel. </p>
-
-</div>
-</div>
-<a id="gae62e749b994950ccb572af032eecf0c4" name="gae62e749b994950ccb572af032eecf0c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae62e749b994950ccb572af032eecf0c4">&#9670;&#160;</a></span>MMU_ALL_RDWR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MMU_ALL_RDWR&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Full access, user and kernel. </p>
-
-</div>
-</div>
-<a id="ga3ea26a2af1f5c77c800d04bcbd2b9f4e" name="ga3ea26a2af1f5c77c800d04bcbd2b9f4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3ea26a2af1f5c77c800d04bcbd2b9f4e">&#9670;&#160;</a></span>MMU_KERNEL_RDONLY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MMU_KERNEL_RDONLY&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>No user access, kernel read-only. </p>
-
-</div>
-</div>
-<a id="gad26df705dc75a83e024c260d6e2aec98" name="gad26df705dc75a83e024c260d6e2aec98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad26df705dc75a83e024c260d6e2aec98">&#9670;&#160;</a></span>MMU_KERNEL_RDWR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MMU_KERNEL_RDWR&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>No user access, kernel full. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggabb74621125b66f85a633b965209f92ecaf7f36b98041a6cdb95caa31038818ebb" name="ggabb74621125b66f85a633b965209f92ecaf7f36b98041a6cdb95caa31038818ebb"></a>MMU_KERNEL_RDONLY&#160;</td><td class="fielddoc"><p>No user access, kernel read-only. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabb74621125b66f85a633b965209f92eca74682ac2a94362d6e636ce68b60dd4a3" name="ggabb74621125b66f85a633b965209f92eca74682ac2a94362d6e636ce68b60dd4a3"></a>MMU_KERNEL_RDWR&#160;</td><td class="fielddoc"><p>No user access, kernel full. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabb74621125b66f85a633b965209f92eca60a56b06e8d223911fb6ee0eb3075167" name="ggabb74621125b66f85a633b965209f92eca60a56b06e8d223911fb6ee0eb3075167"></a>MMU_ALL_RDONLY&#160;</td><td class="fielddoc"><p>Read-only user and kernel. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabb74621125b66f85a633b965209f92ecab13121ab06ec05f300945898cecf8b86" name="ggabb74621125b66f85a633b965209f92ecab13121ab06ec05f300945898cecf8b86"></a>MMU_ALL_RDWR&#160;</td><td class="fielddoc"><p>Full access, user and kernel. </p>
+</td></tr>
+</table>
 
 </div>
 </div>

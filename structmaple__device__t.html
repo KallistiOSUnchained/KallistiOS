@@ -110,6 +110,9 @@ $(function(){initNavTree('structmaple__device__t.html',''); initResizable(true);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
+<tr class="memitem:af3b745494d5df96c15e4a57f2e8bb086" id="r_af3b745494d5df96c15e4a57f2e8bb086"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3b745494d5df96c15e4a57f2e8bb086">valid</a></td></tr>
+<tr class="memdesc:af3b745494d5df96c15e4a57f2e8bb086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a valid device?  <br /></td></tr>
+<tr class="separator:af3b745494d5df96c15e4a57f2e8bb086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc39087c3626495f01169165605bfeac" id="r_abc39087c3626495f01169165605bfeac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc39087c3626495f01169165605bfeac">port</a></td></tr>
 <tr class="memdesc:abc39087c3626495f01169165605bfeac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maple bus port connected to.  <br /></td></tr>
 <tr class="separator:abc39087c3626495f01169165605bfeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,9 +137,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a18ec305afdf61564e9ea639993049bfd" id="r_a18ec305afdf61564e9ea639993049bfd"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18ec305afdf61564e9ea639993049bfd">status_valid</a></td></tr>
 <tr class="memdesc:a18ec305afdf61564e9ea639993049bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Have we got our first status update?  <br /></td></tr>
 <tr class="separator:a18ec305afdf61564e9ea639993049bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8e4e8ab66813acca1247e66987af70c" id="r_aa8e4e8ab66813acca1247e66987af70c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8e4e8ab66813acca1247e66987af70c">status</a> []</td></tr>
-<tr class="memdesc:aa8e4e8ab66813acca1247e66987af70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status buffer (for pollable devices)  <br /></td></tr>
-<tr class="separator:aa8e4e8ab66813acca1247e66987af70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6b1000783ca85d2f8092c3787cc610" id="r_a2a6b1000783ca85d2f8092c3787cc610"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a6b1000783ca85d2f8092c3787cc610">status</a></td></tr>
+<tr class="memdesc:a2a6b1000783ca85d2f8092c3787cc610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status buffer (for pollable devices)  <br /></td></tr>
+<tr class="separator:a2a6b1000783ca85d2f8092c3787cc610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>One maple device. </p>
@@ -238,14 +241,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="aa8e4e8ab66813acca1247e66987af70c" name="aa8e4e8ab66813acca1247e66987af70c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8e4e8ab66813acca1247e66987af70c">&#9670;&#160;</a></span>status</h2>
+<a id="a2a6b1000783ca85d2f8092c3787cc610" name="a2a6b1000783ca85d2f8092c3787cc610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6b1000783ca85d2f8092c3787cc610">&#9670;&#160;</a></span>status</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> maple_device_t::status[]</td>
+          <td class="memname">void* maple_device_t::status</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -283,6 +286,22 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Unit number, off of the port. </p>
+
+</div>
+</div>
+<a id="af3b745494d5df96c15e4a57f2e8bb086" name="af3b745494d5df96c15e4a57f2e8bb086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3b745494d5df96c15e4a57f2e8bb086">&#9670;&#160;</a></span>valid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool maple_device_t::valid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Is this a valid device? </p>
 
 </div>
 </div>

@@ -114,9 +114,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8ec988c5e9d97d7922246120d41fe304" id="r_ga8ec988c5e9d97d7922246120d41fe304"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8ec988c5e9d97d7922246120d41fe304">pvr_vertbuf_tail</a> (<a class="el" href="group__pvr__lists.html#ga9384c99ee9670d53d0f551046426daef">pvr_list_t</a> list)</td></tr>
 <tr class="memdesc:ga8ec988c5e9d97d7922246120d41fe304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a pointer to the current output location in the DMA buffer for the requested list.  <br /></td></tr>
 <tr class="separator:ga8ec988c5e9d97d7922246120d41fe304"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga84a45c55cbf29f074bdbef80396957e2" id="r_ga84a45c55cbf29f074bdbef80396957e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga84a45c55cbf29f074bdbef80396957e2">pvr_vertbuf_written</a> (<a class="el" href="group__pvr__lists.html#ga9384c99ee9670d53d0f551046426daef">pvr_list_t</a> list, uint32_t amt)</td></tr>
-<tr class="memdesc:ga84a45c55cbf29f074bdbef80396957e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the PVR system that data have been written into the output buffer for the given list.  <br /></td></tr>
-<tr class="separator:ga84a45c55cbf29f074bdbef80396957e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga190c668531b82d0a18431851f731238c" id="r_ga190c668531b82d0a18431851f731238c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga190c668531b82d0a18431851f731238c">pvr_vertbuf_written</a> (<a class="el" href="group__pvr__lists.html#ga9384c99ee9670d53d0f551046426daef">pvr_list_t</a> list, size_t amt)</td></tr>
+<tr class="memdesc:ga190c668531b82d0a18431851f731238c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the PVR system that data have been written into the output buffer for the given list.  <br /></td></tr>
+<tr class="separator:ga190c668531b82d0a18431851f731238c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Use the DMA to transfer inactive lists to the PVR </p>
@@ -137,7 +137,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieve a pointer to the current output location in the DMA buffer for the requested list. </p>
-<p>Vertex DMA must globally be enabled for this to work. Data may be added to this buffer by the user program directly; however, make sure to call <a class="el" href="#ga84a45c55cbf29f074bdbef80396957e2" title="Notify the PVR system that data have been written into the output buffer for the given list.">pvr_vertbuf_written()</a> to notify the system of any such changes.</p>
+<p>Vertex DMA must globally be enabled for this to work. Data may be added to this buffer by the user program directly; however, make sure to call <a class="el" href="#ga190c668531b82d0a18431851f731238c" title="Notify the PVR system that data have been written into the output buffer for the given list.">pvr_vertbuf_written()</a> to notify the system of any such changes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>The primitive list to get the buffer for.</td></tr>
@@ -148,8 +148,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga84a45c55cbf29f074bdbef80396957e2" name="ga84a45c55cbf29f074bdbef80396957e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga84a45c55cbf29f074bdbef80396957e2">&#9670;&#160;</a></span>pvr_vertbuf_written()</h2>
+<a id="ga190c668531b82d0a18431851f731238c" name="ga190c668531b82d0a18431851f731238c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga190c668531b82d0a18431851f731238c">&#9670;&#160;</a></span>pvr_vertbuf_written()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,7 +162,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>amt</em></span>&#160;)</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>amt</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

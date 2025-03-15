@@ -101,6 +101,7 @@ $(function(){initNavTree('mmu_8h.html',''); initResizable(true); });
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">mmu.h File Reference<div class="ingroups"><a class="el" href="group__system.html">System</a> &raquo; <a class="el" href="group__mmu.html">MMU</a></div></div></div>
 </div><!--header-->
@@ -129,57 +130,6 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gaa627e16a878bf898eea19766a93b18e1" id="r_gaa627e16a878bf898eea19766a93b18e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#gaa627e16a878bf898eea19766a93b18e1">MMU_TOP_SHIFT</a>&#160;&#160;&#160;21</td></tr>
-<tr class="memdesc:gaa627e16a878bf898eea19766a93b18e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top-level shift.  <br /></td></tr>
-<tr class="separator:gaa627e16a878bf898eea19766a93b18e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24c05c93731901e5f132e67feee29ed0" id="r_ga24c05c93731901e5f132e67feee29ed0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#ga24c05c93731901e5f132e67feee29ed0">MMU_TOP_BITS</a>&#160;&#160;&#160;10</td></tr>
-<tr class="memdesc:ga24c05c93731901e5f132e67feee29ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top-level bits.  <br /></td></tr>
-<tr class="separator:ga24c05c93731901e5f132e67feee29ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga61b88dd6dcd16e1ad31cb5a0353c9bd2" id="r_ga61b88dd6dcd16e1ad31cb5a0353c9bd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#ga61b88dd6dcd16e1ad31cb5a0353c9bd2">MMU_TOP_MASK</a>&#160;&#160;&#160;((1 &lt;&lt; <a class="el" href="group__mmu__bit__macros.html#ga24c05c93731901e5f132e67feee29ed0">MMU_TOP_BITS</a>) - 1)</td></tr>
-<tr class="memdesc:ga61b88dd6dcd16e1ad31cb5a0353c9bd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top-level mask.  <br /></td></tr>
-<tr class="separator:ga61b88dd6dcd16e1ad31cb5a0353c9bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8f1371656815d14851c7632137c468c6" id="r_ga8f1371656815d14851c7632137c468c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#ga8f1371656815d14851c7632137c468c6">MMU_BOT_SHIFT</a>&#160;&#160;&#160;12</td></tr>
-<tr class="memdesc:ga8f1371656815d14851c7632137c468c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bottom shift.  <br /></td></tr>
-<tr class="separator:ga8f1371656815d14851c7632137c468c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8bbd592b1cc38fbed948ee3b655fd8d1" id="r_ga8bbd592b1cc38fbed948ee3b655fd8d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#ga8bbd592b1cc38fbed948ee3b655fd8d1">MMU_BOT_BITS</a>&#160;&#160;&#160;9</td></tr>
-<tr class="memdesc:ga8bbd592b1cc38fbed948ee3b655fd8d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bottom bits.  <br /></td></tr>
-<tr class="separator:ga8bbd592b1cc38fbed948ee3b655fd8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63d493679e41564015f07a9c3def4537" id="r_ga63d493679e41564015f07a9c3def4537"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#ga63d493679e41564015f07a9c3def4537">MMU_BOT_MASK</a>&#160;&#160;&#160;((1 &lt;&lt; <a class="el" href="group__mmu__bit__macros.html#ga8bbd592b1cc38fbed948ee3b655fd8d1">MMU_BOT_BITS</a>) - 1)</td></tr>
-<tr class="memdesc:ga63d493679e41564015f07a9c3def4537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bottom mask.  <br /></td></tr>
-<tr class="separator:ga63d493679e41564015f07a9c3def4537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga775b72d617567642b5578f594ce83638" id="r_ga775b72d617567642b5578f594ce83638"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#ga775b72d617567642b5578f594ce83638">MMU_IND_SHIFT</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ga775b72d617567642b5578f594ce83638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index shift.  <br /></td></tr>
-<tr class="separator:ga775b72d617567642b5578f594ce83638"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9c2625f4bb966e269b405e24159ab9f7" id="r_ga9c2625f4bb966e269b405e24159ab9f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#ga9c2625f4bb966e269b405e24159ab9f7">MMU_IND_BITS</a>&#160;&#160;&#160;12</td></tr>
-<tr class="memdesc:ga9c2625f4bb966e269b405e24159ab9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index bits.  <br /></td></tr>
-<tr class="separator:ga9c2625f4bb966e269b405e24159ab9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa541ddb4beb8b7378a261e67b3e28f9c" id="r_gaa541ddb4beb8b7378a261e67b3e28f9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__bit__macros.html#gaa541ddb4beb8b7378a261e67b3e28f9c">MMU_IND_MASK</a>&#160;&#160;&#160;((1 &lt;&lt; <a class="el" href="group__mmu__bit__macros.html#ga9c2625f4bb966e269b405e24159ab9f7">MMU_IND_BITS</a>) - 1)</td></tr>
-<tr class="memdesc:gaa541ddb4beb8b7378a261e67b3e28f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index mask.  <br /></td></tr>
-<tr class="separator:gaa541ddb4beb8b7378a261e67b3e28f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3ea26a2af1f5c77c800d04bcbd2b9f4e" id="r_ga3ea26a2af1f5c77c800d04bcbd2b9f4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__prot__values.html#ga3ea26a2af1f5c77c800d04bcbd2b9f4e">MMU_KERNEL_RDONLY</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ga3ea26a2af1f5c77c800d04bcbd2b9f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">No user access, kernel read-only.  <br /></td></tr>
-<tr class="separator:ga3ea26a2af1f5c77c800d04bcbd2b9f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad26df705dc75a83e024c260d6e2aec98" id="r_gad26df705dc75a83e024c260d6e2aec98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__prot__values.html#gad26df705dc75a83e024c260d6e2aec98">MMU_KERNEL_RDWR</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gad26df705dc75a83e024c260d6e2aec98"><td class="mdescLeft">&#160;</td><td class="mdescRight">No user access, kernel full.  <br /></td></tr>
-<tr class="separator:gad26df705dc75a83e024c260d6e2aec98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga41bb197fa6677f3568b4d965c3b89379" id="r_ga41bb197fa6677f3568b4d965c3b89379"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__prot__values.html#ga41bb197fa6677f3568b4d965c3b89379">MMU_ALL_RDONLY</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:ga41bb197fa6677f3568b4d965c3b89379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only user and kernel.  <br /></td></tr>
-<tr class="separator:ga41bb197fa6677f3568b4d965c3b89379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae62e749b994950ccb572af032eecf0c4" id="r_gae62e749b994950ccb572af032eecf0c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__prot__values.html#gae62e749b994950ccb572af032eecf0c4">MMU_ALL_RDWR</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:gae62e749b994950ccb572af032eecf0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full access, user and kernel.  <br /></td></tr>
-<tr class="separator:gae62e749b994950ccb572af032eecf0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf4cf8c3d986bdfbf8e5581e18c31c5d1" id="r_gaf4cf8c3d986bdfbf8e5581e18c31c5d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__cache__values.html#gaf4cf8c3d986bdfbf8e5581e18c31c5d1">MMU_NO_CACHE</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gaf4cf8c3d986bdfbf8e5581e18c31c5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache disabled.  <br /></td></tr>
-<tr class="separator:gaf4cf8c3d986bdfbf8e5581e18c31c5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2f709d91408e6b182f6e00909c8157c1" id="r_ga2f709d91408e6b182f6e00909c8157c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__cache__values.html#ga2f709d91408e6b182f6e00909c8157c1">MMU_CACHE_BACK</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:ga2f709d91408e6b182f6e00909c8157c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write-back caching.  <br /></td></tr>
-<tr class="separator:ga2f709d91408e6b182f6e00909c8157c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7b6ea225f16824b575b0a818139ac812" id="r_ga7b6ea225f16824b575b0a818139ac812"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__cache__values.html#ga7b6ea225f16824b575b0a818139ac812">MMU_CACHE_WT</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:ga7b6ea225f16824b575b0a818139ac812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write-through caching.  <br /></td></tr>
-<tr class="separator:ga7b6ea225f16824b575b0a818139ac812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4a51823b12d7f81261bea0b49f324417" id="r_ga4a51823b12d7f81261bea0b49f324417"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__cache__values.html#ga4a51823b12d7f81261bea0b49f324417">MMU_CACHEABLE</a>&#160;&#160;&#160;<a class="el" href="group__mmu__cache__values.html#ga2f709d91408e6b182f6e00909c8157c1">MMU_CACHE_BACK</a></td></tr>
-<tr class="memdesc:ga4a51823b12d7f81261bea0b49f324417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default caching.  <br /></td></tr>
-<tr class="separator:ga4a51823b12d7f81261bea0b49f324417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1da93d07c858b66f16d8fb8d55bfc309" id="r_ga1da93d07c858b66f16d8fb8d55bfc309"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga1da93d07c858b66f16d8fb8d55bfc309">MMU_SUB_PAGES</a>&#160;&#160;&#160;512</td></tr>
 <tr class="memdesc:ga1da93d07c858b66f16d8fb8d55bfc309"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of pages in a sub-context.  <br /></td></tr>
 <tr class="separator:ga1da93d07c858b66f16d8fb8d55bfc309"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,6 +142,27 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga85804e94e2c6f22c8d1d1f2c216ba0d1" id="r_ga85804e94e2c6f22c8d1d1f2c216ba0d1"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structmmupage__t.html">mmupage_t</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga85804e94e2c6f22c8d1d1f2c216ba0d1">mmu_mapfunc_t</a>) (<a class="el" href="structmmucontext__t.html">mmucontext_t</a> *context, int virtpage)</td></tr>
 <tr class="memdesc:ga85804e94e2c6f22c8d1d1f2c216ba0d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">MMU mapping handler.  <br /></td></tr>
 <tr class="separator:ga85804e94e2c6f22c8d1d1f2c216ba0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gabb74621125b66f85a633b965209f92ec" id="r_gabb74621125b66f85a633b965209f92ec"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__prot__values.html#gabb74621125b66f85a633b965209f92ec">page_prot_t</a> { <a class="el" href="group__mmu__prot__values.html#ggabb74621125b66f85a633b965209f92ecaf7f36b98041a6cdb95caa31038818ebb">MMU_KERNEL_RDONLY</a>
+, <a class="el" href="group__mmu__prot__values.html#ggabb74621125b66f85a633b965209f92eca74682ac2a94362d6e636ce68b60dd4a3">MMU_KERNEL_RDWR</a>
+, <a class="el" href="group__mmu__prot__values.html#ggabb74621125b66f85a633b965209f92eca60a56b06e8d223911fb6ee0eb3075167">MMU_ALL_RDONLY</a>
+, <a class="el" href="group__mmu__prot__values.html#ggabb74621125b66f85a633b965209f92ecab13121ab06ec05f300945898cecf8b86">MMU_ALL_RDWR</a>
+ }</td></tr>
+<tr class="separator:gabb74621125b66f85a633b965209f92ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe624163c44e7fd46b1c428014cd3df8" id="r_gabe624163c44e7fd46b1c428014cd3df8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__cache__values.html#gabe624163c44e7fd46b1c428014cd3df8">page_cache_t</a> { <a class="el" href="group__mmu__cache__values.html#ggabe624163c44e7fd46b1c428014cd3df8a89b6296edf3b03d93f583edc2b252853">MMU_NO_CACHE</a>
+, <a class="el" href="group__mmu__cache__values.html#ggabe624163c44e7fd46b1c428014cd3df8a18da8bd4cc24640bbe3475f867dc77a4">MMU_CACHE_BACK</a>
+, <a class="el" href="group__mmu__cache__values.html#ggabe624163c44e7fd46b1c428014cd3df8a45dc551780c118bb0d09d68a1c0590fe">MMU_CACHE_WT</a>
+, <a class="el" href="group__mmu__cache__values.html#ggabe624163c44e7fd46b1c428014cd3df8a74b4dafa16916a6ef167e3658fff58e0">MMU_CACHEABLE</a> = MMU_CACHE_BACK
+ }</td></tr>
+<tr class="separator:gabe624163c44e7fd46b1c428014cd3df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7066734c48cf2896d679c58a9d2fd90e" id="r_ga7066734c48cf2896d679c58a9d2fd90e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu__page__size.html#ga7066734c48cf2896d679c58a9d2fd90e">page_size_t</a> { <a class="el" href="group__mmu__page__size.html#gga7066734c48cf2896d679c58a9d2fd90ea2363a8b0119c9c191b4a4cdf2e623983">PAGE_SIZE_1K</a>
+, <a class="el" href="group__mmu__page__size.html#gga7066734c48cf2896d679c58a9d2fd90ea573617459ac726f98c5b412a468972fb">PAGE_SIZE_4K</a>
+, <a class="el" href="group__mmu__page__size.html#gga7066734c48cf2896d679c58a9d2fd90ea614d7261afaf6a5c3bd0a56563ebd5cd">PAGE_SIZE_64K</a>
+, <a class="el" href="group__mmu__page__size.html#gga7066734c48cf2896d679c58a9d2fd90eaf950aa4cf2b551289990ef1ee9d12621">PAGE_SIZE_1M</a>
+ }</td></tr>
+<tr class="separator:ga7066734c48cf2896d679c58a9d2fd90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -213,12 +184,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga448c7722206ca064de59cbe2431f349e" id="r_ga448c7722206ca064de59cbe2431f349e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga448c7722206ca064de59cbe2431f349e">mmu_switch_context</a> (<a class="el" href="structmmucontext__t.html">mmucontext_t</a> *context)</td></tr>
 <tr class="memdesc:ga448c7722206ca064de59cbe2431f349e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch to the given context.  <br /></td></tr>
 <tr class="separator:ga448c7722206ca064de59cbe2431f349e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa18eb0616187816f8168f019db521b8" id="r_gaaa18eb0616187816f8168f019db521b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gaaa18eb0616187816f8168f019db521b8">mmu_page_map</a> (<a class="el" href="structmmucontext__t.html">mmucontext_t</a> *context, int virtpage, int physpage, int count, int prot, int cache, int share, int dirty)</td></tr>
-<tr class="memdesc:gaaa18eb0616187816f8168f019db521b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the given virtual page to map to the given physical page.  <br /></td></tr>
-<tr class="separator:gaaa18eb0616187816f8168f019db521b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacb49f02b9c3421c3db648983eac56b6f" id="r_gacb49f02b9c3421c3db648983eac56b6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gacb49f02b9c3421c3db648983eac56b6f">mmu_copyin</a> (<a class="el" href="structmmucontext__t.html">mmucontext_t</a> *context, <a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> srcaddr, <a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> srccnt, void *buffer)</td></tr>
-<tr class="memdesc:gacb49f02b9c3421c3db648983eac56b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a chunk of data from a process' address space into a kernel buffer, taking into account page mappings.  <br /></td></tr>
-<tr class="separator:gacb49f02b9c3421c3db648983eac56b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9864b97510b929120b4443dbbad5fc9c" id="r_ga9864b97510b929120b4443dbbad5fc9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga9864b97510b929120b4443dbbad5fc9c">mmu_page_map</a> (<a class="el" href="structmmucontext__t.html">mmucontext_t</a> *context, int virtpage, int physpage, int count, <a class="el" href="group__mmu__prot__values.html#gabb74621125b66f85a633b965209f92ec">page_prot_t</a> prot, <a class="el" href="group__mmu__cache__values.html#gabe624163c44e7fd46b1c428014cd3df8">page_cache_t</a> cache, bool share, bool dirty)</td></tr>
+<tr class="memdesc:ga9864b97510b929120b4443dbbad5fc9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the given virtual page to map to the given physical page.  <br /></td></tr>
+<tr class="separator:ga9864b97510b929120b4443dbbad5fc9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f8b1b4c5b72ab5f8a1512b26c96c833" id="r_ga3f8b1b4c5b72ab5f8a1512b26c96c833"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga3f8b1b4c5b72ab5f8a1512b26c96c833">mmu_copyin</a> (<a class="el" href="structmmucontext__t.html">mmucontext_t</a> *context, uint32_t srcaddr, uint32_t srccnt, void *buffer)</td></tr>
+<tr class="memdesc:ga3f8b1b4c5b72ab5f8a1512b26c96c833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a chunk of data from a process' address space into a kernel buffer, taking into account page mappings.  <br /></td></tr>
+<tr class="separator:ga3f8b1b4c5b72ab5f8a1512b26c96c833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac159acf73a24f4a7cdada65b31b04616" id="r_gac159acf73a24f4a7cdada65b31b04616"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gac159acf73a24f4a7cdada65b31b04616">mmu_copyv</a> (<a class="el" href="structmmucontext__t.html">mmucontext_t</a> *context1, struct <a class="el" href="structiovec.html">iovec</a> *iov1, int iovcnt1, <a class="el" href="structmmucontext__t.html">mmucontext_t</a> *context2, struct <a class="el" href="structiovec.html">iovec</a> *iov2, int iovcnt2)</td></tr>
 <tr class="memdesc:gac159acf73a24f4a7cdada65b31b04616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a chunk of data from one process' address space to another process' address space, taking into account page mappings.  <br /></td></tr>
 <tr class="separator:gac159acf73a24f4a7cdada65b31b04616"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,12 +199,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0fe62887a4c714ac9c7e6db0b7c67c1e" id="r_ga0fe62887a4c714ac9c7e6db0b7c67c1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__mmu.html#ga85804e94e2c6f22c8d1d1f2c216ba0d1">mmu_mapfunc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga0fe62887a4c714ac9c7e6db0b7c67c1e">mmu_map_set_callback</a> (<a class="el" href="group__mmu.html#ga85804e94e2c6f22c8d1d1f2c216ba0d1">mmu_mapfunc_t</a> newfunc)</td></tr>
 <tr class="memdesc:ga0fe62887a4c714ac9c7e6db0b7c67c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a new MMU mapping handler.  <br /></td></tr>
 <tr class="separator:ga0fe62887a4c714ac9c7e6db0b7c67c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8fea2a954713027b1a67b60380ab41d8" id="r_ga8fea2a954713027b1a67b60380ab41d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga8fea2a954713027b1a67b60380ab41d8">mmu_init</a> (void)</td></tr>
-<tr class="memdesc:ga8fea2a954713027b1a67b60380ab41d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize MMU support.  <br /></td></tr>
-<tr class="separator:ga8fea2a954713027b1a67b60380ab41d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab789f0f1c1838c5629081810d2ce3bb4" id="r_gab789f0f1c1838c5629081810d2ce3bb4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gab789f0f1c1838c5629081810d2ce3bb4">mmu_page_map_static</a> (uintptr_t virt, uintptr_t phys, <a class="el" href="group__mmu__page__size.html#ga7066734c48cf2896d679c58a9d2fd90e">page_size_t</a> page_size, <a class="el" href="group__mmu__prot__values.html#gabb74621125b66f85a633b965209f92ec">page_prot_t</a> page_prot, bool cached)</td></tr>
+<tr class="memdesc:gab789f0f1c1838c5629081810d2ce3bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a static virtual memory maping.  <br /></td></tr>
+<tr class="separator:gab789f0f1c1838c5629081810d2ce3bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac139ab6eabfe7278410aaf6fe58ff04e" id="r_gac139ab6eabfe7278410aaf6fe58ff04e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gac139ab6eabfe7278410aaf6fe58ff04e">mmu_init</a> (void)</td></tr>
+<tr class="memdesc:gac139ab6eabfe7278410aaf6fe58ff04e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize MMU support.  <br /></td></tr>
+<tr class="separator:gac139ab6eabfe7278410aaf6fe58ff04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b3c5f6e795c7e9b488857075aa2e52a" id="r_ga8b3c5f6e795c7e9b488857075aa2e52a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#ga8b3c5f6e795c7e9b488857075aa2e52a">mmu_init_basic</a> (void)</td></tr>
+<tr class="memdesc:ga8b3c5f6e795c7e9b488857075aa2e52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize basic MMU support.  <br /></td></tr>
+<tr class="separator:ga8b3c5f6e795c7e9b488857075aa2e52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa86f8c70fd4601477a2c6c88daa944b4" id="r_gaa86f8c70fd4601477a2c6c88daa944b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gaa86f8c70fd4601477a2c6c88daa944b4">mmu_shutdown</a> (void)</td></tr>
 <tr class="memdesc:gaa86f8c70fd4601477a2c6c88daa944b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown MMU support.  <br /></td></tr>
 <tr class="separator:gaa86f8c70fd4601477a2c6c88daa944b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2d01b365af5ef1bdcd169714d63c4f0" id="r_gaa2d01b365af5ef1bdcd169714d63c4f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gaa2d01b365af5ef1bdcd169714d63c4f0">mmu_shutdown_basic</a> (void)</td></tr>
+<tr class="memdesc:gaa2d01b365af5ef1bdcd169714d63c4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown basic MMU support.  <br /></td></tr>
+<tr class="separator:gaa2d01b365af5ef1bdcd169714d63c4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabffee0d7e91dab25c7453f55640752b6" id="r_gabffee0d7e91dab25c7453f55640752b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html#gabffee0d7e91dab25c7453f55640752b6">mmu_reset_itlb</a> (void)</td></tr>
 <tr class="memdesc:gabffee0d7e91dab25c7453f55640752b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset ITLB.  <br /></td></tr>
 <tr class="separator:gabffee0d7e91dab25c7453f55640752b6"><td class="memSeparator" colspan="2">&#160;</td></tr>

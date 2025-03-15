@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['kbd_5fget_5fkey_0',['kbd_get_key',['../group__kbd.html#ga25b49d83a0c6e63f241bab9cb5a8bc45',1,'keyboard.h']]],
+  ['kbd_5fget_5fkey_0',['kbd_get_key',['../group__kbd.html#ga624304aea04506a26d96e5d885feff8d',1,'keyboard.h']]],
   ['kbd_5fqueue_5fpop_1',['kbd_queue_pop',['../group__kbd.html#gaa79d9098e001b2a7b8ff92c11bbb5e37',1,'keyboard.h']]],
-  ['kbd_5fset_5fqueue_2',['kbd_set_queue',['../group__kbd.html#ga7a89b91417209b1fbfde0ee659ccfed2',1,'keyboard.h']]],
+  ['kbd_5fset_5fqueue_2',['kbd_set_queue',['../group__kbd.html#ga92be71208168ee6163b3793e29d70ac4',1,'keyboard.h']]],
   ['kos_5fget_5fauthors_3',['kos_get_authors',['../group__attribution.html#gaed1bb8a00197783f15957e464b595b21',1,'arch.h']]],
   ['kos_5fget_5fbanner_4',['kos_get_banner',['../group__attribution.html#ga6dfafb1c615315737c5310f025a2a1fe',1,'arch.h']]],
   ['kos_5fget_5flicense_5',['kos_get_license',['../group__attribution.html#ga39d9efdea6d5c4689d85b7e2e3fc84de',1,'arch.h']]],

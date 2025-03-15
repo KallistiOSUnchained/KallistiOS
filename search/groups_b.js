@@ -14,7 +14,7 @@ var searchData=
   ['fonts_11',['Fonts',['../group__video__fonts.html',1,'']]],
   ['for_20the_20poll_20function_12',['Events for the poll() function',['../group__poll__events.html',1,'']]],
   ['format_13',['Format',['../group__elf.html',1,'ELF File Format'],['../group__video__img__fmt.html',1,'Format'],['../group__pvr__uv__fmts.html',1,'U/V Data Format']]],
-  ['formats_14',['Formats',['../group__pvr__txr__fmts.html',1,'Formats'],['../group__pvr__palfmt.html',1,'Formats'],['../group__pvr__color__fmts.html',1,'Vertex Formats']]],
+  ['formats_14',['Formats',['../group__pvr__txr__fmts.html',1,'Formats'],['../group__pvr__color__fmts.html',1,'Vertex Formats']]],
   ['frame_20states_15',['Frame States',['../group__maple__frame__states.html',1,'']]],
   ['framebuffer_16',['Framebuffer',['../group__video__fb.html',1,'Framebuffer'],['../group__vmu__fb.html',1,'Framebuffer']]],
   ['function_17',['Function',['../group__maple__clock.html',1,'Clock Function'],['../group__maple__lcd.html',1,'LCD Function'],['../group__maple__memcard.html',1,'Memory Card Function']]],

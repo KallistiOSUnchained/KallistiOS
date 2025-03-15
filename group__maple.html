@@ -380,7 +380,7 @@ Functions</h2></td></tr>
 <div class="line">            <span class="keywordflow">do</span> {</div>
 <div class="ttc" id="agroup__maple_html_ga799d5750b8249abbd94aad16045b0efc"><div class="ttname"><a href="#ga799d5750b8249abbd94aad16045b0efc">maple_enum_type</a></div><div class="ttdeci">maple_device_t * maple_enum_type(int n, uint32 func)</div><div class="ttdoc">Get the Nth device of the requested type (where N is zero-indexed).</div></div>
 <div class="ttc" id="agroup__maple_html_gaeed7e161e4b6b49ebef7aaf7436583e4"><div class="ttname"><a href="#gaeed7e161e4b6b49ebef7aaf7436583e4">maple_dev_status</a></div><div class="ttdeci">void * maple_dev_status(maple_device_t *dev)</div><div class="ttdoc">Get the status struct for the requested maple device.</div></div>
-<div class="ttc" id="astructmaple__device__t_html"><div class="ttname"><a href="structmaple__device__t.html">maple_device_t</a></div><div class="ttdoc">One maple device.</div><div class="ttdef"><b>Definition</b> maple.h:270</div></div>
+<div class="ttc" id="astructmaple__device__t_html"><div class="ttname"><a href="structmaple__device__t.html">maple_device_t</a></div><div class="ttdoc">One maple device.</div><div class="ttdef"><b>Definition</b> maple.h:271</div></div>
 </div><!-- fragment -->
 <p>Begin a foreach loop over Maple devices. </p>
 <p>This macro (along with the <a class="el" href="#gaa4aba87dbc90c0447497fce8ecbe081d" title="End a foreach loop over Maple devices.">MAPLE_FOREACH_END()</a> one) implements a simple foreach-style loop over the given type of devices. Essentially, it grabs the status of the device, and leaves it to you to figure out what to do with it.</p>
@@ -840,6 +840,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
+    <tr><td class="paramname">1</td><td>Couldn't allocate buffers. </td></tr>
     <tr><td class="paramname">0</td><td>On success. </td></tr>
     <tr><td class="paramname">-1</td><td>If no driver is available. </td></tr>
   </table>

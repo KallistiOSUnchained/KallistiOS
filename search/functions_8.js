@@ -5,5 +5,6 @@ var searchData=
   ['hardware_5fsys_5finit_2',['hardware_sys_init',['../group__arch.html#ga66f6da99c5bff5dfc1fa21f9c3b7cef5',1,'arch.h']]],
   ['hardware_5fsys_5fmode_3',['hardware_sys_mode',['../group__arch.html#gafd8fcf4bf29661fe4a507a3868097d73',1,'arch.h']]],
   ['htonl_4',['htonl',['../group__networking__utils.html#ga0e7477edd2a29331acedcd4f1d8b0d1a',1,'inet.h']]],
-  ['htons_5',['htons',['../group__networking__utils.html#gaf86d9622798ed7e76bd7de347df940ae',1,'inet.h']]]
+  ['htons_5',['htons',['../group__networking__utils.html#gaf86d9622798ed7e76bd7de347df940ae',1,'inet.h']]],
+  ['hw_5fto_5fdma_5faddr_6',['hw_to_dma_addr',['../group__dmac.html#ga382463b1d037cf72d0732a0895712ba0',1,'dmac.h']]]
 ];

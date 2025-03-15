@@ -91,7 +91,5 @@ var group__pvr__vertex__types =
       [ "d5", "structpvr__modifier__vol__t.html#add5db6ec4f5f71f2289b151fb2ec4147", null ],
       [ "d6", "structpvr__modifier__vol__t.html#aae228ba284125bac73000aeb17eacbda", null ],
       [ "flags", "structpvr__modifier__vol__t.html#a715c3f2e05fd0a7ab674adbb5b678462", null ]
-    ] ],
-    [ "PVR_PACK_COLOR", "group__pvr__vertex__types.html#ga33cf9bb04e81c6729365336a7cf6cb9d", null ],
-    [ "PVR_PACK_16BIT_UV", "group__pvr__vertex__types.html#ga353933028c8e9b70804401d4b580bb8d", null ]
+    ] ]
 ];

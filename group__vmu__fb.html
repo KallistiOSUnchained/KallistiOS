@@ -131,6 +131,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gad0815aff12e764934e058a462fa275da" id="r_gad0815aff12e764934e058a462fa275da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad0815aff12e764934e058a462fa275da">vmufb_clear</a> (<a class="el" href="structvmufb__t.html">vmufb_t</a> *fb)</td></tr>
 <tr class="memdesc:gad0815aff12e764934e058a462fa275da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the VMU framebuffer.  <br /></td></tr>
 <tr class="separator:gad0815aff12e764934e058a462fa275da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga76bc112a1c0caab23b4e9c8693317684" id="r_ga76bc112a1c0caab23b4e9c8693317684"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga76bc112a1c0caab23b4e9c8693317684">vmufb_paint_xbm</a> (<a class="el" href="structvmufb__t.html">vmufb_t</a> *fb, unsigned int x, unsigned int y, unsigned int w, unsigned int h, const uint8_t *xbm_data)</td></tr>
+<tr class="memdesc:ga76bc112a1c0caab23b4e9c8693317684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a XBM image into the VMU framebuffer.  <br /></td></tr>
+<tr class="separator:ga76bc112a1c0caab23b4e9c8693317684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga05187ebee71ea8a2c2b507572fa333bb" id="r_ga05187ebee71ea8a2c2b507572fa333bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga05187ebee71ea8a2c2b507572fa333bb">vmufb_present</a> (const <a class="el" href="structvmufb__t.html">vmufb_t</a> *fb, <a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev)</td></tr>
 <tr class="memdesc:ga05187ebee71ea8a2c2b507572fa333bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Present the VMU framebuffer to a VMU.  <br /></td></tr>
 <tr class="separator:ga05187ebee71ea8a2c2b507572fa333bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -359,6 +362,61 @@ Functions</h2></td></tr>
     <tr><td class="paramname">w</td><td>The width of the drawing area, in pixels </td></tr>
     <tr><td class="paramname">h</td><td>The height of the drawing area, in pixels </td></tr>
     <tr><td class="paramname">data</td><td>A pointer to the pixel data that will be painted into the drawing area. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga76bc112a1c0caab23b4e9c8693317684" name="ga76bc112a1c0caab23b4e9c8693317684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76bc112a1c0caab23b4e9c8693317684">&#9670;&#160;</a></span>vmufb_paint_xbm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vmufb_paint_xbm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvmufb__t.html">vmufb_t</a> *</td>          <td class="paramname"><span class="paramname"><em>fb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>xbm_data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Render a XBM image into the VMU framebuffer. </p>
+<p>This function will paint the provided XBM data into the VMU framebuffer, into the rectangle provided by the x, y, w and h values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fb</td><td>A pointer to the <a class="el" href="structvmufb__t.html" title="Virtual framebuffer for the VMU.">vmufb_t</a> to paint to. </td></tr>
+    <tr><td class="paramname">x</td><td>The horizontal position of the top-left corner of the drawing area, in pixels </td></tr>
+    <tr><td class="paramname">y</td><td>The vertical position of the top-left corner of the drawing area, in pixels </td></tr>
+    <tr><td class="paramname">w</td><td>The width of the drawing area, in pixels. It must correspond to the width of the XBM image. </td></tr>
+    <tr><td class="paramname">h</td><td>The height of the drawing area, in pixels. It must correspond to the height of the XBM image. </td></tr>
+    <tr><td class="paramname">xbm_data</td><td>A pointer to the pixel data in XBM format that will be painted </td></tr>
   </table>
   </dd>
 </dl>

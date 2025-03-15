@@ -31,7 +31,7 @@ var group__kbd =
     [ "KBD_QUEUE_SIZE", "group__kbd.html#gaf8a95f173e93b8af6091a7b915d7d5be", null ],
     [ "MAX_KBD_KEYS", "group__kbd.html#ga8df3ecdb47d4bbfde4ed1a06f72da2d2", null ],
     [ "MAX_PRESSED_KEYS", "group__kbd.html#ga315533334be61b9c05c9d8139585b073", null ],
-    [ "kbd_get_key", "group__kbd.html#ga25b49d83a0c6e63f241bab9cb5a8bc45", null ],
+    [ "kbd_get_key", "group__kbd.html#ga624304aea04506a26d96e5d885feff8d", null ],
     [ "kbd_queue_pop", "group__kbd.html#gaa79d9098e001b2a7b8ff92c11bbb5e37", null ],
-    [ "kbd_set_queue", "group__kbd.html#ga7a89b91417209b1fbfde0ee659ccfed2", null ]
+    [ "kbd_set_queue", "group__kbd.html#ga92be71208168ee6163b3793e29d70ac4", null ]
 ];

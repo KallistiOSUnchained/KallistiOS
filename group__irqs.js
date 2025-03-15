@@ -7,8 +7,28 @@ var group__irqs =
     [ "Mask", "group__irq__mask.html", "group__irq__mask" ],
     [ "State", "group__irq__state.html", "group__irq__state" ],
     [ "irq.h", "irq_8h.html", null ],
-    [ "irq_disable_scoped", "group__irqs.html#ga0f9fd9695f1bd7a6c78fe9401989408d", null ],
+    [ "IRQ_PRIO_MASKED", "group__irqs.html#gadbab15415e7fd3fd09686b1057561db8", null ],
+    [ "IRQ_PRIO_MAX", "group__irqs.html#gaa595fffe85c06c91d6a074f6f6fef3da", null ],
+    [ "IRQ_PRIO_MIN", "group__irqs.html#gae260e8e9aded67a2f967690739e05351", null ],
     [ "TIMER_IRQ", "group__irqs.html#ga7095fb363d08f6646611f9a47806647b", null ],
+    [ "irq_src_t", "group__irqs.html#ga26eeabb95673d3d3a3568fd93139da37", [
+      [ "IRQ_SRC_RTC", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a3bdd9d91629e3a6d5c0deecc7d72929f", null ],
+      [ "IRQ_SRC_TMU2", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a70cb0f6535a1dab3d35c96741c8d61de", null ],
+      [ "IRQ_SRC_TMU1", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a095a1d16278d32987c455c8fc0be40f6", null ],
+      [ "IRQ_SRC_TMU0", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a7968cfc9025744cbb53343e3d3f8c143", null ],
+      [ "_IRQ_SRC_RESV", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37ab7e5b276c1d0820ee90b598b901dc1ee", null ],
+      [ "IRQ_SRC_SCI1", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37ac3c44724d6ce7e1be493cca5636e672d", null ],
+      [ "IRQ_SRC_REF", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a057a22ce7f370b97cb13a13e1b1270f8", null ],
+      [ "IRQ_SRC_WDT", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a4f4201892aa3199fe2b231128ea8ba9c", null ],
+      [ "IRQ_SRC_HUDI", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a88facd5656807e0498051d0a2d8497cb", null ],
+      [ "IRQ_SRC_SCIF", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37ab95bf26a139ecf45d3a80e9de7aff12a", null ],
+      [ "IRQ_SRC_DMAC", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37ab453e93c28a8a8457b66ca06e19ea01a", null ],
+      [ "IRQ_SRC_GPIO", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a1c79c151f934009c501bb4b71ede60d6", null ],
+      [ "IRQ_SRC_IRL3", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a8a0bae7762cd170444aa5580fba859ea", null ],
+      [ "IRQ_SRC_IRL2", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a04b493504ba492f6c44952556d4964dd", null ],
+      [ "IRQ_SRC_IRL1", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37adaf50dab79c1c1ba799b6dc248a88bcd", null ],
+      [ "IRQ_SRC_IRL0", "group__irqs.html#gga26eeabb95673d3d3a3568fd93139da37a8ea50ac131a16d2124a6f2997e0d209c", null ]
+    ] ],
     [ "irq_t", "group__irqs.html#ga514a97b44194f47af21948925e129400", [
       [ "EXC_RESET_POWERON", "group__irqs.html#gga514a97b44194f47af21948925e129400a59f6c0088df62a9bc0339cd028663836", null ],
       [ "EXC_RESET_MANUAL", "group__irqs.html#gga514a97b44194f47af21948925e129400a6a55ce7b629b49737edd005d86200c96", null ],
@@ -76,5 +96,7 @@ var group__irqs =
       [ "EXC_SCIF_TXI", "group__irqs.html#gga514a97b44194f47af21948925e129400a0252ae50bb25e01f62f90524e3c64526", null ],
       [ "EXC_DOUBLE_FAULT", "group__irqs.html#gga514a97b44194f47af21948925e129400a70dd83a44a4f58f734bce251f0fee9f9", null ],
       [ "EXC_UNHANDLED_EXC", "group__irqs.html#gga514a97b44194f47af21948925e129400a067eb6f8286aa0ebab653e10d45f01d3", null ]
-    ] ]
+    ] ],
+    [ "irq_get_priority", "group__irqs.html#ga599ada81c7cb2fce2a09b2270998100e", null ],
+    [ "irq_set_priority", "group__irqs.html#ga2c731b76846e9882613ea21dcf465a97", null ]
 ];

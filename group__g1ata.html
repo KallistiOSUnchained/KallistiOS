@@ -114,6 +114,9 @@ Topics</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ata__devices.html">Device Definitions</a></td></tr>
 <tr class="memdesc:group__ata__devices"><td class="mdescLeft">&#160;</td><td class="mdescRight">ATA device definitions <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__g1ata__protect.html">G1 ATA protection</a></td></tr>
+<tr class="memdesc:group__g1ata__protect"><td class="mdescLeft">&#160;</td><td class="mdescRight">G1 Bus and DMA protection <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -135,6 +138,33 @@ Macros</h2></td></tr>
 <tr class="memitem:gaef5c019f3d6b409726956f00c1039c5d" id="r_gaef5c019f3d6b409726956f00c1039c5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaef5c019f3d6b409726956f00c1039c5d">G1_ATA_LBA_MODE</a>&#160;&#160;&#160;0x40</td></tr>
 <tr class="memdesc:gaef5c019f3d6b409726956f00c1039c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select LBA addressing mode.  <br /></td></tr>
 <tr class="separator:gaef5c019f3d6b409726956f00c1039c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga036b452ba591b798fce0f25b82bdf420" id="r_ga036b452ba591b798fce0f25b82bdf420"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga036b452ba591b798fce0f25b82bdf420">G1_ATA_BUS_PROTECTION</a>&#160;&#160;&#160;0x005F74E4</td></tr>
+<tr class="memdesc:ga036b452ba591b798fce0f25b82bdf420"><td class="mdescLeft">&#160;</td><td class="mdescRight">G1 ATA bus protection register.  <br /></td></tr>
+<tr class="separator:ga036b452ba591b798fce0f25b82bdf420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf40ff4f661682423a99fc6dfd7778b2e" id="r_gaf40ff4f661682423a99fc6dfd7778b2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf40ff4f661682423a99fc6dfd7778b2e">G1_ATA_BUS_PROTECTION_STATUS</a>&#160;&#160;&#160;0x005F74EC</td></tr>
+<tr class="memdesc:gaf40ff4f661682423a99fc6dfd7778b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">G1 ATA bus protection status register.  <br /></td></tr>
+<tr class="separator:gaf40ff4f661682423a99fc6dfd7778b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95d0cb5d9b26754a54fa99348d20a33d" id="r_ga95d0cb5d9b26754a54fa99348d20a33d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga95d0cb5d9b26754a54fa99348d20a33d">G1_ATA_BUS_PROTECTION_STATUS_IN_PROGRESS</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:ga95d0cb5d9b26754a54fa99348d20a33d"><td class="mdescLeft">&#160;</td><td class="mdescRight">G1 ATA bus protection in progress state.  <br /></td></tr>
+<tr class="separator:ga95d0cb5d9b26754a54fa99348d20a33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7beee661208be757eddc60e338f2c2e5" id="r_ga7beee661208be757eddc60e338f2c2e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7beee661208be757eddc60e338f2c2e5">G1_ATA_BUS_PROTECTION_STATUS_FAILED</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:ga7beee661208be757eddc60e338f2c2e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">G1 ATA bus protection failed state.  <br /></td></tr>
+<tr class="separator:ga7beee661208be757eddc60e338f2c2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadca90a2ce9598a09843b73c4ab05b665" id="r_gadca90a2ce9598a09843b73c4ab05b665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadca90a2ce9598a09843b73c4ab05b665">G1_ATA_BUS_PROTECTION_STATUS_PASSED</a>&#160;&#160;&#160;0x03</td></tr>
+<tr class="memdesc:gadca90a2ce9598a09843b73c4ab05b665"><td class="mdescLeft">&#160;</td><td class="mdescRight">G1 ATA bus protection passed state.  <br /></td></tr>
+<tr class="separator:gadca90a2ce9598a09843b73c4ab05b665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7049e17fa607a7dce55c60fe53122a0a" id="r_ga7049e17fa607a7dce55c60fe53122a0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7049e17fa607a7dce55c60fe53122a0a">G1_ATA_DMA_PROTECTION</a>&#160;&#160;&#160;0x005F74B8</td></tr>
+<tr class="memdesc:ga7049e17fa607a7dce55c60fe53122a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">G1 ATA DMA protection register.  <br /></td></tr>
+<tr class="separator:ga7049e17fa607a7dce55c60fe53122a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1394c7fd63b35857aeed20a23583b9bd" id="r_ga1394c7fd63b35857aeed20a23583b9bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1394c7fd63b35857aeed20a23583b9bd">G1_ATA_DMA_UNLOCK_CODE</a>&#160;&#160;&#160;0x8843</td></tr>
+<tr class="memdesc:ga1394c7fd63b35857aeed20a23583b9bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">G1 ATA DMA protection register code.  <br /></td></tr>
+<tr class="separator:ga1394c7fd63b35857aeed20a23583b9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b6e6c7ff40c4d9257065b47f4ac5bef" id="r_ga4b6e6c7ff40c4d9257065b47f4ac5bef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4b6e6c7ff40c4d9257065b47f4ac5bef">G1_ATA_DMA_UNLOCK_SYSMEM</a>&#160;&#160;&#160;(<a class="el" href="#ga1394c7fd63b35857aeed20a23583b9bd">G1_ATA_DMA_UNLOCK_CODE</a> &lt;&lt; 16 | 0x407F)</td></tr>
+<tr class="memdesc:ga4b6e6c7ff40c4d9257065b47f4ac5bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">System memory DMA protection unlock value.  <br /></td></tr>
+<tr class="separator:ga4b6e6c7ff40c4d9257065b47f4ac5bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c4a0ef8107ed0353041d260b5405272" id="r_ga7c4a0ef8107ed0353041d260b5405272"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7c4a0ef8107ed0353041d260b5405272">G1_ATA_DMA_UNLOCK_ALLMEM</a>&#160;&#160;&#160;(<a class="el" href="#ga1394c7fd63b35857aeed20a23583b9bd">G1_ATA_DMA_UNLOCK_CODE</a> &lt;&lt; 16 | 0x007F)</td></tr>
+<tr class="memdesc:ga7c4a0ef8107ed0353041d260b5405272"><td class="mdescLeft">&#160;</td><td class="mdescRight">All memory DMA protection unlock value.  <br /></td></tr>
+<tr class="separator:ga7c4a0ef8107ed0353041d260b5405272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -190,6 +220,152 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Driver for Accessing an ATA device on the G1 Bus </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga036b452ba591b798fce0f25b82bdf420" name="ga036b452ba591b798fce0f25b82bdf420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga036b452ba591b798fce0f25b82bdf420">&#9670;&#160;</a></span>G1_ATA_BUS_PROTECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_BUS_PROTECTION&#160;&#160;&#160;0x005F74E4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>G1 ATA bus protection register. </p>
+<p>Used to check BIOS contents in the Holly. </p>
+
+</div>
+</div>
+<a id="gaf40ff4f661682423a99fc6dfd7778b2e" name="gaf40ff4f661682423a99fc6dfd7778b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf40ff4f661682423a99fc6dfd7778b2e">&#9670;&#160;</a></span>G1_ATA_BUS_PROTECTION_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_BUS_PROTECTION_STATUS&#160;&#160;&#160;0x005F74EC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>G1 ATA bus protection status register. </p>
+<p>Used to determine the status of the check in the Holly. </p>
+
+</div>
+</div>
+<a id="ga7beee661208be757eddc60e338f2c2e5" name="ga7beee661208be757eddc60e338f2c2e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7beee661208be757eddc60e338f2c2e5">&#9670;&#160;</a></span>G1_ATA_BUS_PROTECTION_STATUS_FAILED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_BUS_PROTECTION_STATUS_FAILED&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>G1 ATA bus protection failed state. </p>
+
+</div>
+</div>
+<a id="ga95d0cb5d9b26754a54fa99348d20a33d" name="ga95d0cb5d9b26754a54fa99348d20a33d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga95d0cb5d9b26754a54fa99348d20a33d">&#9670;&#160;</a></span>G1_ATA_BUS_PROTECTION_STATUS_IN_PROGRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_BUS_PROTECTION_STATUS_IN_PROGRESS&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>G1 ATA bus protection in progress state. </p>
+
+</div>
+</div>
+<a id="gadca90a2ce9598a09843b73c4ab05b665" name="gadca90a2ce9598a09843b73c4ab05b665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadca90a2ce9598a09843b73c4ab05b665">&#9670;&#160;</a></span>G1_ATA_BUS_PROTECTION_STATUS_PASSED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_BUS_PROTECTION_STATUS_PASSED&#160;&#160;&#160;0x03</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>G1 ATA bus protection passed state. </p>
+
+</div>
+</div>
+<a id="ga7049e17fa607a7dce55c60fe53122a0a" name="ga7049e17fa607a7dce55c60fe53122a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7049e17fa607a7dce55c60fe53122a0a">&#9670;&#160;</a></span>G1_ATA_DMA_PROTECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_DMA_PROTECTION&#160;&#160;&#160;0x005F74B8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>G1 ATA DMA protection register. </p>
+
+</div>
+</div>
+<a id="ga7c4a0ef8107ed0353041d260b5405272" name="ga7c4a0ef8107ed0353041d260b5405272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c4a0ef8107ed0353041d260b5405272">&#9670;&#160;</a></span>G1_ATA_DMA_UNLOCK_ALLMEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_DMA_UNLOCK_ALLMEM&#160;&#160;&#160;(<a class="el" href="#ga1394c7fd63b35857aeed20a23583b9bd">G1_ATA_DMA_UNLOCK_CODE</a> &lt;&lt; 16 | 0x007F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>All memory DMA protection unlock value. </p>
+
+</div>
+</div>
+<a id="ga1394c7fd63b35857aeed20a23583b9bd" name="ga1394c7fd63b35857aeed20a23583b9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1394c7fd63b35857aeed20a23583b9bd">&#9670;&#160;</a></span>G1_ATA_DMA_UNLOCK_CODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_DMA_UNLOCK_CODE&#160;&#160;&#160;0x8843</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>G1 ATA DMA protection register code. </p>
+
+</div>
+</div>
+<a id="ga4b6e6c7ff40c4d9257065b47f4ac5bef" name="ga4b6e6c7ff40c4d9257065b47f4ac5bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4b6e6c7ff40c4d9257065b47f4ac5bef">&#9670;&#160;</a></span>G1_ATA_DMA_UNLOCK_SYSMEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define G1_ATA_DMA_UNLOCK_SYSMEM&#160;&#160;&#160;(<a class="el" href="#ga1394c7fd63b35857aeed20a23583b9bd">G1_ATA_DMA_UNLOCK_CODE</a> &lt;&lt; 16 | 0x407F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System memory DMA protection unlock value. </p>
+
+</div>
+</div>
 <a id="gaef5c019f3d6b409726956f00c1039c5d" name="gaef5c019f3d6b409726956f00c1039c5d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaef5c019f3d6b409726956f00c1039c5d">&#9670;&#160;</a></span>G1_ATA_LBA_MODE</h2>
 
@@ -608,7 +784,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>0 on success. &lt; 0 on failure, setting errno as appropriate.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If errno is set to ENOTSUP after calling this function, you must use a CHS addressed transfer function instead, like <a class="el" href="#ga941fd09568265fcecfdf402c99d1615f" title="Read one or more disk sectors with Cylinder-Head-Sector addressing.">g1_ata_read_chs()</a>.</dd>
 <dd>
-If errno is set to EPERM after calling this function, DMA mode is not supported. You should use a PIO transfer function like <a class="el" href="#gaf867d803272850203f8454ac9a4dc1cb" title="Read one or more disk sectors with Linear Block Addressing (LBA).">g1_ata_read_lba()</a> instead.</dd></dl>
+If errno is set to EPERM after calling this function, DMA mode is not supported. You should use a PIO transfer function like <a class="el" href="#gaf867d803272850203f8454ac9a4dc1cb" title="Read one or more disk sectors with Linear Block Addressing (LBA).">g1_ata_read_lba()</a> instead.</dd>
+<dd>
+If the buffer address points to the P2 memory area, the caller function will be responsible for ensuring memory coherency.</dd></dl>
 <dl class="section user"><dt>Error Conditions:</dt><dd><em>EIO</em> - an I/O error occurred in reading data <br  />
 <em>ENXIO</em> - ATA support not initialized or no device attached <br  />
 <em>EOVERFLOW</em> - one or more of the requested sectors is out of the range of the disk <br  />
@@ -803,7 +981,9 @@ If errno is set to EPERM after calling this function, DMA mode is not supported.
 <dl class="section return"><dt>Returns</dt><dd>0 on success. &lt; 0 on failure, setting errno as appropriate.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If errno is set to ENOTSUP after calling this function, you must use the <a class="el" href="#gafd4c03e6620c3343dea0d7539a85393e" title="Write one or more disk sectors with Cylinder-Head-Sector addressing.">g1_ata_write_chs()</a> function instead.</dd>
 <dd>
-If errno is set to EPERM after calling this function, DMA mode is not supported. You should use a PIO transfer function like <a class="el" href="#ga51875b08c887f50edda02f45a557ba95" title="Write one or more disk sectors with Linear Block Addressing (LBA).">g1_ata_write_lba()</a> instead.</dd></dl>
+If errno is set to EPERM after calling this function, DMA mode is not supported. You should use a PIO transfer function like <a class="el" href="#ga51875b08c887f50edda02f45a557ba95" title="Write one or more disk sectors with Linear Block Addressing (LBA).">g1_ata_write_lba()</a> instead.</dd>
+<dd>
+If the buffer address points to the P2 memory area, the caller function will be responsible for ensuring memory coherency.</dd></dl>
 <dl class="section user"><dt>Error Conditions:</dt><dd><em>ENXIO</em> - ATA support not initialized or no device attached <br  />
 <em>EOVERFLOW</em> - one or more of the requested sectors is out of the range of the disk <br  />
 <em>ENOTSUP</em> - LBA mode not supported by the device <br  />

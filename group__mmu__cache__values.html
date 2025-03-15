@@ -98,7 +98,7 @@ $(function(){initNavTree('group__mmu__cache__values.html',''); initResizable(tru
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">Cacheability Settings<div class="ingroups"><a class="el" href="group__system.html">System</a> &raquo; <a class="el" href="group__mmu.html">MMU</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -106,86 +106,40 @@ $(function(){initNavTree('group__mmu__cache__values.html',''); initResizable(tru
 <p>SH4 MMU page cachability settings values  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gaf4cf8c3d986bdfbf8e5581e18c31c5d1" id="r_gaf4cf8c3d986bdfbf8e5581e18c31c5d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf4cf8c3d986bdfbf8e5581e18c31c5d1">MMU_NO_CACHE</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gaf4cf8c3d986bdfbf8e5581e18c31c5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache disabled.  <br /></td></tr>
-<tr class="separator:gaf4cf8c3d986bdfbf8e5581e18c31c5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2f709d91408e6b182f6e00909c8157c1" id="r_ga2f709d91408e6b182f6e00909c8157c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f709d91408e6b182f6e00909c8157c1">MMU_CACHE_BACK</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:ga2f709d91408e6b182f6e00909c8157c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write-back caching.  <br /></td></tr>
-<tr class="separator:ga2f709d91408e6b182f6e00909c8157c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7b6ea225f16824b575b0a818139ac812" id="r_ga7b6ea225f16824b575b0a818139ac812"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7b6ea225f16824b575b0a818139ac812">MMU_CACHE_WT</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:ga7b6ea225f16824b575b0a818139ac812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write-through caching.  <br /></td></tr>
-<tr class="separator:ga7b6ea225f16824b575b0a818139ac812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4a51823b12d7f81261bea0b49f324417" id="r_ga4a51823b12d7f81261bea0b49f324417"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4a51823b12d7f81261bea0b49f324417">MMU_CACHEABLE</a>&#160;&#160;&#160;<a class="el" href="#ga2f709d91408e6b182f6e00909c8157c1">MMU_CACHE_BACK</a></td></tr>
-<tr class="memdesc:ga4a51823b12d7f81261bea0b49f324417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default caching.  <br /></td></tr>
-<tr class="separator:ga4a51823b12d7f81261bea0b49f324417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gabe624163c44e7fd46b1c428014cd3df8" id="r_gabe624163c44e7fd46b1c428014cd3df8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabe624163c44e7fd46b1c428014cd3df8">page_cache_t</a> { <a class="el" href="#ggabe624163c44e7fd46b1c428014cd3df8a89b6296edf3b03d93f583edc2b252853">MMU_NO_CACHE</a>
+, <a class="el" href="#ggabe624163c44e7fd46b1c428014cd3df8a18da8bd4cc24640bbe3475f867dc77a4">MMU_CACHE_BACK</a>
+, <a class="el" href="#ggabe624163c44e7fd46b1c428014cd3df8a45dc551780c118bb0d09d68a1c0590fe">MMU_CACHE_WT</a>
+, <a class="el" href="#ggabe624163c44e7fd46b1c428014cd3df8a74b4dafa16916a6ef167e3658fff58e0">MMU_CACHEABLE</a> = MMU_CACHE_BACK
+ }</td></tr>
+<tr class="separator:gabe624163c44e7fd46b1c428014cd3df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>SH4 MMU page cachability settings values </p>
 <p>Each page mapped via the MMU can have its cacheability set individually. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga2f709d91408e6b182f6e00909c8157c1" name="ga2f709d91408e6b182f6e00909c8157c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2f709d91408e6b182f6e00909c8157c1">&#9670;&#160;</a></span>MMU_CACHE_BACK</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gabe624163c44e7fd46b1c428014cd3df8" name="gabe624163c44e7fd46b1c428014cd3df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe624163c44e7fd46b1c428014cd3df8">&#9670;&#160;</a></span>page_cache_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MMU_CACHE_BACK&#160;&#160;&#160;2</td>
+          <td class="memname">enum <a class="el" href="#gabe624163c44e7fd46b1c428014cd3df8">page_cache_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Write-back caching. </p>
-
-</div>
-</div>
-<a id="ga7b6ea225f16824b575b0a818139ac812" name="ga7b6ea225f16824b575b0a818139ac812"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7b6ea225f16824b575b0a818139ac812">&#9670;&#160;</a></span>MMU_CACHE_WT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MMU_CACHE_WT&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Write-through caching. </p>
-
-</div>
-</div>
-<a id="ga4a51823b12d7f81261bea0b49f324417" name="ga4a51823b12d7f81261bea0b49f324417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4a51823b12d7f81261bea0b49f324417">&#9670;&#160;</a></span>MMU_CACHEABLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MMU_CACHEABLE&#160;&#160;&#160;<a class="el" href="#ga2f709d91408e6b182f6e00909c8157c1">MMU_CACHE_BACK</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Default caching. </p>
-
-</div>
-</div>
-<a id="gaf4cf8c3d986bdfbf8e5581e18c31c5d1" name="gaf4cf8c3d986bdfbf8e5581e18c31c5d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf4cf8c3d986bdfbf8e5581e18c31c5d1">&#9670;&#160;</a></span>MMU_NO_CACHE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MMU_NO_CACHE&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Cache disabled. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggabe624163c44e7fd46b1c428014cd3df8a89b6296edf3b03d93f583edc2b252853" name="ggabe624163c44e7fd46b1c428014cd3df8a89b6296edf3b03d93f583edc2b252853"></a>MMU_NO_CACHE&#160;</td><td class="fielddoc"><p>Cache disabled. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabe624163c44e7fd46b1c428014cd3df8a18da8bd4cc24640bbe3475f867dc77a4" name="ggabe624163c44e7fd46b1c428014cd3df8a18da8bd4cc24640bbe3475f867dc77a4"></a>MMU_CACHE_BACK&#160;</td><td class="fielddoc"><p>Write-back caching. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabe624163c44e7fd46b1c428014cd3df8a45dc551780c118bb0d09d68a1c0590fe" name="ggabe624163c44e7fd46b1c428014cd3df8a45dc551780c118bb0d09d68a1c0590fe"></a>MMU_CACHE_WT&#160;</td><td class="fielddoc"><p>Write-through caching. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabe624163c44e7fd46b1c428014cd3df8a74b4dafa16916a6ef167e3658fff58e0" name="ggabe624163c44e7fd46b1c428014cd3df8a74b4dafa16916a6ef167e3658fff58e0"></a>MMU_CACHEABLE&#160;</td><td class="fielddoc"><p>Default caching. </p>
+</td></tr>
+</table>
 
 </div>
 </div>

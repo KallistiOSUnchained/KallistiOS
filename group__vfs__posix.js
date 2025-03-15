@@ -2,8 +2,8 @@ var group__vfs__posix =
 [
     [ "libgen.h", "libgen_8h.html", null ],
     [ "dirent.h", "dirent_8h.html", null ],
+    [ "ioctl.h", "ioctl_8h.html", null ],
     [ "uio.h", "uio_8h.html", null ],
-    [ "termios.h", "termios_8h.html", null ],
     [ "dirent", "structdirent.html", [
       [ "d_ino", "structdirent.html#aef01e92a29cba347e6e6a5f22d4908a2", null ],
       [ "d_name", "structdirent.html#a39a9af609c1808f0bdf90155bd3f55ed", null ],

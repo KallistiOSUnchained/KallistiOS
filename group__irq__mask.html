@@ -98,6 +98,7 @@ $(function(){initNavTree('group__irq__mask.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Mask<div class="ingroups"><a class="el" href="group__system.html">System</a> &raquo; <a class="el" href="group__irqs.html">Interrupts</a></div></div></div>
@@ -107,6 +108,12 @@ $(function(){initNavTree('group__irq__mask.html',''); initResizable(true); });
 <p>Accessors and modifiers of the IMASK state.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga0f9fd9695f1bd7a6c78fe9401989408d" id="r_ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0f9fd9695f1bd7a6c78fe9401989408d">irq_disable_scoped</a>()&#160;&#160;&#160;__irq_disable_scoped(__LINE__)</td></tr>
+<tr class="memdesc:ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable interrupts with scope management.  <br /></td></tr>
+<tr class="separator:ga0f9fd9695f1bd7a6c78fe9401989408d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gac86eb9bc95ad073837dfe8e4e9453295" id="r_gac86eb9bc95ad073837dfe8e4e9453295"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac86eb9bc95ad073837dfe8e4e9453295">irq_mask_t</a></td></tr>
@@ -115,6 +122,9 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gae3b8efdb3e2d84b5ef13e2dee25b7ebf" id="r_gae3b8efdb3e2d84b5ef13e2dee25b7ebf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gac86eb9bc95ad073837dfe8e4e9453295">irq_mask_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae3b8efdb3e2d84b5ef13e2dee25b7ebf">irq_get_sr</a> (void)</td></tr>
+<tr class="memdesc:gae3b8efdb3e2d84b5ef13e2dee25b7ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get status register contents.  <br /></td></tr>
+<tr class="separator:gae3b8efdb3e2d84b5ef13e2dee25b7ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac8594a5bb7ec76a0d1a5f08c9b7aae27" id="r_gac8594a5bb7ec76a0d1a5f08c9b7aae27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gac86eb9bc95ad073837dfe8e4e9453295">irq_mask_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8594a5bb7ec76a0d1a5f08c9b7aae27">irq_disable</a> (void)</td></tr>
 <tr class="memdesc:gac8594a5bb7ec76a0d1a5f08c9b7aae27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable interrupts.  <br /></td></tr>
 <tr class="separator:gac8594a5bb7ec76a0d1a5f08c9b7aae27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +138,27 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Accessors and modifiers of the IMASK state. </p>
 <p>This API is provided for managing and querying information regarding the interrupt mask, a series of bitflags representing whether each type of interrupt has been enabled or not. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga0f9fd9695f1bd7a6c78fe9401989408d" name="ga0f9fd9695f1bd7a6c78fe9401989408d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f9fd9695f1bd7a6c78fe9401989408d">&#9670;&#160;</a></span>irq_disable_scoped</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define irq_disable_scoped</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;__irq_disable_scoped(__LINE__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable interrupts with scope management. </p>
+<p>This macro will disable interrupts, similarly to <a class="el" href="#gac8594a5bb7ec76a0d1a5f08c9b7aae27" title="Disable interrupts.">irq_disable()</a>, with the difference that the interrupt state will automatically be restored once the execution exits the functional block in which the macro was called. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gac86eb9bc95ad073837dfe8e4e9453295" name="gac86eb9bc95ad073837dfe8e4e9453295"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac86eb9bc95ad073837dfe8e4e9453295">&#9670;&#160;</a></span>irq_mask_t</h2>
@@ -162,8 +193,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Disable interrupts. </p>
-<p>This function will disable interrupts, but will leave exceptions enabled.</p>
-<dl class="section return"><dt>Returns</dt><dd>The state of IRQs before calling the function. This can be used to restore this state later on with <a class="el" href="#ga768b54fd6ed13cbc74921ff529c6c424" title="Restore IRQ state.">irq_restore()</a>.</dd></dl>
+<p>This function will disable SH4 interrupts, but will leave SH4 general exceptions enabled.</p>
+<dl class="section return"><dt>Returns</dt><dd>The state of the SH4 interrupts before calling the function. This can be used to restore this state later on with <a class="el" href="#ga768b54fd6ed13cbc74921ff529c6c424" title="Restore IRQ state.">irq_restore()</a>.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga768b54fd6ed13cbc74921ff529c6c424" title="Restore IRQ state.">irq_restore()</a>, <a class="el" href="#ga0a004f8aa16635895a42e0667f26c420" title="Enable all interrupts.">irq_enable()</a> </dd></dl>
 
 <p class="reference">Referenced by <a class="el" href="group__system__g2bus.html#ga726597af42393c34a37614573786bb29">g2_lock()</a>.</p>
@@ -187,6 +218,34 @@ Functions</h2></td></tr>
 
 <p>Enable all interrupts. </p>
 <p>This function will enable ALL interrupts, including external ones.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gac8594a5bb7ec76a0d1a5f08c9b7aae27" title="Disable interrupts.">irq_disable()</a> </dd></dl>
+
+</div>
+</div>
+<a id="gae3b8efdb3e2d84b5ef13e2dee25b7ebf" name="gae3b8efdb3e2d84b5ef13e2dee25b7ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3b8efdb3e2d84b5ef13e2dee25b7ebf">&#9670;&#160;</a></span>irq_get_sr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#gac86eb9bc95ad073837dfe8e4e9453295">irq_mask_t</a> irq_get_sr </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get status register contents. </p>
+<p>Returns the current value of the status register, as <a class="el" href="#gac8594a5bb7ec76a0d1a5f08c9b7aae27" title="Disable interrupts.">irq_disable()</a> does. The function can be found in arch\dreamcast\kernel\entry.s</p>
+<dl class="section note"><dt>Note</dt><dd>This is the entire status register word, not just the <code>IMASK</code> field.</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Status</td><td>register word </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#gac8594a5bb7ec76a0d1a5f08c9b7aae27" title="Disable interrupts.">irq_disable()</a> </dd></dl>
 
 </div>

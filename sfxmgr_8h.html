@@ -98,6 +98,7 @@ $(function(){initNavTree('sfxmgr_8h.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -114,6 +115,12 @@ $(function(){initNavTree('sfxmgr_8h.html',''); initResizable(true); });
 </div>
 <p><a href="sfxmgr_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsfx__play__data__t.html">sfx_play_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure for sound effect playback.  <a href="structsfx__play__data__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:gaf2e7c01af5a2d5452bddc5b1fca71767" id="r_gaf2e7c01af5a2d5452bddc5b1fca71767"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__sfx.html#gaf2e7c01af5a2d5452bddc5b1fca71767">SFXHND_INVALID</a>&#160;&#160;&#160;0</td></tr>
@@ -137,6 +144,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga25b621198f02cf572d01f3f070c1f506" id="r_ga25b621198f02cf572d01f3f070c1f506"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__audio__sfx.html#ga55343251375bf0ac822aaab24948922f">sfxhnd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__sfx.html#ga25b621198f02cf572d01f3f070c1f506">snd_sfx_load_fd</a> (<a class="el" href="group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9">file_t</a> fd, size_t len, uint32_t rate, uint16_t bitsize, uint16_t channels)</td></tr>
 <tr class="memdesc:ga25b621198f02cf572d01f3f070c1f506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a sound effect without wav header by file handler.  <br /></td></tr>
 <tr class="separator:ga25b621198f02cf572d01f3f070c1f506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ccaf9f5a0d47fbf40fa2f5444fcb096" id="r_ga9ccaf9f5a0d47fbf40fa2f5444fcb096"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__audio__sfx.html#ga55343251375bf0ac822aaab24948922f">sfxhnd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__sfx.html#ga9ccaf9f5a0d47fbf40fa2f5444fcb096">snd_sfx_load_buf</a> (char *buf)</td></tr>
+<tr class="memdesc:ga9ccaf9f5a0d47fbf40fa2f5444fcb096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a sound effect.  <br /></td></tr>
+<tr class="separator:ga9ccaf9f5a0d47fbf40fa2f5444fcb096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5b11bcf5982ffa6d2fcd7ff27962108" id="r_gac5b11bcf5982ffa6d2fcd7ff27962108"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__audio__sfx.html#ga55343251375bf0ac822aaab24948922f">sfxhnd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__sfx.html#gac5b11bcf5982ffa6d2fcd7ff27962108">snd_sfx_load_raw_buf</a> (char *buf, size_t len, uint32_t rate, uint16_t bitsize, uint16_t channels)</td></tr>
+<tr class="memdesc:gac5b11bcf5982ffa6d2fcd7ff27962108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a sound effect without wav header from buffer.  <br /></td></tr>
+<tr class="separator:gac5b11bcf5982ffa6d2fcd7ff27962108"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafaaacbd4c0d4ae869f9a250f61417893" id="r_gafaaacbd4c0d4ae869f9a250f61417893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__sfx.html#gafaaacbd4c0d4ae869f9a250f61417893">snd_sfx_unload</a> (<a class="el" href="group__audio__sfx.html#ga55343251375bf0ac822aaab24948922f">sfxhnd_t</a> idx)</td></tr>
 <tr class="memdesc:gafaaacbd4c0d4ae869f9a250f61417893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload a sound effect.  <br /></td></tr>
 <tr class="separator:gafaaacbd4c0d4ae869f9a250f61417893"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +162,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga43534fc7fa4676be555482dbe7926f54" id="r_ga43534fc7fa4676be555482dbe7926f54"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__sfx.html#ga43534fc7fa4676be555482dbe7926f54">snd_sfx_play_chn</a> (int chn, <a class="el" href="group__audio__sfx.html#ga55343251375bf0ac822aaab24948922f">sfxhnd_t</a> idx, int vol, int pan)</td></tr>
 <tr class="memdesc:ga43534fc7fa4676be555482dbe7926f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play a sound effect on a specific channel.  <br /></td></tr>
 <tr class="separator:ga43534fc7fa4676be555482dbe7926f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10d04bca3c96ea819a9bd916f7766956" id="r_ga10d04bca3c96ea819a9bd916f7766956"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__sfx.html#ga10d04bca3c96ea819a9bd916f7766956">snd_sfx_play_ex</a> (<a class="el" href="structsfx__play__data__t.html">sfx_play_data_t</a> *data)</td></tr>
+<tr class="memdesc:ga10d04bca3c96ea819a9bd916f7766956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended sound effect playback function.  <br /></td></tr>
+<tr class="separator:ga10d04bca3c96ea819a9bd916f7766956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga26d2c1e14131496e2ba920c5967750c7" id="r_ga26d2c1e14131496e2ba920c5967750c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__sfx.html#ga26d2c1e14131496e2ba920c5967750c7">snd_sfx_stop</a> (int chn)</td></tr>
 <tr class="memdesc:ga26d2c1e14131496e2ba920c5967750c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop a single channel of sound.  <br /></td></tr>
 <tr class="separator:ga26d2c1e14131496e2ba920c5967750c7"><td class="memSeparator" colspan="2">&#160;</td></tr>

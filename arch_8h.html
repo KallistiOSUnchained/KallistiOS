@@ -108,6 +108,7 @@ $(function(){initNavTree('arch_8h.html',''); initResizable(true); });
 <p>Dreamcast architecture specific options.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="cdefs_8h_source.html">kos/cdefs.h</a>&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="init_8h_source.html">kos/init.h</a>&gt;</code><br />
 </div>
@@ -199,27 +200,6 @@ Macros</h2></td></tr>
 <tr class="memitem:ga391e3bc3ffbaafcb1fe811c237c17715" id="r_ga391e3bc3ffbaafcb1fe811c237c17715"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hw__regions.html#ga391e3bc3ffbaafcb1fe811c237c17715">HW_REGION_EUROPE</a>&#160;&#160;&#160;0xC</td></tr>
 <tr class="memdesc:ga391e3bc3ffbaafcb1fe811c237c17715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Europe (PAL)  <br /></td></tr>
 <tr class="separator:ga391e3bc3ffbaafcb1fe811c237c17715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8d9b1b29f325cb276f6c62dde830d702" id="r_ga8d9b1b29f325cb276f6c62dde830d702"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga8d9b1b29f325cb276f6c62dde830d702">arch_sleep</a>()</td></tr>
-<tr class="memdesc:ga8d9b1b29f325cb276f6c62dde830d702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast specific sleep mode "function".  <br /></td></tr>
-<tr class="separator:ga8d9b1b29f325cb276f6c62dde830d702"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga918cbb6c3977d897b3c205407dda1891" id="r_ga918cbb6c3977d897b3c205407dda1891"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga918cbb6c3977d897b3c205407dda1891">arch_get_ret_addr</a>()</td></tr>
-<tr class="memdesc:ga918cbb6c3977d897b3c205407dda1891"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC specific "function" to get the return address from the current function.  <br /></td></tr>
-<tr class="separator:ga918cbb6c3977d897b3c205407dda1891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4bf02fe7e5534d6fd8d67dc45f32f7b4" id="r_ga4bf02fe7e5534d6fd8d67dc45f32f7b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga4bf02fe7e5534d6fd8d67dc45f32f7b4">arch_get_fptr</a>()</td></tr>
-<tr class="memdesc:ga4bf02fe7e5534d6fd8d67dc45f32f7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC specific "function" to get the frame pointer from the current function.  <br /></td></tr>
-<tr class="separator:ga4bf02fe7e5534d6fd8d67dc45f32f7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga382f88c6cc8d7ce7f1841e56e94d94d7" id="r_ga382f88c6cc8d7ce7f1841e56e94d94d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga382f88c6cc8d7ce7f1841e56e94d94d7">arch_fptr_ret_addr</a>(fptr)&#160;&#160;&#160;(*((<a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>*)(fptr)))</td></tr>
-<tr class="memdesc:ga382f88c6cc8d7ce7f1841e56e94d94d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass in a frame pointer value to get the return address for the given frame.  <br /></td></tr>
-<tr class="separator:ga382f88c6cc8d7ce7f1841e56e94d94d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga915feed501d27550bfec72705543dee1" id="r_ga915feed501d27550bfec72705543dee1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga915feed501d27550bfec72705543dee1">arch_fptr_next</a>(fptr)&#160;&#160;&#160;(*((<a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>*)((fptr)+4)))</td></tr>
-<tr class="memdesc:ga915feed501d27550bfec72705543dee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass in a frame pointer value to get the previous frame pointer for the given frame.  <br /></td></tr>
-<tr class="separator:ga915feed501d27550bfec72705543dee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9f4ceb692456160c38e8cbf16702c60e" id="r_ga9f4ceb692456160c38e8cbf16702c60e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga9f4ceb692456160c38e8cbf16702c60e">arch_valid_address</a>(ptr)&#160;&#160;&#160;((<a class="el" href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a>)(ptr) &gt;= 0x8c010000 &amp;&amp; (<a class="el" href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a>)(ptr) &lt; <a class="el" href="group__arch.html#ga77cc74c7207b1839793919978ac12b47">_arch_mem_top</a>)</td></tr>
-<tr class="memdesc:ga9f4ceb692456160c38e8cbf16702c60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the passed address is likely to be valid.  <br /></td></tr>
-<tr class="separator:ga9f4ceb692456160c38e8cbf16702c60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac90dbe4c6359827226569942bf0e9397" id="r_gac90dbe4c6359827226569942bf0e9397"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#gac90dbe4c6359827226569942bf0e9397">arch_valid_text_address</a>(ptr)&#160;&#160;&#160;    ((uintptr_t)(ptr) &gt;= (uintptr_t)&amp;<a class="el" href="group__arch.html#ga5541094cb97b935cdbd4cc50461ab5eb">_executable_start</a> &amp;&amp; (uintptr_t)(ptr) &lt; (uintptr_t)&amp;<a class="el" href="group__arch.html#gae4ac23ee1563c1bbcb0921de93c24832">_etext</a>)</td></tr>
-<tr class="memdesc:gac90dbe4c6359827226569942bf0e9397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the passed address is in the text section of your program.  <br /></td></tr>
-<tr class="separator:gac90dbe4c6359827226569942bf0e9397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -280,6 +260,27 @@ Functions</h2></td></tr>
 <tr class="memitem:gaed1bb8a00197783f15957e464b595b21" id="r_gaed1bb8a00197783f15957e464b595b21"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__attribution.html#gaed1bb8a00197783f15957e464b595b21">kos_get_authors</a> (void)</td></tr>
 <tr class="memdesc:gaed1bb8a00197783f15957e464b595b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a list of authors and the dates of their contributions.  <br /></td></tr>
 <tr class="separator:gaed1bb8a00197783f15957e464b595b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55fc7a1503773dfc8a9ff3e8d7b24f39" id="r_ga55fc7a1503773dfc8a9ff3e8d7b24f39"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga55fc7a1503773dfc8a9ff3e8d7b24f39">arch_sleep</a> (void)</td></tr>
+<tr class="memdesc:ga55fc7a1503773dfc8a9ff3e8d7b24f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast specific sleep mode function.  <br /></td></tr>
+<tr class="separator:ga55fc7a1503773dfc8a9ff3e8d7b24f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade55a5850429616d68fbd6a9cb98effe" id="r_gade55a5850429616d68fbd6a9cb98effe"><td class="memItemLeft" align="right" valign="top">static uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#gade55a5850429616d68fbd6a9cb98effe">arch_get_ret_addr</a> (void)</td></tr>
+<tr class="memdesc:gade55a5850429616d68fbd6a9cb98effe"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC specific "function" to get the return address from the current function.  <br /></td></tr>
+<tr class="separator:gade55a5850429616d68fbd6a9cb98effe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ed1f3eb40fc935345caf675fb2373f0" id="r_ga5ed1f3eb40fc935345caf675fb2373f0"><td class="memItemLeft" align="right" valign="top">static uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga5ed1f3eb40fc935345caf675fb2373f0">arch_get_fptr</a> (void)</td></tr>
+<tr class="memdesc:ga5ed1f3eb40fc935345caf675fb2373f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC specific "function" to get the frame pointer from the current function.  <br /></td></tr>
+<tr class="separator:ga5ed1f3eb40fc935345caf675fb2373f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa34ed9555994229b6976ec8baf358ed3" id="r_gaa34ed9555994229b6976ec8baf358ed3"><td class="memItemLeft" align="right" valign="top">static uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#gaa34ed9555994229b6976ec8baf358ed3">arch_fptr_ret_addr</a> (uintptr_t fptr)</td></tr>
+<tr class="memdesc:gaa34ed9555994229b6976ec8baf358ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass in a frame pointer value to get the return address for the given frame.  <br /></td></tr>
+<tr class="separator:gaa34ed9555994229b6976ec8baf358ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae415ce0387c15e2ea0ceca494d098a38" id="r_gae415ce0387c15e2ea0ceca494d098a38"><td class="memItemLeft" align="right" valign="top">static uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#gae415ce0387c15e2ea0ceca494d098a38">arch_fptr_next</a> (uintptr_t fptr)</td></tr>
+<tr class="memdesc:gae415ce0387c15e2ea0ceca494d098a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass in a frame pointer value to get the previous frame pointer for the given frame.  <br /></td></tr>
+<tr class="separator:gae415ce0387c15e2ea0ceca494d098a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8e20742959acf259eb593999d5cb098" id="r_gaf8e20742959acf259eb593999d5cb098"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#gaf8e20742959acf259eb593999d5cb098">arch_valid_address</a> (uintptr_t ptr)</td></tr>
+<tr class="memdesc:gaf8e20742959acf259eb593999d5cb098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the passed address is likely to be valid.  <br /></td></tr>
+<tr class="separator:gaf8e20742959acf259eb593999d5cb098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e82ee49738b8c8e70bf1a587e5b45a2" id="r_ga4e82ee49738b8c8e70bf1a587e5b45a2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arch.html#ga4e82ee49738b8c8e70bf1a587e5b45a2">arch_valid_text_address</a> (uintptr_t ptr)</td></tr>
+<tr class="memdesc:ga4e82ee49738b8c8e70bf1a587e5b45a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the passed address is in the text section of your program.  <br /></td></tr>
+<tr class="separator:ga4e82ee49738b8c8e70bf1a587e5b45a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>

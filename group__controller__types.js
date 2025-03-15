@@ -8,6 +8,7 @@ var group__controller__types =
     [ "CONT_TYPE_DUAL_ANALOG_CONTROLLER", "group__controller__types.html#gae6bc6c7dfe7fbc4de8b5e2d91fa615f4", null ],
     [ "CONT_TYPE_FISHING_ROD", "group__controller__types.html#ga25ffe35c0369d951632644e9b07bd45f", null ],
     [ "CONT_TYPE_MARACAS", "group__controller__types.html#gac6e662c1c589daac4e8b35189fe9c333", null ],
+    [ "CONT_TYPE_PANTHERDC", "group__controller__types.html#gaeeda8c10c7d216ffee54ea95411336f5", null ],
     [ "CONT_TYPE_POP_N_MUSIC", "group__controller__types.html#gaea5f0643525d4875b5439bd5b06f97ab", null ],
     [ "CONT_TYPE_RACING_CONTROLLER", "group__controller__types.html#ga662d1bca9a3dd42f3eac699a6a75da59", null ],
     [ "CONT_TYPE_STANDARD_CONTROLLER", "group__controller__types.html#ga0353593684fe51db3924638daf7fc221", null ],

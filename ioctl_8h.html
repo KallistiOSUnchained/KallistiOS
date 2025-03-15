@@ -99,25 +99,27 @@ $(function(){initNavTree('ioctl_8h.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">ioctl.h File Reference</div></div>
+  <div class="headertitle"><div class="title">ioctl.h File Reference<div class="ingroups"><a class="el" href="group__vfs.html">Filesystem</a> &raquo; <a class="el" href="group__vfs__posix.html">POSIX</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="termios_8h_source.html">sys/termios.h</a>&gt;</code><br />
-<code>#include &lt;sys/cdefs.h&gt;</code><br />
+
+<p>Header for terminal control operations.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="fs_8h_source.html">kos/fs.h</a>&gt;</code><br />
 </div>
 <p><a href="ioctl_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad9643c3b80739733cbf55d89d0958f98" id="r_ad9643c3b80739733cbf55d89d0958f98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9643c3b80739733cbf55d89d0958f98">TCGETS</a>&#160;&#160;&#160;0x5401</td></tr>
-<tr class="separator:ad9643c3b80739733cbf55d89d0958f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cef5242a2853d0acf6d93879c517512" id="r_a0cef5242a2853d0acf6d93879c517512"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cef5242a2853d0acf6d93879c517512">TIOCGETA</a>&#160;&#160;&#160;<a class="el" href="#ad9643c3b80739733cbf55d89d0958f98">TCGETS</a></td></tr>
-<tr class="separator:a0cef5242a2853d0acf6d93879c517512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a283e8988aa6e03e93cdc45dbc65848c8" id="r_a283e8988aa6e03e93cdc45dbc65848c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a283e8988aa6e03e93cdc45dbc65848c8">ioctl</a>&#160;&#160;&#160;<a class="el" href="group__vfs__generic.html#ga86ea8c0a0529cef2924f07441bc2c128">fs_ioctl</a></td></tr>
 <tr class="separator:a283e8988aa6e03e93cdc45dbc65848c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header for terminal control operations. </p>
+<p>This file contains definitions for terminal control operations, as specified by the POSIX standard. It includes necessary constants and macros for performing various control operations on terminals using the ioctl system call.</p>
+<dl class="section author"><dt>Author</dt><dd>Andress Barajas </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a283e8988aa6e03e93cdc45dbc65848c8" name="a283e8988aa6e03e93cdc45dbc65848c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a283e8988aa6e03e93cdc45dbc65848c8">&#9670;&#160;</a></span>ioctl</h2>
 
@@ -126,34 +128,6 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define ioctl&#160;&#160;&#160;<a class="el" href="group__vfs__generic.html#ga86ea8c0a0529cef2924f07441bc2c128">fs_ioctl</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad9643c3b80739733cbf55d89d0958f98" name="ad9643c3b80739733cbf55d89d0958f98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9643c3b80739733cbf55d89d0958f98">&#9670;&#160;</a></span>TCGETS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TCGETS&#160;&#160;&#160;0x5401</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0cef5242a2853d0acf6d93879c517512" name="a0cef5242a2853d0acf6d93879c517512"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cef5242a2853d0acf6d93879c517512">&#9670;&#160;</a></span>TIOCGETA</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TIOCGETA&#160;&#160;&#160;<a class="el" href="#ad9643c3b80739733cbf55d89d0958f98">TCGETS</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

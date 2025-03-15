@@ -1,4 +1,4 @@
-var dmac_8h =
+var dc_2dmac_8h =
 [
     [ "DMAC_BASE", "group__system__dmac.html#ga8064c4f3d53dd221f4c579350ac73e0c", null ],
     [ "DMAC_CHCR0", "group__system__dmac.html#ga4c1170f7f94e622c22c0bba2c26a2b07", null ],

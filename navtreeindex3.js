@@ -1,5 +1,15 @@
 var NAVTREEINDEX3 =
 {
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a2e60b68e281c96af2dc76cc2256022cf":[9,11,1,0,4,13,49],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a3ac9990e68f14fcf22e461547fc2948a":[9,11,1,0,4,13,98],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a3c51c519793b14fcdf47853a50d9fdbb":[9,11,1,0,4,13,2],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a3d64144d263671fc103d4708a9420da2":[9,11,1,0,4,13,95],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a405674ddd2c50e29989a7dda40f588f7":[9,11,1,0,4,13,7],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a42586a2fdc4bb617faf8881a9b02a30c":[9,11,1,0,4,13,9],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a43297f5aecbabc51a830ed2d6bb25c55":[9,11,1,0,4,13,28],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4389323300b995b27edac8d2edb5ade0":[9,11,1,0,4,13,1],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a43c82dc010e1d38df42eeaf93faa331f":[9,11,1,0,4,13,36],
+"group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4571cfbf59a39cab91a1b049dadf3aaa":[9,11,1,0,4,13,19],
 "group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4576f9dda43cbc999afca1dce99416bc":[9,11,1,0,4,13,104],
 "group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a48bc37c2e2e4a447b0ee230f3895c26d":[9,11,1,0,4,13,106],
 "group__bfont__indicies.html#gga378ee090caa5326a4670400b3740d9f7a4c48f6775386bf32cd95d1dca5542fcf":[9,11,1,0,4,13,83],
@@ -239,15 +249,5 @@ var NAVTREEINDEX3 =
 "group__bfont__string.html#gaabf47131270b7bdd478e3c11bfc3d55a":[9,11,1,0,3,131],
 "group__bfont__string.html#gaad026c4e0932058b8443d9e4a2f08086":[9,11,1,0,3,35],
 "group__bfont__string.html#gaad0f3a6091901b164210fcda17b49849":[9,11,1,0,3,130],
-"group__bfont__string.html#gaaeffb0eabde607213393a29ebf64608c":[9,11,1,0,3,82],
-"group__bfont__string.html#gab034e889e7d31989076f59b6b69eaaf6":[9,11,1,0,3,74],
-"group__bfont__string.html#gab43fef064a885e1f39c301fff72ab910":[9,11,1,0,3,111],
-"group__bfont__string.html#gab708204672904235dc0055ad2e84c40c":[9,11,1,0,3,44],
-"group__bfont__string.html#gab768617cd56a4eb5fdaf6ae3262f47fc":[9,11,1,0,3,28],
-"group__bfont__string.html#gabcd43fe769e2fb0f0605db621c92288a":[9,11,1,0,3,38],
-"group__bfont__string.html#gabfbaaa8185814d619cfd82d975c3fc34":[9,11,1,0,3,141],
-"group__bfont__string.html#gac0ab236df742228e83c6b20ab3b52f67":[9,11,1,0,3,64],
-"group__bfont__string.html#gac1ea79fa38dd58952fda1c1fb8b56047":[9,11,1,0,3,115],
-"group__bfont__string.html#gac440511dd1698c92263b5b34d38afd4c":[9,11,1,0,3,62],
-"group__bfont__string.html#gac4716f52dd89b5e95ab41530ffc05594":[9,11,1,0,3,106]
+"group__bfont__string.html#gaaeffb0eabde607213393a29ebf64608c":[9,11,1,0,3,82]
 };

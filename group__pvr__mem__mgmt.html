@@ -114,9 +114,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa15d61181f3dcc5962d239038a531a8d" id="r_gaa15d61181f3dcc5962d239038a531a8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa15d61181f3dcc5962d239038a531a8d">pvr_mem_free</a> (<a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> chunk)</td></tr>
 <tr class="memdesc:gaa15d61181f3dcc5962d239038a531a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a block of allocated memory in the PVR RAM pool.  <br /></td></tr>
 <tr class="separator:gaa15d61181f3dcc5962d239038a531a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd1268bb8c53251449e9182e30985216" id="r_gadd1268bb8c53251449e9182e30985216"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadd1268bb8c53251449e9182e30985216">pvr_mem_available</a> (void)</td></tr>
-<tr class="memdesc:gadd1268bb8c53251449e9182e30985216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of bytes available still in the PVR RAM pool.  <br /></td></tr>
-<tr class="separator:gadd1268bb8c53251449e9182e30985216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f21e9648498201c35afe43dbe7d3854" id="r_ga9f21e9648498201c35afe43dbe7d3854"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9f21e9648498201c35afe43dbe7d3854">pvr_mem_available</a> (void)</td></tr>
+<tr class="memdesc:ga9f21e9648498201c35afe43dbe7d3854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of bytes available still in the PVR RAM pool.  <br /></td></tr>
+<tr class="separator:ga9f21e9648498201c35afe43dbe7d3854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4b01692145947158489bb9067c6b4f19" id="r_ga4b01692145947158489bb9067c6b4f19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4b01692145947158489bb9067c6b4f19">pvr_mem_reset</a> (void)</td></tr>
 <tr class="memdesc:ga4b01692145947158489bb9067c6b4f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the PVR RAM pool.  <br /></td></tr>
 <tr class="separator:ga4b01692145947158489bb9067c6b4f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,14 +131,14 @@ Functions</h2></td></tr>
 <p>Memory management API for VRAM </p>
 <p>PVR memory management in KOS uses a modified dlmalloc; see the source file pvr_mem_core.c for more info. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gadd1268bb8c53251449e9182e30985216" name="gadd1268bb8c53251449e9182e30985216"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadd1268bb8c53251449e9182e30985216">&#9670;&#160;</a></span>pvr_mem_available()</h2>
+<a id="ga9f21e9648498201c35afe43dbe7d3854" name="ga9f21e9648498201c35afe43dbe7d3854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f21e9648498201c35afe43dbe7d3854">&#9670;&#160;</a></span>pvr_mem_available()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t pvr_mem_available </td>
+          <td class="memname">size_t pvr_mem_available </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>

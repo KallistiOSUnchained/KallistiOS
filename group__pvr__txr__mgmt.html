@@ -99,6 +99,7 @@ $(function(){initNavTree('group__pvr__txr__mgmt.html',''); initResizable(true); 
 <div class="header">
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
+<a href="#files">Files</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Texturing<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__pvr.html">PowerVR API</a></div></div></div>
 </div><!--header-->
@@ -116,14 +117,17 @@ Topics</h2></td></tr>
 <tr class="memdesc:group__pvr__txr__fmts"><td class="mdescLeft">&#160;</td><td class="mdescRight">PowerVR texture formats <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pvr__txr_8h.html">pvr_txr.h</a></td></tr>
+<tr class="memdesc:pvr__txr_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture management with the PVR 3D API. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga4c143ba911990ad9181f803d99279328" id="r_ga4c143ba911990ad9181f803d99279328"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4c143ba911990ad9181f803d99279328">pvr_txr_set_stride</a> (uint32_t texture_width)</td></tr>
-<tr class="memdesc:ga4c143ba911990ad9181f803d99279328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global stride width for non-power-of-two textures in PVR RAM.  <br /></td></tr>
-<tr class="separator:ga4c143ba911990ad9181f803d99279328"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5243a55051d4223e24daaedf67eaf713" id="r_ga5243a55051d4223e24daaedf67eaf713"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5243a55051d4223e24daaedf67eaf713">pvr_txr_get_stride</a> (void)</td></tr>
-<tr class="memdesc:ga5243a55051d4223e24daaedf67eaf713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current texture stride width in pixels as set in the PVR.  <br /></td></tr>
-<tr class="separator:ga5243a55051d4223e24daaedf67eaf713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e9dad5c5fd7c8bdd66574ca7faf12fe" id="r_ga4e9dad5c5fd7c8bdd66574ca7faf12fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4e9dad5c5fd7c8bdd66574ca7faf12fe">pvr_get_front_buffer</a> (void)</td></tr>
+<tr class="memdesc:ga4e9dad5c5fd7c8bdd66574ca7faf12fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to the front buffer.  <br /></td></tr>
+<tr class="separator:ga4e9dad5c5fd7c8bdd66574ca7faf12fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1a68edeccfeba7ca52af3eb8d7bddd9c" id="r_ga1a68edeccfeba7ca52af3eb8d7bddd9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a68edeccfeba7ca52af3eb8d7bddd9c">pvr_txr_load</a> (const void *src, <a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dst, uint32_t count)</td></tr>
 <tr class="memdesc:ga1a68edeccfeba7ca52af3eb8d7bddd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load raw texture data from an SH-4 buffer into PVR RAM.  <br /></td></tr>
 <tr class="separator:ga1a68edeccfeba7ca52af3eb8d7bddd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,14 +142,14 @@ Functions</h2></td></tr>
 <p>API for managing PowerVR textures </p>
 <p>Helper functions for handling texture tasks of various kinds. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga5243a55051d4223e24daaedf67eaf713" name="ga5243a55051d4223e24daaedf67eaf713"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5243a55051d4223e24daaedf67eaf713">&#9670;&#160;</a></span>pvr_txr_get_stride()</h2>
+<a id="ga4e9dad5c5fd7c8bdd66574ca7faf12fe" name="ga4e9dad5c5fd7c8bdd66574ca7faf12fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e9dad5c5fd7c8bdd66574ca7faf12fe">&#9670;&#160;</a></span>pvr_get_front_buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t pvr_txr_get_stride </td>
+          <td class="memname"><a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> pvr_get_front_buffer </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -153,11 +157,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the current texture stride width in pixels as set in the PVR. </p>
-<p>This function reads the <code>PVR_TXR_STRIDE_MULT</code> register and calculates the texture stride width in pixels. The value returned is the width in pixels that has been configured for all textures using the <code>PVR_TXRFMT_X32_STRIDE</code> flag in the same frame.</p>
-<p>The stride width is computed by taking the current multiplier in <code>PVR_TXR_STRIDE_MULT</code> (which stores the width divided by 32), and multiplying it back by 32 to return the full width in pixels.</p>
-<dl class="section return"><dt>Returns</dt><dd>The current texture stride width in pixels.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga4c143ba911990ad9181f803d99279328" title="Set the global stride width for non-power-of-two textures in PVR RAM.">pvr_txr_set_stride()</a> </dd></dl>
+<p>Get a pointer to the front buffer. </p>
+<p>This function can be used to retrieve a pointer to the front buffer, aka. the last fully rendered buffer that is either being displayed right now, or is queued to be displayed.</p>
+<p>Note that the frame buffers lie in 32-bit memory, while textures lie in 64-bit memory. The address returned will point to 64-bit memory, but the front buffer cannot be used directly as a regular texture.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the front buffer. </dd></dl>
 
 </div>
 </div>
@@ -289,45 +292,6 @@ Functions</h2></td></tr>
 You cannot specify both <a class="el" href="group__pvr__txrload__constants.html#gabfeae21a314dd7288312b92a6767193d">PVR_TXRLOAD_FMT_NOTWIDDLE</a> (or equivalently <a class="el" href="group__pvr__txrload__constants.html#ga40e3a93ed6aa0ebc007d088ededd8181">PVR_TXRLOAD_FMT_TWIDDLED</a>) and <a class="el" href="group__pvr__txrload__constants.html#ga819951024acd9fe8fc9651fb6f22e7e5">PVR_TXRLOAD_INVERT_Y</a> in the flags. </dd>
 <dd>
 DMA and Store Queue based loading is not available from this function if it twiddles the texture while loading. </dd></dl>
-
-</div>
-</div>
-<a id="ga4c143ba911990ad9181f803d99279328" name="ga4c143ba911990ad9181f803d99279328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4c143ba911990ad9181f803d99279328">&#9670;&#160;</a></span>pvr_txr_set_stride()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool pvr_txr_set_stride </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>texture_width</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the global stride width for non-power-of-two textures in PVR RAM. </p>
-<p>This function configures the global texture stride register <code>PVR_TXR_STRIDE_MULT</code>, which defines the row width in VRAM for non-power-of-two textures. The setting applies to all textures rendered with the <code>PVR_TXRFMT_X32_STRIDE</code> flag in the same frame. Since <code>PVR_TXR_STRIDE_MULT</code> is a global register, all textures using this flag must share the same stride width in each frame.</p>
-<p>The stride width configured here is <b>only supported for textures with widths that are multiples of 32 pixels</b> and up to a maximum of 992 pixels. Any texture width not meeting this requirement will not work with the <code>PVR_TXRFMT_X32_STRIDE</code> flag.</p>
-<dl class="section warning"><dt>Warning</dt><dd><ul>
-<li>Textures that are palette-based cannot use the <code>PVR_TXRFMT_X32_STRIDE</code> flag so the stride set here will not apply to them.</li>
-</ul>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">texture_width</td><td>The width of the texture in pixels. Must be a multiple of 32 and up to 992 pixels. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">true</td><td>On success. </td></tr>
-    <tr><td class="paramname">false</td><td>On failure.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga5243a55051d4223e24daaedf67eaf713" title="Get the current texture stride width in pixels as set in the PVR.">pvr_txr_get_stride()</a> </dd></dl>
 
 </div>
 </div>

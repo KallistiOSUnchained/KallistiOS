@@ -16,10 +16,11 @@ var searchData=
   ['disc_20types_13',['Drive Disc Types',['../group__cd__disc__types.html',1,'']]],
   ['display_14',['Display',['../group__video__display.html',1,'']]],
   ['dma_15',['DMA',['../group__system__dmac.html',1,'DMA'],['../group__pvr__dma.html',1,'DMA'],['../group__asic__events__g2dma.html',1,'G2 Bus DMA'],['../group__pvr__vertex__dma.html',1,'Vertex DMA']]],
-  ['drawing_16',['Drawing',['../group__bfont__char.html',1,'Character Drawing'],['../group__bfont__string.html',1,'String Drawing']]],
-  ['dreamcast_20specific_20flags_17',['Dreamcast-Specific Flags',['../group__kos__init__flags__dc.html',1,'']]],
-  ['drive_18',['GD-ROM Drive',['../group__asic__events__gd.html',1,'']]],
-  ['drive_20disc_20types_19',['Drive Disc Types',['../group__cd__disc__types.html',1,'']]],
-  ['driver_20',['Driver',['../group__audio__driver.html',1,'']]],
-  ['drivers_21',['Drivers',['../group__networking__drivers.html',1,'Drivers'],['../group__vfs__drivers.html',1,'Drivers']]]
+  ['dma_20controller_20api_16',['DMA Controller API',['../group__dmac.html',1,'']]],
+  ['drawing_17',['Drawing',['../group__bfont__char.html',1,'Character Drawing'],['../group__bfont__string.html',1,'String Drawing']]],
+  ['dreamcast_20specific_20flags_18',['Dreamcast-Specific Flags',['../group__kos__init__flags__dc.html',1,'']]],
+  ['drive_19',['GD-ROM Drive',['../group__asic__events__gd.html',1,'']]],
+  ['drive_20disc_20types_20',['Drive Disc Types',['../group__cd__disc__types.html',1,'']]],
+  ['driver_21',['Driver',['../group__audio__driver.html',1,'']]],
+  ['drivers_22',['Drivers',['../group__networking__drivers.html',1,'Drivers'],['../group__vfs__drivers.html',1,'Drivers']]]
 ];

@@ -54,8 +54,8 @@ var searchData=
   ['log_20levels_51',['Log Levels',['../group__dbglog__levels.html',1,'']]],
   ['logging_52',['Logging',['../group__logging.html',1,'']]],
   ['logical_20blocks_53',['Logical Blocks',['../group__fr__blocks.html',1,'']]],
-  ['loop_54',['loop',['../structaica__channel__t.html#aa4e439f8f9cade0b80efd174baf3e6f4',1,'aica_channel_t']]],
-  ['loopend_55',['loopend',['../structaica__channel__t.html#ab32dfc110f57d6e884c4f2fe81eead3d',1,'aica_channel_t']]],
-  ['loopstart_56',['loopstart',['../structaica__channel__t.html#a77518e4d6966067f3181feffd0486409',1,'aica_channel_t']]],
+  ['loop_54',['loop',['../structaica__channel__t.html#aa4e439f8f9cade0b80efd174baf3e6f4',1,'aica_channel_t::loop'],['../structsfx__play__data__t.html#a1d138617670533889728626494982e8d',1,'sfx_play_data_t::loop']]],
+  ['loopend_55',['loopend',['../structaica__channel__t.html#ab32dfc110f57d6e884c4f2fe81eead3d',1,'aica_channel_t::loopend'],['../structsfx__play__data__t.html#a3536b6741d1ae8932fe4754c188b66d4',1,'sfx_play_data_t::loopend']]],
+  ['loopstart_56',['loopstart',['../structaica__channel__t.html#a77518e4d6966067f3181feffd0486409',1,'aica_channel_t::loopstart'],['../structsfx__play__data__t.html#a29396c4b8f6fe09f0d1726b759be148e',1,'sfx_play_data_t::loopstart']]],
   ['ltrig_57',['ltrig',['../structcont__state__t.html#a304c95d3c54e56586a17364dbee550dd',1,'cont_state_t']]]
 ];

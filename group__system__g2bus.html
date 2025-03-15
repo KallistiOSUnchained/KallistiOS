@@ -168,9 +168,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa3e36808749a9670d569e1a51754d167" id="r_gaa3e36808749a9670d569e1a51754d167"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa3e36808749a9670d569e1a51754d167">g2_read_32</a> (uintptr_t address)</td></tr>
 <tr class="memdesc:gaa3e36808749a9670d569e1a51754d167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one 32-bit dword from G2.  <br /></td></tr>
 <tr class="separator:gaa3e36808749a9670d569e1a51754d167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1096dcd53088406a3cf57d9518651895" id="r_ga1096dcd53088406a3cf57d9518651895"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1096dcd53088406a3cf57d9518651895">g2_read_32_raw</a> (uintptr_t address)</td></tr>
+<tr class="memdesc:ga1096dcd53088406a3cf57d9518651895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-blocked read one 32-bit dword from G2.  <br /></td></tr>
+<tr class="separator:ga1096dcd53088406a3cf57d9518651895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0198db5c9757656fc27a639b7c7ecc4d" id="r_ga0198db5c9757656fc27a639b7c7ecc4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0198db5c9757656fc27a639b7c7ecc4d">g2_write_32</a> (uintptr_t address, uint32_t value)</td></tr>
 <tr class="memdesc:ga0198db5c9757656fc27a639b7c7ecc4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a 32-bit dword to G2.  <br /></td></tr>
 <tr class="separator:ga0198db5c9757656fc27a639b7c7ecc4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga728d1d67e82f0c4072f33b899709017a" id="r_ga728d1d67e82f0c4072f33b899709017a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga728d1d67e82f0c4072f33b899709017a">g2_write_32_raw</a> (uintptr_t address, uint32_t value)</td></tr>
+<tr class="memdesc:ga728d1d67e82f0c4072f33b899709017a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-blocked write a 32-bit dword to G2.  <br /></td></tr>
+<tr class="separator:ga728d1d67e82f0c4072f33b899709017a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac245a5b8843233d4d8fa806f3a851212" id="r_gac245a5b8843233d4d8fa806f3a851212"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac245a5b8843233d4d8fa806f3a851212">g2_read_block_8</a> (uint8_t *output, uintptr_t address, size_t amt)</td></tr>
 <tr class="memdesc:gac245a5b8843233d4d8fa806f3a851212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a block of bytes from G2.  <br /></td></tr>
 <tr class="separator:gac245a5b8843233d4d8fa806f3a851212"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -615,6 +621,41 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga1096dcd53088406a3cf57d9518651895" name="ga1096dcd53088406a3cf57d9518651895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1096dcd53088406a3cf57d9518651895">&#9670;&#160;</a></span>g2_read_32_raw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t g2_read_32_raw </td>
+          <td>(</td>
+          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>address</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Non-blocked read one 32-bit dword from G2. </p>
+<p>This function reads a single dword from the specified address, without all necessary precautions that are required for accessing G2.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>The address in memory to read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The dword read from the address specified. </dd></dl>
+
+</div>
+</div>
 <a id="gab7c1e3a886467ce3ec2d924422f5736f" name="gab7c1e3a886467ce3ec2d924422f5736f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab7c1e3a886467ce3ec2d924422f5736f">&#9670;&#160;</a></span>g2_read_8()</h2>
 
@@ -841,6 +882,45 @@ Functions</h2></td></tr>
 
 <p>Write a 32-bit dword to G2. </p>
 <p>This function writes one dword to the specified address, taking all the necessary precautions to ensure your write actually succeeds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>The address in memory to write to. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to write to that address. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga728d1d67e82f0c4072f33b899709017a" name="ga728d1d67e82f0c4072f33b899709017a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga728d1d67e82f0c4072f33b899709017a">&#9670;&#160;</a></span>g2_write_32_raw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void g2_write_32_raw </td>
+          <td>(</td>
+          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>address</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Non-blocked write a 32-bit dword to G2. </p>
+<p>This function writes one dword to the specified address, without all the necessary precautions to ensure your write actually succeeds.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">address</td><td>The address in memory to write to. </td></tr>

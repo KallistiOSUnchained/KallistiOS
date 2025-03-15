@@ -98,6 +98,7 @@ $(function(){initNavTree('group__pvr__fog.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#files">Files</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Fog<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__pvr.html">PowerVR API</a> &raquo; <a class="el" href="group__pvr__global.html">Global State</a></div></div></div>
 </div><!--header-->
@@ -106,6 +107,12 @@ $(function(){initNavTree('group__pvr__fog.html',''); initResizable(true); });
 <p>Hardware Fog API for the PowerVR  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pvr__fog_8h.html">pvr_fog.h</a></td></tr>
+<tr class="memdesc:pvr__fog_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public API for the PVR's hardware fog. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gac36fb2b6bd739794402fe4a7687f9f8c" id="r_gac36fb2b6bd739794402fe4a7687f9f8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac36fb2b6bd739794402fe4a7687f9f8c">pvr_fog_table_color</a> (float a, float r, float g, float b)</td></tr>
@@ -118,20 +125,21 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad2fb9b3641697a548d86d152f9f36c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the fog far depth.  <br /></td></tr>
 <tr class="separator:gad2fb9b3641697a548d86d152f9f36c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2f5a4c3b0be7324b9dd0e1a001347108" id="r_ga2f5a4c3b0be7324b9dd0e1a001347108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f5a4c3b0be7324b9dd0e1a001347108">pvr_fog_table_exp2</a> (float density)</td></tr>
-<tr class="memdesc:ga2f5a4c3b0be7324b9dd0e1a001347108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the fog table using an exp2 algorithm (like GL_EXP2).  <br /></td></tr>
+<tr class="memdesc:ga2f5a4c3b0be7324b9dd0e1a001347108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the fog table using an exp2 algorithm (like <code>GL_EXP2</code>).  <br /></td></tr>
 <tr class="separator:ga2f5a4c3b0be7324b9dd0e1a001347108"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadbf51da6d5d44396c660f48350129508" id="r_gadbf51da6d5d44396c660f48350129508"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadbf51da6d5d44396c660f48350129508">pvr_fog_table_exp</a> (float density)</td></tr>
-<tr class="memdesc:gadbf51da6d5d44396c660f48350129508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the fog table using an exp algorithm (like GL_EXP).  <br /></td></tr>
+<tr class="memdesc:gadbf51da6d5d44396c660f48350129508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the fog table using an exp algorithm (like <code>GL_EXP</code>).  <br /></td></tr>
 <tr class="separator:gadbf51da6d5d44396c660f48350129508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga499c554924d2074148e5ffdde0ced159" id="r_ga499c554924d2074148e5ffdde0ced159"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga499c554924d2074148e5ffdde0ced159">pvr_fog_table_linear</a> (float start, float end)</td></tr>
-<tr class="memdesc:ga499c554924d2074148e5ffdde0ced159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the fog table using a linear algorithm (like GL_LINEAR).  <br /></td></tr>
+<tr class="memdesc:ga499c554924d2074148e5ffdde0ced159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the fog table using a linear algorithm (like <code>GL_LINEAR</code>).  <br /></td></tr>
 <tr class="separator:ga499c554924d2074148e5ffdde0ced159"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga97362717e82b19ea119a77dc70d530b7" id="r_ga97362717e82b19ea119a77dc70d530b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga97362717e82b19ea119a77dc70d530b7">pvr_fog_table_custom</a> (float tbl1[])</td></tr>
-<tr class="memdesc:ga97362717e82b19ea119a77dc70d530b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom fog table from float values.  <br /></td></tr>
-<tr class="separator:ga97362717e82b19ea119a77dc70d530b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1bf6caa5f399c4b86c718f120acabcd" id="r_gab1bf6caa5f399c4b86c718f120acabcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab1bf6caa5f399c4b86c718f120acabcd">pvr_fog_table_custom</a> (float *table)</td></tr>
+<tr class="memdesc:gab1bf6caa5f399c4b86c718f120acabcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom fog table from float values.  <br /></td></tr>
+<tr class="separator:gab1bf6caa5f399c4b86c718f120acabcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Hardware Fog API for the PowerVR </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo</a></b></dt><dd>Explain fog modes + equations</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Thanks to Paul Boese for figuring this stuff out </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gad2fb9b3641697a548d86d152f9f36c9e" name="gad2fb9b3641697a548d86d152f9f36c9e"></a>
@@ -150,7 +158,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the fog far depth. </p>
-<p>This function sets the PVR_FOG_DENSITY register appropriately for the specified value.</p>
+<p>This function sets the <code>PVR_FOG_DENSITY</code> register appropriately for the specified value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">d</td><td>The depth to set </td></tr>
@@ -190,7 +198,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the table fog color. </p>
-<p>This function sets the color of fog for table fog. 0-1 range for all colors.</p>
+<p>This function sets the color of fog for table fog. <code>0-1</code> range for all colors.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>Alpha value of the fog </td></tr>
@@ -203,8 +211,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga97362717e82b19ea119a77dc70d530b7" name="ga97362717e82b19ea119a77dc70d530b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga97362717e82b19ea119a77dc70d530b7">&#9670;&#160;</a></span>pvr_fog_table_custom()</h2>
+<a id="gab1bf6caa5f399c4b86c718f120acabcd" name="gab1bf6caa5f399c4b86c718f120acabcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab1bf6caa5f399c4b86c718f120acabcd">&#9670;&#160;</a></span>pvr_fog_table_custom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,20 +220,21 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void pvr_fog_table_custom </td>
           <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>tbl1</em></span>[]</td><td>)</td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>table</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Set a custom fog table from float values. </p>
-<p>This function allows you to specify whatever values you need to for your fog parameters. All values should be clamped between 0 and 1, and its your responsibility to set up the PVR_FOG_DENSITY register by calling <a class="el" href="#gad2fb9b3641697a548d86d152f9f36c9e" title="Set the fog far depth.">pvr_fog_far_depth()</a> with an appropriate value. The table passed in should have 129 entries, where the 0th entry is farthest from the eye and the last entry is nearest. Higher values = heavier fog.</p>
+<p>This function allows you to specify whatever values you need to for your fog parameters. All values should be clamped between <code>0</code> and <code>1</code>, and its your responsibility to set up the <code>PVR_FOG_DENSITY</code> register by calling <a class="el" href="#gad2fb9b3641697a548d86d152f9f36c9e" title="Set the fog far depth.">pvr_fog_far_depth()</a> with an appropriate value. The table passed in should have <code>129</code> entries, where the <code>0</code>th entry is farthest from the eye and the last entry is nearest. Higher values = heavier fog.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tbl1</td><td>The table of fog values to set </td></tr>
+    <tr><td class="paramname">table</td><td>The table of fog values to set</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga2f5a4c3b0be7324b9dd0e1a001347108" title="Initialize the fog table using an exp2 algorithm (like GL_EXP2).">pvr_fog_table_exp2()</a>, <a class="el" href="#gadbf51da6d5d44396c660f48350129508" title="Initialize the fog table using an exp algorithm (like GL_EXP).">pvr_fog_table_exp()</a>, <a class="el" href="#ga499c554924d2074148e5ffdde0ced159" title="Initialize the fog table using a linear algorithm (like GL_LINEAR).">pvr_fog_table_linear()</a> </dd></dl>
 
 </div>
 </div>
@@ -244,14 +253,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the fog table using an exp algorithm (like GL_EXP). </p>
-<p>This function will automatically set the PVR_FOG_DENSITY register to 259.999999 as a part of its processing, then set up the fog table.</p>
+<p>Initialize the fog table using an exp algorithm (like <code>GL_EXP</code>). </p>
+<p>This function will automatically set the <code>PVR_FOG_DENSITY</code> register to <code>259.999999</code> as a part of its processing, then set up the fog table.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">density</td><td>Fog density value </td></tr>
+    <tr><td class="paramname">density</td><td>Fog density value</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga2f5a4c3b0be7324b9dd0e1a001347108" title="Initialize the fog table using an exp2 algorithm (like GL_EXP2).">pvr_fog_table_exp2()</a>, <a class="el" href="#ga499c554924d2074148e5ffdde0ced159" title="Initialize the fog table using a linear algorithm (like GL_LINEAR).">pvr_fog_table_linear()</a>, <a class="el" href="#gab1bf6caa5f399c4b86c718f120acabcd" title="Set a custom fog table from float values.">pvr_fog_table_custom()</a> </dd></dl>
 
 </div>
 </div>
@@ -270,14 +280,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the fog table using an exp2 algorithm (like GL_EXP2). </p>
-<p>This function will automatically set the PVR_FOG_DENSITY register to 259.999999 as a part of its processing, then set up the fog table.</p>
+<p>Initialize the fog table using an exp2 algorithm (like <code>GL_EXP2</code>). </p>
+<p>This function will automatically set the <code>PVR_FOG_DENSITY</code> register to <code>259.999999</code> as a part of its processing, then set up the fog table.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">density</td><td>Fog density value </td></tr>
+    <tr><td class="paramname">density</td><td>Fog density value</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gadbf51da6d5d44396c660f48350129508" title="Initialize the fog table using an exp algorithm (like GL_EXP).">pvr_fog_table_exp()</a>, <a class="el" href="#ga499c554924d2074148e5ffdde0ced159" title="Initialize the fog table using a linear algorithm (like GL_LINEAR).">pvr_fog_table_linear()</a>, <a class="el" href="#gab1bf6caa5f399c4b86c718f120acabcd" title="Set a custom fog table from float values.">pvr_fog_table_custom()</a> </dd></dl>
 
 </div>
 </div>
@@ -300,15 +311,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the fog table using a linear algorithm (like GL_LINEAR). </p>
-<p>This function will set the PVR_FOG_DENSITY register to the as appropriate for the end value, and initialize the fog table for perspectively correct linear fog.</p>
+<p>Initialize the fog table using a linear algorithm (like <code>GL_LINEAR</code>). </p>
+<p>This function will set the <code>PVR_FOG_DENSITY</code> register to the as appropriate for the end value, and initialize the fog table for perspectively correct linear fog.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>Fog start point </td></tr>
-    <tr><td class="paramname">end</td><td>Fog end point </td></tr>
+    <tr><td class="paramname">end</td><td>Fog end point</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gadbf51da6d5d44396c660f48350129508" title="Initialize the fog table using an exp algorithm (like GL_EXP).">pvr_fog_table_exp()</a>, <a class="el" href="#ga2f5a4c3b0be7324b9dd0e1a001347108" title="Initialize the fog table using an exp2 algorithm (like GL_EXP2).">pvr_fog_table_exp2()</a>, <a class="el" href="#gab1bf6caa5f399c4b86c718f120acabcd" title="Set a custom fog table from float values.">pvr_fog_table_custom()</a> </dd></dl>
 
 </div>
 </div>
@@ -342,7 +354,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the vertex fog color. </p>
-<p>This function sets the fog color for vertex fog. 0-1 range for all colors. This function is currently not implemented, as vertex fog is not supported by KOS. Calling this function will cause an assertion failure.</p>
+<p>This function sets the fog color for vertex fog. <code>0-1</code> range for all colors.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo</a></b></dt><dd>This function is currently not implemented, as vertex fog is not supported by KOS. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Calling this function will cause an assertion failure.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>Alpha value of the fog </td></tr>

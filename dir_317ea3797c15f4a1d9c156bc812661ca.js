@@ -9,7 +9,6 @@ var dir_317ea3797c15f4a1d9c156bc812661ca =
     [ "select.h", "select_8h.html", "select_8h" ],
     [ "socket.h", "socket_8h.html", "socket_8h" ],
     [ "stdio.h", "stdio_8h.html", "stdio_8h" ],
-    [ "termios.h", "termios_8h.html", "termios_8h" ],
     [ "uio.h", "uio_8h.html", "uio_8h" ],
     [ "utsname.h", "utsname_8h.html", "utsname_8h" ]
 ];

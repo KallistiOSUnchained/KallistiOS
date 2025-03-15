@@ -5,5 +5,6 @@ var searchData=
   ['iovec_2',['iovec',['../structiovec.html',1,'']]],
   ['ip_5fhdr_5ft_3',['ip_hdr_t',['../structip__hdr__t.html',1,'']]],
   ['ipv6_5fhdr_5ft_4',['ipv6_hdr_t',['../structipv6__hdr__t.html',1,'']]],
-  ['irq_5fcontext_5ft_5',['irq_context_t',['../structirq__context__t.html',1,'']]]
+  ['irq_5fcb_5ft_5',['irq_cb_t',['../structirq__cb__t.html',1,'']]],
+  ['irq_5fcontext_5ft_6',['irq_context_t',['../structirq__context__t.html',1,'']]]
 ];

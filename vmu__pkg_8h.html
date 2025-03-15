@@ -108,7 +108,7 @@ $(function(){initNavTree('vmu__pkg_8h.html',''); initResizable(true); });
 <p>VMU Packaging functionality.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 </div>
 <p><a href="vmu__pkg_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -138,12 +138,15 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga8ba955bdb70a86e4008400b4892a08fa" id="r_ga8ba955bdb70a86e4008400b4892a08fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__package.html#ga8ba955bdb70a86e4008400b4892a08fa">vmu_pkg_build</a> (<a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *src, <a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> **dst, int *dst_size)</td></tr>
-<tr class="memdesc:ga8ba955bdb70a86e4008400b4892a08fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <a class="el" href="structvmu__pkg__t.html" title="VMU Package type.">vmu_pkg_t</a> into an array of uint8s.  <br /></td></tr>
-<tr class="separator:ga8ba955bdb70a86e4008400b4892a08fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga54577f9ae7f9f811d3838282a3950f47" id="r_ga54577f9ae7f9f811d3838282a3950f47"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__package.html#ga54577f9ae7f9f811d3838282a3950f47">vmu_pkg_parse</a> (<a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> *data, <a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg)</td></tr>
-<tr class="memdesc:ga54577f9ae7f9f811d3838282a3950f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an array of uint8s into a <a class="el" href="structvmu__pkg__t.html" title="VMU Package type.">vmu_pkg_t</a>.  <br /></td></tr>
-<tr class="separator:ga54577f9ae7f9f811d3838282a3950f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80053b490bc194a98a89acf91d27c984" id="r_ga80053b490bc194a98a89acf91d27c984"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__package.html#ga80053b490bc194a98a89acf91d27c984">vmu_pkg_build</a> (<a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *src, uint8_t **dst, int *dst_size)</td></tr>
+<tr class="memdesc:ga80053b490bc194a98a89acf91d27c984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <a class="el" href="structvmu__pkg__t.html" title="VMU Package type.">vmu_pkg_t</a> into an array of uint8s.  <br /></td></tr>
+<tr class="separator:ga80053b490bc194a98a89acf91d27c984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc8110f5983da5ea46f4c1e3f648fd60" id="r_gadc8110f5983da5ea46f4c1e3f648fd60"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__package.html#gadc8110f5983da5ea46f4c1e3f648fd60">vmu_pkg_parse</a> (uint8_t *data, <a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg)</td></tr>
+<tr class="memdesc:gadc8110f5983da5ea46f4c1e3f648fd60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an array of uint8s into a <a class="el" href="structvmu__pkg__t.html" title="VMU Package type.">vmu_pkg_t</a>.  <br /></td></tr>
+<tr class="separator:gadc8110f5983da5ea46f4c1e3f648fd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga76ef47c910340f550a75b074a3d30b0b" id="r_ga76ef47c910340f550a75b074a3d30b0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vmu__package.html#ga76ef47c910340f550a75b074a3d30b0b">vmu_pkg_load_icon</a> (<a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg, const char *icon_fn)</td></tr>
+<tr class="memdesc:ga76ef47c910340f550a75b074a3d30b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a .ico file to use as a VMU file's icon.  <br /></td></tr>
+<tr class="separator:ga76ef47c910340f550a75b074a3d30b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>VMU Packaging functionality. </p>

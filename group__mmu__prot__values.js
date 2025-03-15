@@ -1,7 +1,9 @@
 var group__mmu__prot__values =
 [
-    [ "MMU_ALL_RDONLY", "group__mmu__prot__values.html#ga41bb197fa6677f3568b4d965c3b89379", null ],
-    [ "MMU_ALL_RDWR", "group__mmu__prot__values.html#gae62e749b994950ccb572af032eecf0c4", null ],
-    [ "MMU_KERNEL_RDONLY", "group__mmu__prot__values.html#ga3ea26a2af1f5c77c800d04bcbd2b9f4e", null ],
-    [ "MMU_KERNEL_RDWR", "group__mmu__prot__values.html#gad26df705dc75a83e024c260d6e2aec98", null ]
+    [ "page_prot_t", "group__mmu__prot__values.html#gabb74621125b66f85a633b965209f92ec", [
+      [ "MMU_KERNEL_RDONLY", "group__mmu__prot__values.html#ggabb74621125b66f85a633b965209f92ecaf7f36b98041a6cdb95caa31038818ebb", null ],
+      [ "MMU_KERNEL_RDWR", "group__mmu__prot__values.html#ggabb74621125b66f85a633b965209f92eca74682ac2a94362d6e636ce68b60dd4a3", null ],
+      [ "MMU_ALL_RDONLY", "group__mmu__prot__values.html#ggabb74621125b66f85a633b965209f92eca60a56b06e8d223911fb6ee0eb3075167", null ],
+      [ "MMU_ALL_RDWR", "group__mmu__prot__values.html#ggabb74621125b66f85a633b965209f92ecab13121ab06ec05f300945898cecf8b86", null ]
+    ] ]
 ];

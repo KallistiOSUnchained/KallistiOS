@@ -5,5 +5,6 @@ var structpvr__init__params__t =
     [ "fsaa_enabled", "structpvr__init__params__t.html#a29dc5c626e3c2e5e068e5e6416ac087e", null ],
     [ "opb_overflow_count", "structpvr__init__params__t.html#abf1dde86528c2cbc34c4d01eb921bcf3", null ],
     [ "opb_sizes", "structpvr__init__params__t.html#a848b6028dcc7ac343c89fc6d5ceb47b9", null ],
+    [ "vbuf_doublebuf_disabled", "structpvr__init__params__t.html#a3c3a69b5457754c08436f31f7e114a43", null ],
     [ "vertex_buf_size", "structpvr__init__params__t.html#aa34d6c39a693ca1b1555aaade5f26a30", null ]
 ];

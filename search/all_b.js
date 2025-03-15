@@ -139,6 +139,6 @@ var searchData=
   ['ext2_136',['EXT2',['../group__vfs__ext2.html',1,'']]],
   ['external_20port_137',['External Port',['../group__asic__events__ext.html',1,'']]],
   ['eyecatch_20types_138',['Eyecatch Types',['../group__vmu__ectype.html',1,'']]],
-  ['eyecatch_5fdata_139',['eyecatch_data',['../structvmu__pkg__t.html#ae3b2f08886653f6cb8aa5be3dbb730b0',1,'vmu_pkg_t']]],
-  ['eyecatch_5ftype_140',['eyecatch_type',['../structvmu__pkg__t.html#a082a9da1aa2009396b683efb853f526f',1,'vmu_pkg_t::eyecatch_type'],['../structvmu__hdr__t.html#a15681453f79ab6a96bd1f133eb9b36fb',1,'vmu_hdr_t::eyecatch_type']]]
+  ['eyecatch_5fdata_139',['eyecatch_data',['../structvmu__pkg__t.html#ae08acecff8703dc9fd484632dd131551',1,'vmu_pkg_t']]],
+  ['eyecatch_5ftype_140',['eyecatch_type',['../structvmu__pkg__t.html#a082a9da1aa2009396b683efb853f526f',1,'vmu_pkg_t::eyecatch_type'],['../structvmu__hdr__t.html#a415e4932778efea6346ea039a77731e5',1,'vmu_hdr_t::eyecatch_type']]]
 ];

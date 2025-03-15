@@ -98,7 +98,8 @@ $(function(){initNavTree('group__pvr__pal__mgmt.html',''); initResizable(true); 
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Topics</a> &#124;
+<a href="#files">Files</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Palettes<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__pvr.html">PowerVR API</a> &raquo; <a class="el" href="group__pvr__global.html">Global State</a></div></div></div>
 </div><!--header-->
@@ -107,15 +108,25 @@ $(function(){initNavTree('group__pvr__pal__mgmt.html',''); initResizable(true); 
 <p>Color palette management API of the PowerVR  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__palfmt.html">Formats</a></td></tr>
-<tr class="memdesc:group__pvr__palfmt"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color palette formats of the PowerVR <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pvr__pal_8h.html">pvr_pal.h</a></td></tr>
+<tr class="memdesc:pvr__pal_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Palette API for the PowerVR. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga67a1d5c39b356f7811c8efd68565e148" id="r_ga67a1d5c39b356f7811c8efd68565e148"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga67a1d5c39b356f7811c8efd68565e148">pvr_palfmt_t</a> { <a class="el" href="#gga67a1d5c39b356f7811c8efd68565e148a24dc00102d9e008a4684a9743b729bf8">PVR_PAL_ARGB1555</a>
+, <a class="el" href="#gga67a1d5c39b356f7811c8efd68565e148ac0c71a62537b8602d40899c15b322711">PVR_PAL_RGB565</a>
+, <a class="el" href="#gga67a1d5c39b356f7811c8efd68565e148a3479fe62796d3eb55218526d5f58dc0e">PVR_PAL_ARGB4444</a>
+, <a class="el" href="#gga67a1d5c39b356f7811c8efd68565e148ac229691a9d76eb2094e9e772d1153ca2">PVR_PAL_ARGB8888</a>
+ }</td></tr>
+<tr class="memdesc:ga67a1d5c39b356f7811c8efd68565e148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color palette formats of the PowerVR.  <a href="#ga67a1d5c39b356f7811c8efd68565e148">More...</a><br /></td></tr>
+<tr class="separator:ga67a1d5c39b356f7811c8efd68565e148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gafbc1412daff1c48dc43905b02fee27e9" id="r_gafbc1412daff1c48dc43905b02fee27e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafbc1412daff1c48dc43905b02fee27e9">pvr_set_pal_format</a> (<a class="el" href="group__pvr__palfmt.html#ga67a1d5c39b356f7811c8efd68565e148">pvr_palfmt_t</a> fmt)</td></tr>
+<tr class="memitem:gafbc1412daff1c48dc43905b02fee27e9" id="r_gafbc1412daff1c48dc43905b02fee27e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafbc1412daff1c48dc43905b02fee27e9">pvr_set_pal_format</a> (<a class="el" href="#ga67a1d5c39b356f7811c8efd68565e148">pvr_palfmt_t</a> fmt)</td></tr>
 <tr class="memdesc:gafbc1412daff1c48dc43905b02fee27e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the palette format.  <br /></td></tr>
 <tr class="separator:gafbc1412daff1c48dc43905b02fee27e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga32c8879d08573f79c5b8798fb7600109" id="r_ga32c8879d08573f79c5b8798fb7600109"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga32c8879d08573f79c5b8798fb7600109">pvr_set_pal_entry</a> (uint32_t idx, uint32_t value)</td></tr>
@@ -126,6 +137,34 @@ Functions</h2></td></tr>
 <p>Color palette management API of the PowerVR </p>
 <p>In addition to its 16-bit truecolor modes, the PVR also supports some nice paletted modes.</p>
 <dl class="section remark"><dt>Remarks</dt><dd>These aren't useful for super high quality images most of the time, but they can be useful for doing some interesting special effects, like the old cheap "worm hole". </dd></dl>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga67a1d5c39b356f7811c8efd68565e148" name="ga67a1d5c39b356f7811c8efd68565e148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67a1d5c39b356f7811c8efd68565e148">&#9670;&#160;</a></span>pvr_palfmt_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ga67a1d5c39b356f7811c8efd68565e148">pvr_palfmt_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Color palette formats of the PowerVR. </p>
+<p>Entries in the PVR's palettes can be of any of these formats. Note that you can only have one format active at a time. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga67a1d5c39b356f7811c8efd68565e148a24dc00102d9e008a4684a9743b729bf8" name="gga67a1d5c39b356f7811c8efd68565e148a24dc00102d9e008a4684a9743b729bf8"></a>PVR_PAL_ARGB1555&#160;</td><td class="fielddoc"><p>16-bit ARGB1555 palette format </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga67a1d5c39b356f7811c8efd68565e148ac0c71a62537b8602d40899c15b322711" name="gga67a1d5c39b356f7811c8efd68565e148ac0c71a62537b8602d40899c15b322711"></a>PVR_PAL_RGB565&#160;</td><td class="fielddoc"><p>16-bit RGB565 palette format </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga67a1d5c39b356f7811c8efd68565e148a3479fe62796d3eb55218526d5f58dc0e" name="gga67a1d5c39b356f7811c8efd68565e148a3479fe62796d3eb55218526d5f58dc0e"></a>PVR_PAL_ARGB4444&#160;</td><td class="fielddoc"><p>16-bit ARGB4444 palette format </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga67a1d5c39b356f7811c8efd68565e148ac229691a9d76eb2094e9e772d1153ca2" name="gga67a1d5c39b356f7811c8efd68565e148ac229691a9d76eb2094e9e772d1153ca2"></a>PVR_PAL_ARGB8888&#160;</td><td class="fielddoc"><p>32-bit ARGB8888 palette format </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga32c8879d08573f79c5b8798fb7600109" name="ga32c8879d08573f79c5b8798fb7600109"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga32c8879d08573f79c5b8798fb7600109">&#9670;&#160;</a></span>pvr_set_pal_entry()</h2>
@@ -177,7 +216,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void pvr_set_pal_format </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__pvr__palfmt.html#ga67a1d5c39b356f7811c8efd68565e148">pvr_palfmt_t</a></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#ga67a1d5c39b356f7811c8efd68565e148">pvr_palfmt_t</a></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -185,14 +224,13 @@ Functions</h2></td></tr>
 
 <p>Set the palette format. </p>
 <p>This function sets the currently active palette format on the PVR. Each entry in the palette table is 32-bits in length, regardless of what color format is in use.</p>
-<p>Be sure to use care when using the PVR_PAL_ARGB8888 format. Rendering speed is greatly affected (cut about in half) if you use any filtering with paletted textures with ARGB8888 entries in the palette.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Be sure to use care when using the PVR_PAL_ARGB8888 format. Rendering speed is greatly affected (cut about in half) if you use any filtering with paletted textures with ARGB8888 entries in the palette.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fmt</td><td>The format to use </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__pvr__palfmt.html#ga67a1d5c39b356f7811c8efd68565e148">pvr_palfmt_t</a> </dd></dl>
 
 </div>
 </div>

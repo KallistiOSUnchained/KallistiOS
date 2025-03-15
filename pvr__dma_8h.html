@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: kernel/arch/dreamcast/include/dc/pvr_dma.h File Reference</title>
+<title>KallistiOS: kernel/arch/dreamcast/include/dc/pvr/pvr_dma.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,93 +101,75 @@ $(function(){initNavTree('pvr__dma_8h.html',''); initResizable(true); });
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">pvr_dma.h File Reference<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__pvr.html">PowerVR API</a></div></div></div>
+  <div class="headertitle"><div class="title">pvr_dma.h File Reference<div class="ingroups"><a class="el" href="group__video.html">Video</a> &raquo; <a class="el" href="group__pvr.html">PowerVR API</a> &raquo; <a class="el" href="group__pvr__dma.html">DMA</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>PVR/TA DMA interface.  
+<p>API for utilizing the DMA with the PVR for rendering.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="sq_8h_source.html">dc/sq.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;sys/cdefs.h&gt;</code><br />
 </div>
 <p><a href="pvr__dma_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a621fa8a260d17a31b12d4155426d0fa4" id="r_a621fa8a260d17a31b12d4155426d0fa4"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a></td></tr>
-<tr class="separator:a621fa8a260d17a31b12d4155426d0fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1c983e6877a569204c25ec9e5ad48d63" id="r_ga1c983e6877a569204c25ec9e5ad48d63"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a>) (void *data)</td></tr>
 <tr class="memdesc:ga1c983e6877a569204c25ec9e5ad48d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">PVR DMA interrupt callback type.  <br /></td></tr>
 <tr class="separator:ga1c983e6877a569204c25ec9e5ad48d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga7d772c6dfeec1493c31bb6a200cd3744" id="r_ga7d772c6dfeec1493c31bb6a200cd3744"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> { <br />
-&#160;&#160;<a class="el" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">PVR_DMA_VRAM64</a>
-, <a class="el" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">PVR_DMA_VRAM32</a>
-, <a class="el" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">PVR_DMA_TA</a>
-, <a class="el" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">PVR_DMA_YUV</a>
+<tr class="memitem:ga7d772c6dfeec1493c31bb6a200cd3744" id="r_ga7d772c6dfeec1493c31bb6a200cd3744"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> { <br />
+&#160;&#160;<a class="el" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744afaba0c72033f26fb2b8ab7aec80e8a77">PVR_DMA_VRAM64</a>
+, <a class="el" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a93bbfc6753338b4ba5136f68188e0df5">PVR_DMA_VRAM32</a>
+, <a class="el" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a00a5de5fff8a3ddf7dfec57026f918dc">PVR_DMA_TA</a>
+, <a class="el" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744aa8301fa03015fdf178b78ccb2bbadfe3">PVR_DMA_YUV</a>
 , <br />
-&#160;&#160;<a class="el" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">PVR_DMA_VRAM32_SB</a>
-, <a class="el" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">PVR_DMA_VRAM64_SB</a>
-, <a class="el" href="group__pvr__dma__type.html#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">PVR_DMA_REGISTERS</a>
+&#160;&#160;<a class="el" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a2c305a28d30dcda9a37bfea969fe4049">PVR_DMA_VRAM32_SB</a>
+, <a class="el" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744aceda251428b672b45fef93344e7f105b">PVR_DMA_VRAM64_SB</a>
+, <a class="el" href="group__pvr__dma.html#gga7d772c6dfeec1493c31bb6a200cd3744a4df192f91b966baabc4f72a4457279f7">PVR_DMA_REGISTERS</a>
 <br />
  }</td></tr>
+<tr class="memdesc:ga7d772c6dfeec1493c31bb6a200cd3744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfer modes with TA/PVR DMA and Store Queues.  <a href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">More...</a><br /></td></tr>
 <tr class="separator:ga7d772c6dfeec1493c31bb6a200cd3744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga3d92510391f4cfdbe06a531a69827e54" id="r_ga3d92510391f4cfdbe06a531a69827e54"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga3d92510391f4cfdbe06a531a69827e54">pvr_dma_transfer</a> (const void *src, void *dest, size_t count, <a class="el" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type, int block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
-<tr class="memdesc:ga3d92510391f4cfdbe06a531a69827e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a DMA transfer to/from the TA/PVR RAM.  <br /></td></tr>
-<tr class="separator:ga3d92510391f4cfdbe06a531a69827e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf646382b9252ce7ff46d346ad1bca523" id="r_gaf646382b9252ce7ff46d346ad1bca523"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#gaf646382b9252ce7ff46d346ad1bca523">pvr_txr_load_dma</a> (const void *src, <a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dest, size_t count, int block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata) <a class="el" href="group__system__macros.html#ga392e91d0f8a0af994874aadeed30534d">__depr</a>(&quot;Use <a class="el" href="group__pvr__dma.html#gab9fce8e20ebac9ff07500339bbec2987">pvr_dma_ta_load_txr</a> instead.&quot;)</td></tr>
-<tr class="memdesc:gaf646382b9252ce7ff46d346ad1bca523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a texture using TA DMA.  <br /></td></tr>
-<tr class="separator:gaf646382b9252ce7ff46d346ad1bca523"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab9fce8e20ebac9ff07500339bbec2987" id="r_gab9fce8e20ebac9ff07500339bbec2987"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#gab9fce8e20ebac9ff07500339bbec2987">pvr_dma_ta_load_txr</a> (const void *src, <a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dest, size_t count, int block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
-<tr class="memdesc:gab9fce8e20ebac9ff07500339bbec2987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a texture using TA DMA.  <br /></td></tr>
-<tr class="separator:gab9fce8e20ebac9ff07500339bbec2987"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaffbd9e0f61dae3e4b9b4417ab7f264f8" id="r_gaffbd9e0f61dae3e4b9b4417ab7f264f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#gaffbd9e0f61dae3e4b9b4417ab7f264f8">pvr_dma_rb_load_txr</a> (const void *src, <a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dest, size_t count, int block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
-<tr class="memdesc:gaffbd9e0f61dae3e4b9b4417ab7f264f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a texture using PVR DMA.  <br /></td></tr>
-<tr class="separator:gaffbd9e0f61dae3e4b9b4417ab7f264f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga308b01012bbe28dfbc0a4b8c680a9fc4" id="r_ga308b01012bbe28dfbc0a4b8c680a9fc4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga308b01012bbe28dfbc0a4b8c680a9fc4">pvr_dma_download_txr</a> (const void *src, void *dest, size_t count, int block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
-<tr class="memdesc:ga308b01012bbe28dfbc0a4b8c680a9fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download a texture using PVR DMA.  <br /></td></tr>
-<tr class="separator:ga308b01012bbe28dfbc0a4b8c680a9fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9c43a18a5c44c04f14f7445e7e41dd6e" id="r_ga9c43a18a5c44c04f14f7445e7e41dd6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga9c43a18a5c44c04f14f7445e7e41dd6e">pvr_dma_load_ta</a> (const void *src, size_t count, int block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
-<tr class="memdesc:ga9c43a18a5c44c04f14f7445e7e41dd6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load vertex data to the TA using TA DMA.  <br /></td></tr>
-<tr class="separator:ga9c43a18a5c44c04f14f7445e7e41dd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaddc2155f9725e1c514299bc4f3e99efd" id="r_gaddc2155f9725e1c514299bc4f3e99efd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#gaddc2155f9725e1c514299bc4f3e99efd">pvr_dma_yuv_conv</a> (const void *src, size_t count, int block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
-<tr class="memdesc:gaddc2155f9725e1c514299bc4f3e99efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load yuv data to the YUV converter using TA DMA.  <br /></td></tr>
-<tr class="separator:gaddc2155f9725e1c514299bc4f3e99efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04de1a27a256b15e1296961b13cb6b45" id="r_ga04de1a27a256b15e1296961b13cb6b45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga04de1a27a256b15e1296961b13cb6b45">pvr_dma_ready</a> (void) <a class="el" href="group__system__macros.html#ga392e91d0f8a0af994874aadeed30534d">__depr</a>(&quot;Use <a class="el" href="group__pvr__dma.html#ga8e61fe6cb891c5d29dd6cc69a787fe18">pvr_dma_ta_ready</a> instead.&quot;)</td></tr>
-<tr class="memdesc:ga04de1a27a256b15e1296961b13cb6b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the TA DMA is inactive.  <br /></td></tr>
-<tr class="separator:ga04de1a27a256b15e1296961b13cb6b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8e61fe6cb891c5d29dd6cc69a787fe18" id="r_ga8e61fe6cb891c5d29dd6cc69a787fe18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga8e61fe6cb891c5d29dd6cc69a787fe18">pvr_dma_ta_ready</a> (void)</td></tr>
-<tr class="memdesc:ga8e61fe6cb891c5d29dd6cc69a787fe18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the TA DMA is inactive.  <br /></td></tr>
-<tr class="separator:ga8e61fe6cb891c5d29dd6cc69a787fe18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf1053b29573bbab8a654eecf285b6c32" id="r_gaf1053b29573bbab8a654eecf285b6c32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#gaf1053b29573bbab8a654eecf285b6c32">pvr_dma_rb_ready</a> (void)</td></tr>
-<tr class="memdesc:gaf1053b29573bbab8a654eecf285b6c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the PVR DMA is inactive.  <br /></td></tr>
-<tr class="separator:gaf1053b29573bbab8a654eecf285b6c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2052d2931d4d43a1f9a9a522411cc767" id="r_ga2052d2931d4d43a1f9a9a522411cc767"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga2052d2931d4d43a1f9a9a522411cc767">pvr_dma_transfer</a> (const void *src, uintptr_t dest, size_t count, <a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type, bool block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
+<tr class="memdesc:ga2052d2931d4d43a1f9a9a522411cc767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a DMA transfer to the PVR RAM over 64-bit TA bus.  <br /></td></tr>
+<tr class="separator:ga2052d2931d4d43a1f9a9a522411cc767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fb51a5199b68eb794dfee318a6ab99a" id="r_ga2fb51a5199b68eb794dfee318a6ab99a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga2fb51a5199b68eb794dfee318a6ab99a">pvr_txr_load_dma</a> (const void *src, <a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a> dest, size_t count, bool block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
+<tr class="memdesc:ga2fb51a5199b68eb794dfee318a6ab99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a texture using TA DMA.  <br /></td></tr>
+<tr class="separator:ga2fb51a5199b68eb794dfee318a6ab99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8cb0c72f5ade6e432e4d1c9920228a48" id="r_ga8cb0c72f5ade6e432e4d1c9920228a48"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga8cb0c72f5ade6e432e4d1c9920228a48">pvr_dma_load_ta</a> (const void *src, size_t count, bool block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
+<tr class="memdesc:ga8cb0c72f5ade6e432e4d1c9920228a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load vertex data to the TA using TA DMA.  <br /></td></tr>
+<tr class="separator:ga8cb0c72f5ade6e432e4d1c9920228a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07a9d0bac01e1149b1732ef83837c16d" id="r_ga07a9d0bac01e1149b1732ef83837c16d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga07a9d0bac01e1149b1732ef83837c16d">pvr_dma_yuv_conv</a> (const void *src, size_t count, bool block, <a class="el" href="group__pvr__dma.html#ga1c983e6877a569204c25ec9e5ad48d63">pvr_dma_callback_t</a> callback, void *cbdata)</td></tr>
+<tr class="memdesc:ga07a9d0bac01e1149b1732ef83837c16d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load yuv data to the YUV converter using TA DMA.  <br /></td></tr>
+<tr class="separator:ga07a9d0bac01e1149b1732ef83837c16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a286584074c5d23d73ab3575ec033ba" id="r_ga4a286584074c5d23d73ab3575ec033ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga4a286584074c5d23d73ab3575ec033ba">pvr_dma_ready</a> (void)</td></tr>
+<tr class="memdesc:ga4a286584074c5d23d73ab3575ec033ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is PVR DMA is inactive?  <br /></td></tr>
+<tr class="separator:ga4a286584074c5d23d73ab3575ec033ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad109fa463b781e04238895138e0a2a38" id="r_gad109fa463b781e04238895138e0a2a38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#gad109fa463b781e04238895138e0a2a38">pvr_dma_init</a> (void)</td></tr>
 <tr class="memdesc:gad109fa463b781e04238895138e0a2a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize TA/PVR DMA.  <br /></td></tr>
 <tr class="separator:gad109fa463b781e04238895138e0a2a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaea1ae7a936cd5952942d6039f00c9862" id="r_gaea1ae7a936cd5952942d6039f00c9862"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#gaea1ae7a936cd5952942d6039f00c9862">pvr_dma_shutdown</a> (void)</td></tr>
 <tr class="memdesc:gaea1ae7a936cd5952942d6039f00c9862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shut down TA/PVR DMA.  <br /></td></tr>
 <tr class="separator:gaea1ae7a936cd5952942d6039f00c9862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga862e89040f0b6a0649843f9e2f08ee9a" id="r_ga862e89040f0b6a0649843f9e2f08ee9a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga862e89040f0b6a0649843f9e2f08ee9a">pvr_sq_load</a> (void *dest, const void *src, size_t n, <a class="el" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
+<tr class="memitem:ga862e89040f0b6a0649843f9e2f08ee9a" id="r_ga862e89040f0b6a0649843f9e2f08ee9a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__store__queues.html#ga862e89040f0b6a0649843f9e2f08ee9a">pvr_sq_load</a> (void *dest, const void *src, size_t n, <a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
 <tr class="memdesc:ga862e89040f0b6a0649843f9e2f08ee9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a block of memory to VRAM.  <br /></td></tr>
 <tr class="separator:ga862e89040f0b6a0649843f9e2f08ee9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga279e1dc13ceda7c544ed72a9e4141fac" id="r_ga279e1dc13ceda7c544ed72a9e4141fac"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga279e1dc13ceda7c544ed72a9e4141fac">pvr_sq_set16</a> (void *dest, uint32_t c, size_t n, <a class="el" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
+<tr class="memitem:ga279e1dc13ceda7c544ed72a9e4141fac" id="r_ga279e1dc13ceda7c544ed72a9e4141fac"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__store__queues.html#ga279e1dc13ceda7c544ed72a9e4141fac">pvr_sq_set16</a> (void *dest, uint32_t c, size_t n, <a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
 <tr class="memdesc:ga279e1dc13ceda7c544ed72a9e4141fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a block of PVR memory to a 16-bit value.  <br /></td></tr>
 <tr class="separator:ga279e1dc13ceda7c544ed72a9e4141fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga60be360851438cc0c0a0d8d9c4ec8230" id="r_ga60be360851438cc0c0a0d8d9c4ec8230"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pvr__dma.html#ga60be360851438cc0c0a0d8d9c4ec8230">pvr_sq_set32</a> (void *dest, uint32_t c, size_t n, <a class="el" href="group__pvr__dma__type.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
+<tr class="memitem:ga60be360851438cc0c0a0d8d9c4ec8230" id="r_ga60be360851438cc0c0a0d8d9c4ec8230"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__store__queues.html#ga60be360851438cc0c0a0d8d9c4ec8230">pvr_sq_set32</a> (void *dest, uint32_t c, size_t n, <a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
 <tr class="memdesc:ga60be360851438cc0c0a0d8d9c4ec8230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a block of PVR memory to a 32-bit value.  <br /></td></tr>
 <tr class="separator:ga60be360851438cc0c0a0d8d9c4ec8230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>PVR/TA DMA interface. </p>
-<p>This file provides support for PVR DMA and TA DMA transfers in the Dreamcast. These DMA types can be used independently of each other, and both can operate concurrently. Depending on the transfer method specified, the appropriate DMA mechanism is selected.</p>
-<p>TA DMA (Tile Accelerator DMA): This is a one-way transfer method used primarily for submitting data directly to the Tile Accelerator (TA). It is commonly used for submitting vertex data, texture data, and YUV conversion data.</p>
-<p>PVR DMA (PowerVR DMA): This is a more flexible, two-way transfer mechanism that supports both uploading and downloading data. PVR DMA is used for transferring textures and palette data to VRAM, downloading data from VRAM to the SH4, and for handling register data (e. palettes, fog tables).</p>
+<div class="textblock"><p>API for utilizing the DMA with the PVR for rendering. </p>
 <dl class="section author"><dt>Author</dt><dd>Megan Potter </dd>
 <dd>
 Roger Cattermole </dd>
@@ -200,28 +182,19 @@ Lawrence Sebald </dd>
 <dd>
 Benoit Miller </dd>
 <dd>
-Ruslan Rostovtsev </dd></dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a621fa8a260d17a31b12d4155426d0fa4" name="a621fa8a260d17a31b12d4155426d0fa4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a621fa8a260d17a31b12d4155426d0fa4">&#9670;&#160;</a></span>pvr_ptr_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef void* <a class="el" href="group__pvr__vram.html#ga621fa8a260d17a31b12d4155426d0fa4">pvr_ptr_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+Ruslan Rostovtsev </dd>
+<dd>
+Falco Girgis</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo</a></b></dt><dd><ul>
+<li>Top level "Transfer" group a. DMA b. SQs </li>
+</ul>
+</dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="dir_49fbd9c46ac73fe76d8a6b686de400da.html">dreamcast</a></li><li class="navelem"><a class="el" href="dir_08ece2ffab5ad20e41852b4cf81b30e2.html">include</a></li><li class="navelem"><a class="el" href="dir_39421b6c340728d4b73811bee3577133.html">dc</a></li><li class="navelem"><a class="el" href="pvr__dma_8h.html">pvr_dma.h</a></li>
+    <li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="dir_49fbd9c46ac73fe76d8a6b686de400da.html">dreamcast</a></li><li class="navelem"><a class="el" href="dir_08ece2ffab5ad20e41852b4cf81b30e2.html">include</a></li><li class="navelem"><a class="el" href="dir_39421b6c340728d4b73811bee3577133.html">dc</a></li><li class="navelem"><a class="el" href="dir_323b7fb2b5c5a279a7364037e09b4dac.html">pvr</a></li><li class="navelem"><a class="el" href="pvr__dma_8h.html">pvr_dma.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

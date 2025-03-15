@@ -187,27 +187,6 @@ Macros</h2></td></tr>
 <tr class="memitem:ga4394a5304d7635437adcc7ed58262f2c" id="r_ga4394a5304d7635437adcc7ed58262f2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4394a5304d7635437adcc7ed58262f2c">DBL_MEM</a>&#160;&#160;&#160;(<a class="el" href="#ga77cc74c7207b1839793919978ac12b47">_arch_mem_top</a> - 0x8d000000)</td></tr>
 <tr class="memdesc:ga4394a5304d7635437adcc7ed58262f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this macro to easily determine if system has 32MB of RAM.  <br /></td></tr>
 <tr class="separator:ga4394a5304d7635437adcc7ed58262f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8d9b1b29f325cb276f6c62dde830d702" id="r_ga8d9b1b29f325cb276f6c62dde830d702"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8d9b1b29f325cb276f6c62dde830d702">arch_sleep</a>()</td></tr>
-<tr class="memdesc:ga8d9b1b29f325cb276f6c62dde830d702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast specific sleep mode "function".  <br /></td></tr>
-<tr class="separator:ga8d9b1b29f325cb276f6c62dde830d702"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga918cbb6c3977d897b3c205407dda1891" id="r_ga918cbb6c3977d897b3c205407dda1891"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga918cbb6c3977d897b3c205407dda1891">arch_get_ret_addr</a>()</td></tr>
-<tr class="memdesc:ga918cbb6c3977d897b3c205407dda1891"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC specific "function" to get the return address from the current function.  <br /></td></tr>
-<tr class="separator:ga918cbb6c3977d897b3c205407dda1891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4bf02fe7e5534d6fd8d67dc45f32f7b4" id="r_ga4bf02fe7e5534d6fd8d67dc45f32f7b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4bf02fe7e5534d6fd8d67dc45f32f7b4">arch_get_fptr</a>()</td></tr>
-<tr class="memdesc:ga4bf02fe7e5534d6fd8d67dc45f32f7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC specific "function" to get the frame pointer from the current function.  <br /></td></tr>
-<tr class="separator:ga4bf02fe7e5534d6fd8d67dc45f32f7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga382f88c6cc8d7ce7f1841e56e94d94d7" id="r_ga382f88c6cc8d7ce7f1841e56e94d94d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga382f88c6cc8d7ce7f1841e56e94d94d7">arch_fptr_ret_addr</a>(fptr)&#160;&#160;&#160;(*((<a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>*)(fptr)))</td></tr>
-<tr class="memdesc:ga382f88c6cc8d7ce7f1841e56e94d94d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass in a frame pointer value to get the return address for the given frame.  <br /></td></tr>
-<tr class="separator:ga382f88c6cc8d7ce7f1841e56e94d94d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga915feed501d27550bfec72705543dee1" id="r_ga915feed501d27550bfec72705543dee1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga915feed501d27550bfec72705543dee1">arch_fptr_next</a>(fptr)&#160;&#160;&#160;(*((<a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>*)((fptr)+4)))</td></tr>
-<tr class="memdesc:ga915feed501d27550bfec72705543dee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass in a frame pointer value to get the previous frame pointer for the given frame.  <br /></td></tr>
-<tr class="separator:ga915feed501d27550bfec72705543dee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9f4ceb692456160c38e8cbf16702c60e" id="r_ga9f4ceb692456160c38e8cbf16702c60e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9f4ceb692456160c38e8cbf16702c60e">arch_valid_address</a>(ptr)&#160;&#160;&#160;((<a class="el" href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a>)(ptr) &gt;= 0x8c010000 &amp;&amp; (<a class="el" href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a>)(ptr) &lt; <a class="el" href="#ga77cc74c7207b1839793919978ac12b47">_arch_mem_top</a>)</td></tr>
-<tr class="memdesc:ga9f4ceb692456160c38e8cbf16702c60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the passed address is likely to be valid.  <br /></td></tr>
-<tr class="separator:ga9f4ceb692456160c38e8cbf16702c60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac90dbe4c6359827226569942bf0e9397" id="r_gac90dbe4c6359827226569942bf0e9397"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac90dbe4c6359827226569942bf0e9397">arch_valid_text_address</a>(ptr)&#160;&#160;&#160;    ((uintptr_t)(ptr) &gt;= (uintptr_t)&amp;<a class="el" href="#ga5541094cb97b935cdbd4cc50461ab5eb">_executable_start</a> &amp;&amp; (uintptr_t)(ptr) &lt; (uintptr_t)&amp;<a class="el" href="#gae4ac23ee1563c1bbcb0921de93c24832">_etext</a>)</td></tr>
-<tr class="memdesc:gac90dbe4c6359827226569942bf0e9397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the passed address is in the text section of your program.  <br /></td></tr>
-<tr class="separator:gac90dbe4c6359827226569942bf0e9397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -259,6 +238,27 @@ Functions</h2></td></tr>
 <tr class="memitem:gafd8fcf4bf29661fe4a507a3868097d73" id="r_gafd8fcf4bf29661fe4a507a3868097d73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafd8fcf4bf29661fe4a507a3868097d73">hardware_sys_mode</a> (int *region)</td></tr>
 <tr class="memdesc:gafd8fcf4bf29661fe4a507a3868097d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the system mode of the console in use.  <br /></td></tr>
 <tr class="separator:gafd8fcf4bf29661fe4a507a3868097d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55fc7a1503773dfc8a9ff3e8d7b24f39" id="r_ga55fc7a1503773dfc8a9ff3e8d7b24f39"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga55fc7a1503773dfc8a9ff3e8d7b24f39">arch_sleep</a> (void)</td></tr>
+<tr class="memdesc:ga55fc7a1503773dfc8a9ff3e8d7b24f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dreamcast specific sleep mode function.  <br /></td></tr>
+<tr class="separator:ga55fc7a1503773dfc8a9ff3e8d7b24f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade55a5850429616d68fbd6a9cb98effe" id="r_gade55a5850429616d68fbd6a9cb98effe"><td class="memItemLeft" align="right" valign="top">static uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gade55a5850429616d68fbd6a9cb98effe">arch_get_ret_addr</a> (void)</td></tr>
+<tr class="memdesc:gade55a5850429616d68fbd6a9cb98effe"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC specific "function" to get the return address from the current function.  <br /></td></tr>
+<tr class="separator:gade55a5850429616d68fbd6a9cb98effe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ed1f3eb40fc935345caf675fb2373f0" id="r_ga5ed1f3eb40fc935345caf675fb2373f0"><td class="memItemLeft" align="right" valign="top">static uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5ed1f3eb40fc935345caf675fb2373f0">arch_get_fptr</a> (void)</td></tr>
+<tr class="memdesc:ga5ed1f3eb40fc935345caf675fb2373f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC specific "function" to get the frame pointer from the current function.  <br /></td></tr>
+<tr class="separator:ga5ed1f3eb40fc935345caf675fb2373f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa34ed9555994229b6976ec8baf358ed3" id="r_gaa34ed9555994229b6976ec8baf358ed3"><td class="memItemLeft" align="right" valign="top">static uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa34ed9555994229b6976ec8baf358ed3">arch_fptr_ret_addr</a> (uintptr_t fptr)</td></tr>
+<tr class="memdesc:gaa34ed9555994229b6976ec8baf358ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass in a frame pointer value to get the return address for the given frame.  <br /></td></tr>
+<tr class="separator:gaa34ed9555994229b6976ec8baf358ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae415ce0387c15e2ea0ceca494d098a38" id="r_gae415ce0387c15e2ea0ceca494d098a38"><td class="memItemLeft" align="right" valign="top">static uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae415ce0387c15e2ea0ceca494d098a38">arch_fptr_next</a> (uintptr_t fptr)</td></tr>
+<tr class="memdesc:gae415ce0387c15e2ea0ceca494d098a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass in a frame pointer value to get the previous frame pointer for the given frame.  <br /></td></tr>
+<tr class="separator:gae415ce0387c15e2ea0ceca494d098a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8e20742959acf259eb593999d5cb098" id="r_gaf8e20742959acf259eb593999d5cb098"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8e20742959acf259eb593999d5cb098">arch_valid_address</a> (uintptr_t ptr)</td></tr>
+<tr class="memdesc:gaf8e20742959acf259eb593999d5cb098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the passed address is likely to be valid.  <br /></td></tr>
+<tr class="separator:gaf8e20742959acf259eb593999d5cb098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e82ee49738b8c8e70bf1a587e5b45a2" id="r_ga4e82ee49738b8c8e70bf1a587e5b45a2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4e82ee49738b8c8e70bf1a587e5b45a2">arch_valid_text_address</a> (uintptr_t ptr)</td></tr>
+<tr class="memdesc:ga4e82ee49738b8c8e70bf1a587e5b45a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the passed address is in the text section of your program.  <br /></td></tr>
+<tr class="separator:ga4e82ee49738b8c8e70bf1a587e5b45a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -285,176 +285,7 @@ Variables</h2></td></tr>
 
 <p>Top of memory available, depending on memory size. </p>
 
-</div>
-</div>
-<a id="ga915feed501d27550bfec72705543dee1" name="ga915feed501d27550bfec72705543dee1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga915feed501d27550bfec72705543dee1">&#9670;&#160;</a></span>arch_fptr_next</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define arch_fptr_next</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fptr</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;(*((<a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>*)((fptr)+4)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pass in a frame pointer value to get the previous frame pointer for the given frame. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fptr</td><td>The frame pointer to look at. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The previous frame pointer. </dd></dl>
-
-</div>
-</div>
-<a id="ga382f88c6cc8d7ce7f1841e56e94d94d7" name="ga382f88c6cc8d7ce7f1841e56e94d94d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga382f88c6cc8d7ce7f1841e56e94d94d7">&#9670;&#160;</a></span>arch_fptr_ret_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define arch_fptr_ret_addr</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fptr</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;(*((<a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>*)(fptr)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pass in a frame pointer value to get the return address for the given frame. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fptr</td><td>The frame pointer to look at. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The return address of the pointer. </dd></dl>
-
-</div>
-</div>
-<a id="ga4bf02fe7e5534d6fd8d67dc45f32f7b4" name="ga4bf02fe7e5534d6fd8d67dc45f32f7b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4bf02fe7e5534d6fd8d67dc45f32f7b4">&#9670;&#160;</a></span>arch_get_fptr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define arch_get_fptr</td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        ({ \</div>
-<div class="line">        <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> fp; \</div>
-<div class="line">        __asm__ __volatile__(<span class="stringliteral">&quot;mov       r14,%0\n&quot;</span> \</div>
-<div class="line">                             : <span class="stringliteral">&quot;=&amp;z&quot;</span> (fp) \</div>
-<div class="line">                             : <span class="comment">/* no inputs */</span> \</div>
-<div class="line">                             : <span class="stringliteral">&quot;memory&quot;</span> ); \</div>
-<div class="line">        fp; })</div>
-<div class="ttc" id="agroup__system__types_html_ga4b435a49c74bb91f284f075e63416cb6"><div class="ttname"><a href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></div><div class="ttdeci">unsigned long uint32</div><div class="ttdoc">32-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:33</div></div>
-</div><!-- fragment -->
-<p>DC specific "function" to get the frame pointer from the current function. </p>
-<dl class="section return"><dt>Returns</dt><dd>The frame pointer from the current function. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This only works if you don't disable frame pointers. </dd></dl>
-
-</div>
-</div>
-<a id="ga918cbb6c3977d897b3c205407dda1891" name="ga918cbb6c3977d897b3c205407dda1891"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga918cbb6c3977d897b3c205407dda1891">&#9670;&#160;</a></span>arch_get_ret_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define arch_get_ret_addr</td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        ({ \</div>
-<div class="line">        <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> pr; \</div>
-<div class="line">        __asm__ __volatile__(<span class="stringliteral">&quot;sts       pr,%0\n&quot;</span> \</div>
-<div class="line">                             : <span class="stringliteral">&quot;=&amp;z&quot;</span> (pr) \</div>
-<div class="line">                             : <span class="comment">/* no inputs */</span> \</div>
-<div class="line">                             : <span class="stringliteral">&quot;memory&quot;</span> ); \</div>
-<div class="line">        pr; })</div>
-</div><!-- fragment -->
-<p>DC specific "function" to get the return address from the current function. </p>
-<dl class="section return"><dt>Returns</dt><dd>The return address of the current function. </dd></dl>
-
-</div>
-</div>
-<a id="ga8d9b1b29f325cb276f6c62dde830d702" name="ga8d9b1b29f325cb276f6c62dde830d702"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8d9b1b29f325cb276f6c62dde830d702">&#9670;&#160;</a></span>arch_sleep</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define arch_sleep</td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> { \</div>
-<div class="line">        __asm__ __volatile__(<span class="stringliteral">&quot;sleep&quot;</span>); \</div>
-<div class="line">    } <span class="keywordflow">while</span>(0)</div>
-</div><!-- fragment -->
-<p>Dreamcast specific sleep mode "function". </p>
-
-</div>
-</div>
-<a id="ga9f4ceb692456160c38e8cbf16702c60e" name="ga9f4ceb692456160c38e8cbf16702c60e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9f4ceb692456160c38e8cbf16702c60e">&#9670;&#160;</a></span>arch_valid_address</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define arch_valid_address</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a>)(ptr) &gt;= 0x8c010000 &amp;&amp; (<a class="el" href="group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd">ptr_t</a>)(ptr) &lt; <a class="el" href="#ga77cc74c7207b1839793919978ac12b47">_arch_mem_top</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if the passed address is likely to be valid. </p>
-<p>Doesn't have to be exact, just a sort of general idea.</p>
-<dl class="section return"><dt>Returns</dt><dd>Whether the address is valid or not for normal memory access. </dd></dl>
-
-</div>
-</div>
-<a id="gac90dbe4c6359827226569942bf0e9397" name="gac90dbe4c6359827226569942bf0e9397"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac90dbe4c6359827226569942bf0e9397">&#9670;&#160;</a></span>arch_valid_text_address</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define arch_valid_text_address</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;    ((uintptr_t)(ptr) &gt;= (uintptr_t)&amp;<a class="el" href="#ga5541094cb97b935cdbd4cc50461ab5eb">_executable_start</a> &amp;&amp; (uintptr_t)(ptr) &lt; (uintptr_t)&amp;<a class="el" href="#gae4ac23ee1563c1bbcb0921de93c24832">_etext</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if the passed address is in the text section of your program. </p>
-<dl class="section return"><dt>Returns</dt><dd>Whether the address is valid or not for text memory access. </dd></dl>
+<p class="reference">Referenced by <a class="el" href="#gaf8e20742959acf259eb593999d5cb098">arch_valid_address()</a>.</p>
 
 </div>
 </div>
@@ -745,7 +576,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Legacy symbol for scheduler frequency. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated</a></b></dt><dd></dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#gaf42cee43257eabd7a2df99ad00c7c6d9" title="Scheduler interrupt frequency.">THD_SCHED_HZ</a> </dd></dl>
 
 </div>
@@ -787,6 +618,135 @@ Variables</h2></td></tr>
 
 <p>Generic kernel "exit" point. </p>
 <dl class="section note"><dt>Note</dt><dd>This function will never return! </dd></dl>
+
+</div>
+</div>
+<a id="gae415ce0387c15e2ea0ceca494d098a38" name="gae415ce0387c15e2ea0ceca494d098a38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae415ce0387c15e2ea0ceca494d098a38">&#9670;&#160;</a></span>arch_fptr_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uintptr_t arch_fptr_next </td>
+          <td>(</td>
+          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>fptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pass in a frame pointer value to get the previous frame pointer for the given frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fptr</td><td>The frame pointer to look at. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The previous frame pointer. </dd></dl>
+
+<p class="reference">References <a class="el" href="#gaa34ed9555994229b6976ec8baf358ed3">arch_fptr_ret_addr()</a>.</p>
+
+</div>
+</div>
+<a id="gaa34ed9555994229b6976ec8baf358ed3" name="gaa34ed9555994229b6976ec8baf358ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa34ed9555994229b6976ec8baf358ed3">&#9670;&#160;</a></span>arch_fptr_ret_addr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uintptr_t arch_fptr_ret_addr </td>
+          <td>(</td>
+          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>fptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pass in a frame pointer value to get the return address for the given frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fptr</td><td>The frame pointer to look at. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The return address of the pointer. </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="#gae415ce0387c15e2ea0ceca494d098a38">arch_fptr_next()</a>.</p>
+
+</div>
+</div>
+<a id="ga5ed1f3eb40fc935345caf675fb2373f0" name="ga5ed1f3eb40fc935345caf675fb2373f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ed1f3eb40fc935345caf675fb2373f0">&#9670;&#160;</a></span>arch_get_fptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uintptr_t arch_get_fptr </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DC specific "function" to get the frame pointer from the current function. </p>
+<dl class="section return"><dt>Returns</dt><dd>The frame pointer from the current function. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This only works if you don't disable frame pointers. </dd></dl>
+
+</div>
+</div>
+<a id="gade55a5850429616d68fbd6a9cb98effe" name="gade55a5850429616d68fbd6a9cb98effe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade55a5850429616d68fbd6a9cb98effe">&#9670;&#160;</a></span>arch_get_ret_addr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uintptr_t arch_get_ret_addr </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DC specific "function" to get the return address from the current function. </p>
+<dl class="section return"><dt>Returns</dt><dd>The return address of the current function. </dd></dl>
 
 </div>
 </div>
@@ -942,6 +902,94 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__arch__retpaths.html" title="Potential exit paths from the kernel on arch_exit()">Exit Paths</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga55fc7a1503773dfc8a9ff3e8d7b24f39" name="ga55fc7a1503773dfc8a9ff3e8d7b24f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55fc7a1503773dfc8a9ff3e8d7b24f39">&#9670;&#160;</a></span>arch_sleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void arch_sleep </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dreamcast specific sleep mode function. </p>
+
+</div>
+</div>
+<a id="gaf8e20742959acf259eb593999d5cb098" name="gaf8e20742959acf259eb593999d5cb098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8e20742959acf259eb593999d5cb098">&#9670;&#160;</a></span>arch_valid_address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool arch_valid_address </td>
+          <td>(</td>
+          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if the passed address is likely to be valid. </p>
+<p>Doesn't have to be exact, just a sort of general idea.</p>
+<dl class="section return"><dt>Returns</dt><dd>Whether the address is valid or not for normal memory access. </dd></dl>
+
+<p class="reference">References <a class="el" href="#ga77cc74c7207b1839793919978ac12b47">_arch_mem_top</a>.</p>
+
+</div>
+</div>
+<a id="ga4e82ee49738b8c8e70bf1a587e5b45a2" name="ga4e82ee49738b8c8e70bf1a587e5b45a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e82ee49738b8c8e70bf1a587e5b45a2">&#9670;&#160;</a></span>arch_valid_text_address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool arch_valid_text_address </td>
+          <td>(</td>
+          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if the passed address is in the text section of your program. </p>
+<dl class="section return"><dt>Returns</dt><dd>Whether the address is valid or not for text memory access. </dd></dl>
+
+<p class="reference">References <a class="el" href="#gae4ac23ee1563c1bbcb0921de93c24832">_etext</a>, and <a class="el" href="#ga5541094cb97b935cdbd4cc50461ab5eb">_executable_start</a>.</p>
 
 </div>
 </div>
@@ -1117,6 +1165,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="#ga4e82ee49738b8c8e70bf1a587e5b45a2">arch_valid_text_address()</a>.</p>
+
 </div>
 </div>
 <a id="ga5541094cb97b935cdbd4cc50461ab5eb" name="ga5541094cb97b935cdbd4cc50461ab5eb"></a>
@@ -1140,6 +1190,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Start and End address for .text portion of program. </p>
+
+<p class="reference">Referenced by <a class="el" href="#ga4e82ee49738b8c8e70bf1a587e5b45a2">arch_valid_text_address()</a>.</p>
 
 </div>
 </div>

@@ -122,12 +122,21 @@ Macros</h2></td></tr>
 <tr class="memitem:gae368a79b7f862bbdd28e89f8fd717a97" id="r_gae368a79b7f862bbdd28e89f8fd717a97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae368a79b7f862bbdd28e89f8fd717a97">SQ_MASK_DEST</a>(dest)&#160;&#160;&#160;    ((uint32_t *)(void *) <a class="el" href="#gae3f3b19cc818d9be2940facc19692856">SQ_MASK_DEST_ADDR</a>(dest))</td></tr>
 <tr class="memdesc:gae368a79b7f862bbdd28e89f8fd717a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask dest to Store Queue area as pointer.  <br /></td></tr>
 <tr class="separator:gae368a79b7f862bbdd28e89f8fd717a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa981440464e89f52b075abbddfab805" id="r_gaaa981440464e89f52b075abbddfab805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaa981440464e89f52b075abbddfab805">sq_flush</a>(dest)&#160;&#160;&#160;<a class="el" href="group__system__cache.html#gab0e4bfd2c4c84423518de9dae6af4eda">dcache_wback_sq</a>(dest)</td></tr>
+<tr class="memitem:gaaa981440464e89f52b075abbddfab805" id="r_gaaa981440464e89f52b075abbddfab805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaa981440464e89f52b075abbddfab805">sq_flush</a>(dest)&#160;&#160;&#160;<a class="el" href="group__system__cache.html#ga8d2cd0f58f5e48948cff376b585907cc">dcache_wback_sq</a>(dest)</td></tr>
 <tr class="memdesc:gaaa981440464e89f52b075abbddfab805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write-back one Store Queue.  <br /></td></tr>
 <tr class="separator:gaaa981440464e89f52b075abbddfab805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga862e89040f0b6a0649843f9e2f08ee9a" id="r_ga862e89040f0b6a0649843f9e2f08ee9a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga862e89040f0b6a0649843f9e2f08ee9a">pvr_sq_load</a> (void *dest, const void *src, size_t n, <a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
+<tr class="memdesc:ga862e89040f0b6a0649843f9e2f08ee9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a block of memory to VRAM.  <br /></td></tr>
+<tr class="separator:ga862e89040f0b6a0649843f9e2f08ee9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga279e1dc13ceda7c544ed72a9e4141fac" id="r_ga279e1dc13ceda7c544ed72a9e4141fac"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga279e1dc13ceda7c544ed72a9e4141fac">pvr_sq_set16</a> (void *dest, uint32_t c, size_t n, <a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
+<tr class="memdesc:ga279e1dc13ceda7c544ed72a9e4141fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a block of PVR memory to a 16-bit value.  <br /></td></tr>
+<tr class="separator:ga279e1dc13ceda7c544ed72a9e4141fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60be360851438cc0c0a0d8d9c4ec8230" id="r_ga60be360851438cc0c0a0d8d9c4ec8230"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga60be360851438cc0c0a0d8d9c4ec8230">pvr_sq_set32</a> (void *dest, uint32_t c, size_t n, <a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a> type)</td></tr>
+<tr class="memdesc:ga60be360851438cc0c0a0d8d9c4ec8230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a block of PVR memory to a 32-bit value.  <br /></td></tr>
+<tr class="separator:ga60be360851438cc0c0a0d8d9c4ec8230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab4e172b463199228bf4709dad346c207" id="r_gab4e172b463199228bf4709dad346c207"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab4e172b463199228bf4709dad346c207">sq_lock</a> (void *dest)</td></tr>
 <tr class="memdesc:gab4e172b463199228bf4709dad346c207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock Store Queues.  <br /></td></tr>
 <tr class="separator:gab4e172b463199228bf4709dad346c207"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,7 +180,7 @@ Functions</h2></td></tr>
           <td class="memname">#define sq_flush</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dest</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="group__system__cache.html#gab0e4bfd2c4c84423518de9dae6af4eda">dcache_wback_sq</a>(dest)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="group__system__cache.html#ga8d2cd0f58f5e48948cff376b585907cc">dcache_wback_sq</a>(dest)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -227,6 +236,147 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga862e89040f0b6a0649843f9e2f08ee9a" name="ga862e89040f0b6a0649843f9e2f08ee9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga862e89040f0b6a0649843f9e2f08ee9a">&#9670;&#160;</a></span>pvr_sq_load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * pvr_sq_load </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy a block of memory to VRAM. </p>
+<p>This function is similar to <a class="el" href="#ga8dcb6016c825d951d5aacd15fd137b89" title="Copy a block of memory.">sq_cpy()</a>, but it has been optimized for writing to a destination residing within VRAM.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This function cannot be used at the same time as a PVR DMA transfer.</dd></dl>
+<p>The dest pointer must be at least 32-byte aligned and reside in video memory, the src pointer must be at least 8-byte aligned, and n must be a multiple of 32.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>The address to copy to (32-byte aligned). </td></tr>
+    <tr><td class="paramname">src</td><td>The address to copy from (32-bit (8-byte) aligned). </td></tr>
+    <tr><td class="paramname">n</td><td>The number of bytes to copy (multiple of 32). </td></tr>
+    <tr><td class="paramname">type</td><td>The type of SQ/DMA transfer to do (see list of modes). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value of dest.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga60be360851438cc0c0a0d8d9c4ec8230" title="Set a block of PVR memory to a 32-bit value.">pvr_sq_set32()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga279e1dc13ceda7c544ed72a9e4141fac" name="ga279e1dc13ceda7c544ed72a9e4141fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga279e1dc13ceda7c544ed72a9e4141fac">&#9670;&#160;</a></span>pvr_sq_set16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * pvr_sq_set16 </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a block of PVR memory to a 16-bit value. </p>
+<p>This function is similar to <a class="el" href="#ga30f23e7f5106da1dc68c773b9e7306a5" title="Set a block of memory to a 16-bit value.">sq_set16()</a>, but it has been optimized for writing to a destination residing within VRAM.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This function cannot be used at the same time as a PVR DMA transfer.</dd></dl>
+<p>The dest pointer must be at least 32-byte aligned and reside in video memory, n must be a multiple of 32 and only the low 16-bits are used from c.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>The address to begin setting at (32-byte aligned). </td></tr>
+    <tr><td class="paramname">c</td><td>The value to set (in the low 16-bits). </td></tr>
+    <tr><td class="paramname">n</td><td>The number of bytes to set (multiple of 32). </td></tr>
+    <tr><td class="paramname">type</td><td>The type of SQ/DMA transfer to do (see list of modes). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value of dest.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga60be360851438cc0c0a0d8d9c4ec8230" title="Set a block of PVR memory to a 32-bit value.">pvr_sq_set32()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga60be360851438cc0c0a0d8d9c4ec8230" name="ga60be360851438cc0c0a0d8d9c4ec8230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga60be360851438cc0c0a0d8d9c4ec8230">&#9670;&#160;</a></span>pvr_sq_set32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * pvr_sq_set32 </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__pvr__dma.html#ga7d772c6dfeec1493c31bb6a200cd3744">pvr_dma_type_t</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a block of PVR memory to a 32-bit value. </p>
+<p>This function is similar to <a class="el" href="#ga31a2bae1ddf089207a59b1dc29c3ffb4" title="Set a block of memory to a 32-bit value.">sq_set32()</a>, but it has been optimized for writing to a destination residing within VRAM.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This function cannot be used at the same time as a PVR DMA transfer.</dd></dl>
+<p>The dest pointer must be at least 32-byte aligned and reside in video memory, n must be a multiple of 32.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>The address to begin setting at (32-byte aligned). </td></tr>
+    <tr><td class="paramname">c</td><td>The value to set. </td></tr>
+    <tr><td class="paramname">n</td><td>The number of bytes to set (multiple of 32). </td></tr>
+    <tr><td class="paramname">type</td><td>The type of SQ/DMA transfer to do (see list of modes). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value of dest.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga279e1dc13ceda7c544ed72a9e4141fac" title="Set a block of PVR memory to a 16-bit value.">pvr_sq_set16()</a> </dd></dl>
+
+</div>
+</div>
 <a id="gae7c2c6f4ce37eaa9d886efbbd0fa2ec5" name="gae7c2c6f4ce37eaa9d886efbbd0fa2ec5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae7c2c6f4ce37eaa9d886efbbd0fa2ec5">&#9670;&#160;</a></span>sq_clr()</h2>
 
@@ -284,7 +434,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy a block of memory. </p>
-<p>This function is similar to <a class="el" href="group__system__types.html#ga5ec67da835a014140d3cbe2f14925476" title="Copy a block of memory, 4 bytes at a time.">memcpy4()</a>, but uses the store queues to do its work.</p>
+<p>This function is similar to <a class="el" href="group__system__types.html#ga5a793ea416479791698823ce98450763" title="Copy a block of memory, 4 bytes at a time.">memcpy4()</a>, but uses the store queues to do its work.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The dest pointer must be at least 32-byte aligned, the src pointer must be at least 4-byte aligned (8-byte aligned uses fast path), and n must be a multiple of 32!</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -433,7 +583,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set a block of memory to a 16-bit value. </p>
-<p>This function is similar to calling <a class="el" href="group__system__types.html#ga8bfb449cc3354d2f9f4933db730fabd2" title="Set a block of memory, 2 bytes at a time.">memset2()</a>, but uses the store queues to do its work.</p>
+<p>This function is similar to calling <a class="el" href="group__system__types.html#gae13f9699e0222d19414e3d1b824a1cca" title="Set a block of memory, 2 bytes at a time.">memset2()</a>, but uses the store queues to do its work.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The dest pointer must be a 32-byte aligned with n being a multiple of 32, and only the low 16-bits are used from c.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -473,7 +623,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set a block of memory to a 32-bit value. </p>
-<p>This function is similar to calling <a class="el" href="group__system__types.html#gaa60ff67301aee11d4360c056f30236eb" title="Set a block of memory, 4 bytes at a time.">memset4()</a>, but uses the store queues to do its work.</p>
+<p>This function is similar to calling <a class="el" href="group__system__types.html#ga5ec7805d6d103d15bf506df74b230ac1" title="Set a block of memory, 4 bytes at a time.">memset4()</a>, but uses the store queues to do its work.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The dest pointer must be a 32-byte aligned with n being a multiple of 32!</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
