@@ -19,7 +19,7 @@ jobs:
         tag:
           - "13.3-legacy"
           - "14.2-stable"
-          - "15.0-dev"
+          - "15.0.1-dev"
 
     steps:
       - name: Checkout Code
