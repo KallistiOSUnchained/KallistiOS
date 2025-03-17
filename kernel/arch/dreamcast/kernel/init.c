@@ -140,7 +140,7 @@ KOS_INIT_FLAG_WEAK(fs_dclsocket_shutdown, true);
 /* Auto-init stuff: override with a non-weak symbol if you don't want all of
    this to be linked into your code (and do the same with the
    arch_auto_shutdown function too). */
-int  __weak arch_auto_init(void) {
+int __weak arch_auto_init(void) {
     /* Initialize memory management */
     mm_init();
 
@@ -172,7 +172,7 @@ int  __weak arch_auto_init(void) {
     timer_init();           /* Timers */
     hardware_sys_init();        /* DC low-level hardware init */
 
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI)
         syscall_sysinfo_init();
 
     /* Initialize our timer */
@@ -206,7 +206,7 @@ int  __weak arch_auto_init(void) {
 
     KOS_INIT_FLAG_CALL(dcload_init);
 
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI)
         KOS_INIT_FLAG_CALL(fs_iso9660_init);
 
     KOS_INIT_FLAG_CALL(vmu_fs_init);
@@ -220,15 +220,15 @@ int  __weak arch_auto_init(void) {
         KOS_INIT_FLAG_CALL(maple_wait_scan);  /* Wait for the maple scan to complete */
     }
 
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI)
         KOS_INIT_FLAG_CALL(arch_init_net);
 
     return 0;
 }
 
-void  __weak arch_auto_shutdown(void) {
+void __weak arch_auto_shutdown(void) {
     KOS_INIT_FLAG_CALL(fs_dclsocket_shutdown);
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI)
         KOS_INIT_FLAG_CALL(net_shutdown);
 
     snd_shutdown();
@@ -244,7 +244,7 @@ void  __weak arch_auto_shutdown(void) {
     library_shutdown();
     KOS_INIT_FLAG_CALL(fs_dcload_shutdown);
     KOS_INIT_FLAG_CALL(vmu_fs_shutdown);
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI)
         KOS_INIT_FLAG_CALL(fs_iso9660_shutdown);
 #if defined(__NEWLIB__) && !(__NEWLIB__ < 2 && __NEWLIB_MINOR__ < 4)
     fs_rnd_shutdown();
@@ -259,13 +259,16 @@ void  __weak arch_auto_shutdown(void) {
     rtc_shutdown();
 }
 
+/* Strongly defined in gcrt1.s and linked when compiling with -pg */
+void __weak gprof_init(void) { }
+
 /* This is the entry point inside the C program */
 void arch_main(void) {
     uint8 *bss_start = (uint8 *)(&_bss_start);
     uint8 *bss_end = (uint8 *)(&end);
     int rv;
 
-    if (KOS_PLATFORM_IS_NAOMI) {
+    if(KOS_PLATFORM_IS_NAOMI) {
         /* Ugh. I'm really not sure why we have to set up these DMA registers this
            way on boot, but failing to do so breaks maple... */
         DMAC_SAR2 = 0;
@@ -295,6 +298,9 @@ void arch_main(void) {
 
     /* Run ctors */
     _init();
+
+    /* Setup gprof */
+    gprof_init();
 
     /* Call the user's main function */
     rv = main(0, NULL);
