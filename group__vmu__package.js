@@ -8,7 +8,7 @@ var group__vmu__package =
       [ "data_len", "structvmu__pkg__t.html#aa23d40852a6057093c6cdb9ccbe1035c", null ],
       [ "desc_long", "structvmu__pkg__t.html#a9ffe4fa86b1314ebddd5ad7d1daecc9b", null ],
       [ "desc_short", "structvmu__pkg__t.html#aba8cc4b2c09e1ac15cdff903b09580db", null ],
-      [ "eyecatch_data", "structvmu__pkg__t.html#ae08acecff8703dc9fd484632dd131551", null ],
+      [ "eyecatch_data", "structvmu__pkg__t.html#a43aef66f1d4ba1b4e8b315201c5a129f", null ],
       [ "eyecatch_type", "structvmu__pkg__t.html#a082a9da1aa2009396b683efb853f526f", null ],
       [ "icon_anim_speed", "structvmu__pkg__t.html#adb3660029f6fe02fc3ebffe40f85463e", null ],
       [ "icon_cnt", "structvmu__pkg__t.html#a5880e16780b3cc54e43100aad641343b", null ],
@@ -29,5 +29,5 @@ var group__vmu__package =
     ] ],
     [ "vmu_pkg_build", "group__vmu__package.html#ga80053b490bc194a98a89acf91d27c984", null ],
     [ "vmu_pkg_load_icon", "group__vmu__package.html#ga76ef47c910340f550a75b074a3d30b0b", null ],
-    [ "vmu_pkg_parse", "group__vmu__package.html#gadc8110f5983da5ea46f4c1e3f648fd60", null ]
+    [ "vmu_pkg_parse", "group__vmu__package.html#gaf6c2afd0530588c0c86efbc66a348eb8", null ]
 ];

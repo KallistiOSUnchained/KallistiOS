@@ -6,5 +6,5 @@ var vmu__pkg_8h =
     [ "VMUPKG_EC_NONE", "group__vmu__ectype.html#gaba3c8eb0f4cbd379de2eb52020ec0ff1", null ],
     [ "vmu_pkg_build", "group__vmu__package.html#ga80053b490bc194a98a89acf91d27c984", null ],
     [ "vmu_pkg_load_icon", "group__vmu__package.html#ga76ef47c910340f550a75b074a3d30b0b", null ],
-    [ "vmu_pkg_parse", "group__vmu__package.html#gadc8110f5983da5ea46f4c1e3f648fd60", null ]
+    [ "vmu_pkg_parse", "group__vmu__package.html#gaf6c2afd0530588c0c86efbc66a348eb8", null ]
 ];

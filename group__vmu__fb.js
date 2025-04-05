@@ -20,5 +20,6 @@ var group__vmu__fb =
     [ "vmufb_paint_xbm", "group__vmu__fb.html#ga76bc112a1c0caab23b4e9c8693317684", null ],
     [ "vmufb_present", "group__vmu__fb.html#ga05187ebee71ea8a2c2b507572fa333bb", null ],
     [ "vmufb_print_string", "group__vmu__fb.html#ga89a26c9c683b41ce59c3e1c886b3a9a7", null ],
-    [ "vmufb_print_string_into", "group__vmu__fb.html#ga2ba255a7eee077a832701c5e8c4b8603", null ]
+    [ "vmufb_print_string_into", "group__vmu__fb.html#ga2ba255a7eee077a832701c5e8c4b8603", null ],
+    [ "vmufb_screen_shot", "group__vmu__fb.html#ga23773ffd272957db8cbc33c2cd083e20", null ]
 ];

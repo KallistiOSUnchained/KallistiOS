@@ -42,6 +42,8 @@ var group__vfs__vmu =
     [ "VMUFS_NOCOPY", "group__vfs__vmu.html#gac7200ea5832decc8605e7b4ca10d0756", null ],
     [ "VMUFS_OVERWRITE", "group__vfs__vmu.html#gafbed836ca1265630c350a957c90dcbe7", null ],
     [ "VMUFS_VMUGAME", "group__vfs__vmu.html#ga6cc51d734de26b769d13d418c359dda0", null ],
+    [ "fs_vmu_set_default_header", "group__vfs__vmu.html#ga75f4acb794399d43f1d0528a854ce962", null ],
+    [ "fs_vmu_set_header", "group__vfs__vmu.html#ga4dac03d345d2f1579606dac4ce05d128", null ],
     [ "vmufs_delete", "group__vfs__vmu.html#ga9ec34ccd6dd9e062a6fa154744d7ebb7", null ],
     [ "vmufs_dir_add", "group__vfs__vmu.html#ga4d3fee989033191d08dece515b3fc4f8", null ],
     [ "vmufs_dir_blocks", "group__vfs__vmu.html#ga2fa3a9de375757a814f6b821858388c1", null ],

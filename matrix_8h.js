@@ -14,6 +14,7 @@ var matrix_8h =
     [ "mat_apply", "group__math__matrices.html#ga26119e263528f047d9c73a6701c1b0ea", null ],
     [ "mat_identity", "group__math__matrices.html#ga1ff180bf67c0e8b88e38014472046031", null ],
     [ "mat_load", "group__math__matrices.html#ga47dc9daa4a52246793f47ea02464a3d6", null ],
+    [ "mat_multiply", "group__math__matrices.html#ga37a985bc4c2814fa9cc81562dd6141b6", null ],
     [ "mat_store", "group__math__matrices.html#gac2f4867f117cb85159be2081a023bda9", null ],
     [ "mat_transform", "group__math__matrices.html#ga7dd7afb39f276c916129158c97e82eb3", null ],
     [ "mat_transform_sq", "group__math__matrices.html#ga1796706c43ae14fd27e696968755aab3", null ]

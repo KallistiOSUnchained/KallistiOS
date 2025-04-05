@@ -136,27 +136,99 @@ $(function(){initNavTree('fs__vmu_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>__BEGIN_DECLS</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;<a class="code" href="fs_8h.html">kos/fs.h</a>&gt;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"></span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/** \defgroup vfs_vmu   VMU</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    \brief              VFS driver for accessing Visual Memory Unit storage</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    \ingroup            vfs</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"></span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">    @{</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/* \cond */</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/* Initialization */</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">int</span> fs_vmu_init(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">int</span> fs_vmu_shutdown(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/* \endcond */</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"></span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/** @} */</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>__END_DECLS</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif  </span><span class="comment">/* __DC_FS_VMU_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;<a class="code" href="vmu__pkg_8h.html">dc/vmu_pkg.h</a>&gt;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/** \defgroup vfs_vmu   VMU</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    \brief              VFS driver for accessing Visual Memory Unit storage</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">    \ingroup            vfs</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">    @{</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/* \cond */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/* Initialization */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">int</span> fs_vmu_init(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">int</span> fs_vmu_shutdown(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define IOCTL_VMU_SET_HDR     0x564d5530 </span><span class="comment">/* &quot;VMU0&quot; */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/* \endcond */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"></span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">/** \brief  Set a header to an opened VMU file</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"></span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">    This function can be used to set a specific header (which contains the</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    metadata, icons...) to an opened VMU file, replacing the one it previously</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    had (if any).</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">    Note that the &quot;pkg&quot; pointer as well as the eyecatch/icon data pointers it</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">    contain can be freed (if dynamically allocated) as soon as this function</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">    return, as the filesystem code will keep an internal copy.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"></span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">    It is valid to pass NULL as the header pointer, in which case the header</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">    for the file will be discarded.</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"></span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">    \param fd               A file descriptor corresponding to the VMU file</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    \param pkg              The header to set to the VMU file</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">    \retval -1              On error.</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__vfs__vmu.html#ga4dac03d345d2f1579606dac4ce05d128">   72</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="group__vfs__vmu.html#ga4dac03d345d2f1579606dac4ce05d128">fs_vmu_set_header</a>(<a class="code hl_typedef" href="group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9">file_t</a> fd, <span class="keyword">const</span> <a class="code hl_struct" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__vfs__generic.html#ga86ea8c0a0529cef2924f07441bc2c128">fs_ioctl</a>(fd, IOCTL_VMU_SET_HDR, pkg);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment"></span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">/** \brief  Set a default header for newly created VMU files</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment"></span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">    This function will set a default header, that will be used for new files</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">    which were not assignated their own header.</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment"></span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">    Note that files which already have a header, either because they were opened</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">    read-write or because they were given one, will use their own header instead</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">    of the default one.</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment"></span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">    Note that the &quot;pkg&quot; pointer as well as the eyecatch/icon data pointers it</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">    contain can be freed (if dynamically allocated) as soon as this function</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">    return, as the filesystem code will keep an internal copy.</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment"></span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">    It is valid to pass NULL as the header pointer, in which case the default</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">    header will be discarded.</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"></span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">    \param pkg              The header to set to the VMU file</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">    \retval -1              On error.</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="group__vfs__vmu.html#ga75f4acb794399d43f1d0528a854ce962">   96</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="group__vfs__vmu.html#ga75f4acb794399d43f1d0528a854ce962">fs_vmu_set_default_header</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_typedef" href="group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9">file_t</a> fd;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">int</span> ret;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    fd = <a class="code hl_function" href="group__vfs__generic.html#ga25d7fb53c97b19b22645e482803bd7d3">fs_open</a>(<span class="stringliteral">&quot;/vmu&quot;</span>, O_RDONLY | <a class="code hl_define" href="group__vfs__generic.html#gad8aa83f74090afc7e57f871c9491ed95">O_DIR</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span>(!fd)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    ret = <a class="code hl_function" href="group__vfs__vmu.html#ga4dac03d345d2f1579606dac4ce05d128">fs_vmu_set_header</a>(fd, pkg);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_function" href="group__vfs__generic.html#ga70a39957ef36f3710ec6d6e10b394bea">fs_close</a>(fd);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment"></span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">/** @} */</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>__END_DECLS</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif  </span><span class="comment">/* __DC_FS_VMU_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="ttc" id="afs_8h_html"><div class="ttname"><a href="fs_8h.html">fs.h</a></div><div class="ttdoc">Virtual filesystem support.</div></div>
+<div class="ttc" id="agroup__vfs__generic_html_ga25d7fb53c97b19b22645e482803bd7d3"><div class="ttname"><a href="group__vfs__generic.html#ga25d7fb53c97b19b22645e482803bd7d3">fs_open</a></div><div class="ttdeci">file_t fs_open(const char *fn, int mode)</div><div class="ttdoc">Open a file on the VFS.</div></div>
+<div class="ttc" id="agroup__vfs__generic_html_ga70a39957ef36f3710ec6d6e10b394bea"><div class="ttname"><a href="group__vfs__generic.html#ga70a39957ef36f3710ec6d6e10b394bea">fs_close</a></div><div class="ttdeci">int fs_close(file_t hnd)</div><div class="ttdoc">Close an opened file.</div></div>
+<div class="ttc" id="agroup__vfs__generic_html_ga86ea8c0a0529cef2924f07441bc2c128"><div class="ttname"><a href="group__vfs__generic.html#ga86ea8c0a0529cef2924f07441bc2c128">fs_ioctl</a></div><div class="ttdeci">int fs_ioctl(file_t hnd, int cmd,...)</div><div class="ttdoc">Execute a device-specific command on a file descriptor.</div></div>
+<div class="ttc" id="agroup__vfs__generic_html_gacc1a13debc906d8d57e38e0ae5ad07b9"><div class="ttname"><a href="group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9">file_t</a></div><div class="ttdeci">int file_t</div><div class="ttdoc">File descriptor type.</div><div class="ttdef"><b>Definition</b> fs.h:94</div></div>
+<div class="ttc" id="agroup__vfs__generic_html_gad8aa83f74090afc7e57f871c9491ed95"><div class="ttname"><a href="group__vfs__generic.html#gad8aa83f74090afc7e57f871c9491ed95">O_DIR</a></div><div class="ttdeci">#define O_DIR</div><div class="ttdoc">Open as directory.</div><div class="ttdef"><b>Definition</b> fs.h:229</div></div>
+<div class="ttc" id="agroup__vfs__vmu_html_ga4dac03d345d2f1579606dac4ce05d128"><div class="ttname"><a href="group__vfs__vmu.html#ga4dac03d345d2f1579606dac4ce05d128">fs_vmu_set_header</a></div><div class="ttdeci">static int fs_vmu_set_header(file_t fd, const vmu_pkg_t *pkg)</div><div class="ttdoc">Set a header to an opened VMU file.</div><div class="ttdef"><b>Definition</b> fs_vmu.h:72</div></div>
+<div class="ttc" id="agroup__vfs__vmu_html_ga75f4acb794399d43f1d0528a854ce962"><div class="ttname"><a href="group__vfs__vmu.html#ga75f4acb794399d43f1d0528a854ce962">fs_vmu_set_default_header</a></div><div class="ttdeci">static int fs_vmu_set_default_header(const vmu_pkg_t *pkg)</div><div class="ttdoc">Set a default header for newly created VMU files.</div><div class="ttdef"><b>Definition</b> fs_vmu.h:96</div></div>
+<div class="ttc" id="astructvmu__pkg__t_html"><div class="ttname"><a href="structvmu__pkg__t.html">vmu_pkg_t</a></div><div class="ttdoc">VMU Package type.</div><div class="ttdef"><b>Definition</b> vmu_pkg.h:46</div></div>
+<div class="ttc" id="avmu__pkg_8h_html"><div class="ttname"><a href="vmu__pkg_8h.html">vmu_pkg.h</a></div><div class="ttdoc">VMU Packaging functionality.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -41,6 +41,7 @@ var thread_8h =
     [ "thd_get_mode", "group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c", null ],
     [ "thd_get_pwd", "group__kthreads.html#ga5ad0b1c2495f1fdf11df6d7ba38e2620", null ],
     [ "thd_get_reent", "group__kthreads.html#ga42fb0ef4f8b4901fbb9a515b08db0ff6", null ],
+    [ "thd_get_total_cpu_time", "group__kthreads.html#ga368a4d08f7be08602f4ae7d035a5dae4", null ],
     [ "thd_join", "group__kthreads.html#ga8e1d141b734cf8614afdb11d30ca5575", null ],
     [ "thd_pass", "group__kthreads.html#gae8fa787b9408d6e108ba49097afb8a17", null ],
     [ "thd_pslist", "group__kthreads.html#gac9c082bca35dc855807f6aa048dd19ba", null ],

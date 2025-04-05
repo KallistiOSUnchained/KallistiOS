@@ -193,6 +193,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga26119e263528f047d9c73a6701c1b0ea" id="r_ga26119e263528f047d9c73a6701c1b0ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga26119e263528f047d9c73a6701c1b0ea">mat_apply</a> (const <a class="el" href="#ga8ecaa0194273075e004dba09f4ca0428">matrix_t</a> *src)</td></tr>
 <tr class="memdesc:ga26119e263528f047d9c73a6701c1b0ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a matrix.  <br /></td></tr>
 <tr class="separator:ga26119e263528f047d9c73a6701c1b0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37a985bc4c2814fa9cc81562dd6141b6" id="r_ga37a985bc4c2814fa9cc81562dd6141b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga37a985bc4c2814fa9cc81562dd6141b6">mat_multiply</a> (<a class="el" href="#ga8ecaa0194273075e004dba09f4ca0428">matrix_t</a> *dst, const <a class="el" href="#ga8ecaa0194273075e004dba09f4ca0428">matrix_t</a> *src)</td></tr>
+<tr class="memdesc:ga37a985bc4c2814fa9cc81562dd6141b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply a matrix.  <br /></td></tr>
+<tr class="separator:ga37a985bc4c2814fa9cc81562dd6141b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7dd7afb39f276c916129158c97e82eb3" id="r_ga7dd7afb39f276c916129158c97e82eb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7dd7afb39f276c916129158c97e82eb3">mat_transform</a> (const <a class="el" href="structvector__t.html">vector_t</a> *invecs, <a class="el" href="structvector__t.html">vector_t</a> *outvecs, int veccnt, int stride)</td></tr>
 <tr class="memdesc:ga7dd7afb39f276c916129158c97e82eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform vectors by the internal matrix.  <br /></td></tr>
 <tr class="separator:ga7dd7afb39f276c916129158c97e82eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1059,6 +1062,39 @@ Functions</h2></td></tr>
     <tr><td class="paramname">eye</td><td>The eye coordinate. </td></tr>
     <tr><td class="paramname">center</td><td>The center coordinate. </td></tr>
     <tr><td class="paramname">up</td><td>The up vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga37a985bc4c2814fa9cc81562dd6141b6" name="ga37a985bc4c2814fa9cc81562dd6141b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37a985bc4c2814fa9cc81562dd6141b6">&#9670;&#160;</a></span>mat_multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mat_multiply </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga8ecaa0194273075e004dba09f4ca0428">matrix_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#ga8ecaa0194273075e004dba09f4ca0428">matrix_t</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiply a matrix. </p>
+<p>This function multiplies a matrix in memory with the internal matrix and stores the result into a new matrix.</p>
+<dl class="section warning"><dt>Warning</dt><dd><code>src</code> and dst MUST be at least 8-byte aligned!</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For best performance, 32-byte alignment of <code>src</code> and <code>dst</code> is recommended.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst</td><td>A pointer to the destination matrix. </td></tr>
+    <tr><td class="paramname">src</td><td>A pointer to the matrix to multiply. </td></tr>
   </table>
   </dd>
 </dl>

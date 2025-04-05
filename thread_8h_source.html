@@ -719,175 +719,185 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span><span class="comment">    \return                 The thread&#39;s reent struct.</span></div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga42fb0ef4f8b4901fbb9a515b08db0ff6">  609</a></span><span class="keyword">struct </span>_reent *<a class="code hl_function" href="group__kthreads.html#ga42fb0ef4f8b4901fbb9a515b08db0ff6">thd_get_reent</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd);</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span> </div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span><span class="comment"></span> </div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span><span class="comment">/** \brief       Retrieves the thread&#39;s elapsed CPU time</span></div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span><span class="comment">    \relatesalso kthread_t</span></div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="comment"></span> </div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="comment">    Returns the amount of active CPU time the thread has consumed in</span></div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span><span class="comment">    nanoseconds.</span></div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span><span class="comment"></span> </div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="comment">    \warning</span></div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="comment">    The implementation uses perf_cntr_timer_ns() internally when maintaining</span></div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span><span class="comment">    this CPU time, so disabling or clearing the nanosecond timer will</span></div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span><span class="comment">    interfere with this time keeping.</span></div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span><span class="comment"></span> </div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span><span class="comment">/** \brief       Retrieves the thread&#39;s elapsed CPU time</span></div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span><span class="comment">    \relatesalso kthread_t</span></div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span><span class="comment"></span> </div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="comment">    Returns the amount of active CPU time the thread has consumed in</span></div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="comment">    nanoseconds.</span></div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span><span class="comment"></span> </div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span><span class="comment">    \param thd          The thead to retrieve the CPU time for.</span></div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="comment"></span> </div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="comment">    \retval             Total utilized CPU time in nanoseconds.</span></div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga5284a45993b16ea36c23e12e56ddd2bc">  621</a></span>uint64_t <a class="code hl_function" href="group__kthreads.html#ga5284a45993b16ea36c23e12e56ddd2bc">thd_get_cpu_time</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd);</div>
 <div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span><span class="comment"></span> </div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span><span class="comment">    \param thd          The thead to retrieve the CPU time for</span></div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span><span class="comment"></span> </div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span><span class="comment">    \retval             Total utilized CPU time in nanoseconds OR</span></div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="comment">                        0 if the nanosecond timer of the performance</span></div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span><span class="comment">                        counters has been disturbed.</span></div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga5284a45993b16ea36c23e12e56ddd2bc">  629</a></span>uint64_t <a class="code hl_function" href="group__kthreads.html#ga5284a45993b16ea36c23e12e56ddd2bc">thd_get_cpu_time</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd);</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span><span class="comment"></span> </div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span><span class="comment">/** \brief   Change threading modes.</span></div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span><span class="comment">/** \brief       Retrieves all thread&#39;s elapsed CPU time</span></div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span><span class="comment">    \relatesalso kthread_t</span></div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span><span class="comment"></span> </div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="comment">    Returns the amount of active CPU time all threads have consumed in</span></div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span><span class="comment">    nanoseconds.</span></div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><span class="comment"></span> </div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span><span class="comment">    \retval             Total utilized CPU time in nanoseconds.</span></div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga368a4d08f7be08602f4ae7d035a5dae4">  631</a></span>uint64_t <a class="code hl_function" href="group__kthreads.html#ga368a4d08f7be08602f4ae7d035a5dae4">thd_get_total_cpu_time</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span><span class="comment"></span> </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span><span class="comment">    This function changes the current threading mode of the system.</span></div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span><span class="comment">    With preemptive threading being the only mode.</span></div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="comment"></span> </div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span><span class="comment">    \deprecated</span></div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span><span class="comment">    This is now deprecated</span></div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span><span class="comment"></span> </div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span><span class="comment">    \param  mode            One of the THD_MODE values.</span></div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span><span class="comment">/** \brief   Change threading modes.</span></div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span><span class="comment"></span> </div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="comment">    This function changes the current threading mode of the system.</span></div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span><span class="comment">    With preemptive threading being the only mode.</span></div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span><span class="comment"></span> </div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span><span class="comment">    \deprecated</span></div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span><span class="comment">    This is now deprecated</span></div>
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span><span class="comment"></span> </div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span><span class="comment">    \return                 The old mode of the threading system.</span></div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span><span class="comment">    \param  mode            One of the THD_MODE values.</span></div>
 <div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span><span class="comment"></span> </div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span><span class="comment">    \sa thd_get_mode</span></div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno"><a class="line" href="group__kthreads.html#gad3eb4652a1578c25dd5c6bebe5ddadcb">  645</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#gad3eb4652a1578c25dd5c6bebe5ddadcb">thd_set_mode</a>(<a class="code hl_enumeration" href="group__kthreads.html#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a> mode) <a class="code hl_define" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a>;</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span><span class="comment"></span> </div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span><span class="comment">/** \brief   Fetch the current threading mode.</span></div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span><span class="comment">    \return                 The old mode of the threading system.</span></div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span><span class="comment"></span> </div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span><span class="comment">    \sa thd_get_mode</span></div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno"><a class="line" href="group__kthreads.html#gad3eb4652a1578c25dd5c6bebe5ddadcb">  647</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#gad3eb4652a1578c25dd5c6bebe5ddadcb">thd_set_mode</a>(<a class="code hl_enumeration" href="group__kthreads.html#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a> mode) <a class="code hl_define" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a>;</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span><span class="comment"></span> </div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span><span class="comment">    With preemptive threading being the only mode.</span></div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span><span class="comment">/** \brief   Fetch the current threading mode.</span></div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span><span class="comment"></span> </div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span><span class="comment">    \deprecated</span></div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="comment">    This is now deprecated.</span></div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="comment"></span> </div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span><span class="comment">    \return                 The current mode of the threading system.</span></div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span><span class="comment">    With preemptive threading being the only mode.</span></div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="comment"></span> </div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="comment">    \deprecated</span></div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span><span class="comment">    This is now deprecated.</span></div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span><span class="comment"></span> </div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span><span class="comment">    \sa thd_set_mode</span></div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c">  658</a></span><a class="code hl_enumeration" href="group__kthreads.html#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a> <a class="code hl_function" href="group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c">thd_get_mode</a>(<span class="keywordtype">void</span>) <a class="code hl_define" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a>;</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span><span class="comment"></span> </div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span><span class="comment">/** \brief   Set the scheduler&#39;s frequency.</span></div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span><span class="comment">    \return                 The current mode of the threading system.</span></div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span><span class="comment"></span> </div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span><span class="comment">    \sa thd_set_mode</span></div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c">  660</a></span><a class="code hl_enumeration" href="group__kthreads.html#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a> <a class="code hl_function" href="group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c">thd_get_mode</a>(<span class="keywordtype">void</span>) <a class="code hl_define" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a>;</div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span><span class="comment"></span> </div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="comment">    Sets the frequency of the scheduler interrupts in hertz.</span></div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="comment">/** \brief   Set the scheduler&#39;s frequency.</span></div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span><span class="comment"></span> </div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span><span class="comment">    \param hertz    The new frequency in hertz (1-1000)</span></div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span><span class="comment">    Sets the frequency of the scheduler interrupts in hertz.</span></div>
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="comment"></span> </div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="comment">    \retval 0       The frequency was updated successfully.</span></div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="comment">    \retval -1      \p hertz is invalid.</span></div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="comment"></span> </div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="comment">    \sa thd_get_hz(), HZ</span></div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga12dad87642cf1a5c8190752b0573f812">  671</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga12dad87642cf1a5c8190752b0573f812">thd_set_hz</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hertz);</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span><span class="comment"></span> </div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span><span class="comment">/** \brief   Fetch the scheduler&#39;s current frequency.</span></div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="comment">    \param hertz    The new frequency in hertz (1-1000)</span></div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="comment"></span> </div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="comment">    \retval 0       The frequency was updated successfully.</span></div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="comment">    \retval -1      \p hertz is invalid.</span></div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span><span class="comment"></span> </div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="comment">    \sa thd_get_hz(), HZ</span></div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga12dad87642cf1a5c8190752b0573f812">  673</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga12dad87642cf1a5c8190752b0573f812">thd_set_hz</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hertz);</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span><span class="comment"></span> </div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="comment">    Queries the scheduler for its interrupt frequency in hertz.</span></div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="comment">/** \brief   Fetch the scheduler&#39;s current frequency.</span></div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span><span class="comment"></span> </div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span><span class="comment">    \return                 Scheduler frequency in hertz.</span></div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span><span class="comment">    Queries the scheduler for its interrupt frequency in hertz.</span></div>
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span><span class="comment"></span> </div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="comment">    \sa thd_set_hz(), HZ</span></div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga49f240a1e9fc3737dfccb4b61635de92">  681</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="group__kthreads.html#ga49f240a1e9fc3737dfccb4b61635de92">thd_get_hz</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span><span class="comment"></span> </div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span><span class="comment">/** \brief       Wait for a thread to exit.</span></div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span><span class="comment">    \relatesalso kthread_t</span></div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span><span class="comment"></span> </div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span><span class="comment">    This function &quot;joins&quot; a joinable thread. This means effectively that the</span></div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span><span class="comment">    calling thread blocks until the speified thread completes execution. It is</span></div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span><span class="comment">    invalid to join a detached thread, only joinable threads may be joined.</span></div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span><span class="comment"></span> </div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span><span class="comment">    \param  thd             The joinable thread to join.</span></div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span><span class="comment">    \param  value_ptr       A pointer to storage for the thread&#39;s return value,</span></div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span><span class="comment">                            or NULL if you don&#39;t care about it.</span></div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="comment"></span> </div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="comment">    \return                 0 on success, or less than 0 if the thread is</span></div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="comment">                            non-existent or not joinable.</span></div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span><span class="comment"></span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span><span class="comment">    \sa thd_detach</span></div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga8e1d141b734cf8614afdb11d30ca5575">  699</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga8e1d141b734cf8614afdb11d30ca5575">thd_join</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd, <span class="keywordtype">void</span> **value_ptr);</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span><span class="comment"></span> </div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span><span class="comment">/** \brief       Detach a joinable thread.</span></div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span><span class="comment">    \relatesalso kthread_t</span></div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span><span class="comment"></span> </div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span><span class="comment">    This function switches the specified thread&#39;s mode from THD_MODE_JOINABLE</span></div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span><span class="comment">    to THD_MODE_DETACHED. This will ensure that the thread cleans up all of its</span></div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span><span class="comment">    internal resources when it exits.</span></div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span><span class="comment"></span> </div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span><span class="comment">    \param  thd             The joinable thread to detach.</span></div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="comment">    \return                 Scheduler frequency in hertz.</span></div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="comment"></span> </div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="comment">    \sa thd_set_hz(), HZ</span></div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga49f240a1e9fc3737dfccb4b61635de92">  683</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="group__kthreads.html#ga49f240a1e9fc3737dfccb4b61635de92">thd_get_hz</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span><span class="comment"></span> </div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span><span class="comment">/** \brief       Wait for a thread to exit.</span></div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span><span class="comment">    \relatesalso kthread_t</span></div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span><span class="comment"></span> </div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span><span class="comment">    This function &quot;joins&quot; a joinable thread. This means effectively that the</span></div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span><span class="comment">    calling thread blocks until the speified thread completes execution. It is</span></div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span><span class="comment">    invalid to join a detached thread, only joinable threads may be joined.</span></div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span><span class="comment"></span> </div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span><span class="comment">    \param  thd             The joinable thread to join.</span></div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="comment">    \param  value_ptr       A pointer to storage for the thread&#39;s return value,</span></div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="comment">                            or NULL if you don&#39;t care about it.</span></div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="comment"></span> </div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span><span class="comment">    \return                 0 on success, or less than 0 if the thread is</span></div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span><span class="comment">                            non-existent or not joinable.</span></div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span><span class="comment"></span> </div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span><span class="comment">    \sa thd_detach</span></div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga8e1d141b734cf8614afdb11d30ca5575">  701</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga8e1d141b734cf8614afdb11d30ca5575">thd_join</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd, <span class="keywordtype">void</span> **value_ptr);</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span><span class="comment"></span> </div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span><span class="comment">/** \brief       Detach a joinable thread.</span></div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span><span class="comment">    \relatesalso kthread_t</span></div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span><span class="comment"></span> </div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span><span class="comment">    This function switches the specified thread&#39;s mode from THD_MODE_JOINABLE</span></div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span><span class="comment">    to THD_MODE_DETACHED. This will ensure that the thread cleans up all of its</span></div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span><span class="comment">    internal resources when it exits.</span></div>
 <div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span><span class="comment"></span> </div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span><span class="comment">    \return                 0 on success or less than 0 if the thread is</span></div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span><span class="comment">                            non-existent or already detached.</span></div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span><span class="comment">    \sa thd_join()</span></div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga724bf784df854173a2b74e71697a62a0">  714</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga724bf784df854173a2b74e71697a62a0">thd_detach</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd);</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span><span class="comment"></span> </div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span><span class="comment">/** \brief       Iterate all threads and call the passed callback for each</span></div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span><span class="comment">    \relatesalso kthread_t</span></div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span><span class="comment"></span> </div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="comment">    \param cb               The callback to call for each thread. </span></div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="comment">                            If a nonzero value is returned, iteration</span></div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span><span class="comment">                            ceases immediately.</span></div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span><span class="comment">    \param data             User data to be passed to the callback</span></div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span><span class="comment"></span> </div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span><span class="comment">    \retval                 0 or the first nonzero value returned by \p cb.</span></div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span><span class="comment">    \param  thd             The joinable thread to detach.</span></div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span><span class="comment"></span> </div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span><span class="comment">    \return                 0 on success or less than 0 if the thread is</span></div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span><span class="comment">                            non-existent or already detached.</span></div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span><span class="comment">    \sa thd_join()</span></div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga724bf784df854173a2b74e71697a62a0">  716</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga724bf784df854173a2b74e71697a62a0">thd_detach</a>(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd);</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span><span class="comment"></span> </div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span><span class="comment">/** \brief       Iterate all threads and call the passed callback for each</span></div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="comment">    \relatesalso kthread_t</span></div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="comment"></span> </div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span><span class="comment">    \param cb               The callback to call for each thread. </span></div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span><span class="comment">                            If a nonzero value is returned, iteration</span></div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span><span class="comment">                            ceases immediately.</span></div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span><span class="comment">    \param data             User data to be passed to the callback</span></div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span><span class="comment"></span> </div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span><span class="comment">    \sa thd_pslist</span></div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga16573d932033e584af5828f2d2e723a0">  728</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga16573d932033e584af5828f2d2e723a0">thd_each</a>(<span class="keywordtype">int</span> (*cb)(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd, <span class="keywordtype">void</span> *user_data), <span class="keywordtype">void</span> *data);</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span><span class="comment"></span> </div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span><span class="comment">/** \brief   Print a list of all threads using the given print function.</span></div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span><span class="comment">    \retval                 0 or the first nonzero value returned by \p cb.</span></div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span><span class="comment"></span> </div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span><span class="comment">    \sa thd_pslist</span></div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno"><a class="line" href="group__kthreads.html#ga16573d932033e584af5828f2d2e723a0">  730</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#ga16573d932033e584af5828f2d2e723a0">thd_each</a>(<span class="keywordtype">int</span> (*cb)(<a class="code hl_struct" href="structkthread__t.html">kthread_t</a> *thd, <span class="keywordtype">void</span> *user_data), <span class="keywordtype">void</span> *data);</div>
 <div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span><span class="comment"></span> </div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span><span class="comment">    \param  pf              The printf-like function to print with.</span></div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span><span class="comment">/** \brief   Print a list of all threads using the given print function.</span></div>
 <div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span><span class="comment"></span> </div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span><span class="comment"></span> </div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span><span class="comment">    \sa thd_pslist_queue</span></div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno"><a class="line" href="group__kthreads.html#gac9c082bca35dc855807f6aa048dd19ba">  738</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#gac9c082bca35dc855807f6aa048dd19ba">thd_pslist</a>(<span class="keywordtype">int</span> (*pf)(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...));</div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span><span class="comment"></span> </div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="comment">/** \brief   Print a list of all queued threads using the given print function.</span></div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span><span class="comment">    Each thread is printed with its address, tid, priority level, flags,</span></div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span><span class="comment">    it&#39;s wait timeout (if sleeping) the amount of cpu time usage in ns</span></div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span><span class="comment">    (this includes time in IRQs), state, and name.</span></div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span><span class="comment"></span> </div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span><span class="comment">    In addition a &#39;[system]&#39; item is provided that represents time since</span></div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span><span class="comment">    initialization not spent in a thread (context switching, updating</span></div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="comment">    wait timeouts, etc).</span></div>
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span><span class="comment"></span> </div>
 <div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span><span class="comment">    \param  pf              The printf-like function to print with.</span></div>
 <div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span><span class="comment"></span> </div>
 <div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span><span class="comment">    \retval 0               On success.</span></div>
 <div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span><span class="comment"></span> </div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span><span class="comment">    \sa thd_pslist</span></div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span><span class="comment">    \sa thd_pslist_queue</span></div>
 <div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno"><a class="line" href="group__kthreads.html#gac60ff417061399c9c9371a2c7354f5d1">  748</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#gac60ff417061399c9c9371a2c7354f5d1">thd_pslist_queue</a>(<span class="keywordtype">int</span> (*pf)(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...));</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno"><a class="line" href="group__kthreads.html#gac9c082bca35dc855807f6aa048dd19ba">  748</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#gac9c082bca35dc855807f6aa048dd19ba">thd_pslist</a>(<span class="keywordtype">int</span> (*pf)(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...));</div>
 <div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span><span class="comment"></span> </div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><span class="comment">/** \cond INTERNAL */</span></div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><span class="comment">/** \brief   Print a list of all queued threads using the given print function.</span></div>
 <div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span><span class="comment"></span> </div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span><span class="comment">/** \brief  Initialize the threading system.</span></div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span><span class="comment">    </span></div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span><span class="comment">    This is normally done for you by default when KOS starts. This will also</span></div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="comment">    initialize all the various synchronization primitives.</span></div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span><span class="comment">    \retval -1              If threads are already initialized.</span></div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span><span class="comment">    \sa thd_shutdown</span></div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span><span class="keywordtype">int</span> thd_init(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span> </div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span><span class="comment"></span> </div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="comment">/** \brief   Shutdown the threading system.</span></div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span><span class="comment"> </span></div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="comment">    This is done for you by the normal shutdown procedure of KOS. This will</span></div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span><span class="comment">    also shutdown all the various synchronization primitives.</span></div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="comment"> </span></div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span><span class="comment">    \sa thd_init</span></div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span><span class="comment">    \param  pf              The printf-like function to print with.</span></div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span><span class="comment"></span> </div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="comment"></span> </div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span><span class="comment">    \sa thd_pslist</span></div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno"><a class="line" href="group__kthreads.html#gac60ff417061399c9c9371a2c7354f5d1">  758</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__kthreads.html#gac60ff417061399c9c9371a2c7354f5d1">thd_pslist_queue</a>(<span class="keywordtype">int</span> (*pf)(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...));</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span><span class="comment"></span> </div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span><span class="comment">/** \cond INTERNAL */</span></div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span><span class="comment"></span> </div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span><span class="comment">/** \brief  Initialize the threading system.</span></div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="comment">    </span></div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span><span class="comment">    This is normally done for you by default when KOS starts. This will also</span></div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="comment">    initialize all the various synchronization primitives.</span></div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span><span class="comment">    \retval -1              If threads are already initialized.</span></div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span><span class="comment">    \sa thd_shutdown</span></div>
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span><span class="keywordtype">void</span> thd_shutdown(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="comment"></span> </div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span><span class="comment">/** \endcond */</span></div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span><span class="comment"></span> </div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span><span class="comment">/** @} */</span></div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span> </div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>__END_DECLS</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span> </div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span><span class="preprocessor">#endif  </span><span class="comment">/* __KOS_THREAD_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span><span class="keywordtype">int</span> thd_init(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span> </div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span><span class="comment"></span> </div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span><span class="comment">/** \brief   Shutdown the threading system.</span></div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span><span class="comment"> </span></div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span><span class="comment">    This is done for you by the normal shutdown procedure of KOS. This will</span></div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span><span class="comment">    also shutdown all the various synchronization primitives.</span></div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span><span class="comment"> </span></div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span><span class="comment">    \sa thd_init</span></div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span><span class="keywordtype">void</span> thd_shutdown(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span><span class="comment"></span> </div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span><span class="comment">/** \endcond */</span></div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span><span class="comment"></span> </div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span><span class="comment">/** @} */</span></div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span> </div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>__END_DECLS</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span> </div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span><span class="preprocessor">#endif  </span><span class="comment">/* __KOS_THREAD_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="acdefs_8h_html"><div class="ttname"><a href="cdefs_8h.html">cdefs.h</a></div><div class="ttdoc">Definitions for builtin attributes and compiler directives.</div></div>
 <div class="ttc" id="agroup__kthreads_html_ga036601c3dfd9d079729a867f691c7251"><div class="ttname"><a href="group__kthreads.html#ga036601c3dfd9d079729a867f691c7251">thd_choose_new</a></div><div class="ttdeci">irq_context_t * thd_choose_new(void)</div><div class="ttdoc">Find a new thread to swap in.</div></div>
 <div class="ttc" id="agroup__kthreads_html_ga064e68e032ac7b6478142c5806a4eb2c"><div class="ttname"><a href="group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c">thd_get_mode</a></div><div class="ttdeci">kthread_mode_t thd_get_mode(void) __deprecated</div><div class="ttdoc">Fetch the current threading mode.</div></div>
@@ -896,6 +906,7 @@ $(function(){initNavTree('thread_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="agroup__kthreads_html_ga1b6cbf2f872e306735a95fffc0439106"><div class="ttname"><a href="group__kthreads.html#ga1b6cbf2f872e306735a95fffc0439106">thd_exit</a></div><div class="ttdeci">void thd_exit(void *rv) __noreturn</div><div class="ttdoc">Exit the current thread.</div></div>
 <div class="ttc" id="agroup__kthreads_html_ga2459a9ed83fed30df5515c46d8c8b32f"><div class="ttname"><a href="group__kthreads.html#ga2459a9ed83fed30df5515c46d8c8b32f">kthread_t::thd_remove_from_runnable</a></div><div class="ttdeci">int thd_remove_from_runnable(kthread_t *thd)</div><div class="ttdoc">Removes a thread from the runnable queue, if it's there.</div></div>
 <div class="ttc" id="agroup__kthreads_html_ga314b55cd3cae0c7d22114f4e4d0153fd"><div class="ttname"><a href="group__kthreads.html#ga314b55cd3cae0c7d22114f4e4d0153fd">thd_schedule</a></div><div class="ttdeci">void thd_schedule(bool front_of_line, uint64_t now)</div><div class="ttdoc">Force a thread reschedule.</div></div>
+<div class="ttc" id="agroup__kthreads_html_ga368a4d08f7be08602f4ae7d035a5dae4"><div class="ttname"><a href="group__kthreads.html#ga368a4d08f7be08602f4ae7d035a5dae4">kthread_t::thd_get_total_cpu_time</a></div><div class="ttdeci">uint64_t thd_get_total_cpu_time(void)</div><div class="ttdoc">Retrieves all thread's elapsed CPU time.</div></div>
 <div class="ttc" id="agroup__kthreads_html_ga42fb0ef4f8b4901fbb9a515b08db0ff6"><div class="ttname"><a href="group__kthreads.html#ga42fb0ef4f8b4901fbb9a515b08db0ff6">kthread_t::thd_get_reent</a></div><div class="ttdeci">struct _reent * thd_get_reent(kthread_t *thd)</div><div class="ttdoc">Retrieve a pointer to the thread reent struct.</div></div>
 <div class="ttc" id="agroup__kthreads_html_ga46580d9fc434ae5d832d08bdc798f487"><div class="ttname"><a href="group__kthreads.html#ga46580d9fc434ae5d832d08bdc798f487">kthread_t::thd_destroy</a></div><div class="ttdeci">int thd_destroy(kthread_t *thd)</div><div class="ttdoc">Brutally kill the given thread.</div></div>
 <div class="ttc" id="agroup__kthreads_html_ga47e84ffe7caf93ee355fb1b5c41e87d2"><div class="ttname"><a href="group__kthreads.html#ga47e84ffe7caf93ee355fb1b5c41e87d2">thd_block_now</a></div><div class="ttdeci">int thd_block_now(irq_context_t *mycxt)</div><div class="ttdoc">Block the current thread.</div></div>

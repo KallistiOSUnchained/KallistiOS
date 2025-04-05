@@ -17,7 +17,7 @@ var dir_39421b6c340728d4b73811bee3577133 =
     [ "fs_dcload.h", "fs__dcload_8h.html", "fs__dcload_8h" ],
     [ "fs_dclsocket.h", "fs__dclsocket_8h.html", null ],
     [ "fs_iso9660.h", "fs__iso9660_8h.html", "fs__iso9660_8h" ],
-    [ "fs_vmu.h", "fs__vmu_8h.html", null ],
+    [ "fs_vmu.h", "fs__vmu_8h.html", "fs__vmu_8h" ],
     [ "g1ata.h", "g1ata_8h.html", "g1ata_8h" ],
     [ "g2bus.h", "g2bus_8h.html", "g2bus_8h" ],
     [ "maple.h", "maple_8h.html", "maple_8h" ],

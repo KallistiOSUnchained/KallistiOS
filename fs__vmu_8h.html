@@ -97,6 +97,8 @@ $(function(){initNavTree('fs__vmu_8h.html',''); initResizable(true); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">fs_vmu.h File Reference<div class="ingroups"><a class="el" href="group__vfs.html">Filesystem</a> &raquo; <a class="el" href="group__vfs__vmu.html">VMU</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -105,8 +107,19 @@ $(function(){initNavTree('fs__vmu_8h.html',''); initResizable(true); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="fs_8h_source.html">kos/fs.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vmu__pkg_8h_source.html">dc/vmu_pkg.h</a>&gt;</code><br />
 </div>
 <p><a href="fs__vmu_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga4dac03d345d2f1579606dac4ce05d128" id="r_ga4dac03d345d2f1579606dac4ce05d128"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__vmu.html#ga4dac03d345d2f1579606dac4ce05d128">fs_vmu_set_header</a> (<a class="el" href="group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9">file_t</a> fd, const <a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg)</td></tr>
+<tr class="memdesc:ga4dac03d345d2f1579606dac4ce05d128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a header to an opened VMU file.  <br /></td></tr>
+<tr class="separator:ga4dac03d345d2f1579606dac4ce05d128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75f4acb794399d43f1d0528a854ce962" id="r_ga75f4acb794399d43f1d0528a854ce962"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vfs__vmu.html#ga75f4acb794399d43f1d0528a854ce962">fs_vmu_set_default_header</a> (const <a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg)</td></tr>
+<tr class="memdesc:ga75f4acb794399d43f1d0528a854ce962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a default header for newly created VMU files.  <br /></td></tr>
+<tr class="separator:ga75f4acb794399d43f1d0528a854ce962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>VMU filesystem driver. </p>
 <p>The VMU filesystem driver mounts itself on /vmu of the VFS. Each memory card has its own subdirectory off of that directory (i.e, /vmu/a1 for slot 1 of the first controller). VMUs themselves have no subdirectories, so the driver itself is fairly simple.</p>

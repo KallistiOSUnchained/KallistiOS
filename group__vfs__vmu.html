@@ -144,6 +144,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga4dac03d345d2f1579606dac4ce05d128" id="r_ga4dac03d345d2f1579606dac4ce05d128"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4dac03d345d2f1579606dac4ce05d128">fs_vmu_set_header</a> (<a class="el" href="group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9">file_t</a> fd, const <a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg)</td></tr>
+<tr class="memdesc:ga4dac03d345d2f1579606dac4ce05d128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a header to an opened VMU file.  <br /></td></tr>
+<tr class="separator:ga4dac03d345d2f1579606dac4ce05d128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75f4acb794399d43f1d0528a854ce962" id="r_ga75f4acb794399d43f1d0528a854ce962"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga75f4acb794399d43f1d0528a854ce962">fs_vmu_set_default_header</a> (const <a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *pkg)</td></tr>
+<tr class="memdesc:ga75f4acb794399d43f1d0528a854ce962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a default header for newly created VMU files.  <br /></td></tr>
+<tr class="separator:ga75f4acb794399d43f1d0528a854ce962"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad08c7bd843c8ef21174caecf6a47d7e7" id="r_gad08c7bd843c8ef21174caecf6a47d7e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad08c7bd843c8ef21174caecf6a47d7e7">vmufs_dir_fill_time</a> (<a class="el" href="structvmu__dir__t.html">vmu_dir_t</a> *d)</td></tr>
 <tr class="memdesc:gad08c7bd843c8ef21174caecf6a47d7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill in the date on a <a class="el" href="structvmu__dir__t.html" title="VMU FS Directory entries, 32 bytes each.">vmu_dir_t</a> for writing.  <br /></td></tr>
 <tr class="separator:gad08c7bd843c8ef21174caecf6a47d7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -275,6 +281,104 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga75f4acb794399d43f1d0528a854ce962" name="ga75f4acb794399d43f1d0528a854ce962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga75f4acb794399d43f1d0528a854ce962">&#9670;&#160;</a></span>fs_vmu_set_default_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int fs_vmu_set_default_header </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pkg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a default header for newly created VMU files. </p>
+<p>This function will set a default header, that will be used for new files which were not assignated their own header.</p>
+<p>Note that files which already have a header, either because they were opened read-write or because they were given one, will use their own header instead of the default one.</p>
+<p>Note that the "pkg" pointer as well as the eyecatch/icon data pointers it contain can be freed (if dynamically allocated) as soon as this function return, as the filesystem code will keep an internal copy.</p>
+<p>It is valid to pass NULL as the header pointer, in which case the default header will be discarded.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pkg</td><td>The header to set to the VMU file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>On success. </td></tr>
+    <tr><td class="paramname">-1</td><td>On error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="group__vfs__generic.html#ga70a39957ef36f3710ec6d6e10b394bea">fs_close()</a>, <a class="el" href="group__vfs__generic.html#ga25d7fb53c97b19b22645e482803bd7d3">fs_open()</a>, <a class="el" href="#ga4dac03d345d2f1579606dac4ce05d128">fs_vmu_set_header()</a>, and <a class="el" href="group__vfs__generic.html#gad8aa83f74090afc7e57f871c9491ed95">O_DIR</a>.</p>
+
+</div>
+</div>
+<a id="ga4dac03d345d2f1579606dac4ce05d128" name="ga4dac03d345d2f1579606dac4ce05d128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4dac03d345d2f1579606dac4ce05d128">&#9670;&#160;</a></span>fs_vmu_set_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int fs_vmu_set_header </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9">file_t</a></td>          <td class="paramname"><span class="paramname"><em>fd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structvmu__pkg__t.html">vmu_pkg_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pkg</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a header to an opened VMU file. </p>
+<p>This function can be used to set a specific header (which contains the metadata, icons...) to an opened VMU file, replacing the one it previously had (if any).</p>
+<p>Note that the "pkg" pointer as well as the eyecatch/icon data pointers it contain can be freed (if dynamically allocated) as soon as this function return, as the filesystem code will keep an internal copy.</p>
+<p>It is valid to pass NULL as the header pointer, in which case the header for the file will be discarded.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>A file descriptor corresponding to the VMU file </td></tr>
+    <tr><td class="paramname">pkg</td><td>The header to set to the VMU file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>On success. </td></tr>
+    <tr><td class="paramname">-1</td><td>On error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="group__vfs__generic.html#ga86ea8c0a0529cef2924f07441bc2c128">fs_ioctl()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#ga75f4acb794399d43f1d0528a854ce962">fs_vmu_set_default_header()</a>.</p>
+
+</div>
+</div>
 <a id="ga9ec34ccd6dd9e062a6fa154744d7ebb7" name="ga9ec34ccd6dd9e062a6fa154744d7ebb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9ec34ccd6dd9e062a6fa154744d7ebb7">&#9670;&#160;</a></span>vmufs_delete()</h2>
 

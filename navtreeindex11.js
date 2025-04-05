@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"group__pvr__filter__modes.html#gadd5bd867cb0c99b0601d65d74da97ac9":[9,11,5,1,0,0,0,8,4,1],
+"group__pvr__filter__modes.html#gaf07d63f6b93c6837acf18e5c9866cb52":[9,11,5,1,0,0,0,8,4,3],
+"group__pvr__fog.html":[9,11,5,2,0],
 "group__pvr__fog.html#ga2f5a4c3b0be7324b9dd0e1a001347108":[9,11,5,2,0,5],
 "group__pvr__fog.html#ga499c554924d2074148e5ffdde0ced159":[9,11,5,2,0,6],
 "group__pvr__fog.html#gab1bf6caa5f399c4b86c718f120acabcd":[9,11,5,2,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX11 =
 "group__pvr__uv__flip.html#gacb99026c8f88ff6349c4d70aae11f4ee":[9,11,5,1,0,0,0,8,8,0],
 "group__pvr__uv__flip.html#gaef7c56e3c10ffe310ee489797a7da59a":[9,11,5,1,0,0,0,8,8,1],
 "group__pvr__uv__flip.html#gafe562f48c506fdedff5e5c5d62ea417d":[9,11,5,1,0,0,0,8,8,2],
-"group__pvr__uv__fmts.html":[9,11,5,1,0,0,0,8,7],
-"group__pvr__uv__fmts.html#ga1ab39c354e462e22b14049863e45543f":[9,11,5,1,0,0,0,8,7,1],
-"group__pvr__uv__fmts.html#ga8803dcc35b04ac26b7f20376a508a171":[9,11,5,1,0,0,0,8,7,0],
-"group__pvr__vertex__dma.html":[9,11,5,7,2]
+"group__pvr__uv__fmts.html":[9,11,5,1,0,0,0,8,7]
 };

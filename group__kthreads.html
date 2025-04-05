@@ -274,6 +274,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5284a45993b16ea36c23e12e56ddd2bc" id="r_ga5284a45993b16ea36c23e12e56ddd2bc"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5284a45993b16ea36c23e12e56ddd2bc">thd_get_cpu_time</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
 <tr class="memdesc:ga5284a45993b16ea36c23e12e56ddd2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the thread's elapsed CPU time.  <br /></td></tr>
 <tr class="separator:ga5284a45993b16ea36c23e12e56ddd2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga368a4d08f7be08602f4ae7d035a5dae4" id="r_ga368a4d08f7be08602f4ae7d035a5dae4"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga368a4d08f7be08602f4ae7d035a5dae4">thd_get_total_cpu_time</a> (void)</td></tr>
+<tr class="memdesc:ga368a4d08f7be08602f4ae7d035a5dae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all thread's elapsed CPU time.  <br /></td></tr>
+<tr class="separator:ga368a4d08f7be08602f4ae7d035a5dae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad3eb4652a1578c25dd5c6bebe5ddadcb" id="r_gad3eb4652a1578c25dd5c6bebe5ddadcb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3eb4652a1578c25dd5c6bebe5ddadcb">thd_set_mode</a> (<a class="el" href="#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a> mode) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
 <tr class="memdesc:gad3eb4652a1578c25dd5c6bebe5ddadcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change threading modes.  <br /></td></tr>
 <tr class="separator:gad3eb4652a1578c25dd5c6bebe5ddadcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -349,6 +352,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5284a45993b16ea36c23e12e56ddd2bc" id="r_ga5284a45993b16ea36c23e12e56ddd2bc"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5284a45993b16ea36c23e12e56ddd2bc">thd_get_cpu_time</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
 <tr class="memdesc:ga5284a45993b16ea36c23e12e56ddd2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the thread's elapsed CPU time.  <br /></td></tr>
 <tr class="separator:ga5284a45993b16ea36c23e12e56ddd2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga368a4d08f7be08602f4ae7d035a5dae4" id="r_ga368a4d08f7be08602f4ae7d035a5dae4"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga368a4d08f7be08602f4ae7d035a5dae4">thd_get_total_cpu_time</a> (void)</td></tr>
+<tr class="memdesc:ga368a4d08f7be08602f4ae7d035a5dae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all thread's elapsed CPU time.  <br /></td></tr>
+<tr class="separator:ga368a4d08f7be08602f4ae7d035a5dae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8e1d141b734cf8614afdb11d30ca5575" id="r_ga8e1d141b734cf8614afdb11d30ca5575"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8e1d141b734cf8614afdb11d30ca5575">thd_join</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, void **value_ptr)</td></tr>
 <tr class="memdesc:ga8e1d141b734cf8614afdb11d30ca5575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a thread to exit.  <br /></td></tr>
 <tr class="separator:ga8e1d141b734cf8614afdb11d30ca5575"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1252,16 +1258,15 @@ Functions</h2></td></tr>
 
 <p>Retrieves the thread's elapsed CPU time. </p>
 <p>Returns the amount of active CPU time the thread has consumed in nanoseconds.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The implementation uses <a class="el" href="group__perf__counters__timer.html#ga358fcfefcb2d36710d6cfeb7c97ff77f" title="Gets elapsed CPU time (in nanoseconds)">perf_cntr_timer_ns()</a> internally when maintaining this CPU time, so disabling or clearing the nanosecond timer will interfere with this time keeping.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">thd</td><td>The thead to retrieve the CPU time for</td></tr>
+    <tr><td class="paramname">thd</td><td>The thead to retrieve the CPU time for.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">Total</td><td>utilized CPU time in nanoseconds OR 0 if the nanosecond timer of the performance counters has been disturbed. </td></tr>
+    <tr><td class="paramname">Total</td><td>utilized CPU time in nanoseconds. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1285,16 +1290,15 @@ Functions</h2></td></tr>
 
 <p>Retrieves the thread's elapsed CPU time. </p>
 <p>Returns the amount of active CPU time the thread has consumed in nanoseconds.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The implementation uses <a class="el" href="group__perf__counters__timer.html#ga358fcfefcb2d36710d6cfeb7c97ff77f" title="Gets elapsed CPU time (in nanoseconds)">perf_cntr_timer_ns()</a> internally when maintaining this CPU time, so disabling or clearing the nanosecond timer will interfere with this time keeping.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">thd</td><td>The thead to retrieve the CPU time for</td></tr>
+    <tr><td class="paramname">thd</td><td>The thead to retrieve the CPU time for.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">Total</td><td>utilized CPU time in nanoseconds OR 0 if the nanosecond timer of the performance counters has been disturbed. </td></tr>
+    <tr><td class="paramname">Total</td><td>utilized CPU time in nanoseconds. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1644,6 +1648,66 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga368a4d08f7be08602f4ae7d035a5dae4" name="ga368a4d08f7be08602f4ae7d035a5dae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga368a4d08f7be08602f4ae7d035a5dae4">&#9670;&#160;</a></span>thd_get_total_cpu_time() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t thd_get_total_cpu_time </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves all thread's elapsed CPU time. </p>
+<p>Returns the amount of active CPU time all threads have consumed in nanoseconds.</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Total</td><td>utilized CPU time in nanoseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga368a4d08f7be08602f4ae7d035a5dae4" name="ga368a4d08f7be08602f4ae7d035a5dae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga368a4d08f7be08602f4ae7d035a5dae4">&#9670;&#160;</a></span>thd_get_total_cpu_time() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t thd_get_total_cpu_time </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves all thread's elapsed CPU time. </p>
+<p>Returns the amount of active CPU time all threads have consumed in nanoseconds.</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Total</td><td>utilized CPU time in nanoseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga8e1d141b734cf8614afdb11d30ca5575" name="ga8e1d141b734cf8614afdb11d30ca5575"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8e1d141b734cf8614afdb11d30ca5575">&#9670;&#160;</a></span>thd_join() <span class="overload">[1/2]</span></h2>
 
@@ -1756,6 +1820,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print a list of all threads using the given print function. </p>
+<p>Each thread is printed with its address, tid, priority level, flags, it's wait timeout (if sleeping) the amount of cpu time usage in ns (this includes time in IRQs), state, and name.</p>
+<p>In addition a '[system]' item is provided that represents time since initialization not spent in a thread (context switching, updating wait timeouts, etc).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pf</td><td>The printf-like function to print with.</td></tr>

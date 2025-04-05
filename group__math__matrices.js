@@ -32,6 +32,7 @@ var group__math__matrices =
     [ "mat_identity", "group__math__matrices.html#ga1ff180bf67c0e8b88e38014472046031", null ],
     [ "mat_load", "group__math__matrices.html#ga47dc9daa4a52246793f47ea02464a3d6", null ],
     [ "mat_lookat", "group__math__matrices.html#ga7c7ab3fc1edb2a4925a8a0663cf9b622", null ],
+    [ "mat_multiply", "group__math__matrices.html#ga37a985bc4c2814fa9cc81562dd6141b6", null ],
     [ "mat_perspective", "group__math__matrices.html#ga57002d12954451d060419d752bdf9762", null ],
     [ "mat_rotate", "group__math__matrices.html#ga21ed325de27b24c9d7abbd8179c3bebf", null ],
     [ "mat_rotate_x", "group__math__matrices.html#ga15b63fb7d93ab1c75b305df5ea190ea3", null ],

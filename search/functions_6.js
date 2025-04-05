@@ -74,10 +74,12 @@ var searchData=
   ['fs_5ftotal_71',['fs_total',['../group__vfs__generic.html#ga20244754d0c1f62c3821001f91c788d0',1,'fs.h']]],
   ['fs_5ftotal64_72',['fs_total64',['../group__vfs__generic.html#gac106f4ddb42005f23b4c4d85dd97ef31',1,'fs.h']]],
   ['fs_5funlink_73',['fs_unlink',['../group__vfs__generic.html#ga90ed9e4d5b20426e04fd5031b4d952c2',1,'fs.h']]],
-  ['fs_5fwrite_74',['fs_write',['../group__vfs__generic.html#ga05d232085793a240327d6ee9da8e1764',1,'fs.h']]],
-  ['fsin_75',['fsin',['../group__math__intrinsics.html#ga117027665a2ba3ac02996f87868239ca',1,'fmath.h']]],
-  ['fsincos_76',['fsincos',['../group__math__intrinsics.html#ga1d74dce1cbbbdfbbb224cc412298c42f',1,'fmath.h']]],
-  ['fsincosr_77',['fsincosr',['../group__math__intrinsics.html#ga4f7cb9aa0a7f6f58dbd32773e007145e',1,'fmath.h']]],
-  ['fsqrt_78',['fsqrt',['../group__math__intrinsics.html#ga02e12ab84b2efd1e7394aa76798b941a',1,'fmath.h']]],
-  ['ftan_79',['ftan',['../group__math__intrinsics.html#gaeb8f4a9167779b002ff2b6f03f705596',1,'fmath.h']]]
+  ['fs_5fvmu_5fset_5fdefault_5fheader_74',['fs_vmu_set_default_header',['../group__vfs__vmu.html#ga75f4acb794399d43f1d0528a854ce962',1,'fs_vmu.h']]],
+  ['fs_5fvmu_5fset_5fheader_75',['fs_vmu_set_header',['../group__vfs__vmu.html#ga4dac03d345d2f1579606dac4ce05d128',1,'fs_vmu.h']]],
+  ['fs_5fwrite_76',['fs_write',['../group__vfs__generic.html#ga05d232085793a240327d6ee9da8e1764',1,'fs.h']]],
+  ['fsin_77',['fsin',['../group__math__intrinsics.html#ga117027665a2ba3ac02996f87868239ca',1,'fmath.h']]],
+  ['fsincos_78',['fsincos',['../group__math__intrinsics.html#ga1d74dce1cbbbdfbbb224cc412298c42f',1,'fmath.h']]],
+  ['fsincosr_79',['fsincosr',['../group__math__intrinsics.html#ga4f7cb9aa0a7f6f58dbd32773e007145e',1,'fmath.h']]],
+  ['fsqrt_80',['fsqrt',['../group__math__intrinsics.html#ga02e12ab84b2efd1e7394aa76798b941a',1,'fmath.h']]],
+  ['ftan_81',['ftan',['../group__math__intrinsics.html#gaeb8f4a9167779b002ff2b6f03f705596',1,'fmath.h']]]
 ];
