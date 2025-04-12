@@ -9,7 +9,7 @@ var searchData=
   ['real_20time_20clock_6',['Real-Time Clock',['../group__rtc.html',1,'']]],
   ['receive_20status_20bits_7',['Receive Status Bits',['../group__bba__rbits.html',1,'']]],
   ['region_8',['P4 memory region',['../group__p4mem.html',1,'']]],
-  ['region_20codes_9',['Region Codes',['../group__hw__regions.html',1,'Region Codes'],['../group__kbd__regions.html',1,'Region Codes']]],
+  ['region_20codes_9',['Region Codes',['../group__hw__regions.html',1,'']]],
   ['region_20settings_10',['Region Settings',['../group__fr__region.html',1,'']]],
   ['register_201_20rt_5fconfig1_20bits_11',['RTL8139C Config Register 1 (RT_CONFIG1) Bits',['../group__bba__config1bits.html',1,'']]],
   ['register_204_20rt_5fconfig4_20bits_12',['RTL8139C Config Register 4 (RT_CONFIG4) Bits',['../group__bba__config4bits.html',1,'']]],

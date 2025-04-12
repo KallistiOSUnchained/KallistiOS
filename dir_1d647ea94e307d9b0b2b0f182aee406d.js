@@ -15,6 +15,7 @@ var dir_1d647ea94e307d9b0b2b0f182aee406d =
     [ "spinlock.h", "spinlock_8h.html", "spinlock_8h" ],
     [ "stack.h", "stack_8h.html", "stack_8h" ],
     [ "timer.h", "timer_8h.html", "timer_8h" ],
+    [ "tls_static.h", "tls__static_8h.html", "tls__static_8h" ],
     [ "trap.h", "trap_8h.html", "trap_8h" ],
     [ "types.h", "types_8h.html", "types_8h" ],
     [ "wdt.h", "wdt_8h.html", "wdt_8h" ]

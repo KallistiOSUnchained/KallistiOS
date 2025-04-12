@@ -99,7 +99,7 @@ $(function(){initNavTree('structkbd__state__t.html',''); initResizable(true); })
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">kbd_state_t Struct Reference<div class="ingroups"><a class="el" href="group__peripherals.html">Peripherals</a> &raquo; <a class="el" href="group__kbd.html">Keyboard</a></div></div></div>
+  <div class="headertitle"><div class="title">kbd_state_t Struct Reference<div class="ingroups"><a class="el" href="group__peripherals.html">Peripherals</a> &raquo; <a class="el" href="group__kbd.html">Keyboard</a> &raquo; <a class="el" href="group__kbd__status__grp.html">Device Status</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -113,38 +113,41 @@ Data Fields</h2></td></tr>
 <tr class="memitem:ac81f8608836ba0aa3bf795e4e5955af3" id="r_ac81f8608836ba0aa3bf795e4e5955af3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkbd__cond__t.html">kbd_cond_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac81f8608836ba0aa3bf795e4e5955af3">cond</a></td></tr>
 <tr class="memdesc:ac81f8608836ba0aa3bf795e4e5955af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The latest raw condition of the keyboard.  <br /></td></tr>
 <tr class="separator:ac81f8608836ba0aa3bf795e4e5955af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac8ca1c911fa2da8274133b7b34ceba1" id="r_aac8ca1c911fa2da8274133b7b34ceba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac8ca1c911fa2da8274133b7b34ceba1">matrix</a> [<a class="el" href="group__kbd.html#ga8df3ecdb47d4bbfde4ed1a06f72da2d2">MAX_KBD_KEYS</a>]</td></tr>
-<tr class="memdesc:aac8ca1c911fa2da8274133b7b34ceba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key array.  <br /></td></tr>
-<tr class="separator:aac8ca1c911fa2da8274133b7b34ceba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b2bda996b0886f944e3d8786f042b01" id="r_a8b2bda996b0886f944e3d8786f042b01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b2bda996b0886f944e3d8786f042b01">shift_keys</a></td></tr>
-<tr class="memdesc:a8b2bda996b0886f944e3d8786f042b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifier key status.  <br /></td></tr>
-<tr class="separator:a8b2bda996b0886f944e3d8786f042b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0cd04383da4f3b967a3aa0be4ec2a9a" id="r_af0cd04383da4f3b967a3aa0be4ec2a9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0cd04383da4f3b967a3aa0be4ec2a9a">region</a></td></tr>
-<tr class="memdesc:af0cd04383da4f3b967a3aa0be4ec2a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard type/region.  <br /></td></tr>
-<tr class="separator:af0cd04383da4f3b967a3aa0be4ec2a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af427bb193049830cf9e6b7eeff65b743" id="r_af427bb193049830cf9e6b7eeff65b743"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af427bb193049830cf9e6b7eeff65b743">key_queue</a> [<a class="el" href="group__kbd.html#gaf8a95f173e93b8af6091a7b915d7d5be">KBD_QUEUE_SIZE</a>]</td></tr>
-<tr class="memdesc:af427bb193049830cf9e6b7eeff65b743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Individual keyboard queue.  <br /></td></tr>
-<tr class="separator:af427bb193049830cf9e6b7eeff65b743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fecd02063568caba97032e0589ff77b" id="r_a4fecd02063568caba97032e0589ff77b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fecd02063568caba97032e0589ff77b">queue_tail</a></td></tr>
-<tr class="memdesc:a4fecd02063568caba97032e0589ff77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key queue tail.  <br /></td></tr>
-<tr class="separator:a4fecd02063568caba97032e0589ff77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedc8c6153cd7547040e543999059d532" id="r_aedc8c6153cd7547040e543999059d532"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedc8c6153cd7547040e543999059d532">queue_head</a></td></tr>
-<tr class="memdesc:aedc8c6153cd7547040e543999059d532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key queue head.  <br /></td></tr>
-<tr class="separator:aedc8c6153cd7547040e543999059d532"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bc9d1e31f736839292bdaf6d9bc8ce7" id="r_a3bc9d1e31f736839292bdaf6d9bc8ce7"><td class="memItemLeft" align="right" valign="top">volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bc9d1e31f736839292bdaf6d9bc8ce7">queue_len</a></td></tr>
-<tr class="memdesc:a3bc9d1e31f736839292bdaf6d9bc8ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current length of queue.  <br /></td></tr>
-<tr class="separator:a3bc9d1e31f736839292bdaf6d9bc8ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24ef54149b27b552599a9e4759ab6f58" id="r_a24ef54149b27b552599a9e4759ab6f58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24ef54149b27b552599a9e4759ab6f58">kbd_repeat_key</a></td></tr>
-<tr class="memdesc:a24ef54149b27b552599a9e4759ab6f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key that is repeating.  <br /></td></tr>
-<tr class="separator:a24ef54149b27b552599a9e4759ab6f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9ea7ff7ce5d2042fbd13e76b51b4ecf" id="r_ae9ea7ff7ce5d2042fbd13e76b51b4ecf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9ea7ff7ce5d2042fbd13e76b51b4ecf">kbd_repeat_timer</a></td></tr>
-<tr class="memdesc:ae9ea7ff7ce5d2042fbd13e76b51b4ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time that the next repeat will trigger.  <br /></td></tr>
-<tr class="separator:ae9ea7ff7ce5d2042fbd13e76b51b4ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a25485dd9cf102b7fbd9c09d0c4abf" id="r_ae3a25485dd9cf102b7fbd9c09d0c4abf"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3a25485dd9cf102b7fbd9c09d0c4abf">matrix</a> [<a class="el" href="group__kbd__status__grp.html#ga8fe2decf5efd2287da1ef40d1a8b4ff6">KBD_MAX_KEYS</a>]</td></tr>
+<tr class="memdesc:ae3a25485dd9cf102b7fbd9c09d0c4abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key array.  <br /></td></tr>
+<tr class="separator:ae3a25485dd9cf102b7fbd9c09d0c4abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4c4e42053e56f1e52f348888396100" id="r_a8b4c4e42053e56f1e52f348888396100"><td class="memItemLeft" >union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2d61a9a648d2cca228a0e70c4a3664" id="r_abe2d61a9a648d2cca228a0e70c4a3664"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="unionkbd__mods__t.html">kbd_mods_t</a>&#160;&#160;&#160;<a class="el" href="#a954d7f90b79489c0835e0d41937f37ca">last_modifiers</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:abe2d61a9a648d2cca228a0e70c4a3664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4c4e42053e56f1e52f348888396100" id="r_a8b4c4e42053e56f1e52f348888396100"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom">&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a8b4c4e42053e56f1e52f348888396100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifier key status. <br /></td></tr>
+<tr class="separator:a8b4c4e42053e56f1e52f348888396100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26df5c8f33e2c75ced9f22b35502a7e" id="r_ad26df5c8f33e2c75ced9f22b35502a7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__kbd__status__grp.html#ga0e5881b4080afc9e7e5ed0040d1147ca">kbd_region_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad26df5c8f33e2c75ced9f22b35502a7e">region</a></td></tr>
+<tr class="memdesc:ad26df5c8f33e2c75ced9f22b35502a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard type/region.  <br /></td></tr>
+<tr class="separator:ad26df5c8f33e2c75ced9f22b35502a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Keyboard status structure. </p>
 <p>This structure holds information about the current status of the keyboard device. This is what <a class="el" href="group__maple.html#gaeed7e161e4b6b49ebef7aaf7436583e4" title="Get the status struct for the requested maple device.">maple_dev_status()</a> will return. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a8b4c4e42053e56f1e52f348888396100" name="a8b4c4e42053e56f1e52f348888396100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b4c4e42053e56f1e52f348888396100">&#9670;&#160;</a></span>[union]</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union  { ... }  <a class="el" href="structkbd__state__t.html">kbd_state_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modifier key status. </p>
+<p>Stored to track changes. </p>
+
+</div>
+</div>
 <a id="ac81f8608836ba0aa3bf795e4e5955af3" name="ac81f8608836ba0aa3bf795e4e5955af3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac81f8608836ba0aa3bf795e4e5955af3">&#9670;&#160;</a></span>cond</h2>
 
@@ -161,150 +164,51 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a24ef54149b27b552599a9e4759ab6f58" name="a24ef54149b27b552599a9e4759ab6f58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24ef54149b27b552599a9e4759ab6f58">&#9670;&#160;</a></span>kbd_repeat_key</h2>
+<a id="a954d7f90b79489c0835e0d41937f37ca" name="a954d7f90b79489c0835e0d41937f37ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954d7f90b79489c0835e0d41937f37ca">&#9670;&#160;</a></span>last_modifiers</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> kbd_state_t::kbd_repeat_key</td>
+          <td class="memname"><a class="el" href="unionkbd__mods__t.html">kbd_mods_t</a> kbd_state_t::last_modifiers</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Key that is repeating. </p>
-
 </div>
 </div>
-<a id="ae9ea7ff7ce5d2042fbd13e76b51b4ecf" name="ae9ea7ff7ce5d2042fbd13e76b51b4ecf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9ea7ff7ce5d2042fbd13e76b51b4ecf">&#9670;&#160;</a></span>kbd_repeat_timer</h2>
+<a id="ae3a25485dd9cf102b7fbd9c09d0c4abf" name="ae3a25485dd9cf102b7fbd9c09d0c4abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a25485dd9cf102b7fbd9c09d0c4abf">&#9670;&#160;</a></span>matrix</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a> kbd_state_t::kbd_repeat_timer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Time that the next repeat will trigger. </p>
-
-</div>
-</div>
-<a id="af427bb193049830cf9e6b7eeff65b743" name="af427bb193049830cf9e6b7eeff65b743"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af427bb193049830cf9e6b7eeff65b743">&#9670;&#160;</a></span>key_queue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> kbd_state_t::key_queue[<a class="el" href="group__kbd.html#gaf8a95f173e93b8af6091a7b915d7d5be">KBD_QUEUE_SIZE</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Individual keyboard queue. </p>
-<p>You should not access this variable directly. Please use the appropriate function to access it. </p>
-
-</div>
-</div>
-<a id="aac8ca1c911fa2da8274133b7b34ceba1" name="aac8ca1c911fa2da8274133b7b34ceba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac8ca1c911fa2da8274133b7b34ceba1">&#9670;&#160;</a></span>matrix</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__system__types.html#gadde6aaee8457bee49c2a92621fe22b79">uint8</a> kbd_state_t::matrix[<a class="el" href="group__kbd.html#ga8df3ecdb47d4bbfde4ed1a06f72da2d2">MAX_KBD_KEYS</a>]</td>
+          <td class="memname">uint8_t kbd_state_t::matrix[<a class="el" href="group__kbd__status__grp.html#ga8fe2decf5efd2287da1ef40d1a8b4ff6">KBD_MAX_KEYS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Key array. </p>
 <p>This array lists the state of all possible keys on the keyboard. It can be used for key repeat and debouncing. This will be non-zero if the key is currently being pressed.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__kbd__keys.html" title="Values representing the various keyboard keys">Keys</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>kbd_keys </dd></dl>
 
 </div>
 </div>
-<a id="aedc8c6153cd7547040e543999059d532" name="aedc8c6153cd7547040e543999059d532"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedc8c6153cd7547040e543999059d532">&#9670;&#160;</a></span>queue_head</h2>
+<a id="ad26df5c8f33e2c75ced9f22b35502a7e" name="ad26df5c8f33e2c75ced9f22b35502a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26df5c8f33e2c75ced9f22b35502a7e">&#9670;&#160;</a></span>region</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int kbd_state_t::queue_head</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Key queue head. </p>
-
-</div>
-</div>
-<a id="a3bc9d1e31f736839292bdaf6d9bc8ce7" name="a3bc9d1e31f736839292bdaf6d9bc8ce7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bc9d1e31f736839292bdaf6d9bc8ce7">&#9670;&#160;</a></span>queue_len</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile int kbd_state_t::queue_len</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Current length of queue. </p>
-
-</div>
-</div>
-<a id="a4fecd02063568caba97032e0589ff77b" name="a4fecd02063568caba97032e0589ff77b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fecd02063568caba97032e0589ff77b">&#9670;&#160;</a></span>queue_tail</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int kbd_state_t::queue_tail</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Key queue tail. </p>
-
-</div>
-</div>
-<a id="af0cd04383da4f3b967a3aa0be4ec2a9a" name="af0cd04383da4f3b967a3aa0be4ec2a9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0cd04383da4f3b967a3aa0be4ec2a9a">&#9670;&#160;</a></span>region</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int kbd_state_t::region</td>
+          <td class="memname"><a class="el" href="group__kbd__status__grp.html#ga0e5881b4080afc9e7e5ed0040d1147ca">kbd_region_t</a> kbd_state_t::region</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Keyboard type/region. </p>
-
-</div>
-</div>
-<a id="a8b2bda996b0886f944e3d8786f042b01" name="a8b2bda996b0886f944e3d8786f042b01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b2bda996b0886f944e3d8786f042b01">&#9670;&#160;</a></span>shift_keys</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int kbd_state_t::shift_keys</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifier key status. </p>
 
 </div>
 </div>

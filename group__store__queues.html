@@ -434,7 +434,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy a block of memory. </p>
-<p>This function is similar to <a class="el" href="group__system__types.html#ga5a793ea416479791698823ce98450763" title="Copy a block of memory, 4 bytes at a time.">memcpy4()</a>, but uses the store queues to do its work.</p>
+<p>This function is similar to <a class="el" href="group__system__types.html#gadf52d2a04e8c4c20ae5285052b4dd625" title="Copy a block of memory, 4 bytes at a time.">memcpy4()</a>, but uses the store queues to do its work.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The dest pointer must be at least 32-byte aligned, the src pointer must be at least 4-byte aligned (8-byte aligned uses fast path), and n must be a multiple of 32!</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -583,7 +583,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set a block of memory to a 16-bit value. </p>
-<p>This function is similar to calling <a class="el" href="group__system__types.html#gae13f9699e0222d19414e3d1b824a1cca" title="Set a block of memory, 2 bytes at a time.">memset2()</a>, but uses the store queues to do its work.</p>
+<p>This function is similar to calling <a class="el" href="group__system__types.html#ga9691cb8175449138ebcfee23ad7d9c74" title="Set a block of memory, 2 bytes at a time.">memset2()</a>, but uses the store queues to do its work.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The dest pointer must be a 32-byte aligned with n being a multiple of 32, and only the low 16-bits are used from c.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -623,7 +623,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set a block of memory to a 32-bit value. </p>
-<p>This function is similar to calling <a class="el" href="group__system__types.html#ga5ec7805d6d103d15bf506df74b230ac1" title="Set a block of memory, 4 bytes at a time.">memset4()</a>, but uses the store queues to do its work.</p>
+<p>This function is similar to calling <a class="el" href="group__system__types.html#ga03cc8ca3108698007c4953dbb4b4df1c" title="Set a block of memory, 4 bytes at a time.">memset4()</a>, but uses the store queues to do its work.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The dest pointer must be a 32-byte aligned with n being a multiple of 32!</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

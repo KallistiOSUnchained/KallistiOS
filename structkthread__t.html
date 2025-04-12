@@ -186,9 +186,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a492f60fe4653354894bfd33548672486" id="r_a492f60fe4653354894bfd33548672486"><td class="memItemLeft" align="right" valign="top">struct kthread_tls_kv_list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a492f60fe4653354894bfd33548672486">tls_list</a></td></tr>
 <tr class="memdesc:a492f60fe4653354894bfd33548672486"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS-level thread-local storage.  <br /></td></tr>
 <tr class="separator:a492f60fe4653354894bfd33548672486"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a813ba69dc317483e36e2418ece5f3d1d" id="r_a813ba69dc317483e36e2418ece5f3d1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtcbhead__t.html">tcbhead_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a813ba69dc317483e36e2418ece5f3d1d">tcbhead</a></td></tr>
-<tr class="memdesc:a813ba69dc317483e36e2418ece5f3d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiler-level thread-local storage.  <br /></td></tr>
-<tr class="separator:a813ba69dc317483e36e2418ece5f3d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0c0330260c467e789928c04cd6d049b" id="r_ae0c0330260c467e789928c04cd6d049b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0c0330260c467e789928c04cd6d049b">tls_hnd</a></td></tr>
+<tr class="memdesc:ae0c0330260c467e789928c04cd6d049b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiler-level thread-local storage.  <br /></td></tr>
+<tr class="separator:ae0c0330260c467e789928c04cd6d049b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f872304c92b4e69a8e8de782896465a" id="r_a6f872304c92b4e69a8e8de782896465a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f872304c92b4e69a8e8de782896465a">rv</a></td></tr>
 <tr class="memdesc:a6f872304c92b4e69a8e8de782896465a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return value of the thread function.  <br /></td></tr>
 <tr class="separator:a6f872304c92b4e69a8e8de782896465a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -518,22 +518,6 @@ Related Symbols</h2></td></tr>
 
 </div>
 </div>
-<a id="a813ba69dc317483e36e2418ece5f3d1d" name="a813ba69dc317483e36e2418ece5f3d1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a813ba69dc317483e36e2418ece5f3d1d">&#9670;&#160;</a></span>tcbhead</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structtcbhead__t.html">tcbhead_t</a>* kthread_t::tcbhead</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compiler-level thread-local storage. </p>
-
-</div>
-</div>
 <a id="a3130ee0743cc1690a8148a4aa2f4f252" name="a3130ee0743cc1690a8148a4aa2f4f252"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3130ee0743cc1690a8148a4aa2f4f252">&#9670;&#160;</a></span>thd_errno</h2>
 
@@ -579,6 +563,22 @@ Related Symbols</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Kernel thread id. </p>
+
+</div>
+</div>
+<a id="ae0c0330260c467e789928c04cd6d049b" name="ae0c0330260c467e789928c04cd6d049b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0c0330260c467e789928c04cd6d049b">&#9670;&#160;</a></span>tls_hnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* kthread_t::tls_hnd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compiler-level thread-local storage. </p>
 
 </div>
 </div>

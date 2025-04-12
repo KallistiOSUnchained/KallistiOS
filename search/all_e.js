@@ -47,5 +47,6 @@ var searchData=
   ['hw_5fregion_5fus_44',['HW_REGION_US',['../group__hw__regions.html#ga7740e53c945a731058228b5a29e692f2',1,'arch.h']]],
   ['hw_5fto_5fdma_5faddr_45',['hw_to_dma_addr',['../group__dmac.html#ga382463b1d037cf72d0732a0895712ba0',1,'dmac.h']]],
   ['hw_5ftype_5fretail_46',['HW_TYPE_RETAIL',['../group__hw__consoles.html#gad69aa103f456d4686978c9347a1ffbd9',1,'arch.h']]],
-  ['hw_5ftype_5fset5_47',['HW_TYPE_SET5',['../group__hw__consoles.html#ga6eede3ad2a18e9498c5db9d076b9a317',1,'arch.h']]]
+  ['hw_5ftype_5fset5_47',['HW_TYPE_SET5',['../group__hw__consoles.html#ga6eede3ad2a18e9498c5db9d076b9a317',1,'arch.h']]],
+  ['hz_48',['HZ',['../group__arch.html#ga7c33b69f0b9e327c0a476d0ab6d0172b',1,'arch.h']]]
 ];

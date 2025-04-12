@@ -89,7 +89,7 @@ var cdrom_8h =
     [ "cdrom_cdda_play", "group__gdrom.html#ga446b7e47d3c4d6e011f018e9a2b5fb57", null ],
     [ "cdrom_cdda_resume", "group__gdrom.html#ga48b64b50f7a705915e6e3958cc1d8dae", null ],
     [ "cdrom_change_datatype", "group__gdrom.html#ga0864556ec5c970d634f83ae147ed77e7", null ],
-    [ "cdrom_change_dataype", "group__gdrom.html#gab6843e3d41e4df86652bf25aa36c17ff", null ],
+    [ "cdrom_change_dataype", "group__gdrom.html#gae25b4fd905efa3c8373a51f34ef0b2a4", null ],
     [ "cdrom_exec_cmd", "group__gdrom.html#gaeda149749399d1bf918174aaf7fdf164", null ],
     [ "cdrom_exec_cmd_timed", "group__gdrom.html#gab79ad9bd28a54c10818f2d53ce762d1e", null ],
     [ "cdrom_get_status", "group__gdrom.html#gab087591ac6b393c68d680800310a1631", null ],

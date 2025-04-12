@@ -32,7 +32,7 @@ var searchData=
   ['init_29',['init',['../structkos__blockdev__t.html#a96313e260e6a6c7c7208184c26c790ab',1,'kos_blockdev_t::init'],['../structdbgio__handler__t.html#a19f930ad604f41977738aed0afa5af7e',1,'dbgio_handler_t::init'],['../structppp__device__t.html#afd28d72fcb4d2d14245bc9a9149782b3',1,'ppp_device_t::init'],['../structppp__protocol__t.html#a88dd927c75bed96ae25267922398ab7d',1,'ppp_protocol_t::init']]],
   ['initialized_30',['initialized',['../structsemaphore__t.html#aeca6beecfba4210df7a3a8a333e269e1',1,'semaphore_t']]],
   ['input_31',['input',['../structfs__socket__proto__t.html#af788d1f922e3275de70329c3eb3140d7',1,'fs_socket_proto_t::input'],['../structppp__protocol__t.html#a029c7a67549944ba4393aef26209273b',1,'ppp_protocol_t::input']]],
-  ['instruction_32',['instruction',['../structubc__breakpoint__t.html#a4e87005d3119c7ccae9c43906d314b5a',1,'ubc_breakpoint_t']]],
+  ['instruction_32',['instruction',['../structubc__breakpoint__t.html#a91018e0f67ae3f883e9db193bc333456',1,'ubc_breakpoint_t']]],
   ['ioctl_33',['ioctl',['../structvfs__handler__t.html#a632387acdd6c0a1c6f97be6fbcec4c58',1,'vfs_handler_t']]],
   ['iov_5fbase_34',['iov_base',['../structiovec.html#ad400ba7accff6cc071fa504d294846b8',1,'iovec']]],
   ['iov_5flen_35',['iov_len',['../structiovec.html#a93ae6e322983ad684c4d96f171106054',1,'iovec']]],

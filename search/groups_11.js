@@ -27,10 +27,11 @@ var searchData=
   ['modem_24',['Modem',['../group__modem.html',1,'']]],
   ['modes_25',['Modes',['../group__pvr__blend__modes.html',1,'Blending Modes'],['../group__cdda__read__modes.html',1,'CDDA Read Modes'],['../group__pvr__clip__modes.html',1,'Clipping Modes'],['../group__pvr__txrenv__modes.html',1,'Color Calculation Modes'],['../group__pvr__depth__modes.html',1,'Comparison Modes'],['../group__pvr__cull__modes.html',1,'Culling Modes'],['../group__pvr__fog__types.html',1,'Fog Modes'],['../group__pvr__mip__bias.html',1,'Mipmap Bias Modes'],['../group__pvr__mod__modes.html',1,'Modes'],['../group__video__modes.html',1,'Modes'],['../group__video__modes__pixel.html',1,'Pixel Modes'],['../group__pvr__filter__modes.html',1,'Sampling Modes'],['../group__pvr__shading__types.html',1,'Shading Modes'],['../group__modem__v22.html',1,'V.22 Modes'],['../group__modem__v22bis.html',1,'V.22bis Modes'],['../group__modem__v32.html',1,'V.32 Modes'],['../group__modem__v32bis.html',1,'V.32bis Modes'],['../group__modem__v8.html',1,'V.8 Modes'],['../group__bba__wait.html',1,'Wait Modes']]],
   ['modes_20of_20operation_26',['Modes of Operation',['../group__modem__modes.html',1,'']]],
-  ['modifier_20keys_27',['Modifier Keys',['../group__kbd__mods.html',1,'']]],
+  ['modifier_20keys_27',['Modifier Keys',['../group__kbd__mods__grp.html',1,'']]],
   ['modifier_20volumes_28',['Modifier Volumes',['../group__pvr__ctx__modvol.html',1,'']]],
   ['monitor_29',['Performance monitor',['../group__perf__monitor.html',1,'']]],
-  ['mount_20flags_30',['Mount Flags',['../group__ext2__mount__flags.html',1,'Mount Flags'],['../group__fat__mount__flags.html',1,'Mount Flags']]],
-  ['mouse_31',['Mouse',['../group__mouse.html',1,'']]],
-  ['multicast_32',['Multicast',['../group__networking__multicast.html',1,'']]]
+  ['monitoring_30',['Queue Monitoring',['../group__kbd__queue.html',1,'']]],
+  ['mount_20flags_31',['Mount Flags',['../group__ext2__mount__flags.html',1,'Mount Flags'],['../group__fat__mount__flags.html',1,'Mount Flags']]],
+  ['mouse_32',['Mouse',['../group__mouse.html',1,'']]],
+  ['multicast_33',['Multicast',['../group__networking__multicast.html',1,'']]]
 ];

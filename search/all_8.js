@@ -1,7 +1,7 @@
 var searchData=
 [
   ['b_0',['b',['../structcont__state__t.html#a0399bc0901dc7a02966ea0431b389668',1,'cont_state_t::b'],['../unionvmu__buttons__t.html#a0c6e91bd96f86442652724c16874ad37',1,'vmu_buttons_t::b'],['../structpvr__poly__ic__hdr__t.html#a0e42634d7c1c71c8be7ae47b83876f10',1,'pvr_poly_ic_hdr_t::b']]],
-  ['base_1',['base',['../structkbd__keymap__t.html#a7dba22f1b0868edaefb30442a9e7bf38',1,'kbd_keymap_t::base'],['../structpvr__poly__cxt__t.html#a4c0ed7cdbb81e857f91fbb8f581d3e20',1,'pvr_poly_cxt_t::base'],['../structpvr__sprite__cxt__t.html#a97f39bca1ba34c044a084a28e83a8128',1,'pvr_sprite_cxt_t::base'],['../structaica__channel__t.html#a16eab35a3b364317ed84038b9184d93e',1,'aica_channel_t::base']]],
+  ['base_1',['base',['../structpvr__poly__cxt__t.html#a4c0ed7cdbb81e857f91fbb8f581d3e20',1,'pvr_poly_cxt_t::base'],['../structpvr__sprite__cxt__t.html#a97f39bca1ba34c044a084a28e83a8128',1,'pvr_sprite_cxt_t::base'],['../structaica__channel__t.html#a16eab35a3b364317ed84038b9184d93e',1,'aica_channel_t::base']]],
   ['basename_2',['basename',['../group__vfs__posix.html#ga79e1e7bdc4ab98aaa8347b172a07fe45',1,'libgen.h']]],
   ['bba_5fget_5fmac_3',['bba_get_mac',['../group__bba.html#ga732a9c43b3c61b10cf8bb03bd2d1a473',1,'broadband_adapter.h']]],
   ['bba_5fset_5frx_5fcallback_4',['bba_set_rx_callback',['../group__bba__rx.html#ga7efcf21b93e885209ef972356da23c38',1,'broadband_adapter.h']]],
@@ -225,7 +225,7 @@ var searchData=
   ['bits_222',['Bits',['../group__bba__cbits.html',1,'Command Bits'],['../group__bba__ibits.html',1,'Interrupt Status Bits'],['../group__bba__miicb.html',1,'MII Control Bits'],['../group__bba__miisb.html',1,'MII Status Bits'],['../group__bba__rbits.html',1,'Receive Status Bits'],['../group__bba__config1bits.html',1,'RTL8139C Config Register 1 (RT_CONFIG1) Bits'],['../group__bba__config4bits.html',1,'RTL8139C Config Register 4 (RT_CONFIG4) Bits'],['../group__bba__config5bits.html',1,'RTL8139C Config Register 5 (RT_CONFIG5) Bits'],['../group__bba__tbits.html',1,'RTL8139C Transmit Status Bits']]],
   ['bits_223',['RTL8139C RX Config Register (RT_RXCONFIG) bits',['../group__bba__configrx.html',1,'']]],
   ['blank_224',['blank',['../structmmupage__t.html#a7b1859c81f835fd3d0e4217a153825dc',1,'mmupage_t']]],
-  ['blend_225',['blend',['../structpvr__poly__cxt__t.html#a28030af6d9e595a04ddf57a000137579',1,'pvr_poly_cxt_t::blend'],['../structpvr__sprite__cxt__t.html#aee507aa535e9e96ff59c74e4c409a49a',1,'pvr_sprite_cxt_t::blend']]],
+  ['blend_225',['blend',['../structpvr__poly__cxt__t.html#a0d388d6e0ed4c3e0a7be2c867da5e733',1,'pvr_poly_cxt_t::blend'],['../structpvr__sprite__cxt__t.html#a886cb37ac65104cf31d13185131d4d67',1,'pvr_sprite_cxt_t::blend']]],
   ['blending_226',['Blending',['../group__pvr__blend.html',1,'']]],
   ['blending_20modes_227',['Blending Modes',['../group__pvr__blend__modes.html',1,'']]],
   ['blending_20toggle_228',['Blending Toggle',['../group__pvr__blend__switch.html',1,'']]],
@@ -252,7 +252,7 @@ var searchData=
   ['bus_20dma_249',['G2 Bus DMA',['../group__asic__events__g2dma.html',1,'']]],
   ['busy_250',['BUSY',['../group__cd__cmd__status.html#gab5be0aaddb58ffb9cb20c12530d66316',1,'cdrom.h']]],
   ['buttons_251',['Buttons',['../group__mouse__buttons.html',1,'Buttons'],['../group__vmu__buttons.html',1,'VMU Buttons']]],
-  ['buttons_252',['buttons',['../structcont__state__t.html#a985692f2308d2fac04caa38c3a203375',1,'cont_state_t::buttons'],['../structmouse__state__t.html#ab9aa1f299e0f5464d74b645da1da4af9',1,'mouse_state_t::buttons'],['../structvmu__state__t.html#a79712736321e6bd2cccc53cc4503fab0',1,'vmu_state_t::buttons']]],
+  ['buttons_252',['buttons',['../structcont__state__t.html#a985692f2308d2fac04caa38c3a203375',1,'cont_state_t::buttons'],['../structmouse__state__t.html#ab9aa1f299e0f5464d74b645da1da4af9',1,'mouse_state_t::buttons'],['../structvmu__state__t.html#a59409276c9ae41d5d460e2605c4c384e',1,'vmu_state_t::buttons']]],
   ['buv_253',['buv',['../structpvr__sprite__txr__t.html#a56285b60b1375d085e658cb8550cb3bd',1,'pvr_sprite_txr_t']]],
   ['bx_254',['bx',['../structpvr__sprite__txr__t.html#aee4511e36febe8341ef4672c1191ebe8',1,'pvr_sprite_txr_t::bx'],['../structpvr__sprite__col__t.html#a573b8bc2e939107c5dc701813c57c51f',1,'pvr_sprite_col_t::bx'],['../structpvr__modifier__vol__t.html#ae4bed7f685d1d5885050ff5b322d488c',1,'pvr_modifier_vol_t::bx']]],
   ['by_255',['by',['../structpvr__sprite__txr__t.html#aa98e1fe89506a7c62bfd629cb95d3b3f',1,'pvr_sprite_txr_t::by'],['../structpvr__sprite__col__t.html#a891ea00157b1794eb76395cea44092fc',1,'pvr_sprite_col_t::by'],['../structpvr__modifier__vol__t.html#a23d600c83db8938829549b4433d8c452',1,'pvr_modifier_vol_t::by']]],

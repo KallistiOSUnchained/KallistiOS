@@ -8,11 +8,13 @@ var searchData=
   ['units_5',['units',['../structmaple__port__t.html#a32b53a4af7fc4a1ce5067544483becaf',1,'maple_port_t']]],
   ['unk1_6',['unk1',['../structvmu__root__t.html#a39787789df7f862569c227679db74cf5',1,'vmu_root_t']]],
   ['unk2_7',['unk2',['../structvmu__root__t.html#a75b58bae5569dbf66763917f3923540d',1,'vmu_root_t']]],
-  ['unlink_8',['unlink',['../structvfs__handler__t.html#a8881a0c804ce35d9a06dd5eb4367c809',1,'vfs_handler_t']]],
-  ['uordblks_9',['uordblks',['../structmallinfo.html#a069da4deb53aa768ef8647baaa19b708',1,'mallinfo']]],
-  ['use_5fcustom_10',['use_custom',['../structvmu__root__t.html#a70cfeffacd3687bb0881c86cd6807055',1,'vmu_root_t']]],
-  ['usmblks_11',['usmblks',['../structmallinfo.html#a75928ca43d08035413bb25d7d489a039',1,'mallinfo']]],
-  ['uv_12',['uv',['../structpvr__poly__cxt__t.html#afedc235a4d48767186cf58e2eeee30ca',1,'pvr_poly_cxt_t']]],
-  ['uv_5fclamp_13',['uv_clamp',['../structpvr__poly__cxt__t.html#adccdb132fce5fdbc1c0d3415c61505ec',1,'pvr_poly_cxt_t::uv_clamp'],['../structpvr__sprite__cxt__t.html#adbc42914352eef5b7045ddbe81774506',1,'pvr_sprite_cxt_t::uv_clamp']]],
-  ['uv_5fflip_14',['uv_flip',['../structpvr__poly__cxt__t.html#abaa3c4429ad15ced2998fca50ee8f9d1',1,'pvr_poly_cxt_t::uv_flip'],['../structpvr__sprite__cxt__t.html#ab914d40e039256680d2f9145add5a64e',1,'pvr_sprite_cxt_t::uv_flip']]]
+  ['unknown1_8',['unknown1',['../unionkbd__leds__t.html#ad54f8a5b1d15a7ddf1c19ade9e4194f7',1,'kbd_leds_t']]],
+  ['unknown2_9',['unknown2',['../unionkbd__leds__t.html#a6747dcb38e3e3cded12dcf7706acce64',1,'kbd_leds_t']]],
+  ['unlink_10',['unlink',['../structvfs__handler__t.html#a8881a0c804ce35d9a06dd5eb4367c809',1,'vfs_handler_t']]],
+  ['uordblks_11',['uordblks',['../structmallinfo.html#a069da4deb53aa768ef8647baaa19b708',1,'mallinfo']]],
+  ['use_5fcustom_12',['use_custom',['../structvmu__root__t.html#a70cfeffacd3687bb0881c86cd6807055',1,'vmu_root_t']]],
+  ['usmblks_13',['usmblks',['../structmallinfo.html#a75928ca43d08035413bb25d7d489a039',1,'mallinfo']]],
+  ['uv_14',['uv',['../structpvr__poly__cxt__t.html#afedc235a4d48767186cf58e2eeee30ca',1,'pvr_poly_cxt_t']]],
+  ['uv_5fclamp_15',['uv_clamp',['../structpvr__poly__cxt__t.html#adccdb132fce5fdbc1c0d3415c61505ec',1,'pvr_poly_cxt_t::uv_clamp'],['../structpvr__sprite__cxt__t.html#adbc42914352eef5b7045ddbe81774506',1,'pvr_sprite_cxt_t::uv_clamp']]],
+  ['uv_5fflip_16',['uv_flip',['../structpvr__poly__cxt__t.html#abaa3c4429ad15ced2998fca50ee8f9d1',1,'pvr_poly_cxt_t::uv_flip'],['../structpvr__sprite__cxt__t.html#ab914d40e039256680d2f9145add5a64e',1,'pvr_sprite_cxt_t::uv_flip']]]
 ];

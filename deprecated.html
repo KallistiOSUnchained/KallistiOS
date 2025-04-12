@@ -101,49 +101,49 @@ $(function(){initNavTree('deprecated.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt>Global <a class="el" href="group__arch.html#ga8280ce4e9f78ff83a2e6e4afe36e8679">__depr</a>  ("Please use the new THD_SCHED_HZ macro.")</dt>
-<dd><a class="anchor" id="_deprecated000025"></a>  </dd>
-<dt>Global <a class="el" href="cond_8h.html#a9ed9cb297ec02c95ba3aaa994acac16b">cond_create</a>  () __depr("Use cond_init or COND_INITIALIZER.")</dt>
+<dt>Global <a class="el" href="cond_8h.html#abbce9ccf1ced1b7b4aae3fda0cb0a962">cond_create</a>  () 1("Use cond_init or COND_INITIALIZER.")</dt>
 <dd><a class="anchor" id="_deprecated000001"></a> This function is formally deprecated and should not be used in new code. Instead you should use either the static initializer or the <a class="el" href="cond_8h.html#ab91d64f116e1426002713d100efa57ef" title="Initialize a condition variable.">cond_init()</a> function. </dd>
+<dt>Global <a class="el" href="group__arch.html#ga7c33b69f0b9e327c0a476d0ab6d0172b">HZ</a>  ("Please use the new THD_SCHED_HZ macro.")</dt>
+<dd><a class="anchor" id="_deprecated000025"></a>  </dd>
 <dt>Global <a class="el" href="group__kos__initflags.html#ga66bc9557aa798f08f8ed4515f44f569f">INIT_THD_PREEMPT</a>  </dt>
 <dd><a class="anchor" id="_deprecated000002"></a>Already default mode  </dd>
 <dt>File <a class="el" href="iovec_8h.html">iovec.h</a>  </dt>
 <dd><a class="anchor" id="_deprecated000003"></a> </dd>
-<dt>Global <a class="el" href="group__kbd.html#ga624304aea04506a26d96e5d885feff8d">kbd_get_key</a>  (void) __deprecated</dt>
+<dt>Global <a class="el" href="group__kbd__queue.html#ga624304aea04506a26d96e5d885feff8d">kbd_get_key</a>  (void) __deprecated</dt>
 <dd><a class="anchor" id="_deprecated000027"></a> </dd>
-<dt>Global <a class="el" href="group__kbd.html#ga92be71208168ee6163b3793e29d70ac4">kbd_set_queue</a>  (int active) __deprecated</dt>
+<dt>Global <a class="el" href="group__kbd__queue.html#ga92be71208168ee6163b3793e29d70ac4">kbd_set_queue</a>  (int active) __deprecated</dt>
 <dd><a class="anchor" id="_deprecated000026"></a> </dd>
 <dt>Global <a class="el" href="group__kthreads.html#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a>  </dt>
 <dd><a class="anchor" id="_deprecated000021"></a> Only preemptive scheduling is still supported! </dd>
-<dt>Global <a class="el" href="group__system__types.html#ga1ec7098f218ef837d0177cc393430458">memcpy2</a>  (void *dest, const void *src, size_t count) __depr("Unsafe. Use memcpy().")</dt>
+<dt>Global <a class="el" href="group__system__types.html#gaf082a8fd6e5505b8476bdd922f465397">memcpy2</a>  (void *dest, const void *src, size_t count) 1("Unsafe. Use memcpy().")</dt>
 <dd><a class="anchor" id="_deprecated000019"></a>Invokes undefined behavior. Use memcpy(). </dd>
-<dt>Global <a class="el" href="group__system__types.html#ga5a793ea416479791698823ce98450763">memcpy4</a>  (void *dest, const void *src, size_t count) __depr("Unsafe. Use memcpy().")</dt>
+<dt>Global <a class="el" href="group__system__types.html#gadf52d2a04e8c4c20ae5285052b4dd625">memcpy4</a>  (void *dest, const void *src, size_t count) 1("Unsafe. Use memcpy().")</dt>
 <dd><a class="anchor" id="_deprecated000017"></a>Invokes undefined behavior. Use memcpy(). </dd>
-<dt>Global <a class="el" href="group__system__types.html#gae13f9699e0222d19414e3d1b824a1cca">memset2</a>  (void *s, unsigned short c, size_t count) __depr("Unsafe.")</dt>
+<dt>Global <a class="el" href="group__system__types.html#ga9691cb8175449138ebcfee23ad7d9c74">memset2</a>  (void *s, unsigned short c, size_t count) 1("Unsafe.")</dt>
 <dd><a class="anchor" id="_deprecated000020"></a>Invokes undefined behavior. </dd>
-<dt>Global <a class="el" href="group__system__types.html#ga5ec7805d6d103d15bf506df74b230ac1">memset4</a>  (void *s, unsigned long c, size_t count) __depr("Unsafe. Use memset().")</dt>
+<dt>Global <a class="el" href="group__system__types.html#ga03cc8ca3108698007c4953dbb4b4df1c">memset4</a>  (void *s, unsigned long c, size_t count) 1("Unsafe. Use memset().")</dt>
 <dd><a class="anchor" id="_deprecated000018"></a>Invokes undefined behavior. Use memset(). </dd>
-<dt>Global <a class="el" href="mutex_8h.html#a734bb84ae02ae0f4570ca5ee990a6763">mutex_create</a>  (void) __depr("Use mutex_init or an initializer.")</dt>
+<dt>Global <a class="el" href="mutex_8h.html#aac972b2e8228f67e57f66c260854dabf">mutex_create</a>  (void) 1("Use mutex_init or an initializer.")</dt>
 <dd><a class="anchor" id="_deprecated000005"></a> This function allocates and initializes a new mutex for use. This function will always create mutexes of the type MUTEX_TYPE_NORMAL. </dd>
 <dt>File <a class="el" href="recursive__lock_8h.html">recursive_lock.h</a>  </dt>
 <dd><a class="anchor" id="_deprecated000006"></a> These are now just wrappers around the MUTEX_TYPE_RECURSIVE that is now provided and will be removed at some point in the future. Please update your code to use that type instead. </dd>
-<dt>Global <a class="el" href="recursive__lock_8h.html#a48bdaf7f390ca67396bd740c93040d78">rlock_create</a>  (void) __depr("Use mutexes instead.")</dt>
+<dt>Global <a class="el" href="recursive__lock_8h.html#ad50c4173b381491889c7bb26ba90ac7d">rlock_create</a>  (void) 1("Use mutexes instead.")</dt>
 <dd><a class="anchor" id="_deprecated000007"></a> This function allocates a new recursive lock that is initially not locked. </dd>
-<dt>Global <a class="el" href="recursive__lock_8h.html#a205cb7f0bde9298d2bb2f12b73632cb5">rlock_destroy</a>  (recursive_lock_t *l) __depr("Use mutexes instead.")</dt>
+<dt>Global <a class="el" href="recursive__lock_8h.html#afe3239cca2a15d185d2643781a13a2fa">rlock_destroy</a>  (recursive_lock_t *l) 1("Use mutexes instead.")</dt>
 <dd><a class="anchor" id="_deprecated000008"></a> This function cleans up a recursive lock. It is an error to attempt to destroy a locked recursive lock. </dd>
-<dt>Global <a class="el" href="recursive__lock_8h.html#afb7be99a8a37c00232d9ec959734366c">rlock_is_locked</a>  (recursive_lock_t *l) __depr("Use mutexes instead.")</dt>
+<dt>Global <a class="el" href="recursive__lock_8h.html#a87235baa7b46f8c853ef3cae7934ab50">rlock_is_locked</a>  (recursive_lock_t *l) 1("Use mutexes instead.")</dt>
 <dd><a class="anchor" id="_deprecated000013"></a> This function checks whether or not a lock is currently held by any thread, including the calling thread. Note that this is <b>NOT</b> a safe way to check if a lock <em>will</em> be held by the time you get around to locking it. </dd>
-<dt>Global <a class="el" href="recursive__lock_8h.html#a034f533b4ce8ce85be499001587fbda0">rlock_lock</a>  (recursive_lock_t *l) __depr("Use mutexes instead.")</dt>
+<dt>Global <a class="el" href="recursive__lock_8h.html#ab2e880d39fcb9c299abc74e0452f8160">rlock_lock</a>  (recursive_lock_t *l) 1("Use mutexes instead.")</dt>
 <dd><a class="anchor" id="_deprecated000009"></a> This function attempts to lock the requested lock, and if it cannot it will block until that is possible. </dd>
-<dt>Global <a class="el" href="recursive__lock_8h.html#a2ed36a549e48d00f68ea2965b098161c">rlock_lock_timed</a>  (recursive_lock_t *l, int timeout) __depr("Use mutexes instead.")</dt>
+<dt>Global <a class="el" href="recursive__lock_8h.html#af65815abb56c128a2d03fedefc10bcad">rlock_lock_timed</a>  (recursive_lock_t *l, int timeout) 1("Use mutexes instead.")</dt>
 <dd><a class="anchor" id="_deprecated000010"></a> This function attempts to lock the requested lock, and if it cannot it will block until either it is possible to acquire the lock or timeout milliseconds have elapsed. </dd>
-<dt>Global <a class="el" href="recursive__lock_8h.html#a954c27d99a77cdcd4c0b110082842510">rlock_trylock</a>  (recursive_lock_t *l) __depr("Use mutexes instead.")</dt>
+<dt>Global <a class="el" href="recursive__lock_8h.html#a98e73073c8ac513827f94f7549c58455">rlock_trylock</a>  (recursive_lock_t *l) 1("Use mutexes instead.")</dt>
 <dd><a class="anchor" id="_deprecated000012"></a> This function attempts to lock a recursive lock without blocking. This function, unlike rlock_lock and rlock_lock_timed is safe to call inside an interrupt. </dd>
-<dt>Global <a class="el" href="recursive__lock_8h.html#a0b556717e91615c67232a61f17522446">rlock_unlock</a>  (recursive_lock_t *l) __depr("Use mutexes instead.")</dt>
+<dt>Global <a class="el" href="recursive__lock_8h.html#a91aeaed761d39a34eca2c64def52e1c4">rlock_unlock</a>  (recursive_lock_t *l) 1("Use mutexes instead.")</dt>
 <dd><a class="anchor" id="_deprecated000011"></a> This function releases the lock one time from the current thread. </dd>
-<dt>Global <a class="el" href="rwsem_8h.html#a2fb7ca5577aa0e4c43d062b12eea3223">rwsem_create</a>  (void) __depr("Use rwsem_init or RWSEM_INITIALIZER.")</dt>
+<dt>Global <a class="el" href="rwsem_8h.html#ad54f55b8242b7d83bae3a2e6c928fbec">rwsem_create</a>  (void) 1("Use rwsem_init or RWSEM_INITIALIZER.")</dt>
 <dd><a class="anchor" id="_deprecated000015"></a> This function is formally deprecated, and should not be used in newly written code. Instead, please use <a class="el" href="rwsem_8h.html#aecabee230a8ad6b3b7b5877e6ab5c564" title="Initialize a reader/writer semaphore.">rwsem_init()</a>. </dd>
-<dt>Global <a class="el" href="sem_8h.html#a25b57131b89d1d17a37d5938066eb895">sem_create</a>  (int value) __depr("Use sem_init or SEM_INITIALIZER.")</dt>
+<dt>Global <a class="el" href="sem_8h.html#aff22571ff8983eef5ef794e43090a169">sem_create</a>  (int value) 1("Use sem_init or SEM_INITIALIZER.")</dt>
 <dd><a class="anchor" id="_deprecated000014"></a> This function is formally deprecated. Please update your code to use <a class="el" href="sem_8h.html#ac413622adbec71bdf2476b2121f7125c" title="Initialize a semaphore for use.">sem_init()</a> or static initialization with SEM_INITIALIZER instead. </dd>
 <dt>File <a class="el" href="string_8h.html">string.h</a>  </dt>
 <dd><a class="anchor" id="_deprecated000016"></a> </dd>

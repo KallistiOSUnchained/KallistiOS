@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: LEDs</title>
+<title>KallistiOS: State Polling</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('group__kbd__leds.html',''); initResizable(true); });
+$(function(){initNavTree('group__kbd__polling.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -98,66 +98,69 @@ $(function(){initNavTree('group__kbd__leds.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">LEDs<div class="ingroups"><a class="el" href="group__peripherals.html">Peripherals</a> &raquo; <a class="el" href="group__kbd.html">Keyboard</a></div></div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">State Polling<div class="ingroups"><a class="el" href="group__peripherals.html">Peripherals</a> &raquo; <a class="el" href="group__kbd.html">Keyboard</a> &raquo; <a class="el" href="group__kbd__input.html">Querying for Input</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Values for the different keyboard LEDs  
+<p>Frame-based polling for keyboard input  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga6cfe424815352eb4044f1eac3bebd899" id="r_ga6cfe424815352eb4044f1eac3bebd899"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6cfe424815352eb4044f1eac3bebd899">KBD_LED_NUMLOCK</a>&#160;&#160;&#160;(1&lt;&lt;0)</td></tr>
-<tr class="separator:ga6cfe424815352eb4044f1eac3bebd899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9da692440feafaa7eb95fc16d273571d" id="r_ga9da692440feafaa7eb95fc16d273571d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9da692440feafaa7eb95fc16d273571d">KBD_LED_CAPSLOCK</a>&#160;&#160;&#160;(1&lt;&lt;1)</td></tr>
-<tr class="separator:ga9da692440feafaa7eb95fc16d273571d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaabf1b80f7093393d9c870eb214e9dcfd" id="r_gaabf1b80f7093393d9c870eb214e9dcfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaabf1b80f7093393d9c870eb214e9dcfd">KBD_LED_SCRLOCK</a>&#160;&#160;&#160;(1&lt;&lt;2)</td></tr>
-<tr class="separator:gaabf1b80f7093393d9c870eb214e9dcfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gad42779d1de5dce4ef98649732abe4647" id="r_gad42779d1de5dce4ef98649732abe4647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkbd__state__t.html">kbd_state_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad42779d1de5dce4ef98649732abe4647">kbd_get_state</a> (<a class="el" href="structmaple__device__t.html">maple_device_t</a> *device)</td></tr>
+<tr class="memdesc:gad42779d1de5dce4ef98649732abe4647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the keyboard state from a maple device.  <br /></td></tr>
+<tr class="separator:gad42779d1de5dce4ef98649732abe4647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Values for the different keyboard LEDs </p>
-<p>This is the LEDs that can be turned on and off on the keyboard. This list may not be exhaustive. Think of these sorta like an extension of the modifiers list. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga9da692440feafaa7eb95fc16d273571d" name="ga9da692440feafaa7eb95fc16d273571d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9da692440feafaa7eb95fc16d273571d">&#9670;&#160;</a></span>KBD_LED_CAPSLOCK</h2>
+<p>Frame-based polling for keyboard input </p>
+<p>One method of checking for key input is to simply poll <a class="el" href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf" title="Key array.">kbd_state_t::matrix</a> for the desired key states each frame.</p>
+<p>First, lets grab a pointer to the <a class="el" href="structkbd__state__t.html" title="Keyboard status structure.">kbd_state_t</a>: </p><pre class="fragment">kbd_state_t *kbd = kbd_get_state(device);
+</pre><p> Then let's "move" every frame an arrow key is held down: </p><pre class="fragment">if(kbd-&gt;matrix[KBD_KEY_LEFT] == KEY_STATE_PRESSED)
+    printf("Moving left!\n");
+if(kbd-&gt;matrix[KBD_KEY_RIGHT] == KEY_STATE_PRESSED)
+    printf("Moving right!\n");
+if(kbd-&gt;matrix[KBD_KEY_UP] == KEY_STATE_PRESSED)
+    printf("Moving up!\n");
+if(kbd-&gt;matrix[KBD_KEY_DOWN] == KEY_STATE_PRESSED)
+    printf("Moving down!\n");
+</pre><p> Finally, let's charge an "attack" incrementing the charge for each frame that the key is held and resetting when the key is released: </p><pre class="fragment">if(kbd-&gt;matrix[KBD_KEY_SPACE] == KEY_STATE_PRESSED)
+    charge++;
+if(kbd-&gt;matrix[KBD_KEY_SPACE] == KEY_STATE_WAS_PRESSED) {
+    printf("Releasing a charged attack of %i!\n", charge);
+    charge = 0;
+}
+</pre> <h2 class="groupheader">Function Documentation</h2>
+<a id="gad42779d1de5dce4ef98649732abe4647" name="gad42779d1de5dce4ef98649732abe4647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad42779d1de5dce4ef98649732abe4647">&#9670;&#160;</a></span>kbd_get_state()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define KBD_LED_CAPSLOCK&#160;&#160;&#160;(1&lt;&lt;1)</td>
+          <td class="memname"><a class="el" href="structkbd__state__t.html">kbd_state_t</a> * kbd_get_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmaple__device__t.html">maple_device_t</a> *</td>          <td class="paramname"><span class="paramname"><em>device</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ga6cfe424815352eb4044f1eac3bebd899" name="ga6cfe424815352eb4044f1eac3bebd899"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6cfe424815352eb4044f1eac3bebd899">&#9670;&#160;</a></span>KBD_LED_NUMLOCK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KBD_LED_NUMLOCK&#160;&#160;&#160;(1&lt;&lt;0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gaabf1b80f7093393d9c870eb214e9dcfd" name="gaabf1b80f7093393d9c870eb214e9dcfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabf1b80f7093393d9c870eb214e9dcfd">&#9670;&#160;</a></span>KBD_LED_SCRLOCK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KBD_LED_SCRLOCK&#160;&#160;&#160;(1&lt;&lt;2)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Retrieves the keyboard state from a maple device. </p>
+<p>Accessor method for safely retrieving a <a class="el" href="structkbd__state__t.html" title="Keyboard status structure.">kbd_state_t</a> from a <a class="el" href="structmaple__device__t.html" title="One maple device.">maple_device_t</a> of a <code>MAPLE_FUNC_KEYBOARD</code> type. This function also checks for whether the given device is actually a keyboard and for whether it is currently valid.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Handle corresponding to a <code>MAPLE_FUNC_KEYBOARD</code> device.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">kbd_state_t*</td><td>A pointer to the internal keyboard state on success. </td></tr>
+    <tr><td class="paramname">NULL</td><td>On failure. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -99,10 +99,7 @@ $(function(){initNavTree('group__kbd.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
-<a href="#files">Files</a> &#124;
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#files">Files</a>  </div>
   <div class="headertitle"><div class="title">Keyboard<div class="ingroups"><a class="el" href="group__peripherals.html">Peripherals</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -112,20 +109,11 @@ $(function(){initNavTree('group__kbd.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__states.html">Key States</a></td></tr>
-<tr class="memdesc:group__key__states"><td class="mdescLeft">&#160;</td><td class="mdescRight">States each key can be in. <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html">Device Status</a></td></tr>
+<tr class="memdesc:group__kbd__status__grp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types relating to overall keyboard state <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__keys.html">Keys</a></td></tr>
-<tr class="memdesc:group__kbd__keys"><td class="mdescLeft">&#160;</td><td class="mdescRight">Values representing the various keyboard keys <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__leds.html">LEDs</a></td></tr>
-<tr class="memdesc:group__kbd__leds"><td class="mdescLeft">&#160;</td><td class="mdescRight">Values for the different keyboard LEDs <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__mods.html">Modifier Keys</a></td></tr>
-<tr class="memdesc:group__kbd__mods"><td class="mdescLeft">&#160;</td><td class="mdescRight">Masks for the various keyboard modifier keys <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__regions.html">Region Codes</a></td></tr>
-<tr class="memdesc:group__kbd__regions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Region codes for the Dreamcast keyboard <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__input.html">Querying for Input</a></td></tr>
+<tr class="memdesc:group__kbd__input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various methods for checking keyboard input <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
@@ -133,188 +121,9 @@ Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8h.html">keyboard.h</a></td></tr>
 <tr class="memdesc:keyboard_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definitions for using the keyboard device. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkbd__keymap__t.html">kbd_keymap_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard keymap.  <a href="structkbd__keymap__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkbd__cond__t.html">kbd_cond_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard raw condition structure.  <a href="structkbd__cond__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkbd__state__t.html">kbd_state_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard status structure.  <a href="structkbd__state__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga315533334be61b9c05c9d8139585b073" id="r_ga315533334be61b9c05c9d8139585b073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga315533334be61b9c05c9d8139585b073">MAX_PRESSED_KEYS</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:ga315533334be61b9c05c9d8139585b073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of keys the DC can read simultaneously.  <br /></td></tr>
-<tr class="separator:ga315533334be61b9c05c9d8139585b073"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8df3ecdb47d4bbfde4ed1a06f72da2d2" id="r_ga8df3ecdb47d4bbfde4ed1a06f72da2d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8df3ecdb47d4bbfde4ed1a06f72da2d2">MAX_KBD_KEYS</a>&#160;&#160;&#160;256</td></tr>
-<tr class="memdesc:ga8df3ecdb47d4bbfde4ed1a06f72da2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of keys a DC keyboard can have.  <br /></td></tr>
-<tr class="separator:ga8df3ecdb47d4bbfde4ed1a06f72da2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf8a95f173e93b8af6091a7b915d7d5be" id="r_gaf8a95f173e93b8af6091a7b915d7d5be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8a95f173e93b8af6091a7b915d7d5be">KBD_QUEUE_SIZE</a>&#160;&#160;&#160;16</td></tr>
-<tr class="memdesc:gaf8a95f173e93b8af6091a7b915d7d5be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a keyboard queue.  <br /></td></tr>
-<tr class="separator:gaf8a95f173e93b8af6091a7b915d7d5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga92be71208168ee6163b3793e29d70ac4" id="r_ga92be71208168ee6163b3793e29d70ac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga92be71208168ee6163b3793e29d70ac4">kbd_set_queue</a> (int active) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
-<tr class="memdesc:ga92be71208168ee6163b3793e29d70ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate or deactivate global key queueing.  <br /></td></tr>
-<tr class="separator:ga92be71208168ee6163b3793e29d70ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga624304aea04506a26d96e5d885feff8d" id="r_ga624304aea04506a26d96e5d885feff8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga624304aea04506a26d96e5d885feff8d">kbd_get_key</a> (void) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
-<tr class="memdesc:ga624304aea04506a26d96e5d885feff8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop a key off the global keyboard queue.  <br /></td></tr>
-<tr class="separator:ga624304aea04506a26d96e5d885feff8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa79d9098e001b2a7b8ff92c11bbb5e37" id="r_gaa79d9098e001b2a7b8ff92c11bbb5e37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa79d9098e001b2a7b8ff92c11bbb5e37">kbd_queue_pop</a> (<a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev, int xlat)</td></tr>
-<tr class="memdesc:gaa79d9098e001b2a7b8ff92c11bbb5e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop a key off a specific keyboard's queue.  <br /></td></tr>
-<tr class="separator:gaa79d9098e001b2a7b8ff92c11bbb5e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Driver for the Dreamcast's Keyboard Input Device </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gaf8a95f173e93b8af6091a7b915d7d5be" name="gaf8a95f173e93b8af6091a7b915d7d5be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf8a95f173e93b8af6091a7b915d7d5be">&#9670;&#160;</a></span>KBD_QUEUE_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KBD_QUEUE_SIZE&#160;&#160;&#160;16</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Size of a keyboard queue. </p>
-<p>Each keyboard queue will hold this many elements. Once the queue fills, no new elements will be placed on the queue. As long as you check the queue relatively frequently, the default of 16 should be plenty.</p>
-<dl class="section note"><dt>Note</dt><dd>This <b>MUST</b> be a power of two. </dd></dl>
-
-</div>
-</div>
-<a id="ga8df3ecdb47d4bbfde4ed1a06f72da2d2" name="ga8df3ecdb47d4bbfde4ed1a06f72da2d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8df3ecdb47d4bbfde4ed1a06f72da2d2">&#9670;&#160;</a></span>MAX_KBD_KEYS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_KBD_KEYS&#160;&#160;&#160;256</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Maximum number of keys a DC keyboard can have. </p>
-<p>This is a hardware constant. The define prevents the magic number '256' from appearing. </p>
-
-</div>
-</div>
-<a id="ga315533334be61b9c05c9d8139585b073" name="ga315533334be61b9c05c9d8139585b073"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga315533334be61b9c05c9d8139585b073">&#9670;&#160;</a></span>MAX_PRESSED_KEYS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_PRESSED_KEYS&#160;&#160;&#160;6</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Maximum number of keys the DC can read simultaneously. </p>
-<p>This is a hardware constant. The define prevents the magic number '6' from appearing. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga624304aea04506a26d96e5d885feff8d" name="ga624304aea04506a26d96e5d885feff8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga624304aea04506a26d96e5d885feff8d">&#9670;&#160;</a></span>kbd_get_key()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int kbd_get_key </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pop a key off the global keyboard queue. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated</a></b></dt><dd></dd></dl>
-<p>This function pops the front off of the keyboard queue, and returns the value to the caller. The value returned will be the ASCII value of the key pressed (accounting for the shift keys being pressed).</p>
-<p>If a key does not have an ASCII value associated with it, the raw key code will be returned, shifted up by 8 bits.</p>
-<dl class="section return"><dt>Returns</dt><dd>The value at the front of the queue, or -1 if there are no keys in the queue or queueing is off. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This function does not account for non-US keyboard layouts properly (for compatibility with old code), and is deprecated. Use the individual keyboard queues instead to properly account for non-US keyboards. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gaa79d9098e001b2a7b8ff92c11bbb5e37" title="Pop a key off a specific keyboard&#39;s queue.">kbd_queue_pop()</a> </dd></dl>
-
-</div>
-</div>
-<a id="gaa79d9098e001b2a7b8ff92c11bbb5e37" name="gaa79d9098e001b2a7b8ff92c11bbb5e37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa79d9098e001b2a7b8ff92c11bbb5e37">&#9670;&#160;</a></span>kbd_queue_pop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int kbd_queue_pop </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmaple__device__t.html">maple_device_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>xlat</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pop a key off a specific keyboard's queue. </p>
-<p>This function pops the front element off of the specified keyboard queue, and returns the value of that key to the caller.</p>
-<p>If the xlat parameter is non-zero and the key represents an ISO-8859-1 character, that is the value that will be returned from this function. Otherwise if xlat is non-zero, it will be the raw key code, shifted up by 8 bits.</p>
-<p>If the xlat parameter is zero, the lower 8 bits of the returned value will be the raw key code. The next 8 bits will be the modifier keys that were down when the key was pressed (a bitfield of KBD_MOD_* values). The next 3 bits will be the lock key status (a bitfield of KBD_LED_* values).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dev</td><td>The keyboard device to read from. </td></tr>
-    <tr><td class="paramname">xlat</td><td>Set to non-zero to do key translation. Otherwise, you'll simply get the raw key value. Raw key values are not mapped at all, so you are responsible for figuring out what it is by the region.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The value at the front of the queue, or -1 if there are no keys in the queue. </dd></dl>
-
-</div>
-</div>
-<a id="ga92be71208168ee6163b3793e29d70ac4" name="ga92be71208168ee6163b3793e29d70ac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga92be71208168ee6163b3793e29d70ac4">&#9670;&#160;</a></span>kbd_set_queue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void kbd_set_queue </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>active</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Activate or deactivate global key queueing. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated</a></b></dt><dd></dd></dl>
-<p>This function will turn the internal keyboard queueing on or off. Note that there is only one queue for the whole system, no matter how many keyboards are attached, and the queue is of fairly limited length. Turning queueing off is useful (for instance) in a game where individual keypresses don't mean as much as having the keys up or down does.</p>
-<p>You can clear the queue (without popping all the keys off) by setting the active value to a different value than it was.</p>
-<p>The queue is by default on, unless you turn it off.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">active</td><td>Set to non-zero to activate the queue. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>The global queue does not account for non-US keyboard layouts and is deprecated. Please use the individual queues instead for future code. </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

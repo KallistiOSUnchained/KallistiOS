@@ -16,7 +16,7 @@ var searchData=
   ['phases_13',['Automaton Phases',['../group__ppp__phases.html',1,'']]],
   ['pixel_20modes_14',['Pixel Modes',['../group__video__modes__pixel.html',1,'']]],
   ['poll_20function_15',['Events for the poll() function',['../group__poll__events.html',1,'']]],
-  ['polling_16',['Polling',['../group__threading__polling.html',1,'']]],
+  ['polling_16',['Polling',['../group__threading__polling.html',1,'Polling'],['../group__kbd__polling.html',1,'State Polling']]],
   ['polygon_20lists_17',['Polygon Lists',['../group__pvr__lists.html',1,'Polygon Lists'],['../group__pvr__list__mgmt.html',1,'Polygon Lists']]],
   ['port_18',['External Port',['../group__asic__events__ext.html',1,'']]],
   ['posix_19',['POSIX',['../group__vfs__posix.html',1,'POSIX'],['../group__system__posix.html',1,'POSIX'],['../group__threading__posix.html',1,'POSIX']]],

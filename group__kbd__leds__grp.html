@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: tcbhead_t Struct Reference</title>
+<title>KallistiOS: LEDs</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('structtcbhead__t.html',''); initResizable(true); });
+$(function(){initNavTree('group__kbd__leds__grp.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -98,70 +98,38 @@ $(function(){initNavTree('structtcbhead__t.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">tcbhead_t Struct Reference<div class="ingroups"><a class="el" href="group__threading.html">Threading</a> &raquo; <a class="el" href="group__kthreads.html">Kernel</a></div></div></div>
+<a href="#groups">Topics</a> &#124;
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle"><div class="title">LEDs<div class="ingroups"><a class="el" href="group__peripherals.html">Peripherals</a> &raquo; <a class="el" href="group__kbd.html">Keyboard</a> &raquo; <a class="el" href="group__kbd__status__grp.html">Device Status</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Thread Control Block Header.  
- <a href="#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="thread_8h_source.html">thread.h</a>&gt;</code></p>
+<p>Types associated with keyboard LEDs  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a7bd9c69986508a8de02b55d79f91d16c" id="r_a7bd9c69986508a8de02b55d79f91d16c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bd9c69986508a8de02b55d79f91d16c">dtv</a></td></tr>
-<tr class="memdesc:a7bd9c69986508a8de02b55d79f91d16c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamic TLS vector (unused)  <br /></td></tr>
-<tr class="separator:a7bd9c69986508a8de02b55d79f91d16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8415185cf11ca61401fd6a3fd39fec7f" id="r_a8415185cf11ca61401fd6a3fd39fec7f"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8415185cf11ca61401fd6a3fd39fec7f">pointer_guard</a></td></tr>
-<tr class="memdesc:a8415185cf11ca61401fd6a3fd39fec7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer guard (unused)  <br /></td></tr>
-<tr class="separator:a8415185cf11ca61401fd6a3fd39fec7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__led__flags.html">Flags</a></td></tr>
+<tr class="memdesc:group__kbd__led__flags"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard LED flags <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionkbd__leds__t.html">kbd_leds_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard LEDs.  <a href="unionkbd__leds__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Thread Control Block Header. </p>
-<p>Header preceding the static TLS data segments as defined by the SH-ELF TLS ABI (version 1). This is what the thread pointer (GBR) points to for compiler access to thread-local data. </p>
-</div><h2 class="groupheader">Field Documentation</h2>
-<a id="a7bd9c69986508a8de02b55d79f91d16c" name="a7bd9c69986508a8de02b55d79f91d16c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bd9c69986508a8de02b55d79f91d16c">&#9670;&#160;</a></span>dtv</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* tcbhead_t::dtv</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Dynamic TLS vector (unused) </p>
-
-</div>
-</div>
-<a id="a8415185cf11ca61401fd6a3fd39fec7f" name="a8415185cf11ca61401fd6a3fd39fec7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8415185cf11ca61401fd6a3fd39fec7f">&#9670;&#160;</a></span>pointer_guard</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uintptr_t tcbhead_t::pointer_guard</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pointer guard (unused) </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/kos/<a class="el" href="thread_8h_source.html">thread.h</a></li>
-</ul>
+<p>Types associated with keyboard LEDs </p>
+<p>LEDs are represented by the <a class="el" href="unionkbd__leds__t.html" title="Keyboard LEDs.">kbd_leds_t</a> union type. Each individual LED can be accessed by:</p><ol type="1">
+<li>Directly using a convenience bit field.</li>
+<li>Bitwise <code>AND</code> of <a class="el" href="unionkbd__leds__t.html#a0f3558c30c5b0aeeb4055663f43c3f4d" title="Packed 8-bit unsigned integer of bitflags.">kbd_leds_t::raw</a> with one of the <a class="el" href="group__kbd__led__flags.html">Flags</a>. </li>
+</ol>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structtcbhead__t.html">tcbhead_t</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

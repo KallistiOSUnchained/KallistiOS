@@ -12,10 +12,7 @@ var group__kthreads =
     [ "tls.h", "tls_8h.html", null ],
     [ "worker_thread.h", "worker__thread_8h.html", null ],
     [ "spinlock.h", "spinlock_8h.html", null ],
-    [ "tcbhead_t", "structtcbhead__t.html", [
-      [ "dtv", "structtcbhead__t.html#a7bd9c69986508a8de02b55d79f91d16c", null ],
-      [ "pointer_guard", "structtcbhead__t.html#a8415185cf11ca61401fd6a3fd39fec7f", null ]
-    ] ],
+    [ "tls_static.h", "tls__static_8h.html", null ],
     [ "kthread_t", "structkthread__t.html", [
       [ "LIST_ENTRY", "structkthread__t.html#ad1648f5220dcc957eb757495d65cc492", null ],
       [ "TAILQ_ENTRY", "structkthread__t.html#ae1d17385b12926c2628d907fce204dcb", null ],
@@ -52,10 +49,10 @@ var group__kthreads =
       [ "stack", "structkthread__t.html#a5f1682784a47040f9073751afb297481", null ],
       [ "stack_size", "structkthread__t.html#af678e5769991844d204d461a09a54a32", null ],
       [ "state", "structkthread__t.html#a4b88e1289fefc4f33c4baf394e32ad31", null ],
-      [ "tcbhead", "structkthread__t.html#a813ba69dc317483e36e2418ece5f3d1d", null ],
       [ "thd_errno", "structkthread__t.html#a3130ee0743cc1690a8148a4aa2f4f252", null ],
       [ "thd_reent", "structkthread__t.html#a6a949ecefca60ac6b03d79b9d600aa24", null ],
       [ "tid", "structkthread__t.html#a1e683af33bafb9b13eb2d9caf02b14d6", null ],
+      [ "tls_hnd", "structkthread__t.html#ae0c0330260c467e789928c04cd6d049b", null ],
       [ "tls_list", "structkthread__t.html#a492f60fe4653354894bfd33548672486", null ],
       [ "total", "structkthread__t.html#a492dad4841d8f5b5adeb44d6fb2bb42c", null ],
       [ "wait_callback", "structkthread__t.html#adfba1961050da641a2fadb318b2610c5", null ],
