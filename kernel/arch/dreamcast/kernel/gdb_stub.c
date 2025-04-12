@@ -809,7 +809,7 @@ When in the monitor mode we talk a human on the serial line rather than gdb.
 
 */
 
-
+extern const size_t tcbhead_size;
 static void gdb_handle_exception(int exceptionVector) {
     int sigval, stepping;
     uint32 addr, length;
@@ -976,7 +976,7 @@ static void gdb_handle_exception(int exceptionVector) {
                             kthread_t* thr = thd_by_tid(tid);
                             const char* plabel = thd_get_label(thr);
                             mem2hex(plabel , remcomOutBuffer, strlen(plabel));
-                        } else{
+                        } else {
                             build_error_packet("Failed to get TID for ThreadExtraInfo.");
                         }
                     /* ‘GetTLSAddr:thread-id,offset,lm’ */
@@ -994,11 +994,11 @@ static void gdb_handle_exception(int exceptionVector) {
                             thread = thd_by_tid(thread_id);
                             if(thread) {
                                 /* Get the TLS header address for the specified thread */
-                                tcbhead_t *tcb = thread->tcbhead;
+                                void *tcb = thread->tls_hnd;
 
                                 if(tcb) {
                                     /* Calculate the address by adding the offset to the base of the TLS data segment */
-                                    void* tls_addr = (void*)((uintptr_t)tcb + sizeof(tcbhead_t) + offset);
+                                    void* tls_addr = (void*)((uintptr_t)tcb + tcbhead_size + offset);
 
                                     /* Convert the address to big endian hex string */
                                     mem2hex((char*)&tls_addr, remcomOutBuffer, sizeof(tls_addr));

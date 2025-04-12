@@ -33,6 +33,8 @@ typedef struct tcbhead {
     uintptr_t pointer_guard; /* Pointer guard (unused) */
 } tcbhead_t;
 
+const size_t tcbhead_size = sizeof(tcbhead_t);
+
 void arch_tls_init(void) {
     /* Initialize GBR register for Main Thread */
     __builtin_set_thread_pointer((void*)(thd_get_current()->context.gbr));
