@@ -169,7 +169,7 @@ typedef struct {
     uint32  lists_dmaed;                // (1 << idx) for each list which has been DMA'd (DMA mode only)
 
     mutex_t dma_lock;                   // Locked if a DMA is in progress (vertex or texture)
-    int     ta_ready;                   // >0 if the TA is ready for the new scene
+    int     ta_checked_ready;           // >0 if the TA has been checked to be ready for the new scene
     int     ta_busy;                    // >0 if a scene is ongoing and the TA hasn't signaled completion
     int     render_busy;                // >0 if a render is in progress
     int     render_completed;           // >1 if a render has recently finished

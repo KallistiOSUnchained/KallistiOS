@@ -57,7 +57,7 @@ typedef struct vmu_fh_str {
     int mode;                           /* mode the file was opened with */
     char path[17];                      /* full path of the file */
     char name[13];                      /* name of the file */
-    off_t loc;                          /* current position in the file (bytes) */
+    off_t loc;                          /* current position from the start in the file (bytes) */
     off_t start;                        /* start of the data in the file (bytes) */
     maple_device_t *dev;                /* maple address of the vmu to use */
     uint32 filesize;                    /* file length from dirent (in 512-byte blks) */
@@ -283,7 +283,6 @@ static vmu_fh_t *vmu_open_file(maple_device_t * dev, const char *path, int mode)
     } else if(!fd->raw && !vmu_pkg_parse(data, datasize, &vmu_pkg)) {
         fd->header = vmu_pkg_dup(&vmu_pkg);
         fd->start = (unsigned int)vmu_pkg.data - (unsigned int)data;
-        fd->loc = fd->start;
     }
 
     fd->data = (uint8 *)data;
@@ -467,7 +466,7 @@ static ssize_t vmu_read(void * hnd, void *buffer, size_t cnt) {
         return 0;
 
     /* Copy out the data */
-    memcpy(buffer, fh->data + fh->loc, cnt);
+    memcpy(buffer, fh->data + fh->loc + fh->start, cnt);
     fh->loc += cnt;
 
     return cnt;
@@ -490,9 +489,9 @@ static ssize_t vmu_write(void * hnd, const void *buffer, size_t cnt) {
         return -1;
 
     /* Check to make sure we have enough room in data */
-    if(fh->loc + cnt > fh->filesize * 512) {
+    if(fh->loc + fh->start + cnt > fh->filesize * 512) {
         /* Figure out the new block count */
-        n = ((fh->loc + cnt) - (fh->filesize * 512));
+        n = ((fh->loc + fh->start + cnt) - (fh->filesize * 512));
 
         if(n & 511)
             n = (n + 512) & ~511;
@@ -522,7 +521,7 @@ static ssize_t vmu_write(void * hnd, const void *buffer, size_t cnt) {
     dbglog(DBG_KDEBUG, "VMUFS: adding %d bytes of data at loc %d (%d avail)\n",
            cnt, fh->loc, fh->filesize * 512);
 #endif
-    memcpy(fh->data + fh->loc, buffer, cnt);
+    memcpy(fh->data + fh->loc + fh->start, buffer, cnt);
     fh->loc += cnt;
 
     return cnt;
@@ -539,7 +538,7 @@ static void *vmu_mmap(void * hnd) {
 
     fh = (vmu_fh_t *)hnd;
 
-    return fh->data;
+    return fh->data + fh->start;
 }
 
 /* Seek elsewhere in a file */
@@ -555,10 +554,9 @@ static off_t vmu_seek(void * hnd, off_t offset, int whence) {
     /* Update current position according to arguments */
     switch(whence) {
         case SEEK_SET:
-            offset += fh->start;
             break;
         case SEEK_CUR:
-            offset += fh->loc + fh->start;
+            offset += fh->loc;
             break;
         case SEEK_END:
             offset = fh->filesize * 512 - offset;
@@ -568,7 +566,8 @@ static off_t vmu_seek(void * hnd, off_t offset, int whence) {
     }
 
     /* Check bounds; allow seek past EOF. */
-    if(offset < 0) offset = fh->start;
+    if(offset < 0)
+        offset = 0;
 
     fh->loc = offset;
 
@@ -581,7 +580,7 @@ static off_t vmu_tell(void * hnd) {
     if(!vmu_verify_hnd(hnd, VMU_FILE))
         return -1;
 
-    return ((vmu_fh_t *) hnd)->loc + ((vmu_fh_t *) hnd)->start;
+    return ((vmu_fh_t *) hnd)->loc;
 }
 
 /* return the filesize */

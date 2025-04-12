@@ -89,7 +89,7 @@ void pvr_vertbuf_written(pvr_list_t list, size_t amt) {
 
 static void pvr_start_ta_rendering(void) {
     // Make sure to wait until the TA is ready to start rendering a new scene
-    if(!pvr_state.ta_ready) {
+    if(!pvr_state.ta_checked_ready) {
         pvr_wait_ready();
 
         // If using a single vertex buffer, we have to wait until the PVR is
@@ -97,15 +97,15 @@ static void pvr_start_ta_rendering(void) {
         if(!pvr_state.vbuf_doublebuf)
             pvr_wait_render_done();
 
-        pvr_state.ta_ready = 1;
+        pvr_state.ta_checked_ready = 1;
         pvr_state.curr_to_texture = pvr_state.next_to_texture;
         pvr_state.to_txr_rp = pvr_state.next_to_txr_rp;
         pvr_state.to_txr_addr = pvr_state.next_to_txr_addr;
-    }
 
-    // Starting from that point, we consider that the Tile Accelerator
-    // might be busy.
-    pvr_state.ta_busy = 1;
+        // Starting from that point, we consider that the Tile Accelerator
+        // might be busy.
+        pvr_state.ta_busy = 1;
+    }
 }
 
 /* Begin collecting data for a frame of 3D output to the off-screen
@@ -114,7 +114,7 @@ void pvr_scene_begin(void) {
     int i;
 
     pvr_state.next_to_texture = 0;
-    pvr_state.ta_ready = 0;
+    pvr_state.ta_checked_ready = 0;
     pvr_state.lists_closed = 0;
 
     // Get general stuff ready.
