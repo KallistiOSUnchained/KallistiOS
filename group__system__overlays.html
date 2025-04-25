@@ -115,18 +115,18 @@ Files</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gae00eb87863d6b8ad8cec1336a8e54e62" id="r_gae00eb87863d6b8ad8cec1336a8e54e62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae00eb87863d6b8ad8cec1336a8e54e62">arch_exec_at</a> (const void *image, <a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> length, <a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> address) <a class="el" href="group__system__macros.html#ga5b6df4fe38493e14648842364a76075f">__noreturn</a></td></tr>
-<tr class="memdesc:gae00eb87863d6b8ad8cec1336a8e54e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the currently running binary.  <br /></td></tr>
-<tr class="separator:gae00eb87863d6b8ad8cec1336a8e54e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga17a56f5335251833282c4114c7a39caf" id="r_ga17a56f5335251833282c4114c7a39caf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga17a56f5335251833282c4114c7a39caf">arch_exec</a> (const void *image, <a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> length) <a class="el" href="group__system__macros.html#ga5b6df4fe38493e14648842364a76075f">__noreturn</a></td></tr>
-<tr class="memdesc:ga17a56f5335251833282c4114c7a39caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the currently running binary at the default address.  <br /></td></tr>
-<tr class="separator:ga17a56f5335251833282c4114c7a39caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3aa53298f1a90445209ee75de3e82e26" id="r_ga3aa53298f1a90445209ee75de3e82e26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3aa53298f1a90445209ee75de3e82e26">arch_exec_at</a> (const void *image, uint32_t length, uint32_t address) <a class="el" href="group__system__attributes.html#ga5b6df4fe38493e14648842364a76075f">__noreturn</a></td></tr>
+<tr class="memdesc:ga3aa53298f1a90445209ee75de3e82e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the currently running binary.  <br /></td></tr>
+<tr class="separator:ga3aa53298f1a90445209ee75de3e82e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacbccc75e66bbd4829bebccc924b38de2" id="r_gacbccc75e66bbd4829bebccc924b38de2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacbccc75e66bbd4829bebccc924b38de2">arch_exec</a> (const void *image, uint32_t length) <a class="el" href="group__system__attributes.html#ga5b6df4fe38493e14648842364a76075f">__noreturn</a></td></tr>
+<tr class="memdesc:gacbccc75e66bbd4829bebccc924b38de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the currently running binary at the default address.  <br /></td></tr>
+<tr class="separator:gacbccc75e66bbd4829bebccc924b38de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>API for loading and executing overlays </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga17a56f5335251833282c4114c7a39caf" name="ga17a56f5335251833282c4114c7a39caf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga17a56f5335251833282c4114c7a39caf">&#9670;&#160;</a></span>arch_exec()</h2>
+<a id="gacbccc75e66bbd4829bebccc924b38de2" name="gacbccc75e66bbd4829bebccc924b38de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacbccc75e66bbd4829bebccc924b38de2">&#9670;&#160;</a></span>arch_exec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,13 +139,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Replace the currently running binary at the default address. </p>
-<p>This is a convenience function for <a class="el" href="#gae00eb87863d6b8ad8cec1336a8e54e62" title="Replace the currently running binary.">arch_exec_at()</a> that assumes that the binary has been set up with its starting point at the standard location. In the case of the Dreamcast, this is 0xAC010000 (or 0x8C010000, in P1).</p>
+<p>This is a convenience function for <a class="el" href="#ga3aa53298f1a90445209ee75de3e82e26" title="Replace the currently running binary.">arch_exec_at()</a> that assumes that the binary has been set up with its starting point at the standard location. In the case of the Dreamcast, this is 0xAC010000 (or 0x8C010000, in P1).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">image</td><td>The binary to run (already loaded into RAM). </td></tr>
@@ -156,8 +156,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gae00eb87863d6b8ad8cec1336a8e54e62" name="gae00eb87863d6b8ad8cec1336a8e54e62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae00eb87863d6b8ad8cec1336a8e54e62">&#9670;&#160;</a></span>arch_exec_at()</h2>
+<a id="ga3aa53298f1a90445209ee75de3e82e26" name="ga3aa53298f1a90445209ee75de3e82e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3aa53298f1a90445209ee75de3e82e26">&#9670;&#160;</a></span>arch_exec_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,12 +170,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a></td>          <td class="paramname"><span class="paramname"><em>address</em></span>&#160;)</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>address</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -98,7 +98,8 @@ $(function(){initNavTree('group__system.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Topics</a>  </div>
+<a href="#groups">Topics</a> &#124;
+<a href="#files">Files</a>  </div>
   <div class="headertitle"><div class="title">System</div></div>
 </div><!--header-->
 <div class="contents">
@@ -119,6 +120,9 @@ Topics</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__cache.html">Cache</a></td></tr>
 <tr class="memdesc:group__system__cache"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver and API for managing the SH4's cache <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__attributes.html">Compiler Attributes</a></td></tr>
+<tr class="memdesc:group__system__attributes"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definitions for builtin attributes and compiler directives <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__dmac.html">DMA</a></td></tr>
 <tr class="memdesc:group__system__dmac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the SH4's Direct Memory Access Controller <br /></td></tr>
@@ -141,14 +145,14 @@ Topics</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irqs.html">Interrupts</a></td></tr>
 <tr class="memdesc:group__irqs"><td class="mdescLeft">&#160;</td><td class="mdescRight">IRQs and ISRs for the SH4's CPU <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__compat.html">Language Compat</a></td></tr>
+<tr class="memdesc:group__system__compat"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definitions for language features <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__libraries.html">Libraries</a></td></tr>
 <tr class="memdesc:group__system__libraries"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for managing dynamically loaded libraries <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mmu.html">MMU</a></td></tr>
 <tr class="memdesc:group__mmu"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the SH4's MMU (disabled by default). <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__macros.html">Macros</a></td></tr>
-<tr class="memdesc:group__system__macros"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various common macros used throughout the codebase <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__namemgr.html">Name Manager</a></td></tr>
 <tr class="memdesc:group__system__namemgr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract Module System for KOS's VFS <br /></td></tr>
@@ -177,8 +181,17 @@ Topics</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__types.html">Types</a></td></tr>
 <tr class="memdesc:group__system__types"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard types and their utilities <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__helpers.html">Utility Macros</a></td></tr>
+<tr class="memdesc:group__system__helpers"><td class="mdescLeft">&#160;</td><td class="mdescRight">General useful language macros <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__vblank.html">VBlank</a></td></tr>
 <tr class="memdesc:group__system__vblank"><td class="mdescLeft">&#160;</td><td class="mdescRight">VBlank interrupt handler management <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdefs_8h.html">cdefs.h</a></td></tr>
+<tr class="memdesc:cdefs_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various common macros used throughout the codebase. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

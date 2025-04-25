@@ -225,7 +225,7 @@ var searchData=
   ['bits_222',['Bits',['../group__bba__cbits.html',1,'Command Bits'],['../group__bba__ibits.html',1,'Interrupt Status Bits'],['../group__bba__miicb.html',1,'MII Control Bits'],['../group__bba__miisb.html',1,'MII Status Bits'],['../group__bba__rbits.html',1,'Receive Status Bits'],['../group__bba__config1bits.html',1,'RTL8139C Config Register 1 (RT_CONFIG1) Bits'],['../group__bba__config4bits.html',1,'RTL8139C Config Register 4 (RT_CONFIG4) Bits'],['../group__bba__config5bits.html',1,'RTL8139C Config Register 5 (RT_CONFIG5) Bits'],['../group__bba__tbits.html',1,'RTL8139C Transmit Status Bits']]],
   ['bits_223',['RTL8139C RX Config Register (RT_RXCONFIG) bits',['../group__bba__configrx.html',1,'']]],
   ['blank_224',['blank',['../structmmupage__t.html#a7b1859c81f835fd3d0e4217a153825dc',1,'mmupage_t']]],
-  ['blend_225',['blend',['../structpvr__poly__cxt__t.html#a0d388d6e0ed4c3e0a7be2c867da5e733',1,'pvr_poly_cxt_t::blend'],['../structpvr__sprite__cxt__t.html#a886cb37ac65104cf31d13185131d4d67',1,'pvr_sprite_cxt_t::blend']]],
+  ['blend_225',['blend',['../structpvr__poly__cxt__t.html#a370190dc0c8768bd18c203f6ea062aa4',1,'pvr_poly_cxt_t::blend'],['../structpvr__sprite__cxt__t.html#a2b5e8efe4b74a763c1e6233cdd425510',1,'pvr_sprite_cxt_t::blend']]],
   ['blending_226',['Blending',['../group__pvr__blend.html',1,'']]],
   ['blending_20modes_227',['Blending Modes',['../group__pvr__blend__modes.html',1,'']]],
   ['blending_20toggle_228',['Blending Toggle',['../group__pvr__blend__switch.html',1,'']]],

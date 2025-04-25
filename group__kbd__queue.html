@@ -124,21 +124,23 @@ Functions</h2></td></tr>
 <tr class="memitem:ga60207c54ce956c976961ab2c7a67884b" id="r_ga60207c54ce956c976961ab2c7a67884b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga60207c54ce956c976961ab2c7a67884b">kbd_queue_pop</a> (<a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev, bool xlat)</td></tr>
 <tr class="memdesc:ga60207c54ce956c976961ab2c7a67884b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop a key off a specific keyboard's queue.  <br /></td></tr>
 <tr class="separator:ga60207c54ce956c976961ab2c7a67884b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga92be71208168ee6163b3793e29d70ac4" id="r_ga92be71208168ee6163b3793e29d70ac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga92be71208168ee6163b3793e29d70ac4">kbd_set_queue</a> (int active) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
+<tr class="memitem:ga92be71208168ee6163b3793e29d70ac4" id="r_ga92be71208168ee6163b3793e29d70ac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga92be71208168ee6163b3793e29d70ac4">kbd_set_queue</a> (int active) <a class="el" href="group__system__attributes.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
 <tr class="memdesc:ga92be71208168ee6163b3793e29d70ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate or deactivate global key queueing.  <br /></td></tr>
 <tr class="separator:ga92be71208168ee6163b3793e29d70ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga624304aea04506a26d96e5d885feff8d" id="r_ga624304aea04506a26d96e5d885feff8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga624304aea04506a26d96e5d885feff8d">kbd_get_key</a> (void) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
+<tr class="memitem:ga624304aea04506a26d96e5d885feff8d" id="r_ga624304aea04506a26d96e5d885feff8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga624304aea04506a26d96e5d885feff8d">kbd_get_key</a> (void) <a class="el" href="group__system__attributes.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
 <tr class="memdesc:ga624304aea04506a26d96e5d885feff8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop a key off the global keyboard queue.  <br /></td></tr>
 <tr class="separator:ga624304aea04506a26d96e5d885feff8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Monitor queue for key press events. </p>
 <dl class="section user"><dt>Popping from the Queue</dt><dd>One method of checking for key input is to use the internal key press queue. This is most frequently used when keyboard input is used within a text processing context, which is only concerned with individual key press events, rather than the frame-by-frame state.</dd></dl>
-<dl class="section user"><dt></dt><dd>We simply pop keys off of the queue in a loop, until the queue is empty: <pre class="fragment">int k;
-
-while((k = kbd_queue_pop(device, 1)) != KBD_QUEUE_END)
-    printf("Key pressed: %c!\n", (char)k);
-</pre> </dd></dl>
+<dl class="section user"><dt></dt><dd>We simply pop keys off of the queue in a loop, until the queue is empty: <div class="fragment"><div class="line"><span class="keywordtype">int</span> k;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">while</span>((k = <a class="code hl_function" href="#ga60207c54ce956c976961ab2c7a67884b">kbd_queue_pop</a>(device, 1)) != <a class="code hl_define" href="#gaa115d28788304a16204392b89ceae321">KBD_QUEUE_END</a>)</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Key pressed: %c!\n&quot;</span>, (<span class="keywordtype">char</span>)k);</div>
+<div class="ttc" id="agroup__kbd__queue_html_ga60207c54ce956c976961ab2c7a67884b"><div class="ttname"><a href="#ga60207c54ce956c976961ab2c7a67884b">kbd_queue_pop</a></div><div class="ttdeci">int kbd_queue_pop(maple_device_t *dev, bool xlat)</div><div class="ttdoc">Pop a key off a specific keyboard's queue.</div></div>
+<div class="ttc" id="agroup__kbd__queue_html_gaa115d28788304a16204392b89ceae321"><div class="ttname"><a href="#gaa115d28788304a16204392b89ceae321">KBD_QUEUE_END</a></div><div class="ttdeci">#define KBD_QUEUE_END</div><div class="ttdoc">Delimiter value for kbd_queue_pop()</div><div class="ttdef"><b>Definition</b> keyboard.h:503</div></div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Repeated Presses</dt><dd>As with a text processor, a key which has been held down for a duration of time will generate periodic key press events which will be pushed onto the queue. </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaa115d28788304a16204392b89ceae321" name="gaa115d28788304a16204392b89ceae321"></a>

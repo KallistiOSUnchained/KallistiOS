@@ -9,7 +9,7 @@ var searchData=
   ['mach_6',['mach',['../structirq__context__t.html#a96b91c7dda0b447f9367f572b8418296',1,'irq_context_t']]],
   ['machine_7',['machine',['../structelf__hdr__t.html#a993eb9a44990a4052be497fe6a024cd3',1,'elf_hdr_t::machine'],['../structutsname.html#ab41a90cb33bfbdc976e08f49057c8e04',1,'utsname::machine']]],
   ['macl_8',['macl',['../structirq__context__t.html#aba81442edd689c12d8cfe36849432600',1,'irq_context_t']]],
-  ['macros_9',['Macros',['../group__system__macros.html',1,'Macros'],['../group__register__macros.html',1,'Register Macros'],['../group__cd__toc__access.html',1,'TOC Access Macros']]],
+  ['macros_9',['Macros',['../group__register__macros.html',1,'Register Macros'],['../group__cd__toc__access.html',1,'TOC Access Macros'],['../group__system__helpers.html',1,'Utility Macros']]],
   ['magic_10',['magic',['../structvmu__root__t.html#addd93f41b0c6fca9ce86bda5b6d6635b',1,'vmu_root_t']]],
   ['mallinfo_11',['mallinfo',['../structmallinfo.html',1,'mallinfo'],['../group__system__allocator.html#ga887279dbdb413cf1a0f52dee44a11eac',1,'mallinfo():&#160;malloc.h']]],
   ['malloc_12',['malloc',['../group__system__allocator.html#ga9c36d0fe3ec4675cbffdc9b52f5fb399',1,'malloc.h']]],

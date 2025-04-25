@@ -226,13 +226,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ga78c79e8185667cc332ff2d7a8268fa70" id="r_ga78c79e8185667cc332ff2d7a8268fa70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkthread__t.html">kthread_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78c79e8185667cc332ff2d7a8268fa70">thd_create</a> (bool detach, void *(*routine)(void *param), void *param)</td></tr>
 <tr class="memdesc:ga78c79e8185667cc332ff2d7a8268fa70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new thread.  <br /></td></tr>
 <tr class="separator:ga78c79e8185667cc332ff2d7a8268fa70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac4862dddd62e84e192d7831105555cc1" id="r_gac4862dddd62e84e192d7831105555cc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkthread__t.html">kthread_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac4862dddd62e84e192d7831105555cc1">thd_create_ex</a> (const <a class="el" href="structkthread__attr__t.html">kthread_attr_t</a> *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> attr, void *(*routine)(void *param), void *param)</td></tr>
+<tr class="memitem:gac4862dddd62e84e192d7831105555cc1" id="r_gac4862dddd62e84e192d7831105555cc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkthread__t.html">kthread_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac4862dddd62e84e192d7831105555cc1">thd_create_ex</a> (const <a class="el" href="structkthread__attr__t.html">kthread_attr_t</a> *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> attr, void *(*routine)(void *param), void *param)</td></tr>
 <tr class="memdesc:gac4862dddd62e84e192d7831105555cc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new thread with the specified set of attributes.  <br /></td></tr>
 <tr class="separator:gac4862dddd62e84e192d7831105555cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga46580d9fc434ae5d832d08bdc798f487" id="r_ga46580d9fc434ae5d832d08bdc798f487"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga46580d9fc434ae5d832d08bdc798f487">thd_destroy</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
 <tr class="memdesc:ga46580d9fc434ae5d832d08bdc798f487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brutally kill the given thread.  <br /></td></tr>
 <tr class="separator:ga46580d9fc434ae5d832d08bdc798f487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1b6cbf2f872e306735a95fffc0439106" id="r_ga1b6cbf2f872e306735a95fffc0439106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1b6cbf2f872e306735a95fffc0439106">thd_exit</a> (void *rv) <a class="el" href="group__system__macros.html#ga5b6df4fe38493e14648842364a76075f">__noreturn</a></td></tr>
+<tr class="memitem:ga1b6cbf2f872e306735a95fffc0439106" id="r_ga1b6cbf2f872e306735a95fffc0439106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1b6cbf2f872e306735a95fffc0439106">thd_exit</a> (void *rv) <a class="el" href="group__system__attributes.html#ga5b6df4fe38493e14648842364a76075f">__noreturn</a></td></tr>
 <tr class="memdesc:ga1b6cbf2f872e306735a95fffc0439106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exit the current thread.  <br /></td></tr>
 <tr class="separator:ga1b6cbf2f872e306735a95fffc0439106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga314b55cd3cae0c7d22114f4e4d0153fd" id="r_ga314b55cd3cae0c7d22114f4e4d0153fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga314b55cd3cae0c7d22114f4e4d0153fd">thd_schedule</a> (bool front_of_line, uint64_t now)</td></tr>
@@ -256,13 +256,13 @@ Functions</h2></td></tr>
 <tr class="memitem:gac07d8fb5d1cab6ac36081effb1ff80de" id="r_gac07d8fb5d1cab6ac36081effb1ff80de"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac07d8fb5d1cab6ac36081effb1ff80de">thd_get_label</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
 <tr class="memdesc:gac07d8fb5d1cab6ac36081effb1ff80de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the thread's label.  <br /></td></tr>
 <tr class="separator:gac07d8fb5d1cab6ac36081effb1ff80de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf60fbc4829be062daba4f2520f503cd0" id="r_gaf60fbc4829be062daba4f2520f503cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf60fbc4829be062daba4f2520f503cd0">thd_set_label</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, const char *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> label)</td></tr>
+<tr class="memitem:gaf60fbc4829be062daba4f2520f503cd0" id="r_gaf60fbc4829be062daba4f2520f503cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf60fbc4829be062daba4f2520f503cd0">thd_set_label</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, const char *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> label)</td></tr>
 <tr class="memdesc:gaf60fbc4829be062daba4f2520f503cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the thread's label.  <br /></td></tr>
 <tr class="separator:gaf60fbc4829be062daba4f2520f503cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ad0b1c2495f1fdf11df6d7ba38e2620" id="r_ga5ad0b1c2495f1fdf11df6d7ba38e2620"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5ad0b1c2495f1fdf11df6d7ba38e2620">thd_get_pwd</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
 <tr class="memdesc:ga5ad0b1c2495f1fdf11df6d7ba38e2620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the thread's current working directory.  <br /></td></tr>
 <tr class="separator:ga5ad0b1c2495f1fdf11df6d7ba38e2620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab12a497953adc81df5bea7bf50dbd917" id="r_gab12a497953adc81df5bea7bf50dbd917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab12a497953adc81df5bea7bf50dbd917">thd_set_pwd</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, const char *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> pwd)</td></tr>
+<tr class="memitem:gab12a497953adc81df5bea7bf50dbd917" id="r_gab12a497953adc81df5bea7bf50dbd917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab12a497953adc81df5bea7bf50dbd917">thd_set_pwd</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, const char *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> pwd)</td></tr>
 <tr class="memdesc:gab12a497953adc81df5bea7bf50dbd917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the thread's current working directory.  <br /></td></tr>
 <tr class="separator:gab12a497953adc81df5bea7bf50dbd917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga94704cdb804720b06e7558d6167e9a51" id="r_ga94704cdb804720b06e7558d6167e9a51"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga94704cdb804720b06e7558d6167e9a51">thd_get_errno</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
@@ -277,10 +277,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga368a4d08f7be08602f4ae7d035a5dae4" id="r_ga368a4d08f7be08602f4ae7d035a5dae4"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga368a4d08f7be08602f4ae7d035a5dae4">thd_get_total_cpu_time</a> (void)</td></tr>
 <tr class="memdesc:ga368a4d08f7be08602f4ae7d035a5dae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all thread's elapsed CPU time.  <br /></td></tr>
 <tr class="separator:ga368a4d08f7be08602f4ae7d035a5dae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3eb4652a1578c25dd5c6bebe5ddadcb" id="r_gad3eb4652a1578c25dd5c6bebe5ddadcb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3eb4652a1578c25dd5c6bebe5ddadcb">thd_set_mode</a> (<a class="el" href="#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a> mode) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
+<tr class="memitem:gad3eb4652a1578c25dd5c6bebe5ddadcb" id="r_gad3eb4652a1578c25dd5c6bebe5ddadcb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3eb4652a1578c25dd5c6bebe5ddadcb">thd_set_mode</a> (<a class="el" href="#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a> mode) <a class="el" href="group__system__attributes.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
 <tr class="memdesc:gad3eb4652a1578c25dd5c6bebe5ddadcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change threading modes.  <br /></td></tr>
 <tr class="separator:gad3eb4652a1578c25dd5c6bebe5ddadcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga064e68e032ac7b6478142c5806a4eb2c" id="r_ga064e68e032ac7b6478142c5806a4eb2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga064e68e032ac7b6478142c5806a4eb2c">thd_get_mode</a> (void) <a class="el" href="group__system__macros.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
+<tr class="memitem:ga064e68e032ac7b6478142c5806a4eb2c" id="r_ga064e68e032ac7b6478142c5806a4eb2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga90d0ea4ed54cf85bcae2fbac1b85f52a">kthread_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga064e68e032ac7b6478142c5806a4eb2c">thd_get_mode</a> (void) <a class="el" href="group__system__attributes.html#ga4e1585cb1b8a465a6a9a702d97bb4ad8">__deprecated</a></td></tr>
 <tr class="memdesc:ga064e68e032ac7b6478142c5806a4eb2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the current threading mode.  <br /></td></tr>
 <tr class="separator:ga064e68e032ac7b6478142c5806a4eb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga12dad87642cf1a5c8190752b0573f812" id="r_ga12dad87642cf1a5c8190752b0573f812"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12dad87642cf1a5c8190752b0573f812">thd_set_hz</a> (unsigned int hertz)</td></tr>
@@ -316,7 +316,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ga78c79e8185667cc332ff2d7a8268fa70" id="r_ga78c79e8185667cc332ff2d7a8268fa70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkthread__t.html">kthread_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78c79e8185667cc332ff2d7a8268fa70">thd_create</a> (bool detach, void *(*routine)(void *param), void *param)</td></tr>
 <tr class="memdesc:ga78c79e8185667cc332ff2d7a8268fa70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new thread.  <br /></td></tr>
 <tr class="separator:ga78c79e8185667cc332ff2d7a8268fa70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac4862dddd62e84e192d7831105555cc1" id="r_gac4862dddd62e84e192d7831105555cc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkthread__t.html">kthread_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac4862dddd62e84e192d7831105555cc1">thd_create_ex</a> (const <a class="el" href="structkthread__attr__t.html">kthread_attr_t</a> *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> attr, void *(*routine)(void *param), void *param)</td></tr>
+<tr class="memitem:gac4862dddd62e84e192d7831105555cc1" id="r_gac4862dddd62e84e192d7831105555cc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkthread__t.html">kthread_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac4862dddd62e84e192d7831105555cc1">thd_create_ex</a> (const <a class="el" href="structkthread__attr__t.html">kthread_attr_t</a> *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> attr, void *(*routine)(void *param), void *param)</td></tr>
 <tr class="memdesc:gac4862dddd62e84e192d7831105555cc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new thread with the specified set of attributes.  <br /></td></tr>
 <tr class="separator:gac4862dddd62e84e192d7831105555cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga46580d9fc434ae5d832d08bdc798f487" id="r_ga46580d9fc434ae5d832d08bdc798f487"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga46580d9fc434ae5d832d08bdc798f487">thd_destroy</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
@@ -334,13 +334,13 @@ Functions</h2></td></tr>
 <tr class="memitem:gac07d8fb5d1cab6ac36081effb1ff80de" id="r_gac07d8fb5d1cab6ac36081effb1ff80de"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac07d8fb5d1cab6ac36081effb1ff80de">thd_get_label</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
 <tr class="memdesc:gac07d8fb5d1cab6ac36081effb1ff80de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the thread's label.  <br /></td></tr>
 <tr class="separator:gac07d8fb5d1cab6ac36081effb1ff80de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf60fbc4829be062daba4f2520f503cd0" id="r_gaf60fbc4829be062daba4f2520f503cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf60fbc4829be062daba4f2520f503cd0">thd_set_label</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, const char *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> <a class="el" href="structkthread__t.html#a536277c2ece6b62ceee8a49c90df97e5">label</a>)</td></tr>
+<tr class="memitem:gaf60fbc4829be062daba4f2520f503cd0" id="r_gaf60fbc4829be062daba4f2520f503cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf60fbc4829be062daba4f2520f503cd0">thd_set_label</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, const char *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> <a class="el" href="structkthread__t.html#a536277c2ece6b62ceee8a49c90df97e5">label</a>)</td></tr>
 <tr class="memdesc:gaf60fbc4829be062daba4f2520f503cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the thread's label.  <br /></td></tr>
 <tr class="separator:gaf60fbc4829be062daba4f2520f503cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ad0b1c2495f1fdf11df6d7ba38e2620" id="r_ga5ad0b1c2495f1fdf11df6d7ba38e2620"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5ad0b1c2495f1fdf11df6d7ba38e2620">thd_get_pwd</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
 <tr class="memdesc:ga5ad0b1c2495f1fdf11df6d7ba38e2620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the thread's current working directory.  <br /></td></tr>
 <tr class="separator:ga5ad0b1c2495f1fdf11df6d7ba38e2620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab12a497953adc81df5bea7bf50dbd917" id="r_gab12a497953adc81df5bea7bf50dbd917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab12a497953adc81df5bea7bf50dbd917">thd_set_pwd</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, const char *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> <a class="el" href="structkthread__t.html#aac3521e4b3523fbbee700d97a97440c3">pwd</a>)</td></tr>
+<tr class="memitem:gab12a497953adc81df5bea7bf50dbd917" id="r_gab12a497953adc81df5bea7bf50dbd917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab12a497953adc81df5bea7bf50dbd917">thd_set_pwd</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd, const char *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a> <a class="el" href="structkthread__t.html#aac3521e4b3523fbbee700d97a97440c3">pwd</a>)</td></tr>
 <tr class="memdesc:gab12a497953adc81df5bea7bf50dbd917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the thread's current working directory.  <br /></td></tr>
 <tr class="separator:gab12a497953adc81df5bea7bf50dbd917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga94704cdb804720b06e7558d6167e9a51" id="r_ga94704cdb804720b06e7558d6167e9a51"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga94704cdb804720b06e7558d6167e9a51">thd_get_errno</a> (<a class="el" href="structkthread__t.html">kthread_t</a> *thd)</td></tr>
@@ -911,7 +911,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structkthread__t.html">kthread_t</a> * thd_create_ex </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structkthread__attr__t.html">kthread_attr_t</a> *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>attr</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structkthread__attr__t.html">kthread_attr_t</a> *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>attr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -955,7 +955,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structkthread__t.html">kthread_t</a> * thd_create_ex </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structkthread__attr__t.html">kthread_attr_t</a> *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>attr</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structkthread__attr__t.html">kthread_attr_t</a> *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>attr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2088,7 +2088,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>label</em></span>&#160;)</td>
+          <td class="paramtype">const char *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>label</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2125,7 +2125,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>label</em></span>&#160;)</td>
+          <td class="paramtype">const char *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>label</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2275,7 +2275,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>pwd</em></span>&#160;)</td>
+          <td class="paramtype">const char *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>pwd</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2312,7 +2312,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *<a class="el" href="group__system__macros.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>pwd</em></span>&#160;)</td>
+          <td class="paramtype">const char *<a class="el" href="group__system__compat.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td>          <td class="paramname"><span class="paramname"><em>pwd</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

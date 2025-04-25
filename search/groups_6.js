@@ -23,7 +23,7 @@ var searchData=
   ['ata_20',['G1 ATA',['../group__g1ata.html',1,'']]],
   ['ata_20protection_21',['G1 ATA protection',['../group__g1ata__protect.html',1,'']]],
   ['ata_20statuses_22',['ATA Statuses',['../group__cd__cmd__ata__status.html',1,'']]],
-  ['attributes_23',['Attributes',['../group__pvr__ctx__attrib.html',1,'']]],
+  ['attributes_23',['Attributes',['../group__pvr__ctx__attrib.html',1,'Attributes'],['../group__system__attributes.html',1,'Compiler Attributes']]],
   ['attribution_24',['Attribution',['../group__attribution.html',1,'']]],
   ['audio_25',['Audio',['../group__audio.html',1,'']]],
   ['audio_20status_26',['Subcode Audio Status',['../group__cd__subcode__audio.html',1,'']]],

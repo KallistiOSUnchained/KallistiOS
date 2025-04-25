@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: Macros</title>
+<title>KallistiOS: Compiler Attributes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('group__system__macros.html',''); initResizable(true); });
+$(function(){initNavTree('group__system__attributes.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -98,21 +98,14 @@ $(function(){initNavTree('group__system__macros.html',''); initResizable(true); 
 
 <div class="header">
   <div class="summary">
-<a href="#files">Files</a> &#124;
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">Macros<div class="ingroups"><a class="el" href="group__system.html">System</a></div></div></div>
+  <div class="headertitle"><div class="title">Compiler Attributes<div class="ingroups"><a class="el" href="group__system.html">System</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Various common macros used throughout the codebase  
+<p>Definitions for builtin attributes and compiler directives  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdefs_8h.html">cdefs.h</a></td></tr>
-<tr class="memdesc:cdefs_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definitions for builtin attributes and compiler directives. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ga5b6df4fe38493e14648842364a76075f" id="r_ga5b6df4fe38493e14648842364a76075f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b6df4fe38493e14648842364a76075f">__noreturn</a>&#160;&#160;&#160;__attribute__((__noreturn__))</td></tr>
@@ -156,21 +149,16 @@ Macros</h2></td></tr>
 <tr class="separator:gab15954bc9ecb87117067f953971c11b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaef63d663f510bc84741bf7a00079a1e" id="r_gaaef63d663f510bc84741bf7a00079a1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaef63d663f510bc84741bf7a00079a1e">__fallthrough</a>&#160;&#160;&#160;/* Fall through */</td></tr>
 <tr class="separator:gaaef63d663f510bc84741bf7a00079a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6034e8cd4bcd5bacfd060abd01bbd8a8" id="r_ga6034e8cd4bcd5bacfd060abd01bbd8a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6034e8cd4bcd5bacfd060abd01bbd8a8">__always_inline</a>&#160;&#160;&#160;<a class="el" href="#ga00d24c7231be28dbaf71f5408f30e44c">inline</a> __attribute__((__always_inline__))</td></tr>
+<tr class="memitem:ga6034e8cd4bcd5bacfd060abd01bbd8a8" id="r_ga6034e8cd4bcd5bacfd060abd01bbd8a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6034e8cd4bcd5bacfd060abd01bbd8a8">__always_inline</a>&#160;&#160;&#160;<a class="el" href="group__system__compat.html#ga00d24c7231be28dbaf71f5408f30e44c">inline</a> __attribute__((__always_inline__))</td></tr>
 <tr class="memdesc:ga6034e8cd4bcd5bacfd060abd01bbd8a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask the compiler to <em>always</em> inline a given function.  <br /></td></tr>
 <tr class="separator:ga6034e8cd4bcd5bacfd060abd01bbd8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe36f523b4b718c7258c816728a03f79" id="r_gabe36f523b4b718c7258c816728a03f79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabe36f523b4b718c7258c816728a03f79">__no_inline</a>&#160;&#160;&#160;__attribute__((__noinline__))</td></tr>
 <tr class="memdesc:gabe36f523b4b718c7258c816728a03f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask the compiler to <em>never</em> inline a given function.  <br /></td></tr>
 <tr class="separator:gabe36f523b4b718c7258c816728a03f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga378ac21329d33f561f90265eef89f564" id="r_ga378ac21329d33f561f90265eef89f564"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></td></tr>
-<tr class="separator:ga378ac21329d33f561f90265eef89f564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga586c6a171eb0104d519dc0eda5284ef7" id="r_ga586c6a171eb0104d519dc0eda5284ef7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga586c6a171eb0104d519dc0eda5284ef7">__extension__</a></td></tr>
-<tr class="separator:ga586c6a171eb0104d519dc0eda5284ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00d24c7231be28dbaf71f5408f30e44c" id="r_ga00d24c7231be28dbaf71f5408f30e44c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga00d24c7231be28dbaf71f5408f30e44c">inline</a>&#160;&#160;&#160;__inline__</td></tr>
-<tr class="separator:ga00d24c7231be28dbaf71f5408f30e44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Various common macros used throughout the codebase </p>
+<p>Definitions for builtin attributes and compiler directives </p>
+<p>This group contains definitions of various <b>attribute</b> directives in shorter forms for use in programs. These typically aid in optimizations or provide the compiler with extra information about a symbol. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga6034e8cd4bcd5bacfd060abd01bbd8a8" name="ga6034e8cd4bcd5bacfd060abd01bbd8a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6034e8cd4bcd5bacfd060abd01bbd8a8">&#9670;&#160;</a></span>__always_inline</h2>
@@ -179,7 +167,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __always_inline&#160;&#160;&#160;<a class="el" href="#ga00d24c7231be28dbaf71f5408f30e44c">inline</a> __attribute__((__always_inline__))</td>
+          <td class="memname">#define __always_inline&#160;&#160;&#160;<a class="el" href="group__system__compat.html#ga00d24c7231be28dbaf71f5408f30e44c">inline</a> __attribute__((__always_inline__))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -219,20 +207,6 @@ Macros</h2></td></tr>
 
 <p>Mark something as deprecated. </p>
 <p>This should be used to warn users that a function/type/etc will be removed in a future version of KOS. </p>
-
-</div>
-</div>
-<a id="ga586c6a171eb0104d519dc0eda5284ef7" name="ga586c6a171eb0104d519dc0eda5284ef7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga586c6a171eb0104d519dc0eda5284ef7">&#9670;&#160;</a></span>__extension__</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __extension__</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -389,20 +363,6 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ga378ac21329d33f561f90265eef89f564" name="ga378ac21329d33f561f90265eef89f564"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga378ac21329d33f561f90265eef89f564">&#9670;&#160;</a></span>__RESTRICT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __RESTRICT</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="gab15954bc9ecb87117067f953971c11b6" name="gab15954bc9ecb87117067f953971c11b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab15954bc9ecb87117067f953971c11b6">&#9670;&#160;</a></span>__scanflike</h2>
 
@@ -506,20 +466,6 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Identify a function or variable that may be overridden by another symbol. </p>
-
-</div>
-</div>
-<a id="ga00d24c7231be28dbaf71f5408f30e44c" name="ga00d24c7231be28dbaf71f5408f30e44c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga00d24c7231be28dbaf71f5408f30e44c">&#9670;&#160;</a></span>inline</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define inline&#160;&#160;&#160;__inline__</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

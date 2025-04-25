@@ -115,22 +115,32 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Frame-based polling for keyboard input </p>
 <p>One method of checking for key input is to simply poll <a class="el" href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf" title="Key array.">kbd_state_t::matrix</a> for the desired key states each frame.</p>
-<p>First, lets grab a pointer to the <a class="el" href="structkbd__state__t.html" title="Keyboard status structure.">kbd_state_t</a>: </p><pre class="fragment">kbd_state_t *kbd = kbd_get_state(device);
-</pre><p> Then let's "move" every frame an arrow key is held down: </p><pre class="fragment">if(kbd-&gt;matrix[KBD_KEY_LEFT] == KEY_STATE_PRESSED)
-    printf("Moving left!\n");
-if(kbd-&gt;matrix[KBD_KEY_RIGHT] == KEY_STATE_PRESSED)
-    printf("Moving right!\n");
-if(kbd-&gt;matrix[KBD_KEY_UP] == KEY_STATE_PRESSED)
-    printf("Moving up!\n");
-if(kbd-&gt;matrix[KBD_KEY_DOWN] == KEY_STATE_PRESSED)
-    printf("Moving down!\n");
-</pre><p> Finally, let's charge an "attack" incrementing the charge for each frame that the key is held and resetting when the key is released: </p><pre class="fragment">if(kbd-&gt;matrix[KBD_KEY_SPACE] == KEY_STATE_PRESSED)
-    charge++;
-if(kbd-&gt;matrix[KBD_KEY_SPACE] == KEY_STATE_WAS_PRESSED) {
-    printf("Releasing a charged attack of %i!\n", charge);
-    charge = 0;
-}
-</pre> <h2 class="groupheader">Function Documentation</h2>
+<p>First, lets grab a pointer to the <a class="el" href="structkbd__state__t.html" title="Keyboard status structure.">kbd_state_t</a>: </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structkbd__state__t.html">kbd_state_t</a> *kbd = <a class="code hl_function" href="#gad42779d1de5dce4ef98649732abe4647">kbd_get_state</a>(device);</div>
+<div class="ttc" id="agroup__kbd__polling_html_gad42779d1de5dce4ef98649732abe4647"><div class="ttname"><a href="#gad42779d1de5dce4ef98649732abe4647">kbd_get_state</a></div><div class="ttdeci">kbd_state_t * kbd_get_state(maple_device_t *device)</div><div class="ttdoc">Retrieves the keyboard state from a maple device.</div></div>
+<div class="ttc" id="astructkbd__state__t_html"><div class="ttname"><a href="structkbd__state__t.html">kbd_state_t</a></div><div class="ttdoc">Keyboard status structure.</div><div class="ttdef"><b>Definition</b> keyboard.h:369</div></div>
+</div><!-- fragment --><p> Then let's "move" every frame an arrow key is held down: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(kbd-&gt;<a class="code hl_variable" href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf">matrix</a>[<a class="code hl_variable" href="keyboard_8h.html#a0550c267d7f07d4881913d000fc68954">KBD_KEY_LEFT</a>] == <a class="code hl_define" href="group__key__states.html#gaa4b515fe088a4844edb891e4fe3aeab9">KEY_STATE_PRESSED</a>)</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Moving left!\n&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span>(kbd-&gt;<a class="code hl_variable" href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf">matrix</a>[<a class="code hl_variable" href="keyboard_8h.html#a903b50f8c5066992feed0e2095b0cc63">KBD_KEY_RIGHT</a>] == <a class="code hl_define" href="group__key__states.html#gaa4b515fe088a4844edb891e4fe3aeab9">KEY_STATE_PRESSED</a>)</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Moving right!\n&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span>(kbd-&gt;<a class="code hl_variable" href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf">matrix</a>[<a class="code hl_variable" href="keyboard_8h.html#ab6c16b45dbc53edd2b60da8e2d86d1e6">KBD_KEY_UP</a>] == <a class="code hl_define" href="group__key__states.html#gaa4b515fe088a4844edb891e4fe3aeab9">KEY_STATE_PRESSED</a>)</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Moving up!\n&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span>(kbd-&gt;<a class="code hl_variable" href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf">matrix</a>[<a class="code hl_variable" href="keyboard_8h.html#ad38aaa62673cd7de4e55a2103cb61c23">KBD_KEY_DOWN</a>] == <a class="code hl_define" href="group__key__states.html#gaa4b515fe088a4844edb891e4fe3aeab9">KEY_STATE_PRESSED</a>)</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Moving down!\n&quot;</span>);</div>
+<div class="ttc" id="agroup__key__states_html_gaa4b515fe088a4844edb891e4fe3aeab9"><div class="ttname"><a href="group__key__states.html#gaa4b515fe088a4844edb891e4fe3aeab9">KEY_STATE_PRESSED</a></div><div class="ttdeci">#define KEY_STATE_PRESSED</div><div class="ttdef"><b>Definition</b> keyboard.h:330</div></div>
+<div class="ttc" id="akeyboard_8h_html_a0550c267d7f07d4881913d000fc68954"><div class="ttname"><a href="keyboard_8h.html#a0550c267d7f07d4881913d000fc68954">KBD_KEY_LEFT</a></div><div class="ttdeci">KBD_KEY_LEFT</div><div class="ttdoc">Left Arrow key.</div><div class="ttdef"><b>Definition</b> keyboard.h:276</div></div>
+<div class="ttc" id="akeyboard_8h_html_a903b50f8c5066992feed0e2095b0cc63"><div class="ttname"><a href="keyboard_8h.html#a903b50f8c5066992feed0e2095b0cc63">KBD_KEY_RIGHT</a></div><div class="ttdeci">KBD_KEY_RIGHT</div><div class="ttdoc">Right Arrow key.</div><div class="ttdef"><b>Definition</b> keyboard.h:275</div></div>
+<div class="ttc" id="akeyboard_8h_html_ab6c16b45dbc53edd2b60da8e2d86d1e6"><div class="ttname"><a href="keyboard_8h.html#ab6c16b45dbc53edd2b60da8e2d86d1e6">KBD_KEY_UP</a></div><div class="ttdeci">KBD_KEY_UP</div><div class="ttdoc">Up Arrow key.</div><div class="ttdef"><b>Definition</b> keyboard.h:278</div></div>
+<div class="ttc" id="akeyboard_8h_html_ad38aaa62673cd7de4e55a2103cb61c23"><div class="ttname"><a href="keyboard_8h.html#ad38aaa62673cd7de4e55a2103cb61c23">KBD_KEY_DOWN</a></div><div class="ttdeci">KBD_KEY_DOWN</div><div class="ttdoc">Down Arrow key.</div><div class="ttdef"><b>Definition</b> keyboard.h:277</div></div>
+<div class="ttc" id="astructkbd__state__t_html_ae3a25485dd9cf102b7fbd9c09d0c4abf"><div class="ttname"><a href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf">kbd_state_t::matrix</a></div><div class="ttdeci">uint8_t matrix[KBD_MAX_KEYS]</div><div class="ttdoc">Key array.</div><div class="ttdef"><b>Definition</b> keyboard.h:381</div></div>
+</div><!-- fragment --><p> Finally, let's charge an "attack" incrementing the charge for each frame that the key is held and resetting when the key is released: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(kbd-&gt;<a class="code hl_variable" href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf">matrix</a>[<a class="code hl_variable" href="keyboard_8h.html#a730aafb57c8215576275a92ecca03807">KBD_KEY_SPACE</a>] == <a class="code hl_define" href="group__key__states.html#gaa4b515fe088a4844edb891e4fe3aeab9">KEY_STATE_PRESSED</a>)</div>
+<div class="line">    charge++;</div>
+<div class="line"><span class="keywordflow">if</span>(kbd-&gt;<a class="code hl_variable" href="structkbd__state__t.html#ae3a25485dd9cf102b7fbd9c09d0c4abf">matrix</a>[<a class="code hl_variable" href="keyboard_8h.html#a730aafb57c8215576275a92ecca03807">KBD_KEY_SPACE</a>] == <a class="code hl_define" href="group__key__states.html#ga53d5a6b69ad4261ef14d97de19307f2d">KEY_STATE_WAS_PRESSED</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Releasing a charged attack of %i!\n&quot;</span>, charge);</div>
+<div class="line">    charge = 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__key__states_html_ga53d5a6b69ad4261ef14d97de19307f2d"><div class="ttname"><a href="group__key__states.html#ga53d5a6b69ad4261ef14d97de19307f2d">KEY_STATE_WAS_PRESSED</a></div><div class="ttdeci">#define KEY_STATE_WAS_PRESSED</div><div class="ttdef"><b>Definition</b> keyboard.h:329</div></div>
+<div class="ttc" id="akeyboard_8h_html_a730aafb57c8215576275a92ecca03807"><div class="ttname"><a href="keyboard_8h.html#a730aafb57c8215576275a92ecca03807">KBD_KEY_SPACE</a></div><div class="ttdeci">KBD_KEY_SPACE</div><div class="ttdoc">Space key.</div><div class="ttdef"><b>Definition</b> keyboard.h:241</div></div>
+</div><!-- fragment --> <h2 class="groupheader">Function Documentation</h2>
 <a id="gad42779d1de5dce4ef98649732abe4647" name="gad42779d1de5dce4ef98649732abe4647"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad42779d1de5dce4ef98649732abe4647">&#9670;&#160;</a></span>kbd_get_state()</h2>
 

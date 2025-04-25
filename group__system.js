@@ -4,6 +4,7 @@ var group__system =
     [ "Allocator", "group__system__allocator.html", "group__system__allocator" ],
     [ "Architecture", "group__arch.html", "group__arch" ],
     [ "Cache", "group__system__cache.html", "group__system__cache" ],
+    [ "Compiler Attributes", "group__system__attributes.html", "group__system__attributes" ],
     [ "DMA", "group__system__dmac.html", "group__system__dmac" ],
     [ "DMA Controller API", "group__dmac.html", "group__dmac" ],
     [ "Events", "group__asic.html", "group__asic" ],
@@ -11,9 +12,9 @@ var group__system =
     [ "G2 Bus", "group__system__g2bus.html", "group__system__g2bus" ],
     [ "Initialization", "group__init__flags.html", "group__init__flags" ],
     [ "Interrupts", "group__irqs.html", "group__irqs" ],
+    [ "Language Compat", "group__system__compat.html", "group__system__compat" ],
     [ "Libraries", "group__system__libraries.html", "group__system__libraries" ],
     [ "MMU", "group__mmu.html", "group__mmu" ],
-    [ "Macros", "group__system__macros.html", "group__system__macros" ],
     [ "Name Manager", "group__system__namemgr.html", "group__system__namemgr" ],
     [ "Overlays", "group__system__overlays.html", "group__system__overlays" ],
     [ "POSIX", "group__system__posix.html", "group__system__posix" ],
@@ -23,5 +24,7 @@ var group__system =
     [ "System Calls", "group__system__calls.html", "group__system__calls" ],
     [ "Traps", "group__traps.html", "group__traps" ],
     [ "Types", "group__system__types.html", "group__system__types" ],
-    [ "VBlank", "group__system__vblank.html", "group__system__vblank" ]
+    [ "Utility Macros", "group__system__helpers.html", "group__system__helpers" ],
+    [ "VBlank", "group__system__vblank.html", "group__system__vblank" ],
+    [ "cdefs.h", "cdefs_8h.html", null ]
 ];

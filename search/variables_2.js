@@ -7,7 +7,7 @@ var searchData=
   ['bitmapx_4',['bitmapx',['../structvid__mode__t.html#a972e357a9ca27b4a4895d910b1306cbf',1,'vid_mode_t']]],
   ['bitmapy_5',['bitmapy',['../structvid__mode__t.html#a7d56780e08826626e21ced2eece442ec',1,'vid_mode_t']]],
   ['blank_6',['blank',['../structmmupage__t.html#a7b1859c81f835fd3d0e4217a153825dc',1,'mmupage_t']]],
-  ['blend_7',['blend',['../structpvr__poly__cxt__t.html#a0d388d6e0ed4c3e0a7be2c867da5e733',1,'pvr_poly_cxt_t::blend'],['../structpvr__sprite__cxt__t.html#a886cb37ac65104cf31d13185131d4d67',1,'pvr_sprite_cxt_t::blend']]],
+  ['blend_7',['blend',['../structpvr__poly__cxt__t.html#a370190dc0c8768bd18c203f6ea062aa4',1,'pvr_poly_cxt_t::blend'],['../structpvr__sprite__cxt__t.html#a2b5e8efe4b74a763c1e6233cdd425510',1,'pvr_sprite_cxt_t::blend']]],
   ['blk_5fcnt_8',['blk_cnt',['../structvmu__root__t.html#a98c44f98994b024ef91b7a89a0b64424',1,'vmu_root_t']]],
   ['borderx1_9',['borderx1',['../structvid__mode__t.html#af5a487a910d34fc739e32774a1bd2b09',1,'vid_mode_t']]],
   ['borderx2_10',['borderx2',['../structvid__mode__t.html#aa0a7f7e12936757311e490254ed04e40',1,'vid_mode_t']]],

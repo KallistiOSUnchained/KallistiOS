@@ -1,5 +1,11 @@
 var NAVTREEINDEX14 =
 {
+"group__vfs__generic.html#gac198cf00563c43bdb39116287bdf9adc":[9,3,5,14],
+"group__vfs__generic.html#gac5d0c9848f853f8b026b1211b93f78b1":[9,3,5,4],
+"group__vfs__generic.html#gac70a9ae57464247f3df114a376988aa9":[9,3,5,16],
+"group__vfs__generic.html#gacc1a13debc906d8d57e38e0ae5ad07b9":[9,3,5,22],
+"group__vfs__generic.html#gacd0a6eae209d0484a73d080f32a8e93b":[9,3,5,53],
+"group__vfs__generic.html#gace7af0d1a7e390ae2cd2ccaad7c3a3d8":[9,3,5,18],
 "group__vfs__generic.html#gad2a2e6c114780c3071efd24f16c7f7d8":[9,3,5,9],
 "group__vfs__generic.html#gad8aa83f74090afc7e57f871c9491ed95":[9,3,5,5],
 "group__vfs__generic.html#gad933cf39befb0d1209124b666ee54fc2":[9,3,5,43],
@@ -240,14 +246,8 @@ var NAVTREEINDEX14 =
 "index.html#autotoc_md8":[1,2],
 "index.html#autotoc_md9":[1,3],
 "inet_8h.html":[9,5,13,0],
-"init_8h.html":[9,7,9,2],
-"init__base_8h.html":[9,7,9,3],
-"init__flags_8h.html":[9,7,9,4],
-"ioctl_8h.html":[9,3,7,2],
-"iovec_8h.html":[11,0,2,1,18],
-"iovec_8h_source.html":[11,0,2,1,18],
-"irq_8h.html":[9,7,10,6],
-"kernel_2arch_2dreamcast_2include_2dc_2vector_8h.html":[9,4,2,3],
-"keyboard_8h.html":[9,6,2,2],
-"kos_8h.html":[11,0,2,5]
+"init_8h.html":[9,7,10,2],
+"init__base_8h.html":[9,7,10,3],
+"init__flags_8h.html":[9,7,10,4],
+"ioctl_8h.html":[9,3,7,2]
 };
