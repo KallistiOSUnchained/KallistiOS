@@ -241,14 +241,14 @@ typedef enum __packed kbd_key {
     KBD_KEY_SPACE        = 0x2c, /**< \brief Space key */
     KBD_KEY_MINUS        = 0x2d, /**< \brief Minus key */
     KBD_KEY_PLUS         = 0x2e, /**< \brief Plus key */
-    KBD_KEY_LBRACKET     = 0x2f, /**< \brief [ key */
-    KBD_KEY_RBRACKET     = 0x30, /**< \brief ] key */
-    KBD_KEY_BACKSLASH    = 0x31, /**< \brief \ key */
-    KBD_KEY_SEMICOLON    = 0x33, /**< \brief ; key */
-    KBD_KEY_QUOTE        = 0x34, /**< \brief " key */
-    KBD_KEY_TILDE        = 0x35, /**< \brief ~ key */
-    KBD_KEY_COMMA        = 0x36, /**< \brief , key */
-    KBD_KEY_PERIOD       = 0x37, /**< \brief . key */
+    KBD_KEY_LBRACKET     = 0x2f, /**< \brief Left Bracket key */
+    KBD_KEY_RBRACKET     = 0x30, /**< \brief Right Bracket key */
+    KBD_KEY_BACKSLASH    = 0x31, /**< \brief Backslash key */
+    KBD_KEY_SEMICOLON    = 0x33, /**< \brief Semicolon key */
+    KBD_KEY_QUOTE        = 0x34, /**< \brief Double Quote key */
+    KBD_KEY_TILDE        = 0x35, /**< \brief Tilde key */
+    KBD_KEY_COMMA        = 0x36, /**< \brief Comma key */
+    KBD_KEY_PERIOD       = 0x37, /**< \brief Period key */
     KBD_KEY_SLASH        = 0x38, /**< \brief Slash key */
     KBD_KEY_CAPSLOCK     = 0x39, /**< \brief Caps Lock key */
     KBD_KEY_F1           = 0x3a, /**< \brief F1 key */
@@ -400,8 +400,8 @@ typedef struct kbd_state {
 
     Mechanism             | Description
     ----------------------|--------------------------------------------
-    \ref kbd_polling      |Manual checks each key state every frame
-    \ref kbd_queue        |Monitor for new key press events every frame
+    \ref kbd_polling      | Manual checks each key state every frame
+    \ref kbd_queue        | Monitor for new key press events every frame
 
     @{
 */
@@ -413,11 +413,11 @@ typedef struct kbd_state {
     kbd_state_t::matrix for the desired key states each frame.
 
     First, lets grab a pointer to the kbd_state_t:
-
+    \code{.c}
         kbd_state_t *kbd = kbd_get_state(device);
-
+    \endcode
     Then let's "move" every frame an arrow key is held down:
-
+    \code{.c}
         if(kbd->matrix[KBD_KEY_LEFT] == KEY_STATE_PRESSED)
             printf("Moving left!\n");
         if(kbd->matrix[KBD_KEY_RIGHT] == KEY_STATE_PRESSED)
@@ -426,17 +426,17 @@ typedef struct kbd_state {
             printf("Moving up!\n");
         if(kbd->matrix[KBD_KEY_DOWN] == KEY_STATE_PRESSED)
             printf("Moving down!\n");
-
+    \endcode
     Finally, let's charge an "attack" incrementing the charge for each
     frame that the key is held and resetting when the key is released:
-
+    \code{.c}
         if(kbd->matrix[KBD_KEY_SPACE] == KEY_STATE_PRESSED)
             charge++;
         if(kbd->matrix[KBD_KEY_SPACE] == KEY_STATE_WAS_PRESSED) {
             printf("Releasing a charged attack of %i!\n", charge);
             charge = 0;
         }
-
+    \endcode
     @{
 */
 
@@ -469,12 +469,12 @@ kbd_state_t *kbd_get_state(maple_device_t *device);
 
     \par
     We simply pop keys off of the queue in a loop, until the queue is empty:
-
+    \code{.c}
         int k;
 
         while((k = kbd_queue_pop(device, 1)) != KBD_QUEUE_END)
             printf("Key pressed: %c!\n", (char)k);
-
+    \endcode
     \par Repeated Presses
     As with a text processor, a key which has been held down for a duration of
     time will generate periodic key press events which will be pushed onto the
