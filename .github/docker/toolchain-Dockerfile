@@ -45,7 +45,7 @@ ARG enable_ada=0
 ARG enable_rust=0
 ARG enable_libgccjit=0
 ARG precision_modes=m4-single-only,m4-single
-ARG default_precision=m4-single-only
+ARG default_precision=m4-single
 ARG thread_model=kos
 ARG use_kos_patches=1
 
