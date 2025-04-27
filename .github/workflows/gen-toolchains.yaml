@@ -25,7 +25,8 @@ jobs:
         version:
           - { tag: "13.3-legacy", dc_chain: "legacy" }
           - { tag: "14.2-stable", dc_chain: "stable" }
-          - { tag: "15.0.1-dev", dc_chain: "dev" }
+          - { tag: "15.1.0-dev", dc_chain: "15.1-dev" }
+          - { tag: "16.0.0-dev", dc_chain: "16.0-dev" }
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -69,7 +70,8 @@ jobs:
         version:
           - { tag: "13.3-legacy", dc_chain: "legacy" }
           - { tag: "14.2-stable", dc_chain: "stable" }
-          - { tag: "15.0.1-dev", dc_chain: "dev" }
+          - { tag: "15.1.0-dev", dc_chain: "15.1-dev" }
+          - { tag: "16.0.0-dev", dc_chain: "16.0-dev" }
     needs: build-arm64
     steps:
       - name: Checkout Repository
@@ -114,7 +116,8 @@ jobs:
         version:
           - { tag: "13.3-legacy", dc_chain: "legacy" }
           - { tag: "14.2-stable", dc_chain: "stable" }
-          - { tag: "15.0.1-dev", dc_chain: "dev" }
+          - { tag: "15.1.0-dev", dc_chain: "15.1-dev" }
+          - { tag: "16.0.0-dev", dc_chain: "16.0-dev" }
     needs:
       - build-arm64
       - build-amd64
