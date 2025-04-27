@@ -9,6 +9,9 @@ on:
       - 'kernel/**'
       - 'addons/**'
       - 'utils/**'
+    paths-ignore:
+      - 'utils/dc-chain/**'
+      - 'kernel/arch/dreamcast/kernel/startup.s'
   workflow_run:
     workflows:
       - Generate Toolchain Docker Images
@@ -28,7 +31,8 @@ jobs:
         tag:
           - "13.3-legacy"
           - "14.2-stable"
-          - "15.0.1-dev"
+          - "15.1.0-dev"
+          - "16.0.0-dev"
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -71,7 +75,8 @@ jobs:
         tag:
           - "13.3-legacy"
           - "14.2-stable"
-          - "15.0.1-dev"
+          - "15.1.0-dev"
+          - "16.0.0-dev"
     needs: build-arm64
     steps:
       - name: Checkout Repository
@@ -115,7 +120,8 @@ jobs:
         tag:
           - "13.3-legacy"
           - "14.2-stable"
-          - "15.0.1-dev"
+          - "15.1.0-dev"
+          - "16.0.0-dev"
     needs:
       - build-arm64
       - build-amd64
