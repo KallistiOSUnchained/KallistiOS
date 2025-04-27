@@ -1,7 +1,6 @@
-Binary files gcc-8.5.0/.DS_Store and gcc-8.5.0-kos/.DS_Store differ
 diff -ruN gcc-8.5.0/gcc/system.h gcc-8.5.0-kos/gcc/system.h
---- gcc-8.5.0/gcc/system.h	2024-11-17 19:21:37
-+++ gcc-8.5.0-kos/gcc/system.h	2024-11-17 19:23:31
+--- gcc-8.5.0/gcc/system.h	2025-04-27 12:27:52
++++ gcc-8.5.0-kos/gcc/system.h	2025-04-27 12:28:32
 @@ -198,25 +198,6 @@
     the ctype macros through safe-ctype.h */
  
@@ -57,3 +56,19 @@ diff -ruN gcc-8.5.0/gcc/system.h gcc-8.5.0-kos/gcc/system.h
  #endif
  
  /* Some of glibc's string inlines cause warnings.  Plus we'd rather
+diff -ruN gcc-8.5.0/libcpp/system.h gcc-8.5.0-kos/libcpp/system.h
+--- gcc-8.5.0/libcpp/system.h	2025-04-27 12:27:55
++++ gcc-8.5.0-kos/libcpp/system.h	2025-04-27 12:29:01
+@@ -268,7 +268,11 @@
+ #endif
+ 
+ #ifndef HAVE_SETLOCALE
+-# define setlocale(category, locale) (locale)
++# if defined(__APPLE__) && defined(__clang__) && (__clang_major__ >= 17)
++  /* On macOS with Clang 17+: don’t override setlocale, use the real prototype */
++# else
++#  define setlocale(category, locale) (locale)
++# endif
+ #endif
+ 
+ #ifdef ENABLE_NLS
