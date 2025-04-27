@@ -1,17 +1,18 @@
 name: Generate Toolchain Docker Images
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
     paths:
-      - utils/dc-chain/scripts/**
-      - utils/dc-chain/patches/**
-      - utils/dc-chain/profiles/**
-      - utils/dc-chain/Makefile
-      - utils/dc-chain/Makefile.default.cfg
-      - .github/docker/toolchain-Dockerfile
-      - kernel/arch/dreamcast/kernel/startup.s
+      - 'utils/dc-chain/scripts/**'
+      - 'utils/dc-chain/patches/**'
+      - 'utils/dc-chain/profiles/**'
+      - 'utils/dc-chain/Makefile'
+      - 'utils/dc-chain/Makefile.default.cfg'
+      - '.github/docker/toolchain-Dockerfile'
+      - 'kernel/arch/dreamcast/kernel/startup.s'
 
 permissions:
   packages: write

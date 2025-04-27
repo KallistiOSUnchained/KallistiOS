@@ -9,6 +9,9 @@ on:
       - 'kernel/**'
       - 'addons/**'
       - 'utils/**'
+    paths-ignore:
+      - 'utils/dc-chain/**'
+      - 'kernel/arch/dreamcast/kernel/startup.s'
   workflow_run:
     workflows:
       - Generate Toolchain Docker Images
