@@ -20,12 +20,11 @@
 
 #include "arm/aica_cmd_iface.h"
 
+/* Include the default firmware blob */
+#include "snd_stream_drv.c"
+
 /* Are we initted? */
 static int initted = 0;
-
-/* This will come from a separately linked object file */
-extern uintptr_t snd_stream_drv;
-extern uintptr_t snd_stream_drv_end;
 
 /* The queue processing mutex for snd_sh4_to_aica_start and snd_sh4_to_aica_stop.
    There are some cases like stereo stream control + stereo sfx control
@@ -41,13 +40,13 @@ int snd_init(void) {
     if(!initted) {
         spu_disable();
         spu_memset_sq(0, 0, AICA_RAM_START);
-        amt = snd_stream_drv_end - snd_stream_drv;
+        amt = snd_stream_drv_size;
 
         if(amt % 4)
             amt = (amt + 4) & ~3;
 
-        dbglog(DBG_DEBUG, "snd_init(): loading %u bytes into SPU RAM\n", amt);
-        spu_memload_sq(0, (void* )snd_stream_drv, amt);
+        dbglog(DBG_DEBUG, "snd_init(): loading %zu bytes into SPU RAM\n", amt);
+        spu_memload_sq(0, (void *)snd_stream_drv_data, amt);
 
         /* Enable the AICA and give it a few ms to start up */
         spu_enable();
