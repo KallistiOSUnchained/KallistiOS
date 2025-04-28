@@ -67,18 +67,17 @@ ifdef MACOS
     SH_CC_FOR_TARGET += $(macos_extra_args)
     SH_CXX_FOR_TARGET += $(macos_extra_args)
     macos_gcc_configure_args = --with-sysroot --with-native-system-header=/usr/include
+    macos_gdb_configure_args = --with-sysroot=$(sdkroot)
 
     # only on macOS + Clang ≥17, switch zlib to system
     macos_zlib_flag := $(shell \
-      if [ "$(shell uname)" = "Darwin" ] && \
-         $(CC) --version 2>&1 | head -1 | \
-           grep -qE 'clang.*version ([1-9][7-9]|[2-9][0-9])'; then \
-        echo --with-system-zlib; \
-      fi)
+      clang --version 2>&1 | head -n1 | \
+      grep -qE 'clang.*version ([1-9][7-9]|[2-9][0-9])' && \
+      echo --with-system-zlib)
 
     macos_gcc_configure_args += $(macos_zlib_flag)
     binutils_extra_configure_args += $(macos_zlib_flag)
-    macos_gdb_configure_args = --with-sysroot=$(sdkroot)
+    macos_gdb_configure_args += $(macos_zlib_flag)
   endif
 endif
 
