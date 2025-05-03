@@ -7,6 +7,8 @@ var NAVTREEINDEX1 =
 "globals_v.html":[11,1,0,21],
 "globals_vars.html":[11,1,2],
 "globals_w.html":[11,1,0,22],
+"gmon_8h.html":[11,0,2,3,3],
+"gmon_8h_source.html":[11,0,2,3,3],
 "group__addrinfo__errors.html":[9,5,1,1],
 "group__addrinfo__errors.html#ga01d6798d308152b919a0b9f998bbd336":[9,5,1,1,6],
 "group__addrinfo__errors.html#ga0bb00f48d6ba1e8c55b7d85c8e3a19a7":[9,5,1,1,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "group__audio__streaming.html#ga3bbf370cbde47fb29fee971bbc793f84":[9,1,2,31],
 "group__audio__streaming.html#ga3f20b26e20d800f1e964a5497fce3138":[9,1,2,16],
 "group__audio__streaming.html#ga5cd9bdb3c131197b97a4537f66bcb41b":[9,1,2,7],
-"group__audio__streaming.html#ga609a1f999996a6aec8b5f314fe8ad2b5":[9,1,2,33],
-"group__audio__streaming.html#ga627b9debe59409f085b462f551f17cb8":[9,1,2,14],
-"group__audio__streaming.html#ga6c03ea438593bac1ec9987e2571a94a8":[9,1,2,5]
+"group__audio__streaming.html#ga609a1f999996a6aec8b5f314fe8ad2b5":[9,1,2,33]
 };

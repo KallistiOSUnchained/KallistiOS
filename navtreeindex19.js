@@ -1,5 +1,11 @@
 var NAVTREEINDEX19 =
 {
+"structvfs__handler__t.html#a032185ecde89a32b09f997ae97d6f468":[9,3,5,2,23],
+"structvfs__handler__t.html#a056d2cdbba83c786545511386e39dad8":[9,3,5,2,14],
+"structvfs__handler__t.html#a18e4b90dae2328e79e891ae8502ac04d":[9,3,5,2,8],
+"structvfs__handler__t.html#a226178ac9bba9f5207aa9d31938b88f2":[9,3,5,2,2],
+"structvfs__handler__t.html#a242a34c51bee66cf23a1e536b230d677":[9,3,5,2,1],
+"structvfs__handler__t.html#a2532f6ce65385b855c76e0afa5e3ae50":[9,3,5,2,3],
 "structvfs__handler__t.html#a287fcdbd2d4eb0c3db9b10dedd8912da":[9,3,5,2,12],
 "structvfs__handler__t.html#a301495e684cd4a6a31ef917ad7fc933b":[9,3,5,2,13],
 "structvfs__handler__t.html#a351908c1e25538fd1c3ecf15b792e249":[9,3,5,2,24],
@@ -125,7 +131,7 @@ var NAVTREEINDEX19 =
 "topics.html":[9],
 "trap_8h.html":[9,7,22,1],
 "types_8h.html":[9,7,23,2],
-"ubc_8h.html":[9,2,7,0],
+"ubc_8h.html":[9,2,8,0],
 "udp_8h.html":[9,5,12,2],
 "udplite_8h.html":[9,5,12,3],
 "uio_8h.html":[9,3,7,3],

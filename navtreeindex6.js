@@ -1,5 +1,11 @@
 var NAVTREEINDEX6 =
 {
+"group__herrno__vals.html#ga92b3de98da10bac7363111d35bce2fe7":[9,5,1,2,2],
+"group__herrno__vals.html#gab7112bbe219185a9726405d4c5ce9886":[9,5,1,2,0],
+"group__herrno__vals.html#gaefda3c41e567de5717e579212109a355":[9,5,1,2,3],
+"group__hw__consoles.html":[9,7,2,1],
+"group__hw__consoles.html#ga6eede3ad2a18e9498c5db9d076b9a317":[9,7,2,1,1],
+"group__hw__consoles.html#gad69aa103f456d4686978c9347a1ffbd9":[9,7,2,1,0],
 "group__hw__memsizes.html":[9,7,2,3],
 "group__hw__memsizes.html#ga3dd3b4f668dc1da794b3ed70521d01b1":[9,7,2,3,1],
 "group__hw__memsizes.html#ga665dc889068a56ad5f07a1de577459c6":[9,7,2,3,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX6 =
 "group__kthreads.html":[9,8,1],
 "group__kthreads.html#ga036601c3dfd9d079729a867f691c7251":[9,8,1,33],
 "group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c":[9,8,1,54],
-"group__kthreads.html#ga07a18c87aee351e96d36e4321437edcf":[9,8,1,15],
-"group__kthreads.html#ga12dad87642cf1a5c8190752b0573f812":[9,8,1,71],
-"group__kthreads.html#ga16573d932033e584af5828f2d2e723a0":[9,8,1,42],
-"group__kthreads.html#ga16573d932033e584af5828f2d2e723a0":[9,8,1,43],
-"group__kthreads.html#ga1b6cbf2f872e306735a95fffc0439106":[9,8,1,44],
-"group__kthreads.html#ga1d01f45ac725636a40f06964c9478530":[9,8,1,21],
-"group__kthreads.html#ga2459a9ed83fed30df5515c46d8c8b32f":[9,8,1,66]
+"group__kthreads.html#ga07a18c87aee351e96d36e4321437edcf":[9,8,1,15]
 };

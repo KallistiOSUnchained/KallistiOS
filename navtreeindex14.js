@@ -1,5 +1,11 @@
 var NAVTREEINDEX14 =
 {
+"group__vfs__generic.html#ga9439199abb5eedb748f73fffb1b7c2c0":[9,3,5,50],
+"group__vfs__generic.html#ga9cb4356cf444646ec116524a2eec9846":[9,3,5,19],
+"group__vfs__generic.html#gaa18d2940616f9aa474940c0f0e4ee0b8":[9,3,5,44],
+"group__vfs__generic.html#gaab55b43d8115308582f0df9f98b37e8f":[9,3,5,51],
+"group__vfs__generic.html#gabcdae64c8b5d0c0c6cdd14db5afffc38":[9,3,5,26],
+"group__vfs__generic.html#gac106f4ddb42005f23b4c4d85dd97ef31":[9,3,5,58],
 "group__vfs__generic.html#gac198cf00563c43bdb39116287bdf9adc":[9,3,5,14],
 "group__vfs__generic.html#gac5d0c9848f853f8b026b1211b93f78b1":[9,3,5,4],
 "group__vfs__generic.html#gac70a9ae57464247f3df114a376988aa9":[9,3,5,16],
@@ -243,11 +249,5 @@ var NAVTREEINDEX14 =
 "index.html#autotoc_md5":[1],
 "index.html#autotoc_md6":[1,0],
 "index.html#autotoc_md7":[1,1],
-"index.html#autotoc_md8":[1,2],
-"index.html#autotoc_md9":[1,3],
-"inet_8h.html":[9,5,13,0],
-"init_8h.html":[9,7,10,2],
-"init__base_8h.html":[9,7,10,3],
-"init__flags_8h.html":[9,7,10,4],
-"ioctl_8h.html":[9,3,7,2]
+"index.html#autotoc_md8":[1,2]
 };

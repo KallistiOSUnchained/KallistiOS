@@ -18,7 +18,7 @@ var searchData=
   ['transmit_5fmode_15',['transmit_mode',['../structdma__config__t.html#a72bc08f75bddce98906fcb419bef0054',1,'dma_config_t']]],
   ['ttl_16',['ttl',['../structip__hdr__t.html#a89fb5eda69c606da2a0d8bb4f0260315',1,'ip_hdr_t']]],
   ['tx_17',['tx',['../structppp__device__t.html#a0b8f99d603eb52b97aed61664a91402e',1,'ppp_device_t']]],
-  ['txr_18',['txr',['../structpvr__poly__cxt__t.html#a549beb240f99db7ba2474dccaefcbbc7',1,'pvr_poly_cxt_t::txr'],['../structpvr__sprite__cxt__t.html#ad674a6a8c9be2f92dd66fc9ef71a1d6d',1,'pvr_sprite_cxt_t::txr']]],
-  ['txr2_19',['txr2',['../structpvr__poly__cxt__t.html#ab69cebd2f2690b878b588ca470e629fa',1,'pvr_poly_cxt_t']]],
+  ['txr_18',['txr',['../structpvr__poly__cxt__t.html#ab4ba677d29564af7461a00c603cb4c2a',1,'pvr_poly_cxt_t::txr'],['../structpvr__sprite__cxt__t.html#a66ce8aebe87f6be795fb7c1d085c24f9',1,'pvr_sprite_cxt_t::txr']]],
+  ['txr2_19',['txr2',['../structpvr__poly__cxt__t.html#a8f0c93b8586983a3c19e1f6e3bedaaba',1,'pvr_poly_cxt_t']]],
   ['type_20',['type',['../structelf__hdr__t.html#a2fdbb3597a35aa5c1505bd02b33b9d47',1,'elf_hdr_t::type'],['../structelf__shdr__t.html#a2d10b31679cf8194aa931a75a484d118',1,'elf_shdr_t::type'],['../structfs__socket__proto__t.html#a953406ac76959e7a825fb217a52a1f5b',1,'fs_socket_proto_t::type'],['../structmutex__t.html#a94d48f5aef1ce2a55044c45bead68cfe',1,'mutex_t::type'],['../structnmmgr__handler__t.html#a582a530a244448897364919edd94b14a',1,'nmmgr_handler_t::type'],['../structaica__channel__t.html#a55ec8b2d743af57a609dec959c4749ca',1,'aica_channel_t::type']]]
 ];

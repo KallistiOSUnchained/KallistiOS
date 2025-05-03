@@ -73,7 +73,7 @@ var searchData=
   ['gdb_2eh_70',['gdb.h',['../gdb_8h.html',1,'']]],
   ['gdb_5fbreakpoint_71',['gdb_breakpoint',['../group__debugging__gdb.html#ga8725bc79e0b0122780e8dc0fc617797d',1,'gdb.h']]],
   ['gdb_5finit_72',['gdb_init',['../group__debugging__gdb.html#ga6ac752c9c4b38d27d2a04d23d906d450',1,'gdb.h']]],
-  ['gen_73',['gen',['../structpvr__poly__cxt__t.html#af4047473a62e78d75ee401e8eb3f147d',1,'pvr_poly_cxt_t::gen'],['../structpvr__sprite__cxt__t.html#a8b9e1c27bb9a77247b7dfd0d064ca8d8',1,'pvr_sprite_cxt_t::gen']]],
+  ['gen_73',['gen',['../structpvr__poly__cxt__t.html#a7a8a6706aa9f60deecffca1044b3b213',1,'pvr_poly_cxt_t::gen'],['../structpvr__sprite__cxt__t.html#a82a203aa253c2da2d23e4cf52dc27fa9',1,'pvr_sprite_cxt_t::gen']]],
   ['general_74',['General',['../group__math__general.html',1,'']]],
   ['generic_75',['Generic',['../group__vfs__generic.html',1,'']]],
   ['generic_76',['generic',['../structvid__mode__t.html#a76d421e5ff26f1458324945cac8b37e2',1,'vid_mode_t']]],
@@ -100,10 +100,13 @@ var searchData=
   ['getting_20started_97',['Getting Started',['../index.html#autotoc_md10',1,'']]],
   ['global_98',['Global',['../group__irq__handlers__global.html',1,'']]],
   ['global_20state_99',['Global State',['../group__pvr__global.html',1,'']]],
-  ['goal_100',['Goal',['../index.html#autotoc_md4',1,'']]],
-  ['groups_101',['Capability Groups',['../group__controller__caps__groups.html',1,'']]],
-  ['gun_5fport_102',['gun_port',['../structmaple__state__t.html#afcc6fd1dfe40a95bc7ece47a8ed4d668',1,'maple_state_t']]],
-  ['gun_5fx_103',['gun_x',['../structmaple__state__t.html#a9351aa5f50617a7b7d9be03e8bbf98ad',1,'maple_state_t']]],
-  ['gun_5fy_104',['gun_y',['../structmaple__state__t.html#adb2a9f9a61798d62b600c15d821259e3',1,'maple_state_t']]],
-  ['gw_105',['gw',['../structflashrom__ispcfg__t.html#a111d912c152cac5d625922df0c5c859a',1,'flashrom_ispcfg_t']]]
+  ['gmon_2eh_100',['gmon.h',['../gmon_8h.html',1,'']]],
+  ['goal_101',['Goal',['../index.html#autotoc_md4',1,'']]],
+  ['gprof_102',['GPROF',['../group__debugging__gprof.html',1,'']]],
+  ['gprof_5ftrapa_5fcode_103',['GPROF_TRAPA_CODE',['../group__debugging__gprof.html#gaa5cb29560f032ce613e93e32bcdd407e',1,'gmon.h']]],
+  ['groups_104',['Capability Groups',['../group__controller__caps__groups.html',1,'']]],
+  ['gun_5fport_105',['gun_port',['../structmaple__state__t.html#afcc6fd1dfe40a95bc7ece47a8ed4d668',1,'maple_state_t']]],
+  ['gun_5fx_106',['gun_x',['../structmaple__state__t.html#a9351aa5f50617a7b7d9be03e8bbf98ad',1,'maple_state_t']]],
+  ['gun_5fy_107',['gun_y',['../structmaple__state__t.html#adb2a9f9a61798d62b600c15d821259e3',1,'maple_state_t']]],
+  ['gw_108',['gw',['../structflashrom__ispcfg__t.html#a111d912c152cac5d625922df0c5c859a',1,'flashrom_ispcfg_t']]]
 ];
