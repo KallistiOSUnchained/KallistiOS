@@ -1,6 +1,18 @@
-diff --color -ruN gcc-13.3.0/gcc/config/sh/sh-c.cc gcc-13.3.0-kos/gcc/config/sh/sh-c.cc
---- gcc-13.3.0/gcc/config/sh/sh-c.cc	2023-06-04 20:48:46.612552162 -0500
-+++ gcc-13.3.0-kos/gcc/config/sh/sh-c.cc	2023-06-04 20:49:03.486606055 -0500
+diff -ruN gcc-13.3.0/gcc/config/sh/elf.h gcc-13.3.0-kos/gcc/config/sh/elf.h
+--- gcc-13.3.0/gcc/config/sh/elf.h	2025-04-28 14:49:34
++++ gcc-13.3.0-kos/gcc/config/sh/elf.h	2025-04-28 14:50:00
+@@ -69,7 +69,7 @@
+ 
+ #undef STARTFILE_SPEC
+ #define STARTFILE_SPEC \
+-  "%{!shared: crt1.o%s} crti.o%s \
++  "%{!shared: %{pg:gcrt1.o%s}%{!pg:crt1.o%s}} crti.o%s \
+    %{!shared:crtbegin.o%s} %{shared:crtbeginS.o%s}"
+ 
+ #undef ENDFILE_SPEC
+diff -ruN gcc-13.3.0/gcc/config/sh/sh-c.cc gcc-13.3.0-kos/gcc/config/sh/sh-c.cc
+--- gcc-13.3.0/gcc/config/sh/sh-c.cc	2025-04-28 14:49:34
++++ gcc-13.3.0-kos/gcc/config/sh/sh-c.cc	2025-04-28 14:50:00
 @@ -141,4 +141,11 @@
  
    cpp_define_formatted (pfile, "__SH_ATOMIC_MODEL_%s__",
@@ -13,9 +25,9 @@ diff --color -ruN gcc-13.3.0/gcc/config/sh/sh-c.cc gcc-13.3.0-kos/gcc/config/sh/
 +  /* Toolchain supports setting up stack for 32MB */
 +  builtin_define ("__KOS_GCC_32MB__");
  }
-diff --color -ruN gcc-13.3.0/gcc/configure gcc-13.3.0-kos/gcc/configure
---- gcc-13.3.0/gcc/configure	2023-06-04 20:48:49.679561957 -0500
-+++ gcc-13.3.0-kos/gcc/configure	2023-06-04 20:49:03.488606061 -0500
+diff -ruN gcc-13.3.0/gcc/configure gcc-13.3.0-kos/gcc/configure
+--- gcc-13.3.0/gcc/configure	2025-04-28 14:49:33
++++ gcc-13.3.0-kos/gcc/configure	2025-04-28 14:50:00
 @@ -13058,7 +13058,7 @@
      target_thread_file='single'
      ;;
@@ -52,10 +64,27 @@ diff --color -ruN gcc-13.3.0/libgcc/config/sh/t-sh gcc-13.3.0-kos/libgcc/config/
 +
  crt1.o: $(srcdir)/config/sh/crt1.S
  	$(gcc_compile) -c $<
++
++gcrt1.o: $(srcdir)/config/sh/gcrt1.S
++	$(gcc_compile) -c -DPROFILE $<
  
-diff --color -ruN gcc-13.3.0/libgcc/configure gcc-13.3.0-kos/libgcc/configure
---- gcc-13.3.0/libgcc/configure	2023-06-04 20:48:45.787549527 -0500
-+++ gcc-13.3.0-kos/libgcc/configure	2023-06-04 20:49:03.489606065 -0500
+ ic_invalidate_array_4-100.o: $(srcdir)/config/sh/lib1funcs.S
+ 	$(gcc_compile) -c -DL_ic_invalidate_array -DWAYS=1 -DWAY_SIZE=0x2000 $<
+diff -ruN gcc-13.3.0/libgcc/config.host gcc-13.3.0-kos/libgcc/config.host
+--- gcc-13.3.0/libgcc/config.host	2025-04-28 14:49:32
++++ gcc-13.3.0-kos/libgcc/config.host	2025-04-28 14:50:00
+@@ -1358,7 +1358,7 @@
+ 	;;
+ sh-*-elf* | sh[12346l]*-*-elf*)
+ 	tmake_file="$tmake_file sh/t-sh t-crtstuff-pic t-fdpbit"
+-	extra_parts="$extra_parts crt1.o crti.o crtn.o crtbeginS.o crtendS.o \
++	extra_parts="$extra_parts crt1.o gcrt1.o crti.o crtn.o crtbeginS.o crtendS.o \
+ 		libic_invalidate_array_4-100.a \
+ 		libic_invalidate_array_4-200.a \
+ 		libic_invalidate_array_4a.a \
+diff -ruN gcc-13.3.0/libgcc/configure gcc-13.3.0-kos/libgcc/configure
+--- gcc-13.3.0/libgcc/configure	2025-04-28 14:49:32
++++ gcc-13.3.0-kos/libgcc/configure	2025-04-28 14:50:00
 @@ -5699,6 +5699,7 @@
      tpf)	thread_header=config/s390/gthr-tpf.h ;;
      vxworks)	thread_header=config/gthr-vxworks.h ;;
@@ -64,24 +93,9 @@ diff --color -ruN gcc-13.3.0/libgcc/configure gcc-13.3.0-kos/libgcc/configure
      mcf)	thread_header=config/i386/gthr-mcf.h ;;
  esac
  
-diff --color -ruN gcc-13.3.0/libobjc/configure gcc-13.3.0-kos/libobjc/configure
---- gcc-13.3.0/libobjc/configure	2023-06-04 20:48:49.902562670 -0500
-+++ gcc-13.3.0-kos/libobjc/configure	2023-06-04 20:49:03.489606065 -0500
-@@ -2918,11 +2918,9 @@
- 
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
--#include <stdio.h>
- int
- main ()
- {
--printf ("hello world\n");
-   ;
-   return 0;
- }
-diff --color -ruN gcc-13.3.0/libobjc/Makefile.in gcc-13.3.0-kos/libobjc/Makefile.in
---- gcc-13.3.0/libobjc/Makefile.in	2023-06-04 20:48:49.901562666 -0500
-+++ gcc-13.3.0-kos/libobjc/Makefile.in	2023-06-04 20:49:03.490606068 -0500
+diff -ruN gcc-13.3.0/libobjc/Makefile.in gcc-13.3.0-kos/libobjc/Makefile.in
+--- gcc-13.3.0/libobjc/Makefile.in	2025-04-28 14:49:32
++++ gcc-13.3.0-kos/libobjc/Makefile.in	2025-04-28 14:50:00
 @@ -308,14 +308,16 @@
  $(srcdir)/aclocal.m4: @MAINT@ $(aclocal_deps)
  	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
@@ -112,9 +126,24 @@ diff --color -ruN gcc-13.3.0/libobjc/Makefile.in gcc-13.3.0-kos/libobjc/Makefile
  
  mostlyclean:
  	-$(LIBTOOL_CLEAN) rm -f libobjc$(libsuffix).la libobjc_gc$(libsuffix).la *.lo
-diff --color -ruN gcc-13.3.0/libstdc++-v3/config/cpu/sh/atomicity.h gcc-13.3.0-kos/libstdc++-v3/config/cpu/sh/atomicity.h
---- gcc-13.3.0/libstdc++-v3/config/cpu/sh/atomicity.h	2023-06-04 20:48:46.047550357 -0500
-+++ gcc-13.3.0-kos/libstdc++-v3/config/cpu/sh/atomicity.h	2023-06-04 20:49:03.490606068 -0500
+diff -ruN gcc-13.3.0/libobjc/configure gcc-13.3.0-kos/libobjc/configure
+--- gcc-13.3.0/libobjc/configure	2025-04-28 14:49:32
++++ gcc-13.3.0-kos/libobjc/configure	2025-04-28 14:50:00
+@@ -2918,11 +2918,9 @@
+ 
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-#include <stdio.h>
+ int
+ main ()
+ {
+-printf ("hello world\n");
+   ;
+   return 0;
+ }
+diff -ruN gcc-13.3.0/libstdc++-v3/config/cpu/sh/atomicity.h gcc-13.3.0-kos/libstdc++-v3/config/cpu/sh/atomicity.h
+--- gcc-13.3.0/libstdc++-v3/config/cpu/sh/atomicity.h	2025-04-28 14:49:53
++++ gcc-13.3.0-kos/libstdc++-v3/config/cpu/sh/atomicity.h	2025-04-28 14:50:00
 @@ -22,14 +22,40 @@
  // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
  // <http://www.gnu.org/licenses/>.
@@ -165,9 +194,9 @@ diff --color -ruN gcc-13.3.0/libstdc++-v3/config/cpu/sh/atomicity.h gcc-13.3.0-k
 +
 +_GLIBCXX_END_NAMESPACE_VERSION
 +} // namespace
-diff --color -ruN gcc-13.3.0/libstdc++-v3/configure gcc-13.3.0-kos/libstdc++-v3/configure
---- gcc-13.3.0/libstdc++-v3/configure	2023-06-04 20:48:46.398551478 -0500
-+++ gcc-13.3.0-kos/libstdc++-v3/configure	2023-06-04 20:49:03.493606077 -0500
+diff -ruN gcc-13.3.0/libstdc++-v3/configure gcc-13.3.0-kos/libstdc++-v3/configure
+--- gcc-13.3.0/libstdc++-v3/configure	2025-04-28 14:49:53
++++ gcc-13.3.0-kos/libstdc++-v3/configure	2025-04-28 14:50:00
 @@ -15825,6 +15825,7 @@
      tpf)	thread_header=config/s390/gthr-tpf.h ;;
      vxworks)	thread_header=config/gthr-vxworks.h ;;

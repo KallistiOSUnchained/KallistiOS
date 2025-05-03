@@ -16,14 +16,21 @@ COPYOBJS += mmu.o itlb.o
 COPYOBJS += exec.o execasm.o stack.o gdb_stub.o thdswitch.o tls_static.o arch_exports.o
 COPYOBJS += uname.o
 OBJS = $(COPYOBJS) startup.o
+PROFILEOBJS = gcrt1.o
 SUBDIRS =
 
 CRT1_PATH = $(shell $(KOS_CC) $(KOS_CFLAGS) -print-file-name=crt1.o)
+GCRT1_PATH  := $(shell $(KOS_CC) $(KOS_CFLAGS) -print-file-name=gcrt1.o)
 
-myall: $(OBJS)
+myall: $(OBJS) $(PROFILEOBJS)
 	-cp $(COPYOBJS) $(KOS_BASE)/kernel/build/
 	-rm banner.h authors.h banner.o uname.o
 	-cp startup.o $(CRT1_PATH)
+	-cp gcrt1.o $(GCRT1_PATH)
+
+# Compile startup.S with profiling enabled:
+gcrt1.o: startup.S
+	$(KOS_CC) $(KOS_CFLAGS) -DPROFILE -c $< -o $@
 
 include $(KOS_BASE)/Makefile.prefab
 

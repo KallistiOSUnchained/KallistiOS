@@ -10,7 +10,7 @@ on:
       - 'addons/**'
       - 'utils/**'
       - '!utils/dc-chain/**'
-      - '!kernel/arch/dreamcast/kernel/startup.s'
+      - '!kernel/arch/dreamcast/kernel/startup.S'
   workflow_run:
     workflows:
       - Generate Toolchain Docker Images
