@@ -92,7 +92,7 @@ var NAVTREEINDEX16 =
 "structhostent.html#ab9db18bfcc6adfc9c944b0c06ec2dccc":[9,5,1,4,3],
 "structhostent.html#ac266a0b528443e9479f2d8e1680b5e78":[9,5,1,4,2],
 "structin6__addr.html":[9,5,6,1,3],
-"structin6__addr.html#a0fe8cd10d9497ec4548ca22ab7ac1971":[9,5,6,1,3,0],
+"structin6__addr.html#a1a89a4c24adbb955eed6b9ff30bcf2c7":[9,5,6,1,3,0],
 "structin6__addr.html#a1c3d1258e7ba01517710f90886c04581":[9,5,6,1,3,4],
 "structin6__addr.html#a3db778b57f5786b54d5f507cbeaffeef":[9,5,6,1,3,1],
 "structin6__addr.html#ab092dfda06701e31df8684bfac4b88c5":[9,5,6,1,3,3],
