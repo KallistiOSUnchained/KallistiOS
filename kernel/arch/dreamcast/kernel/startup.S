@@ -1,7 +1,8 @@
 ! KallistiOS ##version##
 !
-! startup.s
-! (c)2000-2001 Megan Potter
+! startup.S
+! Copyright (C) 2000-2001 Megan Potter
+! Copyright (C) 2025 Andress Barajas
 !
 ! This file is added to GCC during the patching stage of toolchain
 ! compilation. Any changes to this file will not take effect until the
@@ -21,6 +22,9 @@
 .globl __arch_old_stack
 .globl __arch_old_fpscr
 .globl __arch_mem_top
+#ifdef PROFILE
+.globl _gprof_init
+#endif
 
 .weak   _arch_stack_16m
 .weak   _arch_stack_32m
@@ -178,6 +182,28 @@ normal_exit:
 	lds.l	@r15+,pr
 	rts
 	nop
+
+#ifdef PROFILE
+! Call profiler startup code
+	.align 2
+_gprof_init:
+	mov.l lowpc, r4
+	mov.l highpc, r5
+	mov.l monstartup_addr, r2
+	jmp @r2
+	nop
+
+! GPROF variables
+	.align 2
+
+monstartup_addr:
+	.long __monstartup
+lowpc:
+	.long __executable_start
+highpc:
+	.long __etext
+#endif /* PROFILE */
+
 
 ! Misc variables
 	.align	2

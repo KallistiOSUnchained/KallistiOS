@@ -12,7 +12,7 @@ on:
       - 'utils/dc-chain/Makefile'
       - 'utils/dc-chain/Makefile.default.cfg'
       - '.github/docker/toolchain-Dockerfile'
-      - 'kernel/arch/dreamcast/kernel/startup.s'
+      - 'kernel/arch/dreamcast/kernel/startup.S'
 
 permissions:
   packages: write
