@@ -13,6 +13,7 @@
 #include <kos/dbgio.h>
 #include <kos/init.h>
 #include <kos/platform.h>
+#include <arch/gdb.h>
 #include <arch/arch.h>
 #include <arch/irq.h>
 #include <arch/memory.h>
@@ -137,6 +138,8 @@ KOS_INIT_FLAG_WEAK(fs_dcload_init_console, true);
 KOS_INIT_FLAG_WEAK(fs_dcload_shutdown, true);
 KOS_INIT_FLAG_WEAK(fs_dclsocket_shutdown, true);
 
+KOS_INIT_FLAG_WEAK(gdb_init, false);
+
 /* Auto-init stuff: override with a non-weak symbol if you don't want all of
    this to be linked into your code (and do the same with the
    arch_auto_shutdown function too). */
@@ -220,8 +223,10 @@ int  __weak arch_auto_init(void) {
         KOS_INIT_FLAG_CALL(maple_wait_scan);  /* Wait for the maple scan to complete */
     }
 
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI) {
         KOS_INIT_FLAG_CALL(arch_init_net);
+        KOS_INIT_FLAG_CALL(gdb_init);
+    }
 
     return 0;
 }
