@@ -193,6 +193,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 /* Hitachi SH architecture instruction encoding masks */
 
@@ -296,6 +297,8 @@ static int dofault;  /* Non zero, bus errors will raise exception */
 
 /* debug > 0 prints ill-formed commands in valid packets & checksum errors */
 static int remote_debug;
+
+static bool initialized;
 
 /* map from KOS register context order to GDB sh4 order */
 #define KOS_REG(r)      offsetof(irq_context_t, r)
@@ -1188,6 +1191,11 @@ static void handle_gdb_trapa(trapa_t code, irq_context_t *context, void *data) {
 }
 
 void gdb_init(void) {
+
+    if(initialized)
+        return;
+
+    initialized = true;
     if(dcload_gdbpacket(NULL, 0, NULL, 0) == 0)
         using_dcl = 1;
     else
