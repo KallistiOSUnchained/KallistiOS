@@ -12,11 +12,12 @@ var searchData=
   ['hblks_9',['hblks',['../structmallinfo.html#a846bce3f37f21f839f23409b7eab6cfe',1,'mallinfo']]],
   ['hclass_5flflow_10',['hclass_lflow',['../structipv6__hdr__t.html#aba0d036f63da2e22756c9c4e37215cb4',1,'ipv6_hdr_t']]],
   ['hdl_11',['hdl',['../structirq__cb__t.html#aec9a76ebc5c8fae1d0196651fc5201b4',1,'irq_cb_t::hdl'],['../structasic__evt__handler__entry__t.html#a5a0387f19aedd599ccf2b78f85d090b9',1,'asic_evt_handler_entry_t::hdl']]],
-  ['hdroff_12',['hdroff',['../structvmu__dir__t.html#a653add9ccd3948f90d9a1efa4df39fbf',1,'vmu_dir_t']]],
-  ['head_13',['head',['../structaica__queue__t.html#a024f691bd63399243cf0d90f2f36302b',1,'aica_queue_t']]],
-  ['height_14',['height',['../structpvr__poly__cxt__t.html#a817b0e28ab5095f1141a02d4cfe80c0d',1,'pvr_poly_cxt_t::height'],['../structpvr__sprite__cxt__t.html#ae07b74b0916b87d095c89f5372008056',1,'pvr_sprite_cxt_t::height'],['../structvid__mode__t.html#a58606bbe4b60831b286f866fed743142',1,'vid_mode_t::height']]],
-  ['holder_15',['holder',['../structmutex__t.html#a91bc09a687b607bff6da8b8dbfb8dd3c',1,'mutex_t']]],
-  ['hop_5flimit_16',['hop_limit',['../structnetif__t.html#ad51fb3c9ec1e8fdee51f29f106baca8d',1,'netif_t::hop_limit'],['../structipv6__hdr__t.html#a8065a5fc49061e95a62127bb65a89ee9',1,'ipv6_hdr_t::hop_limit']]],
-  ['hostname_17',['hostname',['../structflashrom__ispcfg__t.html#aa19a25a8e270d32546c24d4c8ea60d91',1,'flashrom_ispcfg_t::hostname'],['../structnetcfg__t.html#ab955158f87ed836c06b3ed573c4bc628',1,'netcfg_t::hostname']]],
-  ['hour_18',['hour',['../structvmu__timestamp__t.html#ac212bee90fe071ea9dd57a01b8632d9d',1,'vmu_timestamp_t']]]
+  ['hdr_5ftype_12',['hdr_type',['../group__pvr__primitives__headers.html#ga826a1e1e8c23eeca99914102631a5c8d',1,'pvr_poly_hdr_cmd']]],
+  ['hdroff_13',['hdroff',['../structvmu__dir__t.html#a653add9ccd3948f90d9a1efa4df39fbf',1,'vmu_dir_t']]],
+  ['head_14',['head',['../structaica__queue__t.html#a024f691bd63399243cf0d90f2f36302b',1,'aica_queue_t']]],
+  ['height_15',['height',['../structpvr__poly__cxt__t.html#a817b0e28ab5095f1141a02d4cfe80c0d',1,'pvr_poly_cxt_t::height'],['../structpvr__sprite__cxt__t.html#ae07b74b0916b87d095c89f5372008056',1,'pvr_sprite_cxt_t::height'],['../structvid__mode__t.html#a58606bbe4b60831b286f866fed743142',1,'vid_mode_t::height']]],
+  ['holder_16',['holder',['../structmutex__t.html#a91bc09a687b607bff6da8b8dbfb8dd3c',1,'mutex_t']]],
+  ['hop_5flimit_17',['hop_limit',['../structnetif__t.html#ad51fb3c9ec1e8fdee51f29f106baca8d',1,'netif_t::hop_limit'],['../structipv6__hdr__t.html#a8065a5fc49061e95a62127bb65a89ee9',1,'ipv6_hdr_t::hop_limit']]],
+  ['hostname_18',['hostname',['../structflashrom__ispcfg__t.html#aa19a25a8e270d32546c24d4c8ea60d91',1,'flashrom_ispcfg_t::hostname'],['../structnetcfg__t.html#ab955158f87ed836c06b3ed573c4bc628',1,'netcfg_t::hostname']]],
+  ['hour_19',['hour',['../structvmu__timestamp__t.html#ac212bee90fe071ea9dd57a01b8632d9d',1,'vmu_timestamp_t']]]
 ];

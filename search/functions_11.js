@@ -71,10 +71,11 @@ var searchData=
   ['timer_5fstop_68',['timer_stop',['../group__tmu__direct.html#gab74e595c1f0e9892f3bf14182cb507e0',1,'timer.h']]],
   ['timer_5fus_5fgettime_69',['timer_us_gettime',['../group__tmu__uptime.html#gacca95562492c6819c7f3627c7ca9b076',1,'timer.h']]],
   ['timer_5fus_5fgettime64_70',['timer_us_gettime64',['../group__tmu__uptime.html#ga027ded7900e9669b44ebd216aafd9ccd',1,'timer.h']]],
-  ['trapa_5fget_5fhandler_71',['trapa_get_handler',['../group__irq__trapa__handler.html#gaeb578d7639383225c1e82814fa18326d',1,'trap.h']]],
-  ['trapa_5fset_5fhandler_72',['trapa_set_handler',['../group__irq__trapa__handler.html#ga6d728f259d13f6d9b2fdcb0fd476e36b',1,'trap.h']]],
-  ['tss_5fcreate_73',['tss_create',['../group__threading__c11.html#ga286fe7927e9af276a9cfdbc8b9eb08ad',1,'threads.h']]],
-  ['tss_5fdelete_74',['tss_delete',['../group__threading__c11.html#gaecebbc66b206171d9381ba94528c6cb7',1,'threads.h']]],
-  ['tss_5fget_75',['tss_get',['../group__threading__c11.html#ga5cf26b78a3f19a4e7b6876f957f2059c',1,'threads.h']]],
-  ['tss_5fset_76',['tss_set',['../group__threading__c11.html#ga608e01c49b84a5ad4f085a9aedc6a680',1,'threads.h']]]
+  ['to_5fpvr_5ftxr_5fptr_71',['to_pvr_txr_ptr',['../group__pvr__primitives__headers.html#ga06829bb7f064e34455f6fbc21d3e42b2',1,'pvr_header.h']]],
+  ['trapa_5fget_5fhandler_72',['trapa_get_handler',['../group__irq__trapa__handler.html#gaeb578d7639383225c1e82814fa18326d',1,'trap.h']]],
+  ['trapa_5fset_5fhandler_73',['trapa_set_handler',['../group__irq__trapa__handler.html#ga6d728f259d13f6d9b2fdcb0fd476e36b',1,'trap.h']]],
+  ['tss_5fcreate_74',['tss_create',['../group__threading__c11.html#ga286fe7927e9af276a9cfdbc8b9eb08ad',1,'threads.h']]],
+  ['tss_5fdelete_75',['tss_delete',['../group__threading__c11.html#gaecebbc66b206171d9381ba94528c6cb7',1,'threads.h']]],
+  ['tss_5fget_76',['tss_get',['../group__threading__c11.html#ga5cf26b78a3f19a4e7b6876f957f2059c',1,'threads.h']]],
+  ['tss_5fset_77',['tss_set',['../group__threading__c11.html#ga608e01c49b84a5ad4f085a9aedc6a680',1,'threads.h']]]
 ];

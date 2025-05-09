@@ -135,6 +135,12 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a0c8d8184a0e2fe222e33616112da0b11" id="r_a0c8d8184a0e2fe222e33616112da0b11"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c8d8184a0e2fe222e33616112da0b11">detach</a> )(struct maple_driver *drv, <a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev)</td></tr>
 <tr class="memdesc:a0c8d8184a0e2fe222e33616112da0b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device detached callback.  <br /></td></tr>
 <tr class="separator:a0c8d8184a0e2fe222e33616112da0b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20dfc0ba89ea781f96cea774872f3e86" id="r_a20dfc0ba89ea781f96cea774872f3e86"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20dfc0ba89ea781f96cea774872f3e86">user_attach</a> )(<a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev)</td></tr>
+<tr class="memdesc:a20dfc0ba89ea781f96cea774872f3e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-specified device attached callback.  <br /></td></tr>
+<tr class="separator:a20dfc0ba89ea781f96cea774872f3e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb02d0f5b85ae4693ca4ef811465ba1" id="r_affb02d0f5b85ae4693ca4ef811465ba1"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affb02d0f5b85ae4693ca4ef811465ba1">user_detach</a> )(<a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev)</td></tr>
+<tr class="memdesc:affb02d0f5b85ae4693ca4ef811465ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-specified device detached callback.  <br /></td></tr>
+<tr class="separator:affb02d0f5b85ae4693ca4ef811465ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A maple device driver. </p>
@@ -278,6 +284,54 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The size of the status buffer. </p>
+
+</div>
+</div>
+<a id="a20dfc0ba89ea781f96cea774872f3e86" name="a20dfc0ba89ea781f96cea774872f3e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20dfc0ba89ea781f96cea774872f3e86">&#9670;&#160;</a></span>user_attach</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* maple_driver_t::user_attach) (<a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User-specified device attached callback. </p>
+<p>This callback will be called when a new device of this driver is connected to the system. It should be set by applications using <a class="el" href="group__maple.html#ga7f43051fc58eb3ede4195ee8cb61f9d7" title="Set an automatic maple attach callback.">maple_attach_callback()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>The device that was connected. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, &lt;0 on error. </dd></dl>
+
+</div>
+</div>
+<a id="affb02d0f5b85ae4693ca4ef811465ba1" name="affb02d0f5b85ae4693ca4ef811465ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affb02d0f5b85ae4693ca4ef811465ba1">&#9670;&#160;</a></span>user_detach</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* maple_driver_t::user_detach) (<a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User-specified device detached callback. </p>
+<p>This callback will be called when a new device of this driver is connected to the system. It should be set by applications using <a class="el" href="group__maple.html#gaad2064db0cf03dcffc173c7d36071a9e" title="Set an automatic maple detach callback.">maple_detach_callback()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>The device that was connected. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, &lt;0 on error. </dd></dl>
 
 </div>
 </div>

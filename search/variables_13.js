@@ -20,7 +20,7 @@ var searchData=
   ['sendto_17',['sendto',['../structfs__socket__proto__t.html#a32acb9e732b24318a0ba3e3ca3fa69ac',1,'fs_socket_proto_t']]],
   ['set_5firq_5fusage_18',['set_irq_usage',['../structdbgio__handler__t.html#a594745f116a092f4f034966ba5918ae0',1,'dbgio_handler_t']]],
   ['setsockopt_19',['setsockopt',['../structfs__socket__proto__t.html#a72dd3c4ffa0540ccf66c7c30c5a9d81f',1,'fs_socket_proto_t']]],
-  ['shading_20',['shading',['../structpvr__poly__cxt__t.html#ab5099202ef755a1e7e99b4813f8ff9c2',1,'pvr_poly_cxt_t']]],
+  ['shading_20',['shading',['../structpvr__poly__cxt__t.html#ab5099202ef755a1e7e99b4813f8ff9c2',1,'pvr_poly_cxt_t::shading'],['../group__pvr__primitives__headers.html#gab7bd4b10d720cee66993a398f515a500',1,'pvr_poly_hdr_mode2::shading']]],
   ['shared_21',['shared',['../structmmupage__t.html#a02a1eb15494d144ddfc9e99f9e7c0311',1,'mmupage_t']]],
   ['shentsize_22',['shentsize',['../structelf__hdr__t.html#a1b2094c5aa00b045047d71b56f719683',1,'elf_hdr_t']]],
   ['shift_23',['shift',['../unionkbd__leds__t.html#ae222fbacad99e54bccc0691253be2f46',1,'kbd_leds_t']]],
@@ -65,7 +65,10 @@ var searchData=
   ['status_5fsize_62',['status_size',['../structmaple__driver__t.html#acd418526e47c85a477fb459c6ac6e8e3',1,'maple_driver_t']]],
   ['status_5fvalid_63',['status_valid',['../structmaple__device__t.html#a18ec305afdf61564e9ea639993049bfd',1,'maple_device_t']]],
   ['stride_64',['stride',['../structvmufb__font__t.html#aa5bd2514b46cdeb54a64802f71cad7fd',1,'vmufb_font_t']]],
-  ['sub_65',['sub',['../structmmucontext__t.html#a1f2b43a08d90a39bb784925e8b8e448d',1,'mmucontext_t']]],
-  ['symlink_66',['symlink',['../structvfs__handler__t.html#a9dd4cd480bed9e4cc09fba43ce82047e',1,'vfs_handler_t']]],
-  ['sysname_67',['sysname',['../structutsname.html#a44800c122fe07631c41bf4bcd602d5f1',1,'utsname']]]
+  ['strip_5fend_65',['strip_end',['../group__pvr__primitives__headers.html#ga8c9866da8ccb82695df5a50a6aeefae0',1,'pvr_poly_hdr_cmd']]],
+  ['strip_5flen_66',['strip_len',['../group__pvr__primitives__headers.html#gae64612f51d7b75b9d4ac147d57a18d3b',1,'pvr_poly_hdr_cmd']]],
+  ['sub_67',['sub',['../structmmucontext__t.html#a1f2b43a08d90a39bb784925e8b8e448d',1,'mmucontext_t']]],
+  ['supersampling_68',['supersampling',['../group__pvr__primitives__headers.html#ga7b78ffec1c994bdcf55f4babadd7f1ed',1,'pvr_poly_hdr_mode2']]],
+  ['symlink_69',['symlink',['../structvfs__handler__t.html#a9dd4cd480bed9e4cc09fba43ce82047e',1,'vfs_handler_t']]],
+  ['sysname_70',['sysname',['../structutsname.html#a44800c122fe07631c41bf4bcd602d5f1',1,'utsname']]]
 ];

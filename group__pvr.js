@@ -12,5 +12,6 @@ var group__pvr =
     [ "Texturing", "group__pvr__txr__mgmt.html", "group__pvr__txr__mgmt" ],
     [ "VRAM", "group__pvr__vram.html", "group__pvr__vram" ],
     [ "pvr.h", "pvr_8h.html", null ],
+    [ "pvr_header.h", "pvr__header_8h.html", null ],
     [ "pvr_misc.h", "pvr__misc_8h.html", null ]
 ];

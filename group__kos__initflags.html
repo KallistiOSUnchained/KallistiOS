@@ -111,30 +111,51 @@ Macros</h2></td></tr>
 <tr class="memitem:ga9ba5e93e685df51511c44b32d1e2774e" id="r_ga9ba5e93e685df51511c44b32d1e2774e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9ba5e93e685df51511c44b32d1e2774e">INIT_DEFAULT</a></td></tr>
 <tr class="memdesc:ga9ba5e93e685df51511c44b32d1e2774e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default init flags (IRQs on, preemption enabled, romdisks).  <br /></td></tr>
 <tr class="separator:ga9ba5e93e685df51511c44b32d1e2774e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08a6eed9340fd907637f4234f6e10cdc" id="r_ga08a6eed9340fd907637f4234f6e10cdc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga08a6eed9340fd907637f4234f6e10cdc">INIT_FS_DEV</a>&#160;&#160;&#160;(<a class="el" href="#ga63b3c8ba75895018c6e9d031bead3ff1">INIT_FS_NULL</a> | <a class="el" href="#ga09190e5444a7b74c3a74844b16a011c0">INIT_FS_RND</a>)</td></tr>
+<tr class="memdesc:ga08a6eed9340fd907637f4234f6e10cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init flags to include all virtual filesystems within <code>/dev</code>  <br /></td></tr>
+<tr class="separator:ga08a6eed9340fd907637f4234f6e10cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga329c8038ccefda4bf9e21a385a630b6e" id="r_ga329c8038ccefda4bf9e21a385a630b6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga329c8038ccefda4bf9e21a385a630b6e">INIT_FS_ALL</a></td></tr>
+<tr class="memdesc:ga329c8038ccefda4bf9e21a385a630b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init flags to include all virtual filesystems (default).  <br /></td></tr>
+<tr class="separator:ga329c8038ccefda4bf9e21a385a630b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab5a97fe72c827de31e835229da1ad3ea" id="r_gab5a97fe72c827de31e835229da1ad3ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab5a97fe72c827de31e835229da1ad3ea">INIT_NONE</a>&#160;&#160;&#160;0x00000000</td></tr>
 <tr class="memdesc:gab5a97fe72c827de31e835229da1ad3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Don't init optional things.  <br /></td></tr>
 <tr class="separator:gab5a97fe72c827de31e835229da1ad3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66bc9557aa798f08f8ed4515f44f569f" id="r_ga66bc9557aa798f08f8ed4515f44f569f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga66bc9557aa798f08f8ed4515f44f569f">INIT_THD_PREEMPT</a>&#160;&#160;&#160;0x00000000</td></tr>
+<tr class="separator:ga66bc9557aa798f08f8ed4515f44f569f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1588026c7d618332da72d63dfc42e924" id="r_ga1588026c7d618332da72d63dfc42e924"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1588026c7d618332da72d63dfc42e924">INIT_IRQ</a>&#160;&#160;&#160;0x00000001</td></tr>
 <tr class="memdesc:ga1588026c7d618332da72d63dfc42e924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable IRQs at startup.  <br /></td></tr>
 <tr class="separator:ga1588026c7d618332da72d63dfc42e924"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66bc9557aa798f08f8ed4515f44f569f" id="r_ga66bc9557aa798f08f8ed4515f44f569f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga66bc9557aa798f08f8ed4515f44f569f">INIT_THD_PREEMPT</a>&#160;&#160;&#160;0x00000002</td></tr>
-<tr class="separator:ga66bc9557aa798f08f8ed4515f44f569f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5ab9690764196d6af9086fd1a3ccfa9d" id="r_ga5ab9690764196d6af9086fd1a3ccfa9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5ab9690764196d6af9086fd1a3ccfa9d">INIT_NET</a>&#160;&#160;&#160;0x00000004</td></tr>
+<tr class="memitem:ga5ab9690764196d6af9086fd1a3ccfa9d" id="r_ga5ab9690764196d6af9086fd1a3ccfa9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5ab9690764196d6af9086fd1a3ccfa9d">INIT_NET</a>&#160;&#160;&#160;0x00000002</td></tr>
 <tr class="memdesc:ga5ab9690764196d6af9086fd1a3ccfa9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable built-in networking.  <br /></td></tr>
 <tr class="separator:ga5ab9690764196d6af9086fd1a3ccfa9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga690a01a657f3654ad81b7679b614ccb1" id="r_ga690a01a657f3654ad81b7679b614ccb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga690a01a657f3654ad81b7679b614ccb1">INIT_MALLOCSTATS</a>&#160;&#160;&#160;0x00000008</td></tr>
+<tr class="memitem:ga690a01a657f3654ad81b7679b614ccb1" id="r_ga690a01a657f3654ad81b7679b614ccb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga690a01a657f3654ad81b7679b614ccb1">INIT_MALLOCSTATS</a>&#160;&#160;&#160;0x00000004</td></tr>
 <tr class="memdesc:ga690a01a657f3654ad81b7679b614ccb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable malloc statistics.  <br /></td></tr>
 <tr class="separator:ga690a01a657f3654ad81b7679b614ccb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0564cf0ac3e25800c92f33652f5b35ed" id="r_ga0564cf0ac3e25800c92f33652f5b35ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0564cf0ac3e25800c92f33652f5b35ed">INIT_QUIET</a>&#160;&#160;&#160;0x00000010</td></tr>
+<tr class="memitem:ga0564cf0ac3e25800c92f33652f5b35ed" id="r_ga0564cf0ac3e25800c92f33652f5b35ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0564cf0ac3e25800c92f33652f5b35ed">INIT_QUIET</a>&#160;&#160;&#160;0x00000008</td></tr>
 <tr class="memdesc:ga0564cf0ac3e25800c92f33652f5b35ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable dbgio.  <br /></td></tr>
 <tr class="separator:ga0564cf0ac3e25800c92f33652f5b35ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24461153d0fc954e3624e33e33a14126" id="r_ga24461153d0fc954e3624e33e33a14126"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga24461153d0fc954e3624e33e33a14126">INIT_EXPORT</a>&#160;&#160;&#160;0x00000020</td></tr>
-<tr class="memdesc:ga24461153d0fc954e3624e33e33a14126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export kernel symbols.  <br /></td></tr>
+<tr class="memitem:ga24461153d0fc954e3624e33e33a14126" id="r_ga24461153d0fc954e3624e33e33a14126"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga24461153d0fc954e3624e33e33a14126">INIT_EXPORT</a>&#160;&#160;&#160;0x00000010</td></tr>
+<tr class="memdesc:ga24461153d0fc954e3624e33e33a14126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export kernel symbols/dynamic libs.  <br /></td></tr>
 <tr class="separator:ga24461153d0fc954e3624e33e33a14126"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga81c906c678c991f80855273544d21c63" id="r_ga81c906c678c991f80855273544d21c63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga81c906c678c991f80855273544d21c63">INIT_FS_ROMDISK</a>&#160;&#160;&#160;0x00000040</td></tr>
+<tr class="memitem:ga2682c7c6ab581e3c58b7f8065367f35f" id="r_ga2682c7c6ab581e3c58b7f8065367f35f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2682c7c6ab581e3c58b7f8065367f35f">INIT_LIBRARY</a>&#160;&#160;&#160;0x00000010</td></tr>
+<tr class="memdesc:ga2682c7c6ab581e3c58b7f8065367f35f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export kernel symbols/dynamic libs.  <br /></td></tr>
+<tr class="separator:ga2682c7c6ab581e3c58b7f8065367f35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81c906c678c991f80855273544d21c63" id="r_ga81c906c678c991f80855273544d21c63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga81c906c678c991f80855273544d21c63">INIT_FS_ROMDISK</a>&#160;&#160;&#160;0x00000020</td></tr>
 <tr class="memdesc:ga81c906c678c991f80855273544d21c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable support for romdisks.  <br /></td></tr>
 <tr class="separator:ga81c906c678c991f80855273544d21c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8516a9336a751d2f83c3ca1c48ca6132" id="r_ga8516a9336a751d2f83c3ca1c48ca6132"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8516a9336a751d2f83c3ca1c48ca6132">INIT_NO_SHUTDOWN</a>&#160;&#160;&#160;0x00000080</td></tr>
+<tr class="memitem:ga4a98571600c3a110b784a4633973ca08" id="r_ga4a98571600c3a110b784a4633973ca08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4a98571600c3a110b784a4633973ca08">INIT_FS_RAMDISK</a>&#160;&#160;&#160;0x00000040</td></tr>
+<tr class="memdesc:ga4a98571600c3a110b784a4633973ca08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable support for ramdisk VFS.  <br /></td></tr>
+<tr class="separator:ga4a98571600c3a110b784a4633973ca08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9aa91f8e44de581bc32adcf5e829ccc" id="r_gab9aa91f8e44de581bc32adcf5e829ccc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab9aa91f8e44de581bc32adcf5e829ccc">INIT_FS_PTY</a>&#160;&#160;&#160;0x00000080</td></tr>
+<tr class="memdesc:gab9aa91f8e44de581bc32adcf5e829ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable support for PTY VFS.  <br /></td></tr>
+<tr class="separator:gab9aa91f8e44de581bc32adcf5e829ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63b3c8ba75895018c6e9d031bead3ff1" id="r_ga63b3c8ba75895018c6e9d031bead3ff1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga63b3c8ba75895018c6e9d031bead3ff1">INIT_FS_NULL</a>&#160;&#160;&#160;0x00000100</td></tr>
+<tr class="memdesc:ga63b3c8ba75895018c6e9d031bead3ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable support for /dev/null VFS.  <br /></td></tr>
+<tr class="separator:ga63b3c8ba75895018c6e9d031bead3ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09190e5444a7b74c3a74844b16a011c0" id="r_ga09190e5444a7b74c3a74844b16a011c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga09190e5444a7b74c3a74844b16a011c0">INIT_FS_RND</a>&#160;&#160;&#160;0x00000200</td></tr>
+<tr class="memdesc:ga09190e5444a7b74c3a74844b16a011c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable support for /dev/urandom VFS.  <br /></td></tr>
+<tr class="separator:ga09190e5444a7b74c3a74844b16a011c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8516a9336a751d2f83c3ca1c48ca6132" id="r_ga8516a9336a751d2f83c3ca1c48ca6132"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8516a9336a751d2f83c3ca1c48ca6132">INIT_NO_SHUTDOWN</a>&#160;&#160;&#160;0x00000400</td></tr>
 <tr class="memdesc:ga8516a9336a751d2f83c3ca1c48ca6132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable hardware shutdown.  <br /></td></tr>
 <tr class="separator:ga8516a9336a751d2f83c3ca1c48ca6132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -154,12 +175,13 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                         (<a class="code hl_define" href="#ga1588026c7d618332da72d63dfc42e924">INIT_IRQ</a> | <a class="code hl_define" href="#ga66bc9557aa798f08f8ed4515f44f569f">INIT_THD_PREEMPT</a> | <a class="code hl_define" href="#ga81c906c678c991f80855273544d21c63">INIT_FS_ROMDISK</a> | \</div>
-<div class="line">                         <a class="code hl_define" href="group__kos__init__flags__dc.html#ga0f1b1288ac4fd7dcce41e9114341575a">INIT_DEFAULT_ARCH</a>)</div>
+<b>Value:</b><div class="fragment"><div class="line">                         (<a class="code hl_define" href="#ga1588026c7d618332da72d63dfc42e924">INIT_IRQ</a>     | <a class="code hl_define" href="#ga66bc9557aa798f08f8ed4515f44f569f">INIT_THD_PREEMPT</a> | <a class="code hl_define" href="#ga329c8038ccefda4bf9e21a385a630b6e">INIT_FS_ALL</a> | \</div>
+<div class="line">                         <a class="code hl_define" href="#ga2682c7c6ab581e3c58b7f8065367f35f">INIT_LIBRARY</a> | <a class="code hl_define" href="group__kos__init__flags__dc.html#ga0f1b1288ac4fd7dcce41e9114341575a">INIT_DEFAULT_ARCH</a>)</div>
 <div class="ttc" id="agroup__kos__init__flags__dc_html_ga0f1b1288ac4fd7dcce41e9114341575a"><div class="ttname"><a href="group__kos__init__flags__dc.html#ga0f1b1288ac4fd7dcce41e9114341575a">INIT_DEFAULT_ARCH</a></div><div class="ttdeci">#define INIT_DEFAULT_ARCH</div><div class="ttdoc">Default init flags for the Dreamcast.</div><div class="ttdef"><b>Definition</b> init_flags.h:91</div></div>
-<div class="ttc" id="agroup__kos__initflags_html_ga1588026c7d618332da72d63dfc42e924"><div class="ttname"><a href="#ga1588026c7d618332da72d63dfc42e924">INIT_IRQ</a></div><div class="ttdeci">#define INIT_IRQ</div><div class="ttdoc">Enable IRQs at startup.</div><div class="ttdef"><b>Definition</b> init.h:134</div></div>
-<div class="ttc" id="agroup__kos__initflags_html_ga66bc9557aa798f08f8ed4515f44f569f"><div class="ttname"><a href="#ga66bc9557aa798f08f8ed4515f44f569f">INIT_THD_PREEMPT</a></div><div class="ttdeci">#define INIT_THD_PREEMPT</div><div class="ttdef"><b>Definition</b> init.h:136</div></div>
-<div class="ttc" id="agroup__kos__initflags_html_ga81c906c678c991f80855273544d21c63"><div class="ttname"><a href="#ga81c906c678c991f80855273544d21c63">INIT_FS_ROMDISK</a></div><div class="ttdeci">#define INIT_FS_ROMDISK</div><div class="ttdoc">Enable support for romdisks.</div><div class="ttdef"><b>Definition</b> init.h:141</div></div>
+<div class="ttc" id="agroup__kos__initflags_html_ga1588026c7d618332da72d63dfc42e924"><div class="ttname"><a href="#ga1588026c7d618332da72d63dfc42e924">INIT_IRQ</a></div><div class="ttdeci">#define INIT_IRQ</div><div class="ttdoc">Enable IRQs at startup.</div><div class="ttdef"><b>Definition</b> init.h:155</div></div>
+<div class="ttc" id="agroup__kos__initflags_html_ga2682c7c6ab581e3c58b7f8065367f35f"><div class="ttname"><a href="#ga2682c7c6ab581e3c58b7f8065367f35f">INIT_LIBRARY</a></div><div class="ttdeci">#define INIT_LIBRARY</div><div class="ttdoc">Export kernel symbols/dynamic libs.</div><div class="ttdef"><b>Definition</b> init.h:160</div></div>
+<div class="ttc" id="agroup__kos__initflags_html_ga329c8038ccefda4bf9e21a385a630b6e"><div class="ttname"><a href="#ga329c8038ccefda4bf9e21a385a630b6e">INIT_FS_ALL</a></div><div class="ttdeci">#define INIT_FS_ALL</div><div class="ttdoc">Init flags to include all virtual filesystems (default).</div><div class="ttdef"><b>Definition</b> init.h:150</div></div>
+<div class="ttc" id="agroup__kos__initflags_html_ga66bc9557aa798f08f8ed4515f44f569f"><div class="ttname"><a href="#ga66bc9557aa798f08f8ed4515f44f569f">INIT_THD_PREEMPT</a></div><div class="ttdeci">#define INIT_THD_PREEMPT</div><div class="ttdef"><b>Definition</b> init.h:154</div></div>
 </div><!-- fragment -->
 <p>Default init flags (IRQs on, preemption enabled, romdisks). </p>
 
@@ -172,12 +194,114 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INIT_EXPORT&#160;&#160;&#160;0x00000020</td>
+          <td class="memname">#define INIT_EXPORT&#160;&#160;&#160;0x00000010</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Export kernel symbols. </p>
+<p>Export kernel symbols/dynamic libs. </p>
+
+</div>
+</div>
+<a id="ga329c8038ccefda4bf9e21a385a630b6e" name="ga329c8038ccefda4bf9e21a385a630b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga329c8038ccefda4bf9e21a385a630b6e">&#9670;&#160;</a></span>INIT_FS_ALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_FS_ALL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                         (<a class="code hl_define" href="#ga81c906c678c991f80855273544d21c63">INIT_FS_ROMDISK</a> | <a class="code hl_define" href="#ga4a98571600c3a110b784a4633973ca08">INIT_FS_RAMDISK</a> | \</div>
+<div class="line">                         <a class="code hl_define" href="#gab9aa91f8e44de581bc32adcf5e829ccc">INIT_FS_PTY</a>     | <a class="code hl_define" href="#ga08a6eed9340fd907637f4234f6e10cdc">INIT_FS_DEV</a>)</div>
+<div class="ttc" id="agroup__kos__initflags_html_ga08a6eed9340fd907637f4234f6e10cdc"><div class="ttname"><a href="#ga08a6eed9340fd907637f4234f6e10cdc">INIT_FS_DEV</a></div><div class="ttdeci">#define INIT_FS_DEV</div><div class="ttdoc">Init flags to include all virtual filesystems within /dev</div><div class="ttdef"><b>Definition</b> init.h:147</div></div>
+<div class="ttc" id="agroup__kos__initflags_html_ga4a98571600c3a110b784a4633973ca08"><div class="ttname"><a href="#ga4a98571600c3a110b784a4633973ca08">INIT_FS_RAMDISK</a></div><div class="ttdeci">#define INIT_FS_RAMDISK</div><div class="ttdoc">Enable support for ramdisk VFS.</div><div class="ttdef"><b>Definition</b> init.h:163</div></div>
+<div class="ttc" id="agroup__kos__initflags_html_ga81c906c678c991f80855273544d21c63"><div class="ttname"><a href="#ga81c906c678c991f80855273544d21c63">INIT_FS_ROMDISK</a></div><div class="ttdeci">#define INIT_FS_ROMDISK</div><div class="ttdoc">Enable support for romdisks.</div><div class="ttdef"><b>Definition</b> init.h:162</div></div>
+<div class="ttc" id="agroup__kos__initflags_html_gab9aa91f8e44de581bc32adcf5e829ccc"><div class="ttname"><a href="#gab9aa91f8e44de581bc32adcf5e829ccc">INIT_FS_PTY</a></div><div class="ttdeci">#define INIT_FS_PTY</div><div class="ttdoc">Enable support for PTY VFS.</div><div class="ttdef"><b>Definition</b> init.h:164</div></div>
+</div><!-- fragment -->
+<p>Init flags to include all virtual filesystems (default). </p>
+
+</div>
+</div>
+<a id="ga08a6eed9340fd907637f4234f6e10cdc" name="ga08a6eed9340fd907637f4234f6e10cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08a6eed9340fd907637f4234f6e10cdc">&#9670;&#160;</a></span>INIT_FS_DEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_FS_DEV&#160;&#160;&#160;(<a class="el" href="#ga63b3c8ba75895018c6e9d031bead3ff1">INIT_FS_NULL</a> | <a class="el" href="#ga09190e5444a7b74c3a74844b16a011c0">INIT_FS_RND</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Init flags to include all virtual filesystems within <code>/dev</code> </p>
+
+</div>
+</div>
+<a id="ga63b3c8ba75895018c6e9d031bead3ff1" name="ga63b3c8ba75895018c6e9d031bead3ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63b3c8ba75895018c6e9d031bead3ff1">&#9670;&#160;</a></span>INIT_FS_NULL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_FS_NULL&#160;&#160;&#160;0x00000100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable support for /dev/null VFS. </p>
+
+</div>
+</div>
+<a id="gab9aa91f8e44de581bc32adcf5e829ccc" name="gab9aa91f8e44de581bc32adcf5e829ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9aa91f8e44de581bc32adcf5e829ccc">&#9670;&#160;</a></span>INIT_FS_PTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_FS_PTY&#160;&#160;&#160;0x00000080</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable support for PTY VFS. </p>
+
+</div>
+</div>
+<a id="ga4a98571600c3a110b784a4633973ca08" name="ga4a98571600c3a110b784a4633973ca08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a98571600c3a110b784a4633973ca08">&#9670;&#160;</a></span>INIT_FS_RAMDISK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_FS_RAMDISK&#160;&#160;&#160;0x00000040</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable support for ramdisk VFS. </p>
+
+</div>
+</div>
+<a id="ga09190e5444a7b74c3a74844b16a011c0" name="ga09190e5444a7b74c3a74844b16a011c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09190e5444a7b74c3a74844b16a011c0">&#9670;&#160;</a></span>INIT_FS_RND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_FS_RND&#160;&#160;&#160;0x00000200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable support for /dev/urandom VFS. </p>
 
 </div>
 </div>
@@ -188,7 +312,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INIT_FS_ROMDISK&#160;&#160;&#160;0x00000040</td>
+          <td class="memname">#define INIT_FS_ROMDISK&#160;&#160;&#160;0x00000020</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -213,6 +337,22 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="ga2682c7c6ab581e3c58b7f8065367f35f" name="ga2682c7c6ab581e3c58b7f8065367f35f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2682c7c6ab581e3c58b7f8065367f35f">&#9670;&#160;</a></span>INIT_LIBRARY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_LIBRARY&#160;&#160;&#160;0x00000010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Export kernel symbols/dynamic libs. </p>
+
+</div>
+</div>
 <a id="ga690a01a657f3654ad81b7679b614ccb1" name="ga690a01a657f3654ad81b7679b614ccb1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga690a01a657f3654ad81b7679b614ccb1">&#9670;&#160;</a></span>INIT_MALLOCSTATS</h2>
 
@@ -220,7 +360,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INIT_MALLOCSTATS&#160;&#160;&#160;0x00000008</td>
+          <td class="memname">#define INIT_MALLOCSTATS&#160;&#160;&#160;0x00000004</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -236,7 +376,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INIT_NET&#160;&#160;&#160;0x00000004</td>
+          <td class="memname">#define INIT_NET&#160;&#160;&#160;0x00000002</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -252,7 +392,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INIT_NO_SHUTDOWN&#160;&#160;&#160;0x00000080</td>
+          <td class="memname">#define INIT_NO_SHUTDOWN&#160;&#160;&#160;0x00000400</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -284,7 +424,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INIT_QUIET&#160;&#160;&#160;0x00000010</td>
+          <td class="memname">#define INIT_QUIET&#160;&#160;&#160;0x00000008</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -300,11 +440,11 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INIT_THD_PREEMPT&#160;&#160;&#160;0x00000002</td>
+          <td class="memname">#define INIT_THD_PREEMPT&#160;&#160;&#160;0x00000000</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>Already default mode </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated</a></b></dt><dd>Already default mode </dd></dl>
 
 </div>
 </div>

@@ -6,5 +6,7 @@ var structmaple__driver__t =
     [ "functions", "structmaple__driver__t.html#ac251f760065a4f2394508bdcb8bcd40e", null ],
     [ "name", "structmaple__driver__t.html#aadd388f32cfe77173c59dd602181bc98", null ],
     [ "periodic", "structmaple__driver__t.html#a7889152841952a6e86e2e01beccbe6e2", null ],
-    [ "status_size", "structmaple__driver__t.html#acd418526e47c85a477fb459c6ac6e8e3", null ]
+    [ "status_size", "structmaple__driver__t.html#acd418526e47c85a477fb459c6ac6e8e3", null ],
+    [ "user_attach", "structmaple__driver__t.html#a20dfc0ba89ea781f96cea774872f3e86", null ],
+    [ "user_detach", "structmaple__driver__t.html#affb02d0f5b85ae4693ca4ef811465ba1", null ]
 ];

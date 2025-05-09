@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['g_0',['g',['../structpvr__poly__ic__hdr__t.html#ad1f039c9112bc55750a47850d79ad045',1,'pvr_poly_ic_hdr_t']]],
+  ['g_0',['g',['../group__pvr__primitives__headers.html#gaa0767b4341d288cc3f1b7a68384dd072',1,'pvr_poly_hdr_t::g'],['../group__pvr__primitives__headers.html#gaaf84ed69cd721024df744571a65ea355',1,'pvr_poly_hdr_t::@28::@32::g']]],
   ['g1_20ata_1',['G1 ATA',['../group__g1ata.html',1,'']]],
   ['g1_20ata_20protection_2',['G1 ATA protection',['../group__g1ata__protect.html',1,'']]],
   ['g1_5fata_5fblockdev_5ffor_5fdevice_3',['g1_ata_blockdev_for_device',['../group__g1ata.html#ga8a083fefa816448a0520526742487c95',1,'g1ata.h']]],
@@ -73,7 +73,7 @@ var searchData=
   ['gdb_2eh_70',['gdb.h',['../gdb_8h.html',1,'']]],
   ['gdb_5fbreakpoint_71',['gdb_breakpoint',['../group__debugging__gdb.html#ga8725bc79e0b0122780e8dc0fc617797d',1,'gdb.h']]],
   ['gdb_5finit_72',['gdb_init',['../group__debugging__gdb.html#ga6ac752c9c4b38d27d2a04d23d906d450',1,'gdb.h']]],
-  ['gen_73',['gen',['../structpvr__poly__cxt__t.html#a7a8a6706aa9f60deecffca1044b3b213',1,'pvr_poly_cxt_t::gen'],['../structpvr__sprite__cxt__t.html#a82a203aa253c2da2d23e4cf52dc27fa9',1,'pvr_sprite_cxt_t::gen']]],
+  ['gen_73',['gen',['../structpvr__poly__cxt__t.html#a34a50b6187b4d4a199f6de5938a64478',1,'pvr_poly_cxt_t::gen'],['../structpvr__sprite__cxt__t.html#a9cb6c69e7b94cc3648c7c2b838f7347f',1,'pvr_sprite_cxt_t::gen']]],
   ['general_74',['General',['../group__math__general.html',1,'']]],
   ['generic_75',['Generic',['../group__vfs__generic.html',1,'']]],
   ['generic_76',['generic',['../structvid__mode__t.html#a76d421e5ff26f1458324945cac8b37e2',1,'vid_mode_t']]],
@@ -103,11 +103,12 @@ var searchData=
   ['global_20state_100',['Global State',['../group__pvr__global.html',1,'']]],
   ['gmon_2eh_101',['gmon.h',['../gmon_8h.html',1,'']]],
   ['goal_102',['Goal',['../index.html#autotoc_md4',1,'']]],
-  ['gprof_103',['GPROF',['../group__debugging__gprof.html',1,'']]],
-  ['gprof_5ftrapa_5fcode_104',['GPROF_TRAPA_CODE',['../group__debugging__gprof.html#gaa5cb29560f032ce613e93e32bcdd407e',1,'gmon.h']]],
-  ['groups_105',['Capability Groups',['../group__controller__caps__groups.html',1,'']]],
-  ['gun_5fport_106',['gun_port',['../structmaple__state__t.html#afcc6fd1dfe40a95bc7ece47a8ed4d668',1,'maple_state_t']]],
-  ['gun_5fx_107',['gun_x',['../structmaple__state__t.html#a9351aa5f50617a7b7d9be03e8bbf98ad',1,'maple_state_t']]],
-  ['gun_5fy_108',['gun_y',['../structmaple__state__t.html#adb2a9f9a61798d62b600c15d821259e3',1,'maple_state_t']]],
-  ['gw_109',['gw',['../structflashrom__ispcfg__t.html#a111d912c152cac5d625922df0c5c859a',1,'flashrom_ispcfg_t']]]
+  ['gouraud_103',['gouraud',['../group__pvr__primitives__headers.html#ga788f45514b3c0cfcc7bfa2c802017b86',1,'pvr_poly_hdr_cmd']]],
+  ['gprof_104',['GPROF',['../group__debugging__gprof.html',1,'']]],
+  ['gprof_5ftrapa_5fcode_105',['GPROF_TRAPA_CODE',['../group__debugging__gprof.html#gaa5cb29560f032ce613e93e32bcdd407e',1,'gmon.h']]],
+  ['groups_106',['Capability Groups',['../group__controller__caps__groups.html',1,'']]],
+  ['gun_5fport_107',['gun_port',['../structmaple__state__t.html#afcc6fd1dfe40a95bc7ece47a8ed4d668',1,'maple_state_t']]],
+  ['gun_5fx_108',['gun_x',['../structmaple__state__t.html#a9351aa5f50617a7b7d9be03e8bbf98ad',1,'maple_state_t']]],
+  ['gun_5fy_109',['gun_y',['../structmaple__state__t.html#adb2a9f9a61798d62b600c15d821259e3',1,'maple_state_t']]],
+  ['gw_110',['gw',['../structflashrom__ispcfg__t.html#a111d912c152cac5d625922df0c5c859a',1,'flashrom_ispcfg_t']]]
 ];
