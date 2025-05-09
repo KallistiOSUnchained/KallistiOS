@@ -38,5 +38,6 @@ var searchData=
   ['modtime_35',['modtime',['../structutimbuf.html#a7588ffe699a9eda52e94aa593bf7d6d8',1,'utimbuf']]],
   ['month_36',['month',['../structvmu__timestamp__t.html#ab86b31dbf2be1bda5067456086dae2a8',1,'vmu_timestamp_t']]],
   ['mtu_37',['mtu',['../structnetif__t.html#a697fbf64471303c335a653bb1e183687',1,'netif_t']]],
-  ['mtu6_38',['mtu6',['../structnetif__t.html#a243bbbdba0bab7df051f81316a900038',1,'netif_t']]]
+  ['mtu6_38',['mtu6',['../structnetif__t.html#a243bbbdba0bab7df051f81316a900038',1,'netif_t']]],
+  ['mtype_39',['mtype',['../structpthread__mutexattr__t.html#ae7341512531078dbb67fbe527d646009',1,'pthread_mutexattr_t']]]
 ];

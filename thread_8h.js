@@ -37,8 +37,10 @@ var thread_8h =
     [ "thd_get_current", "group__kthreads.html#gaa2882fd7a4d6371ab7d5e2af1195c888", null ],
     [ "thd_get_errno", "group__kthreads.html#ga94704cdb804720b06e7558d6167e9a51", null ],
     [ "thd_get_hz", "group__kthreads.html#ga49f240a1e9fc3737dfccb4b61635de92", null ],
+    [ "thd_get_id", "group__kthreads.html#ga722bf3875e032e16fe781225bf7cb80e", null ],
     [ "thd_get_label", "group__kthreads.html#gac07d8fb5d1cab6ac36081effb1ff80de", null ],
     [ "thd_get_mode", "group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c", null ],
+    [ "thd_get_prio", "group__kthreads.html#gae1a1eb164b1d6d27fcd3295c7ff24f17", null ],
     [ "thd_get_pwd", "group__kthreads.html#ga5ad0b1c2495f1fdf11df6d7ba38e2620", null ],
     [ "thd_get_reent", "group__kthreads.html#ga42fb0ef4f8b4901fbb9a515b08db0ff6", null ],
     [ "thd_get_total_cpu_time", "group__kthreads.html#ga368a4d08f7be08602f4ae7d035a5dae4", null ],
@@ -50,9 +52,9 @@ var thread_8h =
     [ "thd_schedule", "group__kthreads.html#ga314b55cd3cae0c7d22114f4e4d0153fd", null ],
     [ "thd_schedule_next", "group__kthreads.html#ga76c272a52c8f7d805685287aec67ddf1", null ],
     [ "thd_set_hz", "group__kthreads.html#ga12dad87642cf1a5c8190752b0573f812", null ],
-    [ "thd_set_label", "group__kthreads.html#gaf60fbc4829be062daba4f2520f503cd0", null ],
+    [ "thd_set_label", "group__kthreads.html#ga7e8398f2e0bc90096a68ff5fab07e3c1", null ],
     [ "thd_set_mode", "group__kthreads.html#gad3eb4652a1578c25dd5c6bebe5ddadcb", null ],
     [ "thd_set_prio", "group__kthreads.html#ga763b92de76217ba97aa5f86b3b5791e3", null ],
-    [ "thd_set_pwd", "group__kthreads.html#gab12a497953adc81df5bea7bf50dbd917", null ],
+    [ "thd_set_pwd", "group__kthreads.html#ga6c1b2f8cde2edba7228b8ac0dca9d1f4", null ],
     [ "thd_sleep", "group__kthreads.html#ga979dc66b2ad0d2a4b7ab1eeec3d4d0ed", null ]
 ];
