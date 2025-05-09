@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"group__bfont__string.html#gaad026c4e0932058b8443d9e4a2f08086":[9,11,1,0,3,35],
 "group__bfont__string.html#gaad0f3a6091901b164210fcda17b49849":[9,11,1,0,3,130],
 "group__bfont__string.html#gaaeffb0eabde607213393a29ebf64608c":[9,11,1,0,3,82],
 "group__bfont__string.html#gab034e889e7d31989076f59b6b69eaaf6":[9,11,1,0,3,74],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "group__debugging__options.html#ga86c5dbf5a99358e288f573d6a1e0873f":[9,2,4,1],
 "group__debugging__options.html#gabe445e79a585ab161c3baee4aef558a3":[9,2,4,4],
 "group__debugging__options.html#gac15e0f61b70f7250c483d7c1bbee87e3":[9,2,4,5],
-"group__debugging__stacktrace.html":[9,2,7],
-"group__debugging__stacktrace.html#ga1ea5a63e6fe45154f54163fa423d8eb1":[9,2,7,2]
+"group__debugging__stacktrace.html":[9,2,7]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"structmaple__devinfo__t.html#a27de7ecc2d334df672e16acb92374540":[9,6,4,8,1],
 "structmaple__devinfo__t.html#a7ae00ab46d375a5123fad98caad8818f":[9,6,4,8,0],
 "structmaple__devinfo__t.html#aa7c824ad9b43efd38f85590b3189e903":[9,6,4,8,2],
 "structmaple__devinfo__t.html#acb41e3da245343aec9316838473cad36":[9,6,4,8,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "structpvr__poly__cxt__t.html#a4c0ed7cdbb81e857f91fbb8f581d3e20":[9,11,5,1,0,0,3,2],
 "structpvr__poly__cxt__t.html#a51a02469c2fbcbaa1f8ef87a3bcef5cd":[9,11,5,1,0,0,3,9],
 "structpvr__poly__cxt__t.html#a66b22b8cddc0979039de24282b72483c":[9,11,5,1,0,0,3,40],
-"structpvr__poly__cxt__t.html#a6afeae1b78e5996d552903bac088c3c7":[9,11,5,1,0,0,3,5],
-"structpvr__poly__cxt__t.html#a73f176a7b4c036c23e4cee04543fa382":[9,11,5,1,0,0,3,30]
+"structpvr__poly__cxt__t.html#a6afeae1b78e5996d552903bac088c3c7":[9,11,5,1,0,0,3,5]
 };

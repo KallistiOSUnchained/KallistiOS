@@ -48,10 +48,11 @@ var searchData=
   ['genwait_5fwake_5fone_45',['genwait_wake_one',['../genwait_8h.html#a0a13953ca917dfab8b432900202fb96e',1,'genwait.h']]],
   ['genwait_5fwake_5fone_5ferr_46',['genwait_wake_one_err',['../genwait_8h.html#a255ec5ddb06c1148af09457a2e2d9a1d',1,'genwait.h']]],
   ['genwait_5fwake_5fthd_47',['genwait_wake_thd',['../genwait_8h.html#a8dd3bee1c9b22e25cafb6fb1808c8814',1,'genwait.h']]],
-  ['getaddrinfo_48',['getaddrinfo',['../group__network__db.html#gac3eb39d7dd5186de34d73253a8b372d2',1,'netdb.h']]],
-  ['gethostbyname_49',['gethostbyname',['../group__network__db.html#gad2df09663e36f8f790d61a02810a3395',1,'netdb.h']]],
-  ['gethostbyname2_50',['gethostbyname2',['../group__network__db.html#ga79723285501c23f69098f7691a3882f1',1,'netdb.h']]],
-  ['getpeername_51',['getpeername',['../group__networking__sockets.html#gafd8def2c9b8ddd24ec918a829a2089c7',1,'socket.h']]],
-  ['getsockname_52',['getsockname',['../group__networking__sockets.html#ga6c1fb9f8643c70bc0a61d85ce26be101',1,'socket.h']]],
-  ['getsockopt_53',['getsockopt',['../group__networking__sockets.html#ga9198cc406a9153792eef1fcb0fa78b06',1,'socket.h']]]
+  ['get_5fapp_5fname_48',['get_app_name',['../group__arch.html#ga44338b85412f6a07deba6d4fcc3c9f22',1,'arch.h']]],
+  ['getaddrinfo_49',['getaddrinfo',['../group__network__db.html#gac3eb39d7dd5186de34d73253a8b372d2',1,'netdb.h']]],
+  ['gethostbyname_50',['gethostbyname',['../group__network__db.html#gad2df09663e36f8f790d61a02810a3395',1,'netdb.h']]],
+  ['gethostbyname2_51',['gethostbyname2',['../group__network__db.html#ga79723285501c23f69098f7691a3882f1',1,'netdb.h']]],
+  ['getpeername_52',['getpeername',['../group__networking__sockets.html#gafd8def2c9b8ddd24ec918a829a2089c7',1,'socket.h']]],
+  ['getsockname_53',['getsockname',['../group__networking__sockets.html#ga6c1fb9f8643c70bc0a61d85ce26be101',1,'socket.h']]],
+  ['getsockopt_54',['getsockopt',['../group__networking__sockets.html#ga9198cc406a9153792eef1fcb0fa78b06',1,'socket.h']]]
 ];

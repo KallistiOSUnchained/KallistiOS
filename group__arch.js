@@ -39,6 +39,7 @@ var group__arch =
     [ "arch_sleep", "group__arch.html#ga55fc7a1503773dfc8a9ff3e8d7b24f39", null ],
     [ "arch_valid_address", "group__arch.html#gaf8e20742959acf259eb593999d5cb098", null ],
     [ "arch_valid_text_address", "group__arch.html#ga4e82ee49738b8c8e70bf1a587e5b45a2", null ],
+    [ "get_app_name", "group__arch.html#ga44338b85412f6a07deba6d4fcc3c9f22", null ],
     [ "hardware_periph_init", "group__arch.html#ga8ba163d94078e3d6a320af390c4c9f2f", null ],
     [ "hardware_shutdown", "group__arch.html#ga232ce8490c0cff3b391889a83b47ae12", null ],
     [ "hardware_sys_init", "group__arch.html#ga66f6da99c5bff5dfc1fa21f9c3b7cef5", null ],

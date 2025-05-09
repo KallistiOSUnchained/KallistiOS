@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"group__peripherals__rumble.html#ga3f8f5b4b467994c496801005b2690bc1":[9,6,7,9],
 "group__peripherals__rumble.html#ga6fa186c3e23e3e88435a6915e8627028":[9,6,7,10],
 "group__peripherals__rumble.html#ga7759e3805b0eb2c0f45e75d275fd4115":[9,6,7,11],
 "group__peripherals__rumble.html#ga8113d8ab48b7a0887928551e78efd4be":[9,6,7,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "group__pvr__mip__switch.html#gabf44a5f89aa63125e8a8d89d2689df36":[9,11,5,1,0,0,0,8,3,0],
 "group__pvr__mod__modes.html":[9,11,5,1,0,0,0,6,0],
 "group__pvr__mod__modes.html#ga24574bc48205c9a8cbb8f6d1c67e787e":[9,11,5,1,0,0,0,6,0,0],
-"group__pvr__mod__modes.html#ga2cb432d82b3f7bd839765727b207b3ce":[9,11,5,1,0,0,0,6,0,1],
-"group__pvr__mod__modes.html#gaf813d9d162aaeb380731d8621fc0fd73":[9,11,5,1,0,0,0,6,0,2]
+"group__pvr__mod__modes.html#ga2cb432d82b3f7bd839765727b207b3ce":[9,11,5,1,0,0,0,6,0,1]
 };

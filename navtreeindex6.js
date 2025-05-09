@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"group__herrno__vals.html#ga68de9030c39965958f08402f7d452ad9":[9,5,1,2,1],
 "group__herrno__vals.html#ga92b3de98da10bac7363111d35bce2fe7":[9,5,1,2,2],
 "group__herrno__vals.html#gab7112bbe219185a9726405d4c5ce9886":[9,5,1,2,0],
 "group__herrno__vals.html#gaefda3c41e567de5717e579212109a355":[9,5,1,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "group__kos__initflags.html#gab5a97fe72c827de31e835229da1ad3ea":[9,7,10,1,7],
 "group__kthreads.html":[9,8,1],
 "group__kthreads.html#ga036601c3dfd9d079729a867f691c7251":[9,8,1,33],
-"group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c":[9,8,1,54],
-"group__kthreads.html#ga07a18c87aee351e96d36e4321437edcf":[9,8,1,15]
+"group__kthreads.html#ga064e68e032ac7b6478142c5806a4eb2c":[9,8,1,54]
 };

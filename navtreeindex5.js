@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"group__debugging__stacktrace.html#ga1ea5a63e6fe45154f54163fa423d8eb1":[9,2,7,2],
 "group__debugging__stacktrace.html#gab8486ac6b1a02cf59d336b0d8e46ed49":[9,2,7,1],
 "group__dmac.html":[9,7,6],
 "group__dmac.html#ga0dc7947c16f6b7974dd238fb7f77ac26":[9,7,6,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "group__gdrom.html#gae9a56fc388783f1f2aae279862033f08":[9,3,4,34],
 "group__gdrom.html#gaeda149749399d1bf918174aaf7fdf164":[9,3,4,20],
 "group__gdrom.html#gaefcb958df24519d173df9915f84d150a":[9,3,4,26],
-"group__herrno__vals.html":[9,5,1,2],
-"group__herrno__vals.html#ga68de9030c39965958f08402f7d452ad9":[9,5,1,2,1]
+"group__herrno__vals.html":[9,5,1,2]
 };

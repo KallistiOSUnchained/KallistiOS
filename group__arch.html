@@ -190,6 +190,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga44338b85412f6a07deba6d4fcc3c9f22" id="r_ga44338b85412f6a07deba6d4fcc3c9f22"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga44338b85412f6a07deba6d4fcc3c9f22">get_app_name</a> (void)</td></tr>
+<tr class="memdesc:ga44338b85412f6a07deba6d4fcc3c9f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the embedded application name.  <br /></td></tr>
+<tr class="separator:ga44338b85412f6a07deba6d4fcc3c9f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7c33b69f0b9e327c0a476d0ab6d0172b" id="r_ga7c33b69f0b9e327c0a476d0ab6d0172b"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7c33b69f0b9e327c0a476d0ab6d0172b">HZ</a> (&quot;Please use the new <a class="el" href="#gaf42cee43257eabd7a2df99ad00c7c6d9">THD_SCHED_HZ</a> macro.&quot;)</td></tr>
 <tr class="memdesc:ga7c33b69f0b9e327c0a476d0ab6d0172b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legacy symbol for scheduler frequency.  <br /></td></tr>
 <tr class="separator:ga7c33b69f0b9e327c0a476d0ab6d0172b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -961,6 +964,27 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether the address is valid or not for text memory access. </dd></dl>
 
 <p class="reference">References <a class="el" href="#gae4ac23ee1563c1bbcb0921de93c24832">_etext</a>, and <a class="el" href="#ga5541094cb97b935cdbd4cc50461ab5eb">_executable_start</a>.</p>
+
+</div>
+</div>
+<a id="ga44338b85412f6a07deba6d4fcc3c9f22" name="ga44338b85412f6a07deba6d4fcc3c9f22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44338b85412f6a07deba6d4fcc3c9f22">&#9670;&#160;</a></span>get_app_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * get_app_name </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the embedded application name. </p>
+<p>This returns the app name string embedded at build time via the KOS_APP_NAME Makefile variable. If no embedded name is present, it falls back to "prog.elf".</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a null-terminated string representing the application name. </dd></dl>
 
 </div>
 </div>
