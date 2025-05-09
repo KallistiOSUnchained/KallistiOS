@@ -92,6 +92,20 @@ romdisk.o: romdisk.img
 	rm romdisk_tmp.c romdisk_tmp.o
 endif
 
+# Add the application name to the binary
+ifdef KOS_APP_NAME
+OBJS += app_name.o
+
+app_name.bin:
+	@printf "%s\0" "$(KOS_APP_NAME)" > app_name.bin
+
+app_name.o: app_name.bin
+	$(KOS_BASE)/utils/bin2c/bin2c app_name.bin app_name_tmp.c app_name
+	$(KOS_CC) $(KOS_CFLAGS) -c app_name_tmp.c -o app_name_tmp.o
+	$(KOS_CC) -o app_name.o -r app_name_tmp.o $(KOS_LIB_PATHS)
+	rm app_name.bin app_name_tmp.c app_name_tmp.o
+endif
+
 define KOS_GCCVER_MIN_CHECK
 $(shell \
 	awk 'BEGIN { \
