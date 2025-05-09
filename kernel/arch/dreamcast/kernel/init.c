@@ -259,6 +259,14 @@ void  __weak arch_auto_shutdown(void) {
     rtc_shutdown();
 }
 
+/* Embedded string and size from KOS_APP_NAME Makefile.Rules variable */
+extern unsigned char __weak app_name_data[];
+extern int __weak app_name_size;
+
+const char *get_app_name(void) {
+    return (&app_name_data && app_name_size > 0) ? (const char *)app_name_data : "prog.elf";
+}
+
 /* Strongly defined in gcrt1.S and linked when compiling with -pg */
 void __weak gprof_init(void) { }
 

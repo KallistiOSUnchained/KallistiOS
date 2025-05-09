@@ -32,6 +32,18 @@ __BEGIN_DECLS
     @{
 */
 
+/** \brief  Returns the embedded application name.
+    \ingroup arch
+
+    This returns the app name string embedded at build time via the 
+    KOS_APP_NAME Makefile variable. If no embedded name is present,
+    it falls back to "prog.elf".
+
+    \return                 A pointer to a null-terminated string 
+                            representing the application name.
+*/
+const char *get_app_name(void);
+
 /** \brief  Top of memory available, depending on memory size. */
 #ifdef __KOS_GCC_32MB__
 extern uint32 _arch_mem_top;
