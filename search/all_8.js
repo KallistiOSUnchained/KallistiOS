@@ -258,7 +258,7 @@ var searchData=
   ['bus_20dma_255',['G2 Bus DMA',['../group__asic__events__g2dma.html',1,'']]],
   ['busy_256',['BUSY',['../group__cd__cmd__status.html#gab5be0aaddb58ffb9cb20c12530d66316',1,'cdrom.h']]],
   ['buttons_257',['Buttons',['../group__mouse__buttons.html',1,'Buttons'],['../group__vmu__buttons.html',1,'VMU Buttons']]],
-  ['buttons_258',['buttons',['../structcont__state__t.html#a985692f2308d2fac04caa38c3a203375',1,'cont_state_t::buttons'],['../structmouse__state__t.html#ab9aa1f299e0f5464d74b645da1da4af9',1,'mouse_state_t::buttons'],['../structvmu__state__t.html#a59409276c9ae41d5d460e2605c4c384e',1,'vmu_state_t::buttons']]],
+  ['buttons_258',['buttons',['../structcont__state__t.html#a985692f2308d2fac04caa38c3a203375',1,'cont_state_t::buttons'],['../structmouse__state__t.html#ab9aa1f299e0f5464d74b645da1da4af9',1,'mouse_state_t::buttons'],['../structvmu__state__t.html#a39423641b6c982159e1e77747fd17472',1,'vmu_state_t::buttons']]],
   ['buv_259',['buv',['../structpvr__sprite__txr__t.html#a56285b60b1375d085e658cb8550cb3bd',1,'pvr_sprite_txr_t']]],
   ['bx_260',['bx',['../structpvr__sprite__txr__t.html#aee4511e36febe8341ef4672c1191ebe8',1,'pvr_sprite_txr_t::bx'],['../structpvr__sprite__col__t.html#a573b8bc2e939107c5dc701813c57c51f',1,'pvr_sprite_col_t::bx'],['../structpvr__modifier__vol__t.html#ae4bed7f685d1d5885050ff5b322d488c',1,'pvr_modifier_vol_t::bx']]],
   ['by_261',['by',['../structpvr__sprite__txr__t.html#aa98e1fe89506a7c62bfd629cb95d3b3f',1,'pvr_sprite_txr_t::by'],['../structpvr__sprite__col__t.html#a891ea00157b1794eb76395cea44092fc',1,'pvr_sprite_col_t::by'],['../structpvr__modifier__vol__t.html#a23d600c83db8938829549b4433d8c452',1,'pvr_modifier_vol_t::by']]],

@@ -36,7 +36,7 @@ var NAVTREEINDEX20 =
 "structvmu__root__t.html#aac87b3a66a4a9653b6cc53a265d01084":[9,3,13,3,6],
 "structvmu__root__t.html#addd93f41b0c6fca9ce86bda5b6d6635b":[9,3,13,3,7],
 "structvmu__state__t.html":[9,6,8,0,0,1],
-"structvmu__state__t.html#a59409276c9ae41d5d460e2605c4c384e":[9,6,8,0,0,1,0],
+"structvmu__state__t.html#a39423641b6c982159e1e77747fd17472":[9,6,8,0,0,1,0],
 "structvmu__state__t.html#aa479ec63097ba7a7a6ebb010ce8954a3":[9,6,8,0,0,1,2],
 "structvmu__state__t.html#aab88c6b3c5f870bef70a18c0863d85c9":[9,6,8,0,0,1,1],
 "structvmu__timestamp__t.html":[9,3,13,2],
