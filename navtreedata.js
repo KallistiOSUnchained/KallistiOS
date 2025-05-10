@@ -27,8 +27,9 @@ var NAVTREE =
   [ "KallistiOS", "index.html", [
     [ "Goal", "index.html#autotoc_md4", null ],
     [ "Overview", "index.html#autotoc_md5", [
-      [ "Core Functionality", "index.html#autotoc_md6", null ],
-      [ "Dreamcast Hardware Support", "index.html#autotoc_md7", null ],
+      [ "Core Functionality", "index.html#autotoc_md6", [
+        [ "Dreamcast Hardware Support", "index.html#autotoc_md7", null ]
+      ] ],
       [ "Peripherals and Accessory Support", "index.html#autotoc_md8", null ],
       [ "Hardware Modification Support", "index.html#autotoc_md9", null ]
     ] ],
@@ -75,18 +76,18 @@ var NAVTREEINDEX =
 "group__gdrom.html#ga5247b0048eef7789e503de832cd10a5e",
 "group__kos__init__flags__dc.html#ga6b263fe321367d587224938a3df6befb",
 "group__math__general.html",
-"group__networking__arp.html#gabc2976b09133e84473a51a2e2d9fbcb1",
-"group__peripherals__camera.html",
-"group__pvr__pal__mgmt.html#gafbc1412daff1c48dc43905b02fee27e9",
-"group__pvr__uv__flip.html#gafe562f48c506fdedff5e5c5d62ea417d",
-"group__system__libraries.html#gabe9aaa181f33b006dbed03fdd1107fda",
-"group__version__runtime__check.html#gaeffd825bf595c1eef8579e2d8da8860f",
-"group__vmu__buttons.html#ga40426b7c731cb3742924211e3b2b1718",
-"structcont__state__t.html#a9939fe3cfbcc9e09963fe73c64132d5c",
-"structkthread__attr__t.html#a5e1ff3766adbb331ec7b27dbe2b165c0",
-"structppp__device__t.html#afd28d72fcb4d2d14245bc9a9149782b3",
-"structpvr__vertex__pcm__t.html#ab1ae478a8bc840521587ba4ceeb91dd1",
-"unionkbd__leds__t.html#a6747dcb38e3e3cded12dcf7706acce64"
+"group__networking__arp.html#gab0e9dfb124326a615170773a2752e1a0",
+"group__peripherals.html",
+"group__pvr__pal__mgmt.html#ga67a1d5c39b356f7811c8efd68565e148",
+"group__pvr__uv__flip.html#gaef7c56e3c10ffe310ee489797a7da59a",
+"group__system__libraries.html#gabe7448a4d522473297905aa593ba29b9",
+"group__tmu__direct.html#gab74e595c1f0e9892f3bf14182cb507e0",
+"group__vfs__vmu.html#gaf6f6a4f2d34fb29c7a1ad4519d92bed2",
+"stdlib_8h_source.html",
+"structiovec.html#a93ae6e322983ad684c4d96f171106054",
+"structnet__udp__stats__t.html#ad35f09c10a61f4a8ab0b6a636005af86",
+"structpvr__sprite__col__t.html#a20559ef146754c625920640e9ab1052d",
+"structvmu__hdr__t.html#a29ce5c04666092b43950391389f21f1c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

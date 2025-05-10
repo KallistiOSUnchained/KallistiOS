@@ -29,6 +29,7 @@ var searchData=
   ['bfont_5fset_5fforeground_5fcolor_26',['bfont_set_foreground_color',['../group__bfont.html#gab7f8f69cb7a23842cf64e928e71c3d85',1,'biosfont.h']]],
   ['bind_27',['bind',['../group__networking__sockets.html#ga55b3c1572b4e86ca0702ecdeb7e43997',1,'socket.h']]],
   ['bit_5freverse_28',['bit_reverse',['../group__math__general.html#ga61acd2dbafafb6b6c637a047f105ef66',1,'math.h']]],
-  ['bspline_5fcoeff_29',['bspline_coeff',['../bspline_8h.html#a4fc0b8c9758c60aa691fe1b0d25ff056',1,'bspline.h']]],
-  ['bspline_5fget_5fpoint_30',['bspline_get_point',['../bspline_8h.html#af5ed3ecd7f349b6fc5cb76e08e51dcad',1,'bspline.h']]]
+  ['bit_5freverse8_29',['bit_reverse8',['../group__math__general.html#ga14fdecd065f7b5e603ceb38be8d28fbc',1,'math.h']]],
+  ['bspline_5fcoeff_30',['bspline_coeff',['../bspline_8h.html#a4fc0b8c9758c60aa691fe1b0d25ff056',1,'bspline.h']]],
+  ['bspline_5fget_5fpoint_31',['bspline_get_point',['../bspline_8h.html#af5ed3ecd7f349b6fc5cb76e08e51dcad',1,'bspline.h']]]
 ];

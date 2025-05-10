@@ -28,6 +28,7 @@ var dir_39421b6c340728d4b73811bee3577133 =
     [ "perf_monitor.h", "perf__monitor_8h.html", "perf__monitor_8h" ],
     [ "perfctr.h", "perfctr_8h.html", "perfctr_8h" ],
     [ "pvr.h", "pvr_8h.html", "pvr_8h" ],
+    [ "sci.h", "sci_8h.html", "sci_8h" ],
     [ "scif.h", "scif_8h.html", "scif_8h" ],
     [ "sd.h", "sd_8h.html", "sd_8h" ],
     [ "spu.h", "spu_8h.html", "spu_8h" ],

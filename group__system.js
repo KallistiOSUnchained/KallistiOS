@@ -19,6 +19,7 @@ var group__system =
     [ "Overlays", "group__system__overlays.html", "group__system__overlays" ],
     [ "POSIX", "group__system__posix.html", "group__system__posix" ],
     [ "Register Macros", "group__register__macros.html", "group__register__macros" ],
+    [ "SCI", "group__system__sci.html", "group__system__sci" ],
     [ "SCIF", "group__system__scif.html", "group__system__scif" ],
     [ "Store Queues", "group__store__queues.html", "group__store__queues" ],
     [ "System Calls", "group__system__calls.html", "group__system__calls" ],

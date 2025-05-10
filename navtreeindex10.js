@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"group__peripherals.html":[9,6],
 "group__peripherals__camera.html":[9,6,0],
 "group__peripherals__camera.html#ga3c543f5d91a20fa58fcd3b0782cbdbcd":[9,6,0,5],
 "group__peripherals__camera.html#ga583aa78f378ca4eb3636d3d086f2c7ac":[9,6,0,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "group__pvr__offset__switch.html#ga136c0161451b501aa957b97b99982f25":[9,11,5,1,0,0,0,1,1,1],
 "group__pvr__offset__switch.html#ga6f741b51e65bc27733590060394d7001":[9,11,5,1,0,0,0,1,1,0],
 "group__pvr__pal__mgmt.html":[9,11,5,2,1],
-"group__pvr__pal__mgmt.html#ga32c8879d08573f79c5b8798fb7600109":[9,11,5,2,1,2],
-"group__pvr__pal__mgmt.html#ga67a1d5c39b356f7811c8efd68565e148":[9,11,5,2,1,1]
+"group__pvr__pal__mgmt.html#ga32c8879d08573f79c5b8798fb7600109":[9,11,5,2,1,2]
 };

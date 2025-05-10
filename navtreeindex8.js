@@ -1,6 +1,7 @@
 var NAVTREEINDEX8 =
 {
 "group__math__general.html":[9,4,0],
+"group__math__general.html#ga14fdecd065f7b5e603ceb38be8d28fbc":[9,4,0,2],
 "group__math__general.html#ga61acd2dbafafb6b6c637a047f105ef66":[9,4,0,1],
 "group__math__intrinsics.html":[9,4,1],
 "group__math__intrinsics.html#ga02e12ab84b2efd1e7394aa76798b941a":[9,4,1,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "group__networking__arp.html#ga45d22983bcba62380e84b1571011b46f":[9,5,0,0],
 "group__networking__arp.html#ga63e12596dda56861f65d41c2d848ff11":[9,5,0,6],
 "group__networking__arp.html#ga82380c6c668ed571162d19b27f13a96b":[9,5,0,3],
-"group__networking__arp.html#ga9ffe4520401d99cf0606613cb58d0a76":[9,5,0,5],
-"group__networking__arp.html#gab0e9dfb124326a615170773a2752e1a0":[9,5,0,4]
+"group__networking__arp.html#ga9ffe4520401d99cf0606613cb58d0a76":[9,5,0,5]
 };

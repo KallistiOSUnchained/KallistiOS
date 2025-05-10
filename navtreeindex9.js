@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"group__networking__arp.html#gab0e9dfb124326a615170773a2752e1a0":[9,5,0,4],
 "group__networking__arp.html#gabc2976b09133e84473a51a2e2d9fbcb1":[9,5,0,2],
 "group__networking__crc.html":[9,5,2],
 "group__networking__crc.html#ga02fbebcaa31a1ccb5e45ce403920f9eb":[9,5,2,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "group__perf__monitor.html#ga62c61981f91df24b5188ed86998bd2b7":[9,2,6,1],
 "group__perf__monitor.html#ga6781f2e91cd9531dec52d18237244a62":[9,2,6,5],
 "group__perf__monitor.html#ga820fdd7d4930bf416b90eb94d52ee137":[9,2,6,3],
-"group__perf__monitor.html#gacae44717c675112e78b998e19e1bf531":[9,2,6,4],
-"group__peripherals.html":[9,6]
+"group__perf__monitor.html#gacae44717c675112e78b998e19e1bf531":[9,2,6,4]
 };
