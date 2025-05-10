@@ -32,18 +32,18 @@ KallistiOS also features a package manager called [**_kos-ports_**](https://gith
 - Dynamically Loaded Libraries and Modules
 - GDB Debugger Support
 
-## Dreamcast Hardware Support
-- Optical Disc Drive
-- Low-level 3D PowerVR Graphics 
-- SH4 ASM-Optimized Math Routines
-- SH4 SCIF Serial I/O
-- DMA Controller 
-- FlashROM Filesystem
-- AICA SPU Sound Processor Driver
-- Cache and Store Queue Management
-- Timer Peripherals, Real-Time Clock, Watchdog Timer
-- Performance Counters
-- MMU Management
+### Dreamcast Hardware Support
+* Optical Disc Drive
+* Low-level 3D PowerVR Graphics 
+* SH4 ASM-Optimized Math Routines
+* SH4 SCI and SCIF Serial I/O
+* DMA Controller 
+* FlashROM Filesystem
+* AICA SPU Sound Processor Driver
+* Cache and Store Queue Management
+* Timer Peripherals, Real-Time Clock, Watchdog Timer
+* Performance Counters
+* MMU Management
 
 ## Peripherals and Accessory Support
 - Standard controllers, expanded controllers with additional buttons and dual analog sticks 
