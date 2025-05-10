@@ -14,6 +14,6 @@ var searchData=
   ['getaddrinfo_20error_20values_11',['getaddrinfo() Error Values',['../group__addrinfo__errors.html',1,'']]],
   ['global_12',['Global',['../group__irq__handlers__global.html',1,'']]],
   ['global_20state_13',['Global State',['../group__pvr__global.html',1,'']]],
-  ['gprof_14',['GPROF',['../group__debugging__gprof.html',1,'']]],
+  ['gprof_14',['GPROF',['../group__gprof.html',1,'']]],
   ['groups_15',['Capability Groups',['../group__controller__caps__groups.html',1,'']]]
 ];

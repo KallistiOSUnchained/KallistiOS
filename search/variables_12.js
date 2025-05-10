@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r_0',['r',['../structirq__context__t.html#ae5e18ad9ead0731961b3282908c5476d',1,'irq_context_t::r'],['../group__pvr__primitives__headers.html#ga3db47cee2a1cc82ba86b4a7e2d8af2d0',1,'pvr_poly_hdr_t::r'],['../group__pvr__primitives__headers.html#ga71eee91ec71b7346a3560dbc851b1e56',1,'pvr_poly_hdr_t::@28::@32::r']]],
+  ['r_0',['r',['../structirq__context__t.html#ae5e18ad9ead0731961b3282908c5476d',1,'irq_context_t::r'],['../structpvr__poly__hdr__t.html#a3db47cee2a1cc82ba86b4a7e2d8af2d0',1,'pvr_poly_hdr_t::r']]],
   ['ralt_1',['ralt',['../unionkbd__mods__t.html#acb0dacb6ece242bd4d90892d0f0890a4',1,'kbd_mods_t']]],
   ['raw_2',['raw',['../unionkbd__mods__t.html#ae3a366928d43455828a318e6605ae945',1,'kbd_mods_t::raw'],['../unionkbd__leds__t.html#a0f3558c30c5b0aeeb4055663f43c3f4d',1,'kbd_leds_t::raw'],['../unionvmu__buttons__t.html#abceb52266a2bf5c690ad3e5fd15d7f21',1,'vmu_buttons_t::raw']]],
   ['rctrl_3',['rctrl',['../unionkbd__mods__t.html#ab84f9e7b0d817c0d4876ec6a866bb50a',1,'kbd_mods_t']]],

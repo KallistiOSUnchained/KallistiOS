@@ -2,7 +2,7 @@ var group__debugging =
 [
     [ "Assertions", "group__assertions.html", "group__assertions" ],
     [ "GDB", "group__debugging__gdb.html", "group__debugging__gdb" ],
-    [ "GPROF", "group__debugging__gprof.html", "group__debugging__gprof" ],
+    [ "GPROF", "group__gprof.html", "group__gprof" ],
     [ "Logging", "group__logging.html", "group__logging" ],
     [ "Options", "group__debugging__options.html", "group__debugging__options" ],
     [ "Performance Counters", "group__perf__counters.html", "group__perf__counters" ],

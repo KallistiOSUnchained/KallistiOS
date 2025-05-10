@@ -1,9 +1,9 @@
 var __pthreadtypes_8h =
 [
     [ "pthread_mutexattr_t", "structpthread__mutexattr__t.html", "structpthread__mutexattr__t" ],
-    [ "pthread_rwlockattr_t", "structpthread__rwlockattr__t.html", null ],
+    [ "pthread_rwlockattr_t", "structpthread__rwlockattr__t.html", "structpthread__rwlockattr__t" ],
     [ "pthread_condattr_t", "unionpthread__condattr__t.html", "unionpthread__condattr__t" ],
-    [ "pthread_barrierattr_t", "structpthread__barrierattr__t.html", null ],
+    [ "pthread_barrierattr_t", "structpthread__barrierattr__t.html", "structpthread__barrierattr__t" ],
     [ "pthread_attr_t", "unionpthread__attr__t.html", "unionpthread__attr__t" ],
     [ "pthread_mutex_t", "unionpthread__mutex__t.html", "unionpthread__mutex__t" ],
     [ "pthread_cond_t", "unionpthread__cond__t.html", "unionpthread__cond__t" ],

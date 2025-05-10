@@ -9,10 +9,6 @@ var NAVTREEINDEX5 =
 "group__debugging__gdb.html":[9,2,1],
 "group__debugging__gdb.html#ga6ac752c9c4b38d27d2a04d23d906d450":[9,2,1,2],
 "group__debugging__gdb.html#ga8725bc79e0b0122780e8dc0fc617797d":[9,2,1,1],
-"group__debugging__gprof.html":[9,2,2],
-"group__debugging__gprof.html#ga30f01de92f05ca2638fcdd7a60d6ab14":[9,2,2,2],
-"group__debugging__gprof.html#ga5c4a4e1a4685b82edd651d2e33494798":[9,2,2,1],
-"group__debugging__gprof.html#gaa5cb29560f032ce613e93e32bcdd407e":[9,2,2,0],
 "group__debugging__options.html":[9,2,4],
 "group__debugging__options.html#ga157276a1a268eea44866cac97ff96bb3":[9,2,4,3],
 "group__debugging__options.html#ga5dc2403b4a5846f5d71cc0ac5ba924dc":[9,2,4,2],
@@ -249,5 +245,9 @@ var NAVTREEINDEX5 =
 "group__g1ata.html#gafd4c03e6620c3343dea0d7539a85393e":[9,3,2,3,28],
 "group__g1ata__protect.html":[9,3,2,3,1],
 "group__gdrom.html":[9,3,4],
-"group__gdrom.html#ga0864556ec5c970d634f83ae147ed77e7":[9,3,4,18]
+"group__gdrom.html#ga0864556ec5c970d634f83ae147ed77e7":[9,3,4,18],
+"group__gdrom.html#ga0db76090a577fe1184d5eb337f45aa7d":[9,3,4,33],
+"group__gdrom.html#ga3c581cebeabdabd013ded48c920d0cfe":[9,3,4,25],
+"group__gdrom.html#ga446b7e47d3c4d6e011f018e9a2b5fb57":[9,3,4,16],
+"group__gdrom.html#ga48b64b50f7a705915e6e3958cc1d8dae":[9,3,4,17]
 };

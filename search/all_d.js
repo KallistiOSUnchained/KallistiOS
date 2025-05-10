@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['g_0',['g',['../group__pvr__primitives__headers.html#gaa0767b4341d288cc3f1b7a68384dd072',1,'pvr_poly_hdr_t::g'],['../group__pvr__primitives__headers.html#gaaf84ed69cd721024df744571a65ea355',1,'pvr_poly_hdr_t::@28::@32::g']]],
+  ['g_0',['g',['../structpvr__poly__hdr__t.html#aa0767b4341d288cc3f1b7a68384dd072',1,'pvr_poly_hdr_t']]],
   ['g1_20ata_1',['G1 ATA',['../group__g1ata.html',1,'']]],
   ['g1_20ata_20protection_2',['G1 ATA protection',['../group__g1ata__protect.html',1,'']]],
   ['g1_5fata_5fblockdev_5ffor_5fdevice_3',['g1_ata_blockdev_for_device',['../group__g1ata.html#ga8a083fefa816448a0520526742487c95',1,'g1ata.h']]],
@@ -103,9 +103,9 @@ var searchData=
   ['global_20state_100',['Global State',['../group__pvr__global.html',1,'']]],
   ['gmon_2eh_101',['gmon.h',['../gmon_8h.html',1,'']]],
   ['goal_102',['Goal',['../index.html#autotoc_md4',1,'']]],
-  ['gouraud_103',['gouraud',['../group__pvr__primitives__headers.html#ga788f45514b3c0cfcc7bfa2c802017b86',1,'pvr_poly_hdr_cmd']]],
-  ['gprof_104',['GPROF',['../group__debugging__gprof.html',1,'']]],
-  ['gprof_5ftrapa_5fcode_105',['GPROF_TRAPA_CODE',['../group__debugging__gprof.html#gaa5cb29560f032ce613e93e32bcdd407e',1,'gmon.h']]],
+  ['gouraud_103',['gouraud',['../structpvr__poly__hdr__cmd.html#a788f45514b3c0cfcc7bfa2c802017b86',1,'pvr_poly_hdr_cmd']]],
+  ['gprof_104',['GPROF',['../group__gprof.html',1,'']]],
+  ['gprof_5ftrapa_5fcode_105',['GPROF_TRAPA_CODE',['../group__gprof.html#gaa5cb29560f032ce613e93e32bcdd407e',1,'gmon.h']]],
   ['groups_106',['Capability Groups',['../group__controller__caps__groups.html',1,'']]],
   ['gun_5fport_107',['gun_port',['../structmaple__state__t.html#afcc6fd1dfe40a95bc7ece47a8ed4d668',1,'maple_state_t']]],
   ['gun_5fx_108',['gun_x',['../structmaple__state__t.html#a9351aa5f50617a7b7d9be03e8bbf98ad',1,'maple_state_t']]],

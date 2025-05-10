@@ -12,6 +12,6 @@ var searchData=
   ['nm_9',['nm',['../structflashrom__ispcfg__t.html#ae6922caecdc8d614016b91075098c21f',1,'flashrom_ispcfg_t']]],
   ['nmmgr_10',['nmmgr',['../structsymtab__handler__t.html#a75a283f20ab90c1cb78a102d638047d1',1,'symtab_handler_t::nmmgr'],['../structvfs__handler__t.html#a94215a80713a1b0a505f8ddbc4fde6c9',1,'vfs_handler_t::nmmgr'],['../structalias__handler__t.html#aaddb60d6720a24e31912d2a894d0cd3e',1,'alias_handler_t::nmmgr']]],
   ['nodename_11',['nodename',['../structutsname.html#a01b2527356cd6886fec4bc348976f950',1,'utsname']]],
-  ['nontwiddled_12',['nontwiddled',['../group__pvr__primitives__headers.html#ga9e0e1d4d516b29386545b39ceb6593b9',1,'pvr_poly_hdr_mode3']]],
+  ['nontwiddled_12',['nontwiddled',['../structpvr__poly__hdr__mode3.html#a9e0e1d4d516b29386545b39ceb6593b9',1,'pvr_poly_hdr_mode3']]],
   ['num_5flock_13',['num_lock',['../unionkbd__leds__t.html#a773c172f80e08da19e0e50edb49ea90c',1,'kbd_leds_t']]]
 ];

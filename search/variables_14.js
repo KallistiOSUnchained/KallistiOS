@@ -20,8 +20,8 @@ var searchData=
   ['tx_17',['tx',['../structppp__device__t.html#a0b8f99d603eb52b97aed61664a91402e',1,'ppp_device_t']]],
   ['txr_18',['txr',['../structpvr__poly__cxt__t.html#ada6189e4e5d8c7317fadac49e75bf5d3',1,'pvr_poly_cxt_t::txr'],['../structpvr__sprite__cxt__t.html#ae94abe153be25d9962cc148c2a27dfee',1,'pvr_sprite_cxt_t::txr']]],
   ['txr2_19',['txr2',['../structpvr__poly__cxt__t.html#a14904a1b236849b52bd2b904a89b20ab',1,'pvr_poly_cxt_t']]],
-  ['txr_5fbase_20',['txr_base',['../group__pvr__primitives__headers.html#gae73958fdc14f8291fc62808145762894',1,'pvr_poly_hdr_mode3']]],
-  ['txr_5fen_21',['txr_en',['../group__pvr__primitives__headers.html#gafb84a737b3dcf28eca3e96376f493179',1,'pvr_poly_hdr_cmd::txr_en'],['../group__pvr__primitives__headers.html#gaf8dde203a85c3ce10de1979f04bbe58d',1,'pvr_poly_hdr_mode1::txr_en']]],
-  ['txralpha_5fdis_22',['txralpha_dis',['../group__pvr__primitives__headers.html#ga8da11740b89e8b67c1737cb870102b3e',1,'pvr_poly_hdr_mode2']]],
+  ['txr_5fbase_20',['txr_base',['../structpvr__poly__hdr__mode3.html#ae73958fdc14f8291fc62808145762894',1,'pvr_poly_hdr_mode3']]],
+  ['txr_5fen_21',['txr_en',['../structpvr__poly__hdr__cmd.html#afb84a737b3dcf28eca3e96376f493179',1,'pvr_poly_hdr_cmd::txr_en'],['../structpvr__poly__hdr__mode1.html#af8dde203a85c3ce10de1979f04bbe58d',1,'pvr_poly_hdr_mode1::txr_en']]],
+  ['txralpha_5fdis_22',['txralpha_dis',['../structpvr__poly__hdr__mode2.html#a8da11740b89e8b67c1737cb870102b3e',1,'pvr_poly_hdr_mode2']]],
   ['type_23',['type',['../structelf__hdr__t.html#a2fdbb3597a35aa5c1505bd02b33b9d47',1,'elf_hdr_t::type'],['../structelf__shdr__t.html#a2d10b31679cf8194aa931a75a484d118',1,'elf_shdr_t::type'],['../structfs__socket__proto__t.html#a953406ac76959e7a825fb217a52a1f5b',1,'fs_socket_proto_t::type'],['../structmutex__t.html#a94d48f5aef1ce2a55044c45bead68cfe',1,'mutex_t::type'],['../structnmmgr__handler__t.html#a582a530a244448897364919edd94b14a',1,'nmmgr_handler_t::type'],['../structaica__channel__t.html#a55ec8b2d743af57a609dec959c4749ca',1,'aica_channel_t::type']]]
 ];

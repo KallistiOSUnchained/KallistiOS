@@ -116,9 +116,9 @@ $(function(){initNavTree('gmon_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"></span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/** \defgroup debugging_gprof GPROF</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">    \brief    GPROF utilities</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    \ingroup  debugging</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/** \defgroup gprof GPROF</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">    \brief          Lightweight GPROF profiling runtime for KOS</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    \ingroup        debugging</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"></span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"></span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">    This file provides utilities for profiling applications using gprof. Gprof</span></div>
@@ -191,7 +191,7 @@ $(function(){initNavTree('gmon_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">    nop       --- This is a 2-byte no-op placeholder</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">    label     --- This is a 4-byte LABELNO</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group__debugging__gprof.html#gaa5cb29560f032ce613e93e32bcdd407e">   92</a></span><span class="preprocessor">#define GPROF_TRAPA_CODE  33</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group__gprof.html#gaa5cb29560f032ce613e93e32bcdd407e">   92</a></span><span class="preprocessor">#define GPROF_TRAPA_CODE  33</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment"></span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">/** \brief  Start gprof profiling for a specified address range.</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment"></span> </div>
@@ -206,7 +206,7 @@ $(function(){initNavTree('gmon_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">    \param  lowpc   The lower bound of the address range to profile.</span></div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">    \param  highpc  The upper bound of the address range to profile.</span></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="group__debugging__gprof.html#ga30f01de92f05ca2638fcdd7a60d6ab14">  107</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__debugging__gprof.html#ga30f01de92f05ca2638fcdd7a60d6ab14">monstartup</a>(uintptr_t lowpc, uintptr_t highpc);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="group__gprof.html#ga30f01de92f05ca2638fcdd7a60d6ab14">  107</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__gprof.html#ga30f01de92f05ca2638fcdd7a60d6ab14">monstartup</a>(uintptr_t lowpc, uintptr_t highpc);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment"></span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">/** \brief  Restart or stop gprof profiling.</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment"></span> </div>
@@ -218,15 +218,15 @@ $(function(){initNavTree('gmon_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">    \param  enable            A boolean value to restart (true) or stop (false) </span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">                              gprof profiling.</span></div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group__debugging__gprof.html#ga5c4a4e1a4685b82edd651d2e33494798">  119</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__debugging__gprof.html#ga5c4a4e1a4685b82edd651d2e33494798">moncontrol</a>(<span class="keywordtype">bool</span> enable);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group__gprof.html#ga5c4a4e1a4685b82edd651d2e33494798">  119</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__gprof.html#ga5c4a4e1a4685b82edd651d2e33494798">moncontrol</a>(<span class="keywordtype">bool</span> enable);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"></span> </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">/** @} */</span></div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>__END_DECLS</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif  </span><span class="comment">/* __SYS_GMON_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="agroup__debugging__gprof_html_ga30f01de92f05ca2638fcdd7a60d6ab14"><div class="ttname"><a href="group__debugging__gprof.html#ga30f01de92f05ca2638fcdd7a60d6ab14">monstartup</a></div><div class="ttdeci">void monstartup(uintptr_t lowpc, uintptr_t highpc)</div><div class="ttdoc">Start gprof profiling for a specified address range.</div></div>
-<div class="ttc" id="agroup__debugging__gprof_html_ga5c4a4e1a4685b82edd651d2e33494798"><div class="ttname"><a href="group__debugging__gprof.html#ga5c4a4e1a4685b82edd651d2e33494798">moncontrol</a></div><div class="ttdeci">void moncontrol(bool enable)</div><div class="ttdoc">Restart or stop gprof profiling.</div></div>
+<div class="ttc" id="agroup__gprof_html_ga30f01de92f05ca2638fcdd7a60d6ab14"><div class="ttname"><a href="group__gprof.html#ga30f01de92f05ca2638fcdd7a60d6ab14">monstartup</a></div><div class="ttdeci">void monstartup(uintptr_t lowpc, uintptr_t highpc)</div><div class="ttdoc">Start gprof profiling for a specified address range.</div></div>
+<div class="ttc" id="agroup__gprof_html_ga5c4a4e1a4685b82edd651d2e33494798"><div class="ttname"><a href="group__gprof.html#ga5c4a4e1a4685b82edd651d2e33494798">moncontrol</a></div><div class="ttdeci">void moncontrol(bool enable)</div><div class="ttdoc">Restart or stop gprof profiling.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

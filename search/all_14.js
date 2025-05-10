@@ -123,7 +123,7 @@ var searchData=
   ['no_5fdata_120',['NO_DATA',['../group__herrno__vals.html#ga68de9030c39965958f08402f7d452ad9',1,'netdb.h']]],
   ['no_5frecovery_121',['NO_RECOVERY',['../group__herrno__vals.html#ga92b3de98da10bac7363111d35bce2fe7',1,'netdb.h']]],
   ['nodename_122',['nodename',['../structutsname.html#a01b2527356cd6886fec4bc348976f950',1,'utsname']]],
-  ['nontwiddled_123',['nontwiddled',['../group__pvr__primitives__headers.html#ga9e0e1d4d516b29386545b39ceb6593b9',1,'pvr_poly_hdr_mode3']]],
+  ['nontwiddled_123',['nontwiddled',['../structpvr__poly__hdr__mode3.html#a9e0e1d4d516b29386545b39ceb6593b9',1,'pvr_poly_hdr_mode3']]],
   ['ntohl_124',['ntohl',['../group__networking__utils.html#gae1b8c84c7a12864edaa5204cb432c302',1,'inet.h']]],
   ['ntohs_125',['ntohs',['../group__networking__utils.html#ga2b3648d627965f7db357f235acae8db6',1,'inet.h']]],
   ['null_126',['/dev/null',['../group__vfs__null.html',1,'']]],
