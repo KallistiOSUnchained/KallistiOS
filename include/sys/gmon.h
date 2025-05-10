@@ -14,9 +14,9 @@ __BEGIN_DECLS
 #include <stdint.h>
 #include <stdbool.h>
 
-/** \defgroup debugging_gprof GPROF
-    \brief    GPROF utilities
-    \ingroup  debugging
+/** \defgroup gprof GPROF
+    \brief          Lightweight GPROF profiling runtime for KOS
+    \ingroup        debugging
 
 
     This file provides utilities for profiling applications using gprof. Gprof

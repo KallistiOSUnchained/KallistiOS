@@ -27,10 +27,10 @@
     \author Lawrence Sebald
 */
 
-/** \cond **/
-
 #ifndef __PTHREAD_H
 #define __PTHREAD_H
+
+/** \cond **/
 
 #include <sys/cdefs.h>
 #include <sys/features.h>
@@ -246,6 +246,6 @@ int pthread_yield(void);
 
 __END_DECLS
 
-/** \endcond */
-
 #endif /* !__PTHREAD_H */
+
+/** \endcond */

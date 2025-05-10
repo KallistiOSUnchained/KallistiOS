@@ -16,7 +16,8 @@ typedef struct pthread_mutexattr_t {
 } pthread_mutexattr_t;
 
 typedef struct pthread_rwlockattr_t {
-    /* Empty */
+    /* Dummy */
+    int __dummy;
 } pthread_rwlockattr_t;
 
 #ifndef __PTHREAD_HAVE_CONDATTR_TYPE
@@ -32,7 +33,8 @@ typedef union pthread_condattr_t {
 #endif /* !__PTHREAD_HAVE_CONDATTR_TYPE */
 
 typedef struct pthread_barrierattr_t {
-    /* Empty */
+    /* Dummy */
+    int __dummy;
 } pthread_barrierattr_t;
 
 /* The following types have no public elements. Their implementation is hidden
