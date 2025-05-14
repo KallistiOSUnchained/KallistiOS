@@ -6,13 +6,17 @@
 *.exe
 *.dll
 *.map
+*.gcda
+*.gcno
 *~
 .*.swp
 .DS_Store
+≈
 .vscode/
 doc/reference/
 environ.sh
 romdisk.img
+coverage.info
 kernel/stubs/*.c
 kernel/exports/kernel_exports.c
 kernel/arch/dreamcast/kernel/arch_exports.c
