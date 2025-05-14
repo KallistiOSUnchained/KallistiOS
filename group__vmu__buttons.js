@@ -12,7 +12,7 @@ var group__vmu__buttons =
       [ "sleep", "unionvmu__buttons__t.html#affbcad0a5df7e53962d1f1bbe7636c87", null ]
     ] ],
     [ "vmu_state_t", "structvmu__state__t.html", [
-      [ "buttons", "structvmu__state__t.html#a39423641b6c982159e1e77747fd17472", null ],
+      [ "buttons", "structvmu__state__t.html#a59409276c9ae41d5d460e2605c4c384e", null ],
       [ "current", "structvmu__state__t.html#aab88c6b3c5f870bef70a18c0863d85c9", null ],
       [ "previous", "structvmu__state__t.html#aa479ec63097ba7a7a6ebb010ce8954a3", null ]
     ] ],
