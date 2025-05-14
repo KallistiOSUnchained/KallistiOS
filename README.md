@@ -93,5 +93,5 @@ Once you've set up the environment and are ready to begin developing, a good pla
 # Resources
 [Wiki](https://github.com/KallistiOSUnchained/KallistiOS/wiki): Collection of tutorials and articles for beginners  
 [Simulant Discord Chat](https://discord.gg/bpDZHT78PA): Home to the official Discord channel of KOS  
-[ChatGPT](https://chatgpt.com/g/g-b64xrLn8h-kallistios-dev-guru): A GPT specifically trained to assist with and understand KallistiOS code
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/KallistiOSUnchained/KallistiOS)
 
