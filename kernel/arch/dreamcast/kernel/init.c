@@ -14,6 +14,7 @@
 #include <kos/dbglog.h>
 #include <kos/init.h>
 #include <kos/platform.h>
+#include <arch/gdb.h>
 #include <arch/arch.h>
 #include <arch/irq.h>
 #include <arch/memory.h>
@@ -44,7 +45,7 @@ extern void __verify_newlib_patch();
 void (*__kos_init_early_fn)(void) __attribute__((weak,section(".data"))) = NULL;
 
 int main(int argc, char **argv);
-uint32 _fs_dclsocket_get_ip(void);
+uint32_t _fs_dclsocket_get_ip(void);
 
 /* We have to put this here so we can include plat-specific devices */
 dbgio_handler_t * dbgio_handlers[] = {
@@ -58,8 +59,8 @@ const size_t dbgio_handler_cnt = __array_size(dbgio_handlers);
 
 void arch_init_net_dcload_ip(void) {
     union {
-        uint32 ipl;
-        uint8 ipb[4];
+        uint32_t ipl;
+        uint8_t ipb[4];
     } ip = { 0 };
 
     if(dcload_type == DCLOAD_TYPE_IP) {
@@ -127,7 +128,7 @@ KOS_INIT_FLAG_WEAK(fs_iso9660_init, true);
 KOS_INIT_FLAG_WEAK(fs_iso9660_shutdown, true);
 
 void dcload_init(void) {
-    if (*DCLOADMAGICADDR == DCLOADMAGICVALUE) {
+    if(*DCLOADMAGICADDR == DCLOADMAGICVALUE) {
         dbglog(DBG_INFO, "dc-load console support enabled\n");
         fs_dcload_init();
     }
@@ -150,10 +151,12 @@ KOS_INIT_FLAG_WEAK(fs_rnd_shutdown, true);
 KOS_INIT_FLAG_WEAK(library_init, true);
 KOS_INIT_FLAG_WEAK(library_shutdown, true);
 
+KOS_INIT_FLAG_WEAK(gdb_init, false);
+
 /* Auto-init stuff: override with a non-weak symbol if you don't want all of
    this to be linked into your code (and do the same with the
    arch_auto_shutdown function too). */
-int  __weak arch_auto_init(void) {
+int __weak arch_auto_init(void) {
     /* Initialize memory management */
     mm_init();
 
@@ -185,7 +188,7 @@ int  __weak arch_auto_init(void) {
     timer_init();           /* Timers */
     hardware_sys_init();        /* DC low-level hardware init */
 
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI)
         syscall_sysinfo_init();
 
     /* Initialize our timer */
@@ -214,7 +217,7 @@ int  __weak arch_auto_init(void) {
 
     KOS_INIT_FLAG_CALL(dcload_init);
 
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI)
         KOS_INIT_FLAG_CALL(fs_iso9660_init);
 
     KOS_INIT_FLAG_CALL(vmu_fs_init);
@@ -228,8 +231,10 @@ int  __weak arch_auto_init(void) {
         KOS_INIT_FLAG_CALL(maple_wait_scan);  /* Wait for the maple scan to complete */
     }
 
-    if (!KOS_PLATFORM_IS_NAOMI)
+    if(!KOS_PLATFORM_IS_NAOMI)
         KOS_INIT_FLAG_CALL(arch_init_net);
+
+    KOS_INIT_FLAG_CALL(gdb_init);
 
     return 0;
 }
@@ -288,7 +293,7 @@ void __weak gprof_init(void) { }
 
 /* This is the entry point inside the C program */
 void arch_main(void) {
-    uint8 *bss_start = (uint8 *)(&_bss_start);
+    uint8_t *bss_start = (uint8_t *)(&_bss_start);
     int rv;
 
     if (KOS_PLATFORM_IS_NAOMI) {
@@ -327,6 +332,8 @@ void arch_main(void) {
 
     /* Call the user's main function */
     rv = main(0, NULL);
+
+    gdb_shutdown(rv);
 
     /* Call kernel exit */
     exit(rv);

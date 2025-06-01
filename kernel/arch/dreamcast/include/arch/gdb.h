@@ -1,7 +1,8 @@
 /* KallistiOS ##version##
 
    arch/dreamcast/include/arch/gdb.h
-   (c)2002 Megan Potter
+   Copyright (C) 2002 Megan Potter
+   Copyright (C) 2025 Andy Barajas
 
 */
 
@@ -33,6 +34,17 @@ __BEGIN_DECLS
     in your program, when you wish to use GDB for debugging.
 */
 void gdb_init(void);
+
+/** \brief  Shutdown the GDB stub.
+
+    This function shuts down GDB support. It informs the GDB server that the
+    program has exited by sending a packet with the exit status. This is done
+    for you by the normal shutdown procedure of KOS. There should not really be
+    any reason for you to call this function yourself.
+
+    \param  status  The program exit status to report to GDB.
+ */
+void gdb_shutdown(int status);
 
 /** \brief  Manually raise a GDB breakpoint.
 
