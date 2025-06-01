@@ -3,8 +3,8 @@
     gmon.c
     Copyright (C) 2025 Andress Barajas
 
-    The methods provided in this file are based on the principles outlined in 
-    the gprof profiling article. However, instead of utilizing a linked list 
+    The methods provided in this file are based on the principles outlined in
+    the gprof profiling article. However, instead of utilizing a linked list
     for storing profiling data, a binary search tree (BST) is used instead.
 
     Article:
@@ -19,6 +19,7 @@
 
 #include <sys/gmon.h>
 #include <kos/thread.h>
+#include <kos/dbglog.h>
 
 #define ROUNDDOWN(x,y)	(((x)/(y))*(y))
 #define ROUNDUP(x,y)	((((x)+(y)-1)/(y))*(y))
@@ -31,7 +32,7 @@
 /* Number of histogram buckets = text_size / HISTFRACTION */
 #define HISTFRACTION    8
 
-/* Hash-table reduction factor: 
+/* Hash-table reduction factor:
    froms[] slots = text_size / HASHFRACTION */
 #define	HASHFRACTION   16
 
@@ -43,7 +44,7 @@
 
 #define	GMON_MAGIC	   "gmon"
 #define GMON_VERSION	    1
-#define GMON_TAG_TIME_HIST  0 
+#define GMON_TAG_TIME_HIST  0
 #define GMON_TAG_CG_ARC     1
 
 #define GMON_OUT_PATH   "/pc/gmon.out"
@@ -143,7 +144,7 @@ static void traverse_and_write(FILE *out, gmon_context_t *cxt, uint32_t index, u
 
     if(index == 0)
         return;
-    
+
     /* Grab a node */
     node = &cxt->nodes[index];
 
@@ -226,7 +227,7 @@ static bool write_arcs(void) {
         /* Skip if no BST built for this index */
         if(cxt->froms[from_index] == 0)
             continue;
-        
+
         /* Construct 'from' address by performing reciprical of hash to insert */
         from_addr = (HASHFRACTION * from_index) + cxt->lowpc;
 
@@ -300,7 +301,7 @@ static void _mcleanup(void) {
         dbglog(DBG_ERROR, "_mcleanup: uninitialized or we encountered an error. \n");
         goto cleanup;
     }
-    
+
     if(!write_histogram())
         goto cleanup;
 
@@ -438,18 +439,18 @@ static void _monstartupbase(uintptr_t lowpc, uintptr_t highpc, bool generate_cal
         nodes_size = cxt->nnodes * sizeof(gmon_node_t);
 
         /* Allocate enough so all buffers can be 32-byte aligned */
-        cxt->allocate_size = ROUNDUP(counter_size, 32) + 
-                             ROUNDUP(froms_size, 32) + 
-                             ROUNDUP(nodes_size, 32) + 
+        cxt->allocate_size = ROUNDUP(counter_size, 32) +
+                             ROUNDUP(froms_size, 32) +
+                             ROUNDUP(nodes_size, 32) +
                              32; /* Extra space for alignment adjustments */
-    } 
+    }
     else {
         /* Just allocate enough for the histogram */
         cxt->allocate_size = ROUNDUP(counter_size, 32);
     }
 
     dbglog(DBG_NOTICE, "[GPROF] Profiling from <%p to %p>\n"
-        "[GPROF] Range size: %d bytes\n", 
+        "[GPROF] Range size: %d bytes\n",
         (void *)cxt->lowpc, (void *)cxt->highpc, cxt->textsize);
 
     if(posix_memalign((void**)&cxt->histogram, 32, cxt->allocate_size)) {
