@@ -96,16 +96,9 @@ void pvr_poly_compile(pvr_poly_hdr_t *dst, const pvr_poly_cxt_t *src) {
     if(src->fmt.modifier && src->gen.modifier_mode) {
         /* If we're affected by a modifier volume, silently promote the header
            to the one that is affected by a modifier volume. */
-        dst->d1 = mode2;
-        dst->d2 = mode3;
+        dst->mode2_1 = mode2;
+        dst->mode3_1 = mode3;
     }
-    else {
-        dst->d1 = 0xffffffff;
-        dst->d2 = 0xffffffff;
-    }
-
-    dst->d3 = 0xffffffff;
-    dst->d4 = 0xffffffff;
 }
 
 /* Create a colored polygon context with parameters similar to
@@ -353,8 +346,6 @@ void pvr_mod_compile(pvr_mod_hdr_t *dst, pvr_list_t list, uint32 mode,
 
     dst->mode1 = FIELD_PREP(PVR_TA_PM1_MODIFIERINST, mode)
         | FIELD_PREP(PVR_TA_PM1_CULLING, cull);
-
-    dst->d1 = dst->d2 = dst->d3 = dst->d4 = dst->d5 = dst->d6 = 0;
 }
 
 /* Compile a polygon context into a polygon header that is affected by
@@ -467,9 +458,6 @@ void pvr_poly_mod_compile(pvr_poly_mod_hdr_t *dst, const pvr_poly_cxt_t *src) {
 
     dst->mode2_1 = mode2;
     dst->mode3_1 = mode3;
-
-    dst->d1 = 0xffffffff;
-    dst->d2 = 0xffffffff;
 }
 
 /* Create a colored polygon context for polygons affected by modifier volumes */

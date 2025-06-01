@@ -18,6 +18,7 @@
 #include <arch/timer.h>
 #include <arch/stack.h>
 #include <kos/dbgio.h>
+#include <kos/dbglog.h>
 #include <kos/thread.h>
 #include <kos/library.h>
 #include <kos/regfield.h>
@@ -173,8 +174,7 @@ static void irq_dump_regs(int code, irq_t evt) {
             if(valid_pr)
                 dbglog(DBG_DEAD, " %08lx", irq_srt_addr->pr);
 
-#ifdef FRAME_POINTERS
-            while(fp != 0xffffffff) {
+            while(__is_defined(FRAME_POINTERS) && fp != 0xffffffff) {
                 /* Validate the function pointer (fp) */
                 if((fp & 3) || (fp < 0x8c000000) || (fp > _arch_mem_top))
                     break;
@@ -189,7 +189,6 @@ static void irq_dump_regs(int code, irq_t evt) {
                 dbglog(DBG_DEAD, " %08lx", fp);
                 fp = arch_fptr_next(fp);
             }
-#endif
         }
 
         dbglog(DBG_DEAD, "\n");

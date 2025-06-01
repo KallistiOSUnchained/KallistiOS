@@ -14,6 +14,7 @@
 #include <dc/maple.h>
 #include <dc/asic.h>
 #include <dc/pvr.h>
+#include <kos/dbglog.h>
 #include <kos/thread.h>
 
 /*********************************************************************/
@@ -48,10 +49,11 @@ static void vbl_chk_disconnect(maple_state_t *state, int p, int u) {
     (void)state;
 
     if(maple_dev_valid(p, u)) {
-#if MAPLE_IRQ_DEBUG
-        dbglog(DBG_KDEBUG, "maple: detach on device %c%c\n",
-               'A' + p, '0' + u);
-#endif
+        if(__is_defined(MAPLE_IRQ_DEBUG)) {
+            dbglog(DBG_KDEBUG, "maple: detach on device %c%c\n",
+                   'A' + p, '0' + u);
+        }
+
         if(maple_driver_detach(p, u) >= 0) {
             assert(!maple_dev_valid(p, u));
         }
@@ -150,10 +152,11 @@ static void vbl_autodet_callback(maple_state_t *state, maple_frame_t *frm) {
     else if(resp->response == MAPLE_RESPONSE_DEVINFO) {
         /* Device is present, check for connections */
         if(!dev) {
-#if MAPLE_IRQ_DEBUG
-            dbglog(DBG_KDEBUG, "maple: attach on device %c%c\n",
-                   'A' + p, '0' + u);
-#endif
+            if(__is_defined(MAPLE_IRQ_DEBUG)) {
+                dbglog(DBG_KDEBUG, "maple: attach on device %c%c\n",
+                       'A' + p, '0' + u);
+            }
+
             if(maple_driver_attach(frm) == 0) {
                 assert(maple_dev_valid(p, u));
             }
@@ -253,9 +256,10 @@ void maple_dma_irq_hnd(uint32 code, void *data) {
     /* ACK the receipt */
     state->dma_in_progress = 0;
 
-#if MAPLE_DMA_DEBUG
-    maple_sentinel_verify("state->dma_buffer", state->dma_buffer, MAPLE_DMA_SIZE);
-#endif
+    if(__is_defined(MAPLE_DMA_DEBUG)) {
+        maple_sentinel_verify("state->dma_buffer", state->dma_buffer,
+                              MAPLE_DMA_SIZE);
+    }
 
     /* For each queued frame, call its callback if it's done */
     TAILQ_FOREACH_SAFE(i, &state->frame_queue, frameq, tmp) {
@@ -272,9 +276,8 @@ void maple_dma_irq_hnd(uint32 code, void *data) {
             continue;
         }
 
-#if MAPLE_DMA_DEBUG
-        maple_sentinel_verify("i->recv_buf", i->recv_buf, 1024);
-#endif
+        if(__is_defined(MAPLE_DMA_DEBUG))
+            maple_sentinel_verify("i->recv_buf", i->recv_buf, 1024);
 
         /* Mark it as responded to */
         i->state = MAPLE_FRAME_RESPONDED;

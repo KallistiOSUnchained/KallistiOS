@@ -118,4 +118,5 @@ void perf_monitor_print(FILE *f);
 /** @} */
 
 __END_DECLS
+
 #endif /* __KOS_PERF_MONITOR_H */

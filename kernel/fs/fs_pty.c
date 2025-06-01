@@ -28,14 +28,18 @@ or space present.
 #include <kos/mutex.h>
 #include <kos/cond.h>
 #include <kos/fs_pty.h>
-#include <sys/queue.h>
+
+#include <arch/types.h>
 
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <assert.h>
 #include <errno.h>
+
 #include <sys/ioctl.h>
+#include <sys/queue.h>
 
 /* pty buffer size */
 #define PTY_BUFFER_SIZE 1024

@@ -263,9 +263,9 @@
                     `major.minor.patch`
 */
 #define KOS_VERSION_MAKE_STRING(major, minor, patch) \
-    KOS_STRINGIFY(major) "." \
-    KOS_STRINGIFY(minor) "." \
-    KOS_STRINGIFY(patch)
+    __stringify(major) "." \
+    __stringify(minor) "." \
+    __stringify(patch)
 /** @} */
 
 /** \name  Version Checking
@@ -380,10 +380,6 @@
 #define KOS_VERSION_MAKE_BELOW(major, minor, patch, version) \
     (KOS_VERSION_MAKE_COMPARISON(major, minor, patch, >, version))
 /** @} */
-
-/** \cond INTERNAL */
-#define KOS_STRINGIFY(str) #str
-/** \endcond */
 
 /** @} */
 

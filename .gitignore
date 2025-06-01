@@ -10,9 +10,10 @@
 .*.swp
 .DS_Store
 .vscode/
-doc/reference/
 environ.sh
 romdisk.img
+/doc/reference/
+/ports/
 kernel/stubs/*.c
 kernel/exports/kernel_exports.c
 kernel/arch/dreamcast/kernel/arch_exports.c
@@ -34,7 +35,6 @@ utils/scramble/scramble
 utils/makeip/makeip
 utils/naomibintool/naomibintool
 utils/naominetboot/naominetboot
-utils/mkdcdisc/mkdcdisc
 examples/dreamcast/basic/exec/romdisk/sub.bin
 examples/dreamcast/kgl/basic/vq/fruit.vq
 examples/dreamcast/kgl/nehe/nehe26/data/txt2bin
@@ -48,12 +48,10 @@ examples/dreamcast/pvr/bumpmap/romdisk/bumpmap.raw
 examples/dreamcast/pvr/modifier_volume_tex/romdisk/fruit.kmg
 examples/dreamcast/pvr/texture_render/texture_render.bin
 examples/dreamcast/video/screenshot/screenshot*.ppm
-examples/dreamcast/*/nehe/nehe26/romdisk/*.bin
 examples/dreamcast/library/exports.c
 examples/dreamcast/library/exports_stubs.c
 examples/dreamcast/library/*/exports.c
 examples/dreamcast/library/*/exports_stubs.c
-examples/dreamcast/*/nehe/nehe26/romdisk/*.bin
 utils/dc-chain/logs
 utils/dc-chain/*.tar.bz2
 utils/dc-chain/*.tar.gz
@@ -62,4 +60,3 @@ utils/dc-chain/gcc-*
 utils/dc-chain/newlib-*
 utils/dc-chain/gdb-*
 utils/dc-chain/insight-*
-utils/mkdcdisc/mkdcdisc

@@ -609,7 +609,6 @@ void maple_gun_disable(void);
 */
 void maple_gun_read_pos(int *x, int *y);
 
-#if MAPLE_DMA_DEBUG
 /* Debugging help */
 
 /** \brief   Setup a sentinel for debugging DMA issues.
@@ -628,7 +627,6 @@ void maple_sentinel_setup(void * buffer, int bufsize);
     \param  bufsize         The size of the buffer.
 */
 void maple_sentinel_verify(const char * bufname, void * buffer, int bufsize);
-#endif
 
 /**************************************************************************/
 /* maple_queue.c */

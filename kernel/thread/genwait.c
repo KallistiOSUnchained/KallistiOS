@@ -16,10 +16,12 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <stdint.h>
 #include <assert.h>
 #include <errno.h>
 
 #include <arch/timer.h>
+#include <kos/dbglog.h>
 #include <kos/genwait.h>
 #include <kos/sem.h>
 
@@ -28,7 +30,7 @@
    on to something. :) */
 #define TABLESIZE   128
 static TAILQ_HEAD(slpquehead, kthread) slpque[TABLESIZE];
-#define LOOKUP(x)   (((ptr_t)(x) >> 8) & (TABLESIZE - 1))
+#define LOOKUP(x)   (((uintptr_t)(x) >> 8) & (TABLESIZE - 1))
 
 /* Timed event queue. Anything that isn't ready to run yet, but will be
    ready to run at a later time will be placed here. Note that this doesn't
@@ -218,7 +220,7 @@ int genwait_wake_thd(void *obj, kthread_t *thd, int err) {
     return 0;
 }
 
-void genwait_check_timeouts(uint64 tm) {
+void genwait_check_timeouts(uint64_t tm) {
     kthread_t   *t;
 
     t = tq_next();
@@ -245,7 +247,7 @@ void genwait_check_timeouts(uint64 tm) {
     }
 }
 
-uint64 genwait_next_timeout(void) {
+uint64_t genwait_next_timeout(void) {
     kthread_t * t;
 
     t = tq_next();

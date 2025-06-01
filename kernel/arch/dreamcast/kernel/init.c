@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <kos/dbgio.h>
+#include <kos/dbglog.h>
 #include <kos/init.h>
 #include <kos/platform.h>
 #include <arch/arch.h>
@@ -260,12 +261,15 @@ void  __weak arch_auto_shutdown(void) {
 
     KOS_INIT_FLAG_CALL(fs_ramdisk_shutdown);
     KOS_INIT_FLAG_CALL(fs_romdisk_shutdown);
-    KOS_INIT_FLAG_CALL(fs_pty_shutdown);
     KOS_INIT_FLAG_CALL(fs_null_shutdown);
     KOS_INIT_FLAG_CALL(fs_dev_shutdown);
 
+    /* As a workaround, shut down the base FS before fs_pty
+       to avoid triggering bugs. */
     if(__kos_init_flags & INIT_FS_ALL)
         fs_shutdown();
+
+    KOS_INIT_FLAG_CALL(fs_pty_shutdown);
 
     thd_shutdown();
     rtc_shutdown();

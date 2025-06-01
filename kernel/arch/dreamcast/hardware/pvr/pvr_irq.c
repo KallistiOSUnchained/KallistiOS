@@ -14,9 +14,7 @@
 #include <kos/genwait.h>
 #include <kos/regfield.h>
 
-#ifdef PVR_RENDER_DBG
 #include <stdio.h>
-#endif
 
 /*
    PVR interrupt handler; the way things are setup, we're gonna get
@@ -176,34 +174,34 @@ void pvr_int_handler(uint32 code, void *data) {
             break;
     }
 
-#ifdef PVR_RENDER_DBG
-    /* Show register values on each interrupt */
-    switch (code) {
-        case ASIC_EVT_PVR_ISP_OUTOFMEM:
-            DBG(("[ERROR]: ASIC_EVT_PVR_ISP_OUTOFMEM\n"));
-            break;
+    if(__is_defined(PVR_RENDER_DBG)) {
+        /* Show register values on each interrupt */
+        switch (code) {
+            case ASIC_EVT_PVR_ISP_OUTOFMEM:
+                DBG(("[ERROR]: ASIC_EVT_PVR_ISP_OUTOFMEM\n"));
+                break;
 
-        case ASIC_EVT_PVR_STRIP_HALT:
-            DBG(("[ERROR]: ASIC_EVT_PVR_STRIP_HALT\n"));
-            break;
+            case ASIC_EVT_PVR_STRIP_HALT:
+                DBG(("[ERROR]: ASIC_EVT_PVR_STRIP_HALT\n"));
+                break;
 
-        case ASIC_EVT_PVR_OPB_OUTOFMEM:
-            DBG(("[ERROR]: ASIC_EVT_PVR_OPB_OUTOFMEM\n"));
-            DBG(("PVR_TA_OPB_START: %08lx\nPVR_TA_OPB_END: %08lx\nPVR_TA_OPB_POS: %08lx\n",
-                PVR_GET(PVR_TA_OPB_START),
-                PVR_GET(PVR_TA_OPB_END),
-                PVR_GET(PVR_TA_OPB_POS) << 2));
-            break;
+            case ASIC_EVT_PVR_OPB_OUTOFMEM:
+                DBG(("[ERROR]: ASIC_EVT_PVR_OPB_OUTOFMEM\n"));
+                DBG(("PVR_TA_OPB_START: %08lx\nPVR_TA_OPB_END: %08lx\nPVR_TA_OPB_POS: %08lx\n",
+                    PVR_GET(PVR_TA_OPB_START),
+                    PVR_GET(PVR_TA_OPB_END),
+                    PVR_GET(PVR_TA_OPB_POS) << 2));
+                break;
 
-        case ASIC_EVT_PVR_TA_INPUT_ERR:
-            DBG(("[ERROR]: ASIC_EVT_PVR_TA_INPUT_ERR\n"));
-            break;
+            case ASIC_EVT_PVR_TA_INPUT_ERR:
+                DBG(("[ERROR]: ASIC_EVT_PVR_TA_INPUT_ERR\n"));
+                break;
 
-        case ASIC_EVT_PVR_TA_INPUT_OVERFLOW:
-            DBG(("[ERROR]: ASIC_EVT_PVR_TA_INPUT_OVERFLOW\n"));
-            break;
+            case ASIC_EVT_PVR_TA_INPUT_OVERFLOW:
+                DBG(("[ERROR]: ASIC_EVT_PVR_TA_INPUT_OVERFLOW\n"));
+                break;
+        }
     }
-#endif
 
     /* Update our stats if we finished all registration */
     switch(code) {

@@ -10,6 +10,7 @@
 #include <string.h>
 #include <arch/memory.h>
 #include <dc/maple.h>
+#include <kos/dbglog.h>
 
 /* Enable / Disable the bus */
 void maple_bus_enable(void) {
@@ -166,9 +167,9 @@ void maple_gun_read_pos(int *x, int *y) {
     *y = maple_state.gun_y;
 }
 
-#if MAPLE_DMA_DEBUG
 /* Debugging help */
 void maple_sentinel_setup(void * buffer, int bufsize) {
+    assert(__is_defined(MAPLE_DMA_DEBUG));
     assert(bufsize % 4 == 0);
     memset(buffer, 0xdeadbeef, bufsize);
 }
@@ -177,6 +178,7 @@ void maple_sentinel_verify(const char * bufname, void * buffer, int bufsize) {
     int i;
     uint32 *b32;
 
+    assert(__is_defined(MAPLE_DMA_DEBUG));
     assert(bufsize % 4 == 0);
 
     b32 = ((uint32 *)buffer) - 512 / 4;
@@ -199,4 +201,3 @@ void maple_sentinel_verify(const char * bufname, void * buffer, int bufsize) {
         }
     }
 }
-#endif

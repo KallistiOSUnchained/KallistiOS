@@ -95,6 +95,16 @@ sci_spi_read_data
 sci_spi_dma_write_data
 sci_spi_dma_read_data
 
+# SD Card
+sd_init
+sd_init_ex
+sd_shutdown
+sd_read_blocks
+sd_write_blocks
+sd_get_size
+sd_blockdev_for_partition
+sd_blockdev_for_device
+
 # Timers
 timer_prime
 timer_start
@@ -141,8 +151,22 @@ bfont_draw_dc_icon
 
 # CD-Rom
 cdrom_reinit
+cdrom_reinit_ex
+cdrom_set_sector_size
+cdrom_change_datatype
+cdrom_exec_cmd
+cdrom_exec_cmd_timed
+cdrom_abort_cmd
+cdrom_get_status
+cdrom_get_subcode
 cdrom_read_toc
 cdrom_read_sectors
+cdrom_read_sectors_ex
+cdrom_stream_start
+cdrom_stream_stop
+cdrom_stream_request
+cdrom_stream_progress
+cdrom_stream_set_callback
 cdrom_locate_data_track
 cdrom_cdda_play
 cdrom_cdda_pause
@@ -225,7 +249,6 @@ snd_stream_pan
 snd_stream_alloc
 snd_stream_destroy
 snd_stream_reinit
-snd_stream_prefill
 snd_pcm16_split
 snd_pcm16_split_sq
 snd_pcm8_split

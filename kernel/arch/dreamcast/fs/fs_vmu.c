@@ -6,6 +6,7 @@
 
 */
 
+#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -14,6 +15,7 @@
 
 #include <arch/types.h>
 #include <kos/mutex.h>
+#include <kos/dbglog.h>
 #include <dc/fs_vmu.h>
 #include <dc/vmufs.h>
 #include <dc/maple.h>
@@ -164,16 +166,17 @@ static vmu_fh_t *vmu_open_vmu_dir(void) {
                 names[num][0] = p + 'a';
                 names[num][1] = u + '0';
                 num++;
-#ifdef VMUFS_DEBUG
-                dbglog(DBG_KDEBUG, "vmu_open_vmu_dir: found memcard (%c%d)\n", 'a' + p, u);
-#endif
+
+                if(__is_defined(VMUFS_DEBUG)) {
+                    dbglog(DBG_KDEBUG, "vmu_open_vmu_dir: found memcard (%c%d)\n",
+                           'a' + p, u);
+                }
             }
         }
     }
 
-#ifdef VMUFS_DEBUG
-    dbglog(DBG_KDEBUG, "# of memcards found: %d\n", num);
-#endif
+    if(__is_defined(VMUFS_DEBUG))
+        dbglog(DBG_KDEBUG, "# of memcards found: %d\n", num);
 
     if(!(dh = malloc(sizeof(vmu_dh_t))))
         return NULL;
@@ -498,9 +501,8 @@ static ssize_t vmu_write(void * hnd, const void *buffer, size_t cnt) {
 
         n = n / 512;
 
-#ifdef VMUFS_DEBUG
-        dbglog(DBG_KDEBUG, "VMUFS: extending file's filesize by %d\n", n);
-#endif
+        if(__is_defined(VMUFS_DEBUG))
+            dbglog(DBG_KDEBUG, "VMUFS: extending file's filesize by %d\n", n);
 
         /* We alloc another 512*n bytes for the file */
         tmp = realloc(fh->data, (fh->filesize + n) * 512);
@@ -517,10 +519,11 @@ static ssize_t vmu_write(void * hnd, const void *buffer, size_t cnt) {
     }
 
     /* insert the data in buffer into fh->data at fh->loc */
-#ifdef VMUFS_DEBUG
-    dbglog(DBG_KDEBUG, "VMUFS: adding %d bytes of data at loc %d (%d avail)\n",
-           cnt, fh->loc, fh->filesize * 512);
-#endif
+    if(__is_defined(VMUFS_DEBUG)) {
+        dbglog(DBG_KDEBUG, "VMUFS: adding %d bytes of data at loc %ld (%ld avail)\n",
+               cnt, fh->loc, fh->filesize * 512);
+    }
+
     memcpy(fh->data + fh->loc + fh->start, buffer, cnt);
     fh->loc += cnt;
 
@@ -729,7 +732,7 @@ static int vmu_stat(vfs_handler_t *vfs, const char *path, struct stat *st,
 
     /* Get the number of free blocks */
     memset(st, 0, sizeof(struct stat));
-    st->st_dev = (dev_t)((ptr_t)dev);
+    st->st_dev = (dev_t)((uintptr_t)dev);
     st->st_mode = S_IFDIR | S_IRUSR | S_IXUSR | S_IRGRP | 
         S_IXGRP | S_IROTH | S_IXOTH;
     st->st_size = vmufs_free_blocks(dev);
@@ -806,7 +809,7 @@ static int vmu_fstat(void *fd, struct stat *st) {
 
     fh = (vmu_fh_t *)fd;
     memset(st, 0, sizeof(struct stat));
-    st->st_dev = (dev_t)((ptr_t)fh->dev);
+    st->st_dev = (dev_t)((uintptr_t)fh->dev);
     st->st_mode =  S_IRWXU | S_IRWXG | S_IRWXO;
     st->st_mode |= (fh->strtype == VMU_DIR) ? S_IFDIR : S_IFREG;
     st->st_size = (fh->strtype == VMU_DIR) ? 

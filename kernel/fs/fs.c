@@ -39,6 +39,7 @@ something like this:
 #include <kos/mutex.h>
 #include <kos/nmmgr.h>
 #include <kos/dbgio.h>
+#include <kos/dbglog.h>
 
 /* File handle structure; this is an entirely internal structure so it does
    not go in a header file. */
@@ -339,10 +340,6 @@ int fs_close(file_t fd) {
 
     /* Deref it and remove it from our table */
     retval = fs_hnd_unref(h);
-
-    /* Reset our position */
-    if(h->refcnt == 0)
-        h->idx = 0;
 
     fd_table[fd] = NULL;
     return retval ? -1 : 0;

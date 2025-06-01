@@ -1,13 +1,13 @@
 /* KallistiOS ##version##
 
-   arch/dreamcast/include/irq.h
+   arch/dreamcast/include/arch/irq.h
    Copyright (C) 2000-2001 Megan Potter
    Copyright (C) 2024 Paul Cercueil
    Copyright (C) 2024 Falco Girgis
 
 */
 
-/** \file
+/** \file    arch/irq.h
     \brief   Interrupt and exception handling.
     \ingroup irqs
 
@@ -31,8 +31,6 @@
 #include <stdint.h>
 #include <sys/cdefs.h>
 __BEGIN_DECLS
-
-#include <arch/types.h>
 
 /** \defgroup irqs  Interrupts
     \brief          IRQs and ISRs for the SH4's CPU
@@ -59,7 +57,7 @@ __BEGIN_DECLS
     @{
 */
 
-/** \defgroup context Context
+/** \defgroup irq_context Context
     \brief Thread execution state and accessors
 
     This API includes the structure and accessors for a
@@ -435,14 +433,14 @@ typedef struct irq_cb {
 */
 
 /** Set or remove an IRQ handler.
-    
+
     Passing a NULL value for hnd will remove the current handler, if any.
 
     \param  code            The IRQ type to set the handler for
-                            (see \ref irq_t).
+                            (see #irq_t).
     \param  hnd             A pointer to a procedure to handle the exception.
     \param  data            A pointer that will be passed along to the callback.
-    
+
     \retval 0               On success.
     \retval -1              If the code is invalid.
 
@@ -512,12 +510,12 @@ int irq_init(void);
 */
 void irq_shutdown(void);
 
-static inline void __irq_scoped_cleanup(int *state) {
+static inline void __irq_scoped_cleanup(irq_mask_t *state) {
     irq_restore(*state);
 }
 
 #define ___irq_disable_scoped(l) \
-    int __scoped_irq_##l __attribute__((cleanup(__irq_scoped_cleanup))) = irq_disable()
+    irq_mask_t __scoped_irq_##l __attribute__((cleanup(__irq_scoped_cleanup))) = irq_disable()
 
 #define __irq_disable_scoped(l) ___irq_disable_scoped(l)
 /** \endcond */

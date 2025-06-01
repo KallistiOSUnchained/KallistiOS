@@ -77,6 +77,16 @@ sci_spi_read_data
 sci_spi_dma_write_data
 sci_spi_dma_read_data
 
+# SD Card
+sd_init
+sd_init_ex
+sd_shutdown
+sd_read_blocks
+sd_write_blocks
+sd_get_size
+sd_blockdev_for_partition
+sd_blockdev_for_device
+
 # Timers
 timer_prime
 timer_start
@@ -164,7 +174,6 @@ snd_stream_pan
 snd_stream_alloc
 snd_stream_destroy
 snd_stream_reinit
-snd_stream_prefill
 snd_pcm16_split
 snd_pcm16_split_sq
 snd_pcm8_split
