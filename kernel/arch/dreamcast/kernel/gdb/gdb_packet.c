@@ -8,6 +8,19 @@
 
 */
 
+/*
+   Implements the core transport layer of the GDB remote serial protocol.
+
+   This file handles the low-level I/O for reading and writing GDB packets, including
+   checksum validation, optional run-length encoding, and DCLoad/SCIF backend switching.
+
+   Supported features:
+    - Full GDB packet parsing with checksum validation
+    - Run-length encoding for packet compression
+    - Optional no-acknowledgement mode (`QStartNoAckMode`)
+    - Dual transport support: SCIF or DCLoad (detected automatically)
+*/
+
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -16,16 +29,81 @@
 
 #include "gdb_internal.h"
 
-bool using_dcl = false;
-char remcom_out_buffer[BUFMAX];
-
+static bool using_dcl = false;
+static bool no_ack_mode = false;
+static bool error_messages = false;
 static char in_dcl_buf[BUFMAX];
 static char out_dcl_buf[BUFMAX];
 static uint32_t in_dcl_pos = 0;
 static uint32_t out_dcl_pos = 0;
 static uint32_t in_dcl_size = 0;
 static char remcom_in_buffer[BUFMAX];
+static char remcom_out_buffer[BUFMAX];
 
+/* Returns a pointer to the GDB output buffer. */
+char *gdb_get_out_buffer(void) {
+    return remcom_out_buffer;
+}
+
+/* Clears the GDB output buffer by setting the first byte to null. */
+void gdb_clear_out_buffer(void) {
+    remcom_out_buffer[0] = '\0';
+}
+
+/* Writes an "OK" response to the GDB output buffer. */
+void gdb_put_ok(void) {
+    strcpy(remcom_out_buffer, GDB_OK);
+}
+
+/* Writes a custom string response to the GDB output buffer. */
+void gdb_put_str(const char *msg) {
+    strcpy(remcom_out_buffer, msg);
+}
+
+/* Enable or disable DCL (dc-load) I/O mode. */
+void set_dcl_mode_enabled(bool enabled) {
+    using_dcl = enabled;
+}
+
+/* Enable or disable support for textual GDB error messages (E.msg). */
+void set_error_messages_enabled(bool enabled) {
+    error_messages = enabled;
+}
+
+/* Enable or disable no-acknowledgment mode for GDB remote protocol. */
+void set_no_ack_mode_enabled(bool enabled) {
+    no_ack_mode = enabled;
+}
+
+/*
+   Sends an error message as a human-readable console message (via GDB 'E.msg' packet)
+   or a machine-readable error code (e.g. `E01`, `E02`, etc.).
+*/
+void gdb_error_with_code_str(const char *errcode, const char *msg_fmt, ...) {
+    char msg[BUFMAX];
+    va_list args;
+
+    /* Format the human-readable message */
+    va_start(args, msg_fmt);
+    vsnprintf(msg, sizeof(msg), msg_fmt, args);
+    va_end(args);
+
+    if(error_messages) {
+        /* GDB supports error text: send E.msg */
+        snprintf(remcom_out_buffer, BUFMAX, "E.%s", msg);
+    }
+    else {
+        /* Fallback to E##: return 2-digit numeric code */
+        strncpy(remcom_out_buffer, errcode, BUFMAX - 1);
+        remcom_out_buffer[BUFMAX - 1] = '\0';
+    }
+}
+
+/*
+   Reads one byte from the debug channel.
+   Uses DCLoad or SCIF depending on context.
+   Blocks until data is available.
+*/
 static char get_debug_char(void) {
     int ch;
 
@@ -47,6 +125,10 @@ static char get_debug_char(void) {
     return ch;
 }
 
+/*
+   Sends a single character over the debug channel.
+   Buffered when using DCLoad; flushed immediately on SCIF.
+*/
 static void put_debug_char(char ch) {
     if(using_dcl) {
         out_dcl_buf[out_dcl_pos++] = ch;
@@ -63,6 +145,10 @@ static void put_debug_char(char ch) {
     }
 }
 
+/*
+   Flushes the output buffer to the host.
+   With DCLoad, handles combined input/output exchange if needed.
+*/
 static void flush_debug_channel(void) {
     /* send the current complete packet and wait for a response */
     if(using_dcl) {
@@ -77,37 +163,20 @@ static void flush_debug_channel(void) {
     }
 }
 
-/* Build ASCII error message packet. */
-void build_error_packet(const char *format, ...) {
-    char *response_ptr = remcom_out_buffer;
-    va_list args;
-
-    /* Construct the error response in the E.errtext format */
-    *response_ptr++ = 'E';
-    *response_ptr++ = '.';
-
-    va_start(args, format);
-    vsnprintf(response_ptr, BUFMAX-3, format, args);
-    va_end(args);
-
-    /* Null terminated error message is now store in remcom_out_buffer */
-}
-
 /*
- * Routines to get and put packets
- */
-
-/* scan for the sequence $<data>#<checksum>     */
-
+   Reads a full GDB packet from the debug channel.
+   Format: $<data>#<checksum>
+   Automatically verifies checksum and handles acknowledgement.
+*/
 unsigned char *get_packet(void) {
-    unsigned char *buffer = (unsigned char *)(&remcom_in_buffer[0]);
+    unsigned char *buffer = (unsigned char *)remcom_in_buffer;
     unsigned char checksum;
     unsigned char xmitcsum;
     int count;
     char ch;
 
     while(true) {
-        /* wait around for the start character, ignore all other characters */
+        /* Wait around for the start character, ignore all other characters */
         while((ch = get_debug_char()) != '$')
             ;
 
@@ -116,7 +185,7 @@ unsigned char *get_packet(void) {
         xmitcsum = -1;
         count = 0;
 
-        /* now, read until a # or end of buffer is found */
+        /* Now, read until a # or end of buffer is found */
         while(count < (BUFMAX-1)) {
             ch = get_debug_char();
 
@@ -140,18 +209,14 @@ unsigned char *get_packet(void) {
             xmitcsum += hex(ch);
 
             if(checksum != xmitcsum) {
-                put_debug_char('-');    /* failed checksum */
+                if(!no_ack_mode) put_debug_char('-');
             }
             else {
-                put_debug_char('+');    /* successful transfer */
+                if(!no_ack_mode) put_debug_char('+');
 
-//        printf("get_packet() -> %s\n", buffer);
-
-                /* if a sequence char is present, reply the sequence ID */
                 if(buffer[2] == ':') {
                     put_debug_char(buffer[0]);
                     put_debug_char(buffer[1]);
-
                     return &buffer[3];
                 }
 
@@ -161,8 +226,11 @@ unsigned char *get_packet(void) {
     }
 }
 
-
-/* send the packet in buffer. */
+/*
+   Sends a GDB response packet using optional run-length encoding.
+   Format: $<data>#<checksum>
+   Retransmits until the host sends an ACK (unless no-ack mode is active).
+*/
 void put_packet(const char *buffer) {
     int check_sum;
 
@@ -204,5 +272,12 @@ void put_packet(const char *buffer) {
         put_debug_char(highhex(check_sum));
         put_debug_char(lowhex(check_sum));
         flush_debug_channel();
+
+        if(no_ack_mode)
+            break;
     } while(get_debug_char() != '+');
+}
+
+void put_out_buffer_packet(void) {
+    put_packet(remcom_out_buffer);
 }
