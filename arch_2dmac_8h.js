@@ -39,9 +39,11 @@ var arch_2dmac_8h =
       [ "DMA_UNITSIZE_32BIT", "group__dmac.html#ggacc9150b6128d03f1777451b40c0eb37aabcce3ceeef8d68e202557620f532e1ca", null ],
       [ "DMA_UNITSIZE_32BYTE", "group__dmac.html#ggacc9150b6128d03f1777451b40c0eb37aa0708e39dd9c49b8d94418111ded1f8bd", null ]
     ] ],
+    [ "dma_is_running", "group__dmac.html#gae213e2e33c9c12055e373f72849cdc06", null ],
     [ "dma_map_dst", "group__dmac.html#gad2d6454612f142e144819b43f9bb0b9c", null ],
     [ "dma_map_src", "group__dmac.html#gae303a679c295f57bb8c1cf5d3f08202d", null ],
     [ "dma_transfer", "group__dmac.html#ga2bfb66fe25dda48790249bec79a09ff9", null ],
+    [ "dma_transfer_abort", "group__dmac.html#ga23a206653fccfe176bf748996cbb3788", null ],
     [ "dma_transfer_get_remaining", "group__dmac.html#ga2e3b66e604184b669329184bb9330e5d", null ],
     [ "dma_wait_complete", "group__dmac.html#ga74b72d4f32375bfc204a1d1913da362f", null ],
     [ "hw_to_dma_addr", "group__dmac.html#ga382463b1d037cf72d0732a0895712ba0", null ]

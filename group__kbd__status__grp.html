@@ -114,8 +114,8 @@ $(function(){initNavTree('group__kbd__status__grp.html',''); initResizable(true)
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__states.html">Key States</a></td></tr>
-<tr class="memdesc:group__key__states"><td class="mdescLeft">&#160;</td><td class="mdescRight">States each key can be in. <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__grp.html">Key States</a></td></tr>
+<tr class="memdesc:group__key__state__grp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types associated with key states <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__leds__grp.html">LEDs</a></td></tr>
 <tr class="memdesc:group__kbd__leds__grp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types associated with keyboard LEDs <br /></td></tr>
@@ -135,9 +135,9 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga315533334be61b9c05c9d8139585b073" id="r_ga315533334be61b9c05c9d8139585b073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga315533334be61b9c05c9d8139585b073">MAX_PRESSED_KEYS</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:ga315533334be61b9c05c9d8139585b073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of keys the DC can read simultaneously.  <br /></td></tr>
-<tr class="separator:ga315533334be61b9c05c9d8139585b073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga138cd276c3adaa3f328fcb4e6455fffe" id="r_ga138cd276c3adaa3f328fcb4e6455fffe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga138cd276c3adaa3f328fcb4e6455fffe">KBD_MAX_PRESSED_KEYS</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memdesc:ga138cd276c3adaa3f328fcb4e6455fffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of keys the DC can read simultaneously.  <br /></td></tr>
+<tr class="separator:ga138cd276c3adaa3f328fcb4e6455fffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8fe2decf5efd2287da1ef40d1a8b4ff6" id="r_ga8fe2decf5efd2287da1ef40d1a8b4ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8fe2decf5efd2287da1ef40d1a8b4ff6">KBD_MAX_KEYS</a>&#160;&#160;&#160;256</td></tr>
 <tr class="memdesc:ga8fe2decf5efd2287da1ef40d1a8b4ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of keys a DC keyboard can have.  <br /></td></tr>
 <tr class="separator:ga8fe2decf5efd2287da1ef40d1a8b4ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,6 +171,8 @@ Functions</h2></td></tr>
 <tr class="memitem:ga48bea28fd7a02c3837886001da6a10ce" id="r_ga48bea28fd7a02c3837886001da6a10ce"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga48bea28fd7a02c3837886001da6a10ce">kbd_key_to_ascii</a> (<a class="el" href="#gad520921c3a8e9611b449b92c52472115">kbd_key_t</a> key, <a class="el" href="#ga0e5881b4080afc9e7e5ed0040d1147ca">kbd_region_t</a> region, <a class="el" href="unionkbd__mods__t.html">kbd_mods_t</a> mods, <a class="el" href="unionkbd__leds__t.html">kbd_leds_t</a> leds)</td></tr>
 <tr class="memdesc:ga48bea28fd7a02c3837886001da6a10ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a kbd_key_t value into its corresponding ASCII value.  <br /></td></tr>
 <tr class="separator:ga48bea28fd7a02c3837886001da6a10ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8a2cd62a6748391d5fb02accdd6e17c" id="r_gad8a2cd62a6748391d5fb02accdd6e17c"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad8a2cd62a6748391d5fb02accdd6e17c">MAX_PRESSED_KEYS</a> (&quot;Please use KBD_MAX_PRESSED_KEYS.&quot;)</td></tr>
+<tr class="separator:gad8a2cd62a6748391d5fb02accdd6e17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga117480e5addbbbfb561504ea031e7ff2" id="r_ga117480e5addbbbfb561504ea031e7ff2"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga117480e5addbbbfb561504ea031e7ff2">MAX_KBD_KEYS</a> (&quot;Please use KBD_MAX_KEYS.&quot;)</td></tr>
 <tr class="separator:ga117480e5addbbbfb561504ea031e7ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -201,14 +203,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga315533334be61b9c05c9d8139585b073" name="ga315533334be61b9c05c9d8139585b073"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga315533334be61b9c05c9d8139585b073">&#9670;&#160;</a></span>MAX_PRESSED_KEYS</h2>
+<a id="ga138cd276c3adaa3f328fcb4e6455fffe" name="ga138cd276c3adaa3f328fcb4e6455fffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga138cd276c3adaa3f328fcb4e6455fffe">&#9670;&#160;</a></span>KBD_MAX_PRESSED_KEYS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_PRESSED_KEYS&#160;&#160;&#160;6</td>
+          <td class="memname">#define KBD_MAX_PRESSED_KEYS&#160;&#160;&#160;6</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -343,6 +345,31 @@ Variables</h2></td></tr>
           <td class="memname">static const int MAX_KBD_KEYS </td>
           <td>(</td>
           <td class="paramtype">&quot;Please use KBD_MAX_KEYS.&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad8a2cd62a6748391d5fb02accdd6e17c" name="gad8a2cd62a6748391d5fb02accdd6e17c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad8a2cd62a6748391d5fb02accdd6e17c">&#9670;&#160;</a></span>MAX_PRESSED_KEYS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const int MAX_PRESSED_KEYS </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Please use KBD_MAX_PRESSED_KEYS.&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

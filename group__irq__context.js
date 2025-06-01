@@ -1,4 +1,4 @@
-var group__context =
+var group__irq__context =
 [
     [ "irq_context_t", "structirq__context__t.html", [
       [ "fpscr", "structirq__context__t.html#ab20d813cdace654bfe0694952bce1d8b", null ],
@@ -14,12 +14,12 @@ var group__context =
       [ "sr", "structirq__context__t.html#a8680f10065fd09f2bd3b4983ce2d7fd6", null ],
       [ "vbr", "structirq__context__t.html#ac9ac58a8feb68d2897ba915063a29a4a", null ]
     ] ],
-    [ "CONTEXT_FP", "group__context.html#ga4a9b02d1e139051c1d7f978912872b46", null ],
-    [ "CONTEXT_PC", "group__context.html#ga62f54d1ce2ace31322d2dd8c26cdfa07", null ],
-    [ "CONTEXT_RET", "group__context.html#ga16d29f3d30bf9fd6f6dea954b831fca3", null ],
-    [ "CONTEXT_SP", "group__context.html#gac041ebe60b5b5dad72971662f7c3943f", null ],
-    [ "REG_BYTE_CNT", "group__context.html#ga8128c0fcb2cdfb2584f264a7c96f27bc", null ],
-    [ "irq_create_context", "group__context.html#ga599a72078489e03f8c35b869074e26b3", null ],
-    [ "irq_get_context", "group__context.html#ga02856bd8678dd7b4390711c8c4fa9734", null ],
-    [ "irq_set_context", "group__context.html#ga91de37af52af16e8a325fefd3f58bf2c", null ]
+    [ "CONTEXT_FP", "group__irq__context.html#ga4a9b02d1e139051c1d7f978912872b46", null ],
+    [ "CONTEXT_PC", "group__irq__context.html#ga62f54d1ce2ace31322d2dd8c26cdfa07", null ],
+    [ "CONTEXT_RET", "group__irq__context.html#ga16d29f3d30bf9fd6f6dea954b831fca3", null ],
+    [ "CONTEXT_SP", "group__irq__context.html#gac041ebe60b5b5dad72971662f7c3943f", null ],
+    [ "REG_BYTE_CNT", "group__irq__context.html#ga8128c0fcb2cdfb2584f264a7c96f27bc", null ],
+    [ "irq_create_context", "group__irq__context.html#ga599a72078489e03f8c35b869074e26b3", null ],
+    [ "irq_get_context", "group__irq__context.html#ga02856bd8678dd7b4390711c8c4fa9734", null ],
+    [ "irq_set_context", "group__irq__context.html#ga91de37af52af16e8a325fefd3f58bf2c", null ]
 ];

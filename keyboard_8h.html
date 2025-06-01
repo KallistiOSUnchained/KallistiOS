@@ -111,7 +111,6 @@ $(function(){initNavTree('keyboard_8h.html',''); initResizable(true); });
 <p>Definitions for using the keyboard device.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="maple_8h_source.html">dc/maple.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="regfield_8h_source.html">kos/regfield.h</a>&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
@@ -126,6 +125,9 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionkbd__leds__t.html">kbd_leds_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard LEDs.  <a href="unionkbd__leds__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionkey__state__t.html">key_state_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard Key State.  <a href="unionkey__state__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkbd__cond__t.html">kbd_cond_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard raw condition structure.  <a href="structkbd__cond__t.html#details">More...</a><br /></td></tr>
@@ -193,15 +195,21 @@ Macros</h2></td></tr>
 <tr class="memitem:gab2c4222bf43c575e79161de9429a5c85" id="r_gab2c4222bf43c575e79161de9429a5c85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__led__flags.html#gab2c4222bf43c575e79161de9429a5c85">KBD_LED_SHIFT</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(7)</td></tr>
 <tr class="memdesc:gab2c4222bf43c575e79161de9429a5c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift LED.  <br /></td></tr>
 <tr class="separator:gab2c4222bf43c575e79161de9429a5c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0e916269f653fd1994c6984f46143402" id="r_ga0e916269f653fd1994c6984f46143402"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__states.html#ga0e916269f653fd1994c6984f46143402">KEY_STATE_NONE</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ga0e916269f653fd1994c6984f46143402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga53d5a6b69ad4261ef14d97de19307f2d" id="r_ga53d5a6b69ad4261ef14d97de19307f2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__states.html#ga53d5a6b69ad4261ef14d97de19307f2d">KEY_STATE_WAS_PRESSED</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:ga53d5a6b69ad4261ef14d97de19307f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4b515fe088a4844edb891e4fe3aeab9" id="r_gaa4b515fe088a4844edb891e4fe3aeab9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__states.html#gaa4b515fe088a4844edb891e4fe3aeab9">KEY_STATE_PRESSED</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:gaa4b515fe088a4844edb891e4fe3aeab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga315533334be61b9c05c9d8139585b073" id="r_ga315533334be61b9c05c9d8139585b073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html#ga315533334be61b9c05c9d8139585b073">MAX_PRESSED_KEYS</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:ga315533334be61b9c05c9d8139585b073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of keys the DC can read simultaneously.  <br /></td></tr>
-<tr class="separator:ga315533334be61b9c05c9d8139585b073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f2dfe6d092d30bff896205f753c9ea2" id="r_ga9f2dfe6d092d30bff896205f753c9ea2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__flags.html#ga9f2dfe6d092d30bff896205f753c9ea2">KEY_STATE_IS_DOWN</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(0)</td></tr>
+<tr class="memdesc:ga9f2dfe6d092d30bff896205f753c9ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">If key is currenty down.  <br /></td></tr>
+<tr class="separator:ga9f2dfe6d092d30bff896205f753c9ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66b499ffecd5252d094551ee1cb40ab8" id="r_ga66b499ffecd5252d094551ee1cb40ab8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__flags.html#ga66b499ffecd5252d094551ee1cb40ab8">KEY_STATE_WAS_DOWN</a>&#160;&#160;&#160;<a class="el" href="group__register__macros.html#ga46713ab97672a328b3b79353b4a468bf">BIT</a>(1)</td></tr>
+<tr class="memdesc:ga66b499ffecd5252d094551ee1cb40ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">If key was previously down.  <br /></td></tr>
+<tr class="separator:ga66b499ffecd5252d094551ee1cb40ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1153c682e2f45e891e499d9cd7feeee" id="r_gac1153c682e2f45e891e499d9cd7feeee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__flags.html#gac1153c682e2f45e891e499d9cd7feeee">KEY_STATE_MASK</a>&#160;&#160;&#160;(<a class="el" href="group__key__state__flags.html#ga9f2dfe6d092d30bff896205f753c9ea2">KEY_STATE_IS_DOWN</a> | <a class="el" href="group__key__state__flags.html#ga66b499ffecd5252d094551ee1cb40ab8">KEY_STATE_WAS_DOWN</a>)</td></tr>
+<tr class="memdesc:gac1153c682e2f45e891e499d9cd7feeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask of all key state flags.  <br /></td></tr>
+<tr class="separator:gac1153c682e2f45e891e499d9cd7feeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf1a7dc7a875a1effd3e4b8d9e752354" id="r_gadf1a7dc7a875a1effd3e4b8d9e752354"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(is_down,  was_down)</td></tr>
+<tr class="memdesc:gadf1a7dc7a875a1effd3e4b8d9e752354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a packed <a class="el" href="unionkey__state__t.html" title="Keyboard Key State.">key_state_t</a>.  <br /></td></tr>
+<tr class="separator:gadf1a7dc7a875a1effd3e4b8d9e752354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga138cd276c3adaa3f328fcb4e6455fffe" id="r_ga138cd276c3adaa3f328fcb4e6455fffe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html#ga138cd276c3adaa3f328fcb4e6455fffe">KBD_MAX_PRESSED_KEYS</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memdesc:ga138cd276c3adaa3f328fcb4e6455fffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of keys the DC can read simultaneously.  <br /></td></tr>
+<tr class="separator:ga138cd276c3adaa3f328fcb4e6455fffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8fe2decf5efd2287da1ef40d1a8b4ff6" id="r_ga8fe2decf5efd2287da1ef40d1a8b4ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html#ga8fe2decf5efd2287da1ef40d1a8b4ff6">KBD_MAX_KEYS</a>&#160;&#160;&#160;256</td></tr>
 <tr class="memdesc:ga8fe2decf5efd2287da1ef40d1a8b4ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of keys a DC keyboard can have.  <br /></td></tr>
 <tr class="separator:ga8fe2decf5efd2287da1ef40d1a8b4ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,8 +225,14 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gad520921c3a8e9611b449b92c52472115" id="r_gad520921c3a8e9611b449b92c52472115"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__system__attributes.html#ga0fe7dde4488278fd739041b673efa525">__packed</a> <a class="el" href="group__kbd__status__grp.html#ga6d40c26d973a4394b51977373ef00077">kbd_key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html#gad520921c3a8e9611b449b92c52472115">kbd_key_t</a></td></tr>
 <tr class="memdesc:gad520921c3a8e9611b449b92c52472115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw Keyboard Key Identifiers.  <br /></td></tr>
 <tr class="separator:gad520921c3a8e9611b449b92c52472115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61dc0517320b3d61c3e30eecdbf07a90" id="r_ga61dc0517320b3d61c3e30eecdbf07a90"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__system__attributes.html#ga0fe7dde4488278fd739041b673efa525">__packed</a> <a class="el" href="group__key__state__grp.html#gaed1bace87abe0b2a64fde511fe9c3207">key_state_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__grp.html#ga61dc0517320b3d61c3e30eecdbf07a90">key_state_value_t</a></td></tr>
+<tr class="memdesc:ga61dc0517320b3d61c3e30eecdbf07a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valid values for <a class="el" href="unionkey__state__t.html#a83af21002f0812b3847b91c8f383c8a9" title="Enum for specific state.">key_state_t::value</a>.  <br /></td></tr>
+<tr class="separator:ga61dc0517320b3d61c3e30eecdbf07a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadc3f44b9247ddc0a9596fd79424f1e04" id="r_gadc3f44b9247ddc0a9596fd79424f1e04"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html#gadc3f44b9247ddc0a9596fd79424f1e04">kbd_keymap_t</a>(&quot;Please open an issue, there should be no reason for external code to have used this.&quot;)</td></tr>
 <tr class="separator:gadc3f44b9247ddc0a9596fd79424f1e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d445604f90bb08be7a66ac555f684cd" id="r_ga8d445604f90bb08be7a66ac555f684cd"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__event__handler.html#ga8d445604f90bb08be7a66ac555f684cd">kbd_event_handler_t</a>) (<a class="el" href="structmaple__device__t.html">maple_device_t</a> *dev, <a class="el" href="group__kbd__status__grp.html#gad520921c3a8e9611b449b92c52472115">kbd_key_t</a> key, <a class="el" href="unionkey__state__t.html">key_state_t</a> state, <a class="el" href="unionkbd__mods__t.html">kbd_mods_t</a> mods, <a class="el" href="unionkbd__leds__t.html">kbd_leds_t</a> leds, void *ud)</td></tr>
+<tr class="memdesc:ga8d445604f90bb08be7a66ac555f684cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard Event Handler Callback.  <br /></td></tr>
+<tr class="separator:ga8d445604f90bb08be7a66ac555f684cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -241,11 +255,25 @@ Functions</h2></td></tr>
 <tr class="memitem:ga48bea28fd7a02c3837886001da6a10ce" id="r_ga48bea28fd7a02c3837886001da6a10ce"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html#ga48bea28fd7a02c3837886001da6a10ce">kbd_key_to_ascii</a> (<a class="el" href="group__kbd__status__grp.html#gad520921c3a8e9611b449b92c52472115">kbd_key_t</a> key, <a class="el" href="group__kbd__status__grp.html#ga0e5881b4080afc9e7e5ed0040d1147ca">kbd_region_t</a> region, <a class="el" href="unionkbd__mods__t.html">kbd_mods_t</a> mods, <a class="el" href="unionkbd__leds__t.html">kbd_leds_t</a> leds)</td></tr>
 <tr class="memdesc:ga48bea28fd7a02c3837886001da6a10ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a kbd_key_t value into its corresponding ASCII value.  <br /></td></tr>
 <tr class="separator:ga48bea28fd7a02c3837886001da6a10ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f6eb7084d7c0801164def9b9ec3d277" id="r_ga7f6eb7084d7c0801164def9b9ec3d277"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__grp.html#ga7f6eb7084d7c0801164def9b9ec3d277">KEY_STATE_NONE</a> (&quot;Please use KEY_STATE_HELD_UP.&quot;)</td></tr>
+<tr class="separator:ga7f6eb7084d7c0801164def9b9ec3d277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1719f33fc5bf859d377fefee61fafb0" id="r_gae1719f33fc5bf859d377fefee61fafb0"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__grp.html#gae1719f33fc5bf859d377fefee61fafb0">KEY_STATE_WAS_PRESSED</a> (&quot;Please use KEY_STATE_CHANGED_UP.&quot;)</td></tr>
+<tr class="separator:gae1719f33fc5bf859d377fefee61fafb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f6273a2cc787dc4b4d9b53a5fbef10b" id="r_ga2f6273a2cc787dc4b4d9b53a5fbef10b"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__grp.html#ga2f6273a2cc787dc4b4d9b53a5fbef10b">KEY_STATE_PRESSED</a> (&quot;Please see key_state_value_t.&quot;)</td></tr>
+<tr class="separator:ga2f6273a2cc787dc4b4d9b53a5fbef10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8a2cd62a6748391d5fb02accdd6e17c" id="r_gad8a2cd62a6748391d5fb02accdd6e17c"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html#gad8a2cd62a6748391d5fb02accdd6e17c">MAX_PRESSED_KEYS</a> (&quot;Please use KBD_MAX_PRESSED_KEYS.&quot;)</td></tr>
+<tr class="separator:gad8a2cd62a6748391d5fb02accdd6e17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga117480e5addbbbfb561504ea031e7ff2" id="r_ga117480e5addbbbfb561504ea031e7ff2"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__status__grp.html#ga117480e5addbbbfb561504ea031e7ff2">MAX_KBD_KEYS</a> (&quot;Please use KBD_MAX_KEYS.&quot;)</td></tr>
 <tr class="separator:ga117480e5addbbbfb561504ea031e7ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad42779d1de5dce4ef98649732abe4647" id="r_gad42779d1de5dce4ef98649732abe4647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkbd__state__t.html">kbd_state_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__polling.html#gad42779d1de5dce4ef98649732abe4647">kbd_get_state</a> (<a class="el" href="structmaple__device__t.html">maple_device_t</a> *device)</td></tr>
 <tr class="memdesc:gad42779d1de5dce4ef98649732abe4647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the keyboard state from a maple device.  <br /></td></tr>
 <tr class="separator:gad42779d1de5dce4ef98649732abe4647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacebfd32ec978f741eb28f605f022abe1" id="r_gacebfd32ec978f741eb28f605f022abe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__event__handler.html#gacebfd32ec978f741eb28f605f022abe1">kbd_set_event_handler</a> (<a class="el" href="group__kbd__event__handler.html#ga8d445604f90bb08be7a66ac555f684cd">kbd_event_handler_t</a> callback, void *user_data)</td></tr>
+<tr class="memdesc:gacebfd32ec978f741eb28f605f022abe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an Event Handler.  <br /></td></tr>
+<tr class="separator:gacebfd32ec978f741eb28f605f022abe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0390042eb731c9175d475bdda1643a07" id="r_ga0390042eb731c9175d475bdda1643a07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__event__handler.html#ga0390042eb731c9175d475bdda1643a07">kbd_get_event_handler</a> (<a class="el" href="group__kbd__event__handler.html#ga8d445604f90bb08be7a66ac555f684cd">kbd_event_handler_t</a> *callback, void **user_data)</td></tr>
+<tr class="memdesc:ga0390042eb731c9175d475bdda1643a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Registered Event Handler.  <br /></td></tr>
+<tr class="separator:ga0390042eb731c9175d475bdda1643a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga10307c972c3fb42f39a16035a22539eb" id="r_ga10307c972c3fb42f39a16035a22539eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__queue.html#ga10307c972c3fb42f39a16035a22539eb">kbd_set_repeat_timing</a> (uint16_t start, uint16_t interval)</td></tr>
 <tr class="memdesc:ga10307c972c3fb42f39a16035a22539eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures held key auto-repeat intervals.  <br /></td></tr>
 <tr class="separator:ga10307c972c3fb42f39a16035a22539eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -406,28 +434,28 @@ Variables</h2></td></tr>
 <tr class="memdesc:a0f312ef54bf53d391d70df39e3fbb502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plus key.  <br /></td></tr>
 <tr class="separator:a0f312ef54bf53d391d70df39e3fbb502"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad374144239b5aca6fb8965d00ed99679" id="r_ad374144239b5aca6fb8965d00ed99679"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad374144239b5aca6fb8965d00ed99679">KBD_KEY_LBRACKET</a> = 0x2f</td></tr>
-<tr class="memdesc:ad374144239b5aca6fb8965d00ed99679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left Bracket key.  <br /></td></tr>
+<tr class="memdesc:ad374144239b5aca6fb8965d00ed99679"><td class="mdescLeft">&#160;</td><td class="mdescRight">[ key  <br /></td></tr>
 <tr class="separator:ad374144239b5aca6fb8965d00ed99679"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0ff4ff9e9b427bb6ef3e2b01fd33ba2" id="r_aa0ff4ff9e9b427bb6ef3e2b01fd33ba2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0ff4ff9e9b427bb6ef3e2b01fd33ba2">KBD_KEY_RBRACKET</a> = 0x30</td></tr>
-<tr class="memdesc:aa0ff4ff9e9b427bb6ef3e2b01fd33ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right Bracket key.  <br /></td></tr>
+<tr class="memdesc:aa0ff4ff9e9b427bb6ef3e2b01fd33ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">] key  <br /></td></tr>
 <tr class="separator:aa0ff4ff9e9b427bb6ef3e2b01fd33ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ae438410c0a7ffecc84ae06ca48df3e" id="r_a6ae438410c0a7ffecc84ae06ca48df3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ae438410c0a7ffecc84ae06ca48df3e">KBD_KEY_BACKSLASH</a> = 0x31</td></tr>
-<tr class="memdesc:a6ae438410c0a7ffecc84ae06ca48df3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backslash key.  <br /></td></tr>
+<tr class="memdesc:a6ae438410c0a7ffecc84ae06ca48df3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">\ key  <br /></td></tr>
 <tr class="separator:a6ae438410c0a7ffecc84ae06ca48df3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b2f7d82213b50791fc52fda7ab6d89b" id="r_a2b2f7d82213b50791fc52fda7ab6d89b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b2f7d82213b50791fc52fda7ab6d89b">KBD_KEY_SEMICOLON</a> = 0x33</td></tr>
-<tr class="memdesc:a2b2f7d82213b50791fc52fda7ab6d89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semicolon key.  <br /></td></tr>
+<tr class="memdesc:a2b2f7d82213b50791fc52fda7ab6d89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">; key  <br /></td></tr>
 <tr class="separator:a2b2f7d82213b50791fc52fda7ab6d89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20237432a7debc7fa4bc74bcbb72735d" id="r_a20237432a7debc7fa4bc74bcbb72735d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20237432a7debc7fa4bc74bcbb72735d">KBD_KEY_QUOTE</a> = 0x34</td></tr>
-<tr class="memdesc:a20237432a7debc7fa4bc74bcbb72735d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Double Quote key.  <br /></td></tr>
+<tr class="memdesc:a20237432a7debc7fa4bc74bcbb72735d"><td class="mdescLeft">&#160;</td><td class="mdescRight">" key  <br /></td></tr>
 <tr class="separator:a20237432a7debc7fa4bc74bcbb72735d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4194327dac55e2791cc29fa2f69e5f48" id="r_a4194327dac55e2791cc29fa2f69e5f48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4194327dac55e2791cc29fa2f69e5f48">KBD_KEY_TILDE</a> = 0x35</td></tr>
-<tr class="memdesc:a4194327dac55e2791cc29fa2f69e5f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tilde key.  <br /></td></tr>
+<tr class="memdesc:a4194327dac55e2791cc29fa2f69e5f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">~ key  <br /></td></tr>
 <tr class="separator:a4194327dac55e2791cc29fa2f69e5f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23b31bdd6947c272ae8d766831f0d801" id="r_a23b31bdd6947c272ae8d766831f0d801"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23b31bdd6947c272ae8d766831f0d801">KBD_KEY_COMMA</a> = 0x36</td></tr>
-<tr class="memdesc:a23b31bdd6947c272ae8d766831f0d801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comma key.  <br /></td></tr>
+<tr class="memdesc:a23b31bdd6947c272ae8d766831f0d801"><td class="mdescLeft">&#160;</td><td class="mdescRight">, key  <br /></td></tr>
 <tr class="separator:a23b31bdd6947c272ae8d766831f0d801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0eef6d33e651b6542a5efe35de15bd79" id="r_a0eef6d33e651b6542a5efe35de15bd79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0eef6d33e651b6542a5efe35de15bd79">KBD_KEY_PERIOD</a> = 0x37</td></tr>
-<tr class="memdesc:a0eef6d33e651b6542a5efe35de15bd79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Period key.  <br /></td></tr>
+<tr class="memdesc:a0eef6d33e651b6542a5efe35de15bd79"><td class="mdescLeft">&#160;</td><td class="mdescRight">.  <br /></td></tr>
 <tr class="separator:a0eef6d33e651b6542a5efe35de15bd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afec249325c34dd20c183aae4e2ee5561" id="r_afec249325c34dd20c183aae4e2ee5561"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afec249325c34dd20c183aae4e2ee5561">KBD_KEY_SLASH</a> = 0x38</td></tr>
 <tr class="memdesc:afec249325c34dd20c183aae4e2ee5561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slash key.  <br /></td></tr>
@@ -561,6 +589,21 @@ Variables</h2></td></tr>
 <tr class="memitem:aada381a39b8b7325f164e00e95d904fd" id="r_aada381a39b8b7325f164e00e95d904fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aada381a39b8b7325f164e00e95d904fd">KBD_KEY_PAD_PERIOD</a> = 0x63</td></tr>
 <tr class="memdesc:aada381a39b8b7325f164e00e95d904fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Period key.  <br /></td></tr>
 <tr class="separator:aada381a39b8b7325f164e00e95d904fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed1bace87abe0b2a64fde511fe9c3207" id="r_gaed1bace87abe0b2a64fde511fe9c3207"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__system__attributes.html#ga0fe7dde4488278fd739041b673efa525">__packed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__key__state__grp.html#gaed1bace87abe0b2a64fde511fe9c3207">key_state_value</a></td></tr>
+<tr class="memdesc:gaed1bace87abe0b2a64fde511fe9c3207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valid values for <a class="el" href="unionkey__state__t.html#a83af21002f0812b3847b91c8f383c8a9" title="Enum for specific state.">key_state_t::value</a>.  <br /></td></tr>
+<tr class="separator:gaed1bace87abe0b2a64fde511fe9c3207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2501ed8be478e88a004061502a0cd3" id="r_a2e2501ed8be478e88a004061502a0cd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e2501ed8be478e88a004061502a0cd3">KEY_STATE_HELD_UP</a> = <a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(false, false)</td></tr>
+<tr class="memdesc:a2e2501ed8be478e88a004061502a0cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key has been in an up state for at least the last two frames.  <br /></td></tr>
+<tr class="separator:a2e2501ed8be478e88a004061502a0cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a16d5d73a0a2b872f51fe4702590baa" id="r_a2a16d5d73a0a2b872f51fe4702590baa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a16d5d73a0a2b872f51fe4702590baa">KEY_STATE_CHANGED_DOWN</a> = <a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(true, false)</td></tr>
+<tr class="memdesc:a2a16d5d73a0a2b872f51fe4702590baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key transitioned from up to pressed this frame.  <br /></td></tr>
+<tr class="separator:a2a16d5d73a0a2b872f51fe4702590baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74ff526aae49ceb6c3b71c614b6f359a" id="r_a74ff526aae49ceb6c3b71c614b6f359a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74ff526aae49ceb6c3b71c614b6f359a">KEY_STATE_CHANGED_UP</a> = <a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(false, true)</td></tr>
+<tr class="memdesc:a74ff526aae49ceb6c3b71c614b6f359a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key transitioned from down to released this frame.  <br /></td></tr>
+<tr class="separator:a74ff526aae49ceb6c3b71c614b6f359a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4ce278ea919639d24dc95d44ffd072" id="r_a2b4ce278ea919639d24dc95d44ffd072"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b4ce278ea919639d24dc95d44ffd072">KEY_STATE_HELD_DOWN</a> = <a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(true, true)</td></tr>
+<tr class="memdesc:a2b4ce278ea919639d24dc95d44ffd072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key has been held down for at least the last two frames.  <br /></td></tr>
+<tr class="separator:a2b4ce278ea919639d24dc95d44ffd072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions for using the keyboard device. </p>
@@ -777,7 +820,7 @@ Falco Girgis </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Backslash key. </p>
+<p>\ key </p>
 
 </div>
 </div>
@@ -841,7 +884,7 @@ Falco Girgis </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Comma key. </p>
+<p>, key </p>
 
 </div>
 </div>
@@ -1353,7 +1396,7 @@ Falco Girgis </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Left Bracket key. </p>
+<p>[ key </p>
 
 </div>
 </div>
@@ -1769,7 +1812,8 @@ Falco Girgis </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Period key. </p>
+<p>. </p>
+<p>key </p>
 
 </div>
 </div>
@@ -1865,7 +1909,7 @@ Falco Girgis </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Double Quote key. </p>
+<p>" key </p>
 
 </div>
 </div>
@@ -1897,7 +1941,7 @@ Falco Girgis </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Right Bracket key. </p>
+<p>] key </p>
 
 </div>
 </div>
@@ -1961,7 +2005,7 @@ Falco Girgis </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Semicolon key. </p>
+<p>; key </p>
 
 </div>
 </div>
@@ -2041,7 +2085,7 @@ Falco Girgis </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Tilde key. </p>
+<p>~ key </p>
 
 </div>
 </div>
@@ -2154,6 +2198,70 @@ Falco Girgis </dd></dl>
 </div><div class="memdoc">
 
 <p>Z key. </p>
+
+</div>
+</div>
+<a id="a2a16d5d73a0a2b872f51fe4702590baa" name="a2a16d5d73a0a2b872f51fe4702590baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a16d5d73a0a2b872f51fe4702590baa">&#9670;&#160;</a></span>KEY_STATE_CHANGED_DOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">KEY_STATE_CHANGED_DOWN = <a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(true, false)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Key transitioned from up to pressed this frame. </p>
+
+</div>
+</div>
+<a id="a74ff526aae49ceb6c3b71c614b6f359a" name="a74ff526aae49ceb6c3b71c614b6f359a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ff526aae49ceb6c3b71c614b6f359a">&#9670;&#160;</a></span>KEY_STATE_CHANGED_UP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">KEY_STATE_CHANGED_UP = <a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(false, true)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Key transitioned from down to released this frame. </p>
+
+</div>
+</div>
+<a id="a2b4ce278ea919639d24dc95d44ffd072" name="a2b4ce278ea919639d24dc95d44ffd072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4ce278ea919639d24dc95d44ffd072">&#9670;&#160;</a></span>KEY_STATE_HELD_DOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">KEY_STATE_HELD_DOWN = <a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(true, true)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Key has been held down for at least the last two frames. </p>
+
+</div>
+</div>
+<a id="a2e2501ed8be478e88a004061502a0cd3" name="a2e2501ed8be478e88a004061502a0cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2501ed8be478e88a004061502a0cd3">&#9670;&#160;</a></span>KEY_STATE_HELD_UP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">KEY_STATE_HELD_UP = <a class="el" href="group__key__state__grp.html#gadf1a7dc7a875a1effd3e4b8d9e752354">KEY_STATE_PACK</a>(false, false)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Key has been in an up state for at least the last two frames. </p>
 
 </div>
 </div>

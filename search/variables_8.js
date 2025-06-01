@@ -12,7 +12,7 @@ var searchData=
   ['hblks_9',['hblks',['../structmallinfo.html#a846bce3f37f21f839f23409b7eab6cfe',1,'mallinfo']]],
   ['hclass_5flflow_10',['hclass_lflow',['../structipv6__hdr__t.html#aba0d036f63da2e22756c9c4e37215cb4',1,'ipv6_hdr_t']]],
   ['hdl_11',['hdl',['../structirq__cb__t.html#aec9a76ebc5c8fae1d0196651fc5201b4',1,'irq_cb_t::hdl'],['../structasic__evt__handler__entry__t.html#a5a0387f19aedd599ccf2b78f85d090b9',1,'asic_evt_handler_entry_t::hdl']]],
-  ['hdr_5ftype_12',['hdr_type',['../structpvr__poly__hdr__cmd.html#a826a1e1e8c23eeca99914102631a5c8d',1,'pvr_poly_hdr_cmd']]],
+  ['hdr_5ftype_12',['hdr_type',['../structpvr__poly__hdr__cmd__t.html#a5121a1daf588829f36665a83be9370aa',1,'pvr_poly_hdr_cmd_t']]],
   ['hdroff_13',['hdroff',['../structvmu__dir__t.html#a653add9ccd3948f90d9a1efa4df39fbf',1,'vmu_dir_t']]],
   ['head_14',['head',['../structaica__queue__t.html#a024f691bd63399243cf0d90f2f36302b',1,'aica_queue_t']]],
   ['height_15',['height',['../structpvr__poly__cxt__t.html#a817b0e28ab5095f1141a02d4cfe80c0d',1,'pvr_poly_cxt_t::height'],['../structpvr__sprite__cxt__t.html#ae07b74b0916b87d095c89f5372008056',1,'pvr_sprite_cxt_t::height'],['../structvid__mode__t.html#a58606bbe4b60831b286f866fed743142',1,'vid_mode_t::height']]],

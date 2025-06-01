@@ -16,5 +16,5 @@ var group__math__intrinsics =
     [ "fsincosr", "group__math__intrinsics.html#ga4f7cb9aa0a7f6f58dbd32773e007145e", null ],
     [ "fsqrt", "group__math__intrinsics.html#ga02e12ab84b2efd1e7394aa76798b941a", null ],
     [ "ftan", "group__math__intrinsics.html#gaeb8f4a9167779b002ff2b6f03f705596", null ],
-    [ "pvr_pack_bump", "group__math__intrinsics.html#ga90c2b9beeaaa6d92033eab15b3556435", null ]
+    [ "pvr_pack_bump", "group__math__intrinsics.html#gab0d9766545d3f9d382c5514a70ad2cdf", null ]
 ];

@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="keywordflow">while</span>((k = <a class="code hl_function" href="#ga60207c54ce956c976961ab2c7a67884b">kbd_queue_pop</a>(device, 1)) != <a class="code hl_define" href="#gaa115d28788304a16204392b89ceae321">KBD_QUEUE_END</a>)</div>
 <div class="line">    printf(<span class="stringliteral">&quot;Key pressed: %c!\n&quot;</span>, (<span class="keywordtype">char</span>)k);</div>
 <div class="ttc" id="agroup__kbd__queue_html_ga60207c54ce956c976961ab2c7a67884b"><div class="ttname"><a href="#ga60207c54ce956c976961ab2c7a67884b">kbd_queue_pop</a></div><div class="ttdeci">int kbd_queue_pop(maple_device_t *dev, bool xlat)</div><div class="ttdoc">Pop a key off a specific keyboard's queue.</div></div>
-<div class="ttc" id="agroup__kbd__queue_html_gaa115d28788304a16204392b89ceae321"><div class="ttname"><a href="#gaa115d28788304a16204392b89ceae321">KBD_QUEUE_END</a></div><div class="ttdeci">#define KBD_QUEUE_END</div><div class="ttdoc">Delimiter value for kbd_queue_pop()</div><div class="ttdef"><b>Definition</b> keyboard.h:503</div></div>
+<div class="ttc" id="agroup__kbd__queue_html_gaa115d28788304a16204392b89ceae321"><div class="ttname"><a href="#gaa115d28788304a16204392b89ceae321">KBD_QUEUE_END</a></div><div class="ttdeci">#define KBD_QUEUE_END</div><div class="ttdoc">Delimiter value for kbd_queue_pop()</div><div class="ttdef"><b>Definition</b> keyboard.h:662</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Repeated Presses</dt><dd>As with a text processor, a key which has been held down for a duration of time will generate periodic key press events which will be pushed onto the queue. </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>

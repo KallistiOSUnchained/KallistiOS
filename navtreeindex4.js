@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"group__bfont__string.html#ga9767a2d6db5cf56bf94d1587f486395d":[9,11,1,0,3,116],
+"group__bfont__string.html#ga98d770cc51996b1d08392e6a83d59e5c":[9,11,1,0,3,46],
 "group__bfont__string.html#ga992ec767b9cceac1bd3c168b003e48a0":[9,11,1,0,3,72],
 "group__bfont__string.html#ga9a3ddb747394a9ec18293d5256bb1a68":[9,11,1,0,3,23],
 "group__bfont__string.html#ga9a695ea3b257dbf43df0eb719d3fc711":[9,11,1,0,3,63],
@@ -164,15 +166,6 @@ var NAVTREEINDEX4 =
 "group__cdda__read__modes.html":[9,3,4,1],
 "group__cdda__read__modes.html#ga2525f79a7fb5aa2fe5c5d6e246c20810":[9,3,4,1,1],
 "group__cdda__read__modes.html#ga80560cd70486ce50ccd288e5a5c36853":[9,3,4,1,0],
-"group__context.html":[9,7,11,0],
-"group__context.html#ga02856bd8678dd7b4390711c8c4fa9734":[9,7,11,0,7],
-"group__context.html#ga16d29f3d30bf9fd6f6dea954b831fca3":[9,7,11,0,3],
-"group__context.html#ga4a9b02d1e139051c1d7f978912872b46":[9,7,11,0,1],
-"group__context.html#ga599a72078489e03f8c35b869074e26b3":[9,7,11,0,6],
-"group__context.html#ga62f54d1ce2ace31322d2dd8c26cdfa07":[9,7,11,0,2],
-"group__context.html#ga8128c0fcb2cdfb2584f264a7c96f27bc":[9,7,11,0,5],
-"group__context.html#ga91de37af52af16e8a325fefd3f58bf2c":[9,7,11,0,8],
-"group__context.html#gac041ebe60b5b5dad72971662f7c3943f":[9,7,11,0,4],
 "group__controller.html":[9,6,1],
 "group__controller__caps.html":[9,6,1,0,0],
 "group__controller__caps.html#ga0ce915695650074e3130ed6cfeb9f0cf":[9,6,1,0,0,4],
@@ -249,5 +242,12 @@ var NAVTREEINDEX4 =
 "group__dbglog__levels.html":[9,2,3,0],
 "group__dbglog__levels.html#ga004bc89ac4c6725bbf5f2291977392e0":[9,2,3,0,3],
 "group__dbglog__levels.html#ga03650e7d52a056bfe7ecad3b2a18a0c0":[9,2,3,0,2],
-"group__dbglog__levels.html#ga724e9ddead30336beecce089c1115900":[9,2,3,0,5]
+"group__dbglog__levels.html#ga724e9ddead30336beecce089c1115900":[9,2,3,0,5],
+"group__dbglog__levels.html#ga7e5c42103da688d305160fa4780d731a":[9,2,3,0,1],
+"group__dbglog__levels.html#ga8744a685dd616033897ff175cf003b84":[9,2,3,0,6],
+"group__dbglog__levels.html#ga9615e001b781d55752b3d44f9bfd5162":[9,2,3,0,4],
+"group__dbglog__levels.html#ga9f7743bd75d5be061a83ae0da47bc323":[9,2,3,0,7],
+"group__dbglog__levels.html#gaf0ecf487aee4d8ff164c0f40e71c5150":[9,2,3,0,0],
+"group__debugging.html":[9,2],
+"group__debugging__gdb.html":[9,2,1]
 };

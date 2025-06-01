@@ -20,13 +20,14 @@ var group__gdrom =
       [ "last", "structCDROM__TOC.html#a7b608d761db470619b2baef23ccaaf0b", null ],
       [ "leadout_sector", "structCDROM__TOC.html#a4e183c931b95b4c1c8691cb36447be92", null ]
     ] ],
+    [ "cdrom_abort_cmd", "group__gdrom.html#ga4e6a8c753fe2b6ed46d31a14179cec39", null ],
     [ "cdrom_cdda_pause", "group__gdrom.html#ga5247b0048eef7789e503de832cd10a5e", null ],
     [ "cdrom_cdda_play", "group__gdrom.html#ga446b7e47d3c4d6e011f018e9a2b5fb57", null ],
     [ "cdrom_cdda_resume", "group__gdrom.html#ga48b64b50f7a705915e6e3958cc1d8dae", null ],
     [ "cdrom_change_datatype", "group__gdrom.html#ga0864556ec5c970d634f83ae147ed77e7", null ],
     [ "cdrom_change_dataype", "group__gdrom.html#gae25b4fd905efa3c8373a51f34ef0b2a4", null ],
     [ "cdrom_exec_cmd", "group__gdrom.html#gaeda149749399d1bf918174aaf7fdf164", null ],
-    [ "cdrom_exec_cmd_timed", "group__gdrom.html#gab79ad9bd28a54c10818f2d53ce762d1e", null ],
+    [ "cdrom_exec_cmd_timed", "group__gdrom.html#gaf329912c3c6183479fc7b2a4b11d8f16", null ],
     [ "cdrom_get_status", "group__gdrom.html#gab087591ac6b393c68d680800310a1631", null ],
     [ "cdrom_get_subcode", "group__gdrom.html#gadb85afff46ccec3e5e9d1e63f0b654a5", null ],
     [ "cdrom_init", "group__gdrom.html#ga6367ca8e204dcc252c23d0338a96b1d1", null ],
@@ -39,5 +40,10 @@ var group__gdrom =
     [ "cdrom_set_sector_size", "group__gdrom.html#ga897fb991129f94130e93e6e989be2d51", null ],
     [ "cdrom_shutdown", "group__gdrom.html#gaad41c5cd1c898fb9bbaaf5f34e6290fe", null ],
     [ "cdrom_spin_down", "group__gdrom.html#ga0db76090a577fe1184d5eb337f45aa7d", null ],
+    [ "cdrom_stream_progress", "group__gdrom.html#ga46eb74a5b8fbd1ebb4787b90dd8195cc", null ],
+    [ "cdrom_stream_request", "group__gdrom.html#ga2f2712c37715cf13555db86eb388d147", null ],
+    [ "cdrom_stream_set_callback", "group__gdrom.html#ga54e1ae4db500d41059a32435d8903a20", null ],
+    [ "cdrom_stream_start", "group__gdrom.html#gab2706b18512e9c55ebdcfacbc3b08c0c", null ],
+    [ "cdrom_stream_stop", "group__gdrom.html#gae8d13384d2655d4f539ffe0fc5c83176", null ],
     [ "iso_reset", "group__gdrom.html#gae9a56fc388783f1f2aae279862033f08", null ]
 ];

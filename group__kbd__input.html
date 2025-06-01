@@ -108,6 +108,9 @@ $(function(){initNavTree('group__kbd__input.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__event__handler.html">Event Handling</a></td></tr>
+<tr class="memdesc:group__kbd__event__handler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event-driven keyboard input mechanism <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__kbd__queue.html">Queue Monitoring</a></td></tr>
 <tr class="memdesc:group__kbd__queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Monitor queue for key press events. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,13 +120,15 @@ Topics</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Various methods for checking keyboard input </p>
-<p>There are 2 different ways to check for input with the keyboard API:</p>
+<p>There are 3 different ways to check for input with the keyboard API:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Mechanism   </th><th class="markdownTableHeadNone">Description    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="group__kbd__polling.html">State Polling</a>   </td><td class="markdownTableBodyNone">Manual checks each key state every frame    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="group__kbd__event__handler.html">Event Handling</a>   </td><td class="markdownTableBodyNone">Automatic callbacks upon key state changes    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="group__kbd__queue.html">Queue Monitoring</a>   </td><td class="markdownTableBodyNone">Monitor for new key press events every frame   </td></tr>
 </table>
 </div><!-- contents -->

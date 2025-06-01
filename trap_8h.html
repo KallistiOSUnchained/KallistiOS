@@ -104,8 +104,7 @@ $(function(){initNavTree('trap_8h.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p><br  />
-  
+<p>Interrupt and exception handling.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="irq_8h_source.html">arch/irq.h</a>&gt;</code><br />
@@ -118,23 +117,21 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga50019c8fd9c43cdbf3656018657bde1f" id="r_ga50019c8fd9c43cdbf3656018657bde1f"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__traps.html#ga50019c8fd9c43cdbf3656018657bde1f">trapa_t</a></td></tr>
 <tr class="memdesc:ga50019c8fd9c43cdbf3656018657bde1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a code passed to the <code>TRAPA</code> instruction.  <br /></td></tr>
 <tr class="separator:ga50019c8fd9c43cdbf3656018657bde1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa16df2bd198f45a2ed0f1fdbcd25ae9b" id="r_gaa16df2bd198f45a2ed0f1fdbcd25ae9b"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__trapa__handler.html#gaa16df2bd198f45a2ed0f1fdbcd25ae9b">trapa_handler</a>) (<a class="el" href="group__traps.html#ga50019c8fd9c43cdbf3656018657bde1f">trapa_t</a> trap, <a class="el" href="structirq__context__t.html">irq_context_t</a> *context, void *data)</td></tr>
-<tr class="memdesc:gaa16df2bd198f45a2ed0f1fdbcd25ae9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a TRAPA handler.  <br /></td></tr>
-<tr class="separator:gaa16df2bd198f45a2ed0f1fdbcd25ae9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe191ef36ff51623c0b4edddf233d8af" id="r_gafe191ef36ff51623c0b4edddf233d8af"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__trapa__handler.html#gafe191ef36ff51623c0b4edddf233d8af">trapa_handler</a>) (<a class="el" href="group__traps.html#ga50019c8fd9c43cdbf3656018657bde1f">trapa_t</a> code, <a class="el" href="structirq__context__t.html">irq_context_t</a> *context, void *data)</td></tr>
+<tr class="memdesc:gafe191ef36ff51623c0b4edddf233d8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a TRAPA handler.  <br /></td></tr>
+<tr class="separator:gafe191ef36ff51623c0b4edddf233d8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga6d728f259d13f6d9b2fdcb0fd476e36b" id="r_ga6d728f259d13f6d9b2fdcb0fd476e36b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__trapa__handler.html#ga6d728f259d13f6d9b2fdcb0fd476e36b">trapa_set_handler</a> (<a class="el" href="group__traps.html#ga50019c8fd9c43cdbf3656018657bde1f">trapa_t</a> trap, <a class="el" href="group__irq__trapa__handler.html#gaa16df2bd198f45a2ed0f1fdbcd25ae9b">trapa_handler</a> hnd, void *data)</td></tr>
-<tr class="memdesc:ga6d728f259d13f6d9b2fdcb0fd476e36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove a handler for a trapa code.  <br /></td></tr>
-<tr class="separator:ga6d728f259d13f6d9b2fdcb0fd476e36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeb578d7639383225c1e82814fa18326d" id="r_gaeb578d7639383225c1e82814fa18326d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__irq__trapa__handler.html#gaa16df2bd198f45a2ed0f1fdbcd25ae9b">trapa_handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__trapa__handler.html#gaeb578d7639383225c1e82814fa18326d">trapa_get_handler</a> (<a class="el" href="group__traps.html#ga50019c8fd9c43cdbf3656018657bde1f">trapa_t</a> trap, void **data)</td></tr>
-<tr class="memdesc:gaeb578d7639383225c1e82814fa18326d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an existing TRAPA handler.  <br /></td></tr>
-<tr class="separator:gaeb578d7639383225c1e82814fa18326d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50e478396d76e4fa51e8c49c540f8366" id="r_ga50e478396d76e4fa51e8c49c540f8366"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__trapa__handler.html#ga50e478396d76e4fa51e8c49c540f8366">trapa_set_handler</a> (<a class="el" href="group__traps.html#ga50019c8fd9c43cdbf3656018657bde1f">trapa_t</a> code, <a class="el" href="group__irq__trapa__handler.html#gafe191ef36ff51623c0b4edddf233d8af">trapa_handler</a> hnd, void *data)</td></tr>
+<tr class="memdesc:ga50e478396d76e4fa51e8c49c540f8366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove a handler for a trapa code.  <br /></td></tr>
+<tr class="separator:ga50e478396d76e4fa51e8c49c540f8366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga231f93301980b404929b921c64a8a9d6" id="r_ga231f93301980b404929b921c64a8a9d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__irq__trapa__handler.html#gafe191ef36ff51623c0b4edddf233d8af">trapa_handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__trapa__handler.html#ga231f93301980b404929b921c64a8a9d6">trapa_get_handler</a> (<a class="el" href="group__traps.html#ga50019c8fd9c43cdbf3656018657bde1f">trapa_t</a> code, void **data)</td></tr>
+<tr class="memdesc:ga231f93301980b404929b921c64a8a9d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an existing TRAPA handler.  <br /></td></tr>
+<tr class="separator:ga231f93301980b404929b921c64a8a9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><br  />
- </p>
-<p>Interrupt and exception handling.</p>
+<div class="textblock"><p>Interrupt and exception handling. </p>
 <p>This file contains various definitions and declarations related to handling trap events, as are invoked through the <code>TRAPA</code> instruction.</p>
 <dl class="section author"><dt>Author</dt><dd>Falco Girgis</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="irq_8h.html" title="Interrupt and exception handling.">arch/irq.h</a>, <a class="el" href="asic_8h.html" title="Dreamcast ASIC event handling support.">dc/asic.h</a></dd></dl>

@@ -103,5 +103,11 @@ var searchData=
   ['kbd_5fkey_5fz_100',['KBD_KEY_Z',['../keyboard_8h.html#a56abe53b3a7f64db23e20062969dfce0',1,'keyboard.h']]],
   ['keepcost_101',['keepcost',['../structmallinfo.html#adb0e5c8cde8d9f45a6f3d136cd91b00c',1,'mallinfo']]],
   ['key_102',['key',['../structkthread__tls__kv__t.html#a57f6bcfa55e2998d3e5e556467979799',1,'kthread_tls_kv_t']]],
-  ['keys_103',['keys',['../structkbd__cond__t.html#a4a871d19045bd472245274f74b2de1df',1,'kbd_cond_t']]]
+  ['key_5fstate_5fchanged_5fdown_103',['KEY_STATE_CHANGED_DOWN',['../keyboard_8h.html#a2a16d5d73a0a2b872f51fe4702590baa',1,'keyboard.h']]],
+  ['key_5fstate_5fchanged_5fup_104',['KEY_STATE_CHANGED_UP',['../keyboard_8h.html#a74ff526aae49ceb6c3b71c614b6f359a',1,'keyboard.h']]],
+  ['key_5fstate_5fheld_5fdown_105',['KEY_STATE_HELD_DOWN',['../keyboard_8h.html#a2b4ce278ea919639d24dc95d44ffd072',1,'keyboard.h']]],
+  ['key_5fstate_5fheld_5fup_106',['KEY_STATE_HELD_UP',['../keyboard_8h.html#a2e2501ed8be478e88a004061502a0cd3',1,'keyboard.h']]],
+  ['key_5fstate_5fvalue_107',['key_state_value',['../group__key__state__grp.html#gaed1bace87abe0b2a64fde511fe9c3207',1,'keyboard.h']]],
+  ['key_5fstates_108',['key_states',['../structkbd__state__t.html#a8b0c6bca7fea4ec44fc1cf5b322fe758',1,'kbd_state_t']]],
+  ['keys_109',['keys',['../structkbd__cond__t.html#ae89d12e3893fb5650ba064ebc5d103c2',1,'kbd_cond_t']]]
 ];

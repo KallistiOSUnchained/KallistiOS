@@ -175,6 +175,12 @@ Macros</h2></td></tr>
 <tr class="separator:gadcc32cc28da802886f6140a51310c5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5989055f989259387234a3868412b106" id="r_ga5989055f989259387234a3868412b106"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__helpers.html#ga5989055f989259387234a3868412b106">_array_size_chk</a>(arr)&#160;&#160;&#160;0</td></tr>
 <tr class="separator:ga5989055f989259387234a3868412b106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga436c656c5d028413008181320f1a821d" id="r_ga436c656c5d028413008181320f1a821d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__helpers.html#ga436c656c5d028413008181320f1a821d">__stringify</a>(arg)&#160;&#160;&#160;&quot;&quot;#arg</td></tr>
+<tr class="memdesc:ga436c656c5d028413008181320f1a821d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string from the argument.  <br /></td></tr>
+<tr class="separator:ga436c656c5d028413008181320f1a821d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga449ce503d6a17b23d70b27401ea59143" id="r_ga449ce503d6a17b23d70b27401ea59143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__helpers.html#ga449ce503d6a17b23d70b27401ea59143">__is_defined</a>(macro)&#160;&#160;&#160;!__builtin_strcmp(<a class="el" href="group__system__helpers.html#ga436c656c5d028413008181320f1a821d">__stringify</a>(macro), &quot;1&quot;)</td></tr>
+<tr class="memdesc:ga449ce503d6a17b23d70b27401ea59143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a macro is defined to 1.  <br /></td></tr>
+<tr class="separator:ga449ce503d6a17b23d70b27401ea59143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Various common macros used throughout the codebase. </p>

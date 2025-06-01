@@ -100,6 +100,7 @@ $(function(){initNavTree('cdrom_8h.html',''); initResizable(true); });
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">cdrom.h File Reference<div class="ingroups"><a class="el" href="group__vfs.html">Filesystem</a> &raquo; <a class="el" href="group__gdrom.html">GD-ROM</a></div></div></div>
 </div><!--header-->
@@ -109,6 +110,8 @@ $(function(){initNavTree('cdrom_8h.html',''); initResizable(true); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">arch/types.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 </div>
 <p><a href="cdrom_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -365,6 +368,12 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga775c8cb3af2d921c9346174483afa166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the track number of a TOC entry.  <br /></td></tr>
 <tr class="separator:ga775c8cb3af2d921c9346174483afa166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:afea6e6348f05e883865c622d0f18a7a5" id="r_afea6e6348f05e883865c622d0f18a7a5"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afea6e6348f05e883865c622d0f18a7a5">cdrom_stream_callback_t</a>) (void *data)</td></tr>
+<tr class="memdesc:afea6e6348f05e883865c622d0f18a7a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">CD-ROM streams callback.  <br /></td></tr>
+<tr class="separator:afea6e6348f05e883865c622d0f18a7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga897fb991129f94130e93e6e989be2d51" id="r_ga897fb991129f94130e93e6e989be2d51"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#ga897fb991129f94130e93e6e989be2d51">cdrom_set_sector_size</a> (int size)</td></tr>
@@ -373,9 +382,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gaeda149749399d1bf918174aaf7fdf164" id="r_gaeda149749399d1bf918174aaf7fdf164"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#gaeda149749399d1bf918174aaf7fdf164">cdrom_exec_cmd</a> (int cmd, void *param)</td></tr>
 <tr class="memdesc:gaeda149749399d1bf918174aaf7fdf164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a CD-ROM command.  <br /></td></tr>
 <tr class="separator:gaeda149749399d1bf918174aaf7fdf164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab79ad9bd28a54c10818f2d53ce762d1e" id="r_gab79ad9bd28a54c10818f2d53ce762d1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#gab79ad9bd28a54c10818f2d53ce762d1e">cdrom_exec_cmd_timed</a> (int cmd, void *param, int timeout)</td></tr>
-<tr class="memdesc:gab79ad9bd28a54c10818f2d53ce762d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a CD-ROM command with timeout.  <br /></td></tr>
-<tr class="separator:gab79ad9bd28a54c10818f2d53ce762d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf329912c3c6183479fc7b2a4b11d8f16" id="r_gaf329912c3c6183479fc7b2a4b11d8f16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#gaf329912c3c6183479fc7b2a4b11d8f16">cdrom_exec_cmd_timed</a> (int cmd, void *param, uint32_t timeout)</td></tr>
+<tr class="memdesc:gaf329912c3c6183479fc7b2a4b11d8f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a CD-ROM command with timeout.  <br /></td></tr>
+<tr class="separator:gaf329912c3c6183479fc7b2a4b11d8f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e6a8c753fe2b6ed46d31a14179cec39" id="r_ga4e6a8c753fe2b6ed46d31a14179cec39"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#ga4e6a8c753fe2b6ed46d31a14179cec39">cdrom_abort_cmd</a> (uint32_t timeout, bool abort_dma)</td></tr>
+<tr class="memdesc:ga4e6a8c753fe2b6ed46d31a14179cec39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort a CD-ROM command with timeout.  <br /></td></tr>
+<tr class="separator:ga4e6a8c753fe2b6ed46d31a14179cec39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab087591ac6b393c68d680800310a1631" id="r_gab087591ac6b393c68d680800310a1631"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#gab087591ac6b393c68d680800310a1631">cdrom_get_status</a> (int *status, int *disc_type)</td></tr>
 <tr class="memdesc:gab087591ac6b393c68d680800310a1631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the status of the GD-ROM drive.  <br /></td></tr>
 <tr class="separator:gab087591ac6b393c68d680800310a1631"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -400,6 +412,21 @@ Functions</h2></td></tr>
 <tr class="memitem:gaefcb958df24519d173df9915f84d150a" id="r_gaefcb958df24519d173df9915f84d150a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#gaefcb958df24519d173df9915f84d150a">cdrom_read_sectors</a> (void *buffer, int sector, int cnt)</td></tr>
 <tr class="memdesc:gaefcb958df24519d173df9915f84d150a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one or more sector from a CD-ROM in PIO mode.  <br /></td></tr>
 <tr class="separator:gaefcb958df24519d173df9915f84d150a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2706b18512e9c55ebdcfacbc3b08c0c" id="r_gab2706b18512e9c55ebdcfacbc3b08c0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#gab2706b18512e9c55ebdcfacbc3b08c0c">cdrom_stream_start</a> (int sector, int cnt, int mode)</td></tr>
+<tr class="memdesc:gab2706b18512e9c55ebdcfacbc3b08c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start streaming from a CD-ROM.  <br /></td></tr>
+<tr class="separator:gab2706b18512e9c55ebdcfacbc3b08c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8d13384d2655d4f539ffe0fc5c83176" id="r_gae8d13384d2655d4f539ffe0fc5c83176"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#gae8d13384d2655d4f539ffe0fc5c83176">cdrom_stream_stop</a> (bool abort_dma)</td></tr>
+<tr class="memdesc:gae8d13384d2655d4f539ffe0fc5c83176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop streaming from a CD-ROM.  <br /></td></tr>
+<tr class="separator:gae8d13384d2655d4f539ffe0fc5c83176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f2712c37715cf13555db86eb388d147" id="r_ga2f2712c37715cf13555db86eb388d147"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#ga2f2712c37715cf13555db86eb388d147">cdrom_stream_request</a> (void *buffer, size_t size, bool block)</td></tr>
+<tr class="memdesc:ga2f2712c37715cf13555db86eb388d147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request stream transfer.  <br /></td></tr>
+<tr class="separator:ga2f2712c37715cf13555db86eb388d147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46eb74a5b8fbd1ebb4787b90dd8195cc" id="r_ga46eb74a5b8fbd1ebb4787b90dd8195cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#ga46eb74a5b8fbd1ebb4787b90dd8195cc">cdrom_stream_progress</a> (size_t *size)</td></tr>
+<tr class="memdesc:ga46eb74a5b8fbd1ebb4787b90dd8195cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check requested stream transfer.  <br /></td></tr>
+<tr class="separator:ga46eb74a5b8fbd1ebb4787b90dd8195cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54e1ae4db500d41059a32435d8903a20" id="r_ga54e1ae4db500d41059a32435d8903a20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#ga54e1ae4db500d41059a32435d8903a20">cdrom_stream_set_callback</a> (<a class="el" href="#afea6e6348f05e883865c622d0f18a7a5">cdrom_stream_callback_t</a> callback, void *param)</td></tr>
+<tr class="memdesc:ga54e1ae4db500d41059a32435d8903a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setting up a callback for transfers.  <br /></td></tr>
+<tr class="separator:ga54e1ae4db500d41059a32435d8903a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadb85afff46ccec3e5e9d1e63f0b654a5" id="r_gadb85afff46ccec3e5e9d1e63f0b654a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gdrom.html#gadb85afff46ccec3e5e9d1e63f0b654a5">cdrom_get_subcode</a> (void *buffer, int buflen, int which)</td></tr>
 <tr class="memdesc:gadb85afff46ccec3e5e9d1e63f0b654a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read subcode data from the most recently read sectors.  <br /></td></tr>
 <tr class="separator:gadb85afff46ccec3e5e9d1e63f0b654a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -436,7 +463,24 @@ Ruslan Rostovtsev </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="fs_8h.html" title="Virtual filesystem support.">kos/fs.h</a> </dd>
 <dd>
 <a class="el" href="fs__iso9660_8h.html" title="ISO9660 (CD-ROM) filesystem driver.">dc/fs_iso9660.h</a> </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="afea6e6348f05e883865c622d0f18a7a5" name="afea6e6348f05e883865c622d0f18a7a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea6e6348f05e883865c622d0f18a7a5">&#9670;&#160;</a></span>cdrom_stream_callback_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* cdrom_stream_callback_t) (void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CD-ROM streams callback. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

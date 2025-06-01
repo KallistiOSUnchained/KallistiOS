@@ -107,6 +107,7 @@ $(function(){initNavTree('genwait_8h.html',''); initResizable(true); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="thread_8h_source.html">kos/thread.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 </div>
 <p><a href="genwait_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -133,12 +134,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a8dd3bee1c9b22e25cafb6fb1808c8814" id="r_a8dd3bee1c9b22e25cafb6fb1808c8814"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dd3bee1c9b22e25cafb6fb1808c8814">genwait_wake_thd</a> (void *obj, <a class="el" href="structkthread__t.html">kthread_t</a> *thd, int err)</td></tr>
 <tr class="memdesc:a8dd3bee1c9b22e25cafb6fb1808c8814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wake up a specific thread that is sleeping on an object.  <br /></td></tr>
 <tr class="separator:a8dd3bee1c9b22e25cafb6fb1808c8814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ee4f8d39d4bd375eb835d7214e11ac6" id="r_a6ee4f8d39d4bd375eb835d7214e11ac6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ee4f8d39d4bd375eb835d7214e11ac6">genwait_check_timeouts</a> (<a class="el" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a> now)</td></tr>
-<tr class="memdesc:a6ee4f8d39d4bd375eb835d7214e11ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look for timed out <a class="el" href="#a52541d393936a6494bc24ecbbcc3d6f3" title="Sleep on an object.">genwait_wait()</a> calls.  <br /></td></tr>
-<tr class="separator:a6ee4f8d39d4bd375eb835d7214e11ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71e45241c05df542f677865f3d364a6" id="r_af71e45241c05df542f677865f3d364a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af71e45241c05df542f677865f3d364a6">genwait_next_timeout</a> (void)</td></tr>
-<tr class="memdesc:af71e45241c05df542f677865f3d364a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look for the next timeout event time.  <br /></td></tr>
-<tr class="separator:af71e45241c05df542f677865f3d364a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9eedc4228cfc787ead955f61206f60" id="r_a9b9eedc4228cfc787ead955f61206f60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b9eedc4228cfc787ead955f61206f60">genwait_check_timeouts</a> (uint64_t now)</td></tr>
+<tr class="memdesc:a9b9eedc4228cfc787ead955f61206f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look for timed out <a class="el" href="#a52541d393936a6494bc24ecbbcc3d6f3" title="Sleep on an object.">genwait_wait()</a> calls.  <br /></td></tr>
+<tr class="separator:a9b9eedc4228cfc787ead955f61206f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab214a80e406f0ab5baacfed562fc0b8b" id="r_ab214a80e406f0ab5baacfed562fc0b8b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab214a80e406f0ab5baacfed562fc0b8b">genwait_next_timeout</a> (void)</td></tr>
+<tr class="memdesc:ab214a80e406f0ab5baacfed562fc0b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look for the next timeout event time.  <br /></td></tr>
+<tr class="separator:ab214a80e406f0ab5baacfed562fc0b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Generic wait system. </p>
@@ -147,8 +148,8 @@ Functions</h2></td></tr>
 <dd>
 Lawrence Sebald </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a6ee4f8d39d4bd375eb835d7214e11ac6" name="a6ee4f8d39d4bd375eb835d7214e11ac6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ee4f8d39d4bd375eb835d7214e11ac6">&#9670;&#160;</a></span>genwait_check_timeouts()</h2>
+<a id="a9b9eedc4228cfc787ead955f61206f60" name="a9b9eedc4228cfc787ead955f61206f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9eedc4228cfc787ead955f61206f60">&#9670;&#160;</a></span>genwait_check_timeouts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,7 +157,7 @@ Lawrence Sebald </dd></dl>
         <tr>
           <td class="memname">void genwait_check_timeouts </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a></td>          <td class="paramname"><span class="paramname"><em>now</em></span></td><td>)</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>now</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -173,14 +174,14 @@ Lawrence Sebald </dd></dl>
 
 </div>
 </div>
-<a id="af71e45241c05df542f677865f3d364a6" name="af71e45241c05df542f677865f3d364a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af71e45241c05df542f677865f3d364a6">&#9670;&#160;</a></span>genwait_next_timeout()</h2>
+<a id="ab214a80e406f0ab5baacfed562fc0b8b" name="ab214a80e406f0ab5baacfed562fc0b8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab214a80e406f0ab5baacfed562fc0b8b">&#9670;&#160;</a></span>genwait_next_timeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__system__types.html#ga29940ae63ec06c9998bba873e25407ad">uint64</a> genwait_next_timeout </td>
+          <td class="memname">uint64_t genwait_next_timeout </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>

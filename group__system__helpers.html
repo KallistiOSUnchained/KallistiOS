@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KallistiOS: Utility Macros</title>
+<title>KallistiOS: Helper Macros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,7 +99,7 @@ $(function(){initNavTree('group__system__helpers.html',''); initResizable(true);
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">Utility Macros<div class="ingroups"><a class="el" href="group__system.html">System</a></div></div></div>
+  <div class="headertitle"><div class="title">Helper Macros<div class="ingroups"><a class="el" href="group__system.html">System</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -119,6 +119,12 @@ Macros</h2></td></tr>
 <tr class="separator:gadcc32cc28da802886f6140a51310c5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5989055f989259387234a3868412b106" id="r_ga5989055f989259387234a3868412b106"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5989055f989259387234a3868412b106">_array_size_chk</a>(arr)&#160;&#160;&#160;0</td></tr>
 <tr class="separator:ga5989055f989259387234a3868412b106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga436c656c5d028413008181320f1a821d" id="r_ga436c656c5d028413008181320f1a821d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga436c656c5d028413008181320f1a821d">__stringify</a>(arg)&#160;&#160;&#160;&quot;&quot;#arg</td></tr>
+<tr class="memdesc:ga436c656c5d028413008181320f1a821d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string from the argument.  <br /></td></tr>
+<tr class="separator:ga436c656c5d028413008181320f1a821d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga449ce503d6a17b23d70b27401ea59143" id="r_ga449ce503d6a17b23d70b27401ea59143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga449ce503d6a17b23d70b27401ea59143">__is_defined</a>(macro)&#160;&#160;&#160;!__builtin_strcmp(<a class="el" href="#ga436c656c5d028413008181320f1a821d">__stringify</a>(macro), &quot;1&quot;)</td></tr>
+<tr class="memdesc:ga449ce503d6a17b23d70b27401ea59143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a macro is defined to 1.  <br /></td></tr>
+<tr class="separator:ga449ce503d6a17b23d70b27401ea59143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>General useful language macros </p>
@@ -167,16 +173,8 @@ Macros</h2></td></tr>
 
 <p>Assert a build-time dependency. </p>
 <p>Your compiler will fail if the condition isn't true, or can't be evaluated by the compiler. This can only be used within a function.</p>
-<p>Example: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
-<div class="line">...</div>
-<div class="line">static <span class="keywordtype">char</span> *foo_to_char(<span class="keyword">struct</span> foo *foo)</div>
-<div class="line">{</div>
-<div class="line">    <span class="comment">// This code needs string to be at start of foo.</span></div>
-<div class="line">    <a class="code hl_define" href="#ga24e9b4927373c345b759ee7b9adb57c0">__build_assert</a>(offsetof(<span class="keyword">struct</span> foo, <span class="keywordtype">string</span>) == 0);</div>
-<div class="line">    <span class="keywordflow">return</span> (<span class="keywordtype">char</span> *)foo;</div>
-<div class="line">}</div>
-<div class="ttc" id="agroup__system__helpers_html_ga24e9b4927373c345b759ee7b9adb57c0"><div class="ttname"><a href="#ga24e9b4927373c345b759ee7b9adb57c0">__build_assert</a></div><div class="ttdeci">#define __build_assert(cond)</div><div class="ttdoc">Assert a build-time dependency.</div><div class="ttdef"><b>Definition</b> cdefs.h:240</div></div>
-</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<p>Example: #include &lt;stddef.h&gt; ... static char *foo_to_char(struct foo *foo) { This code needs string to be at start of foo. __build_assert(offsetof(struct foo, string) == 0); return (char *)foo; } </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cond</td><td>The compile-time condition which must be true.</td></tr>
   </table>
@@ -203,16 +201,67 @@ Macros</h2></td></tr>
 
 <p>Assert a build-time dependency. </p>
 <p>Your compiler will fail if the condition isn't true, or can't be evaluated by the compiler. This can be used in an expression: its value is "0".</p>
-<p>Example: </p><div class="fragment"><div class="line"><span class="preprocessor">#define foo_to_char(foo)                \</span></div>
-<div class="line"><span class="preprocessor">    ((char *)(foo)                      \</span></div>
-<div class="line"><span class="preprocessor">    + __build_assert_or_zero(offsetof(struct foo, string) == 0))</span></div>
-</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<p>Example: #define foo_to_char(foo) \ ((char *)(foo) \</p><ul>
+<li>__build_assert_or_zero(offsetof(struct foo, string) == 0)) </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cond</td><td>The compile-time condition which must be true.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga24e9b4927373c345b759ee7b9adb57c0" title="Assert a build-time dependency.">__build_assert</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga449ce503d6a17b23d70b27401ea59143" name="ga449ce503d6a17b23d70b27401ea59143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga449ce503d6a17b23d70b27401ea59143">&#9670;&#160;</a></span>__is_defined</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __is_defined</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>macro</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;!__builtin_strcmp(<a class="el" href="#ga436c656c5d028413008181320f1a821d">__stringify</a>(macro), &quot;1&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a macro is defined to 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">macro</td><td>The macro to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if the macro is defined to 1, 0 otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ga436c656c5d028413008181320f1a821d" name="ga436c656c5d028413008181320f1a821d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga436c656c5d028413008181320f1a821d">&#9670;&#160;</a></span>__stringify</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __stringify</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>arg</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;&quot;&quot;#arg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string from the argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>The text to stringify. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var structpthread__rwlockattr__t =
 [
-    [ "__dummy", "structpthread__rwlockattr__t.html#aa1a7204d661a1730b95000becc0198bb", null ]
+    [ "_unused", "structpthread__rwlockattr__t.html#a3599b49a7ea07fac77f934cc71cb193f", null ]
 ];

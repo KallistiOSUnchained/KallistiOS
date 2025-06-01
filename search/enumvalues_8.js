@@ -24,9 +24,11 @@ var searchData=
   ['sci_5fuart_5f8n1_21',['SCI_UART_8N1',['../group__system__sci.html#gga3c3b463151260ad986f0484f332d5703ada46be46f2b7905eb7926cf0c157312f',1,'sci.h']]],
   ['sci_5fuart_5f8n2_22',['SCI_UART_8N2',['../group__system__sci.html#gga3c3b463151260ad986f0484f332d5703a7669727dbeb53574a083c8b71c6fd9ff',1,'sci.h']]],
   ['sci_5fuart_5f8o1_23',['SCI_UART_8O1',['../group__system__sci.html#gga3c3b463151260ad986f0484f332d5703a155a3470e6880699830e441ec25dfc66',1,'sci.h']]],
-  ['state_5ffinished_24',['STATE_FINISHED',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7a5e09161e3e14f41b526727f69a2e4148',1,'thread.h']]],
-  ['state_5fready_25',['STATE_READY',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7a5ae0bbfe1a737c76e53253b05168b56b',1,'thread.h']]],
-  ['state_5frunning_26',['STATE_RUNNING',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7addfe11c6d06c4e27bd6efc18cc4862a6',1,'thread.h']]],
-  ['state_5fwait_27',['STATE_WAIT',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7a66d8f16a4988ddb948cc00bcdefafbb8',1,'thread.h']]],
-  ['state_5fzombie_28',['STATE_ZOMBIE',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7afb0756b8d0b7dd0cecbe3b0a4cd7c6dd',1,'thread.h']]]
+  ['sd_5fif_5fsci_24',['SD_IF_SCI',['../group__vfs__sd.html#ggaef5079cbc7014c332608bbf442ed8aa9afcc317684fb9fc35b02625e3e3b85ca1',1,'sd.h']]],
+  ['sd_5fif_5fscif_25',['SD_IF_SCIF',['../group__vfs__sd.html#ggaef5079cbc7014c332608bbf442ed8aa9a755986065fb55f7f9f97fa1361f3370a',1,'sd.h']]],
+  ['state_5ffinished_26',['STATE_FINISHED',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7a5e09161e3e14f41b526727f69a2e4148',1,'thread.h']]],
+  ['state_5fready_27',['STATE_READY',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7a5ae0bbfe1a737c76e53253b05168b56b',1,'thread.h']]],
+  ['state_5frunning_28',['STATE_RUNNING',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7addfe11c6d06c4e27bd6efc18cc4862a6',1,'thread.h']]],
+  ['state_5fwait_29',['STATE_WAIT',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7a66d8f16a4988ddb948cc00bcdefafbb8',1,'thread.h']]],
+  ['state_5fzombie_30',['STATE_ZOMBIE',['../group__kthreads.html#gga8655c45b73db243808d161ab3fab90a7afb0756b8d0b7dd0cecbe3b0a4cd7c6dd',1,'thread.h']]]
 ];

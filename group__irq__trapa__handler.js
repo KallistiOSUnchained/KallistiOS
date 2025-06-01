@@ -1,6 +1,6 @@
 var group__irq__trapa__handler =
 [
-    [ "trapa_handler", "group__irq__trapa__handler.html#gaa16df2bd198f45a2ed0f1fdbcd25ae9b", null ],
-    [ "trapa_get_handler", "group__irq__trapa__handler.html#gaeb578d7639383225c1e82814fa18326d", null ],
-    [ "trapa_set_handler", "group__irq__trapa__handler.html#ga6d728f259d13f6d9b2fdcb0fd476e36b", null ]
+    [ "trapa_handler", "group__irq__trapa__handler.html#gafe191ef36ff51623c0b4edddf233d8af", null ],
+    [ "trapa_get_handler", "group__irq__trapa__handler.html#ga231f93301980b404929b921c64a8a9d6", null ],
+    [ "trapa_set_handler", "group__irq__trapa__handler.html#ga50e478396d76e4fa51e8c49c540f8366", null ]
 ];

@@ -1,6 +1,6 @@
 var ubc_8h =
 [
-    [ "ubc_break_func_t", "group__ubc.html#ga3b064130b91dfc9bbe4de308bc73dcc6", null ],
+    [ "ubc_break_func_t", "group__ubc.html#ga3ce1dd76767696e58b9d397371fbba71", null ],
     [ "ubc_access_t", "group__ubc.html#ga70941c81d979b9926c99896d6070e113", [
       [ "ubc_access_either", "group__ubc.html#gga70941c81d979b9926c99896d6070e113a98a5bc9545189721b9ce7924bded0ccd", null ],
       [ "ubc_access_instruction", "group__ubc.html#gga70941c81d979b9926c99896d6070e113a00e33fa850ac111e5ade0e437b63b30e", null ],

@@ -123,6 +123,8 @@ var group__maple =
     [ "maple_queue_frame", "group__maple.html#gaa1639dd1b792a0252e916d3f1663e754", null ],
     [ "maple_queue_remove", "group__maple.html#gafbac71b6b9155536b7fee66924c3f8d7", null ],
     [ "maple_raddr", "group__maple.html#ga73f822849e0c61bf23dffbebe00c33d3", null ],
+    [ "maple_sentinel_setup", "group__maple.html#ga91bfc4c356300ec28adebcf884acacb1", null ],
+    [ "maple_sentinel_verify", "group__maple.html#ga99b764c4950259d75afbddf4da2abadb", null ],
     [ "maple_shutdown", "group__maple.html#ga53185290848409196fee63ca97f43e74", null ],
     [ "maple_vbl_irq_hnd", "group__maple.html#gae4b866297db34f110a106c2b9bef121e", null ],
     [ "maple_wait_scan", "group__maple.html#ga4365b2fbc0d66f3fb1616815c82d1b79", null ]

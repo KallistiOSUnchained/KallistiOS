@@ -1,7 +1,7 @@
 var searchData=
 [
   ['lan_20adapter_0',['LAN Adapter',['../group__lan__adapter.html',1,'']]],
-  ['language_20compat_1',['Language Compat',['../group__system__compat.html',1,'']]],
+  ['language_20compatibility_20defines_1',['Language Compatibility Defines',['../group__system__compat.html',1,'']]],
   ['language_20settings_2',['Language Settings',['../group__fr__langs.html',1,'']]],
   ['lcd_20function_3',['LCD Function',['../group__maple__lcd.html',1,'']]],
   ['leds_4',['LEDs',['../group__kbd__leds__grp.html',1,'']]],

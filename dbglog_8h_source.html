@@ -123,66 +123,61 @@ $(function(){initNavTree('dbglog_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="cdefs_8h.html">kos/cdefs.h</a>&gt;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>__BEGIN_DECLS</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="fs_8h.html">kos/fs.h</a>&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"></span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/** \defgroup logging   Logging</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">    \brief              KOS&#39;s Logging API </span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">    \ingroup            debugging</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"></span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/** \brief   Kernel debugging printf.</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">    \ingroup logging    </span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"></span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/** \defgroup logging   Logging</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">    \brief              KOS&#39;s Logging API </span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">    \ingroup            debugging</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"></span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/** \brief   Kernel debugging printf.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">    \ingroup logging    </span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"></span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">    This function is similar to printf(), but filters its output through a log</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">    level check before being printed. This way, you can set the level of debug</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">    info you want to see (or want your users to see).</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"></span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    This function is similar to printf(), but filters its output through a log</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">    level check before being printed. This way, you can set the level of debug</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    info you want to see (or want your users to see).</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"></span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">    \param  level           The level of importance of this message.</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">    \param  fmt             Message format string.</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">    \param  ...             Format arguments</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">    \see    dbglog_levels</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group__logging.html#ga5a8fc506ac2aa69a142658920bbeb956">   46</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__logging.html#ga5a8fc506ac2aa69a142658920bbeb956">dbglog</a>(<span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...) <a class="code hl_define" href="group__system__attributes.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a>(2, 3);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    \param  level           The level of importance of this message.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">    \param  fmt             Message format string.</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    \param  ...             Format arguments</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    \see    dbglog_levels</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="group__logging.html#ga5a8fc506ac2aa69a142658920bbeb956">   42</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__logging.html#ga5a8fc506ac2aa69a142658920bbeb956">dbglog</a>(<span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...) <a class="code hl_define" href="group__system__attributes.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a>(2, 3);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"></span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/** \defgroup   dbglog_levels   Log Levels</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">    \brief                      dbglog severity levels</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">    \ingroup                    logging</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"></span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/** \defgroup   dbglog_levels   Log Levels</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">    \brief                      dbglog severity levels</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">    \ingroup                    logging</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"></span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">    This is the list of levels that are allowed to be passed into the dbglog()</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">    function, representing different levels of importance.</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    @{</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga7e5c42103da688d305160fa4780d731a">   57</a></span><span class="preprocessor">#define DBG_DEAD        0       </span><span class="comment">/**&lt; \brief The system is dead */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#gaf0ecf487aee4d8ff164c0f40e71c5150">   58</a></span><span class="preprocessor">#define DBG_CRITICAL    1       </span><span class="comment">/**&lt; \brief A critical error message */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga004bc89ac4c6725bbf5f2291977392e0">   59</a></span><span class="preprocessor">#define DBG_ERROR       2       </span><span class="comment">/**&lt; \brief A normal error message */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga9f7743bd75d5be061a83ae0da47bc323">   60</a></span><span class="preprocessor">#define DBG_WARNING     3       </span><span class="comment">/**&lt; \brief Potential problem */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga8744a685dd616033897ff175cf003b84">   61</a></span><span class="preprocessor">#define DBG_NOTICE      4       </span><span class="comment">/**&lt; \brief Normal but significant */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga9615e001b781d55752b3d44f9bfd5162">   62</a></span><span class="preprocessor">#define DBG_INFO        5       </span><span class="comment">/**&lt; \brief Informational messages */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga03650e7d52a056bfe7ecad3b2a18a0c0">   63</a></span><span class="preprocessor">#define DBG_DEBUG       6       </span><span class="comment">/**&lt; \brief User debug messages */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga724e9ddead30336beecce089c1115900">   64</a></span><span class="preprocessor">#define DBG_KDEBUG      7       </span><span class="comment">/**&lt; \brief Kernel debug messages */</span><span class="preprocessor"></span><span class="comment"></span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">/** @} */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"></span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/** \brief   Set the debugging log level.</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    \ingroup logging</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">    This function sets the level for which dbglog() will ignore messages for if</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">    the message has a higher level.</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"></span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">    \param  level           The level to stop paying attention after.</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">    \see    dbglog_levels</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="group__logging.html#gacd4b9128abb6d4390e1692d0ac85fd0a">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__logging.html#gacd4b9128abb6d4390e1692d0ac85fd0a">dbglog_set_level</a>(<span class="keywordtype">int</span> level);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">    This is the list of levels that are allowed to be passed into the dbglog()</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">    function, representing different levels of importance.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"></span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">    @{</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga7e5c42103da688d305160fa4780d731a">   53</a></span><span class="preprocessor">#define DBG_DEAD        0       </span><span class="comment">/**&lt; \brief The system is dead */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#gaf0ecf487aee4d8ff164c0f40e71c5150">   54</a></span><span class="preprocessor">#define DBG_CRITICAL    1       </span><span class="comment">/**&lt; \brief A critical error message */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga004bc89ac4c6725bbf5f2291977392e0">   55</a></span><span class="preprocessor">#define DBG_ERROR       2       </span><span class="comment">/**&lt; \brief A normal error message */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga9f7743bd75d5be061a83ae0da47bc323">   56</a></span><span class="preprocessor">#define DBG_WARNING     3       </span><span class="comment">/**&lt; \brief Potential problem */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga8744a685dd616033897ff175cf003b84">   57</a></span><span class="preprocessor">#define DBG_NOTICE      4       </span><span class="comment">/**&lt; \brief Normal but significant */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga9615e001b781d55752b3d44f9bfd5162">   58</a></span><span class="preprocessor">#define DBG_INFO        5       </span><span class="comment">/**&lt; \brief Informational messages */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga03650e7d52a056bfe7ecad3b2a18a0c0">   59</a></span><span class="preprocessor">#define DBG_DEBUG       6       </span><span class="comment">/**&lt; \brief User debug messages */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="group__dbglog__levels.html#ga724e9ddead30336beecce089c1115900">   60</a></span><span class="preprocessor">#define DBG_KDEBUG      7       </span><span class="comment">/**&lt; \brief Kernel debug messages */</span><span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/** @} */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/** \brief   Set the debugging log level.</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">    \ingroup logging</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"></span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">    This function sets the level for which dbglog() will ignore messages for if</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">    the message has a higher level.</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment"></span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    \param  level           The level to stop paying attention after.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">    \see    dbglog_levels</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__logging.html#gacd4b9128abb6d4390e1692d0ac85fd0a">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__logging.html#gacd4b9128abb6d4390e1692d0ac85fd0a">dbglog_set_level</a>(<span class="keywordtype">int</span> level);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>__END_DECLS</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif  </span><span class="comment">/* __KOS_DBGLOG_H */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>__END_DECLS</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif  </span><span class="comment">/* __KOS_DBGLOG_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="ttc" id="acdefs_8h_html"><div class="ttname"><a href="cdefs_8h.html">cdefs.h</a></div><div class="ttdoc">Various common macros used throughout the codebase.</div></div>
-<div class="ttc" id="afs_8h_html"><div class="ttname"><a href="fs_8h.html">fs.h</a></div><div class="ttdoc">Virtual filesystem support.</div></div>
 <div class="ttc" id="agroup__logging_html_ga5a8fc506ac2aa69a142658920bbeb956"><div class="ttname"><a href="group__logging.html#ga5a8fc506ac2aa69a142658920bbeb956">dbglog</a></div><div class="ttdeci">void dbglog(int level, const char *fmt,...) __printflike(2</div><div class="ttdoc">Kernel debugging printf.</div></div>
 <div class="ttc" id="agroup__logging_html_gacd4b9128abb6d4390e1692d0ac85fd0a"><div class="ttname"><a href="group__logging.html#gacd4b9128abb6d4390e1692d0ac85fd0a">dbglog_set_level</a></div><div class="ttdeci">void dbglog_set_level(int level)</div><div class="ttdoc">Set the debugging log level.</div></div>
 <div class="ttc" id="agroup__system__attributes_html_gab302334d9a77a6925be4e5b45397e4a3"><div class="ttname"><a href="group__system__attributes.html#gab302334d9a77a6925be4e5b45397e4a3">__printflike</a></div><div class="ttdeci">#define __printflike(fmtarg, firstvararg)</div><div class="ttdoc">Identify a function as accepting formatting like printf().</div><div class="ttdef"><b>Definition</b> cdefs.h:139</div></div>

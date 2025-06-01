@@ -1,6 +1,6 @@
 var group__irqs =
 [
-    [ "Context", "group__context.html", "group__context" ],
+    [ "Context", "group__irq__context.html", "group__irq__context" ],
     [ "Control Flow", "group__irq__ctrl.html", "group__irq__ctrl" ],
     [ "Exception type offsets", "group__irq__type__offsets.html", "group__irq__type__offsets" ],
     [ "Handlers", "group__irq__handlers.html", "group__irq__handlers" ],

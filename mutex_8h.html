@@ -625,7 +625,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Error Conditions:</dt><dd><em>EAGAIN</em> - the mutex is already locked (<a class="el" href="#a6d52957b6bb80a33988222ba146a4faf" title="Lock a mutex.">mutex_lock()</a> would block) <br  />
+<dl class="section user"><dt>Error Conditions:</dt><dd><em>EBUSY</em> - the mutex is already locked (<a class="el" href="#a6d52957b6bb80a33988222ba146a4faf" title="Lock a mutex.">mutex_lock()</a> would block) <br  />
 <em>EINVAL</em> - the mutex has not been initialized properly <br  />
 <em>EAGAIN</em> - lock has been acquired too many times (recursive) <br  />
 <em>EDEADLK</em> - would deadlock (error-checking) </dd></dl>

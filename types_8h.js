@@ -7,7 +7,6 @@ var types_8h =
     [ "int64", "group__system__types.html#gaecfc3c54bd29ad5964e1c1c3ccbf89df", null ],
     [ "int8", "group__system__types.html#gae47c588f3ab8c61121c1c7ab7edc47cd", null ],
     [ "prio_t", "group__system__types.html#ga399ab71ffbe0a6db9d6981a7b4fbc44a", null ],
-    [ "ptr_t", "group__system__types.html#ga6c3e6bc5b006cba69f59a5c14cd2c8cd", null ],
     [ "tid_t", "group__system__types.html#gadffe598a3ea01dc03e080c77ece14d65", null ],
     [ "uint16", "group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e", null ],
     [ "uint32", "group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6", null ],

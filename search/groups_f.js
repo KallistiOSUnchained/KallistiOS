@@ -1,7 +1,7 @@
 var searchData=
 [
   ['kernel_0',['Kernel',['../group__kthreads.html',1,'']]],
-  ['key_20states_1',['Key States',['../group__key__states.html',1,'']]],
+  ['key_20states_1',['Key States',['../group__key__state__grp.html',1,'']]],
   ['keyboard_2',['Keyboard',['../group__kbd.html',1,'']]],
   ['keys_3',['Modifier Keys',['../group__kbd__mods__grp.html',1,'']]]
 ];

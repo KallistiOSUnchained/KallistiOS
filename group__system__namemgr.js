@@ -4,11 +4,11 @@ var group__system__namemgr =
     [ "nmmgr.h", "nmmgr_8h.html", null ],
     [ "nmmgr_handler_t", "structnmmgr__handler__t.html", [
       [ "LIST_ENTRY", "structnmmgr__handler__t.html#a42d82b65f81a1b5fd17459253c98633f", null ],
-      [ "flags", "structnmmgr__handler__t.html#af7db494d6667f4eeb59474538465d3d6", null ],
+      [ "flags", "structnmmgr__handler__t.html#aaa435c44b3d11bd694a588934811b221", null ],
       [ "pathname", "structnmmgr__handler__t.html#a30d9ca7e6882dcb7f3026f6531248301", null ],
       [ "pid", "structnmmgr__handler__t.html#a0600351b25933907940583f310810524", null ],
-      [ "type", "structnmmgr__handler__t.html#a582a530a244448897364919edd94b14a", null ],
-      [ "version", "structnmmgr__handler__t.html#a35d545596749153dc06db984e8c31c47", null ]
+      [ "type", "structnmmgr__handler__t.html#ab07de56e6c7894b9084d5ebd8ea31052", null ],
+      [ "version", "structnmmgr__handler__t.html#a54c7f6efc0edf1b62cbe1816c508cd8c", null ]
     ] ],
     [ "alias_handler_t", "structalias__handler__t.html", [
       [ "alias", "structalias__handler__t.html#a12d2053d70fb65722dfd346224ab85a7", null ],

@@ -110,6 +110,7 @@ $(function(){initNavTree('arch_2dmac_8h.html',''); initResizable(true); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sys/cdefs.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 </div>
 <p><a href="arch_2dmac_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -198,9 +199,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga74b72d4f32375bfc204a1d1913da362f" id="r_ga74b72d4f32375bfc204a1d1913da362f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dmac.html#ga74b72d4f32375bfc204a1d1913da362f">dma_wait_complete</a> (<a class="el" href="group__dmac.html#ga0dc7947c16f6b7974dd238fb7f77ac26">dma_channel_t</a> channel)</td></tr>
 <tr class="memdesc:ga74b72d4f32375bfc204a1d1913da362f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a DMA transfer to complete.  <br /></td></tr>
 <tr class="separator:ga74b72d4f32375bfc204a1d1913da362f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae213e2e33c9c12055e373f72849cdc06" id="r_gae213e2e33c9c12055e373f72849cdc06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dmac.html#gae213e2e33c9c12055e373f72849cdc06">dma_is_running</a> (<a class="el" href="group__dmac.html#ga0dc7947c16f6b7974dd238fb7f77ac26">dma_channel_t</a> channel)</td></tr>
+<tr class="memdesc:gae213e2e33c9c12055e373f72849cdc06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a DMA transfer is running.  <br /></td></tr>
+<tr class="separator:gae213e2e33c9c12055e373f72849cdc06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2e3b66e604184b669329184bb9330e5d" id="r_ga2e3b66e604184b669329184bb9330e5d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dmac.html#ga2e3b66e604184b669329184bb9330e5d">dma_transfer_get_remaining</a> (<a class="el" href="group__dmac.html#ga0dc7947c16f6b7974dd238fb7f77ac26">dma_channel_t</a> channel)</td></tr>
 <tr class="memdesc:ga2e3b66e604184b669329184bb9330e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the remaining size of a DMA transfer.  <br /></td></tr>
 <tr class="separator:ga2e3b66e604184b669329184bb9330e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23a206653fccfe176bf748996cbb3788" id="r_ga23a206653fccfe176bf748996cbb3788"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dmac.html#ga23a206653fccfe176bf748996cbb3788">dma_transfer_abort</a> (<a class="el" href="group__dmac.html#ga0dc7947c16f6b7974dd238fb7f77ac26">dma_channel_t</a> channel)</td></tr>
+<tr class="memdesc:ga23a206653fccfe176bf748996cbb3788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort a DMA transfer.  <br /></td></tr>
+<tr class="separator:ga23a206653fccfe176bf748996cbb3788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SH4 DMA Controller API. </p>

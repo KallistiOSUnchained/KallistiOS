@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['macros_0',['Macros',['../group__register__macros.html',1,'Register Macros'],['../group__cd__toc__access.html',1,'TOC Access Macros'],['../group__system__helpers.html',1,'Utility Macros']]],
+  ['macros_0',['Macros',['../group__system__helpers.html',1,'Helper Macros'],['../group__register__macros.html',1,'Register Macros'],['../group__cd__toc__access.html',1,'TOC Access Macros']]],
   ['management_1',['Texture Stride Management',['../group__pvr__txr__stride.html',1,'']]],
   ['manager_2',['Name Manager',['../group__system__namemgr.html',1,'']]],
   ['maple_3',['Maple',['../group__asic__events__maple.html',1,'']]],

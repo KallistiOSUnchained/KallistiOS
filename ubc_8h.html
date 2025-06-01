@@ -111,6 +111,7 @@ $(function(){initNavTree('ubc_8h.html',''); initResizable(true); });
 <div class="textblock"><code>#include &lt;<a class="el" href="cdefs_8h_source.html">kos/cdefs.h</a>&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="irq_8h_source.html">arch/irq.h</a>&gt;</code><br />
 </div>
 <p><a href="ubc_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -122,9 +123,9 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga3b064130b91dfc9bbe4de308bc73dcc6" id="r_ga3b064130b91dfc9bbe4de308bc73dcc6"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ubc.html#ga3b064130b91dfc9bbe4de308bc73dcc6">ubc_break_func_t</a>) (const <a class="el" href="structubc__breakpoint__t.html">ubc_breakpoint_t</a> *bp, const struct irq_context *ctx, void *user_data)</td></tr>
-<tr class="memdesc:ga3b064130b91dfc9bbe4de308bc73dcc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Breakpoint user callback.  <br /></td></tr>
-<tr class="separator:ga3b064130b91dfc9bbe4de308bc73dcc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ce1dd76767696e58b9d397371fbba71" id="r_ga3ce1dd76767696e58b9d397371fbba71"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ubc.html#ga3ce1dd76767696e58b9d397371fbba71">ubc_break_func_t</a>) (const <a class="el" href="structubc__breakpoint__t.html">ubc_breakpoint_t</a> *bp, const <a class="el" href="structirq__context__t.html">irq_context_t</a> *ctx, void *user_data)</td></tr>
+<tr class="memdesc:ga3ce1dd76767696e58b9d397371fbba71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Breakpoint user callback.  <br /></td></tr>
+<tr class="separator:ga3ce1dd76767696e58b9d397371fbba71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -166,7 +167,7 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga78f8afc9a98387b11a0720bfc41dcbf4" id="r_ga78f8afc9a98387b11a0720bfc41dcbf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ubc.html#ga78f8afc9a98387b11a0720bfc41dcbf4">ubc_add_breakpoint</a> (const <a class="el" href="structubc__breakpoint__t.html">ubc_breakpoint_t</a> *bp, <a class="el" href="group__ubc.html#ga3b064130b91dfc9bbe4de308bc73dcc6">ubc_break_func_t</a> callback, void *user_data)</td></tr>
+<tr class="memitem:ga78f8afc9a98387b11a0720bfc41dcbf4" id="r_ga78f8afc9a98387b11a0720bfc41dcbf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ubc.html#ga78f8afc9a98387b11a0720bfc41dcbf4">ubc_add_breakpoint</a> (const <a class="el" href="structubc__breakpoint__t.html">ubc_breakpoint_t</a> *bp, <a class="el" href="group__ubc.html#ga3ce1dd76767696e58b9d397371fbba71">ubc_break_func_t</a> callback, void *user_data)</td></tr>
 <tr class="memdesc:ga78f8afc9a98387b11a0720bfc41dcbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a breakpoint.  <br /></td></tr>
 <tr class="separator:ga78f8afc9a98387b11a0720bfc41dcbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8a7f5526b33f86e7cff1af37c349c635" id="r_ga8a7f5526b33f86e7cff1af37c349c635"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ubc.html#ga8a7f5526b33f86e7cff1af37c349c635">ubc_remove_breakpoint</a> (const <a class="el" href="structubc__breakpoint__t.html">ubc_breakpoint_t</a> *bp)</td></tr>

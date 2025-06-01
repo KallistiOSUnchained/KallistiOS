@@ -725,332 +725,330 @@ $(function(){initNavTree('maple_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno"><a class="line" href="group__maple.html#ga2f0496e5b3d04f9dba2262e285ab08a9">  610</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga2f0496e5b3d04f9dba2262e285ab08a9">maple_gun_read_pos</a>(<span class="keywordtype">int</span> *x, <span class="keywordtype">int</span> *y);</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span> </div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span><span class="preprocessor">#if MAPLE_DMA_DEBUG</span></div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span><span class="comment">/* Debugging help */</span></div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="comment"></span> </div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="comment">/** \brief   Setup a sentinel for debugging DMA issues.</span></div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span><span class="comment"></span> </div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="comment">    \param  buffer          The buffer to add the sentinel to.</span></div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="comment">    \param  bufsize         The size of the data in the buffer.</span></div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span><span class="keywordtype">void</span> maple_sentinel_setup(<span class="keywordtype">void</span> * buffer, <span class="keywordtype">int</span> bufsize);</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span><span class="comment"></span> </div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span><span class="comment">/** \brief   Verify the presence of the sentine.</span></div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span><span class="comment"></span> </div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="comment">    \param  bufname         A string to recognize the buffer by.</span></div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span><span class="comment">    \param  buffer          The buffer to check.</span></div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><span class="comment">    \param  bufsize         The size of the buffer.</span></div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span><span class="keywordtype">void</span> maple_sentinel_verify(<span class="keyword">const</span> <span class="keywordtype">char</span> * bufname, <span class="keywordtype">void</span> * buffer, <span class="keywordtype">int</span> bufsize);</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span><span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span><span class="comment">/* maple_queue.c */</span></div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="comment"></span> </div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span><span class="comment">/** \brief   Send all queued frames. </span></div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno"><a class="line" href="group__maple.html#gabcb8a9b9b1cd5bf73f7aecc0a5d1dfa5">  639</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#gabcb8a9b9b1cd5bf73f7aecc0a5d1dfa5">maple_queue_flush</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span><span class="comment"></span> </div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span><span class="comment">/** \brief   Submit a frame for queueing.</span></div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span><span class="comment"></span> </div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span><span class="comment">    This will generally be called inside the periodic interrupt; however, if you</span></div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span><span class="comment">    need to do something asynchronously (e.g., VMU access) then it might cause</span></div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span><span class="comment">    some problems. In this case, the function will automatically do locking by</span></div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span><span class="comment">    disabling interrupts temporarily. In any case, the callback will be done</span></div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span><span class="comment">    inside an IRQ context.</span></div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span><span class="comment"></span> </div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span><span class="comment">    \param  frame           The frame to queue up.</span></div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="comment">    \retval -1              If the frame is already queued.</span></div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno"><a class="line" href="group__maple.html#gaa1639dd1b792a0252e916d3f1663e754">  654</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#gaa1639dd1b792a0252e916d3f1663e754">maple_queue_frame</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span><span class="comment"></span> </div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span><span class="comment">/** \brief   Remove a used frame from the queue.</span></div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span><span class="comment">/* Debugging help */</span></div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span><span class="comment"></span> </div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="comment">/** \brief   Setup a sentinel for debugging DMA issues.</span></div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span><span class="comment"></span> </div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span><span class="comment">    \param  buffer          The buffer to add the sentinel to.</span></div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="comment">    \param  bufsize         The size of the data in the buffer.</span></div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno"><a class="line" href="group__maple.html#ga91bfc4c356300ec28adebcf884acacb1">  620</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga91bfc4c356300ec28adebcf884acacb1">maple_sentinel_setup</a>(<span class="keywordtype">void</span> * buffer, <span class="keywordtype">int</span> bufsize);</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span><span class="comment"></span> </div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span><span class="comment">/** \brief   Verify the presence of the sentine.</span></div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span><span class="comment"></span> </div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span><span class="comment">    \param  bufname         A string to recognize the buffer by.</span></div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="comment">    \param  buffer          The buffer to check.</span></div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span><span class="comment">    \param  bufsize         The size of the buffer.</span></div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno"><a class="line" href="group__maple.html#ga99b764c4950259d75afbddf4da2abadb">  629</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga99b764c4950259d75afbddf4da2abadb">maple_sentinel_verify</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * bufname, <span class="keywordtype">void</span> * buffer, <span class="keywordtype">int</span> bufsize);</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span><span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span><span class="comment">/* maple_queue.c */</span></div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span><span class="comment"></span> </div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span><span class="comment">/** \brief   Send all queued frames. </span></div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno"><a class="line" href="group__maple.html#gabcb8a9b9b1cd5bf73f7aecc0a5d1dfa5">  637</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#gabcb8a9b9b1cd5bf73f7aecc0a5d1dfa5">maple_queue_flush</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span><span class="comment"></span> </div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span><span class="comment">/** \brief   Submit a frame for queueing.</span></div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span><span class="comment"></span> </div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span><span class="comment">    This will generally be called inside the periodic interrupt; however, if you</span></div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span><span class="comment">    need to do something asynchronously (e.g., VMU access) then it might cause</span></div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span><span class="comment">    some problems. In this case, the function will automatically do locking by</span></div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span><span class="comment">    disabling interrupts temporarily. In any case, the callback will be done</span></div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span><span class="comment">    inside an IRQ context.</span></div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span><span class="comment"></span> </div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span><span class="comment">    \param  frame           The frame to queue up.</span></div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span><span class="comment">    \retval -1              If the frame is already queued.</span></div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno"><a class="line" href="group__maple.html#gaa1639dd1b792a0252e916d3f1663e754">  652</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#gaa1639dd1b792a0252e916d3f1663e754">maple_queue_frame</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="comment"></span> </div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span><span class="comment">/** \brief   Remove a used frame from the queue.</span></div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span><span class="comment"></span> </div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span><span class="comment">    This will be done automatically when the frame is consumed.</span></div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span><span class="comment"></span> </div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span><span class="comment">    This will be done automatically when the frame is consumed.</span></div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span><span class="comment"></span> </div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span><span class="comment">    \param  frame           The frame to remove from the queue.</span></div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span><span class="comment">    \retval -1              If the frame is not queued.</span></div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno"><a class="line" href="group__maple.html#gafbac71b6b9155536b7fee66924c3f8d7">  665</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#gafbac71b6b9155536b7fee66924c3f8d7">maple_queue_remove</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="comment"></span> </div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="comment">/** \brief   Initialize a new frame to prepare it to be placed on the queue.</span></div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span><span class="comment">    \param  frame           The frame to remove from the queue.</span></div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span><span class="comment">    \retval -1              If the frame is not queued.</span></div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno"><a class="line" href="group__maple.html#gafbac71b6b9155536b7fee66924c3f8d7">  663</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#gafbac71b6b9155536b7fee66924c3f8d7">maple_queue_remove</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span><span class="comment"></span> </div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="comment">/** \brief   Initialize a new frame to prepare it to be placed on the queue.</span></div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="comment"></span> </div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="comment">    You should call this before you fill in the frame data.</span></div>
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="comment"></span> </div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span><span class="comment">    You should call this before you fill in the frame data.</span></div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="comment"></span> </div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span><span class="comment">    \param  frame           The frame to initialize.</span></div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno"><a class="line" href="group__maple.html#ga449b8ea5829636c359b48a7799d9c161">  674</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga449b8ea5829636c359b48a7799d9c161">maple_frame_init</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="comment"></span> </div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span><span class="comment">/** \brief   Lock a frame so that someone else can&#39;t use it in the mean time.</span></div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span><span class="comment"></span> </div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="comment">    \retval -1              If the frame is already locked.</span></div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno"><a class="line" href="group__maple.html#ga5ee1a332b58574c27fa448b8aadec158">  682</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga5ee1a332b58574c27fa448b8aadec158">maple_frame_lock</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span><span class="comment"></span> </div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span><span class="comment">/** \brief   Unlock a frame. </span></div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno"><a class="line" href="group__maple.html#gaaead481ff5ed1a9a5d4cdce911265d3c">  687</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#gaaead481ff5ed1a9a5d4cdce911265d3c">maple_frame_unlock</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span> </div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span><span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span><span class="comment">/* maple_driver.c */</span></div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span><span class="comment"></span> </div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span><span class="comment">/** \brief   Register a maple device driver.</span></div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span><span class="comment">    \param  frame           The frame to initialize.</span></div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno"><a class="line" href="group__maple.html#ga449b8ea5829636c359b48a7799d9c161">  672</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga449b8ea5829636c359b48a7799d9c161">maple_frame_init</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span><span class="comment"></span> </div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span><span class="comment">/** \brief   Lock a frame so that someone else can&#39;t use it in the mean time.</span></div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span><span class="comment"></span> </div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span><span class="comment">    \retval -1              If the frame is already locked.</span></div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno"><a class="line" href="group__maple.html#ga5ee1a332b58574c27fa448b8aadec158">  680</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga5ee1a332b58574c27fa448b8aadec158">maple_frame_lock</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="comment"></span> </div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span><span class="comment">/** \brief   Unlock a frame. </span></div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno"><a class="line" href="group__maple.html#gaaead481ff5ed1a9a5d4cdce911265d3c">  685</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#gaaead481ff5ed1a9a5d4cdce911265d3c">maple_frame_unlock</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *frame);</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span> </div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span><span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span><span class="comment">/* maple_driver.c */</span></div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span><span class="comment"></span> </div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span><span class="comment">/** \brief   Register a maple device driver.</span></div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span><span class="comment"></span> </div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="comment">    This should be done before calling maple_init().</span></div>
 <div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="comment"></span> </div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="comment">    This should be done before calling maple_init().</span></div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span><span class="comment"></span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span><span class="comment">    \retval 0               On success (no error conditions defined).</span></div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno"><a class="line" href="group__maple.html#ga69ef3fa0bd1885fa6dc75cc08d173f5c">  699</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga69ef3fa0bd1885fa6dc75cc08d173f5c">maple_driver_reg</a>(<a class="code hl_struct" href="structmaple__driver__t.html">maple_driver_t</a> *driver);</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span><span class="comment"></span> </div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span><span class="comment">/** \brief   Unregister a maple device driver.</span></div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span><span class="comment"></span> </div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span><span class="comment">    \retval 0               On success (no error conditions defined).</span></div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno"><a class="line" href="group__maple.html#ga0105c280700f3830ba52b0fadb9d5809">  706</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga0105c280700f3830ba52b0fadb9d5809">maple_driver_unreg</a>(<a class="code hl_struct" href="structmaple__driver__t.html">maple_driver_t</a> *driver);</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span><span class="comment"></span> </div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span><span class="comment">/** \brief   Attach a maple device to a driver, if possible.</span></div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span><span class="comment"></span> </div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span><span class="comment">    \param  det             The detection frame.</span></div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span><span class="comment">    \retval 1               Couldn&#39;t allocate buffers.</span></div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span><span class="comment">    \retval -1              If no driver is available.</span></div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno"><a class="line" href="group__maple.html#ga01626ea6453a91a4bef93b07b7cfd31b">  716</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga01626ea6453a91a4bef93b07b7cfd31b">maple_driver_attach</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *det);</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span><span class="comment"></span> </div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span><span class="comment">/** \brief   Detach an attached maple device.</span></div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="comment"></span> </div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span><span class="comment">    \param  p               The port of the device to detach.</span></div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span><span class="comment">    \param  u               The unit of the device to detach.</span></div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span><span class="comment">    \retval -1              If the device wasn&#39;t valid.</span></div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno"><a class="line" href="group__maple.html#ga3e5a60121a891e060fcd2254de939c6a">  726</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga3e5a60121a891e060fcd2254de939c6a">maple_driver_detach</a>(<span class="keywordtype">int</span> p, <span class="keywordtype">int</span> u);</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span><span class="comment"></span> </div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span><span class="comment">/** \brief   For each device which the given driver controls, call the callback.</span></div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span><span class="comment"></span> </div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span><span class="comment">    \param  drv             The driver to loop through devices of.</span></div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span><span class="comment">    \param  callback        The function to call. The parameter is the device</span></div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span><span class="comment">                            that it is being called on. It should return 0 on</span></div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span><span class="comment">                            success, and &lt;0 on failure.</span></div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span><span class="comment">    \retval -1              If any callbacks return &lt;0.</span></div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno"><a class="line" href="group__maple.html#gaf25640efb1cc54b1fd5ab47b038a47f0">  738</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#gaf25640efb1cc54b1fd5ab47b038a47f0">maple_driver_foreach</a>(<a class="code hl_struct" href="structmaple__driver__t.html">maple_driver_t</a> *drv, <span class="keywordtype">int</span> (*callback)(<a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> *));</div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span><span class="comment"></span> </div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="comment">/** \brief   Maple attach callback type.</span></div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span><span class="comment"></span> </div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span><span class="comment">    Functions of this type can be set with maple_attach_callback() to respond</span></div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span><span class="comment">    automatically to the attachment of a maple device that supports specified</span></div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span><span class="comment">    functions.</span></div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno"><a class="line" href="group__maple.html#ga945110b6145654921d748e409550f705">  747</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__maple.html#ga945110b6145654921d748e409550f705">maple_attach_callback_t</a>)(<a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> *dev);</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span><span class="comment"></span> </div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span><span class="comment">/** \brief   Set an automatic maple attach callback.</span></div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span><span class="comment"></span> </div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span><span class="comment">    This function sets a callback function to be called when the specified</span></div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span><span class="comment">    maple device that supports functions has been attached.</span></div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span><span class="comment"></span> </div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="comment">    \param  functions       The functions maple device must support. Set to</span></div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span><span class="comment">                            0 to support all maple devices.</span></div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span><span class="comment">    \param  cb              The callback to call when the maple is attached.</span></div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno"><a class="line" href="group__maple.html#ga7f43051fc58eb3ede4195ee8cb61f9d7">  759</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga7f43051fc58eb3ede4195ee8cb61f9d7">maple_attach_callback</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> functions, <a class="code hl_typedef" href="group__maple.html#ga945110b6145654921d748e409550f705">maple_attach_callback_t</a> cb);</div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span><span class="comment"></span> </div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span><span class="comment">/** \brief   Maple detach callback type.</span></div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="comment"></span> </div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span><span class="comment">    Functions of this type can be set with maple_detach_callback() to respond</span></div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="comment">    automatically to the detachment of a maple device that supports specified</span></div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span><span class="comment">    functions.</span></div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno"><a class="line" href="group__maple.html#ga028bd32952152ed804342eb5a2f87e0f">  768</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__maple.html#ga028bd32952152ed804342eb5a2f87e0f">maple_detach_callback_t</a>)(<a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> *dev);</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span><span class="comment"></span> </div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span><span class="comment">/** \brief   Set an automatic maple detach callback.</span></div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span><span class="comment"></span> </div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span><span class="comment">    This function sets a callback function to be called when the specified</span></div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span><span class="comment">    maple device that supports functions has been detached.</span></div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span><span class="comment"></span> </div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span><span class="comment">    \param  functions       The functions maple device must support. Set to</span></div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span><span class="comment">                            0 to support all maple devices.</span></div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span><span class="comment">    \param  cb              The callback to call when the maple is detached.</span></div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno"><a class="line" href="group__maple.html#gaad2064db0cf03dcffc173c7d36071a9e">  780</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#gaad2064db0cf03dcffc173c7d36071a9e">maple_detach_callback</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> functions, <a class="code hl_typedef" href="group__maple.html#ga028bd32952152ed804342eb5a2f87e0f">maple_detach_callback_t</a> cb);</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span> </div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span><span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span><span class="comment">/* maple_irq.c */</span></div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span><span class="comment"></span> </div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="comment">/** \brief   Called on every VBL (~60fps).</span></div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="comment">    </span></div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span><span class="comment">    \param  code            The ASIC event code.</span></div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span><span class="comment">    \param  data            The user pointer associated with this callback.</span></div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno"><a class="line" href="group__maple.html#gae4b866297db34f110a106c2b9bef121e">  791</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#gae4b866297db34f110a106c2b9bef121e">maple_vbl_irq_hnd</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> code, <span class="keywordtype">void</span> *data);</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span><span class="comment"></span> </div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span><span class="comment">/** \brief   Called after a Maple DMA send / receive pair completes.</span></div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span><span class="comment">    \ingroup maple </span></div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span><span class="comment">    </span></div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="comment">    \param  code            The ASIC event code.</span></div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="comment">    \param  data            The user pointer associated with this callback.</span></div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno"><a class="line" href="group__maple.html#ga34c38101b9e2753e8756d4bf418302b0">  799</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga34c38101b9e2753e8756d4bf418302b0">maple_dma_irq_hnd</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> code, <span class="keywordtype">void</span> *data);</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span> </div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span><span class="comment">/* maple_enum.c */</span></div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="comment"></span> </div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span><span class="comment">/** \brief   Return the number of connected devices.</span></div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span><span class="comment"></span> </div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span><span class="comment">    \return                 The number of devices connected.</span></div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno"><a class="line" href="group__maple.html#ga726f478234a872637e79d02463b4df6d">  809</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga726f478234a872637e79d02463b4df6d">maple_enum_count</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span><span class="comment"></span> </div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span><span class="comment">/** \brief   Get a raw device info struct for the given device.</span></div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span><span class="comment"></span> </div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span><span class="comment">    \param  p               The port to look up.</span></div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span><span class="comment">    \param  u               The unit to look up.</span></div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span><span class="comment">    \return                 The device at that address, or NULL if no device is</span></div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span><span class="comment">                            there.</span></div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno"><a class="line" href="group__maple.html#gac76c085ff0cd3d47d7389c3f5eb2155f">  819</a></span><a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> * <a class="code hl_function" href="group__maple.html#gac76c085ff0cd3d47d7389c3f5eb2155f">maple_enum_dev</a>(<span class="keywordtype">int</span> p, <span class="keywordtype">int</span> u);</div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span><span class="comment"></span> </div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span><span class="comment">/** \brief   Get the Nth device of the requested type (where N is zero-indexed).</span></div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span><span class="comment"></span> </div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span><span class="comment">    \param  n               The index to look up.</span></div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span><span class="comment">    \param  func            The function code to look for.</span></div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span><span class="comment">    \return                 The device found, if any. NULL otherwise.</span></div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno"><a class="line" href="group__maple.html#ga799d5750b8249abbd94aad16045b0efc">  828</a></span><a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> * <a class="code hl_function" href="group__maple.html#ga799d5750b8249abbd94aad16045b0efc">maple_enum_type</a>(<span class="keywordtype">int</span> n, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> func);</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span><span class="comment"></span> </div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span><span class="comment">/** \brief   Return the Nth device that is of the requested type and supports the</span></div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span><span class="comment">             list of capabilities given.</span></div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="comment"></span> </div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span><span class="comment">    Note, this only currently makes sense for controllers, since some devices</span></div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span><span class="comment">    don&#39;t necessarily use the function data in the same manner that controllers</span></div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span><span class="comment">    do (and controllers are the only devices where we have a list of what all</span></div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span><span class="comment">    the bits mean at the moment).</span></div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span><span class="comment"></span> </div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span><span class="comment">    \param  n               The index to look up.</span></div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span><span class="comment">    \param  func            The function code to look for.</span></div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span><span class="comment">    \param  cap             Capabilities bits to look for.</span></div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span><span class="comment">    \return                 The device found, if any. NULL otherwise.</span></div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno"><a class="line" href="group__maple.html#ga6bcc77577eea4d453dcb0ebc217d4b0d">  844</a></span><a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> * <a class="code hl_function" href="group__maple.html#ga6bcc77577eea4d453dcb0ebc217d4b0d">maple_enum_type_ex</a>(<span class="keywordtype">int</span> n, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> func, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> cap);</div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span><span class="comment"></span> </div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span><span class="comment">/** \brief   Get the status struct for the requested maple device.</span></div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span><span class="comment"></span> </div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="comment">    This function will wait until the status is valid before returning.</span></div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span><span class="comment">    You should cast to the appropriate type you&#39;re expecting.</span></div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span><span class="comment"></span> </div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span><span class="comment">    \param  dev             The device to look up.</span></div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span><span class="comment">    \return                 The device&#39;s status.</span></div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno"><a class="line" href="group__maple.html#gaeed7e161e4b6b49ebef7aaf7436583e4">  855</a></span><span class="keywordtype">void</span> * <a class="code hl_function" href="group__maple.html#gaeed7e161e4b6b49ebef7aaf7436583e4">maple_dev_status</a>(<a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> *dev);</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span> </div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span><span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span><span class="comment">/* maple_init.c */</span></div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span><span class="comment"></span> </div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span><span class="comment">/** \brief   Initialize Maple. </span></div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span><span class="comment">    \ingroup maple </span></div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno"><a class="line" href="group__maple.html#ga735162b4e5881b11db61fd02b2cd04da">  863</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga735162b4e5881b11db61fd02b2cd04da">maple_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span><span class="comment"></span> </div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span><span class="comment">/** \brief   Shutdown Maple. </span></div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno"><a class="line" href="group__maple.html#ga53185290848409196fee63ca97f43e74">  868</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga53185290848409196fee63ca97f43e74">maple_shutdown</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span><span class="comment"></span> </div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span><span class="comment">/** \brief   Wait for the initial bus scan to complete. </span></div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno"><a class="line" href="group__maple.html#ga4365b2fbc0d66f3fb1616815c82d1b79">  873</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga4365b2fbc0d66f3fb1616815c82d1b79">maple_wait_scan</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span> </div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span><span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span><span class="comment">/* Convenience macros */</span></div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span> </div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span><span class="comment">/* A &quot;foreach&quot; loop to scan all maple devices of a given type. It is used</span></div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span><span class="comment">   like this:</span></div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span><span class="comment"></span> </div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span><span class="comment">   MAPLE_FOREACH_BEGIN(MAPLE_FUNC_CONTROLLER, cont_state_t, st)</span></div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span><span class="comment">    if(st-&gt;buttons &amp; CONT_START)</span></div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span><span class="comment">        return -1;</span></div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span><span class="comment">   MAPLE_FOREACH_END()</span></div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span><span class="comment"></span> </div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span><span class="comment">   The peripheral index can be obtained with __i, and the raw device struct</span></div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span><span class="comment">   with __dev. The code inside the loop is guaranteed to be inside a block</span></div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span><span class="comment">   (i.e., { code })</span></div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span><span class="comment"></span> </div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span><span class="comment">/** \brief   Begin a foreach loop over Maple devices.</span></div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span><span class="comment"></span> </div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span><span class="comment">    This macro (along with the MAPLE_FOREACH_END() one) implements a simple</span></div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span><span class="comment">    foreach-style loop over the given type of devices. Essentially, it grabs the</span></div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span><span class="comment">    status of the device, and leaves it to you to figure out what to do with it.</span></div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="comment">    \retval 0               On success (no error conditions defined).</span></div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno"><a class="line" href="group__maple.html#ga69ef3fa0bd1885fa6dc75cc08d173f5c">  697</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga69ef3fa0bd1885fa6dc75cc08d173f5c">maple_driver_reg</a>(<a class="code hl_struct" href="structmaple__driver__t.html">maple_driver_t</a> *driver);</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span><span class="comment"></span> </div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span><span class="comment">/** \brief   Unregister a maple device driver.</span></div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span><span class="comment"></span> </div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span><span class="comment">    \retval 0               On success (no error conditions defined).</span></div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno"><a class="line" href="group__maple.html#ga0105c280700f3830ba52b0fadb9d5809">  704</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga0105c280700f3830ba52b0fadb9d5809">maple_driver_unreg</a>(<a class="code hl_struct" href="structmaple__driver__t.html">maple_driver_t</a> *driver);</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span><span class="comment"></span> </div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span><span class="comment">/** \brief   Attach a maple device to a driver, if possible.</span></div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span><span class="comment"></span> </div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span><span class="comment">    \param  det             The detection frame.</span></div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span><span class="comment">    \retval 1               Couldn&#39;t allocate buffers.</span></div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span><span class="comment">    \retval -1              If no driver is available.</span></div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno"><a class="line" href="group__maple.html#ga01626ea6453a91a4bef93b07b7cfd31b">  714</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga01626ea6453a91a4bef93b07b7cfd31b">maple_driver_attach</a>(<a class="code hl_struct" href="structmaple__frame__t.html">maple_frame_t</a> *det);</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span><span class="comment"></span> </div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span><span class="comment">/** \brief   Detach an attached maple device.</span></div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span><span class="comment"></span> </div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="comment">    \param  p               The port of the device to detach.</span></div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="comment">    \param  u               The unit of the device to detach.</span></div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span><span class="comment">    \retval -1              If the device wasn&#39;t valid.</span></div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno"><a class="line" href="group__maple.html#ga3e5a60121a891e060fcd2254de939c6a">  724</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga3e5a60121a891e060fcd2254de939c6a">maple_driver_detach</a>(<span class="keywordtype">int</span> p, <span class="keywordtype">int</span> u);</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span><span class="comment"></span> </div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span><span class="comment">/** \brief   For each device which the given driver controls, call the callback.</span></div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span><span class="comment"></span> </div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span><span class="comment">    \param  drv             The driver to loop through devices of.</span></div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span><span class="comment">    \param  callback        The function to call. The parameter is the device</span></div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span><span class="comment">                            that it is being called on. It should return 0 on</span></div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span><span class="comment">                            success, and &lt;0 on failure.</span></div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span><span class="comment">    \retval -1              If any callbacks return &lt;0.</span></div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno"><a class="line" href="group__maple.html#gaf25640efb1cc54b1fd5ab47b038a47f0">  736</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#gaf25640efb1cc54b1fd5ab47b038a47f0">maple_driver_foreach</a>(<a class="code hl_struct" href="structmaple__driver__t.html">maple_driver_t</a> *drv, <span class="keywordtype">int</span> (*callback)(<a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> *));</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span><span class="comment"></span> </div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span><span class="comment">/** \brief   Maple attach callback type.</span></div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="comment"></span> </div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span><span class="comment">    Functions of this type can be set with maple_attach_callback() to respond</span></div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span><span class="comment">    automatically to the attachment of a maple device that supports specified</span></div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span><span class="comment">    functions.</span></div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno"><a class="line" href="group__maple.html#ga945110b6145654921d748e409550f705">  745</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__maple.html#ga945110b6145654921d748e409550f705">maple_attach_callback_t</a>)(<a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> *dev);</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span><span class="comment"></span> </div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span><span class="comment">/** \brief   Set an automatic maple attach callback.</span></div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span><span class="comment"></span> </div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><span class="comment">    This function sets a callback function to be called when the specified</span></div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span><span class="comment">    maple device that supports functions has been attached.</span></div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span><span class="comment"></span> </div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span><span class="comment">    \param  functions       The functions maple device must support. Set to</span></div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span><span class="comment">                            0 to support all maple devices.</span></div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="comment">    \param  cb              The callback to call when the maple is attached.</span></div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno"><a class="line" href="group__maple.html#ga7f43051fc58eb3ede4195ee8cb61f9d7">  757</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga7f43051fc58eb3ede4195ee8cb61f9d7">maple_attach_callback</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> functions, <a class="code hl_typedef" href="group__maple.html#ga945110b6145654921d748e409550f705">maple_attach_callback_t</a> cb);</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span><span class="comment"></span> </div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span><span class="comment">/** \brief   Maple detach callback type.</span></div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span><span class="comment"></span> </div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span><span class="comment">    Functions of this type can be set with maple_detach_callback() to respond</span></div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="comment">    automatically to the detachment of a maple device that supports specified</span></div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span><span class="comment">    functions.</span></div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno"><a class="line" href="group__maple.html#ga028bd32952152ed804342eb5a2f87e0f">  766</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__maple.html#ga028bd32952152ed804342eb5a2f87e0f">maple_detach_callback_t</a>)(<a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> *dev);</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="comment"></span> </div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span><span class="comment">/** \brief   Set an automatic maple detach callback.</span></div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span><span class="comment"></span> </div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="comment">    This function sets a callback function to be called when the specified</span></div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span><span class="comment">    maple device that supports functions has been detached.</span></div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span><span class="comment"></span> </div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span><span class="comment">    \param  functions       The functions maple device must support. Set to</span></div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span><span class="comment">                            0 to support all maple devices.</span></div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span><span class="comment">    \param  cb              The callback to call when the maple is detached.</span></div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno"><a class="line" href="group__maple.html#gaad2064db0cf03dcffc173c7d36071a9e">  778</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#gaad2064db0cf03dcffc173c7d36071a9e">maple_detach_callback</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> functions, <a class="code hl_typedef" href="group__maple.html#ga028bd32952152ed804342eb5a2f87e0f">maple_detach_callback_t</a> cb);</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span> </div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span><span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span><span class="comment">/* maple_irq.c */</span></div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span><span class="comment"></span> </div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span><span class="comment">/** \brief   Called on every VBL (~60fps).</span></div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="comment">    </span></div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span><span class="comment">    \param  code            The ASIC event code.</span></div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="comment">    \param  data            The user pointer associated with this callback.</span></div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno"><a class="line" href="group__maple.html#gae4b866297db34f110a106c2b9bef121e">  789</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#gae4b866297db34f110a106c2b9bef121e">maple_vbl_irq_hnd</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> code, <span class="keywordtype">void</span> *data);</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span><span class="comment"></span> </div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span><span class="comment">/** \brief   Called after a Maple DMA send / receive pair completes.</span></div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span><span class="comment">    \ingroup maple </span></div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span><span class="comment">    </span></div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span><span class="comment">    \param  code            The ASIC event code.</span></div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span><span class="comment">    \param  data            The user pointer associated with this callback.</span></div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno"><a class="line" href="group__maple.html#ga34c38101b9e2753e8756d4bf418302b0">  797</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga34c38101b9e2753e8756d4bf418302b0">maple_dma_irq_hnd</a>(<a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> code, <span class="keywordtype">void</span> *data);</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span> </div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span><span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="comment">/* maple_enum.c */</span></div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="comment"></span> </div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span><span class="comment">/** \brief   Return the number of connected devices.</span></div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span><span class="comment"></span> </div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span><span class="comment">    \return                 The number of devices connected.</span></div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno"><a class="line" href="group__maple.html#ga726f478234a872637e79d02463b4df6d">  807</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__maple.html#ga726f478234a872637e79d02463b4df6d">maple_enum_count</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span><span class="comment"></span> </div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span><span class="comment">/** \brief   Get a raw device info struct for the given device.</span></div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span><span class="comment"></span> </div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span><span class="comment">    \param  p               The port to look up.</span></div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span><span class="comment">    \param  u               The unit to look up.</span></div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span><span class="comment">    \return                 The device at that address, or NULL if no device is</span></div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span><span class="comment">                            there.</span></div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno"><a class="line" href="group__maple.html#gac76c085ff0cd3d47d7389c3f5eb2155f">  817</a></span><a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> * <a class="code hl_function" href="group__maple.html#gac76c085ff0cd3d47d7389c3f5eb2155f">maple_enum_dev</a>(<span class="keywordtype">int</span> p, <span class="keywordtype">int</span> u);</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span><span class="comment"></span> </div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span><span class="comment">/** \brief   Get the Nth device of the requested type (where N is zero-indexed).</span></div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span><span class="comment"></span> </div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span><span class="comment">    \param  n               The index to look up.</span></div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span><span class="comment">    \param  func            The function code to look for.</span></div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span><span class="comment">    \return                 The device found, if any. NULL otherwise.</span></div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno"><a class="line" href="group__maple.html#ga799d5750b8249abbd94aad16045b0efc">  826</a></span><a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> * <a class="code hl_function" href="group__maple.html#ga799d5750b8249abbd94aad16045b0efc">maple_enum_type</a>(<span class="keywordtype">int</span> n, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> func);</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span><span class="comment"></span> </div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span><span class="comment">/** \brief   Return the Nth device that is of the requested type and supports the</span></div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span><span class="comment">             list of capabilities given.</span></div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span><span class="comment"></span> </div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="comment">    Note, this only currently makes sense for controllers, since some devices</span></div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="comment">    don&#39;t necessarily use the function data in the same manner that controllers</span></div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span><span class="comment">    do (and controllers are the only devices where we have a list of what all</span></div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span><span class="comment">    the bits mean at the moment).</span></div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span><span class="comment"></span> </div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span><span class="comment">    \param  n               The index to look up.</span></div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span><span class="comment">    \param  func            The function code to look for.</span></div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span><span class="comment">    \param  cap             Capabilities bits to look for.</span></div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span><span class="comment">    \return                 The device found, if any. NULL otherwise.</span></div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno"><a class="line" href="group__maple.html#ga6bcc77577eea4d453dcb0ebc217d4b0d">  842</a></span><a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> * <a class="code hl_function" href="group__maple.html#ga6bcc77577eea4d453dcb0ebc217d4b0d">maple_enum_type_ex</a>(<span class="keywordtype">int</span> n, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> func, <a class="code hl_typedef" href="group__system__types.html#ga4b435a49c74bb91f284f075e63416cb6">uint32</a> cap);</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span><span class="comment"></span> </div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span><span class="comment">/** \brief   Get the status struct for the requested maple device.</span></div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span><span class="comment"></span> </div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span><span class="comment">    This function will wait until the status is valid before returning.</span></div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span><span class="comment">    You should cast to the appropriate type you&#39;re expecting.</span></div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="comment"></span> </div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span><span class="comment">    \param  dev             The device to look up.</span></div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span><span class="comment">    \return                 The device&#39;s status.</span></div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno"><a class="line" href="group__maple.html#gaeed7e161e4b6b49ebef7aaf7436583e4">  853</a></span><span class="keywordtype">void</span> * <a class="code hl_function" href="group__maple.html#gaeed7e161e4b6b49ebef7aaf7436583e4">maple_dev_status</a>(<a class="code hl_struct" href="structmaple__device__t.html">maple_device_t</a> *dev);</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span> </div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span><span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span><span class="comment">/* maple_init.c */</span></div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span><span class="comment"></span> </div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span><span class="comment">/** \brief   Initialize Maple. </span></div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span><span class="comment">    \ingroup maple </span></div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno"><a class="line" href="group__maple.html#ga735162b4e5881b11db61fd02b2cd04da">  861</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga735162b4e5881b11db61fd02b2cd04da">maple_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span><span class="comment"></span> </div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span><span class="comment">/** \brief   Shutdown Maple. </span></div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno"><a class="line" href="group__maple.html#ga53185290848409196fee63ca97f43e74">  866</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga53185290848409196fee63ca97f43e74">maple_shutdown</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span><span class="comment"></span> </div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span><span class="comment">/** \brief   Wait for the initial bus scan to complete. </span></div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno"><a class="line" href="group__maple.html#ga4365b2fbc0d66f3fb1616815c82d1b79">  871</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__maple.html#ga4365b2fbc0d66f3fb1616815c82d1b79">maple_wait_scan</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span> </div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span><span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span><span class="comment">/* Convenience macros */</span></div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span> </div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span><span class="comment">/* A &quot;foreach&quot; loop to scan all maple devices of a given type. It is used</span></div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span><span class="comment">   like this:</span></div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span><span class="comment"></span> </div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span><span class="comment">   MAPLE_FOREACH_BEGIN(MAPLE_FUNC_CONTROLLER, cont_state_t, st)</span></div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span><span class="comment">    if(st-&gt;buttons &amp; CONT_START)</span></div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span><span class="comment">        return -1;</span></div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span><span class="comment">   MAPLE_FOREACH_END()</span></div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span><span class="comment"></span> </div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span><span class="comment">   The peripheral index can be obtained with __i, and the raw device struct</span></div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span><span class="comment">   with __dev. The code inside the loop is guaranteed to be inside a block</span></div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span><span class="comment">   (i.e., { code })</span></div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span><span class="comment"></span> </div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span><span class="comment">/** \brief   Begin a foreach loop over Maple devices.</span></div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span><span class="comment"></span> </div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span><span class="comment">    This macro (along with the MAPLE_FOREACH_END() one) implements a simple</span></div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span><span class="comment">    foreach-style loop over the given type of devices. Essentially, it grabs the</span></div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span><span class="comment">    status of the device, and leaves it to you to figure out what to do with it.</span></div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span><span class="comment"></span> </div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span><span class="comment">    The most common use of this would be to look for input on any controller.</span></div>
 <div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span><span class="comment"></span> </div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span><span class="comment">    The most common use of this would be to look for input on any controller.</span></div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span><span class="comment"></span> </div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span><span class="comment">    \param  TYPE            The function code of devices to look at.</span></div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span><span class="comment">    \param  VARTYPE         The type to cast the return value of</span></div>
-<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span><span class="comment">                            maple_dev_status() to.</span></div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span><span class="comment">    \param  VAR             The name of the result of maple_dev_status().</span></div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00905" data-start="" data-end="">
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno"><a class="line" href="group__maple.html#ga7074bc077a4c105bcc861b53fe8d80b9">  905</a></span><span class="preprocessor">#define MAPLE_FOREACH_BEGIN(TYPE, VARTYPE, VAR) \</span></div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span><span class="preprocessor">    do { \</span></div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span><span class="preprocessor">        maple_device_t  * __dev; \</span></div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span><span class="preprocessor">        VARTYPE * VAR; \</span></div>
-<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span><span class="preprocessor">        int __i; \</span></div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span><span class="preprocessor">        \</span></div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span><span class="preprocessor">        __i = 0; \</span></div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span><span class="preprocessor">        while( (__dev = maple_enum_type(__i, TYPE)) ) { \</span></div>
-<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span><span class="preprocessor">            VAR = (VARTYPE *)maple_dev_status(__dev); \</span></div>
-<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span><span class="preprocessor">            do {</span></div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span><span class="comment">    \param  TYPE            The function code of devices to look at.</span></div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span><span class="comment">    \param  VARTYPE         The type to cast the return value of</span></div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span><span class="comment">                            maple_dev_status() to.</span></div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span><span class="comment">    \param  VAR             The name of the result of maple_dev_status().</span></div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00903" data-start="" data-end="">
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno"><a class="line" href="group__maple.html#ga7074bc077a4c105bcc861b53fe8d80b9">  903</a></span><span class="preprocessor">#define MAPLE_FOREACH_BEGIN(TYPE, VARTYPE, VAR) \</span></div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span><span class="preprocessor">    do { \</span></div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span><span class="preprocessor">        maple_device_t  * __dev; \</span></div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span><span class="preprocessor">        VARTYPE * VAR; \</span></div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span><span class="preprocessor">        int __i; \</span></div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span><span class="preprocessor">        \</span></div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span><span class="preprocessor">        __i = 0; \</span></div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span><span class="preprocessor">        while( (__dev = maple_enum_type(__i, TYPE)) ) { \</span></div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span><span class="preprocessor">            VAR = (VARTYPE *)maple_dev_status(__dev); \</span></div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span><span class="preprocessor">            do {</span></div>
 </div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span><span class="comment"></span> </div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span><span class="comment">/** \brief   End a foreach loop over Maple devices.</span></div>
-<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span><span class="comment">    \ingroup maple</span></div>
-<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span><span class="comment"></span> </div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span><span class="comment">    Each MAPLE_FOREACH_BEGIN() must be paired with one of these after the loop</span></div>
-<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span><span class="comment">    body.</span></div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00922" data-start="" data-end="">
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno"><a class="line" href="group__maple.html#gaa4aba87dbc90c0447497fce8ecbe081d">  922</a></span><span class="preprocessor">#define MAPLE_FOREACH_END() \</span></div>
-<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span><span class="preprocessor">    } while(0); \</span></div>
-<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span><span class="preprocessor">    __i++; \</span></div>
-<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span><span class="preprocessor">    } \</span></div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span><span class="preprocessor">    } while(0);</span></div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span><span class="comment"></span> </div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span><span class="comment">/** \brief   End a foreach loop over Maple devices.</span></div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span><span class="comment">    \ingroup maple</span></div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span><span class="comment"></span> </div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span><span class="comment">    Each MAPLE_FOREACH_BEGIN() must be paired with one of these after the loop</span></div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span><span class="comment">    body.</span></div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00920" data-start="" data-end="">
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno"><a class="line" href="group__maple.html#gaa4aba87dbc90c0447497fce8ecbe081d">  920</a></span><span class="preprocessor">#define MAPLE_FOREACH_END() \</span></div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span><span class="preprocessor">    } while(0); \</span></div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span><span class="preprocessor">    __i++; \</span></div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span><span class="preprocessor">    } \</span></div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span><span class="preprocessor">    } while(0);</span></div>
 </div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span> </div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>__END_DECLS</div>
 <div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span> </div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>__END_DECLS</div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span> </div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span><span class="preprocessor">#endif </span><span class="comment">/* __DC_MAPLE_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span><span class="preprocessor">#endif </span><span class="comment">/* __DC_MAPLE_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="agroup__maple_html_ga0105c280700f3830ba52b0fadb9d5809"><div class="ttname"><a href="group__maple.html#ga0105c280700f3830ba52b0fadb9d5809">maple_driver_unreg</a></div><div class="ttdeci">int maple_driver_unreg(maple_driver_t *driver)</div><div class="ttdoc">Unregister a maple device driver.</div></div>
 <div class="ttc" id="agroup__maple_html_ga01626ea6453a91a4bef93b07b7cfd31b"><div class="ttname"><a href="group__maple.html#ga01626ea6453a91a4bef93b07b7cfd31b">maple_driver_attach</a></div><div class="ttdeci">int maple_driver_attach(maple_frame_t *det)</div><div class="ttdoc">Attach a maple device to a driver, if possible.</div></div>
-<div class="ttc" id="agroup__maple_html_ga028bd32952152ed804342eb5a2f87e0f"><div class="ttname"><a href="group__maple.html#ga028bd32952152ed804342eb5a2f87e0f">maple_detach_callback_t</a></div><div class="ttdeci">void(* maple_detach_callback_t)(maple_device_t *dev)</div><div class="ttdoc">Maple detach callback type.</div><div class="ttdef"><b>Definition</b> maple.h:768</div></div>
+<div class="ttc" id="agroup__maple_html_ga028bd32952152ed804342eb5a2f87e0f"><div class="ttname"><a href="group__maple.html#ga028bd32952152ed804342eb5a2f87e0f">maple_detach_callback_t</a></div><div class="ttdeci">void(* maple_detach_callback_t)(maple_device_t *dev)</div><div class="ttdoc">Maple detach callback type.</div><div class="ttdef"><b>Definition</b> maple.h:766</div></div>
 <div class="ttc" id="agroup__maple_html_ga1cc41b4e5dcf5eb978f1973ba41fd0fe"><div class="ttname"><a href="group__maple.html#ga1cc41b4e5dcf5eb978f1973ba41fd0fe">maple_gun_enable</a></div><div class="ttdeci">int maple_gun_enable(int port)</div><div class="ttdoc">Enable light gun mode for this frame.</div></div>
 <div class="ttc" id="agroup__maple_html_ga2861720a2e5bd03962b3b14f0dc6fc45"><div class="ttname"><a href="group__maple.html#ga2861720a2e5bd03962b3b14f0dc6fc45">maple_dma_start</a></div><div class="ttdeci">void maple_dma_start(void)</div><div class="ttdoc">Start a Maple DMA.</div></div>
 <div class="ttc" id="agroup__maple_html_ga2e0373a7ce5cd66b5594e9b886f04b8b"><div class="ttname"><a href="group__maple.html#ga2e0373a7ce5cd66b5594e9b886f04b8b">maple_dma_addr</a></div><div class="ttdeci">void maple_dma_addr(void *ptr)</div><div class="ttdoc">Set the Maple DMA address.</div></div>
@@ -1070,7 +1068,9 @@ $(function(){initNavTree('maple_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="agroup__maple_html_ga73f822849e0c61bf23dffbebe00c33d3"><div class="ttname"><a href="group__maple.html#ga73f822849e0c61bf23dffbebe00c33d3">maple_raddr</a></div><div class="ttdeci">void maple_raddr(uint8 addr, int *port, int *unit)</div><div class="ttdoc">Decompose a &quot;maple address&quot; into a port, unit pair.</div></div>
 <div class="ttc" id="agroup__maple_html_ga799d5750b8249abbd94aad16045b0efc"><div class="ttname"><a href="group__maple.html#ga799d5750b8249abbd94aad16045b0efc">maple_enum_type</a></div><div class="ttdeci">maple_device_t * maple_enum_type(int n, uint32 func)</div><div class="ttdoc">Get the Nth device of the requested type (where N is zero-indexed).</div></div>
 <div class="ttc" id="agroup__maple_html_ga7f43051fc58eb3ede4195ee8cb61f9d7"><div class="ttname"><a href="group__maple.html#ga7f43051fc58eb3ede4195ee8cb61f9d7">maple_attach_callback</a></div><div class="ttdeci">void maple_attach_callback(uint32 functions, maple_attach_callback_t cb)</div><div class="ttdoc">Set an automatic maple attach callback.</div></div>
-<div class="ttc" id="agroup__maple_html_ga945110b6145654921d748e409550f705"><div class="ttname"><a href="group__maple.html#ga945110b6145654921d748e409550f705">maple_attach_callback_t</a></div><div class="ttdeci">void(* maple_attach_callback_t)(maple_device_t *dev)</div><div class="ttdoc">Maple attach callback type.</div><div class="ttdef"><b>Definition</b> maple.h:747</div></div>
+<div class="ttc" id="agroup__maple_html_ga91bfc4c356300ec28adebcf884acacb1"><div class="ttname"><a href="group__maple.html#ga91bfc4c356300ec28adebcf884acacb1">maple_sentinel_setup</a></div><div class="ttdeci">void maple_sentinel_setup(void *buffer, int bufsize)</div><div class="ttdoc">Setup a sentinel for debugging DMA issues.</div></div>
+<div class="ttc" id="agroup__maple_html_ga945110b6145654921d748e409550f705"><div class="ttname"><a href="group__maple.html#ga945110b6145654921d748e409550f705">maple_attach_callback_t</a></div><div class="ttdeci">void(* maple_attach_callback_t)(maple_device_t *dev)</div><div class="ttdoc">Maple attach callback type.</div><div class="ttdef"><b>Definition</b> maple.h:745</div></div>
+<div class="ttc" id="agroup__maple_html_ga99b764c4950259d75afbddf4da2abadb"><div class="ttname"><a href="group__maple.html#ga99b764c4950259d75afbddf4da2abadb">maple_sentinel_verify</a></div><div class="ttdeci">void maple_sentinel_verify(const char *bufname, void *buffer, int bufsize)</div><div class="ttdoc">Verify the presence of the sentine.</div></div>
 <div class="ttc" id="agroup__maple_html_gaa0c262689f9faa6518ba834210ce4689"><div class="ttname"><a href="group__maple.html#gaa0c262689f9faa6518ba834210ce4689">maple_gun_disable</a></div><div class="ttdeci">void maple_gun_disable(void)</div><div class="ttdoc">Disable light gun mode.</div></div>
 <div class="ttc" id="agroup__maple_html_gaa0c8827d828c62b0d835a45d451ffa11"><div class="ttname"><a href="group__maple.html#gaa0c8827d828c62b0d835a45d451ffa11">maple_bus_disable</a></div><div class="ttdeci">void maple_bus_disable(void)</div><div class="ttdoc">Disable the Maple bus.</div></div>
 <div class="ttc" id="agroup__maple_html_gaa1639dd1b792a0252e916d3f1663e754"><div class="ttname"><a href="group__maple.html#gaa1639dd1b792a0252e916d3f1663e754">maple_queue_frame</a></div><div class="ttdeci">int maple_queue_frame(maple_frame_t *frame)</div><div class="ttdoc">Submit a frame for queueing.</div></div>

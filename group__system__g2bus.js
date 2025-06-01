@@ -2,7 +2,7 @@ var group__system__g2bus =
 [
     [ "g2bus.h", "g2bus_8h.html", null ],
     [ "g2_ctx_t", "structg2__ctx__t.html", [
-      [ "irq_state", "structg2__ctx__t.html#ac267f55e228e317e8bd936bedb1b0281", null ]
+      [ "irq_state", "structg2__ctx__t.html#ac73fde4a0228bb073a3cc802748cbd46", null ]
     ] ],
     [ "G2_DMA_CHAN_BBA", "group__system__g2bus.html#ga964f229b1f4cefd58af7647794f2fa46", null ],
     [ "G2_DMA_CHAN_CH2", "group__system__g2bus.html#ga53d5b7fffe6e651001e0d6809ff42536", null ],
@@ -17,7 +17,7 @@ var group__system__g2bus =
     [ "g2_fifo_wait", "group__system__g2bus.html#gafc4f13361cf418a44d67c28beb0c7dce", null ],
     [ "g2_lock", "group__system__g2bus.html#ga726597af42393c34a37614573786bb29", null ],
     [ "g2_memset_8", "group__system__g2bus.html#ga6221d7bb810a5a10c71e8148992c7242", null ],
-    [ "g2_read_16", "group__system__g2bus.html#ga25745a9110107cf7885b1d8abfdf4ccc", null ],
+    [ "g2_read_16", "group__system__g2bus.html#ga0e41c7a2d1424facba601f673441bef8", null ],
     [ "g2_read_32", "group__system__g2bus.html#gaa3e36808749a9670d569e1a51754d167", null ],
     [ "g2_read_32_raw", "group__system__g2bus.html#ga1096dcd53088406a3cf57d9518651895", null ],
     [ "g2_read_8", "group__system__g2bus.html#gab7c1e3a886467ce3ec2d924422f5736f", null ],

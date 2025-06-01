@@ -27,7 +27,7 @@ var searchData=
   ['start_20values_24',['Start Values',['../group__audio__aica__ch__start.html',1,'Channel Start Values'],['../group__pvr__go.html',1,'Init/Start Values']]],
   ['state_25',['State',['../group__pvr__global.html',1,'Global State'],['../group__irq__state.html',1,'State']]],
   ['state_20polling_26',['State Polling',['../group__kbd__polling.html',1,'']]],
-  ['states_27',['States',['../group__maple__frame__states.html',1,'Frame States'],['../group__key__states.html',1,'Key States']]],
+  ['states_27',['States',['../group__maple__frame__states.html',1,'Frame States'],['../group__key__state__grp.html',1,'Key States']]],
   ['status_28',['Status',['../group__kbd__status__grp.html',1,'Device Status'],['../group__cd__subcode__audio.html',1,'Subcode Audio Status']]],
   ['status_20bits_29',['Status Bits',['../group__bba__ibits.html',1,'Interrupt Status Bits'],['../group__bba__miisb.html',1,'MII Status Bits'],['../group__bba__rbits.html',1,'Receive Status Bits'],['../group__bba__tbits.html',1,'RTL8139C Transmit Status Bits']]],
   ['status_20responses_30',['Command Status Responses',['../group__cd__cmd__status.html',1,'']]],

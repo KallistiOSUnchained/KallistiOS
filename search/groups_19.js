@@ -13,6 +13,5 @@ var searchData=
   ['update_20values_10',['Channel Update Values',['../group__audio__aica__ch__update.html',1,'']]],
   ['uptime_11',['Uptime',['../group__tmu__uptime.html',1,'']]],
   ['user_20break_20controller_12',['User Break Controller',['../group__ubc.html',1,'']]],
-  ['utilities_13',['Utilities',['../group__networking__utils.html',1,'Utilities'],['../group__version__utils.html',1,'Utilities']]],
-  ['utility_20macros_14',['Utility Macros',['../group__system__helpers.html',1,'']]]
+  ['utilities_13',['Utilities',['../group__networking__utils.html',1,'Utilities'],['../group__version__utils.html',1,'Utilities']]]
 ];

@@ -139,371 +139,371 @@ $(function(){initNavTree('g2bus_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;<a class="code" href="irq_8h.html">arch/irq.h</a>&gt;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">arch/types.h</a>&gt;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &lt;<a class="code" href="fifo_8h.html">dc/fifo.h</a>&gt;</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"></span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/** \defgroup system_g2bus  G2 Bus</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">    \brief                  Driver for accessing the devices on the G2 Bus</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">    \ingroup                system</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"></span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">    @{</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"></span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/** \name       List of G2 Bus channels</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> </span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">    AICA (SPU) is channel 0, BBA uses channel 1. CH2_DMA_G2CHN and </span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">    CH3_DMA_G2CHN are not currently tied to any specific device.</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"></span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">    \note </span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">      A change in the implementation has rendered *_DMA_MODE and *_DMA_SHCHN </span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">      obsolete.</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">      In the current implementation, *_DMA_MODE should always be set to zero </span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">      (representing CPU_TRIGGER). There is also no involvement of SH4-DMA with</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">      G2-DMA; therefore, the *_DMA_SHCHN values have been deprecated.</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">      </span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">    @{</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga804047866214994a18566d9a75f30fde">   66</a></span><span class="preprocessor">#define G2_DMA_CHAN_SPU  0 </span><span class="comment">/**&lt; \brief AICA: G2 channel 0 */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga964f229b1f4cefd58af7647794f2fa46">   67</a></span><span class="preprocessor">#define G2_DMA_CHAN_BBA  1 </span><span class="comment">/**&lt; \brief BBA:  G2 channel 1 */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga53d5b7fffe6e651001e0d6809ff42536">   68</a></span><span class="preprocessor">#define G2_DMA_CHAN_CH2  2 </span><span class="comment">/**&lt; \brief CH2: G2 channel 2 */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga60d3f9b5a6ae7fe592ef0aa6aa9055b1">   69</a></span><span class="preprocessor">#define G2_DMA_CHAN_CH3  3 </span><span class="comment">/**&lt; \brief CH3: G2 channel 3 */</span><span class="preprocessor"></span><span class="comment"></span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">/** @} */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment"></span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/** \brief  G2Bus DMA direction</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment"></span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">    The direction you want the data to go. SH4 to AICA, BBA, etc use</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">    SH4TOG2BUS, otherwise G2BUSTOSH4.</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga2686dee6fa50396e35f9bd03188789ee">   77</a></span><span class="preprocessor">#define G2_DMA_TO_G2   0</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga5e686f87b492474749f40732af3be5af">   78</a></span><span class="preprocessor">#define G2_DMA_TO_SH4  1</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment"></span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">/** \brief  G2Bus DMA interrupt callback type.</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment"></span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">    Functions that act as callbacks when G2-DMA completes should be of this type.</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">    These functions will be called inside an interrupt context, so don&#39;t try to</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">    use anything that might stall.</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment"></span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">    \param  data            User data passed in to the g2_dma_transfer()</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">                            function.</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga731cc3ad9daf3047f99e0b14c35331c3">   89</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__system__g2bus.html#ga731cc3ad9daf3047f99e0b14c35331c3">g2_dma_callback_t</a>)(<span class="keywordtype">void</span> *data);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment"></span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">/** \brief  Perform a DMA transfer between SH-4 RAM and G2 Bus</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment"></span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">    This function copies a block of data between SH-4 RAM and G2 Bus via DMA. </span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">    You specify the direction of the copy (SH4TOG2BUS/G2BUSTOSH4). There are all </span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">    kinds of constraints that must be fulfilled to actually do this, so</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">    make sure to read all the fine print with the parameter list.</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"></span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">    If a callback is specified, it will be called in an interrupt context, so</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">    keep that in mind in writing the callback.</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment"></span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">    \param  sh4             Where to copy from/to. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">    \param  g2bus           Where to copy from/to. Must be 32-byte aligned.</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">    \param  length          The number of bytes to copy. Must be a multiple of</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">                            32.</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">                            DMA completes.</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">    \param  dir             SH4TOG2BUS or G2BUSTOSH4.</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">    \param  mode            Ignored; for compatibility only.</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">    \param  g2chn           See g2b_channels.</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">    \param  sh4chn          Ignored; for compatibility only.</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">    \retval 0               On success.</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment"></span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">    \par    Error Conditions:</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">    \em     EFAULT - sh4 and/or g2bus is not 32-byte aligned \n</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    \em     EINVAL - Invalid g2chn</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">    \em     EIO - I/O error</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment"></span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga84953671cbbff63b28efc7f3bcdba3aa">  123</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__system__g2bus.html#ga84953671cbbff63b28efc7f3bcdba3aa">g2_dma_transfer</a>(<span class="keywordtype">void</span> *sh4, <span class="keywordtype">void</span> *g2bus, <span class="keywordtype">size_t</span> length, uint32_t block,</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    <a class="code hl_typedef" href="group__system__g2bus.html#ga731cc3ad9daf3047f99e0b14c35331c3">g2_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata,</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                    uint32_t dir, uint32_t mode, uint32_t g2chn, uint32_t sh4chn);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment"></span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">/** \brief  Initialize DMA support.</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment"></span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">    This function sets up the DMA support for transfers to/from the G2 Bus.</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment"></span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">    \retval 0               On success (no error conditions defined).</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga607e22c5045e8ac37a6e01a3b3675f77">  133</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__system__g2bus.html#ga607e22c5045e8ac37a6e01a3b3675f77">g2_dma_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment"></span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">/** \brief  Shutdown DMA support. */</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gacd1d5ea633c47d8ba936d0982c9c951e">  136</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gacd1d5ea633c47d8ba936d0982c9c951e">g2_dma_shutdown</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment"></span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">/** \brief  G2 context</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment"></span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">    A G2 context containing the states of IRQs and G2 DMA. This struct</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">    is used in with g2_lock() and g2_unlock().</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00143" data-start="{" data-end="};">
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="structg2__ctx__t.html">  143</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{ </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="structg2__ctx__t.html#ac267f55e228e317e8bd936bedb1b0281">  144</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structg2__ctx__t.html#ac267f55e228e317e8bd936bedb1b0281">irq_state</a>;    <span class="comment">/** \brief IRQ state when entering a G2 critical block */</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>} <a class="code hl_struct" href="structg2__ctx__t.html">g2_ctx_t</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;<a class="code" href="fifo_8h.html">dc/fifo.h</a>&gt;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/** \defgroup system_g2bus  G2 Bus</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">    \brief                  Driver for accessing the devices on the G2 Bus</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">    \ingroup                system</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">    @{</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"></span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/** \name       List of G2 Bus channels</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> </span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">    AICA (SPU) is channel 0, BBA uses channel 1. CH2_DMA_G2CHN and </span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">    CH3_DMA_G2CHN are not currently tied to any specific device.</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    \note </span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">      A change in the implementation has rendered *_DMA_MODE and *_DMA_SHCHN </span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">      obsolete.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"></span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">      In the current implementation, *_DMA_MODE should always be set to zero </span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">      (representing CPU_TRIGGER). There is also no involvement of SH4-DMA with</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">      G2-DMA; therefore, the *_DMA_SHCHN values have been deprecated.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">      </span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">    @{</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga804047866214994a18566d9a75f30fde">   65</a></span><span class="preprocessor">#define G2_DMA_CHAN_SPU  0 </span><span class="comment">/**&lt; \brief AICA: G2 channel 0 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga964f229b1f4cefd58af7647794f2fa46">   66</a></span><span class="preprocessor">#define G2_DMA_CHAN_BBA  1 </span><span class="comment">/**&lt; \brief BBA:  G2 channel 1 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga53d5b7fffe6e651001e0d6809ff42536">   67</a></span><span class="preprocessor">#define G2_DMA_CHAN_CH2  2 </span><span class="comment">/**&lt; \brief CH2: G2 channel 2 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga60d3f9b5a6ae7fe592ef0aa6aa9055b1">   68</a></span><span class="preprocessor">#define G2_DMA_CHAN_CH3  3 </span><span class="comment">/**&lt; \brief CH3: G2 channel 3 */</span><span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/** @} */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment"></span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/** \brief  G2Bus DMA direction</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"></span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">    The direction you want the data to go. SH4 to AICA, BBA, etc use</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">    SH4TOG2BUS, otherwise G2BUSTOSH4.</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga2686dee6fa50396e35f9bd03188789ee">   76</a></span><span class="preprocessor">#define G2_DMA_TO_G2   0</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga5e686f87b492474749f40732af3be5af">   77</a></span><span class="preprocessor">#define G2_DMA_TO_SH4  1</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment"></span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">/** \brief  G2Bus DMA interrupt callback type.</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment"></span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">    Functions that act as callbacks when G2-DMA completes should be of this type.</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">    These functions will be called inside an interrupt context, so don&#39;t try to</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">    use anything that might stall.</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment"></span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">    \param  data            User data passed in to the g2_dma_transfer()</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">                            function.</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga731cc3ad9daf3047f99e0b14c35331c3">   88</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__system__g2bus.html#ga731cc3ad9daf3047f99e0b14c35331c3">g2_dma_callback_t</a>)(<span class="keywordtype">void</span> *data);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"></span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">/** \brief  Perform a DMA transfer between SH-4 RAM and G2 Bus</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"></span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">    This function copies a block of data between SH-4 RAM and G2 Bus via DMA. </span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">    You specify the direction of the copy (SH4TOG2BUS/G2BUSTOSH4). There are all </span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">    kinds of constraints that must be fulfilled to actually do this, so</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">    make sure to read all the fine print with the parameter list.</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment"></span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">    If a callback is specified, it will be called in an interrupt context, so</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">    keep that in mind in writing the callback.</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment"></span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">    \param  sh4             Where to copy from/to. Must be 32-byte aligned.</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">    \param  g2bus           Where to copy from/to. Must be 32-byte aligned.</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">    \param  length          The number of bytes to copy. Must be a multiple of</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">                            32.</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">    \param  block           Non-zero if you want the function to block until the</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">                            DMA completes.</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">    \param  callback        A function to call upon completion of the DMA.</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">    \param  cbdata          Data to pass to the callback function.</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">    \param  dir             SH4TOG2BUS or G2BUSTOSH4.</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">    \param  mode            Ignored; for compatibility only.</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">    \param  g2chn           See g2b_channels.</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">    \param  sh4chn          Ignored; for compatibility only.</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">    \retval 0               On success.</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">    \retval -1              On failure. Sets errno as appropriate.</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment"></span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">    \par    Error Conditions:</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">    \em     EINPROGRESS - DMA already in progress \n</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">    \em     EFAULT - sh4 and/or g2bus is not 32-byte aligned \n</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">    \em     EINVAL - Invalid g2chn</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    \em     EIO - I/O error</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"></span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga84953671cbbff63b28efc7f3bcdba3aa">  122</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__system__g2bus.html#ga84953671cbbff63b28efc7f3bcdba3aa">g2_dma_transfer</a>(<span class="keywordtype">void</span> *sh4, <span class="keywordtype">void</span> *g2bus, <span class="keywordtype">size_t</span> length, uint32_t block,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                    <a class="code hl_typedef" href="group__system__g2bus.html#ga731cc3ad9daf3047f99e0b14c35331c3">g2_dma_callback_t</a> callback, <span class="keywordtype">void</span> *cbdata,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    uint32_t dir, uint32_t mode, uint32_t g2chn, uint32_t sh4chn);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment"></span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">/** \brief  Initialize DMA support.</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment"></span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">    This function sets up the DMA support for transfers to/from the G2 Bus.</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment"></span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">    \retval 0               On success (no error conditions defined).</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga607e22c5045e8ac37a6e01a3b3675f77">  132</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__system__g2bus.html#ga607e22c5045e8ac37a6e01a3b3675f77">g2_dma_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"></span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">/** \brief  Shutdown DMA support. */</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gacd1d5ea633c47d8ba936d0982c9c951e">  135</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gacd1d5ea633c47d8ba936d0982c9c951e">g2_dma_shutdown</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"></span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">/** \brief  G2 context</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment"></span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">    A G2 context containing the states of IRQs and G2 DMA. This struct</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">    is used in with g2_lock() and g2_unlock().</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="};">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="structg2__ctx__t.html">  142</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{ </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="structg2__ctx__t.html#ac73fde4a0228bb073a3cc802748cbd46">  143</a></span>    <a class="code hl_typedef" href="group__irq__mask.html#gac86eb9bc95ad073837dfe8e4e9453295">irq_mask_t</a> <a class="code hl_variable" href="structg2__ctx__t.html#ac73fde4a0228bb073a3cc802748cbd46">irq_state</a>;    <span class="comment">/** \brief IRQ state when entering a G2 critical block */</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>} <a class="code hl_struct" href="structg2__ctx__t.html">g2_ctx_t</a>;</div>
 </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">/* Internal constants to access suspend registers for G2 DMA. They are not meant for</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">   user-code use. */</span><span class="comment"></span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">/** \cond */</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#define G2_DMA_SUSPEND_SPU     (*((vuint32 *)0xa05f781C))</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#define G2_DMA_SUSPEND_BBA     (*((vuint32 *)0xa05f783C))</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">#define G2_DMA_SUSPEND_CH2     (*((vuint32 *)0xa05f785C))</span><span class="comment"></span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">/** \endcond */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment"></span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">/** \brief  Disable IRQs and G2 DMA</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment"></span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">    This function makes the following g2_read_*()/g2_write_*() functions atomic </span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">    by disabling IRQs and G2 DMA and storing their states. Pass the context </span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">    created by this function to g2_unlock() to re-enable IRQs and G2 DMA.</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment"></span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">    \return                 The context containing the IRQ and G2 DMA states.</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga726597af42393c34a37614573786bb29">  163</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_struct" href="structg2__ctx__t.html">g2_ctx_t</a> <a class="code hl_function" href="group__system__g2bus.html#ga726597af42393c34a37614573786bb29">g2_lock</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <a class="code hl_struct" href="structg2__ctx__t.html">g2_ctx_t</a> ctx;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    ctx.<a class="code hl_variable" href="structg2__ctx__t.html#ac267f55e228e317e8bd936bedb1b0281">irq_state</a> = <a class="code hl_function" href="group__irq__mask.html#gac8594a5bb7ec76a0d1a5f08c9b7aae27">irq_disable</a>();</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">/* Suspend any G2 DMA */</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    G2_DMA_SUSPEND_SPU = 1;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    G2_DMA_SUSPEND_BBA = 1;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    G2_DMA_SUSPEND_CH2 = 1;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">while</span>(<a class="code hl_define" href="group__system__fifo.html#ga9e5c9878194f462bf7a46ca8a7b8f9d2">FIFO_STATUS</a> &amp; (<a class="code hl_define" href="group__system__fifo.html#ga13f8a2ecc978716410a708e7a2c3c705">FIFO_SH4</a> | <a class="code hl_define" href="group__system__fifo.html#ga0311537c00d445bd49311fea60814562">FIFO_G2</a>));</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">return</span> ctx;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment">/* Internal constants to access suspend registers for G2 DMA. They are not meant for</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">   user-code use. */</span><span class="comment"></span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">/** \cond */</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">#define G2_DMA_SUSPEND_SPU     (*((volatile uint32_t *)0xa05f781C))</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#define G2_DMA_SUSPEND_BBA     (*((volatile uint32_t *)0xa05f783C))</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#define G2_DMA_SUSPEND_CH2     (*((volatile uint32_t *)0xa05f785C))</span><span class="comment"></span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">/** \endcond */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment"></span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">/** \brief  Disable IRQs and G2 DMA</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment"></span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">    This function makes the following g2_read_*()/g2_write_*() functions atomic </span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">    by disabling IRQs and G2 DMA and storing their states. Pass the context </span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">    created by this function to g2_unlock() to re-enable IRQs and G2 DMA.</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment"></span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment">    \return                 The context containing the IRQ and G2 DMA states.</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga726597af42393c34a37614573786bb29">  162</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_struct" href="structg2__ctx__t.html">g2_ctx_t</a> <a class="code hl_function" href="group__system__g2bus.html#ga726597af42393c34a37614573786bb29">g2_lock</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_struct" href="structg2__ctx__t.html">g2_ctx_t</a> ctx;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    ctx.<a class="code hl_variable" href="structg2__ctx__t.html#ac73fde4a0228bb073a3cc802748cbd46">irq_state</a> = <a class="code hl_function" href="group__irq__mask.html#gac8594a5bb7ec76a0d1a5f08c9b7aae27">irq_disable</a>();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="comment">/* Suspend any G2 DMA */</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    G2_DMA_SUSPEND_SPU = 1;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    G2_DMA_SUSPEND_BBA = 1;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    G2_DMA_SUSPEND_CH2 = 1;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">while</span>(<a class="code hl_define" href="group__system__fifo.html#ga9e5c9878194f462bf7a46ca8a7b8f9d2">FIFO_STATUS</a> &amp; (<a class="code hl_define" href="group__system__fifo.html#ga13f8a2ecc978716410a708e7a2c3c705">FIFO_SH4</a> | <a class="code hl_define" href="group__system__fifo.html#ga0311537c00d445bd49311fea60814562">FIFO_G2</a>));</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">return</span> ctx;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>}</div>
 </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment"></span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">/** \brief  Enable IRQs and G2 DMA</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment"></span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">    This function restores the IRQ and G2 DMA states using the context value</span></div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment">    generated by g2_lock().</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment"></span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="comment">    \param  ctx             The context containing IRQ and G2 DMA states.</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga28175a37be80794b04aaac5cd1a1eb13">  185</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga28175a37be80794b04aaac5cd1a1eb13">g2_unlock</a>(<a class="code hl_struct" href="structg2__ctx__t.html">g2_ctx_t</a> ctx) {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="comment">/* Restore suspended G2 DMA */</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    G2_DMA_SUSPEND_SPU = 0;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    G2_DMA_SUSPEND_BBA = 0;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    G2_DMA_SUSPEND_CH2 = 0;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <a class="code hl_function" href="group__irq__mask.html#ga768b54fd6ed13cbc74921ff529c6c424">irq_restore</a>(ctx.<a class="code hl_variable" href="structg2__ctx__t.html#ac267f55e228e317e8bd936bedb1b0281">irq_state</a>);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>}</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment"></span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">/** \brief  Enable IRQs and G2 DMA</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment"></span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">    This function restores the IRQ and G2 DMA states using the context value</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">    generated by g2_lock().</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment"></span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment">    \param  ctx             The context containing IRQ and G2 DMA states.</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga28175a37be80794b04aaac5cd1a1eb13">  184</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga28175a37be80794b04aaac5cd1a1eb13">g2_unlock</a>(<a class="code hl_struct" href="structg2__ctx__t.html">g2_ctx_t</a> ctx) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="comment">/* Restore suspended G2 DMA */</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    G2_DMA_SUSPEND_SPU = 0;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    G2_DMA_SUSPEND_BBA = 0;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    G2_DMA_SUSPEND_CH2 = 0;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_function" href="group__irq__mask.html#ga768b54fd6ed13cbc74921ff529c6c424">irq_restore</a>(ctx.<a class="code hl_variable" href="structg2__ctx__t.html#ac73fde4a0228bb073a3cc802748cbd46">irq_state</a>);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>}</div>
 </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="preprocessor">#undef G2_DMA_SUSPEND_SPU</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">#undef G2_DMA_SUSPEND_BBA</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="preprocessor">#undef G2_DMA_SUSPEND_CH2</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="comment"></span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">/** \brief  Read one byte from G2.</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment"></span> </div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">    This function reads a single byte from the specified address, taking all</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment">    necessary precautions that are required for accessing G2.</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment"></span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">    \param  address         The address in memory to read.</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">    \return                 The byte read from the address specified.</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gab7c1e3a886467ce3ec2d924422f5736f">  207</a></span>uint8_t <a class="code hl_function" href="group__system__g2bus.html#gab7c1e3a886467ce3ec2d924422f5736f">g2_read_8</a>(uintptr_t address);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment"></span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">/** \brief  Write a single byte to G2.</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment"></span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">    This function writes one byte to the specified address, taking all the</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">    necessary precautions to ensure your write actually succeeds.</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment"></span> </div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">    \param  address         The address in memory to write to.</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">    \param  value           The value to write to that address.</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga7858e29c9de455ff8bc5177dc864dce9">  217</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga7858e29c9de455ff8bc5177dc864dce9">g2_write_8</a>(uintptr_t address, uint8_t value);</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment"></span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">/** \brief  Read one 16-bit word from G2.</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment"></span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">    This function reads a single word from the specified address, taking all</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">    necessary precautions that are required for accessing G2.</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment"></span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">    \param  address         The address in memory to read.</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">    \return                 The word read from the address specified.</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga25745a9110107cf7885b1d8abfdf4ccc">  227</a></span><a class="code hl_typedef" href="group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a> <a class="code hl_function" href="group__system__g2bus.html#ga25745a9110107cf7885b1d8abfdf4ccc">g2_read_16</a>(uintptr_t address);</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment"></span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">/** \brief  Write a 16-bit word to G2.</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment"></span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">    This function writes one word to the specified address, taking all the</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment">    necessary precautions to ensure your write actually succeeds.</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment"></span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">    \param  address         The address in memory to write to.</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">    \param  value           The value to write to that address.</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga9680ffb0182a7f76d126fa30c132cade">  237</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga9680ffb0182a7f76d126fa30c132cade">g2_write_16</a>(uintptr_t address, uint16_t value);</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment"></span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="comment">/** \brief  Read one 32-bit dword from G2.</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment"></span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">    This function reads a single dword from the specified address, taking all</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">    necessary precautions that are required for accessing G2.</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="comment"></span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="comment">    \param  address         The address in memory to read.</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">    \return                 The dword read from the address specified.</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gaa3e36808749a9670d569e1a51754d167">  247</a></span>uint32_t <a class="code hl_function" href="group__system__g2bus.html#gaa3e36808749a9670d569e1a51754d167">g2_read_32</a>(uintptr_t address);</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment"></span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment">/** \brief  Non-blocked read one 32-bit dword from G2.</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment"></span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment">    This function reads a single dword from the specified address, without all</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="comment">    necessary precautions that are required for accessing G2.</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="comment"></span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="comment">    \param  address         The address in memory to read.</span></div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment">    \return                 The dword read from the address specified.</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00257" data-start="{" data-end="}">
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga1096dcd53088406a3cf57d9518651895">  257</a></span><span class="keyword">static</span> <span class="keyword">inline</span> uint32_t <a class="code hl_function" href="group__system__g2bus.html#ga1096dcd53088406a3cf57d9518651895">g2_read_32_raw</a>(uintptr_t address) {</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">return</span> *((<span class="keyword">volatile</span> uint32_t *)address);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>}</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">#undef G2_DMA_SUSPEND_SPU</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="preprocessor">#undef G2_DMA_SUSPEND_BBA</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">#undef G2_DMA_SUSPEND_CH2</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment"></span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="comment">/** \brief  Read one byte from G2.</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment"></span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">    This function reads a single byte from the specified address, taking all</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">    necessary precautions that are required for accessing G2.</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment"></span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment">    \param  address         The address in memory to read.</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">    \return                 The byte read from the address specified.</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gab7c1e3a886467ce3ec2d924422f5736f">  206</a></span>uint8_t <a class="code hl_function" href="group__system__g2bus.html#gab7c1e3a886467ce3ec2d924422f5736f">g2_read_8</a>(uintptr_t address);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment"></span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">/** \brief  Write a single byte to G2.</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment"></span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">    This function writes one byte to the specified address, taking all the</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">    necessary precautions to ensure your write actually succeeds.</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment"></span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">    \param  address         The address in memory to write to.</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">    \param  value           The value to write to that address.</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga7858e29c9de455ff8bc5177dc864dce9">  216</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga7858e29c9de455ff8bc5177dc864dce9">g2_write_8</a>(uintptr_t address, uint8_t value);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment"></span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">/** \brief  Read one 16-bit word from G2.</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment"></span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">    This function reads a single word from the specified address, taking all</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">    necessary precautions that are required for accessing G2.</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment"></span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">    \param  address         The address in memory to read.</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">    \return                 The word read from the address specified.</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga0e41c7a2d1424facba601f673441bef8">  226</a></span>uint16_t <a class="code hl_function" href="group__system__g2bus.html#ga0e41c7a2d1424facba601f673441bef8">g2_read_16</a>(uintptr_t address);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment"></span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">/** \brief  Write a 16-bit word to G2.</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment"></span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">    This function writes one word to the specified address, taking all the</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">    necessary precautions to ensure your write actually succeeds.</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment"></span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">    \param  address         The address in memory to write to.</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">    \param  value           The value to write to that address.</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga9680ffb0182a7f76d126fa30c132cade">  236</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga9680ffb0182a7f76d126fa30c132cade">g2_write_16</a>(uintptr_t address, uint16_t value);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="comment"></span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment">/** \brief  Read one 32-bit dword from G2.</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="comment"></span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">    This function reads a single dword from the specified address, taking all</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">    necessary precautions that are required for accessing G2.</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment"></span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="comment">    \param  address         The address in memory to read.</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="comment">    \return                 The dword read from the address specified.</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gaa3e36808749a9670d569e1a51754d167">  246</a></span>uint32_t <a class="code hl_function" href="group__system__g2bus.html#gaa3e36808749a9670d569e1a51754d167">g2_read_32</a>(uintptr_t address);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment"></span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment">/** \brief  Non-blocked read one 32-bit dword from G2.</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment"></span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment">    This function reads a single dword from the specified address, without all</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment">    necessary precautions that are required for accessing G2.</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="comment"></span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="comment">    \param  address         The address in memory to read.</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="comment">    \return                 The dword read from the address specified.</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00256" data-start="{" data-end="}">
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga1096dcd53088406a3cf57d9518651895">  256</a></span><span class="keyword">static</span> <span class="keyword">inline</span> uint32_t <a class="code hl_function" href="group__system__g2bus.html#ga1096dcd53088406a3cf57d9518651895">g2_read_32_raw</a>(uintptr_t address) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">return</span> *((<span class="keyword">volatile</span> uint32_t *)address);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
 </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment"></span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="comment">/** \brief  Write a 32-bit dword to G2.</span></div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="comment"></span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="comment">    This function writes one dword to the specified address, taking all the</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="comment">    necessary precautions to ensure your write actually succeeds.</span></div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment"></span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment">    \param  address         The address in memory to write to.</span></div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="comment">    \param  value           The value to write to that address.</span></div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga0198db5c9757656fc27a639b7c7ecc4d">  269</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga0198db5c9757656fc27a639b7c7ecc4d">g2_write_32</a>(uintptr_t address, uint32_t value);</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment"></span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">/** \brief  Non-blocked write a 32-bit dword to G2.</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="comment"></span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="comment">    This function writes one dword to the specified address, without all the</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="comment">    necessary precautions to ensure your write actually succeeds.</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment"></span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">    \param  address         The address in memory to write to.</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">    \param  value           The value to write to that address.</span></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="comment">*/</span></div>
-<div class="foldopen" id="foldopen00279" data-start="{" data-end="}">
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga728d1d67e82f0c4072f33b899709017a">  279</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga728d1d67e82f0c4072f33b899709017a">g2_write_32_raw</a>(uintptr_t address, uint32_t value) {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    *((<span class="keyword">volatile</span> uint32_t *)address) = value;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>}</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="comment"></span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment">/** \brief  Write a 32-bit dword to G2.</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="comment"></span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="comment">    This function writes one dword to the specified address, taking all the</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="comment">    necessary precautions to ensure your write actually succeeds.</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="comment"></span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">    \param  address         The address in memory to write to.</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment">    \param  value           The value to write to that address.</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga0198db5c9757656fc27a639b7c7ecc4d">  268</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga0198db5c9757656fc27a639b7c7ecc4d">g2_write_32</a>(uintptr_t address, uint32_t value);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment"></span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment">/** \brief  Non-blocked write a 32-bit dword to G2.</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment"></span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="comment">    This function writes one dword to the specified address, without all the</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="comment">    necessary precautions to ensure your write actually succeeds.</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="comment"></span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment">    \param  address         The address in memory to write to.</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">    \param  value           The value to write to that address.</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00278" data-start="{" data-end="}">
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga728d1d67e82f0c4072f33b899709017a">  278</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga728d1d67e82f0c4072f33b899709017a">g2_write_32_raw</a>(uintptr_t address, uint32_t value) {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    *((<span class="keyword">volatile</span> uint32_t *)address) = value;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
 </div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment"></span> </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="comment">/** \brief  Read a block of bytes from G2.</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="comment"></span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="comment">    This function acts as memcpy() for copying data from G2 to system memory. It</span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="comment">    will take the necessary precautions before accessing G2 for you as well.</span></div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="comment"></span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="comment">    \param  output          Pointer in system memory to write to.</span></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="comment">    \param  address         The address in G2-space to read from.</span></div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="comment">    \param  amt             The number of bytes to read.</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gac245a5b8843233d4d8fa806f3a851212">  292</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gac245a5b8843233d4d8fa806f3a851212">g2_read_block_8</a>(uint8_t * output, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment"></span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment">/** \brief  Write a block of bytes to G2.</span></div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment"></span> </div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="comment">    This function acts as memcpy() for copying data to G2 from system memory. It</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="comment">    will take the necessary precautions for accessing G2.</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment"></span> </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="comment">    \param  input           The pointer in system memory to read from.</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="comment">    \param  address         The address in G2-space to write to.</span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="comment">    \param  amt             The number of bytes to write.</span></div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga3b8758ea9228eea654eaf32d28affcfd">  303</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga3b8758ea9228eea654eaf32d28affcfd">g2_write_block_8</a>(<span class="keyword">const</span> uint8_t * input, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="comment"></span> </div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment">/** \brief  Read a block of words from G2.</span></div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="comment"></span> </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="comment">    This function acts as memcpy() for copying data from G2 to system memory,</span></div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="comment">    but it copies 16 bits at a time. It will take the necessary precautions</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="comment">    before accessing G2 for you as well.</span></div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="comment"></span> </div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="comment">    \param  output          Pointer in system memory to write to.</span></div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="comment">    \param  address         The address in G2-space to read from.</span></div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="comment">    \param  amt             The number of words to read.</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga35ee337664393da6fdb67e306ed16df4">  315</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga35ee337664393da6fdb67e306ed16df4">g2_read_block_16</a>(uint16_t * output, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="comment"></span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="comment">/** \brief  Write a block of words to G2.</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="comment"></span> </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="comment">    This function acts as memcpy() for copying data to G2 from system memory,</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="comment">    copying 16 bits at a time. It will take the necessary precautions for</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="comment">    accessing G2.</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="comment"></span> </div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="comment">    \param  input           The pointer in system memory to read from.</span></div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="comment">    \param  address         The address in G2-space to write to.</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="comment">    \param  amt             The number of words to write.</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gae7166f21d5caf1e8dd3f294bd22ebb2b">  327</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gae7166f21d5caf1e8dd3f294bd22ebb2b">g2_write_block_16</a>(<span class="keyword">const</span> uint16_t * input, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="comment"></span> </div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="comment">/** \brief  Read a block of dwords from G2.</span></div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="comment"></span> </div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="comment">    This function acts as memcpy() for copying data from G2 to system memory,</span></div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="comment">    but it copies 32 bits at a time. It will take the necessary precautions</span></div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="comment">    before accessing G2 for you as well.</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="comment"></span> </div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="comment">    \param  output          Pointer in system memory to write to.</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="comment">    \param  address         The address in G2-space to read from.</span></div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="comment">    \param  amt             The number of dwords to read.</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gaf8a4774ed57f52683e4444bcdbd88248">  339</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gaf8a4774ed57f52683e4444bcdbd88248">g2_read_block_32</a>(uint32_t * output, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="comment"></span> </div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="comment">/** \brief  Write a block of dwords to G2.</span></div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="comment"></span> </div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="comment">    This function acts as memcpy() for copying data to G2 from system memory,</span></div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="comment">    copying 32 bits at a time. It will take the necessary precautions for</span></div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="comment">    accessing G2.</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="comment"></span> </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="comment">    \param  input           The pointer in system memory to read from.</span></div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="comment">    \param  address         The address in G2-space to write to.</span></div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="comment">    \param  amt             The number of dwords to write.</span></div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gaee63d4c38cccb6ed8e14c7f75203d8f1">  351</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gaee63d4c38cccb6ed8e14c7f75203d8f1">g2_write_block_32</a>(<span class="keyword">const</span> uint32_t * input, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="comment"></span> </div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="comment">/** \brief  Set a block of bytes to G2.</span></div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="comment"></span> </div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="comment">    This function acts as memset() for setting a block of bytes on G2. It will</span></div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="comment">    take the necessary precautions for accessing G2.</span></div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="comment"></span> </div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="comment">    \param  address         The address in G2-space to write to.</span></div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="comment">    \param  c               The byte to write.</span></div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span><span class="comment">    \param  amt             The number of bytes to write.</span></div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga6221d7bb810a5a10c71e8148992c7242">  362</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga6221d7bb810a5a10c71e8148992c7242">g2_memset_8</a>(uintptr_t address, uint8_t c, <span class="keywordtype">size_t</span> amt);</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="comment"></span> </div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="comment">/** \brief  Wait for the G2 write FIFO to empty.</span></div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="comment"></span> </div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="comment">    This function will spinwait until the G2 FIFO indicates that it has been</span></div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="comment">    drained. The FIFO is 32 bytes in length, and thus when accessing AICA you</span></div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="comment">    must do this at least for every 8 32-bit writes that you execute.</span></div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gafc4f13361cf418a44d67c28beb0c7dce">  370</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gafc4f13361cf418a44d67c28beb0c7dce">g2_fifo_wait</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span><span class="comment"></span> </div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="comment">/** @} */</span></div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>__END_DECLS</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> </div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span><span class="preprocessor">#endif  </span><span class="comment">/* __DC_G2BUS_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="comment"></span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">/** \brief  Read a block of bytes from G2.</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="comment"></span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="comment">    This function acts as memcpy() for copying data from G2 to system memory. It</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="comment">    will take the necessary precautions before accessing G2 for you as well.</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="comment"></span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="comment">    \param  output          Pointer in system memory to write to.</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="comment">    \param  address         The address in G2-space to read from.</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="comment">    \param  amt             The number of bytes to read.</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gac245a5b8843233d4d8fa806f3a851212">  291</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gac245a5b8843233d4d8fa806f3a851212">g2_read_block_8</a>(uint8_t * output, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="comment"></span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment">/** \brief  Write a block of bytes to G2.</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment"></span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment">    This function acts as memcpy() for copying data to G2 from system memory. It</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="comment">    will take the necessary precautions for accessing G2.</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="comment"></span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">    \param  input           The pointer in system memory to read from.</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="comment">    \param  address         The address in G2-space to write to.</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="comment">    \param  amt             The number of bytes to write.</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga3b8758ea9228eea654eaf32d28affcfd">  302</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga3b8758ea9228eea654eaf32d28affcfd">g2_write_block_8</a>(<span class="keyword">const</span> uint8_t * input, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="comment"></span> </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="comment">/** \brief  Read a block of words from G2.</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment"></span> </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="comment">    This function acts as memcpy() for copying data from G2 to system memory,</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="comment">    but it copies 16 bits at a time. It will take the necessary precautions</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="comment">    before accessing G2 for you as well.</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="comment"></span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="comment">    \param  output          Pointer in system memory to write to.</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="comment">    \param  address         The address in G2-space to read from.</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="comment">    \param  amt             The number of words to read.</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga35ee337664393da6fdb67e306ed16df4">  314</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga35ee337664393da6fdb67e306ed16df4">g2_read_block_16</a>(uint16_t * output, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="comment"></span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="comment">/** \brief  Write a block of words to G2.</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="comment"></span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="comment">    This function acts as memcpy() for copying data to G2 from system memory,</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="comment">    copying 16 bits at a time. It will take the necessary precautions for</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="comment">    accessing G2.</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="comment"></span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="comment">    \param  input           The pointer in system memory to read from.</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="comment">    \param  address         The address in G2-space to write to.</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="comment">    \param  amt             The number of words to write.</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gae7166f21d5caf1e8dd3f294bd22ebb2b">  326</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gae7166f21d5caf1e8dd3f294bd22ebb2b">g2_write_block_16</a>(<span class="keyword">const</span> uint16_t * input, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="comment"></span> </div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="comment">/** \brief  Read a block of dwords from G2.</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="comment"></span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="comment">    This function acts as memcpy() for copying data from G2 to system memory,</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="comment">    but it copies 32 bits at a time. It will take the necessary precautions</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="comment">    before accessing G2 for you as well.</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="comment"></span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="comment">    \param  output          Pointer in system memory to write to.</span></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="comment">    \param  address         The address in G2-space to read from.</span></div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="comment">    \param  amt             The number of dwords to read.</span></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gaf8a4774ed57f52683e4444bcdbd88248">  338</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gaf8a4774ed57f52683e4444bcdbd88248">g2_read_block_32</a>(uint32_t * output, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="comment"></span> </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="comment">/** \brief  Write a block of dwords to G2.</span></div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="comment"></span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="comment">    This function acts as memcpy() for copying data to G2 from system memory,</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="comment">    copying 32 bits at a time. It will take the necessary precautions for</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="comment">    accessing G2.</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="comment"></span> </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="comment">    \param  input           The pointer in system memory to read from.</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="comment">    \param  address         The address in G2-space to write to.</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="comment">    \param  amt             The number of dwords to write.</span></div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gaee63d4c38cccb6ed8e14c7f75203d8f1">  350</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gaee63d4c38cccb6ed8e14c7f75203d8f1">g2_write_block_32</a>(<span class="keyword">const</span> uint32_t * input, uintptr_t address, <span class="keywordtype">size_t</span> amt);</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="comment"></span> </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="comment">/** \brief  Set a block of bytes to G2.</span></div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="comment"></span> </div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="comment">    This function acts as memset() for setting a block of bytes on G2. It will</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="comment">    take the necessary precautions for accessing G2.</span></div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="comment"></span> </div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="comment">    \param  address         The address in G2-space to write to.</span></div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="comment">    \param  c               The byte to write.</span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="comment">    \param  amt             The number of bytes to write.</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#ga6221d7bb810a5a10c71e8148992c7242">  361</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#ga6221d7bb810a5a10c71e8148992c7242">g2_memset_8</a>(uintptr_t address, uint8_t c, <span class="keywordtype">size_t</span> amt);</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span><span class="comment"></span> </div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="comment">/** \brief  Wait for the G2 write FIFO to empty.</span></div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="comment"></span> </div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="comment">    This function will spinwait until the G2 FIFO indicates that it has been</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="comment">    drained. The FIFO is 32 bytes in length, and thus when accessing AICA you</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="comment">    must do this at least for every 8 32-bit writes that you execute.</span></div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno"><a class="line" href="group__system__g2bus.html#gafc4f13361cf418a44d67c28beb0c7dce">  369</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__system__g2bus.html#gafc4f13361cf418a44d67c28beb0c7dce">g2_fifo_wait</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span><span class="comment"></span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span><span class="comment">/** @} */</span></div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>__END_DECLS</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="preprocessor">#endif  </span><span class="comment">/* __DC_G2BUS_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
 <div class="ttc" id="afifo_8h_html"><div class="ttname"><a href="fifo_8h.html">fifo.h</a></div><div class="ttdoc">Macros to assess FIFO status.</div></div>
 <div class="ttc" id="agroup__irq__mask_html_ga768b54fd6ed13cbc74921ff529c6c424"><div class="ttname"><a href="group__irq__mask.html#ga768b54fd6ed13cbc74921ff529c6c424">irq_restore</a></div><div class="ttdeci">void irq_restore(irq_mask_t v)</div><div class="ttdoc">Restore IRQ state.</div></div>
 <div class="ttc" id="agroup__irq__mask_html_gac8594a5bb7ec76a0d1a5f08c9b7aae27"><div class="ttname"><a href="group__irq__mask.html#gac8594a5bb7ec76a0d1a5f08c9b7aae27">irq_disable</a></div><div class="ttdeci">irq_mask_t irq_disable(void)</div><div class="ttdoc">Disable interrupts.</div></div>
+<div class="ttc" id="agroup__irq__mask_html_gac86eb9bc95ad073837dfe8e4e9453295"><div class="ttname"><a href="group__irq__mask.html#gac86eb9bc95ad073837dfe8e4e9453295">irq_mask_t</a></div><div class="ttdeci">uint32_t irq_mask_t</div><div class="ttdoc">Type representing an interrupt mask state.</div><div class="ttdef"><b>Definition</b> irq.h:319</div></div>
 <div class="ttc" id="agroup__system__fifo_html_ga0311537c00d445bd49311fea60814562"><div class="ttname"><a href="group__system__fifo.html#ga0311537c00d445bd49311fea60814562">FIFO_G2</a></div><div class="ttdeci">#define FIFO_G2</div><div class="ttdef"><b>Definition</b> fifo.h:53</div></div>
 <div class="ttc" id="agroup__system__fifo_html_ga13f8a2ecc978716410a708e7a2c3c705"><div class="ttname"><a href="group__system__fifo.html#ga13f8a2ecc978716410a708e7a2c3c705">FIFO_SH4</a></div><div class="ttdeci">#define FIFO_SH4</div><div class="ttdef"><b>Definition</b> fifo.h:54</div></div>
 <div class="ttc" id="agroup__system__fifo_html_ga9e5c9878194f462bf7a46ca8a7b8f9d2"><div class="ttname"><a href="group__system__fifo.html#ga9e5c9878194f462bf7a46ca8a7b8f9d2">FIFO_STATUS</a></div><div class="ttdeci">#define FIFO_STATUS</div><div class="ttdoc">Address of the FIFO status register.</div><div class="ttdef"><b>Definition</b> fifo.h:35</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_ga0198db5c9757656fc27a639b7c7ecc4d"><div class="ttname"><a href="group__system__g2bus.html#ga0198db5c9757656fc27a639b7c7ecc4d">g2_write_32</a></div><div class="ttdeci">void g2_write_32(uintptr_t address, uint32_t value)</div><div class="ttdoc">Write a 32-bit dword to G2.</div></div>
-<div class="ttc" id="agroup__system__g2bus_html_ga1096dcd53088406a3cf57d9518651895"><div class="ttname"><a href="group__system__g2bus.html#ga1096dcd53088406a3cf57d9518651895">g2_read_32_raw</a></div><div class="ttdeci">static uint32_t g2_read_32_raw(uintptr_t address)</div><div class="ttdoc">Non-blocked read one 32-bit dword from G2.</div><div class="ttdef"><b>Definition</b> g2bus.h:257</div></div>
-<div class="ttc" id="agroup__system__g2bus_html_ga25745a9110107cf7885b1d8abfdf4ccc"><div class="ttname"><a href="group__system__g2bus.html#ga25745a9110107cf7885b1d8abfdf4ccc">g2_read_16</a></div><div class="ttdeci">uint16 g2_read_16(uintptr_t address)</div><div class="ttdoc">Read one 16-bit word from G2.</div></div>
-<div class="ttc" id="agroup__system__g2bus_html_ga28175a37be80794b04aaac5cd1a1eb13"><div class="ttname"><a href="group__system__g2bus.html#ga28175a37be80794b04aaac5cd1a1eb13">g2_unlock</a></div><div class="ttdeci">static void g2_unlock(g2_ctx_t ctx)</div><div class="ttdoc">Enable IRQs and G2 DMA.</div><div class="ttdef"><b>Definition</b> g2bus.h:185</div></div>
+<div class="ttc" id="agroup__system__g2bus_html_ga0e41c7a2d1424facba601f673441bef8"><div class="ttname"><a href="group__system__g2bus.html#ga0e41c7a2d1424facba601f673441bef8">g2_read_16</a></div><div class="ttdeci">uint16_t g2_read_16(uintptr_t address)</div><div class="ttdoc">Read one 16-bit word from G2.</div></div>
+<div class="ttc" id="agroup__system__g2bus_html_ga1096dcd53088406a3cf57d9518651895"><div class="ttname"><a href="group__system__g2bus.html#ga1096dcd53088406a3cf57d9518651895">g2_read_32_raw</a></div><div class="ttdeci">static uint32_t g2_read_32_raw(uintptr_t address)</div><div class="ttdoc">Non-blocked read one 32-bit dword from G2.</div><div class="ttdef"><b>Definition</b> g2bus.h:256</div></div>
+<div class="ttc" id="agroup__system__g2bus_html_ga28175a37be80794b04aaac5cd1a1eb13"><div class="ttname"><a href="group__system__g2bus.html#ga28175a37be80794b04aaac5cd1a1eb13">g2_unlock</a></div><div class="ttdeci">static void g2_unlock(g2_ctx_t ctx)</div><div class="ttdoc">Enable IRQs and G2 DMA.</div><div class="ttdef"><b>Definition</b> g2bus.h:184</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_ga35ee337664393da6fdb67e306ed16df4"><div class="ttname"><a href="group__system__g2bus.html#ga35ee337664393da6fdb67e306ed16df4">g2_read_block_16</a></div><div class="ttdeci">void g2_read_block_16(uint16_t *output, uintptr_t address, size_t amt)</div><div class="ttdoc">Read a block of words from G2.</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_ga3b8758ea9228eea654eaf32d28affcfd"><div class="ttname"><a href="group__system__g2bus.html#ga3b8758ea9228eea654eaf32d28affcfd">g2_write_block_8</a></div><div class="ttdeci">void g2_write_block_8(const uint8_t *input, uintptr_t address, size_t amt)</div><div class="ttdoc">Write a block of bytes to G2.</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_ga607e22c5045e8ac37a6e01a3b3675f77"><div class="ttname"><a href="group__system__g2bus.html#ga607e22c5045e8ac37a6e01a3b3675f77">g2_dma_init</a></div><div class="ttdeci">int g2_dma_init(void)</div><div class="ttdoc">Initialize DMA support.</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_ga6221d7bb810a5a10c71e8148992c7242"><div class="ttname"><a href="group__system__g2bus.html#ga6221d7bb810a5a10c71e8148992c7242">g2_memset_8</a></div><div class="ttdeci">void g2_memset_8(uintptr_t address, uint8_t c, size_t amt)</div><div class="ttdoc">Set a block of bytes to G2.</div></div>
-<div class="ttc" id="agroup__system__g2bus_html_ga726597af42393c34a37614573786bb29"><div class="ttname"><a href="group__system__g2bus.html#ga726597af42393c34a37614573786bb29">g2_lock</a></div><div class="ttdeci">static g2_ctx_t g2_lock(void)</div><div class="ttdoc">Disable IRQs and G2 DMA.</div><div class="ttdef"><b>Definition</b> g2bus.h:163</div></div>
-<div class="ttc" id="agroup__system__g2bus_html_ga728d1d67e82f0c4072f33b899709017a"><div class="ttname"><a href="group__system__g2bus.html#ga728d1d67e82f0c4072f33b899709017a">g2_write_32_raw</a></div><div class="ttdeci">static void g2_write_32_raw(uintptr_t address, uint32_t value)</div><div class="ttdoc">Non-blocked write a 32-bit dword to G2.</div><div class="ttdef"><b>Definition</b> g2bus.h:279</div></div>
-<div class="ttc" id="agroup__system__g2bus_html_ga731cc3ad9daf3047f99e0b14c35331c3"><div class="ttname"><a href="group__system__g2bus.html#ga731cc3ad9daf3047f99e0b14c35331c3">g2_dma_callback_t</a></div><div class="ttdeci">void(* g2_dma_callback_t)(void *data)</div><div class="ttdoc">G2Bus DMA interrupt callback type.</div><div class="ttdef"><b>Definition</b> g2bus.h:89</div></div>
+<div class="ttc" id="agroup__system__g2bus_html_ga726597af42393c34a37614573786bb29"><div class="ttname"><a href="group__system__g2bus.html#ga726597af42393c34a37614573786bb29">g2_lock</a></div><div class="ttdeci">static g2_ctx_t g2_lock(void)</div><div class="ttdoc">Disable IRQs and G2 DMA.</div><div class="ttdef"><b>Definition</b> g2bus.h:162</div></div>
+<div class="ttc" id="agroup__system__g2bus_html_ga728d1d67e82f0c4072f33b899709017a"><div class="ttname"><a href="group__system__g2bus.html#ga728d1d67e82f0c4072f33b899709017a">g2_write_32_raw</a></div><div class="ttdeci">static void g2_write_32_raw(uintptr_t address, uint32_t value)</div><div class="ttdoc">Non-blocked write a 32-bit dword to G2.</div><div class="ttdef"><b>Definition</b> g2bus.h:278</div></div>
+<div class="ttc" id="agroup__system__g2bus_html_ga731cc3ad9daf3047f99e0b14c35331c3"><div class="ttname"><a href="group__system__g2bus.html#ga731cc3ad9daf3047f99e0b14c35331c3">g2_dma_callback_t</a></div><div class="ttdeci">void(* g2_dma_callback_t)(void *data)</div><div class="ttdoc">G2Bus DMA interrupt callback type.</div><div class="ttdef"><b>Definition</b> g2bus.h:88</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_ga7858e29c9de455ff8bc5177dc864dce9"><div class="ttname"><a href="group__system__g2bus.html#ga7858e29c9de455ff8bc5177dc864dce9">g2_write_8</a></div><div class="ttdeci">void g2_write_8(uintptr_t address, uint8_t value)</div><div class="ttdoc">Write a single byte to G2.</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_ga84953671cbbff63b28efc7f3bcdba3aa"><div class="ttname"><a href="group__system__g2bus.html#ga84953671cbbff63b28efc7f3bcdba3aa">g2_dma_transfer</a></div><div class="ttdeci">int g2_dma_transfer(void *sh4, void *g2bus, size_t length, uint32_t block, g2_dma_callback_t callback, void *cbdata, uint32_t dir, uint32_t mode, uint32_t g2chn, uint32_t sh4chn)</div><div class="ttdoc">Perform a DMA transfer between SH-4 RAM and G2 Bus.</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_ga9680ffb0182a7f76d126fa30c132cade"><div class="ttname"><a href="group__system__g2bus.html#ga9680ffb0182a7f76d126fa30c132cade">g2_write_16</a></div><div class="ttdeci">void g2_write_16(uintptr_t address, uint16_t value)</div><div class="ttdoc">Write a 16-bit word to G2.</div></div>
@@ -515,11 +515,9 @@ $(function(){initNavTree('g2bus_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="agroup__system__g2bus_html_gaee63d4c38cccb6ed8e14c7f75203d8f1"><div class="ttname"><a href="group__system__g2bus.html#gaee63d4c38cccb6ed8e14c7f75203d8f1">g2_write_block_32</a></div><div class="ttdeci">void g2_write_block_32(const uint32_t *input, uintptr_t address, size_t amt)</div><div class="ttdoc">Write a block of dwords to G2.</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_gaf8a4774ed57f52683e4444bcdbd88248"><div class="ttname"><a href="group__system__g2bus.html#gaf8a4774ed57f52683e4444bcdbd88248">g2_read_block_32</a></div><div class="ttdeci">void g2_read_block_32(uint32_t *output, uintptr_t address, size_t amt)</div><div class="ttdoc">Read a block of dwords from G2.</div></div>
 <div class="ttc" id="agroup__system__g2bus_html_gafc4f13361cf418a44d67c28beb0c7dce"><div class="ttname"><a href="group__system__g2bus.html#gafc4f13361cf418a44d67c28beb0c7dce">g2_fifo_wait</a></div><div class="ttdeci">void g2_fifo_wait(void)</div><div class="ttdoc">Wait for the G2 write FIFO to empty.</div></div>
-<div class="ttc" id="agroup__system__types_html_ga05f6b0ae8f6a6e135b0e290c25fe0e4e"><div class="ttname"><a href="group__system__types.html#ga05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a></div><div class="ttdeci">unsigned short uint16</div><div class="ttdoc">16-bit unsigned integer</div><div class="ttdef"><b>Definition</b> types.h:34</div></div>
 <div class="ttc" id="airq_8h_html"><div class="ttname"><a href="irq_8h.html">irq.h</a></div><div class="ttdoc">Interrupt and exception handling.</div></div>
-<div class="ttc" id="astructg2__ctx__t_html"><div class="ttname"><a href="structg2__ctx__t.html">g2_ctx_t</a></div><div class="ttdoc">G2 context.</div><div class="ttdef"><b>Definition</b> g2bus.h:143</div></div>
-<div class="ttc" id="astructg2__ctx__t_html_ac267f55e228e317e8bd936bedb1b0281"><div class="ttname"><a href="structg2__ctx__t.html#ac267f55e228e317e8bd936bedb1b0281">g2_ctx_t::irq_state</a></div><div class="ttdeci">int irq_state</div><div class="ttdef"><b>Definition</b> g2bus.h:144</div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Common integer types.</div></div>
+<div class="ttc" id="astructg2__ctx__t_html"><div class="ttname"><a href="structg2__ctx__t.html">g2_ctx_t</a></div><div class="ttdoc">G2 context.</div><div class="ttdef"><b>Definition</b> g2bus.h:142</div></div>
+<div class="ttc" id="astructg2__ctx__t_html_ac73fde4a0228bb073a3cc802748cbd46"><div class="ttname"><a href="structg2__ctx__t.html#ac73fde4a0228bb073a3cc802748cbd46">g2_ctx_t::irq_state</a></div><div class="ttdeci">irq_mask_t irq_state</div><div class="ttdef"><b>Definition</b> g2bus.h:143</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

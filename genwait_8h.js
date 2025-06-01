@@ -1,7 +1,7 @@
 var genwait_8h =
 [
-    [ "genwait_check_timeouts", "genwait_8h.html#a6ee4f8d39d4bd375eb835d7214e11ac6", null ],
-    [ "genwait_next_timeout", "genwait_8h.html#af71e45241c05df542f677865f3d364a6", null ],
+    [ "genwait_check_timeouts", "genwait_8h.html#a9b9eedc4228cfc787ead955f61206f60", null ],
+    [ "genwait_next_timeout", "genwait_8h.html#ab214a80e406f0ab5baacfed562fc0b8b", null ],
     [ "genwait_wait", "genwait_8h.html#a52541d393936a6494bc24ecbbcc3d6f3", null ],
     [ "genwait_wake_all", "genwait_8h.html#a2b442fe2d3ce2f2cd83ef880db3c5019", null ],
     [ "genwait_wake_all_err", "genwait_8h.html#a9ac678b2fba51e6dad09df012aed0336", null ],
